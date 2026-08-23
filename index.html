@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IAL ATLAS | Edexcel IAL Notes Hub</title>
+
+    <meta name="description"
+          content="IAL ATLAS — free, student-friendly revision resources for Edexcel International A Levels.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #4db8ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #dcecff;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            text-align: center;
+            color: #607089;
+            margin-bottom: 40px;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #68778d;
+            line-height: 1.6;
+        }
+
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            color: #53657d;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">IAL ATLAS</div>
+
+    <nav>
+        <a href="#subjects">Subjects</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <h1>IAL ATLAS</h1>
+
+    <p>Explore • Learn • Master</p>
+
+    <p>
+        Free revision resources for Edexcel International A Levels.
+    </p>
+
+    <a href="#subjects" class="button">
+        Explore Subjects
+    </a>
+
+</section>
+
+<section class="section" id="subjects">
+
+    <h2>Subjects</h2>
+
+    <p class="section-intro">
+        Clear, student-friendly resources designed for Edexcel IAL students.
+    </p>
+
+    <div class="subjects">
+
+        <div class="card">
+            <div class="icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>
+                Topic notes, formulas, worked examples and revision resources.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚛️</div>
+            <h3>Physics</h3>
+            <p>
+                Concept explanations, equations, examples and exam-focused revision.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧪</div>
+            <h3>Chemistry</h3>
+            <p>
+                Clear explanations, reactions, calculations and revision guides.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section about" id="about">
+
+    <h2>About IAL ATLAS</h2>
+
+    <p>
+        IAL ATLAS is an independent educational project created to provide
+        accessible and student-friendly revision resources for Pearson Edexcel
+        International A Levels.
+    </p>
+
+</section>
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+</body>
+</html>
