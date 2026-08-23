@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics | IAL ATLAS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #607089;
+            margin-bottom: 40px;
+        }
+
+        .units {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .unit {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .unit:hover {
+            transform: translateY(-4px);
+        }
+
+        .unit h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .unit p {
+            color: #68778d;
+            line-height: 1.6;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            background: #32a9e8;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 750px) {
+            .units {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">IAL ATLAS</a>
+    <a href="index.html">← Home</a>
+</header>
+
+<section class="hero">
+
+    <h1>Physics</h1>
+
+    <p>Edexcel International A Level Physics</p>
+
+</section>
+
+<section class="section">
+
+    <h2>Physics Units</h2>
+
+    <p class="intro">
+        Explore Edexcel IAL Physics concepts, equations, examples and exam-focused resources.
+    </p>
+
+    <div class="units">
+
+        <div class="unit">
+            <h3>Unit 1</h3>
+            <p>Physics on the go — mechanics, materials and electricity.</p>
+        </div>
+
+        <div class="unit">
+            <h3>Unit 2</h3>
+            <p>Physics at work — waves, electricity and particle physics.</p>
+        </div>
+
+        <div class="unit">
+            <h3>Unit 3</h3>
+            <p>Exploring physics through practical skills and experimental methods.</p>
+        </div>
+
+        <div class="unit">
+            <h3>Unit 4</h3>
+            <p>Further mechanics, electric and magnetic fields, nuclear and particle physics.</p>
+        </div>
+
+        <div class="unit">
+            <h3>Unit 5</h3>
+            <p>Thermodynamics, nuclear decay, oscillations, astrophysics and cosmology.</p>
+        </div>
+
+        <div class="unit">
+            <h3>Unit 6</h3>
+            <p>Practical skills, experimental techniques and data analysis.</p>
+        </div>
+
+    </div>
+
+    <div style="text-align: center;">
+        <a href="index.html" class="back">← Back to Subjects</a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+</footer>
+
+</body>
+</html>
