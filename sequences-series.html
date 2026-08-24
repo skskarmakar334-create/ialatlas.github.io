@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sequences & Series | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Sequences and Series notes for Pearson Edexcel International A Level Mathematics.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 32px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .topic-card h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0b3c73;
+        }
+
+        .topic-card h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .formula {
+            background: #eef6ff;
+            padding: 16px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        .back {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .back:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .topic-card {
+                padding: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body id="top">
+
+<header>
+
+    <a href="index.html" class="logo">IAL ATLAS</a>
+
+    <a href="pure-mathematics.html">
+        ← Pure Mathematics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Sequences & Series</h1>
+
+    <p>
+        Edexcel International A Level Mathematics
+    </p>
+
+</section>
+
+
+<section class="section">
+
+
+    <!-- 1. SEQUENCES -->
+
+    <div class="topic-card">
+
+        <h2>1. Sequences</h2>
+
+        <p>
+            A sequence is an ordered list of numbers that follows a
+            particular rule or pattern.
+        </p>
+
+        <h3>Example</h3>
+
+        <div class="formula">
+            3, 7, 11, 15, 19, ...
+        </div>
+
+        <p>
+            Each term increases by 4.
+        </p>
+
+        <p>
+            The number of a term in a sequence is represented by n.
+        </p>
+
+    </div>
+
+
+    <!-- 2. ARITHMETIC SEQUENCES -->
+
+    <div class="topic-card">
+
+        <h2>2. Arithmetic Sequences</h2>
+
+        <p>
+            An arithmetic sequence has a constant difference between
+            consecutive terms.
+        </p>
+
+        <div class="formula">
+            a, a + d, a + 2d, a + 3d, ...
+        </div>
+
+        <p>
+            The nth term is:
+        </p>
+
+        <div class="formula">
+            uₙ = a + (n − 1)d
+        </div>
+
+        <p>
+            where a is the first term and d is the common difference.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the nth term of:
+        </p>
+
+        <div class="formula">
+            5, 9, 13, 17, ...
+        </div>
+
+        <p>
+            First term:
+        </p>
+
+        <div class="formula">
+            a = 5
+        </div>
+
+        <p>
+            Common difference:
+        </p>
+
+        <div class="formula">
+            d = 4
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            uₙ = 5 + (n − 1)4
+            <br>
+            = <strong>4n + 1</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 3. GEOMETRIC SEQUENCES -->
+
+    <div class="topic-card">
+
+        <h2>3. Geometric Sequences</h2>
+
+        <p>
+            A geometric sequence has a constant ratio between consecutive
+            terms.
+        </p>
+
+        <div class="formula">
+            a, ar, ar², ar³, ...
+        </div>
+
+        <p>
+            The nth term is:
+        </p>
+
+        <div class="formula">
+            uₙ = arⁿ⁻¹
+        </div>
+
+        <p>
+            where a is the first term and r is the common ratio.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the nth term of:
+        </p>
+
+        <div class="formula">
+            3, 6, 12, 24, ...
+        </div>
+
+        <p>
+            First term:
+        </p>
+
+        <div class="formula">
+            a = 3
+        </div>
+
+        <p>
+            Common ratio:
+        </p>
+
+        <div class="formula">
+            r = 2
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            <strong>uₙ = 3 × 2ⁿ⁻¹</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 4. SIGMA NOTATION -->
+
+    <div class="topic-card">
+
+        <h2>4. Sigma Notation</h2>
+
+        <p>
+            Sigma notation provides a compact way of writing the sum of
+            several terms.
+        </p>
+
+        <div class="formula">
+            Σ
+        </div>
+
+        <p>
+            For example:
+        </p>
+
+        <div class="formula">
+            Σ⁵ₙ₌₁ n
+        </div>
+
+        <p>
+            means:
+        </p>
+
+        <div class="formula">
+            1 + 2 + 3 + 4 + 5
+        </div>
+
+    </div>
+
+
+    <!-- 5. SUM OF ARITHMETIC SERIES -->
+
+    <div class="topic-card">
+
+        <h2>5. Arithmetic Series</h2>
+
+        <p>
+            The sum of the first n terms of an arithmetic sequence is:
+        </p>
+
+        <div class="formula">
+            Sₙ = n/2 [2a + (n − 1)d]
+        </div>
+
+        <p>
+            An alternative form is:
+        </p>
+
+        <div class="formula">
+            Sₙ = n/2 (a + l)
+        </div>
+
+        <p>
+            where l is the final term.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the sum of the first 10 terms of:
+        </p>
+
+        <div class="formula">
+            2, 5, 8, 11, ...
+        </div>
+
+        <p>
+            Here:
+        </p>
+
+        <div class="formula">
+            a = 2
+            <br>
+            d = 3
+            <br>
+            n = 10
+        </div>
+
+        <div class="formula">
+            S₁₀ = 10/2 [2(2) + 9(3)]
+            <br>
+            = 5(4 + 27)
+            <br>
+            = <strong>155</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 6. GEOMETRIC SERIES -->
+
+    <div class="topic-card">
+
+        <h2>6. Geometric Series</h2>
+
+        <p>
+            The sum of the first n terms of a geometric series is:
+        </p>
+
+        <div class="formula">
+            Sₙ = a(1 − rⁿ)/(1 − r)
+        </div>
+
+        <p>
+            provided r ≠ 1.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the sum of the first 5 terms of:
+        </p>
+
+        <div class="formula">
+            2 + 6 + 18 + 54 + ...
+        </div>
+
+        <div class="formula">
+            a = 2
+            <br>
+            r = 3
+            <br>
+            n = 5
+        </div>
+
+        <div class="formula">
+            S₅ = 2(1 − 3⁵)/(1 − 3)
+            <br>
+            = <strong>242</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 7. PRACTICE QUESTIONS -->
+
+    <div class="topic-card">
+
+        <h2>🧠 Practice Questions</h2>
+
+        <p>
+            Try each question before opening the solution.
+        </p>
+
+
+        <h3>Question 1 — Arithmetic Sequence</h3>
+
+        <p>
+            Find the nth term of:
+        </p>
+
+        <div class="formula">
+            7, 11, 15, 19, ...
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <p>
+                The first term is:
+            </p>
+
+            <div class="formula">
+                a = 7
+            </div>
+
+            <p>
+                The common difference is:
+            </p>
+
+            <div class="formula">
+                d = 4
+            </div>
+
+            <div class="formula">
+                uₙ = 7 + (n − 1)4
+                <br>
+                = <strong>4n + 3</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 2 — Geometric Sequence</h3>
+
+        <p>
+            Find the nth term of:
+        </p>
+
+        <div class="formula">
+            5, 15, 45, 135, ...
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                a = 5
+                <br>
+                r = 3
+            </div>
+
+            <div class="formula">
+                <strong>uₙ = 5 × 3ⁿ⁻¹</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 3 — Arithmetic Series</h3>
+
+        <p>
+            Find the sum of the first 20 terms of:
+        </p>
+
+        <div class="formula">
+            3, 7, 11, 15, ...
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                a = 3
+                <br>
+                d = 4
+                <br>
+                n = 20
+            </div>
+
+            <div class="formula">
+                S₂₀ = 20/2 [2(3) + 19(4)]
+            </div>
+
+            <div class="formula">
+                = 10(6 + 76)
+                <br>
+                = <strong>820</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 4 — Geometric Series</h3>
+
+        <p>
+            Find the sum of the first 6 terms of:
+        </p>
+
+        <div class="formula">
+            2 + 4 + 8 + 16 + ...
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                a = 2
+                <br>
+                r = 2
+                <br>
+                n = 6
+            </div>
+
+            <div class="formula">
+                S₆ = 2(1 − 2⁶)/(1 − 2)
+            </div>
+
+            <div class="formula">
+                = <strong>126</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 5 — Find a Term</h3>
+
+        <p>
+            The nth term of a sequence is 3n + 2.
+            Find the 15th term.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                u₁₅ = 3(15) + 2
+            </div>
+
+            <div class="formula">
+                = <strong>47</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 6 — Sigma Notation</h3>
+
+        <p>
+            Evaluate:
+        </p>
+
+        <div class="formula">
+            Σ⁵ₙ₌₁ n
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                1 + 2 + 3 + 4 + 5
+            </div>
+
+            <div class="formula">
+                = <strong>15</strong>
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- 8. COMMON MISTAKES -->
+
+    <div class="topic-card">
+
+        <h2>⚠️ Common Mistakes</h2>
+
+        <h3>1. Confusing difference with ratio</h3>
+
+        <p>
+            Arithmetic sequences use a common difference, while geometric
+            sequences use a common ratio.
+        </p>
+
+        <h3>2. Forgetting n − 1</h3>
+
+        <p>
+            The nth term of an arithmetic sequence is:
+        </p>
+
+        <div class="formula">
+            uₙ = a + (n − 1)d
+        </div>
+
+        <p>
+            Not a + nd.
+        </p>
+
+        <h3>3. Using the wrong formula</h3>
+
+        <p>
+            Make sure you identify whether the sequence is arithmetic or
+            geometric before choosing a formula.
+        </p>
+
+        <h3>4. Sign errors</h3>
+
+        <p>
+            Be especially careful when the common difference or ratio is
+            negative.
+        </p>
+
+    </div>
+
+
+    <!-- 9. EXAM TIPS -->
+
+    <div class="topic-card">
+
+        <h2>🎯 Exam Tips</h2>
+
+        <h3>1. Identify the sequence first</h3>
+
+        <p>
+            Check whether consecutive terms have a constant difference or
+            a constant ratio.
+        </p>
+
+        <h3>2. Write down a, d, r and n</h3>
+
+        <p>
+            Before using a formula, identify the values you need.
+        </p>
+
+        <h3>3. Check the first term</h3>
+
+        <p>
+            After finding an nth-term formula, substitute n = 1 to make
+            sure it gives the correct first term.
+        </p>
+
+        <h3>4. Check your final answer</h3>
+
+        <p>
+            For sums, estimate whether your answer is a sensible size
+            compared with the individual terms.
+        </p>
+
+    </div>
+
+
+    <!-- BACK TO TOP -->
+
+    <div style="text-align: center;">
+
+        <a href="#top" class="back">
+            ↑ Back to Top
+        </a>
+
+    </div>
+
+
+    <!-- BACK TO PURE MATHEMATICS -->
+
+    <div style="text-align: center;">
+
+        <a href="pure-mathematics.html" class="back">
+            ← Back to Pure Mathematics
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
