@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kinematics in a Straight Line | IAL ATLAS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-1.html">
+        ← Mechanics 1
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 1 • TOPIC 03
+    </p>
+
+    <h1>
+        Kinematics in a Straight Line
+    </h1>
+
+    <p>
+        Learn how displacement, velocity and acceleration describe
+        the motion of particles.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 01</p>
+
+        <h2>What is Kinematics?</h2>
+
+        <p>
+            Kinematics is the study of motion without considering
+            the forces that cause the motion.
+        </p>
+
+        <div class="definition">
+            <strong>Key idea</strong>
+            <p>
+                Kinematics describes how an object moves.
+            </p>
+        </div>
+
+        <p>
+            In Mechanics 1, we mainly study the motion of a particle
+            along a straight line.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 02</p>
+
+        <h2>Displacement</h2>
+
+        <p>
+            Displacement is the directed distance of a particle
+            from a chosen origin.
+        </p>
+
+        <div class="definition">
+            <strong>Displacement is a vector quantity.</strong>
+            <p>
+                Therefore, it has both magnitude and direction.
+            </p>
+        </div>
+
+        <p>
+            Displacement is commonly represented by the variable
+            <strong>s</strong>.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 03</p>
+
+        <h2>Velocity</h2>
+
+        <p>
+            Velocity describes the rate of change of displacement
+            with respect to time.
+        </p>
+
+        <div class="formula">
+            v = ds/dt
+        </div>
+
+        <p>
+            Velocity is a vector quantity, so its sign indicates
+            direction along the chosen line.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 04</p>
+
+        <h2>Acceleration</h2>
+
+        <p>
+            Acceleration describes the rate of change of velocity
+            with respect to time.
+        </p>
+
+        <div class="formula">
+            a = dv/dt
+        </div>
+
+        <p>
+            Acceleration is also a vector quantity.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 05</p>
+
+        <h2>Constant Acceleration</h2>
+
+        <p>
+            When acceleration is constant, we can use the standard
+            constant-acceleration equations.
+        </p>
+
+        <div class="formula">
+            v = u + at
+        </div>
+
+        <div class="formula">
+            s = ut + ½at²
+        </div>
+
+        <div class="formula">
+            v² = u² + 2as
+        </div>
+
+        <div class="formula">
+            s = ½(u + v)t
+        </div>
+
+        <p>
+            Here:
+        </p>
+
+        <ul>
+            <li><strong>u</strong> = initial velocity</li>
+            <li><strong>v</strong> = final velocity</li>
+            <li><strong>a</strong> = constant acceleration</li>
+            <li><strong>t</strong> = time</li>
+            <li><strong>s</strong> = displacement</li>
+        </ul>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Using a Constant-Acceleration Equation</h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle starts with velocity 5 m/s and accelerates
+                at 2 m/s² for 4 seconds. Find its final velocity.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Use:
+                </p>
+
+                <div class="formula">
+                    v = u + at
+                </div>
+
+                <p>
+                    u = 5, a = 2, t = 4
+                </p>
+
+                <p>
+                    v = 5 + (2)(4)
+                </p>
+
+                <p>
+                    <strong>v = 13 m/s</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 06</p>
+
+        <h2>Speed and Velocity</h2>
+
+        <p>
+            Speed tells us how fast a particle is moving.
+            Velocity also tells us the direction of motion.
+        </p>
+
+        <div class="definition">
+            <strong>Speed</strong>
+            <p>
+                Magnitude of velocity.
+            </p>
+        </div>
+
+        <p>
+            A particle can have constant speed while its velocity
+            changes if its direction changes.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Test Yourself</h2>
+
+        <div class="question">
+
+            <strong>
+                1. What does kinematics study?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The motion of objects without considering the
+                    forces causing that motion.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. What is the difference between speed and velocity?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Speed is a scalar, while velocity is a vector
+                    and includes direction.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A particle has u = 4 m/s, a = 3 m/s² and t = 2 s.
+                Find v.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    v = u + at
+                </p>
+
+                <p>
+                    v = 4 + (3)(2)
+                </p>
+
+                <p>
+                    <strong>v = 10 m/s</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. What does a negative velocity indicate?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The particle is moving in the direction defined
+                    as negative.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Remember These</h2>
+
+        <div class="formula">
+            v = ds/dt
+        </div>
+
+        <div class="formula">
+            a = dv/dt
+        </div>
+
+        <div class="formula">
+            v = u + at
+        </div>
+
+        <div class="formula">
+            s = ut + ½at²
+        </div>
+
+        <div class="formula">
+            v² = u² + 2as
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-1.html" class="button">
+        ← Back to Mechanics 1
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+</footer>
+
+
+</body>
+
+</html>
