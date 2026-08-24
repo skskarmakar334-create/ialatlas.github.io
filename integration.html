@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Integration | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Integration notes and revision resources for Pearson Edexcel International A Level Mathematics.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 32px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .topic-card h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0b3c73;
+        }
+
+        .topic-card h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .formula {
+            background: #eef6ff;
+            padding: 16px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        .back {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .back:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .topic-card {
+                padding: 24px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="pure-mathematics.html">
+        ← Pure Mathematics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Integration</h1>
+
+    <p>
+        Edexcel International A Level Mathematics
+    </p>
+
+</section>
+
+
+<section class="section">
+
+
+    <!-- 1. WHAT IS INTEGRATION -->
+
+    <div class="topic-card">
+
+        <h2>1. What Is Integration?</h2>
+
+        <p>
+            Integration is the reverse process of differentiation.
+        </p>
+
+        <p>
+            If differentiation gives the gradient of a function,
+            integration can be used to recover the original function.
+        </p>
+
+        <div class="formula">
+            ∫ f(x) dx
+        </div>
+
+        <p>
+            The symbol ∫ represents integration.
+        </p>
+
+        <p>
+            The expression dx indicates that we are integrating with
+            respect to x.
+        </p>
+
+    </div>
+
+
+    <!-- 2. BASIC INTEGRATION -->
+
+    <div class="topic-card">
+
+        <h2>2. The Power Rule for Integration</h2>
+
+        <p>
+            For powers of x:
+        </p>
+
+        <div class="formula">
+            ∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C
+        </div>
+
+        <p>
+            provided n ≠ −1.
+        </p>
+
+        <p>
+            C is the constant of integration.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ x³ dx
+        </div>
+
+        <div class="formula">
+            = x⁴/4 + C
+        </div>
+
+        <div class="formula">
+            <strong>∫ x³ dx = x⁴/4 + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 3. CONSTANT MULTIPLIERS -->
+
+    <div class="topic-card">
+
+        <h2>3. Integrating Polynomial Functions</h2>
+
+        <p>
+            Integrate each term separately.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ (6x² + 4x − 5) dx
+        </div>
+
+        <div class="formula">
+            = 2x³ + 2x² − 5x + C
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            <strong>2x³ + 2x² − 5x + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 4. NEGATIVE AND FRACTIONAL POWERS -->
+
+    <div class="topic-card">
+
+        <h2>4. Negative and Fractional Powers</h2>
+
+        <p>
+            Rewrite roots and fractions as powers before integrating.
+        </p>
+
+        <div class="formula">
+            √x = x¹ᐟ²
+        </div>
+
+        <div class="formula">
+            1/x² = x⁻²
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ √x dx
+        </div>
+
+        <p>
+            Rewrite:
+        </p>
+
+        <div class="formula">
+            ∫ x¹ᐟ² dx
+        </div>
+
+        <div class="formula">
+            = x³ᐟ²/(3/2) + C
+        </div>
+
+        <div class="formula">
+            <strong>= 2/3 x³ᐟ² + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 5. INTEGRATING 1/X -->
+
+    <div class="topic-card">
+
+        <h2>5. Integrating 1/x</h2>
+
+        <p>
+            The normal power rule cannot be used when n = −1.
+        </p>
+
+        <p>
+            Instead:
+        </p>
+
+        <div class="formula">
+            ∫ 1/x dx = ln|x| + C
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ 5/x dx
+        </div>
+
+        <div class="formula">
+            <strong>= 5ln|x| + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 6. DEFINITE INTEGRALS -->
+
+    <div class="topic-card">
+
+        <h2>6. Definite Integration</h2>
+
+        <p>
+            A definite integral has limits.
+        </p>
+
+        <div class="formula">
+            ∫ᵃᵇ f(x) dx
+        </div>
+
+        <p>
+            To evaluate it, find an antiderivative and substitute the
+            upper and lower limits.
+        </p>
+
+        <div class="formula">
+            ∫ᵃᵇ f(x) dx = F(b) − F(a)
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Evaluate:
+        </p>
+
+        <div class="formula">
+            ∫₀² x² dx
+        </div>
+
+        <p>
+            First integrate:
+        </p>
+
+        <div class="formula">
+            ∫ x² dx = x³/3
+        </div>
+
+        <p>
+            Apply the limits:
+        </p>
+
+        <div class="formula">
+            [x³/3]₀²
+        </div>
+
+        <div class="formula">
+            = 8/3 − 0
+            <br>
+            <strong>= 8/3</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 7. AREA UNDER A CURVE -->
+
+    <div class="topic-card">
+
+        <h2>7. Area Under a Curve</h2>
+
+        <p>
+            A definite integral can be used to find the area between a
+            curve and the x-axis over an interval where the function is
+            non-negative.
+        </p>
+
+        <div class="formula">
+            Area = ∫ᵃᵇ y dx
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the area under y = x² from x = 0 to x = 3.
+        </p>
+
+        <div class="formula">
+            Area = ∫₀³ x² dx
+        </div>
+
+        <div class="formula">
+            = [x³/3]₀³
+        </div>
+
+        <div class="formula">
+            = 27/3
+            <br>
+            <strong>= 9</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 8. AREA BETWEEN CURVES -->
+
+    <div class="topic-card">
+
+        <h2>8. Area Between Two Curves</h2>
+
+        <p>
+            When one curve lies above another:
+        </p>
+
+        <div class="formula">
+            Area = ∫ᵃᵇ (upper curve − lower curve) dx
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the area between:
+        </p>
+
+        <div class="formula">
+            y = x
+            <br>
+            y = x²
+        </div>
+
+        <p>
+            between x = 0 and x = 1.
+        </p>
+
+        <div class="formula">
+            Area = ∫₀¹ (x − x²) dx
+        </div>
+
+        <div class="formula">
+            = [x²/2 − x³/3]₀¹
+        </div>
+
+        <div class="formula">
+            = 1/2 − 1/3
+            <br>
+            <strong>= 1/6</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 9. CONSTANT OF INTEGRATION -->
+
+    <div class="topic-card">
+
+        <h2>9. The Constant of Integration</h2>
+
+        <p>
+            When integrating without limits, always include + C.
+        </p>
+
+        <div class="formula">
+            ∫ 3x² dx = x³ + C
+        </div>
+
+        <p>
+            The constant is required because many different functions
+            have the same derivative.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+            If:
+        </p>
+
+        <div class="formula">
+            dy/dx = 6x
+        </div>
+
+        <p>
+            then:
+        </p>
+
+        <div class="formula">
+            <strong>y = 3x² + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 10. USING CONDITIONS -->
+
+    <div class="topic-card">
+
+        <h2>10. Finding the Constant Using a Condition</h2>
+
+        <p>
+            Sometimes a point on the curve is given. This allows us to
+            determine C.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Given:
+        </p>
+
+        <div class="formula">
+            dy/dx = 6x
+        </div>
+
+        <p>
+            and the curve passes through (2, 5), find y.
+        </p>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            y = 3x² + C
+        </div>
+
+        <p>
+            Substitute (2, 5):
+        </p>
+
+        <div class="formula">
+            5 = 3(2²) + C
+        </div>
+
+        <div class="formula">
+            5 = 12 + C
+            <br>
+            C = −7
+        </div>
+
+        <div class="formula">
+            <strong>y = 3x² − 7</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 11. PRACTICE QUESTIONS -->
+
+    <div class="topic-card">
+
+        <h2>🧠 Practice Questions</h2>
+
+        <p>
+            Try each question before opening the solution.
+        </p>
+
+
+        <h3>Question 1 — Basic Integration</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ 4x³ dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                <strong>x⁴ + C</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 2 — Polynomial</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ (6x² + 4x − 3) dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                2x³ + 2x² − 3x + C
+            </div>
+
+        </details>
+
+
+        <h3>Question 3 — Fractional Power</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ √x dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                ∫ x¹ᐟ² dx
+                <br>
+                = <strong>2/3 x³ᐟ² + C</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 4 — Definite Integral</h3>
+
+        <p>
+            Evaluate:
+        </p>
+
+        <div class="formula">
+            ∫₁³ 2x dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                ∫ 2x dx = x²
+            </div>
+
+            <div class="formula">
+                [x²]₁³
+                <br>
+                = 9 − 1
+                <br>
+                = <strong>8</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 5 — Area</h3>
+
+        <p>
+            Find the area under y = x² between x = 1 and x = 3.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                Area = ∫₁³ x² dx
+            </div>
+
+            <div class="formula">
+                = [x³/3]₁³
+            </div>
+
+            <div class="formula">
+                = 27/3 − 1/3
+                <br>
+                = <strong>26/3</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 6 — Find the Constant</h3>
+
+        <p>
+            Given dy/dx = 4x and the curve passes through (1, 7),
+            find the equation of the curve.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                y = 2x² + C
+            </div>
+
+            <div class="formula">
+                7 = 2(1²) + C
+                <br>
+                C = 5
+            </div>
+
+            <div class="formula">
+                <strong>y = 2x² + 5</strong>
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- 12. COMMON MISTAKES -->
+
+    <div class="topic-card">
+
+        <h2>⚠️ Common Mistakes</h2>
+
+        <h3>1. Forgetting + C</h3>
+
+        <p>
+            For indefinite integration, always include the constant of
+            integration.
+        </p>
+
+        <h3>2. Dividing by the wrong number</h3>
+
+        <p>
+            When integrating xⁿ, increase the power by 1 and divide by
+            the new power.
+        </p>
+
+        <div class="formula">
+            x⁴ → x⁵/5
+        </div>
+
+        <h3>3. Using the power rule for 1/x</h3>
+
+        <p>
+            Remember:
+        </p>
+
+        <div class="formula">
+            ∫ 1/x dx = ln|x| + C
+        </div>
+
+        <h3>4. Reversing upper and lower limits</h3>
+
+        <p>
+            For a definite integral:
+        </p>
+
+        <div class="formula">
+            F(upper) − F(lower)
+        </div>
+
+        <h3>5. Confusing area with signed area</h3>
+
+        <p>
+            If a curve goes below the x-axis, the definite integral can
+            be negative. Finding total geometric area may require splitting
+            the interval.
+        </p>
+
+    </div>
+
+
+    <!-- 13. EXAM TIPS -->
+
+    <div class="topic-card">
+
+        <h2>🎯 Exam Tips</h2>
+
+        <h3>1. Check whether limits are given</h3>
+
+        <p>
+            No limits usually means an indefinite integral and therefore
+            + C is required.
+        </p>
+
+        <h3>2. Rewrite before integrating</h3>
+
+        <p>
+            Convert roots and fractions into powers where appropriate.
+        </p>
+
+        <h3>3. Differentiate your answer</h3>
+
+        <p>
+            A quick differentiation check can confirm whether your
+            integration is correct.
+        </p>
+
+        <h3>4. Keep exact values</h3>
+
+        <p>
+            Avoid unnecessary decimal approximations.
+        </p>
+
+        <h3>5. For areas, identify the correct curve</h3>
+
+        <p>
+            When finding the area between two curves, use:
+        </p>
+
+        <div class="formula">
+            Upper − Lower
+        </div>
+
+    </div>
+
+
+    <!-- BACK TO TOP -->
+
+    <div style="text-align: center;">
+
+        <a href="#top" class="back">
+            ↑ Back to Top
+        </a>
+
+    </div>
+
+
+    <!-- BACK TO PURE MATHEMATICS -->
+
+    <div style="text-align: center;">
+
+        <a href="pure-mathematics.html" class="back">
+            ← Back to Pure Mathematics
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
