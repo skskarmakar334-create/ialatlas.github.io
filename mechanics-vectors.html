@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vectors in Mechanics | IAL ATLAS</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-1.html">
+        ← Mechanics 1
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 1 • TOPIC 02
+    </p>
+
+    <h1>
+        Vectors in Mechanics
+    </h1>
+
+    <p>
+        Learn how vectors are used to represent displacement,
+        velocity, acceleration and forces.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 01</p>
+
+        <h2>What is a Vector?</h2>
+
+        <p>
+            A vector is a quantity that has both magnitude and direction.
+        </p>
+
+        <div class="definition">
+
+            <strong>Examples of vector quantities:</strong>
+
+            <p>
+                Displacement, velocity, acceleration and force.
+            </p>
+
+        </div>
+
+        <p>
+            Scalar quantities have magnitude only. Examples include
+            distance, speed, mass and time.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 02</p>
+
+        <h2>Representing Vectors</h2>
+
+        <p>
+            A vector can be represented using a directed line segment.
+            The arrow shows its direction and the length represents
+            its magnitude.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Same magnitude + same direction = same vector.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 03</p>
+
+        <h2>Column Vectors</h2>
+
+        <p>
+            In two dimensions, vectors can be written as column vectors.
+        </p>
+
+        <div class="formula">
+            a = ( x , y )
+        </div>
+
+        <p>
+            The first component represents the horizontal direction
+            and the second component represents the vertical direction.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 04</p>
+
+        <h2>Magnitude of a Vector</h2>
+
+        <p>
+            For a vector with horizontal component x and vertical
+            component y, its magnitude is found using Pythagoras.
+        </p>
+
+        <div class="formula">
+            |a| = √(x² + y²)
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                Find the magnitude of the vector (3, 4).
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    |a| = √(3² + 4²)
+                </p>
+
+                <p>
+                    |a| = √25
+                </p>
+
+                <p>
+                    <strong>|a| = 5</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 05</p>
+
+        <h2>Adding and Subtracting Vectors</h2>
+
+        <p>
+            Vectors can be added by adding their corresponding components.
+        </p>
+
+        <div class="formula">
+            (a, b) + (c, d) = (a + c, b + d)
+        </div>
+
+        <p>
+            Similarly, subtraction is performed component by component.
+        </p>
+
+        <div class="formula">
+            (a, b) − (c, d) = (a − c, b − d)
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 06</p>
+
+        <h2>Scalar Multiplication</h2>
+
+        <p>
+            Multiplying a vector by a scalar changes its magnitude.
+            A negative scalar also reverses its direction.
+        </p>
+
+        <div class="formula">
+            k(a, b) = (ka, kb)
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 07</p>
+
+        <h2>Vectors in Mechanics</h2>
+
+        <p>
+            Vectors are used throughout mechanics to describe physical
+            quantities such as displacement, velocity, acceleration
+            and force.
+        </p>
+
+        <ul>
+
+            <li>Displacement has magnitude and direction.</li>
+
+            <li>Velocity has magnitude and direction.</li>
+
+            <li>Acceleration has magnitude and direction.</li>
+
+            <li>Force has magnitude and direction.</li>
+
+        </ul>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Vector Calculation</h2>
+
+        <div class="example">
+
+            <p>
+                Given
+            </p>
+
+            <div class="formula">
+                a = (3, 4)
+            </div>
+
+            <p>
+                find the magnitude of a.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    |a| = √(3² + 4²)
+                </p>
+
+                <p>
+                    |a| = √25
+                </p>
+
+                <p>
+                    <strong>|a| = 5</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Test Yourself</h2>
+
+        <div class="question">
+
+            <strong>1. What makes a quantity a vector?</strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    It has both magnitude and direction.
+                </p>
+            </details>
+
+        </div>
+
+        <div class="question">
+
+            <strong>
+                2. Find the magnitude of (5, 12).
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    √(5² + 12²) = √169 = 13.
+                </p>
+            </details>
+
+        </div>
+
+        <div class="question">
+
+            <strong>
+                3. Add (2, 3) and (4, 5).
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    (6, 8).
+                </p>
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Remember These</h2>
+
+        <div class="formula">
+            Vector = magnitude + direction
+        </div>
+
+        <div class="formula">
+            |(x, y)| = √(x² + y²)
+        </div>
+
+        <div class="formula">
+            Add vectors component by component
+        </div>
+
+        <div class="formula">
+            Multiply every component by the scalar
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-1.html" class="button">
+        ← Back to Mechanics 1
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
