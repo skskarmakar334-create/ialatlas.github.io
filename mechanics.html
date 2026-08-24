@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mechanics | IAL ATLAS</title>
 
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Mechanics resources — notes, worked examples and practice questions.">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -40,165 +46,334 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
             color: white;
             text-align: center;
-            padding: 70px 20px;
+            padding: 85px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
+            font-size: 56px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
         }
 
         .hero p {
+            max-width: 700px;
+            margin: auto;
             color: #dcecff;
             font-size: 18px;
+            line-height: 1.7;
         }
 
         .section {
             max-width: 1100px;
             margin: auto;
-            padding: 60px 20px;
+            padding: 70px 20px;
         }
 
         .section h2 {
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 12px;
         }
 
-        .intro {
+        .section-intro {
             text-align: center;
             color: #607089;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+            line-height: 1.7;
+        }
+
+        .units {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .unit {
+            background: white;
+            padding: 35px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            border: 1px solid rgba(16,35,63,0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .unit:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(16,35,63,0.12);
+        }
+
+        .unit-label {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .unit h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .unit-description {
+            color: #68778d;
+            line-height: 1.6;
+            margin-bottom: 22px;
         }
 
         .topics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            list-style: none;
+            padding: 0;
         }
 
-        .topic {
-            background: white;
-            padding: 28px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
+        .topics li {
+            padding: 10px 0;
+            border-top: 1px solid #edf1f6;
+            color: #53657d;
+            font-size: 14px;
         }
 
-        .topic:hover {
-            transform: translateY(-4px);
-        }
-
-        .topic h3 {
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
-
-        .topic p {
-            color: #68778d;
-            line-height: 1.6;
+        .topics li:first-child {
+            border-top: none;
         }
 
         .back {
             display: inline-block;
-            margin-top: 40px;
+            margin-top: 45px;
             background: #32a9e8;
             color: white;
-            padding: 12px 24px;
+            padding: 13px 25px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .back:hover {
+            background: #168dca;
         }
 
         footer {
             background: #071b36;
             color: #b9c9dc;
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
+            padding: 30px 20px;
+            font-size: 14px;
         }
 
-        @media (max-width: 750px) {
-            .topics {
+        @media (max-width: 850px) {
+
+            .units {
                 grid-template-columns: 1fr;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 44px;
             }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
 <header>
-    <a href="index.html" class="logo">IAL ATLAS</a>
-    <a href="mathematics.html">← Mathematics</a>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mathematics.html">
+        ← Mathematics
+    </a>
+
 </header>
+
 
 <section class="hero">
 
-    <h1>Mechanics</h1>
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS
+    </p>
 
-    <p>Edexcel International A Level Mathematics</p>
+    <h1>
+        <span>Mechanics</span>
+    </h1>
+
+    <p>
+        Understand motion, forces and physical systems through
+        clear explanations, worked examples and exam-focused practice.
+    </p>
 
 </section>
+
 
 <section class="section">
 
-    <h2>Mechanics Topics</h2>
+    <h2>Mechanics Units</h2>
 
-    <p class="intro">
-        Explore mechanics concepts, equations, worked examples and exam-focused resources.
+    <p class="section-intro">
+        Explore the Mechanics units of Edexcel International A Level Mathematics.
+        Start with Mechanics 1 and progress through Mechanics 2 and Mechanics 3.
     </p>
 
-    <div class="topics">
 
-        <div class="topic">
-            <h3>Units and Measurements</h3>
-            <p>Physical quantities, units, dimensions and mathematical modelling.</p>
+    <div class="units">
+
+
+        <!-- MECHANICS 1 -->
+
+        <div class="unit">
+
+            <p class="unit-label">
+                M1
+            </p>
+
+            <h3>
+                Mechanics 1
+            </h3>
+
+            <p class="unit-description">
+                The foundations of mechanics: modelling, vectors,
+                motion, forces, equilibrium and moments.
+            </p>
+
+            <ul class="topics">
+
+                <li>Mathematical Models in Mechanics</li>
+
+                <li>Vectors in Mechanics</li>
+
+                <li>Kinematics in a Straight Line</li>
+
+                <li>Dynamics of a Particle</li>
+
+                <li>Statics of a Particle</li>
+
+                <li>Moments</li>
+
+            </ul>
+
         </div>
 
-        <div class="topic">
-            <h3>Kinematics</h3>
-            <p>Displacement, velocity, acceleration and motion in a straight line.</p>
+
+        <!-- MECHANICS 2 -->
+
+        <div class="unit">
+
+            <p class="unit-label">
+                M2
+            </p>
+
+            <h3>
+                Mechanics 2
+            </h3>
+
+            <p class="unit-description">
+                Build on M1 with further kinematics, centres of mass,
+                energy, collisions and rigid-body statics.
+            </p>
+
+            <ul class="topics">
+
+                <li>Further Kinematics</li>
+
+                <li>Centres of Mass</li>
+
+                <li>Work and Energy</li>
+
+                <li>Collisions</li>
+
+                <li>Statics of Rigid Bodies</li>
+
+            </ul>
+
         </div>
 
-        <div class="topic">
-            <h3>Forces</h3>
-            <p>Types of forces, free-body diagrams and modelling assumptions.</p>
+
+        <!-- MECHANICS 3 -->
+
+        <div class="unit">
+
+            <p class="unit-label">
+                M3
+            </p>
+
+            <h3>
+                Mechanics 3
+            </h3>
+
+            <p class="unit-description">
+                Explore advanced mechanics including further motion,
+                elastic strings, circular motion and dynamics.
+            </p>
+
+            <ul class="topics">
+
+                <li>Further Kinematics</li>
+
+                <li>Elastic Strings and Springs</li>
+
+                <li>Further Dynamics</li>
+
+                <li>Motion in a Circle</li>
+
+                <li>Statics of Rigid Bodies</li>
+
+            </ul>
+
         </div>
 
-        <div class="topic">
-            <h3>Newton's Laws</h3>
-            <p>Applying Newton's laws to particles and connected systems.</p>
-        </div>
-
-        <div class="topic">
-            <h3>Momentum</h3>
-            <p>Momentum, impulse, conservation of momentum and collisions.</p>
-        </div>
-
-        <div class="topic">
-            <h3>Work, Energy and Power</h3>
-            <p>Work done, kinetic energy, potential energy and power.</p>
-        </div>
 
     </div>
 
+
     <div style="text-align: center;">
-        <a href="mathematics.html" class="back">← Back to Mathematics</a>
+
+        <a href="mathematics.html" class="back">
+            ← Back to Mathematics
+        </a>
+
     </div>
 
 </section>
 
+
 <footer>
+
     © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
 </footer>
 
+
 </body>
+
 </html>
