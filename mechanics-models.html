@@ -8,11 +8,14 @@
     <title>Mathematical Models in Mechanics | IAL ATLAS</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -25,7 +28,7 @@
         header {
             background: #071b36;
             color: white;
-            padding: 22px 7%;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,7 +40,7 @@
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 27px;
             font-weight: bold;
         }
 
@@ -57,62 +60,84 @@
         }
 
         .hero h1 {
-            font-size: 48px;
-            max-width: 850px;
+            max-width: 900px;
             margin: auto;
+            font-size: 48px;
             line-height: 1.2;
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 720px;
             margin: 20px auto 0;
             color: #dcecff;
             font-size: 18px;
         }
 
-        .section {
+        .container {
             max-width: 950px;
             margin: auto;
             padding: 60px 20px;
         }
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .card {
+        .lesson {
             background: white;
-            padding: 30px;
-            border-radius: 16px;
+            padding: 35px;
             margin-bottom: 30px;
-            box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
         }
 
-        .card p {
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
             color: #53657d;
             margin-bottom: 15px;
         }
 
-        .card ul {
+        .lesson ul {
             padding-left: 25px;
             color: #53657d;
         }
 
-        .highlight {
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
             background: #eaf6ff;
             border-left: 5px solid #32a9e8;
             padding: 20px;
-            margin-top: 20px;
+            margin: 20px 0;
             border-radius: 8px;
+        }
+
+        .definition strong {
+            color: #10233f;
         }
 
         .example {
             background: #f8fbff;
             border: 1px solid #dcecff;
             padding: 25px;
-            border-radius: 12px;
             margin-top: 20px;
+            border-radius: 12px;
         }
 
         .example-title {
@@ -121,8 +146,35 @@
             margin-bottom: 12px;
         }
 
-        .answer {
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
             background: white;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .mistake {
+            border-left: 5px solid #e67e22;
+            background: #fff8ef;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .exam-tip {
+            border-left: 5px solid #32a9e8;
+            background: #eef8ff;
             padding: 18px;
             margin-top: 15px;
             border-radius: 8px;
@@ -147,7 +199,12 @@
             font-weight: bold;
         }
 
-        .back {
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
             display: inline-block;
             background: #32a9e8;
             color: white;
@@ -158,13 +215,8 @@
             margin: 5px;
         }
 
-        .back:hover {
+        .button:hover {
             background: #168dca;
-        }
-
-        .navigation {
-            text-align: center;
-            padding: 20px 20px 60px;
         }
 
         footer {
@@ -175,24 +227,18 @@
         }
 
         @media (max-width: 700px) {
-
             .hero h1 {
                 font-size: 36px;
             }
 
-            .section {
-                padding: 45px 18px;
+            .lesson {
+                padding: 25px;
             }
-
         }
-
     </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -218,191 +264,427 @@
     </h1>
 
     <p>
-        Learn how real physical situations are simplified into
-        mathematical models that can be analysed using mechanics.
+        Learn how mechanics problems are simplified into mathematical models.
     </p>
 
 </section>
 
 
-<section class="section">
+<main class="container">
 
 
-    <h2>What is a Mathematical Model?</h2>
+    <!-- LESSON 1 -->
 
-    <div class="card">
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 01</p>
+
+        <h2>What is a Mathematical Model?</h2>
 
         <p>
-            A mathematical model is a simplified representation
-            of a real physical situation.
+            A mathematical model is a simplified representation of a
+            real-life situation using mathematics.
         </p>
 
         <p>
-            In mechanics, we use models to represent objects,
-            forces and motion in a way that allows us to solve
-            problems mathematically.
+            In mechanics, real objects and situations can be complicated.
+            A model removes details that are not important to the problem
+            so that mathematical methods can be used.
         </p>
 
-        <div class="highlight">
+        <div class="definition">
 
-            <strong>Key idea:</strong>
+            <strong>Definition</strong>
 
-            A model simplifies reality while keeping the
-            important features needed to solve the problem.
+            <p>
+                A mathematical model represents a physical situation
+                using assumptions and mathematical relationships.
+            </p>
 
         </div>
 
-    </div>
-
-
-    <h2>Common Modelling Assumptions</h2>
-
-    <div class="card">
+        <h3>Why do we use models?</h3>
 
         <ul>
-
-            <li>
-                <strong>Particle:</strong>
-                the size and shape of an object are ignored.
-            </li>
-
-            <li>
-                <strong>Light object:</strong>
-                its mass is considered negligible.
-            </li>
-
-            <li>
-                <strong>Light string:</strong>
-                the mass of the string is ignored.
-            </li>
-
-            <li>
-                <strong>Inextensible string:</strong>
-                the string does not stretch.
-            </li>
-
-            <li>
-                <strong>Smooth surface:</strong>
-                friction is ignored.
-            </li>
-
-            <li>
-                <strong>Rough surface:</strong>
-                friction may act between the surfaces.
-            </li>
-
-            <li>
-                <strong>Uniform body:</strong>
-                mass is distributed evenly.
-            </li>
-
-            <li>
-                <strong>Rigid body:</strong>
-                the body does not change shape.
-            </li>
-
+            <li>Real physical situations can be complicated.</li>
+            <li>Ignoring unnecessary details makes calculations possible.</li>
+            <li>The model allows us to predict motion and forces.</li>
+            <li>The model can then be compared with the real situation.</li>
         </ul>
 
-    </div>
+    </section>
 
 
-    <h2>Understanding the Assumptions</h2>
+    <!-- LESSON 2 -->
 
-    <div class="card">
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 02</p>
+
+        <h2>Particles</h2>
+
+        <p>
+            A particle is an object whose size and shape are ignored.
+            Its entire mass is treated as though it acts at a single point.
+        </p>
+
+        <div class="definition">
+
+            <strong>Particle model</strong>
+
+            <p>
+                The dimensions and shape of the object are ignored,
+                while its mass is considered concentrated at one point.
+            </p>
+
+        </div>
 
         <div class="example">
 
             <p class="example-title">
-                Example 1 — Smooth surface
+                Example
+            </p>
+
+            <p>
+                A car travels along a straight road and is modelled
+                as a particle.
+            </p>
+
+            <div class="solution">
+
+                <strong>What is being ignored?</strong>
+
+                <p>
+                    The size and shape of the car are ignored.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 3 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 03</p>
+
+        <h2>Strings</h2>
+
+        <h3>Light string</h3>
+
+        <p>
+            A string is described as light when its mass is considered
+            negligible.
+        </p>
+
+        <div class="definition">
+
+            <strong>Light string = negligible mass</strong>
+
+        </div>
+
+        <h3>Inextensible string</h3>
+
+        <p>
+            An inextensible string does not stretch.
+            Therefore, its length remains constant while it is taut.
+        </p>
+
+        <div class="definition">
+
+            <strong>Inextensible string = constant length</strong>
+
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                Two particles are connected by a light,
+                inextensible string.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    The string has negligible mass and does not stretch.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 4 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 04</p>
+
+        <h2>Smooth and Rough Surfaces</h2>
+
+        <h3>Smooth surface</h3>
+
+        <p>
+            A smooth surface means that friction is ignored.
+        </p>
+
+        <div class="definition">
+
+            <strong>Smooth surface → no frictional force</strong>
+
+        </div>
+
+        <h3>Rough surface</h3>
+
+        <p>
+            A rough surface allows friction to act between the
+            object and the surface.
+        </p>
+
+        <div class="definition">
+
+            <strong>Rough surface → friction may act</strong>
+
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
             </p>
 
             <p>
                 A particle moves along a smooth horizontal surface.
             </p>
 
-            <div class="answer">
+            <div class="solution">
 
-                <strong>What does "smooth" mean?</strong>
+                <p>
+                    Since the surface is smooth, friction is ignored.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 5 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 05</p>
+
+        <h2>Uniform Objects</h2>
+
+        <p>
+            An object is uniform when its mass is distributed evenly
+            throughout the object.
+        </p>
+
+        <div class="definition">
+
+            <strong>
+                Uniform object → mass is distributed evenly.
+            </strong>
+
+        </div>
+
+        <p>
+            This assumption becomes particularly important later when
+            studying centres of mass and rigid bodies.
+        </p>
+
+    </section>
+
+
+    <!-- LESSON 6 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 06</p>
+
+        <h2>Rigid Bodies</h2>
+
+        <p>
+            A rigid body is an object whose shape is assumed not to change.
+        </p>
+
+        <div class="definition">
+
+            <strong>Rigid body → shape does not change.</strong>
+
+        </div>
+
+        <p>
+            This allows us to study forces and turning effects without
+            considering deformation of the object.
+        </p>
+
+    </section>
+
+
+    <!-- LESSON 7 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 07</p>
+
+        <h2>Choosing the Correct Model</h2>
+
+        <p>
+            In an exam question, look carefully at the words used
+            to describe the situation.
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Particle</strong> → ignore size and shape.
+            </li>
+
+            <li>
+                <strong>Light string</strong> → ignore string mass.
+            </li>
+
+            <li>
+                <strong>Inextensible</strong> → string does not stretch.
+            </li>
+
+            <li>
+                <strong>Smooth</strong> → ignore friction.
+            </li>
+
+            <li>
+                <strong>Rough</strong> → friction may act.
+            </li>
+
+            <li>
+                <strong>Uniform</strong> → mass is evenly distributed.
+            </li>
+
+            <li>
+                <strong>Rigid</strong> → shape does not change.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- WORKED EXAMPLE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Putting the Ideas Together</h2>
+
+        <div class="example">
+
+            <p>
+                A particle of mass 4 kg is attached to another particle
+                by a light, inextensible string. The string passes over
+                a smooth pulley.
+            </p>
+
+            <h3>Identify the modelling assumptions.</h3>
+
+            <div class="solution">
+
+                <p>
+                    <strong>Particle:</strong>
+                    The sizes and shapes of the objects are ignored.
+                </p>
+
+                <p>
+                    <strong>Light string:</strong>
+                    The mass of the string is negligible.
+                </p>
+
+                <p>
+                    <strong>Inextensible:</strong>
+                    The string does not stretch.
+                </p>
+
+                <p>
+                    <strong>Smooth pulley:</strong>
+                    Friction at the pulley is ignored.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Test Yourself</h2>
+
+
+        <div class="question">
+
+            <strong>1. What does a particle model ignore?</strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The size and shape of the object.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. What does the word "smooth" mean in mechanics?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
 
                 <p>
                     Friction is ignored.
                 </p>
 
-            </div>
+            </details>
 
         </div>
 
 
-        <div class="example">
+        <div class="question">
 
-            <p class="example-title">
-                Example 2 — Light string
-            </p>
+            <strong>
+                3. What does "light string" mean?
+            </strong>
 
-            <p>
-                Two particles are connected by a light string.
-            </p>
-
-            <div class="answer">
-
-                <strong>What does "light" mean?</strong>
+            <details>
+                <summary>Show answer</summary>
 
                 <p>
                     The mass of the string is considered negligible.
                 </p>
 
-            </div>
-
-        </div>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Example 3 — Inextensible string
-            </p>
-
-            <p>
-                Two particles are connected by an inextensible string.
-            </p>
-
-            <div class="answer">
-
-                <strong>What does "inextensible" mean?</strong>
-
-                <p>
-                    The string does not stretch, so its length remains constant.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <h2>Practice Questions</h2>
-
-    <div class="card">
-
-
-        <div class="question">
-
-            <strong>Question 1</strong>
-
-            <p>
-                A car is modelled as a particle.
-                What features of the car are being ignored?
-            </p>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    The size and shape of the car are ignored.
-                </p>
-
             </details>
 
         </div>
@@ -410,37 +692,11 @@
 
         <div class="question">
 
-            <strong>Question 2</strong>
-
-            <p>
-                A particle moves along a smooth surface.
-                What force is being ignored?
-            </p>
+            <strong>
+                4. What does "inextensible" mean?
+            </strong>
 
             <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Friction is being ignored.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>Question 3</strong>
-
-            <p>
-                What does it mean when a string is described
-                as inextensible?
-            </p>
-
-            <details>
-
                 <summary>Show answer</summary>
 
                 <p>
@@ -452,72 +708,115 @@
         </div>
 
 
-    </div>
+        <div class="question">
+
+            <strong>
+                5. What does a rigid body assumption mean?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The shape of the body does not change.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
 
 
-    <h2>Common Mistakes</h2>
+    <!-- COMMON MISTAKES -->
 
-    <div class="card">
+    <section class="lesson">
 
-        <ul>
+        <p class="lesson-number">EXAM SKILLS</p>
 
-            <li>
-                Forgetting that a smooth surface means no friction.
-            </li>
+        <h2>Common Mistakes</h2>
 
-            <li>
-                Confusing a light string with an inextensible string.
-            </li>
+        <div class="mistake">
 
-            <li>
-                Forgetting that a particle model ignores size and shape.
-            </li>
+            <strong>Mistake 1:</strong>
 
-            <li>
-                Ignoring modelling assumptions stated in the question.
-            </li>
+            <p>
+                Thinking "smooth" means the object moves faster.
+                It actually means friction is ignored.
+            </p>
 
-        </ul>
+        </div>
 
-    </div>
+        <div class="mistake">
 
+            <strong>Mistake 2:</strong>
 
-    <h2>Exam Tips</h2>
+            <p>
+                Thinking "light" means the string has no tension.
+                A light string can still have tension.
+            </p>
 
-    <div class="card">
+        </div>
 
-        <ul>
+        <div class="mistake">
 
-            <li>
-                Always identify the modelling assumptions before starting.
-            </li>
+            <strong>Mistake 3:</strong>
 
-            <li>
-                Translate words such as <strong>smooth</strong>,
-                <strong>light</strong> and <strong>inextensible</strong>
-                into their mathematical consequences.
-            </li>
+            <p>
+                Confusing "light" with "inextensible".
+                They describe different properties.
+            </p>
 
-            <li>
-                When asked to explain an assumption, state precisely
-                what physical effect is being ignored.
-            </li>
+        </div>
 
-        </ul>
-
-    </div>
+    </section>
 
 
-</section>
+    <!-- SUMMARY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Remember These</h2>
+
+        <div class="formula">
+            Particle → ignore size and shape
+        </div>
+
+        <div class="formula">
+            Light string → negligible mass
+        </div>
+
+        <div class="formula">
+            Inextensible → constant length
+        </div>
+
+        <div class="formula">
+            Smooth → no friction
+        </div>
+
+        <div class="formula">
+            Uniform → evenly distributed mass
+        </div>
+
+        <div class="formula">
+            Rigid → no change of shape
+        </div>
+
+    </section>
+
+
+</main>
 
 
 <div class="navigation">
 
-    <a href="mechanics-1.html" class="back">
+    <a href="mechanics-1.html" class="button">
         ← Back to Mechanics 1
     </a>
 
-    <a href="mechanics.html" class="back">
+    <a href="mechanics.html" class="button">
         Mechanics
     </a>
 
@@ -525,9 +824,7 @@
 
 
 <footer>
-
     © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
-
 </footer>
 
 
