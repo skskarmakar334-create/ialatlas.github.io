@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statics of a Particle | IAL ATLAS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-1.html">
+        ← Mechanics 1
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 1 • TOPIC 05
+    </p>
+
+    <h1>
+        Statics of a Particle
+    </h1>
+
+    <p>
+        Learn how forces balance when a particle is in equilibrium.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 01</p>
+
+        <h2>What is Statics?</h2>
+
+        <p>
+            Statics is the study of objects that are in equilibrium.
+        </p>
+
+        <div class="definition">
+            <strong>Key idea</strong>
+            <p>
+                A particle is in equilibrium when the resultant force
+                acting on it is zero.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 02</p>
+
+        <h2>Equilibrium</h2>
+
+        <p>
+            For a particle to remain in equilibrium, the forces acting
+            on it must balance.
+        </p>
+
+        <div class="formula">
+            Resultant force = 0
+        </div>
+
+        <p>
+            This means there is no acceleration.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 03</p>
+
+        <h2>Resolving Forces</h2>
+
+        <p>
+            A force acting at an angle can be resolved into horizontal
+            and vertical components.
+        </p>
+
+        <div class="formula">
+            Horizontal component = F cos θ
+        </div>
+
+        <div class="formula">
+            Vertical component = F sin θ
+        </div>
+
+        <p>
+            These components can then be used to determine whether
+            the particle is in equilibrium.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 04</p>
+
+        <h2>Equilibrium Equations</h2>
+
+        <p>
+            For equilibrium in two dimensions, the horizontal and
+            vertical forces must each balance.
+        </p>
+
+        <div class="formula">
+            ΣFx = 0
+        </div>
+
+        <div class="formula">
+            ΣFy = 0
+        </div>
+
+        <p>
+            These equations are used to find unknown forces or angles.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 05</p>
+
+        <h2>Weight and Tension</h2>
+
+        <p>
+            Two common forces in mechanics problems are weight
+            and tension.
+        </p>
+
+        <div class="definition">
+            <strong>Weight</strong>
+            <p>
+                W = mg and acts vertically downward.
+            </p>
+        </div>
+
+        <div class="definition">
+            <strong>Tension</strong>
+            <p>
+                Tension is a pulling force transmitted through a
+                string or cable.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Simple Equilibrium</h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle is acted on by two horizontal forces:
+                15 N to the right and an unknown force to the left.
+                The particle is in equilibrium. Find the unknown force.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Since the particle is in equilibrium:
+                </p>
+
+                <div class="formula">
+                    ΣFx = 0
+                </div>
+
+                <p>
+                    15 − F = 0
+                </p>
+
+                <p>
+                    F = 15
+                </p>
+
+                <p>
+                    <strong>F = 15 N</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Test Yourself</h2>
+
+        <div class="question">
+
+            <strong>
+                1. What does it mean for a particle to be in equilibrium?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    The resultant force acting on the particle is zero.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. What is the horizontal component of a force F
+                acting at angle θ?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    F cos θ.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. What is the vertical component of a force F
+                acting at angle θ?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    F sin θ.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. What equation represents horizontal equilibrium?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    ΣFx = 0.
+                </p>
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Remember These</h2>
+
+        <div class="formula">
+            Equilibrium → Resultant force = 0
+        </div>
+
+        <div class="formula">
+            ΣFx = 0
+        </div>
+
+        <div class="formula">
+            ΣFy = 0
+        </div>
+
+        <div class="formula">
+            Horizontal component = F cos θ
+        </div>
+
+        <div class="formula">
+            Vertical component = F sin θ
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-1.html" class="button">
+        ← Back to Mechanics 1
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+</footer>
+
+</body>
+
+</html>
