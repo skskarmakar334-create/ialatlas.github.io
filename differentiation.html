@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Differentiation | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Differentiation notes and revision resources for Pearson Edexcel International A Level Mathematics.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 32px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .topic-card h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0b3c73;
+        }
+
+        .topic-card h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .formula {
+            background: #eef6ff;
+            padding: 16px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        .back {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .back:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .topic-card {
+                padding: 24px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="pure-mathematics.html">
+        ← Pure Mathematics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Differentiation</h1>
+
+    <p>
+        Edexcel International A Level Mathematics
+    </p>
+
+</section>
+
+
+<section class="section">
+
+
+    <!-- 1. INTRODUCTION -->
+
+    <div class="topic-card">
+
+        <h2>1. What Is Differentiation?</h2>
+
+        <p>
+            Differentiation is the process of finding the derivative of a
+            function.
+        </p>
+
+        <p>
+            The derivative tells us the rate at which one quantity changes
+            with respect to another.
+        </p>
+
+        <p>
+            Geometrically, the derivative represents the gradient of a
+            curve at a particular point.
+        </p>
+
+        <div class="formula">
+            dy/dx = gradient of the curve
+        </div>
+
+    </div>
+
+
+    <!-- 2. BASIC RULE -->
+
+    <div class="topic-card">
+
+        <h2>2. The Power Rule</h2>
+
+        <p>
+            For a function of the form:
+        </p>
+
+        <div class="formula">
+            y = xⁿ
+        </div>
+
+        <p>
+            the derivative is:
+        </p>
+
+        <div class="formula">
+            dy/dx = nxⁿ⁻¹
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            y = x⁵
+        </div>
+
+        <div class="formula">
+            dy/dx = 5x⁴
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            <strong>dy/dx = 5x⁴</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 3. CONSTANTS AND TERMS -->
+
+    <div class="topic-card">
+
+        <h2>3. Differentiating Polynomials</h2>
+
+        <p>
+            Differentiate each term separately.
+        </p>
+
+        <p>
+            Constants differentiate to zero.
+        </p>
+
+        <div class="formula">
+            d/dx(c) = 0
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            y = 4x³ + 5x² − 7x + 9
+        </div>
+
+        <div class="formula">
+            dy/dx = 12x² + 10x − 7
+        </div>
+
+        <p>
+            The constant 9 disappears because its derivative is zero.
+        </p>
+
+    </div>
+
+
+    <!-- 4. FRACTIONS AND NEGATIVE POWERS -->
+
+    <div class="topic-card">
+
+        <h2>4. Negative and Fractional Powers</h2>
+
+        <p>
+            Rewrite roots and fractions using indices before
+            differentiating.
+        </p>
+
+        <div class="formula">
+            √x = x¹ᐟ²
+        </div>
+
+        <div class="formula">
+            1/x² = x⁻²
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            y = √x
+        </div>
+
+        <div class="formula">
+            y = x¹ᐟ²
+        </div>
+
+        <div class="formula">
+            dy/dx = 1/2 x⁻¹ᐟ²
+        </div>
+
+        <div class="formula">
+            <strong>dy/dx = 1/(2√x)</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 5. TANGENTS AND NORMALS -->
+
+    <div class="topic-card">
+
+        <h2>5. Tangents and Normals</h2>
+
+        <p>
+            The gradient of a tangent is found using the derivative.
+        </p>
+
+        <div class="formula">
+            mₜ = dy/dx
+        </div>
+
+        <p>
+            The gradient of a normal is the negative reciprocal of the
+            tangent gradient.
+        </p>
+
+        <div class="formula">
+            mₙ = −1/mₜ
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the gradient of the tangent to:
+        </p>
+
+        <div class="formula">
+            y = x² + 3x
+        </div>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            dy/dx = 2x + 3
+        </div>
+
+        <p>
+            At x = 2:
+        </p>
+
+        <div class="formula">
+            mₜ = 2(2) + 3
+            <br>
+            = <strong>7</strong>
+        </div>
+
+        <p>
+            Therefore the normal gradient is:
+        </p>
+
+        <div class="formula">
+            <strong>−1/7</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 6. STATIONARY POINTS -->
+
+    <div class="topic-card">
+
+        <h2>6. Stationary Points</h2>
+
+        <p>
+            A stationary point occurs where the gradient of a curve is zero.
+        </p>
+
+        <div class="formula">
+            dy/dx = 0
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the stationary points of:
+        </p>
+
+        <div class="formula">
+            y = x² − 4x + 3
+        </div>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            dy/dx = 2x − 4
+        </div>
+
+        <p>
+            Set the derivative equal to zero:
+        </p>
+
+        <div class="formula">
+            2x − 4 = 0
+            <br>
+            x = 2
+        </div>
+
+        <p>
+            Substitute x = 2 into the original equation:
+        </p>
+
+        <div class="formula">
+            y = 2² − 4(2) + 3
+            <br>
+            y = -1
+        </div>
+
+        <div class="formula">
+            <strong>Stationary point = (2, −1)</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 7. SECOND DERIVATIVE -->
+
+    <div class="topic-card">
+
+        <h2>7. Second Derivative</h2>
+
+        <p>
+            The second derivative can help determine the nature of a
+            stationary point.
+        </p>
+
+        <div class="formula">
+            d²y/dx²
+        </div>
+
+        <p>
+            If:
+        </p>
+
+        <div class="formula">
+            d²y/dx² &gt; 0
+        </div>
+
+        <p>
+            the stationary point is a minimum.
+        </p>
+
+        <p>
+            If:
+        </p>
+
+        <div class="formula">
+            d²y/dx² &lt; 0
+        </div>
+
+        <p>
+            the stationary point is a maximum.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            For:
+        </p>
+
+        <div class="formula">
+            y = x² − 4x + 3
+        </div>
+
+        <p>
+            We have:
+        </p>
+
+        <div class="formula">
+            dy/dx = 2x − 4
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            d²y/dx² = 2
+        </div>
+
+        <p>
+            Since 2 is positive, the stationary point is a:
+        </p>
+
+        <div class="formula">
+            <strong>minimum</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 8. INCREASING AND DECREASING -->
+
+    <div class="topic-card">
+
+        <h2>8. Increasing and Decreasing Functions</h2>
+
+        <p>
+            The sign of the first derivative tells us whether a function
+            is increasing or decreasing.
+        </p>
+
+        <div class="formula">
+            dy/dx &gt; 0 → increasing
+        </div>
+
+        <div class="formula">
+            dy/dx &lt; 0 → decreasing
+        </div>
+
+        <p>
+            Stationary points occur where the derivative changes through
+            zero.
+        </p>
+
+    </div>
+
+
+    <!-- 9. RATES OF CHANGE -->
+
+    <div class="topic-card">
+
+        <h2>9. Rates of Change</h2>
+
+        <p>
+            Differentiation can be used to describe how quickly one
+            quantity changes with another.
+        </p>
+
+        <div class="formula">
+            Rate of change = dy/dx
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            The distance travelled by an object is:
+        </p>
+
+        <div class="formula">
+            s = t³ + 2t²
+        </div>
+
+        <p>
+            Its velocity is:
+        </p>
+
+        <div class="formula">
+            v = ds/dt
+        </div>
+
+        <div class="formula">
+            v = 3t² + 4t
+        </div>
+
+        <p>
+            Therefore, velocity is obtained by differentiating distance
+            with respect to time.
+        </p>
+
+    </div>
+
+
+    <!-- 10. PRACTICE QUESTIONS -->
+
+    <div class="topic-card">
+
+        <h2>🧠 Practice Questions</h2>
+
+        <p>
+            Try each question yourself before revealing the solution.
+        </p>
+
+
+        <h3>Question 1 — Basic Differentiation</h3>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            y = x⁴ + 3x² − 5x
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                dy/dx = 4x³ + 6x − 5
+            </div>
+
+        </details>
+
+
+        <h3>Question 2 — Negative Powers</h3>
+
+        <p>
+            Differentiate:
+        </p>
+
+        <div class="formula">
+            y = 3x⁻²
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                dy/dx = 3(−2)x⁻³
+                <br>
+                <strong>dy/dx = −6x⁻³</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 3 — Tangent Gradient</h3>
+
+        <p>
+            Find the gradient of the tangent to:
+        </p>
+
+        <div class="formula">
+            y = x³ − 2x
+        </div>
+
+        <p>
+            at x = 2.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                dy/dx = 3x² − 2
+            </div>
+
+            <div class="formula">
+                m = 3(2²) − 2
+                <br>
+                = <strong>10</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 4 — Stationary Point</h3>
+
+        <p>
+            Find the stationary point of:
+        </p>
+
+        <div class="formula">
+            y = x² − 6x + 5
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                dy/dx = 2x − 6
+            </div>
+
+            <div class="formula">
+                2x − 6 = 0
+                <br>
+                x = 3
+            </div>
+
+            <div class="formula">
+                y = 3² − 6(3) + 5
+                <br>
+                y = −4
+            </div>
+
+            <div class="formula">
+                <strong>(3, −4)</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 5 — Nature of Stationary Point</h3>
+
+        <p>
+            Determine the nature of the stationary point of:
+        </p>
+
+        <div class="formula">
+            y = x² + 4x + 1
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                dy/dx = 2x + 4
+            </div>
+
+            <div class="formula">
+                d²y/dx² = 2
+            </div>
+
+            <p>
+                Since the second derivative is positive, the stationary
+                point is a:
+            </p>
+
+            <div class="formula">
+                <strong>minimum</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 6 — Rate of Change</h3>
+
+        <p>
+            The displacement of a particle is:
+        </p>
+
+        <div class="formula">
+            s = t³ − 3t² + 2t
+        </div>
+
+        <p>
+            Find its velocity.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                v = ds/dt
+            </div>
+
+            <div class="formula">
+                <strong>v = 3t² − 6t + 2</strong>
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- 11. COMMON MISTAKES -->
+
+    <div class="topic-card">
+
+        <h2>⚠️ Common Mistakes</h2>
+
+        <h3>1. Forgetting to reduce the power</h3>
+
+        <p>
+            When differentiating xⁿ, multiply by n and then reduce the
+            power by 1.
+        </p>
+
+        <div class="formula">
+            x⁵ → 5x⁴
+        </div>
+
+        <h3>2. Differentiating constants incorrectly</h3>
+
+        <p>
+            A constant differentiates to zero.
+        </p>
+
+        <div class="formula">
+            d/dx(7) = 0
+        </div>
+
+        <h3>3. Using the wrong sign for a normal</h3>
+
+        <p>
+            The normal gradient is the negative reciprocal of the tangent
+            gradient.
+        </p>
+
+        <h3>4. Finding the y-coordinate incorrectly</h3>
+
+        <p>
+            After finding the x-coordinate of a stationary point, always
+            substitute it into the original function to find y.
+        </p>
+
+        <h3>5. Confusing the first and second derivatives</h3>
+
+        <p>
+            The first derivative gives the gradient. The second derivative
+            can be used to determine the nature of a stationary point.
+        </p>
+
+    </div>
+
+
+    <!-- 12. EXAM TIPS -->
+
+    <div class="topic-card">
+
+        <h2>🎯 Exam Tips</h2>
+
+        <h3>1. Rewrite before differentiating</h3>
+
+        <p>
+            Convert roots and fractions into powers when necessary.
+        </p>
+
+        <h3>2. Show your differentiation step</h3>
+
+        <p>
+            Clearly write the derivative before substituting values.
+        </p>
+
+        <h3>3. For stationary points, remember the full process</h3>
+
+        <div class="formula">
+            Differentiate → Set dy/dx = 0 → Find x → Find y
+        </div>
+
+        <h3>4. Check the question carefully</h3>
+
+        <p>
+            If the question asks for a tangent, normal, stationary point,
+            maximum or minimum, make sure you answer exactly what is asked.
+        </p>
+
+        <h3>5. Keep exact values</h3>
+
+        <p>
+            Avoid unnecessary rounding unless the question requests a
+            decimal answer.
+        </p>
+
+    </div>
+
+
+    <!-- BACK TO TOP -->
+
+    <div style="text-align: center;">
+
+        <a href="#top" class="back">
+            ↑ Back to Top
+        </a>
+
+    </div>
+
+
+    <!-- BACK TO PURE MATHEMATICS -->
+
+    <div style="text-align: center;">
+
+        <a href="pure-mathematics.html" class="back">
+            ← Back to Pure Mathematics
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
