@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coordinate Geometry | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Coordinate Geometry notes and revision resources for Pearson Edexcel International A Level Mathematics.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #4db8ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #dcecff;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 32px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .topic-card h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #0b3c73;
+        }
+
+        .topic-card h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #10233f;
+        }
+
+        .topic-card p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .formula {
+            background: #eef6ff;
+            padding: 16px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0b3c73;
+        }
+
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0b3c73;
+            padding: 8px 0;
+        }
+
+        .back {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .back:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .topic-card {
+                padding: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+<header>
+
+    <div class="logo">IAL ATLAS</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="mathematics.html">Mathematics</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Coordinate Geometry</h1>
+
+    <p>
+        Pearson Edexcel International A Level Mathematics
+    </p>
+
+</section>
+
+
+<section class="section">
+
+
+    <!-- 1. COORDINATE BASICS -->
+
+    <div class="topic-card">
+
+        <h2>1. Coordinate Geometry Basics</h2>
+
+        <p>
+            Coordinate geometry allows us to describe geometric shapes
+            using algebra and coordinates.
+        </p>
+
+        <h3>Coordinates</h3>
+
+        <p>
+            A point is usually written as:
+        </p>
+
+        <div class="formula">
+            (x, y)
+        </div>
+
+        <p>
+            The x-coordinate describes the horizontal position, while
+            the y-coordinate describes the vertical position.
+        </p>
+
+        <h3>Distance Between Two Points</h3>
+
+        <p>
+            For points (x₁, y₁) and (x₂, y₂), the distance is:
+        </p>
+
+        <div class="formula">
+            d = √[(x₂ − x₁)² + (y₂ − y₁)²]
+        </div>
+
+        <h3>Midpoint</h3>
+
+        <p>
+            The midpoint of two points is found by averaging their
+            x-coordinates and y-coordinates.
+        </p>
+
+        <div class="formula">
+            M = ((x₁ + x₂)/2, (y₁ + y₂)/2)
+        </div>
+
+    </div>
+
+
+    <!-- 2. GRADIENT -->
+
+    <div class="topic-card">
+
+        <h2>2. Gradient of a Straight Line</h2>
+
+        <p>
+            The gradient describes the steepness of a straight line.
+        </p>
+
+        <div class="formula">
+            m = (y₂ − y₁) / (x₂ − x₁)
+        </div>
+
+        <h3>Equation of a Straight Line</h3>
+
+        <div class="formula">
+            y = mx + c
+        </div>
+
+        <p>
+            Here, m is the gradient and c is the y-intercept.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the gradient of the line passing through
+            (2, 3) and (6, 11).
+        </p>
+
+        <div class="formula">
+            m = (11 − 3) / (6 − 2)
+            <br>
+            = 8 / 4
+            <br>
+            = <strong>2</strong>
+        </div>
+
+        <p>
+            Therefore, the gradient is 2.
+        </p>
+
+    </div>
+
+
+    <!-- 3. EQUATION OF A LINE -->
+
+    <div class="topic-card">
+
+        <h2>3. Equation of a Straight Line</h2>
+
+        <p>
+            A straight line can be written in the form:
+        </p>
+
+        <div class="formula">
+            y = mx + c
+        </div>
+
+        <p>
+            If you know the gradient and one point on the line, you can
+            determine its equation.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the equation of the line with gradient 3 passing through
+            (2, 7).
+        </p>
+
+        <p>
+            Start with:
+        </p>
+
+        <div class="formula">
+            y = 3x + c
+        </div>
+
+        <p>
+            Substitute the point (2, 7):
+        </p>
+
+        <div class="formula">
+            7 = 3(2) + c
+            <br>
+            7 = 6 + c
+            <br>
+            c = 1
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            <strong>y = 3x + 1</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 4. PARALLEL AND PERPENDICULAR -->
+
+    <div class="topic-card">
+
+        <h2>4. Parallel and Perpendicular Lines</h2>
+
+        <h3>Parallel Lines</h3>
+
+        <p>
+            Parallel lines have the same gradient.
+        </p>
+
+        <div class="formula">
+            m₁ = m₂
+        </div>
+
+        <h3>Perpendicular Lines</h3>
+
+        <p>
+            For two non-vertical perpendicular lines, the product of their
+            gradients is -1.
+        </p>
+
+        <div class="formula">
+            m₁m₂ = -1
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            A line has gradient 2. Find the gradient of a perpendicular line.
+        </p>
+
+        <div class="formula">
+            2m = -1
+            <br>
+            m = <strong>-1/2</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 5. EQUATIONS OF CURVES -->
+
+    <div class="topic-card">
+
+        <h2>5. Equations and Intersections</h2>
+
+        <p>
+            Coordinate geometry can be used to find where lines and curves
+            intersect.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+            Consider the line:
+        </p>
+
+        <div class="formula">
+            y = x + 2
+        </div>
+
+        <p>
+            and the curve:
+        </p>
+
+        <div class="formula">
+            y = x²
+        </div>
+
+        <p>
+            At an intersection, both equations have the same value of y.
+            Therefore:
+        </p>
+
+        <div class="formula">
+            x² = x + 2
+        </div>
+
+        <div class="formula">
+            x² - x - 2 = 0
+            <br>
+            (x - 2)(x + 1) = 0
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            x = 2 or x = -1
+        </div>
+
+        <p>
+            Substitute these values into either original equation to find
+            the corresponding y-coordinates.
+        </p>
+
+    </div>
+
+
+    <!-- 6. PRACTICE QUESTIONS -->
+
+    <div class="topic-card">
+
+        <h2>🧠 Practice Questions</h2>
+
+        <p>
+            Try each question yourself before revealing the solution.
+        </p>
+
+
+        <h3>Question 1 — Distance</h3>
+
+        <p>
+            Find the distance between A(1, 2) and B(5, 5).
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <p>
+                Use the distance formula:
+            </p>
+
+            <div class="formula">
+                d = √[(5 − 1)² + (5 − 2)²]
+            </div>
+
+            <div class="formula">
+                = √(16 + 9)
+                <br>
+                = √25
+                <br>
+                = <strong>5</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 2 — Midpoint</h3>
+
+        <p>
+            Find the midpoint of A(2, 4) and B(8, 10).
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                M = ((2 + 8)/2, (4 + 10)/2)
+            </div>
+
+            <div class="formula">
+                = (5, 7)
+            </div>
+
+        </details>
+
+
+        <h3>Question 3 — Gradient</h3>
+
+        <p>
+            Find the gradient of the line through (3, 2) and (7, 14).
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                m = (14 − 2)/(7 − 3)
+            </div>
+
+            <div class="formula">
+                = 12/4
+                <br>
+                = <strong>3</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 4 — Equation of a Line</h3>
+
+        <p>
+            Find the equation of the line with gradient 4 passing through
+            (1, 6).
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                y = 4x + c
+            </div>
+
+            <div class="formula">
+                6 = 4(1) + c
+                <br>
+                c = 2
+            </div>
+
+            <div class="formula">
+                <strong>y = 4x + 2</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 5 — Perpendicular Lines</h3>
+
+        <p>
+            Find the gradient of a line perpendicular to a line with
+            gradient 5.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                5m = -1
+            </div>
+
+            <div class="formula">
+                <strong>m = -1/5</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 6 — Intersection</h3>
+
+        <p>
+            Find the x-coordinates of the intersections of:
+        </p>
+
+        <div class="formula">
+            y = x + 2
+            <br>
+            y = x²
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                x² = x + 2
+            </div>
+
+            <div class="formula">
+                x² - x - 2 = 0
+                <br>
+                (x - 2)(x + 1) = 0
+            </div>
+
+            <div class="formula">
+                <strong>x = 2 or x = -1</strong>
+            </div>
+
+        </details>
+
+    </div>
+
+
+    <!-- 7. COMMON MISTAKES -->
+
+    <div class="topic-card">
+
+        <h2>⚠️ Common Mistakes</h2>
+
+        <h3>1. Mixing up x and y coordinates</h3>
+
+        <p>
+            Remember that a coordinate is written as (x, y).
+            The x-coordinate comes first.
+        </p>
+
+        <h3>2. Using the wrong order in the gradient formula</h3>
+
+        <p>
+            Keep the order consistent. If you subtract the y-values in one
+            order, subtract the x-values in the same order.
+        </p>
+
+        <h3>3. Forgetting the negative reciprocal</h3>
+
+        <p>
+            The gradient of a perpendicular line is the negative reciprocal,
+            not simply the reciprocal.
+        </p>
+
+        <div class="formula">
+            m = 2
+            <br>
+            perpendicular gradient = -1/2
+        </div>
+
+        <h3>4. Forgetting to find both coordinates</h3>
+
+        <p>
+            When finding an intersection, finding x alone is usually not
+            enough if the question asks for the coordinates.
+        </p>
+
+    </div>
+
+
+    <!-- 8. EXAM TIPS -->
+
+    <div class="topic-card">
+
+        <h2>🎯 Exam Tips</h2>
+
+        <h3>1. Write the formula first</h3>
+
+        <p>
+            Writing the appropriate formula before substituting values can
+            reduce calculation errors.
+        </p>
+
+        <h3>2. Keep your working organised</h3>
+
+        <p>
+            Coordinate geometry questions often involve several stages.
+            Keep each stage clearly separated.
+        </p>
+
+        <h3>3. Check gradients carefully</h3>
+
+        <p>
+            For perpendicular lines, remember:
+        </p>
+
+        <div class="formula">
+            m₁m₂ = -1
+        </div>
+
+        <h3>4. Check your coordinates</h3>
+
+        <p>
+            If you calculate a midpoint, distance or intersection, check
+            that the result makes sense from the original coordinates.
+        </p>
+
+        <h3>5. Give exact answers when appropriate</h3>
+
+        <p>
+            Keep exact values such as √5 unless the question specifically
+            asks for a decimal approximation.
+        </p>
+
+    </div>
+
+
+    <!-- BACK TO TOP -->
+
+    <div style="text-align: center; margin-bottom: 10px;">
+
+        <a href="#top" class="back">
+            ↑ Back to Top
+        </a>
+
+    </div>
+
+
+    <!-- BACK TO PURE MATHEMATICS -->
+
+    <div style="text-align: center;">
+
+        <a href="pure-mathematics.html" class="back">
+            ← Back to Pure Mathematics
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
