@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dynamics of a Particle | IAL ATLAS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-1.html">
+        ← Mechanics 1
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 1 • TOPIC 04
+    </p>
+
+    <h1>
+        Dynamics of a Particle
+    </h1>
+
+    <p>
+        Understand how forces affect the motion of particles
+        using Newton's laws of motion.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 01</p>
+
+        <h2>What is Dynamics?</h2>
+
+        <p>
+            Dynamics is the study of how forces affect the motion
+            of particles.
+        </p>
+
+        <div class="definition">
+            <strong>Key idea</strong>
+            <p>
+                Kinematics describes motion, while dynamics explains
+                how forces cause changes in motion.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 02</p>
+
+        <h2>Newton's Second Law</h2>
+
+        <p>
+            The most important equation in M1 dynamics is Newton's
+            Second Law.
+        </p>
+
+        <div class="formula">
+            F = ma
+        </div>
+
+        <p>
+            Here F is the resultant force, m is the mass of the
+            particle and a is its acceleration.
+        </p>
+
+        <ul>
+            <li>F is measured in newtons (N).</li>
+            <li>m is measured in kilograms (kg).</li>
+            <li>a is measured in metres per second squared (m/s²).</li>
+        </ul>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 03</p>
+
+        <h2>Resultant Force</h2>
+
+        <p>
+            The resultant force is the single force that has the
+            same effect as all the forces acting on a particle.
+        </p>
+
+        <div class="definition">
+            <strong>Important:</strong>
+            <p>
+                Always consider the direction of each force before
+                calculating the resultant force.
+            </p>
+        </div>
+
+        <p>
+            If forces act in opposite directions, subtract their
+            magnitudes.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 04</p>
+
+        <h2>Weight</h2>
+
+        <p>
+            The weight of a particle is the force caused by gravity.
+        </p>
+
+        <div class="formula">
+            W = mg
+        </div>
+
+        <p>
+            On Earth, the acceleration due to gravity is commonly
+            taken as:
+        </p>
+
+        <div class="formula">
+            g = 9.8 m/s²
+        </div>
+
+        <p>
+            unless the question specifies another value.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 05</p>
+
+        <h2>Newton's First Law</h2>
+
+        <p>
+            Newton's First Law states that a particle remains at rest
+            or continues moving with constant velocity unless acted
+            upon by a resultant force.
+        </p>
+
+        <div class="definition">
+            <strong>Equilibrium</strong>
+            <p>
+                If the resultant force is zero, the acceleration is zero.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 06</p>
+
+        <h2>Newton's Third Law</h2>
+
+        <p>
+            When two objects interact, they exert equal and opposite
+            forces on each other.
+        </p>
+
+        <div class="definition">
+            <strong>Remember:</strong>
+            <p>
+                The two forces act on different bodies.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Using F = ma</h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle of mass 4 kg is acted on by a resultant
+                force of 20 N. Find its acceleration.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Use:
+                </p>
+
+                <div class="formula">
+                    F = ma
+                </div>
+
+                <p>
+                    20 = 4a
+                </p>
+
+                <p>
+                    a = 20 ÷ 4
+                </p>
+
+                <p>
+                    <strong>a = 5 m/s²</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Test Yourself</h2>
+
+        <div class="question">
+
+            <strong>
+                1. State Newton's Second Law.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    The resultant force on a particle equals its mass
+                    multiplied by its acceleration: F = ma.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. Find the weight of a 5 kg particle using g = 9.8 m/s².
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    W = mg = 5 × 9.8
+                </p>
+                <p>
+                    <strong>W = 49 N</strong>
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A 6 kg particle has a resultant force of 30 N.
+                Find its acceleration.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    F = ma
+                </p>
+                <p>
+                    30 = 6a
+                </p>
+                <p>
+                    <strong>a = 5 m/s²</strong>
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. What happens when the resultant force is zero?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    The acceleration is zero, so the particle remains
+                    at rest or moves with constant velocity.
+                </p>
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Remember These</h2>
+
+        <div class="formula">
+            F = ma
+        </div>
+
+        <div class="formula">
+            W = mg
+        </div>
+
+        <div class="formula">
+            Resultant force = mass × acceleration
+        </div>
+
+        <div class="formula">
+            Resultant force = 0 → acceleration = 0
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-1.html" class="button">
+        ← Back to Mechanics 1
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+</footer>
+
+</body>
+
+</html>
