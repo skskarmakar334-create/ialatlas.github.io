@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moments | IAL ATLAS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-1.html">
+        ← Mechanics 1
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 1 • TOPIC 06
+    </p>
+
+    <h1>
+        Moments
+    </h1>
+
+    <p>
+        Understand turning effects, moments about points and
+        equilibrium.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 01</p>
+
+        <h2>What is a Moment?</h2>
+
+        <p>
+            A moment measures the turning effect of a force about
+            a point.
+        </p>
+
+        <div class="definition">
+            <strong>Key idea</strong>
+            <p>
+                A force can make an object rotate about a point.
+                This turning effect is called a moment.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 02</p>
+
+        <h2>Moment of a Force</h2>
+
+        <p>
+            The moment of a force about a point is calculated by
+            multiplying the force by the perpendicular distance
+            from the point to the line of action of the force.
+        </p>
+
+        <div class="formula">
+            Moment = Force × perpendicular distance
+        </div>
+
+        <p>
+            The unit of moment is the newton metre (N m).
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 03</p>
+
+        <h2>Clockwise and Anticlockwise Moments</h2>
+
+        <p>
+            A force can produce either a clockwise or anticlockwise
+            turning effect.
+        </p>
+
+        <div class="definition">
+            <strong>Remember:</strong>
+            <p>
+                Always identify the direction in which the force
+                tends to rotate the object.
+            </p>
+        </div>
+
+        <ul>
+            <li>Clockwise moment → turning clockwise.</li>
+            <li>Anticlockwise moment → turning anticlockwise.</li>
+        </ul>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 04</p>
+
+        <h2>Equilibrium of Moments</h2>
+
+        <p>
+            When a body is in rotational equilibrium, the total
+            clockwise moment equals the total anticlockwise moment.
+        </p>
+
+        <div class="formula">
+            Total clockwise moments = Total anticlockwise moments
+        </div>
+
+        <p>
+            This is known as the principle of moments.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">LESSON 05</p>
+
+        <h2>Choosing a Pivot</h2>
+
+        <p>
+            The point about which moments are calculated is called
+            the pivot.
+        </p>
+
+        <div class="definition">
+            <strong>Useful strategy</strong>
+            <p>
+                Choose a pivot that makes one or more unknown forces
+                have zero moment.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Calculating a Moment</h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A force of 20 N acts perpendicular to a beam at a
+                distance of 3 m from a pivot. Find the moment about
+                the pivot.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Moment = Force × perpendicular distance
+                </p>
+
+                <p>
+                    Moment = 20 × 3
+                </p>
+
+                <p>
+                    <strong>Moment = 60 N m</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Principle of Moments</h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A beam is in equilibrium. A clockwise moment of
+                40 N m acts about a pivot. What must the total
+                anticlockwise moment be?
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    In equilibrium:
+                </p>
+
+                <div class="formula">
+                    Clockwise moments = Anticlockwise moments
+                </div>
+
+                <p>
+                    Therefore:
+                </p>
+
+                <p>
+                    <strong>Anticlockwise moment = 40 N m</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Test Yourself</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. What is the formula for the moment of a force?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    Moment = Force × perpendicular distance.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. A force of 10 N acts 4 m from a pivot.
+                Find its moment.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    Moment = 10 × 4
+                </p>
+                <p>
+                    <strong>40 N m</strong>
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. What happens to the moments when a body is
+                in rotational equilibrium?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    The total clockwise moment equals the total
+                    anticlockwise moment.
+                </p>
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. What is the unit of moment?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+                <p>
+                    Newton metres (N m).
+                </p>
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Remember These</h2>
+
+        <div class="formula">
+            Moment = Force × perpendicular distance
+        </div>
+
+        <div class="formula">
+            Clockwise moments = Anticlockwise moments
+        </div>
+
+        <div class="formula">
+            Unit of moment = N m
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-1.html" class="button">
+        ← Back to Mechanics 1
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+</footer>
+
+</body>
+
+</html>
