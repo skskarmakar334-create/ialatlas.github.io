@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mathematical Models in Mechanics | IAL ATLAS</title>
-
-    <meta name="description"
-          content="Mathematical Models in Mechanics — Edexcel International A Level Mathematics Mechanics 1.">
 
     <style>
 
@@ -17,10 +13,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -39,34 +31,21 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
         header a {
             color: white;
             text-decoration: none;
         }
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
 
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
             color: white;
             text-align: center;
-            padding: 85px 20px;
+            padding: 80px 20px;
         }
 
         .hero-label {
@@ -74,18 +53,18 @@
             font-size: 13px;
             font-weight: bold;
             letter-spacing: 3px;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
+            font-size: 48px;
             max-width: 850px;
             margin: auto;
-            font-size: 50px;
-            line-height: 1.15;
+            line-height: 1.2;
         }
 
         .hero p {
-            max-width: 720px;
+            max-width: 700px;
             margin: 20px auto 0;
             color: #dcecff;
             font-size: 18px;
@@ -97,50 +76,35 @@
             padding: 60px 20px;
         }
 
-        .section h2 {
+        h2 {
             font-size: 32px;
-            margin-bottom: 18px;
-        }
-
-        .section-intro {
-            color: #607089;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .card {
             background: white;
             padding: 30px;
             border-radius: 16px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             box-shadow: 0 6px 22px rgba(0,0,0,0.07);
-            border: 1px solid rgba(16,35,63,0.05);
-        }
-
-        .card h3 {
-            font-size: 23px;
-            margin-bottom: 12px;
         }
 
         .card p {
             color: #53657d;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .card ul {
-            padding-left: 22px;
+            padding-left: 25px;
             color: #53657d;
         }
 
         .highlight {
             background: #eaf6ff;
             border-left: 5px solid #32a9e8;
-            padding: 20px 22px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .highlight strong {
-            color: #10233f;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
         }
 
         .example {
@@ -148,7 +112,7 @@
             border: 1px solid #dcecff;
             padding: 25px;
             border-radius: 12px;
-            margin-top: 18px;
+            margin-top: 20px;
         }
 
         .example-title {
@@ -157,15 +121,20 @@
             margin-bottom: 12px;
         }
 
-        .solution {
-            margin-top: 15px;
-            padding: 18px;
+        .answer {
             background: white;
-            border-radius: 10px;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 8px;
         }
 
         .question {
-            margin-bottom: 18px;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
         }
 
         details {
@@ -178,29 +147,24 @@
             font-weight: bold;
         }
 
-        .mistakes li,
-        .tips li {
-            margin-bottom: 10px;
-        }
-
-        .back-links {
-            text-align: center;
-            padding: 20px 20px 60px;
-        }
-
         .back {
             display: inline-block;
             background: #32a9e8;
             color: white;
+            text-decoration: none;
             padding: 13px 25px;
             border-radius: 8px;
-            text-decoration: none;
             font-weight: bold;
-            margin: 6px;
+            margin: 5px;
         }
 
         .back:hover {
             background: #168dca;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 20px 20px 60px;
         }
 
         footer {
@@ -208,38 +172,16 @@
             color: #b9c9dc;
             text-align: center;
             padding: 30px 20px;
-            font-size: 14px;
         }
 
-        #top {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background: #32a9e8;
-            color: white;
-            padding: 11px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        #top:hover {
-            background: #168dca;
-        }
-
-        @media (max-width: 750px) {
+        @media (max-width: 700px) {
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 36px;
             }
 
             .section {
                 padding: 45px 18px;
-            }
-
-            .card {
-                padding: 24px;
             }
 
         }
@@ -248,7 +190,9 @@
 
 </head>
 
-<body id="top">
+
+<body>
+
 
 <header>
 
@@ -274,8 +218,8 @@
     </h1>
 
     <p>
-        Learn how real-world mechanical situations are simplified
-        into mathematical models.
+        Learn how real physical situations are simplified into
+        mathematical models that can be analysed using mechanics.
     </p>
 
 </section>
@@ -283,27 +227,28 @@
 
 <section class="section">
 
+
     <h2>What is a Mathematical Model?</h2>
 
     <div class="card">
 
         <p>
-            A mathematical model is a simplified mathematical
-            representation of a real physical situation.
+            A mathematical model is a simplified representation
+            of a real physical situation.
         </p>
 
         <p>
-            In mechanics, models allow us to describe the motion
-            and forces acting on objects using mathematics.
+            In mechanics, we use models to represent objects,
+            forces and motion in a way that allows us to solve
+            problems mathematically.
         </p>
 
         <div class="highlight">
 
             <strong>Key idea:</strong>
 
-            A model is useful because it removes unnecessary
-            complications while keeping the features that matter
-            for solving the problem.
+            A model simplifies reality while keeping the
+            important features needed to solve the problem.
 
         </div>
 
@@ -314,89 +259,73 @@
 
     <div class="card">
 
-        <p>
-            Mechanics questions often tell you, directly or indirectly,
-            to make certain assumptions.
-        </p>
-
         <ul>
 
-            <li><strong>Particle:</strong> the object's size and shape are ignored.</li>
+            <li>
+                <strong>Particle:</strong>
+                the size and shape of an object are ignored.
+            </li>
 
-            <li><strong>Light string:</strong> the mass of the string is ignored.</li>
+            <li>
+                <strong>Light object:</strong>
+                its mass is considered negligible.
+            </li>
 
-            <li><strong>Inextensible string:</strong> the string does not stretch.</li>
+            <li>
+                <strong>Light string:</strong>
+                the mass of the string is ignored.
+            </li>
 
-            <li><strong>Smooth surface:</strong> friction is ignored.</li>
+            <li>
+                <strong>Inextensible string:</strong>
+                the string does not stretch.
+            </li>
 
-            <li><strong>Rough surface:</strong> friction may act between surfaces.</li>
+            <li>
+                <strong>Smooth surface:</strong>
+                friction is ignored.
+            </li>
 
-            <li><strong>Uniform object:</strong> mass is distributed evenly.</li>
+            <li>
+                <strong>Rough surface:</strong>
+                friction may act between the surfaces.
+            </li>
 
-            <li><strong>Rigid body:</strong> the shape does not change.</li>
+            <li>
+                <strong>Uniform body:</strong>
+                mass is distributed evenly.
+            </li>
 
-            <li><strong>Gravity:</strong> acceleration due to gravity is usually taken as
-                \(g = 9.8\,\text{m s}^{-2}\), unless the question specifies otherwise.</li>
+            <li>
+                <strong>Rigid body:</strong>
+                the body does not change shape.
+            </li>
 
         </ul>
 
     </div>
 
 
-    <h2>Why Assumptions Matter</h2>
-
-    <div class="card">
-
-        <p>
-            Every assumption changes the mathematical model.
-            You should therefore understand exactly what an assumption
-            allows you to ignore.
-        </p>
-
-        <div class="highlight">
-
-            <strong>Example:</strong>
-
-            If a surface is described as smooth, there is no frictional
-            force acting along the surface.
-
-        </div>
-
-        <p>
-            If the surface is rough, friction must be considered
-            when appropriate.
-        </p>
-
-    </div>
-
-
-    <h2>Worked Examples</h2>
+    <h2>Understanding the Assumptions</h2>
 
     <div class="card">
 
         <div class="example">
 
             <p class="example-title">
-                Example 1 — Identifying assumptions
+                Example 1 — Smooth surface
             </p>
 
             <p>
-                A small object is modelled as a particle moving along
-                a smooth horizontal surface. Explain what assumptions
-                are being made.
+                A particle moves along a smooth horizontal surface.
             </p>
 
-            <div class="solution">
+            <div class="answer">
 
-                <strong>Solution</strong>
-
-                <p>
-                    The object is treated as a particle, so its size
-                    and shape are ignored.
-                </p>
+                <strong>What does "smooth" mean?</strong>
 
                 <p>
-                    The surface is smooth, so friction is ignored.
+                    Friction is ignored.
                 </p>
 
             </div>
@@ -407,26 +336,42 @@
         <div class="example">
 
             <p class="example-title">
-                Example 2 — Light and inextensible string
+                Example 2 — Light string
             </p>
 
             <p>
-                Two particles are connected by a light, inextensible
-                string. Explain what these two assumptions mean.
+                Two particles are connected by a light string.
             </p>
 
-            <div class="solution">
+            <div class="answer">
 
-                <strong>Solution</strong>
+                <strong>What does "light" mean?</strong>
 
                 <p>
-                    A light string has negligible mass.
+                    The mass of the string is considered negligible.
                 </p>
 
+            </div>
+
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Example 3 — Inextensible string
+            </p>
+
+            <p>
+                Two particles are connected by an inextensible string.
+            </p>
+
+            <div class="answer">
+
+                <strong>What does "inextensible" mean?</strong>
+
                 <p>
-                    An inextensible string does not stretch, so the
-                    distance between the connected particles remains
-                    fixed while the string is taut.
+                    The string does not stretch, so its length remains constant.
                 </p>
 
             </div>
@@ -440,14 +385,14 @@
 
     <div class="card">
 
+
         <div class="question">
 
             <strong>Question 1</strong>
 
             <p>
-                A car is modelled as a particle travelling along
-                a straight road. State what is being ignored by
-                treating the car as a particle.
+                A car is modelled as a particle.
+                What features of the car are being ignored?
             </p>
 
             <details>
@@ -469,8 +414,7 @@
 
             <p>
                 A particle moves along a smooth surface.
-                What force has been ignored because the surface
-                is smooth?
+                What force is being ignored?
             </p>
 
             <details>
@@ -478,7 +422,7 @@
                 <summary>Show answer</summary>
 
                 <p>
-                    Friction has been ignored.
+                    Friction is being ignored.
                 </p>
 
             </details>
@@ -491,8 +435,8 @@
             <strong>Question 3</strong>
 
             <p>
-                A string is described as light and inextensible.
-                State what each assumption means.
+                What does it mean when a string is described
+                as inextensible?
             </p>
 
             <details>
@@ -500,37 +444,37 @@
                 <summary>Show answer</summary>
 
                 <p>
-                    Light means the string has negligible mass.
-                    Inextensible means the string does not stretch.
+                    The string does not stretch, so its length remains constant.
                 </p>
 
             </details>
 
         </div>
 
+
     </div>
 
 
     <h2>Common Mistakes</h2>
 
-    <div class="card mistakes">
+    <div class="card">
 
         <ul>
 
             <li>
-                Forgetting that a smooth surface means friction is ignored.
+                Forgetting that a smooth surface means no friction.
             </li>
 
             <li>
-                Assuming every string is automatically inextensible.
+                Confusing a light string with an inextensible string.
             </li>
 
             <li>
-                Confusing a particle model with a rigid-body model.
+                Forgetting that a particle model ignores size and shape.
             </li>
 
             <li>
-                Ignoring an assumption stated explicitly in the question.
+                Ignoring modelling assumptions stated in the question.
             </li>
 
         </ul>
@@ -540,12 +484,12 @@
 
     <h2>Exam Tips</h2>
 
-    <div class="card tips">
+    <div class="card">
 
         <ul>
 
             <li>
-                Read the modelling assumptions carefully before starting calculations.
+                Always identify the modelling assumptions before starting.
             </li>
 
             <li>
@@ -555,11 +499,8 @@
             </li>
 
             <li>
-                If asked to state an assumption, give a precise mechanical meaning.
-            </li>
-
-            <li>
-                Remember that the model is a simplification of reality.
+                When asked to explain an assumption, state precisely
+                what physical effect is being ignored.
             </li>
 
         </ul>
@@ -570,7 +511,7 @@
 </section>
 
 
-<div class="back-links">
+<div class="navigation">
 
     <a href="mechanics-1.html" class="back">
         ← Back to Mechanics 1
@@ -581,11 +522,6 @@
     </a>
 
 </div>
-
-
-<a href="#top" id="top">
-    ↑ Top
-</a>
 
 
 <footer>
