@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics 3 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 3 practical skills resources, experiments, uncertainty, data analysis and exam practice.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul,
+        .lesson ol {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .practical {
+            border-left: 5px solid #32a9e8;
+            background: #f8fbff;
+            padding: 22px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .practical-title {
+            color: #168dca;
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .warning {
+            background: #fff8e8;
+            border-left: 5px solid #e5a400;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .quick {
+            background: #071b36;
+            color: white;
+        }
+
+        .quick h2,
+        .quick h3,
+        .quick p,
+        .quick li {
+            color: white;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="physics.html">
+        ← Physics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 3
+    </p>
+
+    <h1>
+        Physics <span>3</span>
+    </h1>
+
+    <p>
+        Master practical physics through experimental planning,
+        measurements, data analysis, uncertainties and exam-focused practice.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- UNIT OVERVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">UNIT OVERVIEW</p>
+
+        <h2>Practical Skills in Physics I</h2>
+
+        <p>
+            Unit 3 focuses on the practical skills developed while studying
+            Units 1 and 2. You are not simply tested on remembering experiments.
+            You must be able to plan investigations, evaluate measurements,
+            process data and draw scientifically justified conclusions.
+        </p>
+
+        <div class="definition">
+
+            <strong>Exam focus:</strong>
+
+            <p>
+                Unit 3 is a written practical-skills examination. Questions
+                can involve planning, measurements, calculations, graphs,
+                uncertainties, evaluation and scientific reasoning.
+            </p>
+
+        </div>
+
+        <h3>Assessment at a glance</h3>
+
+        <ul>
+
+            <li>Written examination.</li>
+
+            <li>Duration: 1 hour 20 minutes.</li>
+
+            <li>Total marks: 50.</li>
+
+            <li>Calculators may be used.</li>
+
+            <li>Questions can include calculations and extended responses.</li>
+
+            <li>Mathematical skills are an important part of the paper.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- PLANNING -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Planning an Experiment</h2>
+
+        <p>
+            Planning questions ask you to design an experiment that can
+            investigate a specified relationship between variables.
+        </p>
+
+        <h3>Independent Variable</h3>
+
+        <p>
+            The variable deliberately changed by the experimenter.
+        </p>
+
+        <h3>Dependent Variable</h3>
+
+        <p>
+            The quantity measured in response to the independent variable.
+        </p>
+
+        <h3>Control Variables</h3>
+
+        <p>
+            Other relevant quantities that should be kept constant so that
+            the investigation is a fair test.
+        </p>
+
+        <div class="definition">
+
+            <strong>Strong planning answer:</strong>
+
+            <p>
+                State what will be changed, what will be measured, what will
+                be controlled, what apparatus will be used, how measurements
+                will be taken and how the results will be analysed.
+            </p>
+
+        </div>
+
+        <h3>Typical Planning Structure</h3>
+
+        <ol>
+
+            <li>Identify the independent variable.</li>
+
+            <li>Identify the dependent variable.</li>
+
+            <li>Identify important control variables.</li>
+
+            <li>Select suitable apparatus.</li>
+
+            <li>State the range of values to investigate.</li>
+
+            <li>Explain how measurements will be taken.</li>
+
+            <li>Repeat measurements where appropriate.</li>
+
+            <li>Explain how the data will be processed.</li>
+
+            <li>Identify relevant safety precautions.</li>
+
+            <li>Identify possible sources of uncertainty.</li>
+
+        </ol>
+
+    </section>
+
+
+    <!-- APPARATUS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Apparatus and Measuring Instruments</h2>
+
+        <p>
+            Choosing appropriate measuring equipment is an important practical
+            skill. The instrument should have suitable range and resolution.
+        </p>
+
+        <h3>Resolution</h3>
+
+        <p>
+            Resolution is the smallest change in a quantity that an instrument
+            can normally display or measure.
+        </p>
+
+        <h3>Vernier Calipers</h3>
+
+        <p>
+            Vernier calipers can be used for measurements such as diameter,
+            internal diameter and depth.
+        </p>
+
+        <div class="formula">
+            Typical resolution considered in Unit 3: 0.1 mm
+        </div>
+
+        <h3>Micrometer Screw Gauge</h3>
+
+        <p>
+            A micrometer is suitable for measuring very small dimensions,
+            such as the diameter of a thin wire.
+        </p>
+
+        <div class="formula">
+            Typical resolution considered in Unit 3: 0.01 mm
+        </div>
+
+        <h3>Calibration and Zero Error</h3>
+
+        <p>
+            Before taking measurements, check whether the instrument reads
+            zero when it should. A non-zero initial reading can introduce
+            systematic error.
+        </p>
+
+        <div class="warning">
+
+            <strong>Exam tip:</strong>
+
+            <p>
+                Do not simply say "use a better instrument". Explain why the
+                alternative instrument improves the measurement.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPLEMENTATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Implementation and Measurements</h2>
+
+        <p>
+            In Unit 3 you may be given an experiment performed by another
+            student and asked to evaluate the quality of the measurements.
+        </p>
+
+        <h3>Number of Readings</h3>
+
+        <p>
+            A suitable number of readings should be taken to establish the
+            relationship clearly and reduce the effect of random variation.
+        </p>
+
+        <h3>Range of Readings</h3>
+
+        <p>
+            The independent variable should normally cover a sufficiently wide
+            range to make the relationship easier to identify.
+        </p>
+
+        <h3>Repeats</h3>
+
+        <p>
+            Repeating measurements can help identify anomalous readings and
+            reduce the influence of random errors.
+        </p>
+
+        <h3>Significant Figures</h3>
+
+        <p>
+            Measurements and calculated quantities should be recorded to a
+            sensible number of significant figures consistent with the
+            measuring instrument and data provided.
+        </p>
+
+        <h3>Anomalous Results</h3>
+
+        <p>
+            An anomalous result is one that does not fit the general pattern
+            of the other measurements.
+        </p>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                Do not automatically delete an anomalous result. Identify it,
+                investigate possible causes and explain whether it should be
+                excluded from further analysis.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- UNCERTAINTIES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Uncertainty and Error</h2>
+
+        <p>
+            Measurements are never perfectly exact. Unit 3 requires you to
+            understand uncertainty and distinguish it from systematic error.
+        </p>
+
+        <h3>Random Error</h3>
+
+        <p>
+            Random errors cause readings to vary unpredictably around an
+            underlying value.
+        </p>
+
+        <h3>Systematic Error</h3>
+
+        <p>
+            Systematic errors shift measurements consistently in one direction.
+            Repeating the measurement does not normally remove this type of error.
+        </p>
+
+        <h3>Reducing Random Error</h3>
+
+        <ul>
+
+            <li>Repeat measurements.</li>
+
+            <li>Calculate a mean where appropriate.</li>
+
+            <li>Take more measurements.</li>
+
+            <li>Use a wider range of values when investigating relationships.</li>
+
+        </ul>
+
+        <h3>Reducing Systematic Error</h3>
+
+        <ul>
+
+            <li>Check and correct zero errors.</li>
+
+            <li>Calibrate instruments.</li>
+
+            <li>Use appropriate measuring equipment.</li>
+
+            <li>Improve the experimental arrangement.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- PERCENTAGE UNCERTAINTY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Percentage Uncertainty</h2>
+
+        <p>
+            Percentage uncertainty allows the size of an uncertainty to be
+            compared with the measured quantity.
+        </p>
+
+        <div class="formula">
+            Percentage uncertainty = (absolute uncertainty / measured value) × 100%
+        </div>
+
+        <h3>Single Measurement</h3>
+
+        <p>
+            For a single measurement, the specification uses half the
+            instrument resolution as the uncertainty where appropriate.
+        </p>
+
+        <div class="formula">
+            Absolute uncertainty ≈ half the instrument resolution
+        </div>
+
+        <h3>Repeated Measurements</h3>
+
+        <p>
+            When multiple readings are available, the half-range method can
+            be used to estimate uncertainty.
+        </p>
+
+        <div class="formula">
+            Absolute uncertainty = (maximum − minimum) / 2
+        </div>
+
+        <div class="definition">
+
+            <strong>Unit 3 point:</strong>
+
+            <p>
+                For the Unit 3 uncertainty calculations covered here, you are
+                not expected to compound percentage uncertainties.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DATA PROCESSING -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Processing Experimental Data</h2>
+
+        <p>
+            Experimental results often need to be transformed before a
+            physical relationship becomes clear.
+        </p>
+
+        <h3>Tables</h3>
+
+        <ul>
+
+            <li>Include appropriate headings.</li>
+
+            <li>Include units in headings where appropriate.</li>
+
+            <li>Use consistent decimal places or significant figures.</li>
+
+            <li>Show calculated quantities clearly.</li>
+
+        </ul>
+
+        <h3>Calculations</h3>
+
+        <p>
+            Use the correct equation, substitute values carefully and give
+            the final answer with appropriate units and significant figures.
+        </p>
+
+        <h3>Graphs</h3>
+
+        <ul>
+
+            <li>Choose an appropriate scale.</li>
+
+            <li>Label both axes.</li>
+
+            <li>Include units.</li>
+
+            <li>Plot points accurately.</li>
+
+            <li>Use a suitable line or curve of best fit.</li>
+
+            <li>Avoid joining experimental points dot-to-dot when a best-fit relationship is required.</li>
+
+        </ul>
+
+        <h3>Gradient</h3>
+
+        <p>
+            The gradient of a graph can be used to determine a physical
+            constant or establish the relationship between variables.
+        </p>
+
+        <div class="formula">
+            Gradient = change in y / change in x
+        </div>
+
+        <p>
+            When finding a gradient from experimental data, use a large
+            triangle on the line of best fit rather than using two nearby
+            experimental points.
+        </p>
+
+    </section>
+
+
+    <!-- GRAPH ANALYSIS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Identifying Relationships from Graphs</h2>
+
+        <p>
+            Unit 3 may require you to determine a relationship between
+            variables using experimental data.
+        </p>
+
+        <h3>Direct Proportion</h3>
+
+        <div class="formula">
+            y ∝ x
+        </div>
+
+        <p>
+            A graph of y against x should be a straight line through the origin
+            for a direct proportionality.
+        </p>
+
+        <h3>Linear Relationship</h3>
+
+        <div class="formula">
+            y = mx + c
+        </div>
+
+        <p>
+            The gradient and intercept can provide physical information about
+            the experiment.
+        </p>
+
+        <h3>Testing a Relationship</h3>
+
+        <p>
+            If theory predicts a relationship involving a power or transformed
+            quantity, plot the appropriate variables and examine whether the
+            resulting graph is linear.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                Suppose theory predicts that y is proportional to x².
+                A plot of y against x² should produce a straight line through
+                the origin if the model is supported by the data.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVALUATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Evaluation and Improving Experiments</h2>
+
+        <p>
+            Evaluation questions ask you to identify weaknesses in an
+            investigation and suggest realistic improvements.
+        </p>
+
+        <h3>Weak Evaluation</h3>
+
+        <p>
+            "The experiment has errors."
+        </p>
+
+        <h3>Strong Evaluation</h3>
+
+        <p>
+            Identify the specific source of error, explain how it affects
+            the result and give a realistic method of reducing it.
+        </p>
+
+        <div class="definition">
+
+            <strong>Good evaluation structure:</strong>
+
+            <p>
+                Problem → effect on measurement → improvement.
+            </p>
+
+        </div>
+
+        <h3>Common Improvements</h3>
+
+        <ul>
+
+            <li>Take more readings.</li>
+
+            <li>Repeat measurements and calculate an average.</li>
+
+            <li>Increase the range of the independent variable.</li>
+
+            <li>Use an instrument with better resolution.</li>
+
+            <li>Check for zero error.</li>
+
+            <li>Improve alignment.</li>
+
+            <li>Use additional apparatus to improve measurement technique.</li>
+
+            <li>Control relevant variables more carefully.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 1 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 01</p>
+
+        <h2>Acceleration of a Freely Falling Object</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Determine the acceleration of an object undergoing free fall.
+            </p>
+
+            <p class="practical-title">
+                Key idea
+            </p>
+
+            <p>
+                Measure appropriate quantities such as distance and time and
+                use a suitable model of motion to determine gravitational
+                acceleration.
+            </p>
+
+            <p class="practical-title">
+                Important considerations
+            </p>
+
+            <ul>
+
+                <li>Measure distance carefully.</li>
+
+                <li>Use an appropriate timing method.</li>
+
+                <li>Repeat measurements where possible.</li>
+
+                <li>Reduce timing and distance uncertainties.</li>
+
+                <li>Consider the effect of air resistance.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 2 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 02</p>
+
+        <h2>Determining the Viscosity of a Liquid</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Use a falling-ball method to investigate the viscosity of a liquid.
+            </p>
+
+            <p class="practical-title">
+                Principle
+            </p>
+
+            <p>
+                A small sphere falling through a viscous liquid experiences
+                resistive forces. Measurements can be used with the appropriate
+                model to determine the viscosity.
+            </p>
+
+            <div class="formula">
+                F = 6πηrv
+            </div>
+
+            <p class="practical-title">
+                Important considerations
+            </p>
+
+            <ul>
+
+                <li>Use a suitable spherical object.</li>
+
+                <li>Measure the radius accurately.</li>
+
+                <li>Measure the terminal-speed region.</li>
+
+                <li>Control temperature because viscosity depends on temperature.</li>
+
+                <li>Reduce parallax and timing errors.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 3 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 03</p>
+
+        <h2>Determining Young Modulus</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Determine the Young modulus of a material by measuring force,
+                extension and the original dimensions of a sample.
+            </p>
+
+            <p class="practical-title">
+                Key relationships
+            </p>
+
+            <div class="formula">
+                Stress = Force / Cross-sectional area
+            </div>
+
+            <div class="formula">
+                Strain = Extension / Original length
+            </div>
+
+            <div class="formula">
+                Young modulus = Stress / Strain
+            </div>
+
+            <p class="practical-title">
+                Important measurements
+            </p>
+
+            <ul>
+
+                <li>Original length.</li>
+
+                <li>Diameter or cross-sectional dimensions.</li>
+
+                <li>Applied force.</li>
+
+                <li>Extension.</li>
+
+            </ul>
+
+            <p class="practical-title">
+                Important errors
+            </p>
+
+            <ul>
+
+                <li>Small extension can produce a large percentage uncertainty.</li>
+
+                <li>Diameter measurements are especially important because area depends on diameter squared.</li>
+
+                <li>Parallax can affect scale readings.</li>
+
+                <li>Zero errors should be checked.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 4 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 04</p>
+
+        <h2>Speed of Sound Using an Oscilloscope</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Determine the speed of sound in air using a two-beam oscilloscope,
+                signal generator, speaker and microphone.
+            </p>
+
+            <p class="practical-title">
+                Principle
+            </p>
+
+            <p>
+                The wavelength can be determined from the distance between
+                positions corresponding to a known phase relationship, while
+                the frequency is provided by the signal generator.
+            </p>
+
+            <div class="formula">
+                v = fλ
+            </div>
+
+            <p class="practical-title">
+                Key considerations
+            </p>
+
+            <ul>
+
+                <li>Use a suitable frequency.</li>
+
+                <li>Measure distances carefully.</li>
+
+                <li>Identify repeated phase positions where appropriate.</li>
+
+                <li>Use multiple wavelength intervals to reduce percentage uncertainty.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 5 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 05</p>
+
+        <h2>Vibrating String or Wire</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Investigate how the frequency of a vibrating string or wire
+                depends on its length, tension and mass per unit length.
+            </p>
+
+            <div class="formula">
+                v = √(T / μ)
+            </div>
+
+            <p>
+                The investigation can be designed to vary one quantity while
+                controlling the others.
+            </p>
+
+            <h3>Variables to investigate</h3>
+
+            <ul>
+
+                <li>Length of the vibrating section.</li>
+
+                <li>Tension in the string.</li>
+
+                <li>Mass per unit length.</li>
+
+            </ul>
+
+            <h3>Practical considerations</h3>
+
+            <ul>
+
+                <li>Keep the other relevant variables constant.</li>
+
+                <li>Identify the fundamental frequency or a known harmonic.</li>
+
+                <li>Take measurements over a useful range.</li>
+
+                <li>Repeat measurements where appropriate.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 6 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 06</p>
+
+        <h2>Wavelength of Light Using a Diffraction Grating</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Determine the wavelength of light from a laser or another
+                suitable light source using a diffraction grating.
+            </p>
+
+            <div class="formula">
+                nλ = d sinθ
+            </div>
+
+            <p class="practical-title">
+                Measurements
+            </p>
+
+            <ul>
+
+                <li>Grating spacing.</li>
+
+                <li>Distance from grating to screen.</li>
+
+                <li>Position of diffraction maxima.</li>
+
+                <li>Order number of the maximum.</li>
+
+            </ul>
+
+            <h3>Reducing uncertainty</h3>
+
+            <p>
+                Measuring the separation between symmetric diffraction maxima
+                can reduce the relative uncertainty in the position measurement.
+            </p>
+
+            <div class="warning">
+
+                <strong>Safety:</strong>
+
+                <p>
+                    Never look directly into a laser beam. Follow appropriate
+                    laboratory safety procedures.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 7 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 07</p>
+
+        <h2>Electrical Resistivity of a Material</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Determine the electrical resistivity of a material by measuring
+                its resistance and dimensions.
+            </p>
+
+            <div class="formula">
+                R = ρL / A
+            </div>
+
+            <p class="practical-title">
+                Rearranged form
+            </p>
+
+            <div class="formula">
+                ρ = RA / L
+            </div>
+
+            <p class="practical-title">
+                Measurements
+            </p>
+
+            <ul>
+
+                <li>Resistance.</li>
+
+                <li>Length.</li>
+
+                <li>Diameter or cross-sectional area.</li>
+
+            </ul>
+
+            <h3>Important consideration</h3>
+
+            <p>
+                If the material heats up significantly, its resistance may
+                change. Keep the current and measurement conditions controlled
+                where necessary.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICAL 8 -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 08</p>
+
+        <h2>e.m.f. and Internal Resistance of a Cell</h2>
+
+        <div class="practical">
+
+            <p class="practical-title">
+                Aim
+            </p>
+
+            <p>
+                Determine the electromotive force and internal resistance of
+                an electrical cell.
+            </p>
+
+            <h3>e.m.f.</h3>
+
+            <p>
+                The e.m.f. represents the energy supplied by the source per
+                unit charge.
+            </p>
+
+            <h3>Internal Resistance</h3>
+
+            <p>
+                A real cell has internal resistance, so the terminal potential
+                difference decreases when current is drawn.
+            </p>
+
+            <div class="formula">
+                V = E − Ir
+            </div>
+
+            <p>
+                A graph of terminal potential difference against current can
+                be used to determine the e.m.f. and internal resistance.
+            </p>
+
+            <div class="definition">
+
+                <strong>Graph interpretation:</strong>
+
+                <p>
+                    The y-intercept gives the e.m.f., while the magnitude of
+                    the gradient gives the internal resistance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DATA ANALYSIS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 09</p>
+
+        <h2>Graphs, Gradients and Intercepts</h2>
+
+        <p>
+            Many Unit 3 questions provide experimental data and ask you to
+            determine a physical quantity from a graph.
+        </p>
+
+        <h3>Gradient</h3>
+
+        <div class="formula">
+            Gradient = Δy / Δx
+        </div>
+
+        <p>
+            Select two well-separated points on the best-fit line rather than
+            automatically using two experimental data points.
+        </p>
+
+        <h3>Intercept</h3>
+
+        <p>
+            The intercept may represent a physical constant or another
+            quantity predicted by the experimental model.
+        </p>
+
+        <h3>Line of Best Fit</h3>
+
+        <p>
+            A good best-fit line should represent the overall trend of the
+            experimental data, with points distributed reasonably around it.
+        </p>
+
+        <h3>Using a Graph to Find a Constant</h3>
+
+        <p>
+            First determine the equation represented by the graph. Then compare
+            the gradient or intercept with the theoretical equation to identify
+            the required physical constant.
+        </p>
+
+    </section>
+
+
+    <!-- SIGNIFICANT FIGURES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 10</p>
+
+        <h2>Units and Significant Figures</h2>
+
+        <p>
+            Correct presentation of experimental results is essential.
+        </p>
+
+        <h3>Units</h3>
+
+        <p>
+            Always identify the appropriate unit for a physical quantity.
+        </p>
+
+        <h3>Significant Figures</h3>
+
+        <p>
+            Avoid giving calculated results with unjustifiably excessive
+            precision.
+        </p>
+
+        <h3>Scientific Notation</h3>
+
+        <p>
+            Scientific notation is useful for very large or very small
+            physical quantities.
+        </p>
+
+        <div class="formula">
+            Example: 0.0000032 = 3.2 × 10⁻⁶
+        </div>
+
+    </section>
+
+
+    <!-- SAFETY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 11</p>
+
+        <h2>Health and Safety</h2>
+
+        <p>
+            A practical plan should identify hazards and explain how the
+            associated risks can be reduced.
+        </p>
+
+        <h3>Good Safety Answers</h3>
+
+        <ul>
+
+            <li>Identify the actual hazard.</li>
+
+            <li>Explain the potential risk.</li>
+
+            <li>State a realistic control measure.</li>
+
+        </ul>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                If a heated component is used, the hazard is the hot surface.
+                A suitable control measure would be to allow it to cool before
+                handling and avoid unnecessary contact.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVALUATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 12</p>
+
+        <h2>Evaluating Experimental Conclusions</h2>
+
+        <p>
+            A conclusion should be based on the evidence collected rather
+            than simply repeating the expected theory.
+        </p>
+
+        <h3>Good Conclusion</h3>
+
+        <ul>
+
+            <li>State the relationship observed.</li>
+
+            <li>Refer to the experimental evidence.</li>
+
+            <li>Compare the result with the theoretical prediction where appropriate.</li>
+
+            <li>Comment on uncertainty or limitations.</li>
+
+        </ul>
+
+        <div class="definition">
+
+            <strong>Remember:</strong>
+
+            <p>
+                A result can support a model without proving that the model is
+                universally true.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 3 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. Explain why repeated measurements are useful in an experiment.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Repeated measurements help identify random variation and
+                    anomalous results and can allow a more reliable mean value
+                    to be obtained.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. A ruler has a resolution of 1 mm. Estimate the absolute
+                uncertainty associated with a single measurement.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Using half the resolution, the uncertainty is approximately
+                    ±0.5 mm.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A length is measured as 50.0 mm with an uncertainty of
+                0.5 mm. Calculate the percentage uncertainty.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Percentage uncertainty =
+                    (0.5 / 50.0) × 100 = 1.0%.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. State two ways of reducing random uncertainty.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Repeat measurements and calculate a mean. Taking more
+                    measurements over a suitable range can also improve the
+                    reliability of the result.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. Explain why systematic error is not normally reduced by
+                repeating a measurement.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    A systematic error shifts measurements consistently in the
+                    same direction, so repeating the measurement reproduces
+                    the same bias.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. State two features that should be included on a scientific graph.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Clearly labelled axes and appropriate units should be included.
+                    A suitable scale and accurately plotted data are also required.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. Why should a large triangle be used when calculating a
+                gradient from a line of best fit?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    A large triangle makes the changes in x and y easier to
+                    measure accurately, reducing the percentage uncertainty
+                    in the calculated gradient.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. Give the equation used to determine the speed of a wave.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    v = fλ
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. A wire has resistance R, length L and cross-sectional area A.
+                State the equation for resistivity.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    ρ = RA / L
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. In an experiment investigating Young modulus, explain why
+                measuring the diameter of a wire accurately is important.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The cross-sectional area depends on the square of the
+                    diameter, so an uncertainty in diameter can significantly
+                    affect the calculated area and therefore the Young modulus.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                11. A graph of terminal potential difference V against current I
+                has equation V = 1.50 − 0.80I. What are the e.m.f. and internal
+                resistance?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Comparing with V = E − Ir:
+                    e.m.f. = 1.50 V and internal resistance = 0.80 Ω.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                12. Give three features of a strong experimental plan.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    A strong plan identifies suitable apparatus, controls
+                    relevant variables, explains how measurements will be taken,
+                    uses an appropriate range, considers repeats and uncertainty,
+                    and includes suitable safety precautions.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson quick">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 3 Key Ideas</h2>
+
+        <h3>Planning</h3>
+
+        <ul>
+
+            <li>Independent variable.</li>
+
+            <li>Dependent variable.</li>
+
+            <li>Control variables.</li>
+
+            <li>Apparatus, range and resolution.</li>
+
+            <li>Safety and uncertainty.</li>
+
+        </ul>
+
+        <h3>Measurements</h3>
+
+        <ul>
+
+            <li>Check calibration and zero error.</li>
+
+            <li>Use appropriate measuring instruments.</li>
+
+            <li>Take a suitable range of readings.</li>
+
+            <li>Repeat measurements where appropriate.</li>
+
+        </ul>
+
+        <h3>Data Analysis</h3>
+
+        <ul>
+
+            <li>Use correct units.</li>
+
+            <li>Use appropriate significant figures.</li>
+
+            <li>Plot accurate graphs.</li>
+
+            <li>Determine gradients and intercepts.</li>
+
+            <li>Identify relationships between variables.</li>
+
+        </ul>
+
+        <h3>Uncertainty</h3>
+
+        <ul>
+
+            <li>Distinguish random and systematic errors.</li>
+
+            <li>Use half-resolution for appropriate single measurements.</li>
+
+            <li>Use half-range for repeated measurements.</li>
+
+            <li>Calculate percentage uncertainty.</li>
+
+        </ul>
+
+        <h3>Core Practicals</h3>
+
+        <ul>
+
+            <li>Free-fall acceleration.</li>
+
+            <li>Viscosity of a liquid.</li>
+
+            <li>Young modulus.</li>
+
+            <li>Speed of sound.</li>
+
+            <li>Vibrating string or wire.</li>
+
+            <li>Wavelength using diffraction grating.</li>
+
+            <li>Electrical resistivity.</li>
+
+            <li>e.m.f. and internal resistance.</li>
+
+        </ul>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="physics.html" class="button">
+        ← Back to Physics
+    </a>
+
+    <a href="index.html" class="button">
+        Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
