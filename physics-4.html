@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics Unit 4 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 4 — Further Mechanics, Fields and Particles.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson h4 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="physics.html">
+        ← Physics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 4
+    </p>
+
+    <h1>
+        Physics <span>Unit 4</span>
+    </h1>
+
+    <p>
+        Further mechanics, electric and magnetic fields,
+        nuclear and particle physics.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- FURTHER MECHANICS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Further Mechanics</h2>
+
+        <p>
+            Unit 4 extends mechanics into impulse, two-dimensional
+            momentum and circular motion.
+        </p>
+
+
+        <h3>Impulse and Change of Momentum</h3>
+
+        <p>
+            Impulse is the product of force and the time for which
+            the force acts. It is equal to the change in momentum.
+        </p>
+
+        <div class="formula">
+            Impulse = FΔt = Δp
+        </div>
+
+        <p>
+            A large force acting for a short time can therefore
+            produce the same change in momentum as a smaller force
+            acting for a longer time.
+        </p>
+
+
+        <h3>Conservation of Momentum in Two Dimensions</h3>
+
+        <p>
+            In an isolated system, the total momentum before an
+            interaction equals the total momentum after the interaction.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Momentum is a vector, so horizontal and vertical
+                components must be considered separately in two-dimensional
+                collisions.
+            </p>
+
+        </div>
+
+        <h3>Elastic and Inelastic Collisions</h3>
+
+        <p>
+            Momentum is conserved in both elastic and inelastic
+            collisions when external resultant forces are negligible.
+        </p>
+
+        <ul>
+
+            <li>
+                Elastic collision — kinetic energy is also conserved.
+            </li>
+
+            <li>
+                Inelastic collision — kinetic energy is not conserved.
+            </li>
+
+        </ul>
+
+
+        <h3>Kinetic Energy and Momentum</h3>
+
+        <p>
+            For a non-relativistic particle, kinetic energy can be
+            expressed in terms of momentum.
+        </p>
+
+        <div class="formula">
+            E<sub>k</sub> = p² / 2m
+        </div>
+
+
+        <h3>Angular Displacement</h3>
+
+        <p>
+            Angular displacement may be measured in radians or degrees.
+        </p>
+
+        <div class="formula">
+            2π radians = 360°
+        </div>
+
+
+        <h3>Angular Velocity</h3>
+
+        <p>
+            Angular velocity describes the rate at which angular
+            displacement changes.
+        </p>
+
+        <div class="formula">
+            v = ωr
+        </div>
+
+        <div class="formula">
+            ω = 2π / T
+        </div>
+
+
+        <h3>Centripetal Acceleration</h3>
+
+        <p>
+            An object moving in a circle at constant speed is
+            continuously changing direction. Therefore it has
+            an acceleration directed towards the centre of the circle.
+        </p>
+
+        <div class="formula">
+            a = v² / r = rω²
+        </div>
+
+
+        <h3>Centripetal Force</h3>
+
+        <p>
+            The resultant force directed towards the centre of the
+            circular path is called the centripetal force.
+        </p>
+
+        <div class="formula">
+            F = mv² / r = mrω²
+        </div>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                Centripetal force is not a new type of force. It is the
+                name given to the resultant force acting towards the
+                centre of circular motion.
+            </p>
+
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A 2.0 kg object travels in a horizontal circle of radius
+                0.50 m at a speed of 4.0 m s⁻¹. Find the centripetal force.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    F = mv² / r
+                </p>
+
+                <p>
+                    F = (2.0 × 4.0²) / 0.50
+                </p>
+
+                <p>
+                    <strong>F = 64 N</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ELECTRIC FIELDS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Electric Fields</h2>
+
+        <p>
+            Electric fields describe the forces experienced by
+            charged particles.
+        </p>
+
+
+        <h3>Electric Field</h3>
+
+        <p>
+            An electric field is a region in which a charged particle
+            experiences a force.
+        </p>
+
+
+        <h3>Electric Field Strength</h3>
+
+        <div class="formula">
+            E = F / Q
+        </div>
+
+        <p>
+            Electric field strength is measured in N C⁻¹.
+        </p>
+
+
+        <h3>Force Between Two Point Charges</h3>
+
+        <p>
+            Coulomb's law describes the force between two point charges.
+        </p>
+
+        <div class="formula">
+            F = Q₁Q₂ / (4πε₀r²)
+        </div>
+
+        <p>
+            The force is attractive for opposite charges and repulsive
+            for charges of the same sign.
+        </p>
+
+
+        <h3>Electric Field of a Point Charge</h3>
+
+        <div class="formula">
+            E = Q / (4πε₀r²)
+        </div>
+
+
+        <h3>Electric Potential</h3>
+
+        <p>
+            Electric potential is the work done per unit charge in
+            bringing a positive test charge from infinity to a point.
+        </p>
+
+        <p>
+            Electric field strength is related to the rate of change
+            of electric potential with distance.
+        </p>
+
+        <div class="formula">
+            E = ΔV / d
+        </div>
+
+        <p>
+            For a radial electric field:
+        </p>
+
+        <div class="formula">
+            V = Q / (4πε₀r)
+        </div>
+
+
+        <h3>Electric Field Lines and Equipotentials</h3>
+
+        <ul>
+
+            <li>
+                Field lines show the direction of the electric field.
+            </li>
+
+            <li>
+                Field lines point away from positive charges and
+                towards negative charges.
+            </li>
+
+            <li>
+                Equipotential lines represent points of equal electric
+                potential.
+            </li>
+
+            <li>
+                Electric field lines are perpendicular to equipotential
+                lines.
+            </li>
+
+        </ul>
+
+
+        <h3>Capacitance</h3>
+
+        <p>
+            Capacitance is the charge stored per unit potential difference.
+        </p>
+
+        <div class="formula">
+            C = Q / V
+        </div>
+
+
+        <h3>Energy Stored in a Capacitor</h3>
+
+        <div class="formula">
+            W = ½QV
+        </div>
+
+        <div class="formula">
+            W = ½CV²
+        </div>
+
+        <div class="formula">
+            W = Q² / 2C
+        </div>
+
+
+        <h3>Charging and Discharging Capacitors</h3>
+
+        <p>
+            A resistor-capacitor circuit has a time constant given by:
+        </p>
+
+        <div class="formula">
+            τ = RC
+        </div>
+
+        <p>
+            During discharge, charge, current and potential difference
+            decrease exponentially.
+        </p>
+
+        <div class="formula">
+            Q = Q₀e<sup>−t/RC</sup>
+        </div>
+
+        <div class="formula">
+            I = I₀e<sup>−t/RC</sup>
+        </div>
+
+        <div class="formula">
+            V = V₀e<sup>−t/RC</sup>
+        </div>
+
+
+        <h3>Magnetic Flux Density</h3>
+
+        <p>
+            Magnetic flux density describes the strength of a magnetic
+            field.
+        </p>
+
+        <h3>Magnetic Flux</h3>
+
+        <p>
+            Magnetic flux is represented by φ, while flux linkage is
+            represented by Nφ.
+        </p>
+
+
+        <h3>Force on a Moving Charge</h3>
+
+        <div class="formula">
+            F = BQv sin θ
+        </div>
+
+        <p>
+            The direction of the force can be determined using
+            Fleming's left-hand rule.
+        </p>
+
+
+        <h3>Force on a Current-Carrying Conductor</h3>
+
+        <div class="formula">
+            F = BIl sin θ
+        </div>
+
+
+        <h3>Electromagnetic Induction</h3>
+
+        <p>
+            An electromotive force can be induced when there is a change
+            in magnetic flux linkage.
+        </p>
+
+        <p>
+            Faraday's law and Lenz's law give:
+        </p>
+
+        <div class="formula">
+            E = −N dφ/dt
+        </div>
+
+        <p>
+            The negative sign represents Lenz's law: the induced effect
+            opposes the change that produced it.
+        </p>
+
+    </section>
+
+
+    <!-- NUCLEAR AND PARTICLE PHYSICS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Nuclear and Particle Physics</h2>
+
+        <p>
+            This section explores atomic structure, particle accelerators,
+            particle detectors and the Standard Model's quark-lepton
+            classification.
+        </p>
+
+
+        <h3>Nucleon Number and Proton Number</h3>
+
+        <p>
+            The proton number is the number of protons in a nucleus.
+            The nucleon number is the total number of protons and
+            neutrons.
+        </p>
+
+        <div class="formula">
+            Nucleon number = protons + neutrons
+        </div>
+
+
+        <h3>Alpha Scattering and the Nuclear Model</h3>
+
+        <p>
+            Large-angle alpha-particle scattering provided evidence
+            that atoms contain a small, dense, positively charged nucleus.
+        </p>
+
+        <p>
+            Most alpha particles pass through the atom with little
+            deflection, while a small number are strongly deflected.
+            This demonstrates that most of the atom is empty space.
+        </p>
+
+
+        <h3>Thermionic Emission</h3>
+
+        <p>
+            Thermionic emission is the release of electrons from a
+            heated material.
+        </p>
+
+        <p>
+            Electric and magnetic fields can then be used to accelerate
+            and control the motion of these electrons.
+        </p>
+
+
+        <h3>Particle Accelerators</h3>
+
+        <p>
+            Particle accelerators use electric fields to increase the
+            energy of charged particles and magnetic fields to control
+            their paths.
+        </p>
+
+        <h4>Linear Accelerators</h4>
+
+        <p>
+            In a linear accelerator, particles are accelerated through
+            a series of electric fields along a straight path.
+        </p>
+
+        <h4>Cyclotrons</h4>
+
+        <p>
+            A cyclotron uses alternating electric fields for acceleration
+            and magnetic fields to bend the path of charged particles.
+        </p>
+
+
+        <h3>Charged Particles in Magnetic Fields</h3>
+
+        <p>
+            A charged particle moving perpendicular to a magnetic field
+            experiences a force that can produce circular motion.
+        </p>
+
+        <div class="formula">
+            p = BQr
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            r = p / BQ
+        </div>
+
+
+        <h3>Particle Detectors</h3>
+
+        <p>
+            Particle detectors provide evidence about the properties and
+            interactions of high-energy particles.
+        </p>
+
+        <p>
+            Ionisation and deflection in magnetic fields can be used to
+            identify and study charged particles.
+        </p>
+
+
+        <h3>Conservation Laws</h3>
+
+        <p>
+            Particle interactions must obey conservation laws.
+        </p>
+
+        <ul>
+
+            <li>Conservation of charge</li>
+
+            <li>Conservation of energy</li>
+
+            <li>Conservation of momentum</li>
+
+            <li>Conservation of baryon number</li>
+
+            <li>Conservation of lepton number</li>
+
+        </ul>
+
+
+        <h3>Mass-Energy Equivalence</h3>
+
+        <p>
+            Matter and antimatter can be created or annihilated when
+            the relevant conservation laws are satisfied.
+        </p>
+
+        <div class="formula">
+            ΔE = Δmc²
+        </div>
+
+
+        <h3>Particle Energy and Mass Units</h3>
+
+        <p>
+            Particle physics commonly uses MeV and GeV for energy and
+            MeV/c² and GeV/c² for mass.
+        </p>
+
+        <ul>
+
+            <li>1 GeV = 1000 MeV</li>
+
+            <li>1 MeV = 10⁶ eV</li>
+
+        </ul>
+
+
+        <h3>Relativistic Particle Lifetime</h3>
+
+        <p>
+            Fast-moving unstable particles can have significantly longer
+            observed lifetimes than when measured in their rest frame.
+            This is a consequence of time dilation.
+        </p>
+
+
+        <h3>The Standard Quark-Lepton Model</h3>
+
+        <p>
+            The Standard Model classifies particles into several groups.
+        </p>
+
+
+        <h4>Quarks</h4>
+
+        <p>
+            The six quarks are:
+        </p>
+
+        <ul>
+
+            <li>Up</li>
+
+            <li>Down</li>
+
+            <li>Strange</li>
+
+            <li>Charm</li>
+
+            <li>Top</li>
+
+            <li>Bottom</li>
+
+        </ul>
+
+
+        <h4>Baryons</h4>
+
+        <p>
+            Baryons are made from three quarks. Protons and neutrons
+            are examples.
+        </p>
+
+
+        <h4>Mesons</h4>
+
+        <p>
+            Mesons are made from a quark and an antiquark.
+            Pions are examples of mesons.
+        </p>
+
+
+        <h4>Leptons</h4>
+
+        <p>
+            Leptons are fundamental particles. Examples include
+            electrons and neutrinos.
+        </p>
+
+
+        <h4>Photons</h4>
+
+        <p>
+            Photons are fundamental particles associated with the
+            electromagnetic interaction.
+        </p>
+
+
+        <h3>Antiparticles</h3>
+
+        <p>
+            Every particle has a corresponding antiparticle.
+            The antiparticle has the same mass as its particle but
+            opposite values for relevant conserved charges.
+        </p>
+
+
+        <h3>Particle Equations</h3>
+
+        <p>
+            Particle equations can be tested by applying conservation
+            laws to both sides of an interaction.
+        </p>
+
+        <div class="definition">
+
+            <strong>Exam technique:</strong>
+
+            <p>
+                When checking whether an interaction is possible,
+                systematically compare charge, baryon number and
+                lepton number before and after the interaction.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORE PRACTICALS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICAL SKILLS</p>
+
+        <h2>Unit 4 Practical Work</h2>
+
+        <p>
+            Practical knowledge is important because Unit 4 examination
+            questions can assess understanding developed through practical
+            activities.
+        </p>
+
+        <h3>Core Practical 9</h3>
+
+        <p>
+            Investigate the relationship between the force exerted on
+            an object and its change of momentum.
+        </p>
+
+        <h3>Core Practical 10</h3>
+
+        <p>
+            Use ICT to analyse collisions between small spheres,
+            such as ball bearings on a table.
+        </p>
+
+        <h3>Core Practical 11</h3>
+
+        <p>
+            Use an oscilloscope or data logger to display and analyse
+            the potential difference across a capacitor as it charges
+            and discharges through a resistor.
+        </p>
+
+        <div class="definition">
+
+            <strong>Practical focus:</strong>
+
+            <p>
+                Be prepared to discuss variables, apparatus, measurements,
+                graphs, uncertainties, sources of error and improvements
+                to experimental methods.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 4 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. A 0.50 kg ball changes velocity from 8.0 m s⁻¹ east
+                to 4.0 m s⁻¹ west in 0.20 s. Calculate the magnitude
+                of the average force acting on the ball.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Take east as positive.
+                </p>
+
+                <p>
+                    Δp = m(v − u)
+                </p>
+
+                <p>
+                    Δp = 0.50(−4.0 − 8.0) = −6.0 kg m s⁻¹
+                </p>
+
+                <p>
+                    F = Δp / Δt = −6.0 / 0.20
+                </p>
+
+                <p>
+                    <strong>Magnitude = 30 N</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. A 1200 kg car travels around a circular track of
+                radius 50 m at 10 m s⁻¹. Calculate the centripetal force.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    F = mv² / r
+                </p>
+
+                <p>
+                    F = (1200 × 10²) / 50
+                </p>
+
+                <p>
+                    <strong>F = 2400 N</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A point charge produces an electric field of
+                2.0 × 10⁴ N C⁻¹ at a distance of 0.30 m.
+                State the equation that relates electric field strength
+                to point charge.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    E = Q / (4πε₀r²)
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. A capacitor has capacitance 220 μF and is charged
+                to 12 V. Calculate the energy stored.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    W = ½CV²
+                </p>
+
+                <p>
+                    W = ½ × 220 × 10⁻⁶ × 12²
+                </p>
+
+                <p>
+                    <strong>W = 0.0158 J</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. A charged particle enters a magnetic field
+                perpendicular to the field. State the equation
+                for the magnetic force.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    F = BQv sin θ
+                </p>
+
+                <p>
+                    Since θ = 90°, sin θ = 1, so:
+                </p>
+
+                <p>
+                    <strong>F = BQv</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. Explain why a charged particle moving perpendicular
+                to a uniform magnetic field can follow a circular path.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    The magnetic force acts perpendicular to the particle's
+                    velocity and therefore changes the direction of its
+                    velocity without changing its speed. The force acts
+                    towards the centre of the circular path and provides
+                    the centripetal force.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. Explain why large-angle alpha scattering provided
+                evidence for a small, dense nucleus.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Most alpha particles passed through the atom with
+                    little deflection, showing that most of the atom is
+                    empty space. A small fraction were strongly deflected,
+                    showing that positive charge and most of the mass are
+                    concentrated in a small region: the nucleus.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. State the quark composition of a proton and a neutron.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Proton = uud
+                </p>
+
+                <p>
+                    Neutron = udd
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. Explain how conservation laws can be used to determine
+                whether a particle interaction is possible.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    The relevant quantities must have the same total value
+                    before and after the interaction. These include charge,
+                    energy, momentum, baryon number and lepton number.
+                    If a required conservation law is violated, the
+                    proposed interaction is not possible.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. A particle has momentum 3.0 × 10⁻²⁰ kg m s⁻¹ and
+                enters a magnetic field of 0.50 T. Its charge magnitude
+                is 1.60 × 10⁻¹⁹ C. Calculate the radius of its path.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    p = BQr
+                </p>
+
+                <p>
+                    r = p / BQ
+                </p>
+
+                <p>
+                    r =
+                    (3.0 × 10⁻²⁰) /
+                    (0.50 × 1.60 × 10⁻¹⁹)
+                </p>
+
+                <p>
+                    <strong>r = 0.375 m</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 4 Key Equations</h2>
+
+        <div class="formula">
+            Impulse = FΔt = Δp
+        </div>
+
+        <div class="formula">
+            E<sub>k</sub> = p² / 2m
+        </div>
+
+        <div class="formula">
+            v = ωr
+        </div>
+
+        <div class="formula">
+            a = v² / r = rω²
+        </div>
+
+        <div class="formula">
+            F = mv² / r = mrω²
+        </div>
+
+        <div class="formula">
+            E = F / Q
+        </div>
+
+        <div class="formula">
+            F = Q₁Q₂ / (4πε₀r²)
+        </div>
+
+        <div class="formula">
+            E = Q / (4πε₀r²)
+        </div>
+
+        <div class="formula">
+            C = Q / V
+        </div>
+
+        <div class="formula">
+            W = ½CV²
+        </div>
+
+        <div class="formula">
+            τ = RC
+        </div>
+
+        <div class="formula">
+            F = BQv sin θ
+        </div>
+
+        <div class="formula">
+            F = BIl sin θ
+        </div>
+
+        <div class="formula">
+            E = −N dφ/dt
+        </div>
+
+        <div class="formula">
+            p = BQr
+        </div>
+
+        <div class="formula">
+            ΔE = Δmc²
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="physics.html" class="button">
+        ← Back to Physics
+    </a>
+
+    <a href="index.html" class="button">
+        Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
