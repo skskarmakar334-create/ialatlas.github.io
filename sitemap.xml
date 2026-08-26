@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
@@ -6,11 +7,7 @@
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mathematics.html</loc>
-    </url>
-
-    <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/algebra-functions.html</loc>
     </url>
 
     <url>
@@ -18,19 +15,27 @@
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/statistics.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/chemistry-1.html</loc>
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/chemistry-2.html</loc>
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/pure-mathematics.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/chemistry-3.html</loc>
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/algebra-functions.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/chemistry-4.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/chemistry-5.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/chemistry-6.html</loc>
     </url>
 
     <url>
@@ -42,15 +47,47 @@
     </url>
 
     <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/index.html</loc>
+    </url>
+
+    <url>
         <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/integration.html</loc>
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/sequences-series.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mathematics.html</loc>
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/trigonometry.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-1.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-2.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-3.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-centres-of-mass.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-collisions.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-dynamics.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-further-kinematics.html</loc>
     </url>
 
     <url>
@@ -58,7 +95,7 @@
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-dynamics.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-models.html</loc>
     </url>
 
     <url>
@@ -70,11 +107,71 @@
     </url>
 
     <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-statics-rigid-bodies.html</loc>
+    </url>
+
+    <url>
         <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-vectors.html</loc>
     </url>
 
     <url>
-        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-models.html</loc>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/mechanics-work-and-energy.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics-1.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics-2.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics-3.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics-4.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics-5.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/physics-6.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/pure-mathematics.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/sequences-series.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/statistics.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/statistics-1.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/statistics-2.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/statistics-3.html</loc>
+    </url>
+
+    <url>
+        <loc>https://skskarmakar334-create.github.io/ialatlas.github.io/trigonometry.html</loc>
     </url>
 
 </urlset>
