@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics Unit 6 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 6 — Practical Skills in Physics II. Full lessons, experimental techniques, data analysis, uncertainties and mixed practice.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .tip {
+            background: #f1f8ff;
+            border: 1px solid #cfe9fb;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .warning {
+            background: #fff8e8;
+            border-left: 5px solid #f0ad4e;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="physics.html">
+        ← Physics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 6
+    </p>
+
+    <h1>
+        Practical Skills <span>in Physics II</span>
+    </h1>
+
+    <p>
+        Develop the experimental skills needed to plan investigations,
+        collect reliable data, analyse results, evaluate experiments
+        and draw evidence-based conclusions.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">UNIT OVERVIEW</p>
+
+        <h2>Practical Skills in Physics II</h2>
+
+        <p>
+            Unit 6 assesses practical knowledge and understanding
+            developed while studying Units 4 and 5. The focus is not
+            simply on carrying out an experiment, but on understanding
+            how experiments are designed, measured, analysed and evaluated.
+        </p>
+
+        <div class="definition">
+
+            <strong>Core idea:</strong>
+
+            <p>
+                A good experimental investigation connects a clear aim,
+                suitable variables, reliable measurements, appropriate
+                analysis and a justified conclusion.
+            </p>
+
+        </div>
+
+        <h3>Key areas</h3>
+
+        <ul>
+
+            <li>Planning experiments</li>
+
+            <li>Experimental techniques</li>
+
+            <li>Measurements and units</li>
+
+            <li>Uncertainties and errors</li>
+
+            <li>Data processing</li>
+
+            <li>Graphs and gradients</li>
+
+            <li>Logarithmic graphs</li>
+
+            <li>Identifying relationships</li>
+
+            <li>Evaluation and improvements</li>
+
+            <li>Drawing conclusions</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- PLANNING -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Planning an Experiment</h2>
+
+        <p>
+            A successful investigation begins with a clear experimental
+            plan. The plan should allow the relationship between relevant
+            variables to be investigated quantitatively.
+        </p>
+
+        <h3>Experimental Aim</h3>
+
+        <p>
+            The aim should clearly state what relationship or physical
+            quantity is being investigated.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Example</p>
+
+            <p>
+                Investigate how the period of a pendulum depends on its length.
+            </p>
+
+        </div>
+
+        <h3>Independent Variable</h3>
+
+        <p>
+            The independent variable is the quantity deliberately changed
+            by the experimenter.
+        </p>
+
+        <h3>Dependent Variable</h3>
+
+        <p>
+            The dependent variable is the quantity measured in response
+            to the independent variable.
+        </p>
+
+        <h3>Control Variables</h3>
+
+        <p>
+            Control variables are quantities that should be kept constant
+            so that they do not affect the relationship being investigated.
+        </p>
+
+        <div class="tip">
+
+            <strong>Exam tip:</strong>
+
+            <p>
+                When planning, always identify what you change,
+                what you measure and what must remain constant.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- VARIABLES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Variables and Experimental Design</h2>
+
+        <p>
+            The design of an experiment should allow the effect of one
+            variable on another to be investigated fairly.
+        </p>
+
+        <h3>Range of Values</h3>
+
+        <p>
+            The independent variable should normally be varied over a
+            sufficiently large range to make the relationship clear.
+        </p>
+
+        <h3>Repeated Measurements</h3>
+
+        <p>
+            Repeating measurements can help identify random variation
+            and improve confidence in the measured value.
+        </p>
+
+        <h3>Mean Measurements</h3>
+
+        <p>
+            If repeated measurements are appropriate, a mean can be used
+            to represent the measurements.
+        </p>
+
+        <div class="formula">
+            Mean = Sum of measurements / Number of measurements
+        </div>
+
+        <h3>Anomalous Results</h3>
+
+        <p>
+            An anomalous result is a measurement that does not fit the
+            general pattern of the other results.
+        </p>
+
+        <p>
+            Anomalies should not automatically be removed. There should
+            be a justified reason for treating a result as anomalous.
+        </p>
+
+    </section>
+
+
+    <!-- MEASUREMENTS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Measurements and Units</h2>
+
+        <p>
+            Accurate recording of physical quantities is essential in
+            experimental physics.
+        </p>
+
+        <h3>SI Units</h3>
+
+        <ul>
+
+            <li>Length — metre (m)</li>
+
+            <li>Mass — kilogram (kg)</li>
+
+            <li>Time — second (s)</li>
+
+            <li>Current — ampere (A)</li>
+
+            <li>Temperature — kelvin (K)</li>
+
+        </ul>
+
+        <h3>Prefixes</h3>
+
+        <p>
+            Experimental measurements may involve a wide range of scales.
+            Values should be converted consistently when required.
+        </p>
+
+        <ul>
+
+            <li>giga = 10⁹</li>
+
+            <li>mega = 10⁶</li>
+
+            <li>kilo = 10³</li>
+
+            <li>centi = 10⁻²</li>
+
+            <li>milli = 10⁻³</li>
+
+            <li>micro = 10⁻⁶</li>
+
+            <li>nano = 10⁻⁹</li>
+
+        </ul>
+
+        <div class="warning">
+
+            <strong>Remember:</strong>
+
+            <p>
+                Always include units in tables, calculations and graphs
+                where appropriate.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- UNCERTAINTIES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Uncertainties</h2>
+
+        <p>
+            Every experimental measurement has some uncertainty.
+            Understanding uncertainty is essential when evaluating
+            experimental results.
+        </p>
+
+        <h3>Absolute Uncertainty</h3>
+
+        <p>
+            Absolute uncertainty expresses the uncertainty in the same
+            units as the measured quantity.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Example</p>
+
+            <p>
+                A length is measured as 20.0 cm with an uncertainty of
+                ±0.1 cm.
+            </p>
+
+        </div>
+
+        <h3>Percentage Uncertainty</h3>
+
+        <div class="formula">
+            Percentage uncertainty = (Absolute uncertainty / measured value) × 100%
+        </div>
+
+        <h3>Compound Percentage Uncertainty</h3>
+
+        <p>
+            When quantities are multiplied, divided or raised to powers,
+            percentage uncertainties can be combined according to the
+            mathematical relationship.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Example</p>
+
+            <p>
+                If a quantity is calculated from two measured quantities
+                that are multiplied together, the percentage uncertainties
+                are added.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RANDOM AND SYSTEMATIC -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Random and Systematic Errors</h2>
+
+        <h3>Random Errors</h3>
+
+        <p>
+            Random errors cause measurements to vary unpredictably
+            around a value.
+        </p>
+
+        <p>
+            Repeating measurements and calculating a mean can reduce
+            the effect of random variation.
+        </p>
+
+        <h3>Systematic Errors</h3>
+
+        <p>
+            Systematic errors produce a consistent shift in measurements.
+        </p>
+
+        <p>
+            Repeating the measurement does not necessarily remove
+            a systematic error.
+        </p>
+
+        <div class="definition">
+
+            <strong>Important distinction:</strong>
+
+            <p>
+                Random errors mainly affect precision, while systematic
+                errors can affect the accuracy of measurements.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRECISION ACCURACY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Accuracy, Precision and Sensitivity</h2>
+
+        <h3>Accuracy</h3>
+
+        <p>
+            Accuracy describes how close a measurement is to the accepted
+            or true value.
+        </p>
+
+        <h3>Precision</h3>
+
+        <p>
+            Precision describes how closely repeated measurements agree
+            with one another.
+        </p>
+
+        <h3>Sensitivity</h3>
+
+        <p>
+            Sensitivity describes the ability of an instrument or method
+            to detect small changes in the quantity being measured.
+        </p>
+
+        <div class="tip">
+
+            <strong>Exam language:</strong>
+
+            <p>
+                Do not use accuracy and precision as interchangeable terms.
+                They describe different aspects of measurement quality.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICAL TECHNIQUES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Experimental Techniques</h2>
+
+        <p>
+            Unit 6 can draw on practical techniques developed while
+            studying the experimental content of Units 4 and 5.
+        </p>
+
+        <h3>General Good Practice</h3>
+
+        <ul>
+
+            <li>Use suitable measuring instruments.</li>
+
+            <li>Check equipment before taking measurements.</li>
+
+            <li>Record measurements consistently.</li>
+
+            <li>Use an appropriate range of values.</li>
+
+            <li>Repeat measurements where appropriate.</li>
+
+            <li>Control relevant variables.</li>
+
+            <li>Record observations clearly.</li>
+
+            <li>Use appropriate safety precautions.</li>
+
+        </ul>
+
+        <h3>Improving Measurements</h3>
+
+        <p>
+            Measurements can often be improved by choosing an appropriate
+            instrument, increasing the scale of the measurement, repeating
+            readings or using a more suitable experimental arrangement.
+        </p>
+
+    </section>
+
+
+    <!-- TABLES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Recording Experimental Data</h2>
+
+        <p>
+            Experimental results should be recorded in a clear table
+            before detailed analysis is performed.
+        </p>
+
+        <h3>Good Data Tables</h3>
+
+        <ul>
+
+            <li>Give each quantity a clear heading.</li>
+
+            <li>Include units in the headings.</li>
+
+            <li>Use consistent decimal places where appropriate.</li>
+
+            <li>Keep measured and calculated values clearly identifiable.</li>
+
+            <li>Record enough significant figures for the experiment.</li>
+
+        </ul>
+
+        <div class="example">
+
+            <p class="example-title">Example table structure</p>
+
+            <p>
+                Length / m &nbsp;&nbsp;&nbsp;&nbsp; Time / s
+            </p>
+
+            <p>
+                0.20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.91
+            </p>
+
+            <p>
+                0.30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.10
+            </p>
+
+            <p>
+                0.40 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.27
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GRAPHS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 09</p>
+
+        <h2>Drawing and Using Graphs</h2>
+
+        <p>
+            Graphs are one of the most important tools for analysing
+            experimental relationships.
+        </p>
+
+        <h3>Choosing Axes</h3>
+
+        <p>
+            The independent variable is normally placed on the horizontal
+            axis and the dependent variable on the vertical axis.
+        </p>
+
+        <h3>Graph Requirements</h3>
+
+        <ul>
+
+            <li>Label both axes.</li>
+
+            <li>Include units.</li>
+
+            <li>Use an appropriate scale.</li>
+
+            <li>Use the available graph space effectively.</li>
+
+            <li>Plot points accurately.</li>
+
+            <li>Draw a suitable line or curve of best fit.</li>
+
+        </ul>
+
+        <h3>Gradient</h3>
+
+        <p>
+            The gradient of a graph can be used to determine a physical
+            constant or establish a mathematical relationship.
+        </p>
+
+        <div class="formula">
+            Gradient = Change in y / Change in x
+        </div>
+
+        <div class="tip">
+
+            <strong>Large triangle method:</strong>
+
+            <p>
+                When finding a gradient from a best-fit line, use a large
+                triangle rather than a tiny triangle to reduce the effect
+                of drawing and reading uncertainty.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOG GRAPHS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 10</p>
+
+        <h2>Logarithmic Graphs</h2>
+
+        <p>
+            Log graphs can be used to investigate relationships that are
+            not directly linear.
+        </p>
+
+        <h3>Power Relationships</h3>
+
+        <p>
+            Suppose two variables follow a relationship of the form:
+        </p>
+
+        <div class="formula">
+            y = axⁿ
+        </div>
+
+        <p>
+            Taking logarithms gives:
+        </p>
+
+        <div class="formula">
+            log(y) = log(a) + n log(x)
+        </div>
+
+        <p>
+            Therefore, plotting log(y) against log(x) produces a straight
+            line when the power relationship is valid.
+        </p>
+
+        <h3>Finding the Power</h3>
+
+        <p>
+            The gradient of the log-log graph gives the power n.
+        </p>
+
+        <div class="formula">
+            Gradient = n
+        </div>
+
+        <h3>Finding the Constant</h3>
+
+        <p>
+            The intercept can be used to determine the constant a.
+        </p>
+
+        <div class="formula">
+            Intercept = log(a)
+        </div>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Unit 6 expects students to be comfortable using graphs
+                to determine relationships and constants, including
+                logarithmic graphs.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RELATIONSHIPS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 11</p>
+
+        <h2>Determining Relationships</h2>
+
+        <p>
+            Experimental data can be used to determine how one physical
+            quantity depends on another.
+        </p>
+
+        <h3>Linear Relationship</h3>
+
+        <div class="formula">
+            y = mx + c
+        </div>
+
+        <p>
+            The gradient gives m and the vertical intercept gives c.
+        </p>
+
+        <h3>Direct Proportionality</h3>
+
+        <div class="formula">
+            y ∝ x
+        </div>
+
+        <p>
+            A graph through the origin supports a direct proportional
+            relationship.
+        </p>
+
+        <h3>Power Relationship</h3>
+
+        <div class="formula">
+            y ∝ xⁿ
+        </div>
+
+        <p>
+            A log-log graph can be used to determine the value of n.
+        </p>
+
+    </section>
+
+
+    <!-- DATA ANALYSIS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 12</p>
+
+        <h2>Data Analysis</h2>
+
+        <p>
+            Experimental analysis involves converting raw measurements
+            into useful physical information.
+        </p>
+
+        <h3>Calculations</h3>
+
+        <p>
+            Calculations should use appropriate equations and maintain
+            consistent units.
+        </p>
+
+        <h3>Significant Figures</h3>
+
+        <p>
+            Final answers should normally be given to an appropriate
+            number of significant figures based on the precision of
+            the measurements.
+        </p>
+
+        <h3>Patterns and Trends</h3>
+
+        <p>
+            Experimental data should be examined for patterns such as
+            proportionality, linearity, curves, anomalies and changes
+            in gradient.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Example</p>
+
+            <p>
+                If doubling x approximately doubles y, the results may
+                provide evidence for a direct proportional relationship.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVALUATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 13</p>
+
+        <h2>Evaluating an Experiment</h2>
+
+        <p>
+            Evaluation requires more than saying that an experiment
+            was "good" or "bad". The evaluation should be connected
+            to evidence from the experiment.
+        </p>
+
+        <h3>Sources of Error</h3>
+
+        <p>
+            Identify realistic sources of uncertainty or error that
+            could affect the measurements.
+        </p>
+
+        <h3>Limitations</h3>
+
+        <p>
+            Consider limitations of the apparatus, method, measurement
+            range and experimental design.
+        </p>
+
+        <h3>Improvements</h3>
+
+        <p>
+            Improvements should directly address an identified limitation.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Weak evaluation</p>
+
+            <p>
+                "Use better equipment."
+            </p>
+
+            <p class="example-title">Better evaluation</p>
+
+            <p>
+                "Use a digital timer with a smaller measurement uncertainty
+                to reduce uncertainty in the measured period."
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONCLUSIONS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 14</p>
+
+        <h2>Drawing Conclusions</h2>
+
+        <p>
+            A conclusion should answer the original experimental aim
+            using evidence obtained from the data.
+        </p>
+
+        <h3>A Strong Conclusion</h3>
+
+        <ul>
+
+            <li>States the relationship found.</li>
+
+            <li>Uses quantitative evidence where appropriate.</li>
+
+            <li>Refers to the graph or calculated value.</li>
+
+            <li>Addresses the original aim.</li>
+
+            <li>Acknowledges uncertainty where relevant.</li>
+
+        </ul>
+
+        <div class="definition">
+
+            <strong>Remember:</strong>
+
+            <p>
+                A conclusion should be based on the experimental evidence,
+                not simply on what theory predicts.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRECISION OF RESULTS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 15</p>
+
+        <h2>Comparing Experimental and Accepted Values</h2>
+
+        <p>
+            Experimental results can be compared with accepted or
+            theoretical values.
+        </p>
+
+        <h3>Percentage Difference</h3>
+
+        <div class="formula">
+            Percentage difference = |Experimental − Accepted| / Accepted × 100%
+        </div>
+
+        <p>
+            A small percentage difference may indicate good agreement,
+            but the size of experimental uncertainty must also be considered.
+        </p>
+
+        <div class="tip">
+
+            <strong>Exam tip:</strong>
+
+            <p>
+                Do not claim that an experimental result is wrong merely
+                because it differs slightly from an accepted value.
+                Consider uncertainty.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 6 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. State the difference between an independent variable
+                and a dependent variable.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    The independent variable is deliberately changed,
+                    while the dependent variable is measured in response.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. Explain why repeated measurements can be useful.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Repeated measurements can reveal random variation,
+                    allow a mean to be calculated and increase confidence
+                    in the measured value.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A length is measured as 50.0 cm ± 0.5 cm.
+                Calculate the percentage uncertainty.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Percentage uncertainty = (0.5 / 50.0) × 100
+                    = 1.0%.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. Explain the difference between accuracy and precision.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Accuracy describes how close a measurement is to the
+                    accepted value. Precision describes how closely
+                    repeated measurements agree with each other.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. Why is a large triangle normally used when calculating
+                the gradient of a best-fit line?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    A large triangle reduces the relative effect of small
+                    uncertainties in reading the coordinates and therefore
+                    gives a more reliable gradient.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. A relationship is believed to have the form
+                y = axⁿ. Which graph can be used to determine n?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Plot log(y) against log(x). The gradient of the
+                    straight-line graph gives n.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. State two features of a well-designed experimental table.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    For example, quantities should have clear headings
+                    with appropriate units, and measurements should be
+                    recorded consistently.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. Give one way to reduce the effect of random error.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Repeat measurements and use an appropriate mean.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. Explain why repeating a measurement does not necessarily
+                remove systematic error.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    A systematic error produces a consistent shift in the
+                    measurements, so repeating the same flawed measurement
+                    does not remove the underlying bias.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. What should a good experimental conclusion contain?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    It should answer the original aim and use quantitative
+                    evidence from the experiment, while considering
+                    uncertainty where appropriate.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 6 Key Ideas</h2>
+
+        <div class="formula">
+            Percentage uncertainty = (Absolute uncertainty / measured value) × 100%
+        </div>
+
+        <div class="formula">
+            Gradient = Change in y / Change in x
+        </div>
+
+        <div class="formula">
+            y = mx + c
+        </div>
+
+        <div class="formula">
+            y = axⁿ
+        </div>
+
+        <div class="formula">
+            log(y) = log(a) + n log(x)
+        </div>
+
+        <div class="formula">
+            Gradient of log(y) against log(x) = n
+        </div>
+
+        <div class="formula">
+            Percentage difference = |Experimental − Accepted| / Accepted × 100%
+        </div>
+
+        <div class="definition">
+
+            <strong>Unit 6 mindset:</strong>
+
+            <p>
+                Plan → Measure → Record → Process → Graph → Analyse
+                → Evaluate → Conclude.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="physics.html" class="button">
+        ← Back to Physics
+    </a>
+
+    <a href="index.html" class="button">
+        Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
