@@ -1,15 +1,85 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>IAL ATLAS | Edexcel IAL Notes Hub</title>
+    <title>IAL ATLAS | Edexcel IAL Notes, Revision & Study Resources</title>
 
     <meta name="description"
-          content="IAL ATLAS — free, student-friendly revision resources for Edexcel International A Levels.">
+          content="IAL ATLAS is a free, student-built platform for Edexcel International A Levels, with clear notes, formulas, worked examples and exam-focused resources for Mathematics, Physics and Chemistry.">
+
+    <meta name="keywords"
+          content="IAL ATLAS, Edexcel IAL, International A Level, Edexcel International A Levels, Edexcel Mathematics, Edexcel Physics, Edexcel Chemistry, IAL notes, IAL revision">
+
+    <meta name="author" content="Shuvojit Karmakar">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+          href="https://skskarmakar334-create.github.io/ialatlas.github.io/">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title"
+          content="IAL ATLAS | Edexcel IAL Notes & Revision Resources">
+
+    <meta property="og:description"
+          content="Free, student-built revision resources for Edexcel International A Levels — Mathematics, Physics and Chemistry.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url"
+          content="https://skskarmakar334-create.github.io/ialatlas.github.io/">
+
+    <meta property="og:image"
+          content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
+
+    <meta property="og:site_name" content="IAL ATLAS">
+
+    <!-- Twitter / Social Preview -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="IAL ATLAS | Edexcel IAL Notes & Revision Resources">
+
+    <meta name="twitter:description"
+          content="Free, student-built Edexcel International A Level resources for Mathematics, Physics and Chemistry.">
+
+    <meta name="twitter:image"
+          content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
+
+
+    <!-- Structured Data -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "IAL ATLAS",
+        "url": "https://skskarmakar334-create.github.io/ialatlas.github.io/",
+        "logo": "https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png",
+        "description": "A free, student-built learning platform for Edexcel International A Levels.",
+        "founder": {
+            "@type": "Person",
+            "name": "Shuvojit Karmakar"
+        },
+        "educationalCredentialAwarded": "Edexcel International A Level",
+        "knowsAbout": [
+            "Edexcel International A Level Mathematics",
+            "Edexcel International A Level Physics",
+            "Edexcel International A Level Chemistry"
+        ]
+    }
+    </script>
+
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -32,28 +102,23 @@
         }
 
         .logo-image {
-    height: 55px;
-    width: auto;
-    display: block;
-}
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 25px;
             font-size: 15px;
+            transition: color 0.2s ease;
         }
 
-      nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 15px;
-    transition: color 0.2s ease;
-}
+        nav a:hover {
+            color: #4db8ff;
+        }
 
-nav a:hover {
-    color: #4db8ff;
-}
         .hero {
             background:
                 radial-gradient(circle at 20% 20%, rgba(50,169,232,0.18), transparent 30%),
@@ -131,8 +196,6 @@ nav a:hover {
             border-radius: 30px;
             background: rgba(255,255,255,0.04);
         }
-       
-        
 
         .button {
             display: inline-block;
@@ -147,6 +210,7 @@ nav a:hover {
         .button:hover {
             background: #168dca;
         }
+
         .quick-stats {
             background: white;
             display: grid;
@@ -187,6 +251,7 @@ nav a:hover {
             font-size: 13px;
             color: #68778d;
         }
+
         .section {
             max-width: 1100px;
             margin: auto;
@@ -211,7 +276,7 @@ nav a:hover {
             gap: 25px;
         }
 
-              .card {
+        .card {
             background: white;
             padding: 40px 28px;
             border-radius: 18px;
@@ -241,7 +306,7 @@ nav a:hover {
             line-height: 1.6;
         }
 
-                .about {
+        .about {
             background: white;
             text-align: center;
         }
@@ -253,6 +318,7 @@ nav a:hover {
             line-height: 1.8;
             font-size: 17px;
         }
+
         .why-ial {
             background: #f5f8fc;
             text-align: center;
@@ -321,6 +387,7 @@ nav a:hover {
             line-height: 1.7;
             font-size: 15px;
         }
+
         .founder {
             background: white;
             text-align: center;
@@ -386,7 +453,7 @@ nav a:hover {
             font-size: 15px;
         }
 
-               footer {
+        footer {
             background: #071b36;
             color: #b9c9dc;
             text-align: center;
@@ -457,6 +524,7 @@ nav a:hover {
         }
 
         @media (max-width: 750px) {
+
             .hero h1 {
                 font-size: 44px;
             }
@@ -468,7 +536,8 @@ nav a:hover {
             nav {
                 display: none;
             }
-                        .founder h2 {
+
+            .founder h2 {
                 font-size: 38px;
             }
 
@@ -476,6 +545,7 @@ nav a:hover {
                 padding: 22px;
                 font-size: 18px;
             }
+
             .why-ial h2 {
                 font-size: 36px;
             }
@@ -483,10 +553,12 @@ nav a:hover {
             .why-grid {
                 grid-template-columns: 1fr;
             }
+
             .footer-links {
-        gap: 18px;
-    }  
-                        .quick-stats {
+                gap: 18px;
+            }
+
+            .quick-stats {
                 grid-template-columns: 1fr;
                 margin: 0 20px;
             }
@@ -500,26 +572,39 @@ nav a:hover {
                 border-bottom: none;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <header>
-    <a href="#">
-    <img src="logo.png" alt="IAL ATLAS" class="logo-image">
-</a>
-   <nav>
-    <a href="#subjects">Subjects</a>
-    <a href="#about">Founder</a>
-</nav>
+
+    <a href="index.html">
+        <img src="logo.png" alt="IAL ATLAS" class="logo-image">
+    </a>
+
+    <nav>
+
+        <a href="#subjects">Subjects</a>
+
+        <a href="#about">Founder</a>
+
+    </nav>
+
 </header>
+
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <p class="hero-label">EDEXCEL INTERNATIONAL A LEVELS</p>
+        <p class="hero-label">
+            EDEXCEL INTERNATIONAL A LEVELS
+        </p>
 
         <h1>
             Learn without<br>
@@ -555,6 +640,8 @@ nav a:hover {
     </div>
 
 </section>
+
+
 <section class="quick-stats">
 
     <div class="quick-stat">
@@ -588,46 +675,73 @@ nav a:hover {
     </div>
 
 </section>
+
+
 <section class="section" id="subjects">
 
-   <h2>Explore your subjects.</h2>
+    <h2>
+        Explore your subjects.
+    </h2>
 
-<p class="section-intro">
-    Everything you need to understand the syllabus, practise problems,
-    and prepare for your exams.
-</p>
-    
+    <p class="section-intro">
+        Everything you need to understand the syllabus, practise problems,
+        and prepare for your exams.
+    </p>
+
     <div class="subjects">
-    <a href="mathematics.html" class="card" style="text-decoration: none; color: inherit; display: block;">
-    <div class="icon">📐</div>
-    <h3>Mathematics</h3>
-    <p>
-        Topic notes, formulas, worked examples and revision resources.
-    </p>
-</a>
 
-       <a href="physics.html" class="card"
-   style="text-decoration: none; color: inherit; display: block;">
-    <div class="icon">⚛️</div>
-    <h3>Physics</h3>
-    <p>
-        Concept explanations, equations, examples and exam-focused revision.
-    </p>
-</a>
 
-       <a href="chemistry.html" class="card"
-   style="text-decoration: none; color: inherit; display: block;">
-    <div class="icon">🧪</div>
-    <h3>Chemistry</h3>
-    <p>
-        Clear explanations, reactions, calculations and revision guides.
-    </p>
-</a>
+        <a href="mathematics.html"
+           class="card"
+           style="text-decoration: none; color: inherit; display: block;">
+
+            <div class="icon">📐</div>
+
+            <h3>Mathematics</h3>
+
+            <p>
+                Topic notes, formulas, worked examples and revision resources.
+            </p>
+
+        </a>
+
+
+        <a href="physics.html"
+           class="card"
+           style="text-decoration: none; color: inherit; display: block;">
+
+            <div class="icon">⚛️</div>
+
+            <h3>Physics</h3>
+
+            <p>
+                Concept explanations, equations, examples and exam-focused revision.
+            </p>
+
+        </a>
+
+
+        <a href="chemistry.html"
+           class="card"
+           style="text-decoration: none; color: inherit; display: block;">
+
+            <div class="icon">🧪</div>
+
+            <h3>Chemistry</h3>
+
+            <p>
+                Clear explanations, reactions, calculations and revision guides.
+            </p>
+
+        </a>
+
 
     </div>
 
 </section>
-    <section class="section why-ial">
+
+
+<section class="section why-ial">
 
     <p class="why-label">
         WHY IAL ATLAS?
@@ -644,6 +758,7 @@ nav a:hover {
 
     <div class="why-grid">
 
+
         <div class="why-card">
 
             <div class="why-icon">📖</div>
@@ -656,6 +771,7 @@ nav a:hover {
             </p>
 
         </div>
+
 
         <div class="why-card">
 
@@ -670,6 +786,7 @@ nav a:hover {
 
         </div>
 
+
         <div class="why-card">
 
             <div class="why-icon">🎯</div>
@@ -683,9 +800,11 @@ nav a:hover {
 
         </div>
 
+
     </div>
 
 </section>
+
 
 <section class="section founder" id="about">
 
@@ -732,15 +851,20 @@ nav a:hover {
         </p>
 
         <div class="founder-signature">
+
             <strong>Built for students, by a student.</strong>
+
             <br>
+
             <span>— Shuvojit Karmakar</span>
+
         </div>
 
     </div>
 
 </section>
-    
+
+
 <footer>
 
     <div class="footer-content">
@@ -757,9 +881,13 @@ nav a:hover {
         </p>
 
         <div class="footer-links">
+
             <a href="#subjects">Subjects</a>
+
             <a href="#about">Founder</a>
+
             <a href="#">Back to top ↑</a>
+
         </div>
 
         <div class="footer-line"></div>
@@ -775,5 +903,9 @@ nav a:hover {
     </div>
 
 </footer>
+
+
 </body>
 </html>
+```
+
