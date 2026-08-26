@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Centres of Mass | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Mechanics 2 Centres of Mass resources.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-2.html">
+        ← Mechanics 2
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 2 • TOPIC 02
+    </p>
+
+    <h1>
+        Centres of Mass
+    </h1>
+
+    <p>
+        Learn how the centre of mass of particles and systems
+        can be found and used in mechanics problems.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 01
+        </p>
+
+        <h2>
+            What is the Centre of Mass?
+        </h2>
+
+        <p>
+            The centre of mass is the point at which the mass of a
+            system can be considered to be concentrated for many
+            mechanics calculations.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea</strong>
+
+            <p>
+                For particles arranged along a straight line,
+                the centre of mass depends on both the masses
+                and their positions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 02
+        </p>
+
+        <h2>
+            Two Particles
+        </h2>
+
+        <p>
+            Consider two particles of masses m₁ and m₂ at positions
+            x₁ and x₂ on a straight line.
+        </p>
+
+        <div class="formula">
+            x̄ = (m₁x₁ + m₂x₂) / (m₁ + m₂)
+        </div>
+
+        <p>
+            The formula gives the position of the centre of mass
+            measured from the chosen origin.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 03
+        </p>
+
+        <h2>
+            Example with Two Particles
+        </h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle of mass 2 kg is at x = 0 m and a particle
+                of mass 3 kg is at x = 5 m. Find the position of the
+                centre of mass.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    x̄ = (2 × 0 + 3 × 5) / (2 + 3)
+                </p>
+
+                <p>
+                    x̄ = 15 / 5
+                </p>
+
+                <p>
+                    <strong>x̄ = 3 m</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 04
+        </p>
+
+        <h2>
+            More Than Two Particles
+        </h2>
+
+        <p>
+            The same principle can be extended to any number of
+            particles.
+        </p>
+
+        <div class="formula">
+            x̄ = Σ(mx) / Σm
+        </div>
+
+        <p>
+            Multiply each mass by its position, add the results,
+            then divide by the total mass.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 05
+        </p>
+
+        <h2>
+            Centre of Mass in Two Dimensions
+        </h2>
+
+        <p>
+            For particles positioned in two dimensions, the centre
+            of mass can be found separately in the horizontal and
+            vertical directions.
+        </p>
+
+        <div class="formula">
+            x̄ = Σ(mx) / Σm
+        </div>
+
+        <div class="formula">
+            ȳ = Σ(my) / Σm
+        </div>
+
+        <p>
+            This allows the coordinates of the centre of mass
+            to be determined.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            WORKED EXAMPLE
+        </p>
+
+        <h2>
+            Three Particles
+        </h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                Three particles have masses 2 kg, 3 kg and 5 kg
+                at positions 1 m, 4 m and 7 m respectively.
+                Find the centre of mass.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Total mass = 2 + 3 + 5 = 10 kg
+                </p>
+
+                <p>
+                    Σ(mx) = (2 × 1) + (3 × 4) + (5 × 7)
+                </p>
+
+                <p>
+                    Σ(mx) = 2 + 12 + 35 = 49
+                </p>
+
+                <p>
+                    x̄ = 49 / 10
+                </p>
+
+                <p>
+                    <strong>x̄ = 4.9 m</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            PRACTICE
+        </p>
+
+        <h2>
+            Test Yourself
+        </h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. What does the centre of mass represent?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    It is the point at which the mass of a system
+                    can be considered concentrated for many calculations.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. Two particles of masses 2 kg and 4 kg are at
+                x = 0 m and x = 6 m. Find the centre of mass.
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    x̄ = (2 × 0 + 4 × 6) / (2 + 4)
+                </p>
+
+                <p>
+                    <strong>x̄ = 4 m</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. What must be done to find the centre of mass
+                of several particles?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    Calculate Σ(mx) and divide by the total mass Σm.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            QUICK REVIEW
+        </p>
+
+        <h2>
+            Remember These
+        </h2>
+
+        <div class="formula">
+            x̄ = Σ(mx) / Σm
+        </div>
+
+        <div class="formula">
+            ȳ = Σ(my) / Σm
+        </div>
+
+        <div class="formula">
+            Centre of mass depends on mass and position
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-2.html" class="button">
+        ← Back to Mechanics 2
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
