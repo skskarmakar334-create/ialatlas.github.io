@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statics of Rigid Bodies | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Mechanics 2 Statics of Rigid Bodies resources.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-2.html">
+        ← Mechanics 2
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 2 • TOPIC 05
+    </p>
+
+    <h1>
+        Statics of Rigid Bodies
+    </h1>
+
+    <p>
+        Learn how forces and moments act on rigid bodies
+        and how equilibrium can be analysed.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 01
+        </p>
+
+        <h2>
+            What is a Rigid Body?
+        </h2>
+
+        <p>
+            A rigid body is an object whose shape and size are
+            assumed not to change when forces act on it.
+        </p>
+
+        <div class="definition">
+
+            <strong>In mechanics:</strong>
+
+            <p>
+                A rigid body can experience forces and turning effects,
+                but its dimensions remain fixed.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 02
+        </p>
+
+        <h2>
+            Resultant Force
+        </h2>
+
+        <p>
+            For a rigid body to remain in equilibrium, the vector sum
+            of all forces acting on it must be zero.
+        </p>
+
+        <div class="formula">
+            Resultant force = 0
+        </div>
+
+        <p>
+            This means that the horizontal and vertical components
+            of the forces must balance.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 03
+        </p>
+
+        <h2>
+            Moments
+        </h2>
+
+        <p>
+            A force can cause a rigid body to rotate about a point.
+            The turning effect of a force is called its moment.
+        </p>
+
+        <div class="formula">
+            Moment = Force × Perpendicular distance
+        </div>
+
+        <p>
+            The unit of moment is newton-metres (N m).
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 04
+        </p>
+
+        <h2>
+            Equilibrium of a Rigid Body
+        </h2>
+
+        <p>
+            A rigid body is in equilibrium when there is no
+            translational or rotational acceleration.
+        </p>
+
+        <div class="definition">
+
+            <strong>Two important conditions:</strong>
+
+            <ul>
+
+                <li>The resultant force is zero.</li>
+
+                <li>The resultant moment about any point is zero.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="formula">
+            Sum of clockwise moments = Sum of anticlockwise moments
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 05
+        </p>
+
+        <h2>
+            Taking Moments About a Point
+        </h2>
+
+        <p>
+            Choosing a suitable point about which to take moments
+            can make a problem much easier.
+        </p>
+
+        <p>
+            Forces whose lines of action pass through the chosen
+            point have zero moment about that point.
+        </p>
+
+        <div class="definition">
+
+            <strong>Useful strategy:</strong>
+
+            <p>
+                Choose a point that eliminates one or more unknown
+                forces from the moment equation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 06
+        </p>
+
+        <h2>
+            Centre of Mass and Weight
+        </h2>
+
+        <p>
+            The weight of a rigid body acts vertically downward
+            through its centre of mass.
+        </p>
+
+        <div class="formula">
+            Weight = mg
+        </div>
+
+        <p>
+            When analysing moments, the perpendicular distance
+            from the centre of mass to the chosen point must be used.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            WORKED EXAMPLE
+        </p>
+
+        <h2>
+            Balancing Moments
+        </h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A force of 10 N acts at a perpendicular distance
+                of 2 m from a pivot. What force acting at a
+                perpendicular distance of 4 m would balance it?
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Clockwise moment = Anticlockwise moment
+                </p>
+
+                <p>
+                    10 × 2 = F × 4
+                </p>
+
+                <p>
+                    20 = 4F
+                </p>
+
+                <p>
+                    <strong>F = 5 N</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            PRACTICE
+        </p>
+
+        <h2>
+            Test Yourself
+        </h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. What are the two conditions required for a rigid
+                body to be in equilibrium?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    The resultant force must be zero and the
+                    resultant moment must be zero.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. Find the moment of a 15 N force acting at a
+                perpendicular distance of 3 m from a pivot.
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    Moment = 15 × 3
+                </p>
+
+                <p>
+                    <strong>Moment = 45 N m</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A 20 N force acts 2 m from a pivot. What force
+                acting 5 m from the pivot would balance it?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    20 × 2 = F × 5
+                </p>
+
+                <p>
+                    40 = 5F
+                </p>
+
+                <p>
+                    <strong>F = 8 N</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            QUICK REVIEW
+        </p>
+
+        <h2>
+            Remember These
+        </h2>
+
+        <div class="formula">
+            Resultant force = 0
+        </div>
+
+        <div class="formula">
+            Moment = Force × Perpendicular distance
+        </div>
+
+        <div class="formula">
+            Resultant moment = 0
+        </div>
+
+        <div class="formula">
+            Sum of clockwise moments = Sum of anticlockwise moments
+        </div>
+
+        <div class="formula">
+            Weight = mg
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-2.html" class="button">
+        ← Back to Mechanics 2
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
