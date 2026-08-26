@@ -1,0 +1,760 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statistics 1 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Statistics 1 resources.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="statistics.html">
+        ← Statistics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS • S1
+    </p>
+
+    <h1>
+        Statistics <span>1</span>
+    </h1>
+
+    <p>
+        Build a strong foundation in statistics through data,
+        probability, distributions, correlation and regression.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- DATA COLLECTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Data Collection</h2>
+
+        <p>
+            Statistics begins with collecting reliable data.
+            The method used to collect data can strongly affect
+            the conclusions that can be drawn.
+        </p>
+
+        <h3>Population and Sample</h3>
+
+        <p>
+            A population is the complete group being studied.
+            A sample is a smaller group selected from the population.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                A good sample should be representative of the population.
+            </p>
+
+        </div>
+
+        <h3>Types of Data</h3>
+
+        <ul>
+
+            <li>Primary data — collected directly for a particular investigation.</li>
+
+            <li>Secondary data — obtained from an existing source.</li>
+
+            <li>Discrete data — values that can be counted.</li>
+
+            <li>Continuous data — values measured on a continuous scale.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- SAMPLING -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Sampling Methods</h2>
+
+        <p>
+            Sampling methods determine how individuals are selected
+            from a population.
+        </p>
+
+        <h3>Simple Random Sampling</h3>
+
+        <p>
+            Every member of the population has an equal chance of
+            being selected.
+        </p>
+
+        <h3>Systematic Sampling</h3>
+
+        <p>
+            Individuals are selected at regular intervals from an
+            ordered population.
+        </p>
+
+        <h3>Stratified Sampling</h3>
+
+        <p>
+            The population is divided into groups called strata.
+            A sample is then taken from each stratum in proportion
+            to its size.
+        </p>
+
+        <h3>Quota Sampling</h3>
+
+        <p>
+            A fixed number of individuals are selected from different
+            categories until the required quota is reached.
+        </p>
+
+    </section>
+
+
+    <!-- DATA PRESENTATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Data Presentation</h2>
+
+        <p>
+            Data can be represented using tables and diagrams to make
+            patterns easier to identify.
+        </p>
+
+        <h3>Common Representations</h3>
+
+        <ul>
+
+            <li>Frequency tables</li>
+
+            <li>Bar charts</li>
+
+            <li>Histograms</li>
+
+            <li>Cumulative frequency diagrams</li>
+
+            <li>Box plots</li>
+
+        </ul>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                Histograms are used for continuous data and their
+                areas represent frequency.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUMMARY STATISTICS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Measures of Location and Spread</h2>
+
+        <h3>Mean</h3>
+
+        <p>
+            The mean is found by adding all observations and dividing
+            by the number of observations.
+        </p>
+
+        <div class="formula">
+            Mean = Σx / n
+        </div>
+
+        <h3>Median</h3>
+
+        <p>
+            The median is the middle value when the observations are
+            arranged in order.
+        </p>
+
+        <h3>Range</h3>
+
+        <div class="formula">
+            Range = Maximum − Minimum
+        </div>
+
+        <h3>Interquartile Range</h3>
+
+        <div class="formula">
+            IQR = Q₃ − Q₁
+        </div>
+
+    </section>
+
+
+    <!-- PROBABILITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Probability</h2>
+
+        <p>
+            Probability measures how likely an event is to occur.
+        </p>
+
+        <div class="formula">
+            0 ≤ P(A) ≤ 1
+        </div>
+
+        <h3>Complementary Events</h3>
+
+        <div class="formula">
+            P(A') = 1 − P(A)
+        </div>
+
+        <h3>Addition Rule</h3>
+
+        <div class="formula">
+            P(A ∪ B) = P(A) + P(B) − P(A ∩ B)
+        </div>
+
+        <h3>Independent Events</h3>
+
+        <div class="formula">
+            P(A ∩ B) = P(A)P(B)
+        </div>
+
+    </section>
+
+
+    <!-- DISCRETE DISTRIBUTIONS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Discrete Probability Distributions</h2>
+
+        <p>
+            A discrete random variable takes a countable set of possible
+            values.
+        </p>
+
+        <div class="definition">
+
+            <strong>Probability distribution:</strong>
+
+            <p>
+                The probabilities of all possible values must add to 1.
+            </p>
+
+        </div>
+
+        <div class="formula">
+            ΣP(X = x) = 1
+        </div>
+
+        <h3>Expected Value</h3>
+
+        <div class="formula">
+            E(X) = ΣxP(X = x)
+        </div>
+
+    </section>
+
+
+    <!-- BINOMIAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Binomial Distribution</h2>
+
+        <p>
+            The binomial distribution can be used when there are a fixed
+            number of independent trials, each with two possible outcomes.
+        </p>
+
+        <div class="formula">
+            P(X = r) = ⁿCᵣ pʳ(1 − p)ⁿ⁻ʳ
+        </div>
+
+        <h3>Conditions</h3>
+
+        <ul>
+
+            <li>Fixed number of trials.</li>
+
+            <li>Each trial has two possible outcomes.</li>
+
+            <li>The probability of success remains constant.</li>
+
+            <li>The trials are independent.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- CORRELATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Correlation and Regression</h2>
+
+        <p>
+            Correlation describes the strength and direction of a
+            linear relationship between two variables.
+        </p>
+
+        <h3>Correlation</h3>
+
+        <p>
+            A scatter diagram can be used to investigate correlation.
+        </p>
+
+        <ul>
+
+            <li>Positive correlation</li>
+
+            <li>Negative correlation</li>
+
+            <li>No correlation</li>
+
+        </ul>
+
+        <h3>Regression</h3>
+
+        <p>
+            A regression line can be used to model the relationship
+            between two variables and make predictions.
+        </p>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>S1 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. Explain the difference between a population and a sample.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    A population is the complete group being studied,
+                    while a sample is a subset selected from that population.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. Find the mean of 4, 7, 8, 11 and 15.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Mean = (4 + 7 + 8 + 11 + 15) / 5 = 9.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. If P(A) = 0.35, find P(A').
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    P(A') = 1 − 0.35 = 0.65.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. State the conditions required for a binomial model.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    There must be a fixed number of independent trials,
+                    two possible outcomes on each trial, and a constant
+                    probability of success.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. What does positive correlation mean?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    As one variable increases, the other variable tends
+                    to increase.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>S1 Key Ideas</h2>
+
+        <div class="formula">
+            Mean = Σx / n
+        </div>
+
+        <div class="formula">
+            IQR = Q₃ − Q₁
+        </div>
+
+        <div class="formula">
+            P(A') = 1 − P(A)
+        </div>
+
+        <div class="formula">
+            E(X) = ΣxP(X = x)
+        </div>
+
+        <div class="formula">
+            Binomial: fixed trials + two outcomes + constant p + independence
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="statistics.html" class="button">
+        ← Back to Statistics
+    </a>
+
+    <a href="mathematics.html" class="button">
+        Mathematics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
+```
