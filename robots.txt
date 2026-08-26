@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skskarmakar334-create.github.io/ialatlas.github.io/sitemap.xml
