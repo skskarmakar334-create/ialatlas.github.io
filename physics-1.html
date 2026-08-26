@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics 1 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 1 resources — Mechanics and Materials, worked examples, practical skills and mixed practice.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .practical {
+            background: #f4fbff;
+            border-left: 5px solid #168dca;
+            padding: 22px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .practical h3 {
+            margin-top: 0;
+            color: #168dca;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .tip {
+            background: #fff8e8;
+            border-left: 5px solid #e4a72c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="physics.html">
+        ← Physics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • WPH11
+    </p>
+
+    <h1>
+        Physics <span>1</span>
+    </h1>
+
+    <p>
+        Mechanics and Materials — build the foundations of
+        Edexcel International A Level Physics through clear
+        explanations, equations, worked examples and practice.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- MECHANICS INTRODUCTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PART 01</p>
+
+        <h2>Mechanics</h2>
+
+        <p>
+            Mechanics describes the motion of objects and the forces
+            responsible for changing that motion. It provides the
+            mathematical foundation for many areas of physics.
+        </p>
+
+        <div class="definition">
+
+            <strong>Core idea:</strong>
+
+            <p>
+                Motion is described using physical quantities such as
+                displacement, velocity and acceleration, while forces
+                explain how and why motion changes.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCALARS AND VECTORS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 01</p>
+
+        <h2>Scalars and Vectors</h2>
+
+        <p>
+            Physical quantities can be classified as either scalars
+            or vectors.
+        </p>
+
+        <h3>Scalars</h3>
+
+        <p>
+            A scalar has magnitude only.
+        </p>
+
+        <ul>
+
+            <li>Mass</li>
+
+            <li>Time</li>
+
+            <li>Distance</li>
+
+            <li>Speed</li>
+
+            <li>Energy</li>
+
+            <li>Temperature</li>
+
+        </ul>
+
+        <h3>Vectors</h3>
+
+        <p>
+            A vector has both magnitude and direction.
+        </p>
+
+        <ul>
+
+            <li>Displacement</li>
+
+            <li>Velocity</li>
+
+            <li>Acceleration</li>
+
+            <li>Force</li>
+
+            <li>Momentum</li>
+
+        </ul>
+
+        <div class="definition">
+
+            <strong>Remember:</strong>
+
+            <p>
+                Distance is a scalar, while displacement is a vector.
+                Speed is a scalar, while velocity is a vector.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 02</p>
+
+        <h2>Motion</h2>
+
+        <h3>Displacement</h3>
+
+        <p>
+            Displacement is the vector change in position of an object.
+        </p>
+
+        <h3>Velocity</h3>
+
+        <div class="formula">
+            v = Δs / Δt
+        </div>
+
+        <p>
+            Velocity is the rate of change of displacement.
+        </p>
+
+        <h3>Acceleration</h3>
+
+        <div class="formula">
+            a = Δv / Δt
+        </div>
+
+        <p>
+            Acceleration is the rate of change of velocity.
+        </p>
+
+        <h3>Motion Graphs</h3>
+
+        <ul>
+
+            <li>The gradient of a displacement-time graph gives velocity.</li>
+
+            <li>The gradient of a velocity-time graph gives acceleration.</li>
+
+            <li>The area under a velocity-time graph gives displacement.</li>
+
+        </ul>
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A car increases its velocity from 8 m s⁻¹ to
+                20 m s⁻¹ in 4 seconds. Find its acceleration.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    a = (20 − 8) / 4
+                </p>
+
+                <p>
+                    <strong>a = 3 m s⁻²</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUVAT -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 03</p>
+
+        <h2>Constant Acceleration</h2>
+
+        <p>
+            For motion with constant acceleration, the SUVAT equations
+            can be used.
+        </p>
+
+        <div class="formula">
+            v = u + at
+        </div>
+
+        <div class="formula">
+            s = ut + ½at²
+        </div>
+
+        <div class="formula">
+            v² = u² + 2as
+        </div>
+
+        <div class="formula">
+            s = ½(u + v)t
+        </div>
+
+        <div class="definition">
+
+            <strong>Symbols:</strong>
+
+            <p>
+                u = initial velocity, v = final velocity,
+                a = acceleration, s = displacement and t = time.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORCES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 04</p>
+
+        <h2>Forces</h2>
+
+        <p>
+            A force is an interaction that can change the motion or
+            shape of an object.
+        </p>
+
+        <h3>Newton's Laws</h3>
+
+        <p>
+            Newton's First Law states that an object remains at rest
+            or continues moving with constant velocity unless acted
+            upon by a resultant external force.
+        </p>
+
+        <p>
+            Newton's Second Law relates resultant force to the rate
+            of change of momentum. For constant mass:
+        </p>
+
+        <div class="formula">
+            F = ma
+        </div>
+
+        <p>
+            Newton's Third Law states that interacting bodies exert
+            equal and opposite forces on each other.
+        </p>
+
+        <h3>Weight</h3>
+
+        <div class="formula">
+            W = mg
+        </div>
+
+        <p>
+            Weight is the gravitational force acting on an object.
+        </p>
+
+        <h3>Free-Body Diagrams</h3>
+
+        <p>
+            A free-body diagram shows the forces acting on an object.
+            Always identify the direction and nature of each force.
+        </p>
+
+    </section>
+
+
+    <!-- MOMENTS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 05</p>
+
+        <h2>Moments</h2>
+
+        <p>
+            The moment of a force measures its turning effect about
+            a point or axis.
+        </p>
+
+        <div class="formula">
+            Moment = Force × perpendicular distance from pivot
+        </div>
+
+        <h3>Equilibrium</h3>
+
+        <p>
+            For an object in rotational equilibrium, the clockwise
+            moments equal the anticlockwise moments.
+        </p>
+
+        <div class="formula">
+            Σ clockwise moments = Σ anticlockwise moments
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A 20 N force acts perpendicular to a beam at a distance
+                of 0.5 m from a pivot. Find its moment.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Moment = 20 × 0.5
+                </p>
+
+                <p>
+                    <strong>Moment = 10 N m</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOMENTUM -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 06</p>
+
+        <h2>Momentum</h2>
+
+        <p>
+            Momentum is a vector quantity associated with the motion
+            of an object.
+        </p>
+
+        <div class="formula">
+            p = mv
+        </div>
+
+        <h3>Conservation of Momentum</h3>
+
+        <p>
+            In an isolated system, total momentum remains constant.
+        </p>
+
+        <div class="formula">
+            Total momentum before = Total momentum after
+        </div>
+
+        <h3>Impulse</h3>
+
+        <div class="formula">
+            Impulse = Ft = Δp
+        </div>
+
+        <p>
+            The area under a force-time graph represents the impulse.
+        </p>
+
+    </section>
+
+
+    <!-- WORK ENERGY POWER -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MECHANICS • 07</p>
+
+        <h2>Work, Energy and Power</h2>
+
+        <h3>Work Done</h3>
+
+        <div class="formula">
+            W = Fs
+        </div>
+
+        <p>
+            When a force acts in the direction of motion, work is
+            done on the object.
+        </p>
+
+        <h3>Kinetic Energy</h3>
+
+        <div class="formula">
+            Eₖ = ½mv²
+        </div>
+
+        <h3>Gravitational Potential Energy</h3>
+
+        <div class="formula">
+            Eₚ = mgh
+        </div>
+
+        <h3>Power</h3>
+
+        <div class="formula">
+            P = W / t
+        </div>
+
+        <div class="definition">
+
+            <strong>Conservation of energy:</strong>
+
+            <p>
+                Energy cannot be created or destroyed. It can only
+                be transferred between different forms.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATERIALS INTRO -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PART 02</p>
+
+        <h2>Materials</h2>
+
+        <p>
+            The materials section examines how materials respond to
+            forces and how their physical properties can be measured.
+        </p>
+
+    </section>
+
+
+    <!-- DENSITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MATERIALS • 01</p>
+
+        <h2>Density</h2>
+
+        <p>
+            Density is the mass per unit volume of a material.
+        </p>
+
+        <div class="formula">
+            ρ = m / V
+        </div>
+
+        <p>
+            The SI unit of density is kg m⁻³.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A material has a mass of 0.80 kg and a volume of
+                2.0 × 10⁻⁴ m³. Calculate its density.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    ρ = 0.80 / (2.0 × 10⁻⁴)
+                </p>
+
+                <p>
+                    <strong>ρ = 4000 kg m⁻³</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEFORMATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MATERIALS • 02</p>
+
+        <h2>Deformation</h2>
+
+        <p>
+            When a force is applied to an object, it may change shape.
+            This change is called deformation.
+        </p>
+
+        <h3>Elastic Deformation</h3>
+
+        <p>
+            An object undergoing elastic deformation returns to its
+            original shape when the deforming force is removed.
+        </p>
+
+        <h3>Plastic Deformation</h3>
+
+        <p>
+            Plastic deformation is permanent. The object does not
+            return completely to its original shape when the force
+            is removed.
+        </p>
+
+        <div class="definition">
+
+            <strong>Elastic limit:</strong>
+
+            <p>
+                Beyond the elastic limit, removing the force does not
+                return the material completely to its original shape.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOOKE'S LAW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MATERIALS • 03</p>
+
+        <h2>Hooke's Law</h2>
+
+        <p>
+            For a spring or wire operating within its limit of
+            proportionality, extension is proportional to applied force.
+        </p>
+
+        <div class="formula">
+            F = kx
+        </div>
+
+        <p>
+            Here k is the spring constant and x is the extension.
+        </p>
+
+        <h3>Force-Extension Graph</h3>
+
+        <p>
+            A straight-line graph through the origin indicates that
+            force is proportional to extension.
+        </p>
+
+        <div class="definition">
+
+            <strong>Important distinction:</strong>
+
+            <p>
+                The limit of proportionality is where the graph stops
+                being directly proportional. The elastic limit is where
+                permanent deformation begins. They are not necessarily
+                the same point.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STRESS STRAIN YOUNG MODULUS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MATERIALS • 04</p>
+
+        <h2>Stress, Strain and Young Modulus</h2>
+
+        <h3>Stress</h3>
+
+        <div class="formula">
+            Stress = F / A
+        </div>
+
+        <p>
+            Stress is the force applied per unit cross-sectional area.
+        </p>
+
+        <h3>Strain</h3>
+
+        <div class="formula">
+            Strain = ΔL / L
+        </div>
+
+        <p>
+            Strain is the fractional change in length.
+        </p>
+
+        <h3>Young Modulus</h3>
+
+        <div class="formula">
+            E = Stress / Strain
+        </div>
+
+        <p>
+            Young modulus measures the stiffness of a material.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A wire has cross-sectional area 2.0 × 10⁻⁶ m².
+                A force of 50 N is applied. Calculate the stress.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Stress = 50 / (2.0 × 10⁻⁶)
+                </p>
+
+                <p>
+                    <strong>Stress = 2.5 × 10⁷ Pa</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ELASTIC ENERGY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MATERIALS • 05</p>
+
+        <h2>Elastic Strain Energy</h2>
+
+        <p>
+            Work done in stretching a spring or wire is stored as
+            elastic strain energy.
+        </p>
+
+        <div class="formula">
+            E = ½Fx
+        </div>
+
+        <p>
+            For a linear force-extension relationship, this corresponds
+            to the area under the force-extension graph.
+        </p>
+
+        <div class="definition">
+
+            <strong>Graph interpretation:</strong>
+
+            <p>
+                The area under a force-extension graph represents
+                the elastic energy stored.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATERIAL BEHAVIOUR -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">MATERIALS • 06</p>
+
+        <h2>Force-Extension and Stress-Strain Behaviour</h2>
+
+        <p>
+            Force-extension and stress-strain graphs can reveal how
+            a material behaves as it is stretched.
+        </p>
+
+        <h3>Key Features</h3>
+
+        <ul>
+
+            <li>Region of proportional behaviour</li>
+
+            <li>Elastic behaviour</li>
+
+            <li>Plastic deformation</li>
+
+            <li>Yielding</li>
+
+            <li>Breaking point</li>
+
+        </ul>
+
+        <p>
+            Different materials can behave very differently. A stiff
+            material has a large Young modulus, while a more flexible
+            material has a smaller Young modulus.
+        </p>
+
+    </section>
+
+
+    <!-- PRACTICAL SKILLS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICAL PHYSICS</p>
+
+        <h2>Experimental Skills</h2>
+
+        <p>
+            Practical work is an important part of Edexcel IAL Physics.
+            You should be able to plan experiments, collect measurements,
+            analyse data and evaluate methods.
+        </p>
+
+        <div class="practical">
+
+            <h3>Investigating Free Fall</h3>
+
+            <p>
+                Measure the motion of an object falling under gravity
+                and use appropriate measurements or graphs to determine
+                the acceleration due to gravity.
+            </p>
+
+            <ul>
+
+                <li>Measure time and distance carefully.</li>
+
+                <li>Repeat measurements to improve reliability.</li>
+
+                <li>Consider reaction time and systematic errors.</li>
+
+                <li>Use appropriate graph analysis where required.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="practical">
+
+            <h3>Investigating Viscosity</h3>
+
+            <p>
+                A falling sphere can be used to investigate the viscosity
+                of a fluid by examining its motion through the fluid.
+            </p>
+
+            <ul>
+
+                <li>Allow the sphere to reach terminal velocity.</li>
+
+                <li>Measure distance and time.</li>
+
+                <li>Control temperature because viscosity depends on temperature.</li>
+
+                <li>Repeat measurements and identify uncertainties.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="practical">
+
+            <h3>Determining Young Modulus</h3>
+
+            <p>
+                A wire can be loaded gradually while its extension is
+                measured. The resulting data can be used to determine
+                Young modulus.
+            </p>
+
+            <ul>
+
+                <li>Measure the original length accurately.</li>
+
+                <li>Measure the diameter at several positions.</li>
+
+                <li>Calculate cross-sectional area.</li>
+
+                <li>Record force and extension.</li>
+
+                <li>Plot an appropriate graph.</li>
+
+                <li>Consider zero errors and measurement uncertainty.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- UNCERTAINTIES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICAL SKILLS</p>
+
+        <h2>Measurements and Uncertainties</h2>
+
+        <p>
+            Experimental measurements are never perfectly exact.
+            A good experimental analysis identifies the uncertainty
+            associated with measurements.
+        </p>
+
+        <h3>Absolute Uncertainty</h3>
+
+        <p>
+            The uncertainty expressed in the same units as the measured
+            quantity is called absolute uncertainty.
+        </p>
+
+        <h3>Percentage Uncertainty</h3>
+
+        <div class="formula">
+            Percentage uncertainty = (absolute uncertainty / measured value) × 100
+        </div>
+
+        <h3>Reducing Uncertainty</h3>
+
+        <ul>
+
+            <li>Repeat measurements.</li>
+
+            <li>Calculate a mean where appropriate.</li>
+
+            <li>Use instruments with suitable resolution.</li>
+
+            <li>Increase the measured quantity where possible.</li>
+
+            <li>Control relevant variables.</li>
+
+        </ul>
+
+        <div class="tip">
+
+            <strong>Exam tip:</strong>
+
+            <p>
+                Do not simply say “repeat the experiment” when evaluating
+                a method. Explain what repeating the measurement improves
+                and how the results should be processed.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORKED MIXED EXAMPLE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">WORKED EXAMPLE</p>
+
+        <h2>Mixed Unit 1 Example</h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Question
+            </p>
+
+            <p>
+                A 2.0 kg object accelerates from rest to 6.0 m s⁻¹
+                in 3.0 s. Calculate the resultant force acting on it.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    First find acceleration:
+                </p>
+
+                <p>
+                    a = (6.0 − 0) / 3.0
+                </p>
+
+                <p>
+                    a = 2.0 m s⁻²
+                </p>
+
+                <p>
+                    Then use F = ma:
+                </p>
+
+                <p>
+                    F = 2.0 × 2.0
+                </p>
+
+                <p>
+                    <strong>F = 4.0 N</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 1 Mixed Practice</h2>
+
+        <div class="question">
+
+            <strong>
+                1. Explain the difference between a scalar and a vector.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    A scalar has magnitude only, whereas a vector has
+                    both magnitude and direction.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. A car travels from 12 m s⁻¹ to 30 m s⁻¹ in 6 s.
+                Calculate its acceleration.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    a = (30 − 12) / 6
+                </p>
+
+                <p>
+                    <strong>a = 3.0 m s⁻²</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A 5.0 kg object experiences a resultant force of
+                20 N. Calculate its acceleration.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    F = ma
+                </p>
+
+                <p>
+                    a = 20 / 5.0
+                </p>
+
+                <p>
+                    <strong>a = 4.0 m s⁻²</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. A 15 N force acts 0.40 m from a pivot at right angles.
+                Calculate the moment.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Moment = 15 × 0.40
+                </p>
+
+                <p>
+                    <strong>Moment = 6.0 N m</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. State the principle of conservation of momentum.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    In an isolated system, the total momentum before
+                    an interaction equals the total momentum after it.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. A material has a mass of 0.60 kg and volume
+                3.0 × 10⁻⁴ m³. Calculate its density.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    ρ = m / V
+                </p>
+
+                <p>
+                    ρ = 0.60 / (3.0 × 10⁻⁴)
+                </p>
+
+                <p>
+                    <strong>ρ = 2.0 × 10³ kg m⁻³</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. State Hooke's law.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    For a spring or wire within its limit of
+                    proportionality, the extension is proportional
+                    to the applied force.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. A wire has a cross-sectional area of
+                4.0 × 10⁻⁶ m² and is subjected to a force of 80 N.
+                Calculate the stress.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Stress = F / A
+                </p>
+
+                <p>
+                    Stress = 80 / (4.0 × 10⁻⁶)
+                </p>
+
+                <p>
+                    <strong>Stress = 2.0 × 10⁷ Pa</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. Explain the difference between elastic and
+                plastic deformation.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Elastic deformation is reversible when the force
+                    is removed. Plastic deformation produces a permanent
+                    change in shape.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. Explain why repeated measurements are useful
+                in an experiment.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Repeated measurements can help identify random
+                    variation and allow a mean value to be calculated,
+                    improving the reliability of the result.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 1 Key Equations</h2>
+
+        <div class="formula">
+            v = Δs / Δt
+        </div>
+
+        <div class="formula">
+            a = Δv / Δt
+        </div>
+
+        <div class="formula">
+            F = ma
+        </div>
+
+        <div class="formula">
+            W = mg
+        </div>
+
+        <div class="formula">
+            p = mv
+        </div>
+
+        <div class="formula">
+            Moment = Force × perpendicular distance
+        </div>
+
+        <div class="formula">
+            Eₖ = ½mv²
+        </div>
+
+        <div class="formula">
+            Eₚ = mgh
+        </div>
+
+        <div class="formula">
+            P = W / t
+        </div>
+
+        <div class="formula">
+            ρ = m / V
+        </div>
+
+        <div class="formula">
+            F = kx
+        </div>
+
+        <div class="formula">
+            Stress = F / A
+        </div>
+
+        <div class="formula">
+            Strain = ΔL / L
+        </div>
+
+        <div class="formula">
+            E = Stress / Strain
+        </div>
+
+        <div class="formula">
+            Elastic energy = ½Fx
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="physics.html" class="button">
+        ← Back to Physics
+    </a>
+
+    <a href="mathematics.html" class="button">
+        Mathematics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
