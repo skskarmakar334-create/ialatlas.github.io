@@ -1,0 +1,1415 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statistics 3 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Statistics 3 resources — lessons, worked examples, formulas and mixed practice.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+            overflow-x: auto;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="statistics.html">
+        ← Statistics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS • S3
+    </p>
+
+    <h1>
+        Statistics <span>3</span>
+    </h1>
+
+    <p>
+        Build advanced statistical understanding through sampling,
+        random variables, estimation, confidence intervals,
+        hypothesis testing, correlation and chi-squared methods.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- SAMPLING -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Sampling</h2>
+
+        <p>
+            Sampling is the process of selecting observations from a
+            population so that information about the population can be
+            obtained without studying every member.
+        </p>
+
+        <h3>Population and Sample</h3>
+
+        <p>
+            The population is the complete set of individuals or objects
+            being studied. A sample is a subset selected from that population.
+        </p>
+
+        <h3>Simple Random Sampling</h3>
+
+        <p>
+            In simple random sampling, every possible sample of the required
+            size has an equal chance of being selected.
+        </p>
+
+        <div class="definition">
+
+            <strong>Using random numbers:</strong>
+
+            <p>
+                Members of a population can be numbered and random numbers
+                can then be used to select the required sample.
+            </p>
+
+        </div>
+
+        <h3>Stratified Sampling</h3>
+
+        <p>
+            The population is divided into strata according to a relevant
+            characteristic. A sample is then taken from each stratum,
+            usually in proportion to the size of that stratum.
+        </p>
+
+        <div class="formula">
+            Sample from stratum = (stratum size / population size) × total sample size
+        </div>
+
+        <h3>Systematic Sampling</h3>
+
+        <p>
+            Individuals are selected at regular intervals from an ordered
+            sampling frame, usually after choosing a suitable starting point.
+        </p>
+
+        <h3>Quota Sampling</h3>
+
+        <p>
+            The investigator sets quotas for different groups and continues
+            selecting individuals until the required quotas are filled.
+        </p>
+
+        <h3>Comparing Sampling Methods</h3>
+
+        <ul>
+
+            <li>
+                Simple random sampling can reduce selection bias but requires
+                a suitable sampling frame.
+            </li>
+
+            <li>
+                Stratified sampling can ensure important groups are represented
+                appropriately.
+            </li>
+
+            <li>
+                Systematic sampling can be straightforward to administer.
+            </li>
+
+            <li>
+                Quota sampling can be convenient but may introduce interviewer
+                or selection bias.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- COMBINATIONS OF RANDOM VARIABLES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Combinations of Random Variables</h2>
+
+        <p>
+            S3 extends the Normal distribution to combinations of independent
+            Normal random variables.
+        </p>
+
+        <h3>Linear Combinations</h3>
+
+        <p>
+            Suppose X and Y are independent Normal random variables:
+        </p>
+
+        <div class="formula">
+            X ~ N(μx, σx²) &nbsp;&nbsp;&nbsp; Y ~ N(μy, σy²)
+        </div>
+
+        <p>
+            Then a linear combination of X and Y is also Normally distributed.
+        </p>
+
+        <div class="formula">
+            aX ± bY ~ N(aμx ± bμy, a²σx² + b²σy²)
+        </div>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                Variances are added after multiplying them by the squares
+                of the coefficients. The standard deviations themselves
+                are not added.
+            </p>
+
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                X ~ N(20, 4²) and Y ~ N(15, 3²), independently.
+                Find the distribution of 2X − Y.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Mean:
+                </p>
+
+                <div class="formula">
+                    2(20) − 15 = 25
+                </div>
+
+                <p>
+                    Variance:
+                </p>
+
+                <div class="formula">
+                    2²(4²) + 1²(3²) = 64 + 9 = 73
+                </div>
+
+                <p>
+                    Therefore:
+                </p>
+
+                <div class="formula">
+                    2X − Y ~ N(25, 73)
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTIMATORS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Estimators and Standard Error</h2>
+
+        <p>
+            An estimator is a statistic used to estimate an unknown population
+            parameter.
+        </p>
+
+        <h3>Estimator</h3>
+
+        <p>
+            The sample mean is commonly used as an estimator of the population
+            mean μ.
+        </p>
+
+        <div class="formula">
+            X̄ = ΣX / n
+        </div>
+
+        <h3>Bias</h3>
+
+        <p>
+            An estimator is unbiased if its expected value is equal to the
+            population parameter that it estimates.
+        </p>
+
+        <div class="formula">
+            E(X̄) = μ
+        </div>
+
+        <h3>Variance of the Sample Mean</h3>
+
+        <p>
+            For a random sample of n independent observations from a population
+            with variance σ²:
+        </p>
+
+        <div class="formula">
+            Var(X̄) = σ² / n
+        </div>
+
+        <h3>Standard Error</h3>
+
+        <div class="formula">
+            SE(X̄) = σ / √n
+        </div>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Increasing the sample size reduces the standard error and
+                therefore generally makes the sample mean a more precise
+                estimator of μ.
+            </p>
+
+        </div>
+
+        <h3>Estimator of Population Variance</h3>
+
+        <p>
+            For a random sample, the usual unbiased estimator of the population
+            variance uses n − 1 in the denominator.
+        </p>
+
+        <div class="formula">
+            S² = Σ(Xᵢ − X̄)² / (n − 1)
+        </div>
+
+    </section>
+
+
+    <!-- CONFIDENCE INTERVALS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Confidence Intervals</h2>
+
+        <p>
+            A confidence interval provides a range of plausible values for
+            an unknown population parameter.
+        </p>
+
+        <h3>Normal Mean with Known Variance</h3>
+
+        <p>
+            If the population is Normal with known variance σ², an interval
+            estimate for μ can be constructed using the sampling distribution
+            of X̄.
+        </p>
+
+        <div class="formula">
+            X̄ ± z × σ / √n
+        </div>
+
+        <p>
+            Here z is the appropriate percentage point of the standard Normal
+            distribution for the required confidence level.
+        </p>
+
+        <h3>Interpreting a Confidence Interval</h3>
+
+        <p>
+            A confidence interval should be interpreted in terms of the method
+            used to construct it. For example, a 95% confidence procedure
+            produces intervals that contain the true parameter in approximately
+            95% of repeated samples.
+        </p>
+
+        <h3>Width of an Interval</h3>
+
+        <p>
+            A larger sample size gives a smaller standard error and therefore
+            usually produces a narrower confidence interval.
+        </p>
+
+    </section>
+
+
+    <!-- HYPOTHESIS TESTING -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Hypothesis Tests for a Normal Mean</h2>
+
+        <p>
+            Hypothesis testing provides a formal method for deciding whether
+            sample evidence is inconsistent with a proposed population parameter.
+        </p>
+
+        <h3>Null and Alternative Hypotheses</h3>
+
+        <div class="definition">
+
+            <strong>Null hypothesis H₀:</strong>
+
+            <p>
+                The statement assumed to be true unless the sample provides
+                sufficient evidence against it.
+            </p>
+
+            <strong>Alternative hypothesis H₁:</strong>
+
+            <p>
+                The competing statement supported when the null hypothesis
+                is rejected.
+            </p>
+
+        </div>
+
+        <h3>Test Statistic</h3>
+
+        <p>
+            When the population variance is known, the sample mean can be
+            standardised using:
+        </p>
+
+        <div class="formula">
+            Z = (X̄ − μ) / (σ / √n)
+        </div>
+
+        <h3>One-Tailed and Two-Tailed Tests</h3>
+
+        <ul>
+
+            <li>
+                A one-tailed test investigates whether a parameter is greater
+                than or less than a specified value.
+            </li>
+
+            <li>
+                A two-tailed test investigates whether a parameter differs
+                from a specified value in either direction.
+            </li>
+
+        </ul>
+
+        <h3>Significance Level</h3>
+
+        <p>
+            The significance level is the probability of rejecting H₀ when H₀
+            is actually true.
+        </p>
+
+        <h3>Conclusion</h3>
+
+        <p>
+            A statistical conclusion should be stated clearly in the context
+            of the question.
+        </p>
+
+        <div class="definition">
+
+            <strong>Remember:</strong>
+
+            <p>
+                Do not say that H₀ has been proved true. A test either provides
+                sufficient evidence to reject H₀ or does not provide sufficient
+                evidence to reject H₀.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CENTRAL LIMIT THEOREM -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Central Limit Theorem</h2>
+
+        <p>
+            The Central Limit Theorem allows the distribution of a sample mean
+            to be approximated by a Normal distribution for sufficiently large
+            samples, even when the underlying population is not Normal.
+        </p>
+
+        <h3>Sampling Distribution of the Mean</h3>
+
+        <p>
+            For a population with mean μ and variance σ², a sample mean based
+            on n independent observations has:
+        </p>
+
+        <div class="formula">
+            E(X̄) = μ
+        </div>
+
+        <div class="formula">
+            Var(X̄) = σ² / n
+        </div>
+
+        <p>
+            For a Normal population, the sampling distribution of X̄ is exactly
+            Normal. For a sufficiently large sample from a non-Normal population,
+            the Central Limit Theorem provides a Normal approximation.
+        </p>
+
+        <h3>Standardising the Sample Mean</h3>
+
+        <div class="formula">
+            Z = (X̄ − μ) / (σ / √n)
+        </div>
+
+        <div class="definition">
+
+            <strong>Exam idea:</strong>
+
+            <p>
+                Always identify the population mean, population variance,
+                sample size and required probability before standardising.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TWO SAMPLE TESTS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Comparing Two Population Means</h2>
+
+        <p>
+            S3 also considers inference about the difference between two
+            population means using independent samples.
+        </p>
+
+        <h3>Difference Between Sample Means</h3>
+
+        <p>
+            If two independent samples are taken from Normal populations with
+            known variances:
+        </p>
+
+        <div class="formula">
+            E(X̄ − Ȳ) = μx − μy
+        </div>
+
+        <div class="formula">
+            Var(X̄ − Ȳ) = σx²/nx + σy²/ny
+        </div>
+
+        <h3>Standardising the Difference</h3>
+
+        <div class="formula">
+            Z = [(X̄ − Ȳ) − (μx − μy)]
+            / √(σx²/nx + σy²/ny)
+        </div>
+
+        <p>
+            This can be used to construct confidence intervals or perform
+            hypothesis tests about the difference between two population means.
+        </p>
+
+        <div class="definition">
+
+            <strong>Large samples:</strong>
+
+            <p>
+                Large-sample methods can also be used when population variances
+                are unknown, using appropriate estimates of variability.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CORRELATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Spearman's Rank Correlation</h2>
+
+        <p>
+            Spearman's rank correlation coefficient measures the strength and
+            direction of a monotonic relationship between two variables using
+            their ranks.
+        </p>
+
+        <h3>Rank Differences</h3>
+
+        <p>
+            For each observation, calculate the difference d between its two
+            ranks and then calculate d².
+        </p>
+
+        <div class="formula">
+            rₛ = 1 − [6Σd² / n(n² − 1)]
+        </div>
+
+        <h3>Interpreting rₛ</h3>
+
+        <ul>
+
+            <li>
+                A value close to +1 indicates strong positive association.
+            </li>
+
+            <li>
+                A value close to −1 indicates strong negative association.
+            </li>
+
+            <li>
+                A value close to 0 indicates little evidence of a monotonic
+                relationship.
+            </li>
+
+        </ul>
+
+        <h3>Ties</h3>
+
+        <p>
+            When tied values occur, appropriate ranks must be assigned before
+            calculating the correlation coefficient.
+        </p>
+
+        <h3>Limitations</h3>
+
+        <p>
+            Correlation does not establish causation. Spearman's coefficient
+            also describes association rather than proving that one variable
+            causes changes in another.
+        </p>
+
+    </section>
+
+
+    <!-- TESTING CORRELATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 09</p>
+
+        <h2>Testing for Zero Correlation</h2>
+
+        <p>
+            A hypothesis test can be used to investigate whether there is
+            evidence of a relationship between two variables.
+        </p>
+
+        <h3>Hypotheses</h3>
+
+        <div class="formula">
+            H₀: ρ = 0
+        </div>
+
+        <div class="formula">
+            H₁: ρ ≠ 0
+        </div>
+
+        <p>
+            Depending on the wording of the question, a one-tailed alternative
+            may be appropriate.
+        </p>
+
+        <h3>Critical Values</h3>
+
+        <p>
+            For Spearman's rank correlation, critical values can be used to
+            determine whether the observed rank correlation is sufficiently
+            extreme to reject the null hypothesis.
+        </p>
+
+        <div class="definition">
+
+            <strong>Decision rule:</strong>
+
+            <p>
+                Compare the calculated statistic with the appropriate critical
+                value for the chosen significance level and alternative hypothesis.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GOODNESS OF FIT -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 10</p>
+
+        <h2>Goodness of Fit Tests</h2>
+
+        <p>
+            A chi-squared goodness-of-fit test can be used to investigate whether
+            observed frequencies are consistent with a proposed probability model.
+        </p>
+
+        <h3>Observed and Expected Frequencies</h3>
+
+        <p>
+            The observed frequencies are the actual data. Expected frequencies
+            are calculated from the model assumed under the null hypothesis.
+        </p>
+
+        <div class="formula">
+            χ² = Σ (O − E)² / E
+        </div>
+
+        <h3>Hypotheses</h3>
+
+        <div class="definition">
+
+            <strong>H₀:</strong>
+
+            <p>
+                The data are consistent with the proposed distribution.
+            </p>
+
+            <strong>H₁:</strong>
+
+            <p>
+                The data are not consistent with the proposed distribution.
+            </p>
+
+        </div>
+
+        <h3>Degrees of Freedom</h3>
+
+        <p>
+            The number of degrees of freedom depends on the number of categories
+            and the number of parameters estimated from the data.
+        </p>
+
+        <div class="formula">
+            Degrees of freedom = number of categories − 1 − number of estimated parameters
+        </div>
+
+        <h3>Expected Frequencies</h3>
+
+        <p>
+            Expected frequencies should generally be sufficiently large for the
+            chi-squared approximation to be appropriate. Where necessary,
+            categories may need to be combined according to the conditions of
+            the test.
+        </p>
+
+    </section>
+
+
+    <!-- CONTINGENCY TABLES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 11</p>
+
+        <h2>Contingency Tables</h2>
+
+        <p>
+            Contingency tables are used to investigate whether two categorical
+            variables are associated.
+        </p>
+
+        <h3>Observed Frequencies</h3>
+
+        <p>
+            The observed frequencies are arranged in rows and columns according
+            to the two categorical variables.
+        </p>
+
+        <h3>Expected Frequency</h3>
+
+        <div class="formula">
+            Expected frequency = (row total × column total) / grand total
+        </div>
+
+        <h3>Chi-Squared Statistic</h3>
+
+        <div class="formula">
+            χ² = Σ (O − E)² / E
+        </div>
+
+        <h3>Degrees of Freedom</h3>
+
+        <div class="formula">
+            df = (number of rows − 1)(number of columns − 1)
+        </div>
+
+        <h3>Hypotheses</h3>
+
+        <div class="definition">
+
+            <strong>H₀:</strong>
+
+            <p>
+                The two categorical variables are independent.
+            </p>
+
+            <strong>H₁:</strong>
+
+            <p>
+                The two categorical variables are associated.
+            </p>
+
+        </div>
+
+        <h3>Conclusion</h3>
+
+        <p>
+            The final conclusion should be written in context and should refer
+            to the evidence for or against independence.
+        </p>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>S3 Mixed Practice</h2>
+
+        <p>
+            These questions combine different S3 ideas rather than separating
+            practice by chapter.
+        </p>
+
+
+        <div class="question">
+
+            <strong>
+                1. A population contains 480 students. A stratified sample of
+                60 students is required. If 180 students belong to one stratum,
+                how many students should be selected from that stratum?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Proportion = 180 / 480.
+                </p>
+
+                <p>
+                    Required sample = (180 / 480) × 60 = 22.5.
+                </p>
+
+                <p>
+                    In practice, the allocation must be adjusted to whole
+                    students while maintaining the required total sample.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. X ~ N(12, 3²) and Y ~ N(8, 2²), independently.
+                Find the distribution of 2X + 3Y.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Mean = 2(12) + 3(8) = 48.
+                </p>
+
+                <p>
+                    Variance = 2²(3²) + 3²(2²)
+                    = 36 + 36 = 72.
+                </p>
+
+                <p>
+                    Therefore:
+                </p>
+
+                <p>
+                    2X + 3Y ~ N(48, 72).
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A population has standard deviation 12. A random sample
+                of 36 observations is taken. Find the standard error of the
+                sample mean.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    SE(X̄) = σ / √n
+                </p>
+
+                <p>
+                    = 12 / √36 = 2.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. Explain what it means for an estimator to be unbiased.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    An estimator is unbiased if its expected value is equal
+                    to the population parameter that it estimates.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. State the formula for the variance of the sample mean
+                when the population variance is σ².
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Var(X̄) = σ² / n.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. A sample has mean 51, population standard deviation 10,
+                and sample size 100. State the standardised statistic for
+                testing μ = 50.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Z = (51 − 50) / (10 / √100) = 1.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. What does the Central Limit Theorem allow us to do with
+                a sufficiently large sample from a non-Normal population?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    It allows the sampling distribution of the sample mean
+                    to be approximated by a Normal distribution.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. State the formula for Spearman's rank correlation
+                coefficient.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    rₛ = 1 − 6Σd² / [n(n² − 1)].
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. A chi-squared goodness-of-fit test has five categories
+                and two parameters have been estimated from the data.
+                Find the degrees of freedom.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    df = 5 − 1 − 2 = 2.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. A contingency table has 4 rows and 3 columns.
+                Find the degrees of freedom for a chi-squared test of
+                independence.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    df = (4 − 1)(3 − 1) = 6.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                11. In a contingency table, a row total is 80, a column
+                total is 50 and the grand total is 200. Find the expected
+                frequency for that cell.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Expected frequency = (80 × 50) / 200 = 20.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                12. Explain the difference between statistical significance
+                and practical importance.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Statistical significance means that the sample provides
+                    sufficient evidence against the null hypothesis at the
+                    chosen significance level. Practical importance concerns
+                    whether the size of the observed effect is meaningful
+                    in the real-world context.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>S3 Key Ideas</h2>
+
+        <div class="formula">
+            aX ± bY ~ N(aμx ± bμy, a²σx² + b²σy²)
+        </div>
+
+        <div class="formula">
+            Var(X̄) = σ² / n
+        </div>
+
+        <div class="formula">
+            SE(X̄) = σ / √n
+        </div>
+
+        <div class="formula">
+            Z = (X̄ − μ) / (σ / √n)
+        </div>
+
+        <div class="formula">
+            rₛ = 1 − 6Σd² / [n(n² − 1)]
+        </div>
+
+        <div class="formula">
+            χ² = Σ(O − E)² / E
+        </div>
+
+        <div class="formula">
+            Expected frequency = (row total × column total) / grand total
+        </div>
+
+        <div class="formula">
+            df = (rows − 1)(columns − 1)
+        </div>
+
+        <div class="definition">
+
+            <strong>S3 exam checklist:</strong>
+
+            <ul>
+
+                <li>Identify the population parameter being investigated.</li>
+
+                <li>State H₀ and H₁ clearly.</li>
+
+                <li>Choose the correct one-tailed or two-tailed test.</li>
+
+                <li>Calculate the appropriate test statistic.</li>
+
+                <li>Use the correct significance level or critical value.</li>
+
+                <li>State the statistical decision.</li>
+
+                <li>Finish with a conclusion in context.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="statistics.html" class="button">
+        ← Back to Statistics
+    </a>
+
+    <a href="mathematics.html" class="button">
+        Mathematics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
+```
