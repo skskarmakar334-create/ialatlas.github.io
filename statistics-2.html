@@ -1,0 +1,1446 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statistics 2 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Statistics 2 — complete lessons, worked examples and mixed practice.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 85px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 65px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 38px;
+            margin-bottom: 32px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 27px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 22px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+            overflow-x: auto;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 22px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #fff8e8;
+            border-left: 5px solid #f0a500;
+            padding: 20px;
+            margin: 22px 0;
+            border-radius: 8px;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="statistics.html">
+        ← Statistics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS • S2
+    </p>
+
+    <h1>
+        Statistics <span>2</span>
+    </h1>
+
+    <p>
+        Develop your understanding of probability distributions,
+        continuous random variables, normal approximations and
+        hypothesis testing.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- ====================================================== -->
+    <!-- SECTION 1 -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">SECTION 01</p>
+
+        <h2>The Binomial and Poisson Distributions</h2>
+
+        <p>
+            S2 begins by developing the probability distributions
+            introduced in S1. The Binomial and Poisson distributions
+            can be used to model different types of discrete random
+            variables.
+        </p>
+
+
+        <h3>Binomial Distribution</h3>
+
+        <p>
+            A random variable X has a Binomial distribution when there
+            is a fixed number of independent trials, each trial has two
+            possible outcomes, and the probability of success remains
+            constant.
+        </p>
+
+        <div class="formula">
+            X ~ B(n, p)
+        </div>
+
+
+        <h3>Conditions for a Binomial Model</h3>
+
+        <ul>
+
+            <li>There is a fixed number of trials, n.</li>
+
+            <li>Each trial has two possible outcomes.</li>
+
+            <li>The probability of success, p, is constant.</li>
+
+            <li>The trials are independent.</li>
+
+        </ul>
+
+
+        <h3>Binomial Probability</h3>
+
+        <div class="formula">
+            P(X = r) = ⁿCᵣ pʳ(1 − p)ⁿ⁻ʳ
+        </div>
+
+
+        <h3>Mean and Variance</h3>
+
+        <div class="formula">
+            E(X) = np
+        </div>
+
+        <div class="formula">
+            Var(X) = np(1 − p)
+        </div>
+
+
+        <h3>Modelling with the Binomial Distribution</h3>
+
+        <p>
+            A model should only be used when its assumptions are
+            reasonable. In examination questions, you may need to
+            explain whether a Binomial model is appropriate.
+        </p>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A machine produces components. The probability that a
+                component is defective is 0.08. A random sample of
+                20 components is selected. Let X be the number of
+                defective components.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Each component has two possible outcomes:
+                    defective or non-defective.
+                </p>
+
+                <p>
+                    The probability of a defective component remains
+                    constant at 0.08.
+                </p>
+
+                <p>
+                    Assuming the components are independent:
+                </p>
+
+                <p>
+                    <strong>X ~ B(20, 0.08)</strong>
+                </p>
+
+                <p>
+                    Mean = 20 × 0.08 = <strong>1.6</strong>
+                </p>
+
+                <p>
+                    Variance = 20 × 0.08 × 0.92 =
+                    <strong>1.472</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>Poisson Distribution</h3>
+
+        <p>
+            The Poisson distribution can be used to model the number
+            of times an event occurs in a fixed interval of time,
+            length, area or another suitable interval.
+        </p>
+
+        <div class="formula">
+            X ~ Po(λ)
+        </div>
+
+
+        <h3>Poisson Probability</h3>
+
+        <div class="formula">
+            P(X = r) = e⁻λ λʳ ÷ r!
+        </div>
+
+
+        <h3>Mean and Variance</h3>
+
+        <div class="formula">
+            E(X) = λ
+        </div>
+
+        <div class="formula">
+            Var(X) = λ
+        </div>
+
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                For a Poisson distribution, the mean and variance
+                are equal.
+            </p>
+
+        </div>
+
+
+        <h3>Additive Property</h3>
+
+        <p>
+            If two independent Poisson random variables are added,
+            the result is also Poisson.
+        </p>
+
+        <div class="formula">
+            X ~ Po(λ₁), Y ~ Po(λ₂)
+        </div>
+
+        <div class="formula">
+            X + Y ~ Po(λ₁ + λ₂)
+        </div>
+
+
+        <h3>Poisson Approximation to the Binomial</h3>
+
+        <p>
+            Under suitable conditions, a Binomial distribution can be
+            approximated by a Poisson distribution.
+        </p>
+
+        <div class="formula">
+            B(n,p) ≈ Po(np)
+        </div>
+
+        <p>
+            The approximation is particularly useful when n is large
+            and p is small.
+        </p>
+
+
+        <div class="warning">
+
+            <strong>Exam reminder:</strong>
+
+            <p>
+                Always consider whether the assumptions of the model
+                are reasonable before using an approximation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- SECTION 2 -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">SECTION 02</p>
+
+        <h2>Continuous Random Variables</h2>
+
+        <p>
+            Unlike a discrete random variable, a continuous random
+            variable can take any value within an interval.
+        </p>
+
+
+        <h3>Probability Density Function</h3>
+
+        <p>
+            A probability density function, or PDF, describes how
+            probability is distributed over the possible values of X.
+        </p>
+
+        <div class="definition">
+
+            <strong>Conditions for a PDF:</strong>
+
+            <ul>
+
+                <li>f(x) ≥ 0 for all possible values of x.</li>
+
+                <li>The total area under the curve is 1.</li>
+
+            </ul>
+
+        </div>
+
+
+        <h3>Finding Probabilities</h3>
+
+        <p>
+            For a continuous random variable, probability is represented
+            by area under the probability density function.
+        </p>
+
+        <div class="formula">
+            P(a &lt; X &lt; b) = ∫ₐᵇ f(x) dx
+        </div>
+
+
+        <h3>Probability at a Single Point</h3>
+
+        <div class="formula">
+            P(X = a) = 0
+        </div>
+
+
+        <h3>Cumulative Distribution Function</h3>
+
+        <p>
+            The cumulative distribution function gives the probability
+            that X is less than or equal to a particular value.
+        </p>
+
+        <div class="formula">
+            F(x) = P(X ≤ x)
+        </div>
+
+
+        <h3>Relationship Between PDF and CDF</h3>
+
+        <div class="formula">
+            F(x) = ∫₋∞ˣ f(t) dt
+        </div>
+
+        <div class="formula">
+            f(x) = dF(x) / dx
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A continuous random variable X has density
+                f(x) = 2x for 0 ≤ x ≤ 1.
+                Find P(X ≤ 0.5).
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    P(X ≤ 0.5) = ∫₀⁰·⁵ 2x dx
+                </p>
+
+                <p>
+                    = [x²]₀⁰·⁵
+                </p>
+
+                <p>
+                    = 0.25
+                </p>
+
+                <p>
+                    <strong>P(X ≤ 0.5) = 0.25</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>Simple Polynomial Density Functions</h3>
+
+        <p>
+            S2 questions may involve probability density functions
+            defined by simple polynomial expressions over a specified
+            interval.
+        </p>
+
+        <p>
+            You may need to use the condition that the total probability
+            is 1 to find an unknown constant.
+        </p>
+
+        <div class="formula">
+            ∫ f(x) dx = 1
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- SECTION 3 -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">SECTION 03</p>
+
+        <h2>Continuous Distributions</h2>
+
+        <h3>Mean of a Continuous Random Variable</h3>
+
+        <p>
+            The mean of a continuous random variable is found by
+            weighting each possible value by its probability density.
+        </p>
+
+        <div class="formula">
+            E(X) = ∫ x f(x) dx
+        </div>
+
+
+        <h3>Second Moment</h3>
+
+        <div class="formula">
+            E(X²) = ∫ x² f(x) dx
+        </div>
+
+
+        <h3>Variance</h3>
+
+        <div class="formula">
+            Var(X) = E(X²) − [E(X)]²
+        </div>
+
+
+        <h3>Standard Deviation</h3>
+
+        <div class="formula">
+            σ = √Var(X)
+        </div>
+
+
+        <h3>Mode</h3>
+
+        <p>
+            The mode is the value of X at which the probability
+            density function reaches its maximum.
+        </p>
+
+
+        <h3>Median</h3>
+
+        <p>
+            The median is the value m for which half of the probability
+            lies below m and half lies above m.
+        </p>
+
+        <div class="formula">
+            F(m) = 0.5
+        </div>
+
+
+        <h3>Quartiles</h3>
+
+        <p>
+            Quartiles divide the distribution into four equal
+            probability sections.
+        </p>
+
+        <div class="formula">
+            F(Q₁) = 0.25
+        </div>
+
+        <div class="formula">
+            F(Q₃) = 0.75
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                Suppose the cumulative distribution function is known.
+                To find the median, set the cumulative probability
+                equal to 0.5 and solve for x.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Set:
+                </p>
+
+                <p>
+                    <strong>F(x) = 0.5</strong>
+                </p>
+
+                <p>
+                    Solve the resulting equation for x.
+                </p>
+
+                <p>
+                    The solution is the median.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>Continuous Uniform Distribution</h3>
+
+        <p>
+            A continuous uniform distribution has constant probability
+            density throughout a specified interval.
+        </p>
+
+        <div class="formula">
+            X ~ U(a,b)
+        </div>
+
+
+        <h3>Probability Density</h3>
+
+        <div class="formula">
+            f(x) = 1 ÷ (b − a)
+        </div>
+
+
+        <h3>Mean</h3>
+
+        <div class="formula">
+            E(X) = (a + b) ÷ 2
+        </div>
+
+
+        <h3>Variance</h3>
+
+        <div class="formula">
+            Var(X) = (b − a)² ÷ 12
+        </div>
+
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                The uniform distribution gives equal probability density
+                across its entire interval.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- NORMAL APPROXIMATIONS -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">SECTION 03 • NORMAL APPROXIMATIONS</p>
+
+        <h2>Normal Approximations</h2>
+
+        <p>
+            The Normal distribution can be used to approximate certain
+            Binomial and Poisson distributions when appropriate.
+        </p>
+
+
+        <h3>Normal Distribution</h3>
+
+        <div class="formula">
+            X ~ N(μ, σ²)
+        </div>
+
+
+        <h3>Binomial to Normal</h3>
+
+        <p>
+            If X ~ B(n,p), the approximating Normal distribution has:
+        </p>
+
+        <div class="formula">
+            μ = np
+        </div>
+
+        <div class="formula">
+            σ² = np(1 − p)
+        </div>
+
+
+        <h3>Poisson to Normal</h3>
+
+        <p>
+            If X ~ Po(λ), a suitable Normal approximation has:
+        </p>
+
+        <div class="formula">
+            μ = λ
+        </div>
+
+        <div class="formula">
+            σ² = λ
+        </div>
+
+
+        <h3>Continuity Correction</h3>
+
+        <p>
+            A Binomial or Poisson random variable is discrete, whereas
+            the Normal distribution is continuous. A continuity correction
+            adjusts the boundary by 0.5.
+        </p>
+
+
+        <div class="definition">
+
+            <strong>Examples:</strong>
+
+            <p>
+                P(X ≥ 10) becomes P(Y &gt; 9.5).
+            </p>
+
+            <p>
+                P(X ≤ 20) becomes P(Y &lt; 20.5).
+            </p>
+
+            <p>
+                P(10 ≤ X ≤ 20) becomes
+                P(9.5 &lt; Y &lt; 20.5).
+            </p>
+
+        </div>
+
+
+        <h3>Standardisation</h3>
+
+        <div class="formula">
+            Z = (X − μ) ÷ σ
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                X ~ B(100, 0.4). Approximate P(X ≥ 45)
+                using a Normal distribution.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Mean:
+                </p>
+
+                <p>
+                    μ = np = 100 × 0.4 = 40
+                </p>
+
+                <p>
+                    Variance:
+                </p>
+
+                <p>
+                    σ² = np(1 − p)
+                    = 100 × 0.4 × 0.6
+                    = 24
+                </p>
+
+                <p>
+                    Therefore use Y ~ N(40, 24).
+                </p>
+
+                <p>
+                    Apply continuity correction:
+                </p>
+
+                <p>
+                    P(X ≥ 45) ≈ P(Y &gt; 44.5)
+                </p>
+
+                <p>
+                    Then standardise using:
+                </p>
+
+                <p>
+                    Z = (44.5 − 40) / √24
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- HYPOTHESIS TESTS -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">SECTION 04</p>
+
+        <h2>Hypothesis Tests</h2>
+
+        <p>
+            Hypothesis testing provides a formal method for deciding
+            whether sample evidence is sufficiently strong to reject
+            a statistical claim.
+        </p>
+
+
+        <h3>Null Hypothesis</h3>
+
+        <p>
+            The null hypothesis, H₀, represents the claim or assumption
+            being tested.
+        </p>
+
+
+        <h3>Alternative Hypothesis</h3>
+
+        <p>
+            The alternative hypothesis, H₁, represents the competing
+            claim.
+        </p>
+
+
+        <h3>Significance Level</h3>
+
+        <p>
+            The significance level is the probability of rejecting H₀
+            when H₀ is actually true.
+        </p>
+
+        <div class="formula">
+            Common significance levels: 5% and 1%
+        </div>
+
+
+        <h3>Critical Region</h3>
+
+        <p>
+            The critical region contains values of the test statistic
+            that would lead to rejection of H₀.
+        </p>
+
+
+        <h3>Binomial Hypothesis Tests</h3>
+
+        <p>
+            Binomial models can be used to test claims about the
+            probability of success p.
+        </p>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example Structure
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    <strong>Step 1:</strong> State H₀ and H₁.
+                </p>
+
+                <p>
+                    <strong>Step 2:</strong> Identify the distribution
+                    under H₀.
+                </p>
+
+                <p>
+                    <strong>Step 3:</strong> Find the relevant probability
+                    or critical value.
+                </p>
+
+                <p>
+                    <strong>Step 4:</strong> Compare the result with the
+                    significance level.
+                </p>
+
+                <p>
+                    <strong>Step 5:</strong> State the conclusion in
+                    context.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>Poisson Hypothesis Tests</h3>
+
+        <p>
+            A Poisson distribution can be used to test claims about
+            the mean rate λ.
+        </p>
+
+
+        <h3>Testing Procedure</h3>
+
+        <ul>
+
+            <li>Define the null and alternative hypotheses.</li>
+
+            <li>Use the null hypothesis to specify the distribution.</li>
+
+            <li>Identify the critical region or calculate a probability.</li>
+
+            <li>Compare the evidence with the significance level.</li>
+
+            <li>Reject or do not reject H₀.</li>
+
+            <li>State the conclusion in the context of the question.</li>
+
+        </ul>
+
+
+        <div class="warning">
+
+            <strong>Important exam language:</strong>
+
+            <p>
+                Do not simply say “H₀ is true” when a test result is
+                not significant. Say that there is insufficient evidence
+                to reject H₀.
+            </p>
+
+        </div>
+
+
+        <h3>Normal Approximation in Hypothesis Testing</h3>
+
+        <p>
+            When appropriate, a Normal approximation can be used for
+            a Binomial hypothesis test. The continuity correction must
+            be applied when making the approximation.
+        </p>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- MIXED PRACTICE -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>S2 Mixed Practice</h2>
+
+        <p>
+            These questions combine the major S2 techniques rather than
+            separating practice by topic.
+        </p>
+
+
+        <div class="question">
+
+            <strong>
+                1. State the four conditions required for a Binomial model.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Fixed number of trials, two possible outcomes per
+                    trial, constant probability of success and independent
+                    trials.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. X ~ Po(6). Find E(X) and Var(X).
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    E(X) = 6 and Var(X) = 6.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. Explain when a Binomial distribution may be
+                approximated by a Poisson distribution.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    When n is sufficiently large and p is sufficiently
+                    small, using λ = np.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. A continuous random variable has PDF f(x).
+                What must the total area under the PDF equal?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    The total area must equal 1.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. What is P(X = 4) for a continuous random variable?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    P(X = 4) = 0.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. State the relationship between a PDF f(x)
+                and its CDF F(x).
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    F(x) is obtained by integrating f(x), and
+                    f(x) is the derivative of F(x).
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. X ~ U(2, 10). Find E(X).
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    E(X) = (2 + 10) / 2 = 6.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. X ~ B(100, 0.2). State the mean and variance
+                of the Normal approximation.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Mean = np = 20.
+                </p>
+
+                <p>
+                    Variance = np(1 − p)
+                    = 100 × 0.2 × 0.8 = 16.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. When approximating P(X ≥ 30) using a Normal
+                distribution, what continuity correction is required?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Use P(Y &gt; 29.5).
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. What should be stated when a hypothesis test
+                does not provide sufficient evidence against H₀?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    There is insufficient evidence to reject H₀.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- QUICK REVIEW -->
+    <!-- ====================================================== -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>S2 Key Formulae</h2>
+
+
+        <div class="formula">
+            X ~ B(n,p)
+        </div>
+
+        <div class="formula">
+            E(X) = np
+        </div>
+
+        <div class="formula">
+            Var(X) = np(1 − p)
+        </div>
+
+        <div class="formula">
+            X ~ Po(λ)
+        </div>
+
+        <div class="formula">
+            E(X) = Var(X) = λ
+        </div>
+
+        <div class="formula">
+            B(n,p) ≈ Po(np)
+        </div>
+
+        <div class="formula">
+            P(a &lt; X &lt; b) = ∫ₐᵇ f(x) dx
+        </div>
+
+        <div class="formula">
+            F(x) = P(X ≤ x)
+        </div>
+
+        <div class="formula">
+            f(x) = dF(x) / dx
+        </div>
+
+        <div class="formula">
+            E(X) = ∫x f(x) dx
+        </div>
+
+        <div class="formula">
+            Var(X) = E(X²) − [E(X)]²
+        </div>
+
+        <div class="formula">
+            X ~ U(a,b)
+        </div>
+
+        <div class="formula">
+            E(X) = (a + b) ÷ 2
+        </div>
+
+        <div class="formula">
+            Var(X) = (b − a)² ÷ 12
+        </div>
+
+        <div class="formula">
+            Z = (X − μ) ÷ σ
+        </div>
+
+        <div class="formula">
+            Continuity correction: ±0.5
+        </div>
+
+
+        <div class="definition">
+
+            <strong>S2 exam checklist:</strong>
+
+            <ul>
+
+                <li>Check the assumptions of a probability model.</li>
+
+                <li>Use the correct distribution.</li>
+
+                <li>Remember continuity correction for Normal approximations.</li>
+
+                <li>Use integration correctly for continuous variables.</li>
+
+                <li>State hypothesis-test conclusions in context.</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="statistics.html" class="button">
+        ← Back to Statistics
+    </a>
+
+    <a href="mathematics.html" class="button">
+        Mathematics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
+```
