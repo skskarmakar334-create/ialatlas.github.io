@@ -1,0 +1,988 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chemistry 4 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Chemistry Unit 4 resources — rates, equilibria and further organic chemistry.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="chemistry.html">
+        ← Chemistry
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • UNIT 4
+    </p>
+
+    <h1>
+        Chemistry <span>4</span>
+    </h1>
+
+    <p>
+        General Principles of Chemistry I — Rates, Equilibria
+        and Further Organic Chemistry.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- RATES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>How Fast? — Rates of Reaction</h2>
+
+        <p>
+            Reaction kinetics describes how quickly chemical reactions
+            occur and how the rate changes when conditions are altered.
+        </p>
+
+        <h3>Rate of Reaction</h3>
+
+        <p>
+            Rate can be measured using the change in concentration of
+            a reactant or product per unit time.
+        </p>
+
+        <div class="formula">
+            Rate = change in concentration / time
+        </div>
+
+        <h3>Initial Rate</h3>
+
+        <p>
+            The initial rate is the rate of reaction at the beginning
+            of a reaction. It can be determined from the gradient of
+            a tangent to a concentration-time graph at t = 0.
+        </p>
+
+        <h3>Factors Affecting Rate</h3>
+
+        <ul>
+
+            <li>Concentration of reactants</li>
+
+            <li>Pressure of gaseous reactants</li>
+
+            <li>Temperature</li>
+
+            <li>Surface area</li>
+
+            <li>Presence of a catalyst</li>
+
+        </ul>
+
+        <h3>Collision Theory</h3>
+
+        <p>
+            Particles must collide with sufficient energy and suitable
+            orientation for a successful reaction to occur.
+        </p>
+
+        <h3>Activation Energy</h3>
+
+        <div class="definition">
+
+            <strong>Activation energy:</strong>
+
+            <p>
+                The minimum energy required for particles to react
+                successfully during a collision.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RATE EQUATIONS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Rate Equations</h2>
+
+        <p>
+            Experimental data can be used to determine how the
+            concentrations of reactants affect the rate.
+        </p>
+
+        <div class="formula">
+            Rate = k[A]ᵐ[B]ⁿ
+        </div>
+
+        <h3>Order of Reaction</h3>
+
+        <p>
+            The order with respect to a reactant is the power of its
+            concentration in the experimentally determined rate equation.
+        </p>
+
+        <ul>
+
+            <li>Zero order — rate is independent of concentration.</li>
+
+            <li>First order — rate is proportional to concentration.</li>
+
+            <li>Second order — rate is proportional to concentration squared.</li>
+
+        </ul>
+
+        <h3>Overall Order</h3>
+
+        <p>
+            The overall order is the sum of the individual orders
+            in the rate equation.
+        </p>
+
+        <div class="formula">
+            Overall order = m + n
+        </div>
+
+        <h3>Rate Constant</h3>
+
+        <p>
+            The value and units of the rate constant depend on the
+            overall order of the reaction.
+        </p>
+
+    </section>
+
+
+    <!-- ARRHENIUS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Temperature and the Arrhenius Equation</h2>
+
+        <p>
+            Increasing temperature generally increases the rate of
+            reaction because a greater proportion of particles have
+            energy greater than the activation energy.
+        </p>
+
+        <div class="formula">
+            k = Ae<sup>−Eₐ/RT</sup>
+        </div>
+
+        <h3>Arrhenius Equation</h3>
+
+        <ul>
+
+            <li>k = rate constant</li>
+
+            <li>A = pre-exponential factor</li>
+
+            <li>Eₐ = activation energy</li>
+
+            <li>R = gas constant</li>
+
+            <li>T = temperature in kelvin</li>
+
+        </ul>
+
+        <h3>Arrhenius Plots</h3>
+
+        <div class="formula">
+            ln k = ln A − Eₐ / RT
+        </div>
+
+        <p>
+            A graph of ln k against 1/T can be used to determine
+            the activation energy from its gradient.
+        </p>
+
+    </section>
+
+
+    <!-- ENTROPY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>How Far? — Entropy</h2>
+
+        <p>
+            Entropy is a measure of the disorder or dispersal of
+            energy and particles in a system.
+        </p>
+
+        <h3>Entropy Change</h3>
+
+        <div class="formula">
+            ΔS = ΣS(products) − ΣS(reactants)
+        </div>
+
+        <p>
+            Entropy generally increases when particles become more
+            dispersed, particularly when a solid or liquid forms a gas.
+        </p>
+
+        <h3>Total Entropy Change</h3>
+
+        <div class="formula">
+            ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub>
+        </div>
+
+        <div class="definition">
+
+            <strong>Spontaneous change:</strong>
+
+            <p>
+                A reaction is thermodynamically feasible when the
+                total entropy change is positive.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EQUILIBRIA -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Equilibria</h2>
+
+        <p>
+            Dynamic equilibrium occurs when the forward and reverse
+            reactions continue at equal rates in a closed system.
+        </p>
+
+        <h3>Equilibrium Constant</h3>
+
+        <div class="formula">
+            K<sub>c</sub> = [products]<sup>coefficients</sup> /
+            [reactants]<sup>coefficients</sup>
+        </div>
+
+        <p>
+            The equilibrium constant provides information about the
+            position of equilibrium at a particular temperature.
+        </p>
+
+        <h3>Le Chatelier's Principle</h3>
+
+        <p>
+            When a system at equilibrium is subjected to a change,
+            the equilibrium position shifts in the direction that
+            opposes the change.
+        </p>
+
+        <ul>
+
+            <li>Changing concentration</li>
+
+            <li>Changing pressure</li>
+
+            <li>Changing temperature</li>
+
+        </ul>
+
+        <h3>Industrial Equilibria</h3>
+
+        <p>
+            Industrial processes use equilibrium principles to balance
+            yield, rate, cost and safety.
+        </p>
+
+    </section>
+
+
+    <!-- ACID BASE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Acid-Base Equilibria</h2>
+
+        <p>
+            Acids and bases can be treated as equilibrium systems,
+            particularly when considering weak acids and weak bases.
+        </p>
+
+        <h3>Weak Acids</h3>
+
+        <div class="formula">
+            HA ⇌ H⁺ + A⁻
+        </div>
+
+        <h3>Acid Dissociation Constant</h3>
+
+        <div class="formula">
+            K<sub>a</sub> = [H⁺][A⁻] / [HA]
+        </div>
+
+        <h3>pH</h3>
+
+        <div class="formula">
+            pH = −log₁₀[H⁺]
+        </div>
+
+        <h3>Buffers</h3>
+
+        <p>
+            Buffer solutions resist changes in pH when small amounts
+            of acid or alkali are added.
+        </p>
+
+        <h3>Titration Curves</h3>
+
+        <p>
+            Titration curves show how pH changes as acid or alkali
+            is added. They can be used to identify equivalence points
+            and appropriate indicators.
+        </p>
+
+    </section>
+
+
+    <!-- CARBONYL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Carbonyl Compounds</h2>
+
+        <p>
+            Aldehydes and ketones contain the carbonyl functional group,
+            C=O.
+        </p>
+
+        <h3>Aldehydes</h3>
+
+        <p>
+            Aldehydes contain the functional group −CHO and can be
+            oxidised to carboxylic acids.
+        </p>
+
+        <h3>Ketones</h3>
+
+        <p>
+            Ketones contain a carbonyl group bonded to two carbon
+            groups and are generally resistant to further oxidation.
+        </p>
+
+        <h3>Nucleophilic Addition</h3>
+
+        <p>
+            Nucleophiles can attack the electrophilic carbon atom
+            of the carbonyl group.
+        </p>
+
+        <h3>Reaction with Hydrogen Cyanide</h3>
+
+        <p>
+            Aldehydes and ketones can react with hydrogen cyanide to
+            form hydroxynitriles.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                The carbonyl carbon is electron deficient because
+                oxygen is more electronegative than carbon.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARBOXYLIC ACIDS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Carboxylic Acids and Their Derivatives</h2>
+
+        <p>
+            Carboxylic acids contain the functional group −COOH and
+            undergo a range of reactions useful in organic synthesis.
+        </p>
+
+        <h3>Properties</h3>
+
+        <ul>
+
+            <li>Carboxylic acids are weak acids.</li>
+
+            <li>They can form hydrogen bonds.</li>
+
+            <li>They react with bases to form salts.</li>
+
+            <li>They can react with alcohols to form esters.</li>
+
+        </ul>
+
+        <h3>Esters</h3>
+
+        <p>
+            Esters can be formed by the reaction between a carboxylic
+            acid and an alcohol.
+        </p>
+
+        <div class="formula">
+            Carboxylic acid + alcohol ⇌ ester + water
+        </div>
+
+        <h3>Hydrolysis</h3>
+
+        <p>
+            Esters can be hydrolysed under acidic or alkaline conditions.
+        </p>
+
+        <h3>Acyl Derivatives</h3>
+
+        <p>
+            The chemistry of acyl compounds involves nucleophilic
+            substitution and is important in organic synthesis.
+        </p>
+
+    </section>
+
+
+    <!-- ORGANIC SYNTHESIS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 09</p>
+
+        <h2>Organic Synthesis and Analysis</h2>
+
+        <p>
+            Organic synthesis involves converting one organic compound
+            into another using appropriate reagents and conditions.
+        </p>
+
+        <h3>Reaction Pathways</h3>
+
+        <ul>
+
+            <li>Identify the functional group being changed.</li>
+
+            <li>Select an appropriate reagent.</li>
+
+            <li>State suitable reaction conditions.</li>
+
+            <li>Identify the organic product.</li>
+
+            <li>Balance the equation where required.</li>
+
+        </ul>
+
+        <h3>NMR Spectroscopy</h3>
+
+        <p>
+            Nuclear magnetic resonance spectroscopy provides information
+            about the chemical environment of nuclei within molecules.
+        </p>
+
+        <ul>
+
+            <li>Number of signals</li>
+
+            <li>Chemical shift</li>
+
+            <li>Integration</li>
+
+            <li>Splitting patterns</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- PRACTICAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICAL SKILLS</p>
+
+        <h2>Unit 4 Practical Chemistry</h2>
+
+        <p>
+            Practical knowledge is embedded throughout Unit 4 and
+            practical work can be assessed in the written examination.
+        </p>
+
+        <ul>
+
+            <li>Investigating reaction rates</li>
+
+            <li>Measuring rates using experimental data</li>
+
+            <li>Investigating equilibrium systems</li>
+
+            <li>Acid-base titrations</li>
+
+            <li>Organic preparations</li>
+
+            <li>Qualitative observations</li>
+
+            <li>Analysis and evaluation of experimental data</li>
+
+        </ul>
+
+        <div class="definition">
+
+            <strong>Exam focus:</strong>
+
+            <p>
+                Be prepared to analyse experimental results, identify
+                sources of uncertainty and evaluate the reliability
+                of conclusions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 4 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. What is meant by the order of a reaction with respect
+                to a reactant?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    It is the power to which the concentration of that
+                    reactant is raised in the experimentally determined
+                    rate equation.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. State two factors that can increase the rate of a reaction.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Increasing temperature and increasing concentration
+                    are two possible factors.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. What does a positive total entropy change indicate?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    A positive total entropy change indicates that the
+                    reaction is thermodynamically feasible.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. State Le Chatelier's principle.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    When a system at equilibrium is subjected to a change,
+                    the equilibrium position shifts in the direction that
+                    opposes the change.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. What is the functional group present in aldehydes?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    The aldehyde functional group is −CHO.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. What type of reaction occurs when an aldehyde reacts
+                with hydrogen cyanide?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    It is a nucleophilic addition reaction.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 4 Key Ideas</h2>
+
+        <div class="formula">
+            Rate = change in concentration / time
+        </div>
+
+        <div class="formula">
+            Rate = k[A]ᵐ[B]ⁿ
+        </div>
+
+        <div class="formula">
+            k = Ae<sup>−Eₐ/RT</sup>
+        </div>
+
+        <div class="formula">
+            ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub>
+        </div>
+
+        <div class="formula">
+            K<sub>a</sub> = [H⁺][A⁻] / [HA]
+        </div>
+
+        <div class="formula">
+            pH = −log₁₀[H⁺]
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="chemistry.html" class="button">
+        ← Back to Chemistry
+    </a>
+
+    <a href="index.html" class="button">
+        Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
+```
