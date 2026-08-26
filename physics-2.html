@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics 2 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 2 complete lessons, equations, worked examples, practicals and mixed practice.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul,
+        .lesson ol {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .practical {
+            background: #f2f8fc;
+            border-left: 5px solid #168dca;
+            padding: 22px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .practical strong {
+            color: #168dca;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .quick-review {
+            background: #071b36;
+            color: white;
+        }
+
+        .quick-review h2,
+        .quick-review h3,
+        .quick-review p {
+            color: white;
+        }
+
+        .quick-review .formula {
+            background: #0b3c73;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="physics.html">
+        ← Physics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 2
+    </p>
+
+    <h1>
+        Physics <span>2</span>
+    </h1>
+
+    <p>
+        Waves, the particle nature of light and electric circuits —
+        explained through complete lessons, equations, worked examples,
+        practical skills and exam-focused practice.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- WAVES INTRODUCTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Waves and Particle Nature of Light</h2>
+
+        <p>
+            Unit 2 begins with the behaviour and properties of waves,
+            followed by refraction, diffraction, interference and
+            stationary waves. The unit then develops the idea that
+            electromagnetic radiation can behave both as a wave and
+            as a stream of photons.
+        </p>
+
+        <div class="definition">
+
+            <strong>Core idea:</strong>
+
+            <p>
+                A wave transfers energy and information without requiring
+                the overall transfer of matter from one place to another.
+            </p>
+
+        </div>
+
+        <h3>Key Wave Quantities</h3>
+
+        <ul>
+
+            <li><strong>Amplitude:</strong> maximum displacement from the equilibrium position.</li>
+
+            <li><strong>Frequency:</strong> number of complete oscillations per second.</li>
+
+            <li><strong>Period:</strong> time taken for one complete oscillation.</li>
+
+            <li><strong>Wavelength:</strong> distance between successive points in phase.</li>
+
+            <li><strong>Wave speed:</strong> speed at which the wave pattern travels.</li>
+
+        </ul>
+
+        <div class="formula">
+            v = fλ
+        </div>
+
+    </section>
+
+
+    <!-- TRANSVERSE AND LONGITUDINAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Transverse and Longitudinal Waves</h2>
+
+        <h3>Transverse Waves</h3>
+
+        <p>
+            In a transverse wave, the oscillations are perpendicular
+            to the direction in which the wave transfers energy.
+        </p>
+
+        <p>
+            Examples include electromagnetic waves and waves travelling
+            along a stretched string.
+        </p>
+
+        <h3>Longitudinal Waves</h3>
+
+        <p>
+            In a longitudinal wave, the oscillations are parallel to
+            the direction of energy transfer.
+        </p>
+
+        <p>
+            Sound in air is a longitudinal wave. It consists of
+            compressions and rarefactions caused by variations in
+            pressure and molecular displacement.
+        </p>
+
+        <h3>Wave Graphs</h3>
+
+        <p>
+            Transverse waves can be represented by displacement against
+            distance or time. Longitudinal waves can be represented using
+            pressure or molecular displacement.
+        </p>
+
+    </section>
+
+
+    <!-- SUPERPOSITION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Wavefronts, Phase and Superposition</h2>
+
+        <h3>Wavefront</h3>
+
+        <p>
+            A wavefront is a line or surface joining points that are
+            at the same phase of oscillation.
+        </p>
+
+        <h3>Phase</h3>
+
+        <p>
+            Two points are in phase when they have the same displacement
+            and are moving in the same direction at the same time.
+        </p>
+
+        <h3>Path Difference</h3>
+
+        <p>
+            Path difference is the difference between the distances
+            travelled by two waves to reach a particular point.
+        </p>
+
+        <h3>Superposition</h3>
+
+        <p>
+            When two or more waves overlap, their resultant displacement
+            is the algebraic sum of their individual displacements.
+        </p>
+
+        <div class="definition">
+
+            <strong>Interference:</strong>
+
+            <p>
+                Constructive interference occurs when waves reinforce
+                each other, while destructive interference occurs when
+                they oppose each other.
+            </p>
+
+        </div>
+
+        <div class="formula">
+            Phase difference = (path difference / wavelength) × 360°
+        </div>
+
+    </section>
+
+
+    <!-- STATIONARY WAVES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Stationary Waves</h2>
+
+        <p>
+            A stationary wave is produced when two waves of the same
+            frequency, wavelength and amplitude travel in opposite
+            directions and superpose.
+        </p>
+
+        <h3>Nodes</h3>
+
+        <p>
+            A node is a point where the displacement is always zero.
+        </p>
+
+        <h3>Antinodes</h3>
+
+        <p>
+            An antinode is a point where the displacement has its
+            maximum amplitude.
+        </p>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                Adjacent nodes are separated by λ/2, while a node and
+                its nearest antinode are separated by λ/4.
+            </p>
+
+        </div>
+
+        <h3>Wave on a Stretched String</h3>
+
+        <div class="formula">
+            v = √(T / μ)
+        </div>
+
+        <p>
+            Here T is the tension in the string and μ is the mass per
+            unit length.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                A string has a tension of 80 N and a mass per unit length
+                of 0.020 kg m⁻¹. Find the wave speed.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    v = √(80 / 0.020)
+                </p>
+
+                <p>
+                    v = √4000
+                </p>
+
+                <p>
+                    <strong>v ≈ 63.2 m s⁻¹</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTENSITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Intensity of Radiation</h2>
+
+        <p>
+            Intensity is the power transferred per unit area perpendicular
+            to the direction of energy transfer.
+        </p>
+
+        <div class="formula">
+            I = P / A
+        </div>
+
+        <p>
+            where I is intensity, P is power and A is area.
+        </p>
+
+        <h3>Inverse Square Relationship</h3>
+
+        <p>
+            For radiation spreading uniformly from a point source,
+            intensity decreases as the square of the distance from
+            the source increases.
+        </p>
+
+        <div class="formula">
+            I ∝ 1 / r²
+        </div>
+
+    </section>
+
+
+    <!-- REFRACTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Refraction</h2>
+
+        <p>
+            Refraction occurs when a wave changes direction because its
+            speed changes when it enters a different medium.
+        </p>
+
+        <h3>Refractive Index</h3>
+
+        <div class="formula">
+            n = c / v
+        </div>
+
+        <p>
+            Here c is the speed of light in vacuum and v is the speed
+            of light in the medium.
+        </p>
+
+        <h3>Snell's Law</h3>
+
+        <div class="formula">
+            n₁ sin θ₁ = n₂ sin θ₂
+        </div>
+
+        <p>
+            The angles are measured from the normal to the boundary.
+        </p>
+
+        <h3>Critical Angle</h3>
+
+        <div class="formula">
+            sin C = 1 / n
+        </div>
+
+        <p>
+            For light travelling from a material of refractive index n
+            into air, the critical angle C is the angle of incidence
+            for which the refracted ray travels along the boundary.
+        </p>
+
+        <h3>Total Internal Reflection</h3>
+
+        <p>
+            Total internal reflection occurs when light travels from
+            a more optically dense medium to a less optically dense
+            medium and the angle of incidence is greater than the
+            critical angle.
+        </p>
+
+    </section>
+
+
+    <!-- REFRACTIVE INDEX PRACTICAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 4</p>
+
+        <h2>Measuring Refractive Index</h2>
+
+        <p>
+            The refractive index of a transparent solid or liquid can
+            be determined experimentally by measuring angles of
+            incidence and refraction.
+        </p>
+
+        <div class="practical">
+
+            <strong>Typical method</strong>
+
+            <ol>
+
+                <li>Place the transparent material on paper.</li>
+
+                <li>Draw a normal at the point where the light enters.</li>
+
+                <li>Use a ray box or laser to produce an incident ray.</li>
+
+                <li>Measure the angle of incidence and angle of refraction.</li>
+
+                <li>Repeat for several different angles.</li>
+
+                <li>Use Snell's law or a suitable graph to determine n.</li>
+
+            </ol>
+
+            <p>
+                Take care to avoid parallax when measuring angles and
+                repeat measurements to improve reliability.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- POLARISATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Polarisation</h2>
+
+        <p>
+            Plane polarisation occurs when the oscillations of a
+            transverse wave are restricted to one direction.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key point:</strong>
+
+            <p>
+                Polarisation is evidence that a wave is transverse,
+                because longitudinal waves cannot be plane-polarised.
+            </p>
+
+        </div>
+
+        <p>
+            Electromagnetic waves are transverse and can therefore
+            be polarised.
+        </p>
+
+    </section>
+
+
+    <!-- DIFFRACTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Diffraction</h2>
+
+        <p>
+            Diffraction is the spreading of waves when they pass through
+            a gap or around an obstacle.
+        </p>
+
+        <h3>Huygens' Construction</h3>
+
+        <p>
+            Huygens' construction treats every point on a wavefront as
+            a source of secondary wavelets. The new wavefront is obtained
+            by drawing the envelope of these wavelets.
+        </p>
+
+        <p>
+            Diffraction becomes more significant when the size of the
+            gap is comparable to the wavelength.
+        </p>
+
+        <h3>Diffraction Grating</h3>
+
+        <div class="formula">
+            nλ = d sin θ
+        </div>
+
+        <p>
+            Here n is the order of the maximum, λ is wavelength,
+            d is the grating spacing and θ is the diffraction angle.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                A diffraction grating has 600 lines per millimetre.
+                Light of wavelength 500 nm produces a first-order maximum.
+                Find the diffraction angle.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Number of lines per metre =
+                    600 × 1000 = 6.00 × 10⁵ m⁻¹
+                </p>
+
+                <p>
+                    d = 1 / (6.00 × 10⁵)
+                </p>
+
+                <p>
+                    d = 1.67 × 10⁻⁶ m
+                </p>
+
+                <p>
+                    sin θ = λ / d
+                </p>
+
+                <p>
+                    sin θ =
+                    (5.00 × 10⁻⁷) / (1.67 × 10⁻⁶)
+                    ≈ 0.300
+                </p>
+
+                <p>
+                    <strong>θ ≈ 17.5°</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIFFRACTION GRATING PRACTICAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 5</p>
+
+        <h2>Finding the Wavelength of Light</h2>
+
+        <p>
+            A diffraction grating can be used to determine the wavelength
+            of monochromatic light such as laser light.
+        </p>
+
+        <div class="practical">
+
+            <strong>Method</strong>
+
+            <ol>
+
+                <li>Place the diffraction grating perpendicular to the incident beam.</li>
+
+                <li>Observe the central maximum and higher-order maxima.</li>
+
+                <li>Measure the angle θ for a known diffraction order.</li>
+
+                <li>Use the number of lines per unit length to calculate d.</li>
+
+                <li>Use nλ = d sin θ to determine λ.</li>
+
+                <li>Repeat measurements for greater reliability.</li>
+
+            </ol>
+
+        </div>
+
+    </section>
+
+
+    <!-- ELECTRON WAVES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 09</p>
+
+        <h2>Wave Nature of Electrons</h2>
+
+        <p>
+            Electrons can behave as waves as well as particles.
+            Electron diffraction experiments provide evidence for
+            the wave nature of matter.
+        </p>
+
+        <h3>de Broglie Wavelength</h3>
+
+        <div class="formula">
+            λ = h / p
+        </div>
+
+        <p>
+            Since momentum p = mv for a non-relativistic particle:
+        </p>
+
+        <div class="formula">
+            λ = h / mv
+        </div>
+
+        <p>
+            The wave nature becomes more significant for particles
+            with small momentum.
+        </p>
+
+    </section>
+
+
+    <!-- PULSE ECHO -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 10</p>
+
+        <h2>Pulse-Echo Techniques</h2>
+
+        <p>
+            A pulse-echo system sends a short pulse of radiation or
+            ultrasound towards an object and detects the reflected echo.
+        </p>
+
+        <h3>Finding Distance</h3>
+
+        <div class="formula">
+            distance = vt / 2
+        </div>
+
+        <p>
+            The factor of 2 is required because the pulse travels to
+            the object and then back to the detector.
+        </p>
+
+        <h3>Resolution</h3>
+
+        <p>
+            The amount of information obtained can be limited by the
+            wavelength of the radiation and the duration of the pulse.
+            Shorter wavelengths and shorter pulses can generally
+            provide better resolution.
+        </p>
+
+    </section>
+
+
+    <!-- WAVE PARTICLE DUALITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 11</p>
+
+        <h2>Wave-Particle Duality of Light</h2>
+
+        <p>
+            Electromagnetic radiation can be described using both
+            a wave model and a photon model.
+        </p>
+
+        <h3>Wave Model</h3>
+
+        <p>
+            The wave model explains phenomena such as interference,
+            diffraction, refraction and polarisation.
+        </p>
+
+        <h3>Photon Model</h3>
+
+        <p>
+            The photon model treats electromagnetic radiation as
+            packets of energy called photons.
+        </p>
+
+        <div class="formula">
+            E = hf
+        </div>
+
+        <p>
+            Higher-frequency photons have greater energy.
+        </p>
+
+    </section>
+
+
+    <!-- PHOTOELECTRIC EFFECT -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 12</p>
+
+        <h2>The Photoelectric Effect</h2>
+
+        <p>
+            The photoelectric effect is the emission of electrons
+            from a metal surface when electromagnetic radiation of
+            sufficiently high frequency is incident on it.
+        </p>
+
+        <h3>Threshold Frequency</h3>
+
+        <p>
+            The threshold frequency is the minimum frequency required
+            for photoemission from a particular metal.
+        </p>
+
+        <h3>Work Function</h3>
+
+        <p>
+            The work function is the minimum energy required to remove
+            an electron from the surface of a metal.
+        </p>
+
+        <div class="formula">
+            hf = φ + ½mv²max
+        </div>
+
+        <h3>Electronvolt</h3>
+
+        <p>
+            The electronvolt is a convenient unit for small amounts
+            of energy associated with particles.
+        </p>
+
+        <div class="formula">
+            1 eV = 1.60 × 10⁻¹⁹ J
+        </div>
+
+        <div class="definition">
+
+            <strong>Why the photoelectric effect matters:</strong>
+
+            <p>
+                The instantaneous emission of electrons above a threshold
+                frequency and the dependence of maximum kinetic energy
+                on frequency provide evidence for the particle nature
+                of electromagnetic radiation.
+            </p>
+
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                Light of frequency 8.0 × 10¹⁴ Hz falls on a metal with
+                a work function of 2.0 eV. Find the maximum kinetic energy
+                of an emitted electron.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Photon energy:
+                    E = hf
+                </p>
+
+                <p>
+                    E = (6.63 × 10⁻³⁴)(8.0 × 10¹⁴)
+                </p>
+
+                <p>
+                    E ≈ 5.30 × 10⁻¹⁹ J
+                </p>
+
+                <p>
+                    Work function:
+                    φ = 2.0 × 1.60 × 10⁻¹⁹
+                    = 3.20 × 10⁻¹⁹ J
+                </p>
+
+                <p>
+                    Kinetic energy =
+                    5.30 × 10⁻¹⁹ − 3.20 × 10⁻¹⁹
+                </p>
+
+                <p>
+                    <strong>
+                        KEmax ≈ 2.10 × 10⁻¹⁹ J
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ATOMIC SPECTRA -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 13</p>
+
+        <h2>Atomic Line Spectra</h2>
+
+        <p>
+            Electrons in atoms can occupy only certain discrete energy
+            levels. When an electron moves between energy levels,
+            electromagnetic radiation can be emitted or absorbed.
+        </p>
+
+        <h3>Emission</h3>
+
+        <p>
+            When an electron moves from a higher energy level to a
+            lower energy level, a photon is emitted.
+        </p>
+
+        <h3>Absorption</h3>
+
+        <p>
+            When an electron absorbs a photon with the correct energy,
+            it can move to a higher energy level.
+        </p>
+
+        <div class="formula">
+            ΔE = hf
+        </div>
+
+        <p>
+            Therefore:
+        </p>
+
+        <div class="formula">
+            f = ΔE / h
+        </div>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                The discrete nature of atomic energy levels produces
+                discrete spectral lines rather than a continuous spectrum.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ELECTRIC CIRCUITS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 14</p>
+
+        <h2>Electric Current, Charge and Potential Difference</h2>
+
+        <h3>Electric Current</h3>
+
+        <p>
+            Electric current is the rate of flow of electric charge.
+        </p>
+
+        <div class="formula">
+            I = ΔQ / Δt
+        </div>
+
+        <h3>Potential Difference</h3>
+
+        <p>
+            Potential difference is the energy transferred per unit
+            charge when charge moves between two points.
+        </p>
+
+        <div class="formula">
+            V = W / Q
+        </div>
+
+        <h3>Resistance</h3>
+
+        <div class="formula">
+            R = V / I
+        </div>
+
+        <p>
+            Ohm's law is the special case where current is directly
+            proportional to potential difference at constant temperature.
+        </p>
+
+    </section>
+
+
+    <!-- CIRCUIT RULES -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 15</p>
+
+        <h2>Charge and Energy Conservation in Circuits</h2>
+
+        <h3>Current at a Junction</h3>
+
+        <p>
+            Charge cannot accumulate indefinitely at a junction.
+            Therefore the total current entering a junction equals
+            the total current leaving it.
+        </p>
+
+        <div class="formula">
+            ΣI(in) = ΣI(out)
+        </div>
+
+        <h3>Potential Differences</h3>
+
+        <p>
+            Energy is conserved around a complete circuit. The total
+            potential difference supplied is equal to the total
+            potential difference across the components.
+        </p>
+
+        <div class="formula">
+            ΣV = 0 around a complete loop
+        </div>
+
+    </section>
+
+
+    <!-- SERIES PARALLEL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 16</p>
+
+        <h2>Resistors in Series and Parallel</h2>
+
+        <h3>Series</h3>
+
+        <p>
+            In series, the same current passes through each resistor.
+        </p>
+
+        <div class="formula">
+            Rtotal = R₁ + R₂ + R₃ + ...
+        </div>
+
+        <h3>Parallel</h3>
+
+        <p>
+            In parallel, the potential difference across each branch
+            is the same.
+        </p>
+
+        <div class="formula">
+            1/Rtotal = 1/R₁ + 1/R₂ + 1/R₃ + ...
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                Two resistors of 6 Ω and 3 Ω are connected in parallel.
+                Find the combined resistance.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    1/R = 1/6 + 1/3
+                </p>
+
+                <p>
+                    1/R = 1/6 + 2/6 = 3/6 = 1/2
+                </p>
+
+                <p>
+                    <strong>R = 2 Ω</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POWER ENERGY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 17</p>
+
+        <h2>Electrical Power and Energy</h2>
+
+        <div class="formula">
+            P = VI
+        </div>
+
+        <div class="formula">
+            W = VIt
+        </div>
+
+        <p>
+            Using V = IR, further useful forms are:
+        </p>
+
+        <div class="formula">
+            P = I²R
+        </div>
+
+        <div class="formula">
+            P = V²/R
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                A 12 V supply drives a current of 2.5 A through a device.
+                Calculate its power.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    P = VI
+                </p>
+
+                <p>
+                    P = 12 × 2.5
+                </p>
+
+                <p>
+                    <strong>P = 30 W</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- I-V CHARACTERISTICS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 18</p>
+
+        <h2>Current-Potential Difference Characteristics</h2>
+
+        <h3>Ohmic Conductor</h3>
+
+        <p>
+            At constant temperature, an ohmic conductor has current
+            directly proportional to potential difference. Its
+            I-V graph is a straight line through the origin.
+        </p>
+
+        <h3>Filament Bulb</h3>
+
+        <p>
+            As current increases, the filament becomes hotter.
+            Its resistance increases, so the I-V relationship is
+            non-linear.
+        </p>
+
+        <h3>Thermistor</h3>
+
+        <p>
+            A negative temperature coefficient thermistor has decreasing
+            resistance as temperature increases.
+        </p>
+
+        <h3>Diode</h3>
+
+        <p>
+            A diode allows current to flow much more easily in one
+            direction than the other and therefore has a strongly
+            non-linear I-V characteristic.
+        </p>
+
+    </section>
+
+
+    <!-- RESISTIVITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 19</p>
+
+        <h2>Resistivity</h2>
+
+        <p>
+            Resistivity is a property of a material that describes how
+            strongly it opposes the flow of electric current.
+        </p>
+
+        <div class="formula">
+            R = ρl / A
+        </div>
+
+        <p>
+            Therefore resistance increases with length and decreases
+            with cross-sectional area, for a given material and temperature.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                A wire has resistivity 1.7 × 10⁻⁸ Ω m, length 2.0 m
+                and cross-sectional area 1.0 × 10⁻⁶ m². Find its resistance.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    R = ρl / A
+                </p>
+
+                <p>
+                    R =
+                    (1.7 × 10⁻⁸ × 2.0) / (1.0 × 10⁻⁶)
+                </p>
+
+                <p>
+                    <strong>R = 0.034 Ω</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESISTIVITY PRACTICAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 6</p>
+
+        <h2>Determining Electrical Resistivity</h2>
+
+        <div class="practical">
+
+            <strong>Typical method</strong>
+
+            <ol>
+
+                <li>Measure the length of the wire accurately.</li>
+
+                <li>Measure the diameter at several points using a micrometer.</li>
+
+                <li>Calculate the cross-sectional area.</li>
+
+                <li>Connect the wire in a suitable circuit.</li>
+
+                <li>Measure potential difference and current.</li>
+
+                <li>Calculate resistance using R = V/I.</li>
+
+                <li>Repeat for different lengths.</li>
+
+                <li>Use R = ρl/A to determine the resistivity.</li>
+
+            </ol>
+
+            <p>
+                Multiple diameter measurements are useful because the
+                cross-sectional area depends on the square of the radius.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DRIFT VELOCITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 20</p>
+
+        <h2>Current and Charge Carriers</h2>
+
+        <p>
+            In a metal, current is produced by the movement of conduction
+            electrons through the material.
+        </p>
+
+        <div class="formula">
+            I = nqvA
+        </div>
+
+        <p>
+            Here n is the number density of charge carriers, q is the
+            charge of each carrier, v is the drift velocity and A is
+            the cross-sectional area.
+        </p>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                The drift speed of electrons in a metal is much slower
+                than the speed at which electrical effects propagate
+                through a circuit.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- POTENTIAL ALONG WIRE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 21</p>
+
+        <h2>Potential Along a Uniform Wire</h2>
+
+        <p>
+            For a uniform current-carrying wire, the potential changes
+            steadily with distance along the wire when its resistance
+            per unit length is constant.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Equal lengths of a uniform wire have equal resistance
+                and therefore equal potential drops when the same
+                current flows through them.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- POTENTIAL DIVIDERS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 22</p>
+
+        <h2>Potential Dividers</h2>
+
+        <p>
+            A potential divider uses resistors in series to produce a
+            chosen fraction of the supply potential difference.
+        </p>
+
+        <div class="formula">
+            Vout = Vs × R₂ / (R₁ + R₂)
+        </div>
+
+        <p>
+            The resistor connected to the output determines the fraction
+            of the supply voltage appearing across it.
+        </p>
+
+        <h3>Variable Resistance</h3>
+
+        <p>
+            A variable resistor, thermistor or light-dependent resistor
+            can be used to make the output voltage depend on an external
+            condition.
+        </p>
+
+        <h3>Thermistor</h3>
+
+        <p>
+            For a negative temperature coefficient thermistor, resistance
+            decreases as temperature increases.
+        </p>
+
+        <h3>LDR</h3>
+
+        <p>
+            The resistance of a light-dependent resistor decreases as
+            light intensity increases.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">Worked Example</p>
+
+            <p>
+                A 12 V supply is connected across a 2 kΩ resistor and
+                a 4 kΩ resistor in series. Find the potential difference
+                across the 4 kΩ resistor.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Vout = 12 × 4/(2 + 4)
+                </p>
+
+                <p>
+                    Vout = 12 × 4/6
+                </p>
+
+                <p>
+                    <strong>Vout = 8.0 V</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EMF INTERNAL RESISTANCE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 23</p>
+
+        <h2>e.m.f. and Internal Resistance</h2>
+
+        <h3>Electromotive Force</h3>
+
+        <p>
+            The electromotive force of a source is the energy supplied
+            by the source per unit charge passing through it.
+        </p>
+
+        <h3>Internal Resistance</h3>
+
+        <p>
+            Real cells have internal resistance. Some of the energy
+            supplied by the cell is dissipated inside the cell itself.
+        </p>
+
+        <div class="formula">
+            ε = I(R + r)
+        </div>
+
+        <p>
+            Equivalently, the terminal potential difference is:
+        </p>
+
+        <div class="formula">
+            V = ε − Ir
+        </div>
+
+        <p>
+            Here ε is the e.m.f., I is current, R is external resistance
+            and r is internal resistance.
+        </p>
+
+        <div class="definition">
+
+            <strong>Difference:</strong>
+
+            <p>
+                e.m.f. refers to the energy supplied per unit charge by
+                the source, while terminal p.d. is the energy transferred
+                per unit charge in the external circuit.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERNAL RESISTANCE PRACTICAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">CORE PRACTICAL 7</p>
+
+        <h2>Determining e.m.f. and Internal Resistance</h2>
+
+        <div class="practical">
+
+            <strong>Method</strong>
+
+            <ol>
+
+                <li>Connect the cell to a variable external resistance.</li>
+
+                <li>Measure the current I and terminal potential difference V.</li>
+
+                <li>Repeat for several different values of external resistance.</li>
+
+                <li>Plot V against I.</li>
+
+                <li>Use the relationship V = ε − Ir.</li>
+
+                <li>The y-intercept gives ε.</li>
+
+                <li>The magnitude of the gradient gives r.</li>
+
+            </ol>
+
+        </div>
+
+        <div class="formula">
+            V = ε − Ir
+        </div>
+
+    </section>
+
+
+    <!-- TEMPERATURE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 24</p>
+
+        <h2>Resistance and Temperature</h2>
+
+        <h3>Metallic Conductors</h3>
+
+        <p>
+            As temperature increases, the lattice ions vibrate more
+            strongly. Electrons experience more frequent collisions,
+            so the resistance of a metal generally increases.
+        </p>
+
+        <h3>Negative Temperature Coefficient Thermistor</h3>
+
+        <p>
+            In an NTC thermistor, resistance decreases as temperature
+            increases. This can be explained by an increase in the
+            number of charge carriers available for conduction.
+        </p>
+
+    </section>
+
+
+    <!-- LDR -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 25</p>
+
+        <h2>Light-Dependent Resistors</h2>
+
+        <p>
+            An LDR changes its resistance depending on the intensity
+            of incident light.
+        </p>
+
+        <p>
+            Increasing illumination increases the number of charge
+            carriers available for conduction, reducing resistance.
+        </p>
+
+        <div class="definition">
+
+            <strong>Application:</strong>
+
+            <p>
+                LDRs can be incorporated into potential-divider circuits
+                to produce automatic responses to changes in light level.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 2 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. A wave has a frequency of 500 Hz and wavelength
+                0.68 m. Calculate its speed.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    v = fλ = 500 × 0.68
+                </p>
+
+                <p>
+                    <strong>v = 340 m s⁻¹</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. Explain why a stationary wave has nodes and antinodes.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    A stationary wave is formed by superposition of two
+                    identical waves travelling in opposite directions.
+                    Destructive interference produces nodes and constructive
+                    interference produces antinodes.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. State one condition required for total internal reflection.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The wave must travel from a medium of higher refractive
+                    index to a medium of lower refractive index, and the
+                    angle of incidence must exceed the critical angle.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. A diffraction grating has 500 lines per millimetre.
+                Calculate its grating spacing.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    500 lines/mm = 5.00 × 10⁵ lines/m.
+                </p>
+
+                <p>
+                    d = 1/(5.00 × 10⁵)
+                </p>
+
+                <p>
+                    <strong>d = 2.00 × 10⁻⁶ m</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. Calculate the energy of a photon with frequency
+                6.0 × 10¹⁴ Hz.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    E = hf
+                </p>
+
+                <p>
+                    E = (6.63 × 10⁻³⁴)(6.0 × 10¹⁴)
+                </p>
+
+                <p>
+                    <strong>E ≈ 3.98 × 10⁻¹⁹ J</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. A current of 3 A flows for 20 s. Calculate the
+                charge transferred.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Q = It = 3 × 20
+                </p>
+
+                <p>
+                    <strong>Q = 60 C</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. Two resistors of 4 Ω and 8 Ω are connected in series.
+                Find their combined resistance.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    R = 4 + 8
+                </p>
+
+                <p>
+                    <strong>R = 12 Ω</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. A 6 Ω resistor carries a current of 2 A.
+                Calculate the power dissipated.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    P = I²R
+                </p>
+
+                <p>
+                    P = 2² × 6
+                </p>
+
+                <p>
+                    <strong>P = 24 W</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. Explain why the resistance of an NTC thermistor
+                decreases when temperature increases.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Increasing temperature increases the number of
+                    charge carriers available for conduction, causing
+                    the resistance to decrease.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. A cell has e.m.f. 1.50 V and internal resistance
+                0.20 Ω. A current of 2.0 A flows. Find the terminal
+                potential difference.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    V = ε − Ir
+                </p>
+
+                <p>
+                    V = 1.50 − (2.0 × 0.20)
+                </p>
+
+                <p>
+                    <strong>V = 1.10 V</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson quick-review">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 2 Key Equations</h2>
+
+        <div class="formula">
+            v = fλ
+        </div>
+
+        <div class="formula">
+            v = √(T / μ)
+        </div>
+
+        <div class="formula">
+            I = P / A
+        </div>
+
+        <div class="formula">
+            n = c / v
+        </div>
+
+        <div class="formula">
+            n₁ sin θ₁ = n₂ sin θ₂
+        </div>
+
+        <div class="formula">
+            sin C = 1 / n
+        </div>
+
+        <div class="formula">
+            nλ = d sin θ
+        </div>
+
+        <div class="formula">
+            λ = h / p
+        </div>
+
+        <div class="formula">
+            E = hf
+        </div>
+
+        <div class="formula">
+            hf = φ + ½mv²max
+        </div>
+
+        <div class="formula">
+            I = ΔQ / Δt
+        </div>
+
+        <div class="formula">
+            V = W / Q
+        </div>
+
+        <div class="formula">
+            R = V / I
+        </div>
+
+        <div class="formula">
+            P = VI
+        </div>
+
+        <div class="formula">
+            W = VIt
+        </div>
+
+        <div class="formula">
+            R = ρl / A
+        </div>
+
+        <div class="formula">
+            I = nqvA
+        </div>
+
+        <div class="formula">
+            Vout = Vs × R₂ / (R₁ + R₂)
+        </div>
+
+        <div class="formula">
+            V = ε − Ir
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="physics.html" class="button">
+        ← Back to Physics
+    </a>
+
+    <a href="physics-1.html" class="button">
+        ← Physics 1
+    </a>
+
+    <a href="index.html" class="button">
+        Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
