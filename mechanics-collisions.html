@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Collisions | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Mechanics 2 Collisions resources.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-2.html">
+        ← Mechanics 2
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 2 • TOPIC 04
+    </p>
+
+    <h1>
+        Collisions
+    </h1>
+
+    <p>
+        Learn how momentum and impulse are used to analyse
+        collisions between particles.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 01
+        </p>
+
+        <h2>
+            Momentum
+        </h2>
+
+        <p>
+            Momentum is a vector quantity that describes the motion
+            of a particle.
+        </p>
+
+        <div class="formula">
+            p = mv
+        </div>
+
+        <p>
+            Momentum has both magnitude and direction because
+            velocity is a vector.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 02
+        </p>
+
+        <h2>
+            Conservation of Momentum
+        </h2>
+
+        <p>
+            In a collision where no external resultant force acts
+            on the system, total momentum is conserved.
+        </p>
+
+        <div class="formula">
+            Total momentum before = Total momentum after
+        </div>
+
+        <div class="definition">
+
+            <strong>For two particles:</strong>
+
+            <p>
+                m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 03
+        </p>
+
+        <h2>
+            Impulse
+        </h2>
+
+        <p>
+            Impulse is the change in momentum of a particle.
+        </p>
+
+        <div class="formula">
+            Impulse = Change in momentum
+        </div>
+
+        <div class="formula">
+            Impulse = mv − mu
+        </div>
+
+        <p>
+            Impulse is measured in newton-seconds (N s).
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 04
+        </p>
+
+        <h2>
+            Coefficient of Restitution
+        </h2>
+
+        <p>
+            The coefficient of restitution describes how elastic
+            a collision is.
+        </p>
+
+        <div class="formula">
+            e = Relative speed of separation / Relative speed of approach
+        </div>
+
+        <div class="definition">
+
+            <strong>Important:</strong>
+
+            <p>
+                For ordinary collisions, 0 ≤ e ≤ 1.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 05
+        </p>
+
+        <h2>
+            Elastic and Inelastic Collisions
+        </h2>
+
+        <p>
+            In an elastic collision, kinetic energy is conserved.
+            In an inelastic collision, kinetic energy is not conserved.
+        </p>
+
+        <ul>
+
+            <li>Momentum is conserved in an isolated system.</li>
+
+            <li>Kinetic energy may or may not be conserved.</li>
+
+            <li>The coefficient of restitution helps describe the collision.</li>
+
+        </ul>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            WORKED EXAMPLE
+        </p>
+
+        <h2>
+            Conservation of Momentum
+        </h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A 2 kg particle moving at 6 m/s collides with a
+                stationary 3 kg particle. After the collision,
+                the 2 kg particle moves at 1 m/s in the same direction.
+                Find the velocity of the 3 kg particle.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Momentum before = 2 × 6 = 12 kg m/s
+                </p>
+
+                <p>
+                    Momentum after = (2 × 1) + (3v)
+                </p>
+
+                <p>
+                    12 = 2 + 3v
+                </p>
+
+                <p>
+                    3v = 10
+                </p>
+
+                <p>
+                    <strong>v = 10/3 m/s</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            WORKED EXAMPLE
+        </p>
+
+        <h2>
+            Impulse
+        </h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle of mass 4 kg changes velocity from
+                3 m/s to 8 m/s in the same direction. Find the impulse.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Impulse = mv − mu
+                </p>
+
+                <p>
+                    = 4(8) − 4(3)
+                </p>
+
+                <p>
+                    = 32 − 12
+                </p>
+
+                <p>
+                    <strong>Impulse = 20 N s</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            PRACTICE
+        </p>
+
+        <h2>
+            Test Yourself
+        </h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. Find the momentum of a 5 kg particle moving at
+                4 m/s.
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    p = mv = 5 × 4
+                </p>
+
+                <p>
+                    <strong>p = 20 kg m/s</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. What quantity is always conserved in an isolated
+                collision?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    <strong>Momentum.</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A 2 kg particle changes velocity from 5 m/s to
+                9 m/s. Find the impulse.
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    Impulse = 2(9) − 2(5)
+                </p>
+
+                <p>
+                    <strong>Impulse = 8 N s</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            QUICK REVIEW
+        </p>
+
+        <h2>
+            Remember These
+        </h2>
+
+        <div class="formula">
+            p = mv
+        </div>
+
+        <div class="formula">
+            Total momentum before = Total momentum after
+        </div>
+
+        <div class="formula">
+            Impulse = Change in momentum
+        </div>
+
+        <div class="formula">
+            e = Relative speed of separation / Relative speed of approach
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-2.html" class="button">
+        ← Back to Mechanics 2
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
