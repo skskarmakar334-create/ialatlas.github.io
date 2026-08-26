@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Physics Unit 5 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 5 — Thermodynamics, Radiation, Oscillations and Cosmology.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson h4 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="physics.html">
+        ← Physics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 5
+    </p>
+
+    <h1>
+        Physics <span>Unit 5</span>
+    </h1>
+
+    <p>
+        Thermodynamics, radiation, oscillations, astrophysics
+        and cosmology — explained through complete lessons,
+        equations, examples and exam-focused practice.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- THERMODYNAMICS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Thermodynamics</h2>
+
+        <p>
+            Thermodynamics describes the behaviour of matter in terms
+            of temperature, internal energy, pressure and volume.
+        </p>
+
+        <h3>Internal Energy</h3>
+
+        <p>
+            The internal energy of a system is the sum of the random
+            kinetic energy and intermolecular potential energy of
+            its particles.
+        </p>
+
+        <div class="definition">
+
+            <strong>Internal energy:</strong>
+
+            <p>
+                Internal energy is the total microscopic energy
+                associated with the particles in a system.
+            </p>
+
+        </div>
+
+        <h3>Temperature</h3>
+
+        <p>
+            Temperature is related to the average kinetic energy
+            of the particles in a substance.
+        </p>
+
+        <h3>Specific Heat Capacity</h3>
+
+        <p>
+            The specific heat capacity of a substance is the energy
+            required to raise the temperature of 1 kg of the substance
+            by 1 K.
+        </p>
+
+        <div class="formula">
+            ΔE = mcΔθ
+        </div>
+
+        <h3>Specific Latent Heat</h3>
+
+        <p>
+            Specific latent heat is the energy required to change
+            the state of 1 kg of a substance without changing
+            its temperature.
+        </p>
+
+        <div class="formula">
+            E = ml
+        </div>
+
+        <h3>Gas Laws</h3>
+
+        <p>
+            For a fixed mass of gas, pressure, volume and temperature
+            are related.
+        </p>
+
+        <div class="formula">
+            pV = nRT
+        </div>
+
+        <p>
+            where p is pressure, V is volume, n is amount of substance,
+            R is the molar gas constant and T is absolute temperature.
+        </p>
+
+        <h3>Pressure and Temperature</h3>
+
+        <p>
+            For a fixed mass of gas at constant volume, pressure is
+            proportional to absolute temperature.
+        </p>
+
+        <div class="formula">
+            p ∝ T
+        </div>
+
+    </section>
+
+
+    <!-- RADIATION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Nuclear Radiation</h2>
+
+        <p>
+            Radioactive decay is a spontaneous and random process
+            in which an unstable nucleus changes into a more stable
+            configuration.
+        </p>
+
+        <h3>Activity</h3>
+
+        <p>
+            Activity is the number of nuclear decays occurring
+            per unit time.
+        </p>
+
+        <div class="formula">
+            A = λN
+        </div>
+
+        <p>
+            Activity is measured in becquerels (Bq).
+        </p>
+
+        <h3>Decay Constant</h3>
+
+        <p>
+            The decay constant λ represents the probability per unit
+            time that a particular nucleus will decay.
+        </p>
+
+        <h3>Radioactive Decay Equation</h3>
+
+        <div class="formula">
+            N = N₀e<sup>−λt</sup>
+        </div>
+
+        <p>
+            The same exponential behaviour applies to activity:
+        </p>
+
+        <div class="formula">
+            A = A₀e<sup>−λt</sup>
+        </div>
+
+        <h3>Half-Life</h3>
+
+        <p>
+            Half-life is the time required for the number of undecayed
+            nuclei, or the activity, to fall to half its initial value.
+        </p>
+
+        <div class="formula">
+            T½ = ln(2) / λ
+        </div>
+
+        <h3>Types of Radiation</h3>
+
+        <ul>
+
+            <li>Alpha radiation consists of helium nuclei.</li>
+
+            <li>Beta-minus radiation consists of electrons emitted from the nucleus.</li>
+
+            <li>Gamma radiation is electromagnetic radiation emitted from an excited nucleus.</li>
+
+        </ul>
+
+        <h3>Random Nature of Decay</h3>
+
+        <p>
+            It is impossible to predict exactly when an individual
+            nucleus will decay. However, the behaviour of a large
+            collection of nuclei can be modelled statistically.
+        </p>
+
+    </section>
+
+
+    <!-- OSCILLATIONS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Oscillations</h2>
+
+        <p>
+            An oscillation is a repeated motion about an equilibrium
+            position.
+        </p>
+
+        <h3>Simple Harmonic Motion</h3>
+
+        <p>
+            Simple harmonic motion occurs when the acceleration is
+            proportional to the displacement from equilibrium and
+            directed towards equilibrium.
+        </p>
+
+        <div class="formula">
+            a = −ω²x
+        </div>
+
+        <h3>Angular Frequency</h3>
+
+        <div class="formula">
+            ω = 2πf
+        </div>
+
+        <h3>Displacement</h3>
+
+        <p>
+            The displacement of an object undergoing simple harmonic
+            motion can be represented using a sinusoidal function.
+        </p>
+
+        <div class="formula">
+            x = A cos(ωt)
+        </div>
+
+        <h3>Velocity</h3>
+
+        <div class="formula">
+            v = −Aω sin(ωt)
+        </div>
+
+        <h3>Maximum Speed</h3>
+
+        <div class="formula">
+            v<sub>max</sub> = Aω
+        </div>
+
+        <h3>Maximum Acceleration</h3>
+
+        <div class="formula">
+            a<sub>max</sub> = Aω²
+        </div>
+
+        <h3>Energy in SHM</h3>
+
+        <p>
+            During simple harmonic motion, energy transfers between
+            kinetic and potential energy while the total mechanical
+            energy remains constant in an ideal system.
+        </p>
+
+        <div class="formula">
+            E = ½mω²A²
+        </div>
+
+    </section>
+
+
+    <!-- SPRINGS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Springs and Oscillating Systems</h2>
+
+        <p>
+            A mass attached to a spring can oscillate about its
+            equilibrium position.
+        </p>
+
+        <h3>Hooke's Law</h3>
+
+        <div class="formula">
+            F = kx
+        </div>
+
+        <p>
+            provided the limit of proportionality has not been exceeded.
+        </p>
+
+        <h3>Elastic Potential Energy</h3>
+
+        <div class="formula">
+            E = ½kx²
+        </div>
+
+        <h3>Mass-Spring System</h3>
+
+        <p>
+            The period of a mass-spring oscillator depends on the
+            mass and the spring constant.
+        </p>
+
+        <div class="formula">
+            T = 2π√(m/k)
+        </div>
+
+    </section>
+
+
+    <!-- PENDULUM -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Simple Pendulum</h2>
+
+        <p>
+            A simple pendulum provides a useful example of approximately
+            simple harmonic motion for small angular displacements.
+        </p>
+
+        <div class="formula">
+            T = 2π√(l/g)
+        </div>
+
+        <p>
+            The period depends on the length of the pendulum and
+            gravitational field strength.
+        </p>
+
+        <h3>Investigation</h3>
+
+        <p>
+            The relationship between period and length can be investigated
+            experimentally by measuring the time for several oscillations
+            and repeating the experiment for different lengths.
+        </p>
+
+    </section>
+
+
+    <!-- ASTROPHYSICS -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 06</p>
+
+        <h2>Astrophysics</h2>
+
+        <p>
+            Astrophysics applies physical principles to stars,
+            galaxies and other astronomical objects.
+        </p>
+
+        <h3>Gravitational Field Strength</h3>
+
+        <div class="formula">
+            g = GM/r²
+        </div>
+
+        <h3>Orbital Motion</h3>
+
+        <p>
+            Objects remain in orbit because gravitational attraction
+            provides the centripetal force required for circular motion.
+        </p>
+
+        <h3>Orbital Speed</h3>
+
+        <div class="formula">
+            v = √(GM/r)
+        </div>
+
+        <h3>Orbital Period</h3>
+
+        <div class="formula">
+            T² ∝ r³
+        </div>
+
+        <h3>Stars</h3>
+
+        <p>
+            Stars form from clouds of gas and dust. Gravitational
+            collapse raises the temperature and pressure until
+            nuclear fusion can occur.
+        </p>
+
+        <p>
+            The eventual evolution of a star depends strongly on
+            its initial mass.
+        </p>
+
+    </section>
+
+
+    <!-- STELLAR EVOLUTION -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 07</p>
+
+        <h2>Stellar Evolution</h2>
+
+        <h3>Main Sequence</h3>
+
+        <p>
+            During the main-sequence stage, stars produce energy
+            through nuclear fusion in their cores.
+        </p>
+
+        <h3>Low and Medium Mass Stars</h3>
+
+        <p>
+            After leaving the main sequence, these stars can expand
+            into red giants and eventually form white dwarfs.
+        </p>
+
+        <h3>Massive Stars</h3>
+
+        <p>
+            Massive stars can develop into supergiants and undergo
+            supernova explosions. Their remnants may become neutron
+            stars or black holes.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Stellar evolution is strongly determined by the
+                initial mass of the star.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LUMINOSITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 08</p>
+
+        <h2>Luminosity and Stellar Measurements</h2>
+
+        <h3>Luminosity</h3>
+
+        <p>
+            Luminosity is the total power emitted by a star.
+        </p>
+
+        <div class="formula">
+            L = 4πr²σT⁴
+        </div>
+
+        <p>
+            This is the Stefan-Boltzmann law.
+        </p>
+
+        <h3>Inverse Square Law</h3>
+
+        <div class="formula">
+            I = L / (4πd²)
+        </div>
+
+        <p>
+            The intensity received from a source decreases with
+            the square of the distance from the source.
+        </p>
+
+        <h3>Wien's Law</h3>
+
+        <div class="formula">
+            λ<sub>max</sub>T = constant
+        </div>
+
+        <p>
+            Hotter stars have their peak emission at shorter wavelengths.
+        </p>
+
+    </section>
+
+
+    <!-- SPECTRA -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 09</p>
+
+        <h2>Stellar Spectra</h2>
+
+        <p>
+            Spectroscopy allows scientists to determine information
+            about stars from the light they emit or absorb.
+        </p>
+
+        <h3>Absorption Lines</h3>
+
+        <p>
+            Dark absorption lines occur when atoms in a cooler gas
+            absorb particular wavelengths of electromagnetic radiation.
+        </p>
+
+        <h3>Emission Lines</h3>
+
+        <p>
+            Bright emission lines are produced when excited atoms
+            emit photons at specific wavelengths.
+        </p>
+
+        <h3>Doppler Effect</h3>
+
+        <p>
+            The wavelength of light received from an astronomical
+            object changes if the object is moving relative to the observer.
+        </p>
+
+        <div class="formula">
+            Δλ / λ = v / c
+        </div>
+
+        <p>
+            This relationship can be used to estimate radial velocity
+            when the speed is much smaller than the speed of light.
+        </p>
+
+    </section>
+
+
+    <!-- COSMOLOGY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 10</p>
+
+        <h2>Cosmology</h2>
+
+        <p>
+            Cosmology investigates the origin, structure and evolution
+            of the Universe.
+        </p>
+
+        <h3>Expansion of the Universe</h3>
+
+        <p>
+            Observations of distant galaxies show that the Universe
+            is expanding.
+        </p>
+
+        <h3>Hubble's Law</h3>
+
+        <div class="formula">
+            v = H₀d
+        </div>
+
+        <p>
+            The recession velocity of a galaxy is approximately
+            proportional to its distance from Earth.
+        </p>
+
+        <h3>Big Bang Model</h3>
+
+        <p>
+            The Big Bang model describes a Universe that began in
+            an extremely hot and dense state and has expanded and
+            cooled over time.
+        </p>
+
+        <h3>Cosmic Microwave Background Radiation</h3>
+
+        <p>
+            The cosmic microwave background is electromagnetic radiation
+            originating from the early Universe. Its existence provides
+            important evidence supporting the Big Bang model.
+        </p>
+
+    </section>
+
+
+    <!-- REDSHIFT -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 11</p>
+
+        <h2>Redshift and the Expanding Universe</h2>
+
+        <p>
+            When light from a distant galaxy is shifted towards longer
+            wavelengths, it is described as redshifted.
+        </p>
+
+        <div class="formula">
+            z = Δλ / λ
+        </div>
+
+        <p>
+            For relatively small velocities:
+        </p>
+
+        <div class="formula">
+            z ≈ v/c
+        </div>
+
+        <p>
+            Measurements of redshift provide evidence that distant
+            galaxies are generally receding from us.
+        </p>
+
+    </section>
+
+
+    <!-- CRITICAL DENSITY -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 12</p>
+
+        <h2>Density and the Fate of the Universe</h2>
+
+        <p>
+            The large-scale behaviour of the Universe depends on the
+            balance between its expansion and gravitational effects.
+        </p>
+
+        <h3>Critical Density</h3>
+
+        <p>
+            Critical density is the density associated with a particular
+            boundary between different possible large-scale geometries
+            and expansion behaviours.
+        </p>
+
+        <h3>Dark Matter and Dark Energy</h3>
+
+        <p>
+            Observations of galaxies and cosmic expansion indicate that
+            ordinary matter does not account for all of the gravitational
+            and expansion behaviour observed in the Universe.
+        </p>
+
+        <p>
+            Dark matter is used to explain additional gravitational effects,
+            while dark energy is associated with the observed accelerated
+            expansion of the Universe.
+        </p>
+
+    </section>
+
+
+    <!-- PRACTICAL -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICAL SKILLS</p>
+
+        <h2>Unit 5 Practical Investigations</h2>
+
+        <p>
+            Unit 5 also develops practical and mathematical skills.
+            Experimental work should involve planning, measurements,
+            analysis, uncertainties and evaluation.
+        </p>
+
+        <h3>Possible Investigations</h3>
+
+        <ul>
+
+            <li>Investigating the relationship between volume and temperature of a fixed mass of gas.</li>
+
+            <li>Measuring the half-life of a radioactive source.</li>
+
+            <li>Measuring gravitational field strength using a simple pendulum.</li>
+
+            <li>Determining a spring constant using simple harmonic motion.</li>
+
+        </ul>
+
+        <div class="definition">
+
+            <strong>Exam focus:</strong>
+
+            <p>
+                Be prepared to explain experimental methods,
+                identify variables, process data, discuss uncertainty
+                and evaluate limitations.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 5 Mixed Practice</h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. A 2.0 kg mass is heated through 15 K. Its specific heat
+                capacity is 900 J kg⁻¹ K⁻¹. Calculate the energy transferred.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    ΔE = mcΔθ
+                </p>
+
+                <p>
+                    ΔE = 2.0 × 900 × 15 = 27 000 J
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. What is meant by half-life?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Half-life is the time required for the number of
+                    undecayed nuclei, or the activity, to fall to half
+                    its initial value.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A radioactive isotope has a decay constant of
+                0.20 s⁻¹. Calculate its half-life.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    T½ = ln(2) / λ
+                </p>
+
+                <p>
+                    T½ = 0.693 / 0.20 = 3.47 s
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. State the condition required for simple harmonic motion.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The acceleration must be proportional to the displacement
+                    from equilibrium and directed towards the equilibrium position.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. A spring has a spring constant of 200 N m⁻¹ and is
+                stretched by 0.10 m. Calculate its elastic potential energy.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    E = ½kx²
+                </p>
+
+                <p>
+                    E = ½ × 200 × (0.10)² = 1.0 J
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. What provides the centripetal force for a planet
+                orbiting a star?
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The gravitational attraction between the planet
+                    and the star provides the centripetal force.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. State Hubble's law.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    The recession velocity of a distant galaxy is
+                    approximately proportional to its distance from Earth:
+                    v = H₀d.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. Explain why redshift provides evidence for an
+                expanding Universe.
+            </strong>
+
+            <details>
+                <summary>Show answer</summary>
+
+                <p>
+                    Light from distant galaxies is observed to have
+                    wavelengths shifted towards the red end of the spectrum.
+                    This indicates that the galaxies are generally moving
+                    away from us. The relationship between recession velocity
+                    and distance supports the conclusion that the Universe
+                    is expanding.
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- QUICK REVIEW -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 5 Key Equations</h2>
+
+        <div class="formula">
+            ΔE = mcΔθ
+        </div>
+
+        <div class="formula">
+            E = ml
+        </div>
+
+        <div class="formula">
+            pV = nRT
+        </div>
+
+        <div class="formula">
+            A = λN
+        </div>
+
+        <div class="formula">
+            N = N₀e<sup>−λt</sup>
+        </div>
+
+        <div class="formula">
+            T½ = ln(2) / λ
+        </div>
+
+        <div class="formula">
+            a = −ω²x
+        </div>
+
+        <div class="formula">
+            v<sub>max</sub> = Aω
+        </div>
+
+        <div class="formula">
+            T = 2π√(m/k)
+        </div>
+
+        <div class="formula">
+            T = 2π√(l/g)
+        </div>
+
+        <div class="formula">
+            g = GM/r²
+        </div>
+
+        <div class="formula">
+            L = 4πr²σT⁴
+        </div>
+
+        <div class="formula">
+            v = H₀d
+        </div>
+
+        <div class="formula">
+            z = Δλ / λ
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="physics.html" class="button">
+        ← Back to Physics
+    </a>
+
+    <a href="physics-4.html" class="button">
+        ← Unit 4
+    </a>
+
+    <a href="physics-6.html" class="button">
+        Unit 6 →
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
