@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Further Kinematics | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Mathematics Mechanics 2 Further Kinematics resources.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #071b36, #0b3c73);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 20px auto 0;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics-2.html">
+        ← Mechanics 2
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        MECHANICS 2 • TOPIC 01
+    </p>
+
+    <h1>
+        Further Kinematics
+    </h1>
+
+    <p>
+        Extend your understanding of motion using more advanced
+        kinematics models and equations.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 01
+        </p>
+
+        <h2>
+            Revisiting Kinematics
+        </h2>
+
+        <p>
+            Kinematics describes the motion of particles without
+            considering the forces causing that motion.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key quantities</strong>
+
+            <ul>
+
+                <li>Displacement — measured in metres (m)</li>
+
+                <li>Velocity — measured in metres per second (m s⁻¹)</li>
+
+                <li>Acceleration — measured in metres per second squared (m s⁻²)</li>
+
+                <li>Time — measured in seconds (s)</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 02
+        </p>
+
+        <h2>
+            Variable Acceleration
+        </h2>
+
+        <p>
+            In more advanced mechanics problems, acceleration does not
+            always remain constant.
+        </p>
+
+        <p>
+            When acceleration varies with time, velocity can be found
+            by integrating acceleration with respect to time.
+        </p>
+
+        <div class="formula">
+            v = ∫a dt
+        </div>
+
+        <p>
+            Similarly, displacement can be found by integrating velocity.
+        </p>
+
+        <div class="formula">
+            s = ∫v dt
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 03
+        </p>
+
+        <h2>
+            Velocity as a Function of Time
+        </h2>
+
+        <p>
+            If velocity is given as a function of time, displacement
+            can be found by integrating the velocity function.
+        </p>
+
+        <div class="formula">
+            s = ∫v(t) dt
+        </div>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle has velocity
+            </p>
+
+            <div class="formula">
+                v = 3t²
+            </div>
+
+            <p>
+                Find its displacement from t = 0 to t = 2.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    s = ∫₀² 3t² dt
+                </p>
+
+                <p>
+                    s = [t³]₀²
+                </p>
+
+                <p>
+                    <strong>s = 8 m</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 04
+        </p>
+
+        <h2>
+            Acceleration as a Function of Time
+        </h2>
+
+        <p>
+            If acceleration is given as a function of time, integrate
+            it to obtain velocity.
+        </p>
+
+        <div class="formula">
+            v = ∫a(t) dt
+        </div>
+
+        <p>
+            Remember that an initial velocity may be required to
+            determine the constant of integration.
+        </p>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            LESSON 05
+        </p>
+
+        <h2>
+            Using Initial Conditions
+        </h2>
+
+        <p>
+            Initial conditions allow us to determine unknown constants
+            when integrating.
+        </p>
+
+        <div class="definition">
+
+            <strong>Example:</strong>
+
+            <p>
+                If a particle has velocity 5 m s⁻¹ when t = 0,
+                substitute t = 0 and v = 5 into the velocity equation
+                to determine the constant.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            WORKED EXAMPLE
+        </p>
+
+        <h2>
+            Finding Velocity
+        </h2>
+
+        <div class="example">
+
+            <p class="example-title">
+                Example
+            </p>
+
+            <p>
+                A particle has acceleration
+            </p>
+
+            <div class="formula">
+                a = 6t
+            </div>
+
+            <p>
+                Its initial velocity is 4 m s⁻¹. Find its velocity
+                at time t.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    v = ∫6t dt
+                </p>
+
+                <p>
+                    v = 3t² + C
+                </p>
+
+                <p>
+                    At t = 0, v = 4.
+                </p>
+
+                <p>
+                    Therefore C = 4.
+                </p>
+
+                <p>
+                    <strong>v = 3t² + 4</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            PRACTICE
+        </p>
+
+        <h2>
+            Test Yourself
+        </h2>
+
+
+        <div class="question">
+
+            <strong>
+                1. What quantity is obtained by integrating acceleration
+                with respect to time?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    Velocity.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. What quantity is obtained by integrating velocity
+                with respect to time?
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    Displacement.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. A particle has acceleration a = 4t.
+                Find its velocity if its initial velocity is 2 m s⁻¹.
+            </strong>
+
+            <details>
+
+                <summary>
+                    Show answer
+                </summary>
+
+                <p>
+                    v = ∫4t dt
+                </p>
+
+                <p>
+                    v = 2t² + C
+                </p>
+
+                <p>
+                    Since v = 2 when t = 0, C = 2.
+                </p>
+
+                <p>
+                    <strong>v = 2t² + 2</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="lesson">
+
+        <p class="lesson-number">
+            QUICK REVIEW
+        </p>
+
+        <h2>
+            Remember These
+        </h2>
+
+        <div class="formula">
+            v = ∫a dt
+        </div>
+
+        <div class="formula">
+            s = ∫v dt
+        </div>
+
+        <div class="formula">
+            Initial conditions determine constants
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics-2.html" class="button">
+        ← Back to Mechanics 2
+    </a>
+
+    <a href="mechanics.html" class="button">
+        Mechanics
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
