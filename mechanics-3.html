@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mechanics 3 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Complete Edexcel International A Level Mathematics Mechanics 3 course with lessons, worked examples and combined practice questions.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 85px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .contents {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .contents-box {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .contents-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .contents-box a {
+            display: block;
+            padding: 9px 0;
+            color: #168dca;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 35px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .section-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .section h3 {
+            font-size: 23px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .section ul {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .lesson {
+            border-top: 1px solid #e5ebf2;
+            padding-top: 25px;
+            margin-top: 25px;
+        }
+
+        .lesson-title {
+            color: #168dca;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            background: white;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 22px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .review {
+            background: #eaf6ff;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="mechanics.html">
+        ← Mechanics
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS
+    </p>
+
+    <h1>
+        Mechanics <span>3</span>
+    </h1>
+
+    <p>
+        Complete M3 lessons covering further kinematics,
+        elastic strings and springs, dynamics, circular motion
+        and statics of rigid bodies.
+    </p>
+
+</section>
+
+
+<section class="contents">
+
+    <div class="contents-box">
+
+        <h2>
+            M3 Course Contents
+        </h2>
+
+        <a href="#kinematics">
+            01. Further Kinematics
+        </a>
+
+        <a href="#elastic">
+            02. Elastic Strings and Springs
+        </a>
+
+        <a href="#dynamics">
+            03. Further Dynamics
+        </a>
+
+        <a href="#circle">
+            04. Motion in a Circle
+        </a>
+
+        <a href="#statics">
+            05. Statics of Rigid Bodies
+        </a>
+
+        <a href="#practice">
+            📝 Combined M3 Practice
+        </a>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- ========================= -->
+<!-- 01 FURTHER KINEMATICS -->
+<!-- ========================= -->
+
+<section class="section" id="kinematics">
+
+    <p class="section-number">
+        M3 • SECTION 01
+    </p>
+
+    <h2>
+        Further Kinematics
+    </h2>
+
+    <p>
+        Study motion when acceleration is not constant and depends
+        on displacement or time.
+    </p>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 1 — Acceleration as a Function of Time
+        </p>
+
+        <p>
+            When acceleration depends on time, we can use integration
+            to find velocity and displacement.
+        </p>
+
+        <div class="formula">
+            a = dv/dt
+        </div>
+
+        <div class="formula">
+            v = dx/dt
+        </div>
+
+        <p>
+            Integrating acceleration with respect to time gives velocity,
+            while integrating velocity gives displacement.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 2 — Acceleration as a Function of Displacement
+        </p>
+
+        <p>
+            If acceleration is given as a function of displacement,
+            we can use the chain rule.
+        </p>
+
+        <div class="formula">
+            a = v dv/dx
+        </div>
+
+        <p>
+            This allows equations involving acceleration and displacement
+            to be solved without directly using time.
+        </p>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            Worked Example
+        </p>
+
+        <p>
+            A particle has acceleration a = 6t. Find its velocity
+            if its initial velocity is 4 m/s.
+        </p>
+
+        <div class="solution">
+
+            <p>
+                a = dv/dt
+            </p>
+
+            <p>
+                dv/dt = 6t
+            </p>
+
+            <p>
+                Integrating:
+            </p>
+
+            <p>
+                v = 3t² + C
+            </p>
+
+            <p>
+                When t = 0, v = 4, so C = 4.
+            </p>
+
+            <p>
+                <strong>v = 3t² + 4</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 02 ELASTIC -->
+<!-- ========================= -->
+
+<section class="section" id="elastic">
+
+    <p class="section-number">
+        M3 • SECTION 02
+    </p>
+
+    <h2>
+        Elastic Strings and Springs
+    </h2>
+
+    <p>
+        Learn Hooke's law, elastic energy and the mechanics
+        of stretched strings and springs.
+    </p>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 1 — Hooke's Law
+        </p>
+
+        <p>
+            For an elastic string or spring obeying Hooke's law,
+            the tension is proportional to the extension.
+        </p>
+
+        <div class="formula">
+            T = λx/l
+        </div>
+
+        <p>
+            Here λ is the modulus, x is the extension and l is
+            the natural length.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 2 — Elastic Energy
+        </p>
+
+        <p>
+            Work done in stretching an elastic string is stored
+            as elastic potential energy.
+        </p>
+
+        <div class="formula">
+            E = λx² / 2l
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 3 — Elastic Systems
+        </p>
+
+        <p>
+            Problems may involve strings or springs connected to
+            particles and other objects.
+        </p>
+
+        <ul>
+
+            <li>Find the tension.</li>
+
+            <li>Find the extension.</li>
+
+            <li>Apply equilibrium conditions.</li>
+
+            <li>Use conservation of energy.</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            Worked Example
+        </p>
+
+        <p>
+            An elastic string has modulus 60 N and natural length
+            2 m. It is extended by 0.5 m. Find its tension.
+        </p>
+
+        <div class="solution">
+
+            <p>
+                T = λx/l
+            </p>
+
+            <p>
+                T = (60 × 0.5) / 2
+            </p>
+
+            <p>
+                <strong>T = 15 N</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 03 DYNAMICS -->
+<!-- ========================= -->
+
+<section class="section" id="dynamics">
+
+    <p class="section-number">
+        M3 • SECTION 03
+    </p>
+
+    <h2>
+        Further Dynamics
+    </h2>
+
+    <p>
+        Explore variable forces, gravitation and simple harmonic motion.
+    </p>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 1 — Variable Forces
+        </p>
+
+        <p>
+            In M3, the applied force may vary with position or time.
+            Newton's second law is still applied.
+        </p>
+
+        <div class="formula">
+            F = ma
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 2 — Newton's Law of Gravitation
+        </p>
+
+        <p>
+            Two masses attract each other with a gravitational force.
+        </p>
+
+        <div class="formula">
+            F = GMm / r²
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 3 — Simple Harmonic Motion
+        </p>
+
+        <p>
+            A particle performs simple harmonic motion when its
+            acceleration is proportional to its displacement from
+            a fixed point and directed towards that point.
+        </p>
+
+        <div class="formula">
+            d²x/dt² = −ω²x
+        </div>
+
+        <div class="formula">
+            x = a cos(ωt) or x = a sin(ωt)
+        </div>
+
+        <div class="formula">
+            v² = ω²(a² − x²)
+        </div>
+
+        <div class="formula">
+            T = 2π/ω
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 4 — Oscillations of Springs and Strings
+        </p>
+
+        <p>
+            Springs and elastic strings can produce oscillatory motion.
+            Problems may involve horizontal or vertical oscillations.
+        </p>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            Worked Example
+        </p>
+
+        <p>
+            A particle performs SHM with angular speed 4 rad/s.
+            Its amplitude is 0.5 m. Find its period.
+        </p>
+
+        <div class="solution">
+
+            <p>
+                T = 2π/ω
+            </p>
+
+            <p>
+                T = 2π/4
+            </p>
+
+            <p>
+                <strong>T = π/2 s</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 04 CIRCULAR MOTION -->
+<!-- ========================= -->
+
+<section class="section" id="circle">
+
+    <p class="section-number">
+        M3 • SECTION 04
+    </p>
+
+    <h2>
+        Motion in a Circle
+    </h2>
+
+    <p>
+        Study angular speed, radial acceleration and particles
+        moving in horizontal and vertical circles.
+    </p>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 1 — Angular Speed
+        </p>
+
+        <p>
+            Angular speed measures how quickly an object changes
+            its angular position.
+        </p>
+
+        <div class="formula">
+            ω = v/r
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 2 — Radial Acceleration
+        </p>
+
+        <p>
+            A particle moving in a circle has acceleration directed
+            towards the centre.
+        </p>
+
+        <div class="formula">
+            a = rω²
+        </div>
+
+        <div class="formula">
+            a = v²/r
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 3 — Horizontal Circular Motion
+        </p>
+
+        <p>
+            Circular motion problems may involve horizontal circles,
+            strings and conical pendulums.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 4 — Vertical Circular Motion
+        </p>
+
+        <p>
+            For vertical circular motion, the forces acting on the
+            particle change relative to its position around the circle.
+        </p>
+
+        <p>
+            Both Newton's second law and conservation of energy
+            can be required.
+        </p>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            Worked Example
+        </p>
+
+        <p>
+            A particle moves in a circle of radius 2 m with speed
+            6 m/s. Find its radial acceleration.
+        </p>
+
+        <div class="solution">
+
+            <p>
+                a = v²/r
+            </p>
+
+            <p>
+                a = 6²/2
+            </p>
+
+            <p>
+                <strong>a = 18 m/s²</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 05 STATICS -->
+<!-- ========================= -->
+
+<section class="section" id="statics">
+
+    <p class="section-number">
+        M3 • SECTION 05
+    </p>
+
+    <h2>
+        Statics of Rigid Bodies
+    </h2>
+
+    <p>
+        Analyse centres of mass and equilibrium of rigid bodies.
+    </p>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 1 — Centre of Mass
+        </p>
+
+        <p>
+            The centre of mass is the point at which the mass of
+            a body may be considered to be concentrated.
+        </p>
+
+        <p>
+            M3 includes uniform rigid bodies and simple composite bodies.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 2 — Equilibrium of Rigid Bodies
+        </p>
+
+        <p>
+            A rigid body is in equilibrium when both its resultant
+            force and resultant moment are zero.
+        </p>
+
+        <div class="formula">
+            Resultant force = 0
+        </div>
+
+        <div class="formula">
+            Resultant moment = 0
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <p class="lesson-title">
+            Lesson 3 — Rods, Ladders and Contact Forces
+        </p>
+
+        <p>
+            Problems can involve rods or ladders resting against
+            smooth or rough surfaces.
+        </p>
+
+        <ul>
+
+            <li>Identify all forces.</li>
+
+            <li>Resolve forces horizontally and vertically.</li>
+
+            <li>Take moments about a suitable point.</li>
+
+            <li>Apply equilibrium conditions.</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            Worked Example
+        </p>
+
+        <p>
+            A 20 N force acts 3 m from a pivot. A balancing force
+            acts 5 m from the pivot. Find the balancing force.
+        </p>
+
+        <div class="solution">
+
+            <p>
+                20 × 3 = F × 5
+            </p>
+
+            <p>
+                60 = 5F
+            </p>
+
+            <p>
+                <strong>F = 12 N</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- COMBINED PRACTICE -->
+<!-- ========================= -->
+
+<section class="section" id="practice">
+
+    <p class="section-number">
+        M3 • COMBINED PRACTICE
+    </p>
+
+    <h2>
+        M3 Practice Questions
+    </h2>
+
+    <p>
+        These questions combine concepts from across the M3 syllabus.
+        More questions will be added to this section later.
+    </p>
+
+
+    <div class="question">
+
+        <strong>
+            1. A particle has acceleration a = 4t. Its initial
+            velocity is 3 m/s. Find its velocity at time t.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Integrating a = dv/dt gives
+                <strong>v = 2t² + 3</strong>.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            2. An elastic string has natural length 1.5 m,
+            modulus 45 N and extension 0.3 m. Find its tension.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                T = λx/l
+            </p>
+
+            <p>
+                T = (45 × 0.3)/1.5
+            </p>
+
+            <p>
+                <strong>T = 9 N</strong>
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            3. A particle performs SHM with angular speed
+            5 rad/s. Find its period.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                T = 2π/5
+            </p>
+
+            <p>
+                <strong>T = 2π/5 s</strong>
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            4. A particle moves in a circle of radius 4 m with
+            speed 8 m/s. Find its radial acceleration.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                a = v²/r
+            </p>
+
+            <p>
+                a = 64/4
+            </p>
+
+            <p>
+                <strong>a = 16 m/s²</strong>
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            5. A force of 15 N acts at a perpendicular distance
+            of 2 m from a pivot. Find its moment.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Moment = 15 × 2
+            </p>
+
+            <p>
+                <strong>Moment = 30 N m</strong>
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="review">
+
+        <strong>
+            M3 Exam Reminder
+        </strong>
+
+        <p>
+            M3 questions can combine several ideas. Make sure you
+            are comfortable moving between calculus, Newton's laws,
+            energy, moments and circular motion.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="mechanics.html" class="button">
+        ← Back to Mechanics
+    </a>
+
+    <a href="mechanics-2.html" class="button">
+        Mechanics 2
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
