@@ -1,0 +1,1493 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chemistry Unit 1 | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Edexcel International A Level Chemistry Unit 1 — Structure, Bonding and Introduction to Organic Chemistry.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #10233f;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #071b36;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(50,169,232,0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(50,169,232,0.12),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, #071b36, #0b3c73);
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-label {
+            color: #7ed0ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #4db8ff;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #dcecff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .lesson {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 18px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+        }
+
+        .lesson-number {
+            color: #32a9e8;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .lesson h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+            font-size: 21px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .lesson h4 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .lesson p {
+            color: #53657d;
+            margin-bottom: 15px;
+        }
+
+        .lesson ul,
+        .lesson ol {
+            padding-left: 25px;
+            color: #53657d;
+        }
+
+        .lesson li {
+            margin-bottom: 9px;
+        }
+
+        .definition {
+            background: #eaf6ff;
+            border-left: 5px solid #32a9e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        .formula {
+            background: #071b36;
+            color: white;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #f8fbff;
+            border: 1px solid #dcecff;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+
+        .example-title {
+            color: #168dca;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .solution {
+            margin-top: 18px;
+            padding: 18px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .warning {
+            background: #fff8e8;
+            border-left: 5px solid #e5a500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .question {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5ebf2;
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        details {
+            margin-top: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #168dca;
+            font-weight: bold;
+        }
+
+        .quick-review {
+            background: #eef8ff;
+            border-left: 5px solid #32a9e8;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .navigation {
+            text-align: center;
+            padding: 10px 20px 60px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #32a9e8;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #168dca;
+        }
+
+        footer {
+            background: #071b36;
+            color: #b9c9dc;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .lesson {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
+
+    <a href="chemistry.html">
+        ← Chemistry
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <p class="hero-label">
+        EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • WCH11
+    </p>
+
+    <h1>
+        Chemistry <span>Unit 1</span>
+    </h1>
+
+    <p>
+        Structure, Bonding and Introduction to Organic Chemistry
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- ========================================================= -->
+    <!-- TOPIC 01 -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 01</p>
+
+        <h2>Formulae, Equations and Amount of Substance</h2>
+
+        <p>
+            Chemistry uses formulae and equations to represent substances
+            and chemical reactions. Quantitative chemistry allows the amounts
+            of reactants and products to be calculated.
+        </p>
+
+
+        <h3>Relative Atomic Mass</h3>
+
+        <p>
+            Relative atomic mass, A<sub>r</sub>, is the weighted average mass
+            of an atom of an element compared with one-twelfth of the mass
+            of an atom of carbon-12.
+        </p>
+
+
+        <h3>Relative Formula Mass</h3>
+
+        <p>
+            Relative formula mass, M<sub>r</sub>, is obtained by adding the
+            relative atomic masses of all the atoms represented in a formula.
+        </p>
+
+
+        <div class="formula">
+            M<sub>r</sub> = sum of all A<sub>r</sub> values in the formula
+        </div>
+
+
+        <h3>The Mole</h3>
+
+        <p>
+            The mole is the amount of substance containing the Avogadro
+            constant number of specified particles.
+        </p>
+
+        <div class="formula">
+            N<sub>A</sub> = 6.02 × 10<sup>23</sup> mol<sup>−1</sup>
+        </div>
+
+
+        <h3>Amount of Substance</h3>
+
+        <div class="formula">
+            n = m / M
+        </div>
+
+        <p>
+            where n is amount in mol, m is mass in g and M is molar mass
+            in g mol<sup>−1</sup>.
+        </p>
+
+
+        <h3>Number of Particles</h3>
+
+        <div class="formula">
+            N = nN<sub>A</sub>
+        </div>
+
+
+        <h3>Concentration</h3>
+
+        <div class="formula">
+            c = n / V
+        </div>
+
+        <p>
+            For concentration in mol dm<sup>−3</sup>, volume must be expressed
+            in dm<sup>3</sup>.
+        </p>
+
+
+        <div class="warning">
+            <strong>Remember:</strong>
+            1000 cm<sup>3</sup> = 1 dm<sup>3</sup>.
+        </div>
+
+
+        <h3>Empirical Formula</h3>
+
+        <p>
+            The empirical formula gives the simplest whole-number ratio
+            of atoms in a compound.
+        </p>
+
+
+        <h3>Molecular Formula</h3>
+
+        <p>
+            The molecular formula gives the actual number of atoms of each
+            element in one molecule.
+        </p>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                A compound contains 24.0 g of carbon and 4.0 g of hydrogen.
+                Determine its empirical formula.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    Carbon:
+                    24.0 / 12.0 = 2.00 mol
+                </p>
+
+                <p>
+                    Hydrogen:
+                    4.0 / 1.0 = 4.00 mol
+                </p>
+
+                <p>
+                    Divide by the smallest amount:
+                </p>
+
+                <p>
+                    C : H = 1 : 2
+                </p>
+
+                <p>
+                    Empirical formula = <strong>CH<sub>2</sub></strong>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h3>Percentage Yield</h3>
+
+        <div class="formula">
+            Percentage yield =
+            (actual yield / theoretical yield) × 100
+        </div>
+
+
+        <h3>Atom Economy</h3>
+
+        <div class="formula">
+            Atom economy =
+            (M<sub>r</sub> of desired product /
+            total M<sub>r</sub> of reactants) × 100
+        </div>
+
+
+        <h3>Writing Equations</h3>
+
+        <p>
+            Chemical equations must conserve atoms and charge. Equations
+            should be balanced using the smallest whole-number coefficients.
+        </p>
+
+        <div class="definition">
+
+            <strong>Exam habit:</strong>
+
+            <p>
+                Always check that every element has the same number of atoms
+                on both sides of an equation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- TOPIC 02 -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 02</p>
+
+        <h2>Atomic Structure and the Periodic Table</h2>
+
+        <p>
+            The arrangement of electrons in atoms explains many of the
+            patterns observed in the Periodic Table.
+        </p>
+
+
+        <h3>Subatomic Particles</h3>
+
+        <ul>
+
+            <li>Protons have a relative charge of +1.</li>
+
+            <li>Neutrons have a relative charge of 0.</li>
+
+            <li>Electrons have a relative charge of −1.</li>
+
+        </ul>
+
+
+        <h3>Atomic Number and Mass Number</h3>
+
+        <p>
+            Atomic number is the number of protons in an atom.
+            Mass number is the total number of protons and neutrons.
+        </p>
+
+        <div class="formula">
+            Number of neutrons = mass number − atomic number
+        </div>
+
+
+        <h3>Isotopes</h3>
+
+        <p>
+            Isotopes are atoms of the same element with the same number
+            of protons but different numbers of neutrons.
+        </p>
+
+
+        <h3>Electron Configuration</h3>
+
+        <p>
+            Electrons occupy shells and orbitals around the nucleus.
+            The orbitals relevant to Unit 1 include s, p and d orbitals.
+        </p>
+
+        <ul>
+
+            <li>s subshell — one orbital</li>
+
+            <li>p subshell — three orbitals</li>
+
+            <li>d subshell — five orbitals</li>
+
+        </ul>
+
+
+        <h3>Electron Capacity</h3>
+
+        <p>
+            Each orbital can contain a maximum of two electrons.
+            Electrons in the same orbital have opposite spins.
+        </p>
+
+
+        <h3>Ionisation Energy</h3>
+
+        <p>
+            First ionisation energy is the energy required to remove one
+            electron from each atom in one mole of gaseous atoms to form
+            one mole of gaseous singly charged ions.
+        </p>
+
+
+        <div class="definition">
+
+            <strong>Important factors affecting ionisation energy:</strong>
+
+            <ul>
+
+                <li>Distance of the outer electron from the nucleus.</li>
+
+                <li>Nuclear charge.</li>
+
+                <li>Shielding by inner electrons.</li>
+
+                <li>Subshell and electron pairing effects.</li>
+
+            </ul>
+
+        </div>
+
+
+        <h3>Trends Across a Period</h3>
+
+        <p>
+            Across a period, nuclear charge generally increases while
+            electrons are added to the same main shell. This produces
+            characteristic trends in atomic properties.
+        </p>
+
+
+        <h3>Periodic Table Blocks</h3>
+
+        <ul>
+
+            <li>s-block elements have their outer electrons in an s subshell.</li>
+
+            <li>p-block elements have their outer electrons in a p subshell.</li>
+
+            <li>d-block elements involve occupation of d subshells.</li>
+
+        </ul>
+
+
+        <h3>Mass Spectrometry</h3>
+
+        <p>
+            Mass spectrometry can be used to determine isotopic masses
+            and relative abundances.
+        </p>
+
+        <p>
+            A mass spectrum contains peaks corresponding to ions with
+            particular mass-to-charge ratios.
+        </p>
+
+
+        <div class="formula">
+            A<sub>r</sub> =
+            Σ(isotopic mass × fractional abundance)
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                An element has two isotopes with masses 10 and 11.
+                Their abundances are 20% and 80% respectively.
+                Find its relative atomic mass.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    A<sub>r</sub> = (10 × 0.20) + (11 × 0.80)
+                </p>
+
+                <p>
+                    A<sub>r</sub> = 2.00 + 8.80
+                </p>
+
+                <p>
+                    <strong>A<sub>r</sub> = 10.80</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- TOPIC 03 -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 03</p>
+
+        <h2>Bonding and Structure</h2>
+
+        <p>
+            The properties of substances depend strongly on the type of
+            bonding and structure present.
+        </p>
+
+
+        <h3>Ionic Bonding</h3>
+
+        <p>
+            Ionic bonding is the strong electrostatic attraction between
+            oppositely charged ions.
+        </p>
+
+        <p>
+            Ions are formed when atoms gain or lose electrons.
+        </p>
+
+
+        <h3>Ionic Structures</h3>
+
+        <p>
+            Ionic compounds form giant lattices containing positive and
+            negative ions arranged in a regular structure.
+        </p>
+
+        <ul>
+
+            <li>High melting and boiling points.</li>
+
+            <li>Usually solid at room temperature.</li>
+
+            <li>Conduct electricity when molten or dissolved in water.</li>
+
+            <li>Do not conduct electricity when solid.</li>
+
+        </ul>
+
+
+        <h3>Covalent Bonding</h3>
+
+        <p>
+            A covalent bond is a shared pair of electrons between atoms.
+        </p>
+
+
+        <h3>Electronegativity and Bond Polarity</h3>
+
+        <p>
+            Electronegativity describes the tendency of an atom to attract
+            the bonding pair of electrons towards itself.
+        </p>
+
+        <p>
+            A difference in electronegativity can produce a polar covalent
+            bond.
+        </p>
+
+
+        <h3>Shapes of Molecules</h3>
+
+        <p>
+            Electron pairs repel each other and arrange themselves as far
+            apart as possible. Lone pairs repel more strongly than bonding
+            pairs.
+        </p>
+
+        <div class="definition">
+
+            <strong>Electron-pair repulsion order:</strong>
+
+            <p>
+                lone pair–lone pair &gt; lone pair–bond pair &gt;
+                bond pair–bond pair
+            </p>
+
+        </div>
+
+
+        <h3>Common Molecular Shapes</h3>
+
+        <ul>
+
+            <li>Two electron pairs → linear, approximately 180°.</li>
+
+            <li>Three bonding pairs → trigonal planar, approximately 120°.</li>
+
+            <li>Four bonding pairs → tetrahedral, approximately 109.5°.</li>
+
+            <li>Three bonding pairs and one lone pair → trigonal pyramidal.</li>
+
+            <li>Two bonding pairs and two lone pairs → bent / V-shaped.</li>
+
+        </ul>
+
+
+        <h3>Metallic Bonding</h3>
+
+        <p>
+            Metallic bonding consists of positive metal ions surrounded
+            by delocalised electrons.
+        </p>
+
+
+        <h3>Intermolecular Forces</h3>
+
+        <p>
+            Molecules can attract one another through intermolecular forces.
+            These are weaker than the covalent bonds within a molecule.
+        </p>
+
+        <h4>Van der Waals Forces</h4>
+
+        <p>
+            Temporary fluctuations in electron distribution can produce
+            temporary dipoles and attractions between molecules.
+        </p>
+
+        <h4>Permanent Dipole-Dipole Attractions</h4>
+
+        <p>
+            Polar molecules can attract one another because of permanent
+            partial charges.
+        </p>
+
+        <h4>Hydrogen Bonding</h4>
+
+        <p>
+            Hydrogen bonding is a particularly strong intermolecular
+            attraction involving hydrogen bonded to a highly electronegative
+            atom and a lone pair on another electronegative atom.
+        </p>
+
+
+        <h3>Structure and Physical Properties</h3>
+
+        <p>
+            The type of structure affects melting point, boiling point,
+            electrical conductivity and solubility.
+        </p>
+
+        <div class="example">
+
+            <p class="example-title">
+                Exam Comparison
+            </p>
+
+            <p>
+                A giant ionic compound generally has a high melting point
+                because strong electrostatic attractions act throughout
+                its lattice.
+            </p>
+
+            <p>
+                A simple molecular substance usually has a much lower
+                melting point because only intermolecular forces need to
+                be overcome during melting.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- TOPIC 04 -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 04</p>
+
+        <h2>Introductory Organic Chemistry and Alkanes</h2>
+
+        <p>
+            Organic chemistry is the study of carbon-containing compounds.
+            Unit 1 introduces organic structures, naming, isomerism and
+            the chemistry of alkanes.
+        </p>
+
+
+        <h3>Homologous Series</h3>
+
+        <p>
+            A homologous series is a family of compounds with the same
+            functional group and general formula, showing similar chemical
+            properties. Successive members differ by CH<sub>2</sub>.
+        </p>
+
+
+        <h3>Alkanes</h3>
+
+        <p>
+            Alkanes are saturated hydrocarbons containing only carbon-carbon
+            single bonds.
+        </p>
+
+        <div class="formula">
+            General formula: C<sub>n</sub>H<sub>2n+2</sub>
+        </div>
+
+
+        <h3>Names of Simple Alkanes</h3>
+
+        <ul>
+
+            <li>Methane — CH<sub>4</sub></li>
+
+            <li>Ethane — C<sub>2</sub>H<sub>6</sub></li>
+
+            <li>Propane — C<sub>3</sub>H<sub>8</sub></li>
+
+            <li>Butane — C<sub>4</sub>H<sub>10</sub></li>
+
+            <li>Pentane — C<sub>5</sub>H<sub>12</sub></li>
+
+            <li>Hexane — C<sub>6</sub>H<sub>14</sub></li>
+
+        </ul>
+
+
+        <h3>Structural Formulae</h3>
+
+        <p>
+            Organic compounds can be represented using displayed,
+            structural, skeletal and molecular formulae.
+        </p>
+
+
+        <h3>Structural Isomerism</h3>
+
+        <p>
+            Structural isomers have the same molecular formula but
+            different structural arrangements.
+        </p>
+
+
+        <h3>Combustion</h3>
+
+        <p>
+            Alkanes undergo combustion in oxygen.
+        </p>
+
+        <div class="formula">
+            hydrocarbon + oxygen → carbon dioxide + water
+        </div>
+
+        <p>
+            Complete combustion requires sufficient oxygen. Incomplete
+            combustion can produce carbon monoxide and/or carbon.
+        </p>
+
+
+        <h3>Cracking</h3>
+
+        <p>
+            Cracking breaks larger hydrocarbon molecules into smaller,
+            more useful molecules.
+        </p>
+
+        <p>
+            Cracking can produce both alkanes and alkenes.
+        </p>
+
+
+        <h3>Free-Radical Substitution</h3>
+
+        <p>
+            Alkanes can react with halogens in the presence of ultraviolet
+            radiation.
+        </p>
+
+        <h4>Initiation</h4>
+
+        <p>
+            Ultraviolet radiation causes a halogen molecule to undergo
+            homolytic fission, producing radicals.
+        </p>
+
+
+        <h4>Propagation</h4>
+
+        <p>
+            Radicals react with molecules to produce new radicals,
+            allowing the chain reaction to continue.
+        </p>
+
+
+        <h4>Termination</h4>
+
+        <p>
+            Two radicals combine, removing radicals from the reaction chain.
+        </p>
+
+
+        <div class="definition">
+
+            <strong>Homolytic fission:</strong>
+
+            <p>
+                Bond breaking in which one electron from the bonding pair
+                goes to each atom, producing radicals.
+            </p>
+
+        </div>
+
+
+        <h3>Petroleum and Fractional Distillation</h3>
+
+        <p>
+            Crude oil is a mixture of hydrocarbons. Fractional distillation
+            separates hydrocarbons according to differences in boiling point.
+        </p>
+
+        <p>
+            Smaller molecules generally have lower boiling points and are
+            more volatile than larger molecules.
+        </p>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- TOPIC 05 -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">TOPIC 05</p>
+
+        <h2>Alkenes</h2>
+
+        <p>
+            Alkenes are unsaturated hydrocarbons containing a carbon-carbon
+            double bond.
+        </p>
+
+
+        <div class="formula">
+            General formula: C<sub>n</sub>H<sub>2n</sub>
+        </div>
+
+
+        <h3>The C=C Double Bond</h3>
+
+        <p>
+            A carbon-carbon double bond consists of a sigma bond and a
+            pi bond. The presence of the pi bond makes alkenes more
+            reactive than alkanes.
+        </p>
+
+
+        <h3>Naming Alkenes</h3>
+
+        <p>
+            The longest carbon chain containing the double bond is selected.
+            The chain is numbered so that the double bond receives the
+            lowest possible number.
+        </p>
+
+
+        <h3>Electrophilic Addition</h3>
+
+        <p>
+            Alkenes undergo addition reactions because the electron-rich
+            double bond attracts electrophiles.
+        </p>
+
+
+        <h3>Addition of Hydrogen</h3>
+
+        <p>
+            Hydrogen can add across the double bond in the presence of a
+            suitable catalyst.
+        </p>
+
+
+        <h3>Addition of Halogens</h3>
+
+        <p>
+            Alkenes react with halogens by addition across the carbon-carbon
+            double bond.
+        </p>
+
+
+        <h3>Addition of Hydrogen Halides</h3>
+
+        <p>
+            Hydrogen halides can add across an alkene double bond to form
+            a haloalkane.
+        </p>
+
+
+        <h3>Hydration of Alkenes</h3>
+
+        <p>
+            Alkenes can react with steam to produce alcohols under suitable
+            industrial conditions.
+        </p>
+
+
+        <h3>Test for an Alkene</h3>
+
+        <p>
+            Bromine water can be used to test for carbon-carbon double bonds.
+            An alkene rapidly decolourises bromine water.
+        </p>
+
+
+        <h3>Polymerisation</h3>
+
+        <p>
+            Addition polymerisation occurs when many alkene molecules
+            join together to form a polymer.
+        </p>
+
+        <div class="definition">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                The C=C bond opens during addition polymerisation and forms
+                new carbon-carbon single bonds linking monomer units.
+            </p>
+
+        </div>
+
+
+        <div class="example">
+
+            <p class="example-title">
+                Worked Example
+            </p>
+
+            <p>
+                Propene undergoes addition polymerisation.
+                Identify the repeating unit of the polymer.
+            </p>
+
+            <div class="solution">
+
+                <p>
+                    The carbon-carbon double bond opens and the carbon chain
+                    becomes linked to neighbouring monomer units.
+                </p>
+
+                <p>
+                    The repeating unit is based on:
+                </p>
+
+                <div class="formula">
+                    −CH<sub>2</sub>−CH(CH<sub>3</sub>)−
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- MIXED PRACTICE -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">PRACTICE</p>
+
+        <h2>Unit 1 Mixed Practice</h2>
+
+        <p>
+            These questions combine the five Unit 1 specification areas.
+            Try them without looking at the answers first.
+        </p>
+
+
+        <div class="question">
+
+            <strong>
+                1. Calculate the amount of substance in 5.85 g of NaCl.
+                Use A<sub>r</sub>(Na) = 23.0 and A<sub>r</sub>(Cl) = 35.5.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    M<sub>r</sub>(NaCl) = 23.0 + 35.5 = 58.5
+                </p>
+
+                <p>
+                    n = m / M = 5.85 / 58.5
+                </p>
+
+                <p>
+                    <strong>n = 0.100 mol</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                2. An ion has 17 protons, 18 electrons and 18 neutrons.
+                Identify the ion and give its mass number.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    17 protons means the element is chlorine.
+                </p>
+
+                <p>
+                    18 electrons means it has gained one electron,
+                    so the ion is Cl<sup>−</sup>.
+                </p>
+
+                <p>
+                    Mass number = 17 + 18 = <strong>35</strong>.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                3. Explain why magnesium oxide has a much higher melting
+                point than methane.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Magnesium oxide has a giant ionic lattice with strong
+                    electrostatic attractions between oppositely charged ions.
+                    A large amount of energy is required to overcome these
+                    attractions.
+                </p>
+
+                <p>
+                    Methane is a simple molecular substance with relatively
+                    weak intermolecular forces.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                4. State the general formula of an alkane and an alkene.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Alkane:
+                    C<sub>n</sub>H<sub>2n+2</sub>
+                </p>
+
+                <p>
+                    Alkene:
+                    C<sub>n</sub>H<sub>2n</sub>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                5. Explain why alkenes are generally more reactive than alkanes.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Alkenes contain a carbon-carbon double bond containing
+                    a pi bond. The pi bond provides an electron-rich region
+                    that can attract electrophiles and undergo addition
+                    reactions.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                6. A sample contains 60% isotope X-35 and 40% isotope X-37.
+                Calculate the relative atomic mass.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    A<sub>r</sub> = (35 × 0.60) + (37 × 0.40)
+                </p>
+
+                <p>
+                    A<sub>r</sub> = 21.0 + 14.8
+                </p>
+
+                <p>
+                    <strong>A<sub>r</sub> = 35.8</strong>
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                7. State the products of complete combustion of a hydrocarbon.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Carbon dioxide and water.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                8. What type of reaction occurs when bromine reacts
+                with an alkene?
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Addition across the carbon-carbon double bond.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                9. Explain what is meant by structural isomers.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    Structural isomers have the same molecular formula
+                    but different structural arrangements of atoms.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <div class="question">
+
+            <strong>
+                10. Explain why ionic compounds conduct electricity
+                when molten but not when solid.
+            </strong>
+
+            <details>
+
+                <summary>Show answer</summary>
+
+                <p>
+                    When solid, the ions are fixed in position and cannot
+                    move to carry charge. When molten, the ions are free
+                    to move and can carry electric charge.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- QUICK REVIEW -->
+    <!-- ========================================================= -->
+
+    <section class="lesson">
+
+        <p class="lesson-number">QUICK REVIEW</p>
+
+        <h2>Unit 1 Key Ideas</h2>
+
+        <div class="quick-review">
+
+            <ul>
+
+                <li>
+                    n = m / M
+                </li>
+
+                <li>
+                    N = nN<sub>A</sub>
+                </li>
+
+                <li>
+                    c = n / V
+                </li>
+
+                <li>
+                    Percentage yield =
+                    actual yield / theoretical yield × 100
+                </li>
+
+                <li>
+                    Atom economy =
+                    desired product M<sub>r</sub> /
+                    total reactant M<sub>r</sub> × 100
+                </li>
+
+                <li>
+                    Isotopes have the same number of protons but different
+                    numbers of neutrons.
+                </li>
+
+                <li>
+                    Ionic, covalent and metallic bonding are different
+                    forms of strong chemical bonding.
+                </li>
+
+                <li>
+                    Alkanes are saturated hydrocarbons.
+                </li>
+
+                <li>
+                    Alkenes contain a carbon-carbon double bond.
+                </li>
+
+                <li>
+                    Alkenes commonly undergo addition reactions.
+                </li>
+
+                <li>
+                    Alkanes can undergo free-radical substitution under
+                    suitable conditions.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<div class="navigation">
+
+    <a href="chemistry.html" class="button">
+        ← Back to Chemistry
+    </a>
+
+    <a href="chemistry-2.html" class="button">
+        Chemistry Unit 2 →
+    </a>
+
+    <a href="index.html" class="button">
+        Home
+    </a>
+
+</div>
+
+
+<footer>
+
+    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+</footer>
+
+
+</body>
+
+</html>
+```
