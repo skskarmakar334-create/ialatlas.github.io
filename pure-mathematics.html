@@ -8,7 +8,19 @@
 
     <title>Pure Mathematics | IAL ATLAS</title>
 
+    <meta name="description"
+          content="Edexcel International A Level Pure Mathematics notes, formulas, examples and revision resources on IAL ATLAS.">
+
+    <meta name="author" content="Shuvojit Karmakar">
+
+    <meta name="robots" content="index, follow">
+
+
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -16,125 +28,886 @@
             box-sizing: border-box;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
+
+            background: #050816;
+
+            color: #ffffff;
+
+            overflow-x: hidden;
         }
+
+
+        /* =========================
+           FUTURISTIC GRID
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(0,217,255,0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(0,217,255,0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            pointer-events: none;
+
+            z-index: -3;
+        }
+
+
+        /* =========================
+           ATMOSPHERIC GLOW
+        ========================= */
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 650px;
+            height: 650px;
+
+            top: -280px;
+            right: -200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,217,255,0.12),
+                    transparent 68%
+                );
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            background: #071b36;
-            color: white;
-            padding: 22px 7%;
+
+            position: relative;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(5,8,22,0.78);
+
+            border-bottom:
+                1px solid rgba(0,217,255,0.12);
+
+            backdrop-filter: blur(18px);
+
+            z-index: 10;
         }
+
 
         .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
+
+            position: relative;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 26px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
         }
 
-        header a {
-            color: white;
-            text-decoration: none;
+
+        .logo::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -6px;
+
+            width: 32%;
+
+            height: 2px;
+
+            background: #00d9ff;
+
+            box-shadow:
+                0 0 10px #00d9ff,
+                0 0 20px rgba(0,217,255,0.6);
+
+            transition: width 0.3s ease;
         }
+
+
+        .logo:hover::after {
+
+            width: 100%;
+        }
+
+
+        header > a:last-child {
+
+            color: #9eb2cc;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            padding: 10px 18px;
+
+            border: 1px solid
+                rgba(0,217,255,0.18);
+
+            border-radius: 8px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: all 0.3s ease;
+        }
+
+
+        header > a:last-child:hover {
+
+            color: #ffffff;
+
+            border-color: #00d9ff;
+
+            box-shadow:
+                0 0 18px rgba(0,217,255,0.15);
+
+            transform: translateX(-3px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
-            color: white;
+
+            position: relative;
+
+            min-height: 430px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
             text-align: center;
-            padding: 70px 20px;
+
+            padding: 90px 20px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(0,217,255,0.10),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    180deg,
+                    #071127,
+                    #050816
+                );
         }
+
+
+        /* Orbit ring */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 470px;
+
+            height: 470px;
+
+            border:
+                1px solid rgba(0,217,255,0.09);
+
+            border-radius: 50%;
+
+            animation:
+                pulse 5s ease-in-out infinite;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 700px;
+
+            height: 700px;
+
+            border:
+                1px solid rgba(108,99,255,0.05);
+
+            border-radius: 50%;
+        }
+
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size:
+                clamp(42px, 6vw, 76px);
+
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 18px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #8feaff,
+                    #ffffff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            text-shadow:
+                0 0 30px
+                rgba(0,217,255,0.15);
         }
+
+
+        .hero h1::before {
+
+            content: "PURE / 01";
+
+            display: block;
+
+            margin-bottom: 16px;
+
+            color: #00d9ff;
+
+            font-size: 10px;
+
+            letter-spacing: 5px;
+
+            font-weight: 700;
+
+            text-shadow:
+                0 0 15px
+                rgba(0,217,255,0.7);
+        }
+
 
         .hero p {
-            color: #dcecff;
-            font-size: 18px;
+
+            position: relative;
+
+            z-index: 2;
+
+            color: #9db1ca;
+
+            font-size: 17px;
+
+            letter-spacing: 1px;
+
+            line-height: 1.7;
         }
+
+
+        .hero-line {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(500px, 70%);
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #00d9ff,
+                    transparent
+                );
+
+            opacity: 0.5;
+        }
+
+
+        /* =========================
+           MAIN SECTION
+        ========================= */
 
         .section {
-            max-width: 1100px;
+
+            max-width: 1150px;
+
             margin: auto;
-            padding: 60px 20px;
+
+            padding: 90px 25px 110px;
         }
+
 
         .section h2 {
+
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 12px;
+
+            font-size:
+                clamp(30px, 4vw, 42px);
+
+            margin-bottom: 15px;
+
+            letter-spacing: -1px;
         }
+
+
+        .section h2::after {
+
+            content: "";
+
+            display: block;
+
+            width: 50px;
+
+            height: 2px;
+
+            margin:
+                18px auto 0;
+
+            background: #00d9ff;
+
+            box-shadow:
+                0 0 12px
+                rgba(0,217,255,0.8);
+        }
+
 
         .intro {
+
+            max-width: 700px;
+
+            margin:
+                0 auto 55px;
+
             text-align: center;
-            color: #607089;
-            margin-bottom: 40px;
+
+            color: #7f92aa;
+
+            font-size: 15px;
+
+            line-height: 1.8;
         }
+
+
+        /* =========================
+           TOPIC GRID
+        ========================= */
 
         .topics {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
         }
+
+
+        /* =========================
+           TOPIC CARD
+        ========================= */
 
         .topic {
-            background: white;
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-            text-decoration: none;
+
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 185px;
+
+            padding: 32px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid
+                rgba(112,160,200,0.14);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20,35,65,0.72),
+                    rgba(7,13,30,0.84)
+                );
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.25),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.035);
+
             color: inherit;
+
+            text-decoration: none;
+
             display: block;
+
+            backdrop-filter: blur(15px);
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
+
+
+        /* glowing corner */
+
+        .topic::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+
+            height: 170px;
+
+            top: -90px;
+
+            right: -90px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,217,255,0.18),
+                    transparent 70%
+                );
+
+            transition:
+                transform 0.5s ease;
+        }
+
+
+        /* scanning line */
+
+        .topic::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00d9ff,
+                    #6c63ff
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(0,217,255,0.8);
+
+            transition:
+                width 0.45s ease;
+        }
+
 
         .topic:hover {
-            transform: translateY(-4px);
+
+            transform:
+                translateY(-9px);
+
+            border-color:
+                rgba(0,217,255,0.45);
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.42),
+
+                0 0 30px
+                rgba(0,217,255,0.07);
         }
+
+
+        .topic:hover::before {
+
+            transform:
+                scale(1.6);
+        }
+
+
+        .topic:hover::after {
+
+            width: 100%;
+        }
+
+
+        /* =========================
+           TOPIC NUMBER
+        ========================= */
 
         .topic h3 {
+
+            position: relative;
+
+            z-index: 2;
+
+            color: #ffffff;
+
             font-size: 22px;
-            margin-bottom: 10px;
+
+            margin-bottom: 13px;
         }
+
+
+        .topic h3::before {
+
+            content: "01";
+
+            display: block;
+
+            color: #00d9ff;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 14px;
+
+            opacity: 0.8;
+        }
+
+
+        .topic:nth-child(2) h3::before {
+            content: "02";
+        }
+
+
+        .topic:nth-child(3) h3::before {
+            content: "03";
+        }
+
+
+        .topic:nth-child(4) h3::before {
+            content: "04";
+        }
+
+
+        .topic:nth-child(5) h3::before {
+            content: "05";
+        }
+
+
+        .topic:nth-child(6) h3::before {
+            content: "06";
+        }
+
 
         .topic p {
-            color: #68778d;
-            line-height: 1.6;
+
+            position: relative;
+
+            z-index: 2;
+
+            color: #8295ae;
+
+            font-size: 14px;
+
+            line-height: 1.7;
         }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-wrapper {
+
+            text-align: center;
+
+            margin-top: 55px;
+        }
+
 
         .back {
-            display: inline-block;
-            margin-top: 40px;
-            background: #32a9e8;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #dcecff;
+
+            padding: 13px 22px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid
+                rgba(0,217,255,0.2);
+
+            background:
+                rgba(0,217,255,0.035);
+
             text-decoration: none;
-            font-weight: bold;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition:
+                all 0.3s ease;
         }
 
-        footer {
-            background: #071b36;
-            color: #b9c9dc;
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
+
+        .back:hover {
+
+            color: #ffffff;
+
+            border-color: #00d9ff;
+
+            background:
+                rgba(0,217,255,0.08);
+
+            box-shadow:
+                0 0 25px
+                rgba(0,217,255,0.12);
+
+            transform:
+                translateY(-3px);
         }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            position: relative;
+
+            background: #03050d;
+
+            color: #65758c;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-top:
+                1px solid
+                rgba(0,217,255,0.08);
+
+            font-size: 12px;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        footer::before {
+
+            content:
+                "IAL ATLAS // PURE MATHEMATICS";
+
+            display: block;
+
+            color: #00d9ff;
+
+            font-size: 9px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 10px;
+
+            opacity: 0.7;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+
+                transform: scale(0.95);
+
+                opacity: 0.3;
+            }
+
+            50% {
+
+                transform: scale(1.05);
+
+                opacity: 0.65;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 750px) {
 
+            header {
+
+                padding:
+                    17px 5%;
+            }
+
+
+            .logo {
+
+                font-size: 21px;
+
+                letter-spacing: 2px;
+            }
+
+
+            header > a:last-child {
+
+                font-size: 12px;
+
+                padding: 8px 12px;
+            }
+
+
+            .hero {
+
+                min-height: 370px;
+
+                padding: 80px 20px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 46px;
+            }
+
+
+            .hero p {
+
+                font-size: 14px;
+            }
+
+
             .topics {
+
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 38px;
+
+            .topic {
+
+                min-height: 170px;
+
+                padding: 27px;
+            }
+
+
+            .section {
+
+                padding:
+                    70px 18px 90px;
+            }
+
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+
+                transition-duration:
+                    0.01ms !important;
             }
 
         }
@@ -146,6 +919,10 @@
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -160,6 +937,10 @@
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
     <h1>
@@ -170,8 +951,14 @@
         Edexcel International A Level Mathematics
     </p>
 
+    <div class="hero-line"></div>
+
 </section>
 
+
+<!-- =========================
+     TOPICS
+========================= -->
 
 <section class="section">
 
@@ -180,7 +967,8 @@
     </h2>
 
     <p class="intro">
-        Choose a topic to explore notes, formulas, examples and revision resources.
+        Choose a topic to explore notes, formulas, examples
+        and revision resources.
     </p>
 
 
@@ -194,7 +982,8 @@
             </h3>
 
             <p>
-                Algebraic manipulation, functions, equations and inequalities.
+                Algebraic manipulation, functions, equations
+                and inequalities.
             </p>
 
         </a>
@@ -220,7 +1009,8 @@
             </h3>
 
             <p>
-                Arithmetic and geometric sequences, series and sigma notation.
+                Arithmetic and geometric sequences, series
+                and sigma notation.
             </p>
 
         </a>
@@ -233,7 +1023,8 @@
             </h3>
 
             <p>
-                Identities, equations, graphs and trigonometric functions.
+                Identities, equations, graphs and
+                trigonometric functions.
             </p>
 
         </a>
@@ -246,7 +1037,8 @@
             </h3>
 
             <p>
-                Derivatives, stationary points, rates of change and applications.
+                Derivatives, stationary points, rates of
+                change and applications.
             </p>
 
         </a>
@@ -259,7 +1051,8 @@
             </h3>
 
             <p>
-                Indefinite and definite integration and applications.
+                Indefinite and definite integration
+                and applications.
             </p>
 
         </a>
@@ -268,7 +1061,7 @@
     </div>
 
 
-    <div style="text-align: center;">
+    <div class="back-wrapper">
 
         <a href="mathematics.html" class="back">
             ← Back to Mathematics
@@ -280,6 +1073,10 @@
 </section>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
@@ -290,3 +1087,4 @@
 </body>
 
 </html>
+
