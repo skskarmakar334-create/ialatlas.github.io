@@ -23,11 +23,9 @@
 
     <meta name="theme-color" content="#05070d">
 
-
     <!-- Canonical -->
     <link rel="canonical"
           href="https://skskarmakar334-create.github.io/ialatlas.github.io/">
-
 
     <!-- Open Graph -->
     <meta property="og:title"
@@ -50,7 +48,6 @@
     <meta property="og:site_name" content="IAL ATLAS">
 
     <meta property="og:locale" content="en_US">
-
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
@@ -90,7 +87,7 @@
     </script>
 
 
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
@@ -132,6 +129,7 @@
 
         a {
             text-decoration: none;
+
             color: inherit;
         }
 
@@ -149,10 +147,12 @@
             inset: 0;
 
             background-image:
+
                 linear-gradient(
                     rgba(255,255,255,0.025) 1px,
                     transparent 1px
                 ),
+
                 linear-gradient(
                     90deg,
                     rgba(255,255,255,0.025) 1px,
@@ -162,6 +162,13 @@
             background-size: 70px 70px;
 
             mask-image:
+                linear-gradient(
+                    to bottom,
+                    black 0%,
+                    transparent 85%
+                );
+
+            -webkit-mask-image:
                 linear-gradient(
                     to bottom,
                     black 0%,
@@ -181,9 +188,11 @@
             position: fixed;
 
             width: 700px;
+
             height: 700px;
 
             top: -300px;
+
             right: -250px;
 
             background:
@@ -217,6 +226,7 @@
 
         ::-webkit-scrollbar-thumb {
             background: #18344a;
+
             border-radius: 20px;
         }
 
@@ -235,6 +245,7 @@
             position: fixed;
 
             top: 0;
+
             left: 0;
 
             width: 100%;
@@ -381,6 +392,7 @@
         .status-dot {
 
             width: 6px;
+
             height: 6px;
 
             border-radius: 50%;
@@ -397,14 +409,14 @@
 
         @keyframes pulse {
 
-            0%, 100% {
+            0%,
+            100% {
                 opacity: 1;
             }
 
             50% {
                 opacity: 0.35;
             }
-
         }
 
 
@@ -427,9 +439,12 @@
             text-align: center;
 
             padding:
-                120px 20px 100px;
+                150px 20px
+                100px;
 
             overflow: hidden;
+
+            isolation: isolate;
 
             background:
 
@@ -448,6 +463,73 @@
 
 
         /* =========================================================
+           ROTATING GLOBE
+        ========================================================= */
+
+        .hero-globe {
+
+            position: absolute;
+
+            width: 520px;
+
+            height: 520px;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            object-fit: contain;
+
+            display: block;
+
+            opacity: 0.20;
+
+            z-index: -1;
+
+            pointer-events: none;
+
+            user-select: none;
+
+            filter:
+
+                drop-shadow(
+                    0 0 25px
+                    rgba(0,210,255,0.25)
+                )
+
+                drop-shadow(
+                    0 0 80px
+                    rgba(0,210,255,0.12)
+                );
+
+            animation:
+                globeSpin 24s
+                linear infinite;
+        }
+
+
+        @keyframes globeSpin {
+
+            from {
+
+                transform:
+                    translate(-50%, -50%)
+                    rotate(0deg);
+            }
+
+            to {
+
+                transform:
+                    translate(-50%, -50%)
+                    rotate(360deg);
+            }
+        }
+
+
+        /* =========================================================
            ORBITAL SYSTEM
         ========================================================= */
 
@@ -456,9 +538,11 @@
             position: absolute;
 
             width: 650px;
+
             height: 650px;
 
             left: 50%;
+
             top: 50%;
 
             transform:
@@ -467,6 +551,8 @@
             pointer-events: none;
 
             opacity: 0.55;
+
+            z-index: 1;
         }
 
 
@@ -475,6 +561,7 @@
             position: absolute;
 
             left: 50%;
+
             top: 50%;
 
             transform:
@@ -491,6 +578,7 @@
         .orbit:nth-child(1) {
 
             width: 260px;
+
             height: 260px;
         }
 
@@ -498,6 +586,7 @@
         .orbit:nth-child(2) {
 
             width: 420px;
+
             height: 420px;
 
             transform:
@@ -512,6 +601,7 @@
         .orbit:nth-child(3) {
 
             width: 600px;
+
             height: 300px;
 
             transform:
@@ -527,6 +617,7 @@
             position: absolute;
 
             width: 6px;
+
             height: 6px;
 
             background: #00d9ff;
@@ -534,16 +625,20 @@
             border-radius: 50%;
 
             box-shadow:
+
                 0 0 10px #00d9ff,
-                0 0 25px rgba(0,217,255,0.6);
+
+                0 0 25px
+                rgba(0,217,255,0.6);
 
             top: -3px;
+
             left: 50%;
         }
 
 
         /* =========================================================
-           CENTRAL GLOW
+           CENTRAL HERO GLOW
         ========================================================= */
 
         .hero::before {
@@ -553,7 +648,15 @@
             position: absolute;
 
             width: 500px;
+
             height: 500px;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
 
             border-radius: 50%;
 
@@ -565,6 +668,8 @@
                 rgba(0,210,255,0.08);
 
             pointer-events: none;
+
+            z-index: -2;
         }
 
 
@@ -574,140 +679,15 @@
 
         .hero-content {
 
-            max-width: 1150px;
+            max-width: 950px;
 
             width: 100%;
 
             position: relative;
 
-            z-index: 2;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
+            z-index: 10;
         }
 
-
-        /* =========================================================
-           ANIMATED IAL ATLAS LOGO
-        ========================================================= */
-
-        .atlas-logo {
-
-            position: relative;
-
-            width: min(1050px, 92vw);
-
-            margin:
-                0 auto 35px;
-
-            line-height: 0;
-
-            isolation: isolate;
-        }
-
-
-        /* Static logo */
-
-        .atlas-logo-base {
-
-            display: block;
-
-            width: 100%;
-
-            height: auto;
-
-            filter:
-                drop-shadow(
-                    0 0 30px
-                    rgba(0,210,255,0.10)
-                );
-        }
-
-
-        /* =========================================================
-           GLOBE WINDOW
-
-           The globe is positioned over the exact Earth area
-           of the original 1536 × 1024 logo.
-        ========================================================= */
-
-        .atlas-globe-window {
-
-            position: absolute;
-
-            left: 12.37%;
-
-            top: 34.28%;
-
-            width: 21.94%;
-
-            aspect-ratio: 1 / 1;
-
-            overflow: hidden;
-
-            border-radius: 50%;
-
-            clip-path:
-                circle(50% at 50% 50%);
-
-            z-index: 5;
-
-            pointer-events: none;
-        }
-
-
-        /* =========================================================
-           ROTATING EARTH
-        ========================================================= */
-
-        .atlas-globe {
-
-            position: absolute;
-
-            left: 0;
-            top: 0;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            transform-origin:
-                center center;
-
-            animation:
-                atlasEarthRotation
-                18s
-                linear
-                infinite;
-
-            will-change: transform;
-        }
-
-
-        @keyframes atlasEarthRotation {
-
-            from {
-
-                transform:
-                    rotate(0deg);
-            }
-
-            to {
-
-                transform:
-                    rotate(360deg);
-            }
-
-        }
-
-
-        /* =========================================================
-           HERO LABEL
-        ========================================================= */
 
         .hero-label {
 
@@ -747,10 +727,6 @@
         }
 
 
-        /* =========================================================
-           HERO TITLE
-        ========================================================= */
-
         .hero h1 {
 
             font-family:
@@ -777,6 +753,7 @@
         .hero h1 span {
 
             background:
+
                 linear-gradient(
                     100deg,
                     #ffffff 0%,
@@ -788,13 +765,10 @@
 
             background-clip: text;
 
-            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color:
+                transparent;
         }
 
-
-        /* =========================================================
-           HERO DESCRIPTION
-        ========================================================= */
 
         .hero-description {
 
@@ -858,6 +832,7 @@
             color: #031018;
 
             background:
+
                 linear-gradient(
                     135deg,
                     #73edff,
@@ -985,6 +960,8 @@
             letter-spacing: 3px;
 
             text-transform: uppercase;
+
+            z-index: 20;
         }
 
 
@@ -998,6 +975,7 @@
                 8px auto 0;
 
             background:
+
                 linear-gradient(
                     to bottom,
                     #00d9ff,
@@ -1100,6 +1078,7 @@
             border-radius: 18px;
 
             background:
+
                 linear-gradient(
                     145deg,
                     rgba(255,255,255,0.055),
@@ -1113,8 +1092,11 @@
             overflow: hidden;
 
             transition:
+
                 transform 0.35s ease,
+
                 border-color 0.35s ease,
+
                 box-shadow 0.35s ease;
         }
 
@@ -1126,9 +1108,11 @@
             position: absolute;
 
             width: 180px;
+
             height: 180px;
 
             right: -70px;
+
             top: -70px;
 
             border-radius: 50%;
@@ -1149,6 +1133,7 @@
             position: absolute;
 
             right: 25px;
+
             bottom: 20px;
 
             font-family:
@@ -1183,6 +1168,7 @@
                 rgba(0,210,255,0.28);
 
             box-shadow:
+
                 0 20px 60px
                 rgba(0,0,0,0.35),
 
@@ -1205,7 +1191,8 @@
 
             display: flex;
 
-            justify-content: space-between;
+            justify-content:
+                space-between;
 
             align-items: center;
 
@@ -1323,6 +1310,7 @@
             max-width: none;
 
             background:
+
                 radial-gradient(
                     circle at 50% 0%,
                     rgba(0,210,255,0.06),
@@ -1353,6 +1341,7 @@
         .why-ial h2 span {
 
             background:
+
                 linear-gradient(
                     90deg,
                     #6beaff,
@@ -1363,7 +1352,8 @@
 
             background-clip: text;
 
-            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color:
+                transparent;
         }
 
 
@@ -1512,6 +1502,7 @@
         .founder h2 span {
 
             background:
+
                 linear-gradient(
                     90deg,
                     #ffffff,
@@ -1522,7 +1513,8 @@
 
             background-clip: text;
 
-            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color:
+                transparent;
         }
 
 
@@ -1548,6 +1540,7 @@
             border-radius: 15px;
 
             background:
+
                 linear-gradient(
                     135deg,
                     rgba(0,210,255,0.05),
@@ -1577,6 +1570,7 @@
             position: absolute;
 
             left: 18px;
+
             top: 5px;
 
             font-size: 60px;
@@ -1584,7 +1578,8 @@
             color:
                 rgba(0,210,255,0.2);
 
-            font-family: Georgia, serif;
+            font-family:
+                Georgia, serif;
         }
 
 
@@ -1602,7 +1597,6 @@
 
 
         .founder-content strong {
-
             color: #dcecf7;
         }
 
@@ -1650,7 +1644,8 @@
             text-align: center;
 
             padding:
-                75px 20px 30px;
+                75px 20px
+                30px;
 
             overflow: hidden;
         }
@@ -1663,15 +1658,18 @@
             position: absolute;
 
             width: 500px;
+
             height: 200px;
 
             left: 50%;
+
             top: -100px;
 
             transform:
                 translateX(-50%);
 
             background:
+
                 radial-gradient(
                     ellipse,
                     rgba(0,210,255,0.09),
@@ -1761,7 +1759,6 @@
 
 
         .footer-links a:hover {
-
             color: #5de7ff;
         }
 
@@ -1771,6 +1768,7 @@
             height: 1px;
 
             background:
+
                 linear-gradient(
                     90deg,
                     transparent,
@@ -1826,9 +1824,17 @@
 
 
             .hero {
+                padding-top: 130px;
+            }
 
-                padding-top:
-                    120px;
+
+            .hero-globe {
+
+                width: 450px;
+
+                height: 450px;
+
+                opacity: 0.17;
             }
 
 
@@ -1842,23 +1848,14 @@
 
             .subjects {
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
 
             .why-grid {
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
-
-
-            .atlas-logo {
-
-                width: 94vw;
-            }
-
         }
 
 
@@ -1875,15 +1872,18 @@
                 min-height: 100svh;
 
                 padding:
-                    115px 18px 90px;
+                    125px 18px
+                    90px;
             }
 
 
-            .atlas-logo {
+            .hero-globe {
 
-                width: 96vw;
+                width: 330px;
 
-                margin-bottom: 28px;
+                height: 330px;
+
+                opacity: 0.14;
             }
 
 
@@ -1961,7 +1961,6 @@
 
                 gap: 18px;
             }
-
         }
 
 
@@ -1987,13 +1986,6 @@
                 transition-duration:
                     0.01ms !important;
             }
-
-
-            .atlas-globe {
-
-                animation: none !important;
-            }
-
         }
 
     </style>
@@ -2004,24 +1996,609 @@
 <body>
 
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================= -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <header>
+<header>
 
-        <a href="index.html">
+    <a href="index.html">
 
-            <img
-                src="logo.png"
-                alt="IAL ATLAS"
-                class="logo-image"
+        <img
+            src="logo.png"
+            alt="IAL ATLAS"
+            class="logo-image"
+        >
+
+    </a>
+
+
+    <nav>
+
+        <a href="#subjects">
+            Subjects
+        </a>
+
+        <a href="#why">
+            Why IAL ATLAS
+        </a>
+
+        <a href="#about">
+            Founder
+        </a>
+
+    </nav>
+
+
+    <div class="nav-status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ONLINE
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+    <!-- =====================================================
+         ROTATING GLOBE
+
+         IMPORTANT:
+         ial-atlas-globe.png must be in the SAME folder
+         as index.html.
+    ====================================================== -->
+
+    <img
+        src="ial-atlas-globe.png"
+        alt=""
+        class="hero-globe"
+        aria-hidden="true"
+    >
+
+
+    <!-- =====================================================
+         ORBITAL SYSTEM
+    ====================================================== -->
+
+    <div class="orbital-system">
+
+        <div class="orbit"></div>
+
+        <div class="orbit"></div>
+
+        <div class="orbit"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HERO CONTENT
+    ====================================================== -->
+
+    <div class="hero-content">
+
+
+        <p class="hero-label">
+
+            EDEXCEL INTERNATIONAL A LEVELS
+
+        </p>
+
+
+        <h1>
+
+            Learn without<br>
+
+            <span>
+                the confusion.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            IAL ATLAS is a free, student-built learning platform
+            designed to make Edexcel International A Levels clearer,
+            more organised, and easier to study.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#subjects"
+                class="button primary-button"
             >
+
+                Explore the Atlas →
+
+            </a>
+
+
+            <a
+                href="#about"
+                class="button secondary-button"
+            >
+
+                Meet the Founder
+
+            </a>
+
+
+        </div>
+
+
+        <div class="hero-subjects">
+
+            <span>
+                📐 Mathematics
+            </span>
+
+            <span>
+                ⚛️ Physics
+            </span>
+
+            <span>
+                🧪 Chemistry
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         SCROLL INDICATOR
+    ====================================================== -->
+
+    <div class="scroll-indicator">
+
+        SCROLL TO EXPLORE
+
+        <div class="scroll-line"></div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SUBJECTS
+========================================================= -->
+
+<section
+    class="section"
+    id="subjects"
+>
+
+
+    <p class="section-label">
+        KNOWLEDGE SYSTEM
+    </p>
+
+
+    <h2>
+        Explore the Atlas.
+    </h2>
+
+
+    <p class="section-intro">
+
+        Navigate through carefully organised resources
+        designed around the Edexcel International A Level
+        curriculum.
+
+    </p>
+
+
+    <div class="subjects">
+
+
+        <!-- MATHEMATICS -->
+
+        <a
+            href="mathematics.html"
+            class="card"
+        >
+
+            <div class="card-top">
+
+                <span class="card-number">
+                    SUBJECT / 01
+                </span>
+
+                <span class="card-status">
+                    AVAILABLE
+                </span>
+
+            </div>
+
+
+            <div class="icon">
+                📐
+            </div>
+
+
+            <h3>
+                Mathematics
+            </h3>
+
+
+            <p>
+
+                Topic notes, formulas, worked examples
+                and revision resources.
+
+            </p>
+
+
+            <div class="card-arrow">
+                ENTER SUBJECT →
+            </div>
 
         </a>
 
 
-        <nav>
+
+        <!-- PHYSICS -->
+
+        <a
+            href="physics.html"
+            class="card"
+        >
+
+            <div class="card-top">
+
+                <span class="card-number">
+                    SUBJECT / 02
+                </span>
+
+                <span class="card-status">
+                    AVAILABLE
+                </span>
+
+            </div>
+
+
+            <div class="icon">
+                ⚛️
+            </div>
+
+
+            <h3>
+                Physics
+            </h3>
+
+
+            <p>
+
+                Concept explanations, equations,
+                examples and exam-focused revision.
+
+            </p>
+
+
+            <div class="card-arrow">
+                ENTER SUBJECT →
+            </div>
+
+        </a>
+
+
+
+        <!-- CHEMISTRY -->
+
+        <a
+            href="chemistry.html"
+            class="card"
+        >
+
+            <div class="card-top">
+
+                <span class="card-number">
+                    SUBJECT / 03
+                </span>
+
+                <span class="card-status">
+                    AVAILABLE
+                </span>
+
+            </div>
+
+
+            <div class="icon">
+                🧪
+            </div>
+
+
+            <h3>
+                Chemistry
+            </h3>
+
+
+            <p>
+
+                Clear explanations, reactions,
+                calculations and revision guides.
+
+            </p>
+
+
+            <div class="card-arrow">
+                ENTER SUBJECT →
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHY IAL ATLAS
+========================================================= -->
+
+<section
+    class="why-ial"
+    id="why"
+>
+
+
+    <div class="why-inner">
+
+
+        <p class="section-label">
+            WHY IAL ATLAS?
+        </p>
+
+
+        <h2>
+
+            Built to make learning
+
+            <span>
+                simpler.
+            </span>
+
+        </h2>
+
+
+        <p class="why-intro">
+
+            Everything on IAL ATLAS is designed around one goal:
+            helping students understand, practise and prepare
+            with confidence.
+
+        </p>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+
+                    Clear explanations that make difficult
+                    topics easier to understand.
+
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Practise
+                </h3>
+
+                <p>
+
+                    Worked examples and questions that turn
+                    understanding into confidence.
+
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Prepare
+                </h3>
+
+                <p>
+
+                    Organised, exam-focused resources to help
+                    you prepare effectively.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOUNDER
+========================================================= -->
+
+<section
+    class="section founder"
+    id="about"
+>
+
+
+    <div class="founder-content">
+
+
+        <p class="founder-label">
+
+            THE PERSON BEHIND IAL ATLAS
+
+        </p>
+
+
+        <h2>
+
+            Meet
+
+            <span>
+                Shuvojit.
+            </span>
+
+        </h2>
+
+
+        <p class="founder-role">
+
+            Founder & Creator of IAL ATLAS
+
+        </p>
+
+
+        <div class="founder-quote">
+
+            “I created IAL ATLAS with a simple belief:
+            learning should be easier to access, easier to understand,
+            and never feel like something you have to figure out alone.”
+
+        </div>
+
+
+        <p>
+
+            As a student, I know how overwhelming International
+            A Levels can be. There are countless topics to learn,
+            formulas to remember, questions to practise and exams
+            to prepare for. Sometimes, what a student needs isn't
+            more information — it's a clearer way of understanding it.
+
+        </p>
+
+
+        <p>
+
+            That's why I created
+
+            <strong>
+                IAL ATLAS
+            </strong>
+
+            — an independent, student-built platform designed
+            to bring clear explanations, worked examples,
+            practice questions and revision resources together
+            in one place.
+
+        </p>
+
+
+        <p>
+
+            This isn't just a website.
+
+            <strong>
+                It's a project built to help students.
+            </strong>
+
+        </p>
+
+
+        <div class="founder-signature">
+
+            <strong>
+                Built for students, by a student.
+            </strong>
+
+            <br>
+
+            <span>
+                — Shuvojit Karmakar
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+    <div class="footer-content">
+
+
+        <h2>
+            IAL ATLAS
+        </h2>
+
+
+        <p class="footer-tagline">
+
+            Explore • Learn • Master
+
+        </p>
+
+
+        <p class="footer-description">
+
+            A free, independent student resource created
+            to make Edexcel International A Levels easier
+            to understand.
+
+        </p>
+
+
+        <div class="footer-links">
 
             <a href="#subjects">
                 Subjects
@@ -2035,661 +2612,33 @@
                 Founder
             </a>
 
-        </nav>
-
-
-        <div class="nav-status">
-
-            <span class="status-dot"></span>
-
-            SYSTEM ONLINE
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
-
-    <section class="hero">
-
-
-        <!-- BACKGROUND ORBITS -->
-
-        <div class="orbital-system">
-
-            <div class="orbit"></div>
-
-            <div class="orbit"></div>
-
-            <div class="orbit"></div>
+            <a href="#">
+                Back to top ↑
+            </a>
 
         </div>
 
 
-        <!-- HERO CONTENT -->
+        <div class="footer-line"></div>
 
-        <div class="hero-content">
 
+        <p class="footer-copy">
 
-            <!-- =================================================
-                 IAL ATLAS LOGO
-
-                 The base logo stays still.
-                 Only the Earth rotates.
-            ================================================== -->
-
-            <div class="atlas-logo">
-
-
-                <!-- Static logo WITHOUT globe -->
-
-                <img
-                    src="ial-atlas-logo-no-globe.png"
-                    alt="IAL ATLAS"
-                    class="atlas-logo-base"
-                >
-
-
-                <!-- Rotating Earth -->
-
-                <div class="atlas-globe-window">
-
-                    <img
-                        src="ial-atlas-globe.png"
-                        alt=""
-                        aria-hidden="true"
-                        class="atlas-globe"
-                    >
-
-                </div>
-
-
-            </div>
-
-
-            <!-- =================================================
-                 HERO LABEL
-            ================================================== -->
-
-            <p class="hero-label">
-
-                EDEXCEL INTERNATIONAL A LEVELS
-
-            </p>
-
-
-            <!-- =================================================
-                 HERO TITLE
-            ================================================== -->
-
-            <h1>
-
-                Learn without<br>
-
-                <span>
-                    the confusion.
-                </span>
-
-            </h1>
-
-
-            <!-- =================================================
-                 HERO DESCRIPTION
-            ================================================== -->
-
-            <p class="hero-description">
-
-                IAL ATLAS is a free, student-built learning platform
-                designed to make Edexcel International A Levels clearer,
-                more organised, and easier to study.
-
-            </p>
-
-
-            <!-- =================================================
-                 HERO BUTTONS
-            ================================================== -->
-
-            <div class="hero-buttons">
-
-
-                <a
-                    href="#subjects"
-                    class="button primary-button"
-                >
-
-                    Explore the Atlas →
-
-                </a>
-
-
-                <a
-                    href="#about"
-                    class="button secondary-button"
-                >
-
-                    Meet the Founder
-
-                </a>
-
-
-            </div>
-
-
-            <!-- =================================================
-                 SUBJECT TAGS
-            ================================================== -->
-
-            <div class="hero-subjects">
-
-
-                <span>
-                    📐 Mathematics
-                </span>
-
-
-                <span>
-                    ⚛️ Physics
-                </span>
-
-
-                <span>
-                    🧪 Chemistry
-                </span>
-
-
-            </div>
-
-
-        </div>
-
-
-        <!-- =================================================
-             SCROLL INDICATOR
-        ================================================== -->
-
-        <div class="scroll-indicator">
-
-            SCROLL TO EXPLORE
-
-            <div class="scroll-line"></div>
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================================================
-         SUBJECTS
-    ========================================================= -->
-
-    <section class="section" id="subjects">
-
-
-        <p class="section-label">
-            KNOWLEDGE SYSTEM
-        </p>
-
-
-        <h2>
-            Explore the Atlas.
-        </h2>
-
-
-        <p class="section-intro">
-
-            Navigate through carefully organised resources
-            designed around the Edexcel International A Level
-            curriculum.
+            © 2026 IAL ATLAS • Independent student resource
 
         </p>
 
 
-        <div class="subjects">
+        <p class="footer-disclaimer">
 
+            Not affiliated with Pearson
 
-            <!-- MATHEMATICS -->
+        </p>
 
-            <a
-                href="mathematics.html"
-                class="card"
-            >
 
-                <div class="card-top">
+    </div>
 
-                    <span class="card-number">
-                        SUBJECT / 01
-                    </span>
-
-                    <span class="card-status">
-                        AVAILABLE
-                    </span>
-
-                </div>
-
-
-                <div class="icon">
-                    📐
-                </div>
-
-
-                <h3>
-                    Mathematics
-                </h3>
-
-
-                <p>
-
-                    Topic notes, formulas, worked examples
-                    and revision resources.
-
-                </p>
-
-
-                <div class="card-arrow">
-                    ENTER SUBJECT →
-                </div>
-
-            </a>
-
-
-
-            <!-- PHYSICS -->
-
-            <a
-                href="physics.html"
-                class="card"
-            >
-
-                <div class="card-top">
-
-                    <span class="card-number">
-                        SUBJECT / 02
-                    </span>
-
-                    <span class="card-status">
-                        AVAILABLE
-                    </span>
-
-                </div>
-
-
-                <div class="icon">
-                    ⚛️
-                </div>
-
-
-                <h3>
-                    Physics
-                </h3>
-
-
-                <p>
-
-                    Concept explanations, equations,
-                    examples and exam-focused revision.
-
-                </p>
-
-
-                <div class="card-arrow">
-                    ENTER SUBJECT →
-                </div>
-
-            </a>
-
-
-
-            <!-- CHEMISTRY -->
-
-            <a
-                href="chemistry.html"
-                class="card"
-            >
-
-                <div class="card-top">
-
-                    <span class="card-number">
-                        SUBJECT / 03
-                    </span>
-
-                    <span class="card-status">
-                        AVAILABLE
-                    </span>
-
-                </div>
-
-
-                <div class="icon">
-                    🧪
-                </div>
-
-
-                <h3>
-                    Chemistry
-                </h3>
-
-
-                <p>
-
-                    Clear explanations, reactions,
-                    calculations and revision guides.
-
-                </p>
-
-
-                <div class="card-arrow">
-                    ENTER SUBJECT →
-                </div>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         WHY IAL ATLAS
-    ========================================================= -->
-
-    <section
-        class="why-ial"
-        id="why"
-    >
-
-        <div class="why-inner">
-
-
-            <p class="section-label">
-                WHY IAL ATLAS?
-            </p>
-
-
-            <h2>
-
-                Built to make learning
-
-                <span>
-                    simpler.
-                </span>
-
-            </h2>
-
-
-            <p class="why-intro">
-
-                Everything on IAL ATLAS is designed around one goal:
-                helping students understand, practise and prepare
-                with confidence.
-
-            </p>
-
-
-            <div class="why-grid">
-
-
-                <!-- UNDERSTAND -->
-
-                <div class="why-card">
-
-                    <div class="why-icon">
-                        📖
-                    </div>
-
-                    <h3>
-                        Understand
-                    </h3>
-
-                    <p>
-
-                        Clear explanations that make difficult
-                        topics easier to understand.
-
-                    </p>
-
-                </div>
-
-
-                <!-- PRACTISE -->
-
-                <div class="why-card">
-
-                    <div class="why-icon">
-                        🧠
-                    </div>
-
-                    <h3>
-                        Practise
-                    </h3>
-
-                    <p>
-
-                        Worked examples and questions that turn
-                        understanding into confidence.
-
-                    </p>
-
-                </div>
-
-
-                <!-- PREPARE -->
-
-                <div class="why-card">
-
-                    <div class="why-icon">
-                        🎯
-                    </div>
-
-                    <h3>
-                        Prepare
-                    </h3>
-
-                    <p>
-
-                        Organised, exam-focused resources to help
-                        you prepare effectively.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         FOUNDER
-    ========================================================= -->
-
-    <section
-        class="section founder"
-        id="about"
-    >
-
-        <div class="founder-content">
-
-
-            <p class="founder-label">
-
-                THE PERSON BEHIND IAL ATLAS
-
-            </p>
-
-
-            <h2>
-
-                Meet
-
-                <span>
-                    Shuvojit.
-                </span>
-
-            </h2>
-
-
-            <p class="founder-role">
-
-                Founder & Creator of IAL ATLAS
-
-            </p>
-
-
-            <div class="founder-quote">
-
-                “I created IAL ATLAS with a simple belief:
-                learning should be easier to access, easier to understand,
-                and never feel like something you have to figure out alone.”
-
-            </div>
-
-
-            <p>
-
-                As a student, I know how overwhelming International
-                A Levels can be. There are countless topics to learn,
-                formulas to remember, questions to practise and exams
-                to prepare for. Sometimes, what a student needs isn't
-                more information — it's a clearer way of understanding it.
-
-            </p>
-
-
-            <p>
-
-                That's why I created
-
-                <strong>
-                    IAL ATLAS
-                </strong>
-
-                — an independent, student-built platform designed
-                to bring clear explanations, worked examples,
-                practice questions and revision resources together
-                in one place.
-
-            </p>
-
-
-            <p>
-
-                This isn't just a website.
-
-                <strong>
-                    It's a project built to help students.
-                </strong>
-
-            </p>
-
-
-            <div class="founder-signature">
-
-                <strong>
-                    Built for students, by a student.
-                </strong>
-
-                <br>
-
-                <span>
-                    — Shuvojit Karmakar
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
-
-    <footer>
-
-
-        <div class="footer-content">
-
-
-            <h2>
-                IAL ATLAS
-            </h2>
-
-
-            <p class="footer-tagline">
-
-                Explore • Learn • Master
-
-            </p>
-
-
-            <p class="footer-description">
-
-                A free, independent student resource created
-                to make Edexcel International A Levels easier
-                to understand.
-
-            </p>
-
-
-            <div class="footer-links">
-
-                <a href="#subjects">
-                    Subjects
-                </a>
-
-                <a href="#why">
-                    Why IAL ATLAS
-                </a>
-
-                <a href="#about">
-                    Founder
-                </a>
-
-                <a href="#">
-                    Back to top ↑
-                </a>
-
-            </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <p class="footer-copy">
-
-                © 2026 IAL ATLAS • Independent student resource
-
-            </p>
-
-
-            <p class="footer-disclaimer">
-
-                Not affiliated with Pearson
-
-            </p>
-
-
-        </div>
-
-
-    </footer>
+</footer>
 
 
 </body>
