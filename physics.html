@@ -7,32 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <title>Edexcel IAL Physics Notes & Revision | IAL ATLAS</title>
+    <title>Edexcel IAL Physics | IAL ATLAS</title>
 
     <meta name="description"
-          content="Edexcel International A Level Physics notes and revision resources covering Units 1–6, with concepts, equations, examples, practical skills and exam-focused study materials.">
+          content="Explore Edexcel International A Level Physics through the IAL ATLAS futuristic learning system. Access Units 1–6, concepts, equations, practical skills and exam-focused resources.">
 
     <meta name="keywords"
-          content="Edexcel IAL Physics, Edexcel International A Level Physics, IAL Physics notes, Edexcel Physics notes, IAL Physics revision, International A Level Physics">
+          content="Edexcel IAL Physics, Edexcel International A Level Physics, IAL Physics notes, Edexcel Physics revision, International A Level Physics">
 
     <meta name="author" content="Shuvojit Karmakar">
 
     <meta name="robots" content="index, follow, max-image-preview:large">
-
     <meta name="googlebot" content="index, follow">
 
-    <meta name="theme-color" content="#071b36">
+    <meta name="theme-color" content="#020711">
 
-    <!-- Canonical URL -->
+    <!-- Canonical -->
     <link rel="canonical"
           href="https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html">
 
     <!-- Open Graph -->
     <meta property="og:title"
-          content="Edexcel IAL Physics Notes & Revision | IAL ATLAS">
+          content="Edexcel IAL Physics | IAL ATLAS">
 
     <meta property="og:description"
-          content="Explore Edexcel International A Level Physics resources covering Units 1–6, equations, concepts, practical skills and exam-focused revision.">
+          content="Explore Edexcel International A Level Physics Units 1–6 with IAL ATLAS.">
 
     <meta property="og:type" content="website">
 
@@ -45,33 +44,33 @@
     <meta property="og:image:alt"
           content="IAL ATLAS logo">
 
-    <meta property="og:site_name" content="IAL ATLAS">
+    <meta property="og:site_name"
+          content="IAL ATLAS">
 
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale"
+          content="en_US">
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card"
+          content="summary_large_image">
 
     <meta name="twitter:title"
-          content="Edexcel IAL Physics Notes & Revision | IAL ATLAS">
+          content="Edexcel IAL Physics | IAL ATLAS">
 
     <meta name="twitter:description"
-          content="Edexcel International A Level Physics notes and revision resources covering Units 1–6.">
+          content="Edexcel International A Level Physics Units 1–6.">
 
     <meta name="twitter:image"
           content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
-
-    <meta name="twitter:image:alt"
-          content="IAL ATLAS logo">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Edexcel IAL Physics Notes & Revision",
+        "name": "Edexcel IAL Physics",
         "url": "https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html",
-        "description": "Edexcel International A Level Physics notes and revision resources covering Units 1–6, concepts, equations, practical skills and exam-focused study materials.",
+        "description": "Edexcel International A Level Physics notes and revision resources covering Units 1–6.",
         "isPartOf": {
             "@type": "WebSite",
             "name": "IAL ATLAS",
@@ -89,7 +88,12 @@
     }
     </script>
 
+
     <style>
+
+        /* =====================================================
+           IAL ATLAS — 2050 PHYSICS INTERFACE
+        ===================================================== */
 
         * {
             margin: 0;
@@ -97,125 +101,1021 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
+
+        html {
+            scroll-behavior: smooth;
         }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(0, 183, 255, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 0% 50%,
+                    rgba(0, 110, 255, 0.08),
+                    transparent 30%
+                ),
+                #020711;
+
+            color: #eaf7ff;
+
+            min-height: 100vh;
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           FUTURISTIC GRID
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 190, 255, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(0, 190, 255, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+
+            z-index: 0;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
         header {
-            background: #071b36;
-            color: white;
-            padding: 22px 7%;
+
+            position: relative;
+
+            z-index: 10;
+
+            height: 78px;
+
+            padding: 0 7%;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
+            background:
+                rgba(2, 7, 17, 0.78);
+
+            border-bottom:
+                1px solid rgba(0, 204, 255, 0.15);
+
+            backdrop-filter: blur(18px);
+
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 0 35px rgba(0, 150, 255, 0.05);
         }
 
+
         .logo {
-            font-size: 28px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            position: relative;
+        }
+
+
+        .logo::after {
+
+            content: "";
+
+            display: inline-block;
+
+            width: 7px;
+
+            height: 7px;
+
+            margin-left: 7px;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            box-shadow:
+                0 0 8px #00d9ff,
+                0 0 18px #00d9ff;
+
+            vertical-align: middle;
+        }
+
+
+        header > a:last-child {
+
+            color: #91b8ce;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        header > a:last-child:hover {
+
+            color: #00d9ff;
+
+            text-shadow:
+                0 0 12px rgba(0, 217, 255, 0.8);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            position: relative;
+
+            z-index: 1;
+
+            min-height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px 90px;
+
+            overflow: hidden;
+
+            border-bottom:
+                1px solid rgba(0, 204, 255, 0.12);
+        }
+
+
+        /* Atmospheric glow */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+
+            height: 650px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 180, 255, 0.13),
+                    transparent 68%
+                );
+
+            top: -350px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            pointer-events: none;
+        }
+
+
+        /* Orbital ring */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+
+            height: 520px;
+
+            border:
+                1px solid rgba(0, 217, 255, 0.08);
+
+            border-radius: 50%;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(15deg);
+
+            box-shadow:
+                0 0 60px rgba(0, 170, 255, 0.03);
+
+            pointer-events: none;
+        }
+
+
+        .system-label {
+
+            position: relative;
+
+            z-index: 2;
+
+            color: #00d9ff;
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 0 12px rgba(0, 217, 255, 0.8);
+        }
+
+
+        .hero h1 {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: clamp(55px, 8vw, 100px);
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+            line-height: 0.95;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 20px rgba(0, 180, 255, 0.2),
+                0 0 60px rgba(0, 180, 255, 0.08);
+        }
+
+
+        .hero h1 span {
+
+            color: #00d9ff;
+
+            text-shadow:
+                0 0 15px rgba(0, 217, 255, 0.8),
+                0 0 40px rgba(0, 170, 255, 0.35);
+        }
+
+
+        .hero p {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 25px;
+
+            color: #8daabd;
+
+            font-size: 17px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .hero-status {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 35px;
+
+            padding: 10px 18px;
+
+            border:
+                1px solid rgba(0, 217, 255, 0.18);
+
+            background:
+                rgba(0, 217, 255, 0.035);
+
+            border-radius: 100px;
+
+            color: #6f96a9;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .status-dot {
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #00e5ff;
+
+            box-shadow:
+                0 0 8px #00e5ff,
+                0 0 18px #00e5ff;
+        }
+
+
+        /* =====================================================
+           MAIN SECTION
+        ===================================================== */
+
+        .section {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 90px 25px;
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            margin-bottom: 45px;
+
+            border-bottom:
+                1px solid rgba(0, 217, 255, 0.12);
+
+            padding-bottom: 20px;
+        }
+
+
+        .heading-left h2 {
+
+            font-size: 30px;
+
             font-weight: 800;
+
             letter-spacing: 1px;
         }
 
-        header a {
-            color: white;
-            text-decoration: none;
+
+        .heading-left p {
+
+            margin-top: 7px;
+
+            color: #607d8d;
+
+            font-size: 14px;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
+
+        .section-code {
+
+            color: #426272;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
 
-        .hero p {
-            color: #dcecff;
-            font-size: 18px;
-        }
-
-        .section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .intro {
-            text-align: center;
-            color: #607089;
-            margin-bottom: 40px;
-        }
+        /* =====================================================
+           UNIT GRID
+        ===================================================== */
 
         .units {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
             gap: 20px;
         }
 
+
+        /* =====================================================
+           UNIT CARD
+        ===================================================== */
+
         .unit {
-            background: white;
+
+            position: relative;
+
+            min-height: 245px;
+
             padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
             text-decoration: none;
+
             color: inherit;
-            display: block;
+
+            overflow: hidden;
+
+            border:
+                1px solid rgba(105, 175, 205, 0.13);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(12, 28, 43, 0.75),
+                    rgba(3, 11, 21, 0.88)
+                );
+
+            border-radius: 4px;
+
+            backdrop-filter: blur(15px);
+
+            -webkit-backdrop-filter: blur(15px);
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
+
+
+        /* Corner accent */
+
+        .unit::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 70px;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00d9ff,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 12px rgba(0, 217, 255, 0.8);
+        }
+
+
+        .unit::after {
+
+            content: "";
+
+            position: absolute;
+
+            right: -100px;
+
+            bottom: -100px;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 180, 255, 0.09),
+                    transparent 70%
+                );
+
+            transition: 0.4s;
+        }
+
 
         .unit:hover {
-            transform: translateY(-4px);
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(0, 217, 255, 0.42);
+
+            box-shadow:
+                0 15px 50px rgba(0, 100, 180, 0.14),
+                inset 0 0 30px rgba(0, 180, 255, 0.025);
         }
+
+
+        .unit:hover::after {
+
+            right: -60px;
+
+            bottom: -60px;
+        }
+
+
+        /* =====================================================
+           UNIT TOP
+        ===================================================== */
+
+        .unit-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+        }
+
+
+        .unit-number {
+
+            color: #00d9ff;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 10px rgba(0, 217, 255, 0.6);
+        }
+
+
+        .unit-status {
+
+            color: #3e5d6d;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
 
         .unit h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+
+            margin-top: 25px;
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.5px;
+
+            color: #f2fbff;
         }
+
 
         .unit p {
-            color: #68778d;
-            line-height: 1.6;
+
+            margin-top: 10px;
+
+            max-width: 480px;
+
+            color: #7591a0;
+
+            font-size: 14px;
+
+            line-height: 1.7;
         }
+
+
+        /* =====================================================
+           CARD FOOTER
+        ===================================================== */
+
+        .unit-footer {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-top: 28px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid rgba(130, 190, 215, 0.08);
+        }
+
+
+        .module-label {
+
+            color: #486676;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .open-module {
+
+            color: #00d9ff;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        .unit:hover .open-module {
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 12px rgba(0, 217, 255, 0.7);
+        }
+
+
+        /* =====================================================
+           SYSTEM INFORMATION
+        ===================================================== */
+
+        .system-panel {
+
+            margin-top: 65px;
+
+            padding: 25px 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            border:
+                1px solid rgba(0, 217, 255, 0.10);
+
+            background:
+                rgba(3, 13, 24, 0.65);
+
+            backdrop-filter: blur(15px);
+        }
+
+
+        .system-item {
+
+            border-right:
+                1px solid rgba(100, 180, 210, 0.08);
+
+            padding-right: 20px;
+        }
+
+
+        .system-item:last-child {
+
+            border-right: none;
+        }
+
+
+        .system-item span {
+
+            display: block;
+
+            color: #3d6070;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 6px;
+        }
+
+
+        .system-item strong {
+
+            color: #b8d8e6;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .back-container {
+
+            text-align: center;
+
+            margin-top: 55px;
+        }
+
 
         .back {
-            display: inline-block;
-            margin-top: 40px;
-            background: #32a9e8;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 13px 25px;
+
+            border:
+                1px solid rgba(0, 217, 255, 0.25);
+
+            background:
+                rgba(0, 217, 255, 0.045);
+
+            color: #82b7ca;
+
             text-decoration: none;
+
+            font-size: 11px;
+
             font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
         }
+
+
+        .back:hover {
+
+            color: #ffffff;
+
+            border-color:
+                rgba(0, 217, 255, 0.65);
+
+            background:
+                rgba(0, 217, 255, 0.09);
+
+            box-shadow:
+                0 0 25px rgba(0, 180, 255, 0.1);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 30px 20px;
+
             text-align: center;
-            padding: 25px;
-            margin-top: 40px;
+
+            border-top:
+                1px solid rgba(0, 217, 255, 0.10);
+
+            background:
+                rgba(1, 5, 12, 0.85);
+
+            color: #486372;
+
+            font-size: 11px;
+
+            letter-spacing: 0.5px;
         }
 
-        @media (max-width: 750px) {
+
+        footer span {
+
+            color: #00bddd;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            header {
+
+                padding: 0 5%;
+
+            }
+
+
+            .hero {
+
+                min-height: 430px;
+
+                padding: 80px 20px;
+            }
+
+
+            .hero::after {
+
+                width: 350px;
+
+                height: 350px;
+            }
+
 
             .units {
+
                 grid-template-columns: 1fr;
             }
 
+
+            .section {
+
+                padding: 65px 18px;
+            }
+
+
+            .section-heading {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .system-panel {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .system-item {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid rgba(100, 180, 210, 0.08);
+
+                padding:
+                    0 0 15px;
+            }
+
+
+            .system-item:last-child {
+
+                border-bottom: none;
+
+                padding-bottom: 0;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            header {
+
+                height: 70px;
+
+                flex-direction: column;
+
+                justify-content: center;
+
+                gap: 5px;
+            }
+
+
+            .logo {
+
+                font-size: 23px;
+            }
+
+
+            header > a:last-child {
+
+                font-size: 9px;
+            }
+
+
             .hero h1 {
-                font-size: 38px;
+
+                font-size: 55px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .hero p {
+
+                font-size: 13px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .unit {
+
+                padding: 25px;
+
+                min-height: 230px;
+            }
+
+
+            .unit h3 {
+
+                font-size: 22px;
             }
 
         }
@@ -227,6 +1127,10 @@
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -241,109 +1145,340 @@
 </header>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
 
+    <div class="system-label">
+        IAL ATLAS // KNOWLEDGE SYSTEM
+    </div>
+
     <h1>
-        Physics
+        PHY<span>SICS</span>
     </h1>
 
     <p>
         Edexcel International A Level Physics
     </p>
 
+    <div class="hero-status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ONLINE
+
+        <span>•</span>
+
+        UNITS 01–06
+
+    </div>
+
 </section>
 
 
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <section class="section">
 
-    <h2>
-        Physics Units
-    </h2>
 
-    <p class="intro">
-        Explore Edexcel IAL Physics concepts, equations, examples and exam-focused resources.
-    </p>
+    <div class="section-heading">
 
+        <div class="heading-left">
+
+            <h2>
+                Physics Modules
+            </h2>
+
+            <p>
+                Navigate the complete Edexcel International A Level Physics curriculum.
+            </p>
+
+        </div>
+
+        <div class="section-code">
+            PHY / 2026 / ATLAS
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         UNIT GRID
+    ================================================= -->
 
     <div class="units">
 
 
+        <!-- UNIT 1 -->
+
         <a href="physics-1.html" class="unit">
 
-            <h3>
-                Unit 1
-            </h3>
+            <div>
 
-            <p>
-                Physics on the go — mechanics, materials and electricity.
-            </p>
+                <div class="unit-top">
+
+                    <span class="unit-number">
+                        UNIT 01
+                    </span>
+
+                    <span class="unit-status">
+                        FOUNDATION
+                    </span>
+
+                </div>
+
+                <h3>
+                    Physics on the Go
+                </h3>
+
+                <p>
+                    Mechanics, materials and electricity — the foundations
+                    of physical systems and motion.
+                </p>
+
+            </div>
+
+
+            <div class="unit-footer">
+
+                <span class="module-label">
+                    MODULE / PHY-01
+                </span>
+
+                <span class="open-module">
+                    OPEN →
+                </span>
+
+            </div>
 
         </a>
 
+
+        <!-- UNIT 2 -->
 
         <a href="physics-2.html" class="unit">
 
-            <h3>
-                Unit 2
-            </h3>
+            <div>
 
-            <p>
-                Physics at work — waves, electricity and particle physics.
-            </p>
+                <div class="unit-top">
+
+                    <span class="unit-number">
+                        UNIT 02
+                    </span>
+
+                    <span class="unit-status">
+                        CORE
+                    </span>
+
+                </div>
+
+                <h3>
+                    Physics at Work
+                </h3>
+
+                <p>
+                    Waves, electricity and particle physics with
+                    applications across modern physical science.
+                </p>
+
+            </div>
+
+
+            <div class="unit-footer">
+
+                <span class="module-label">
+                    MODULE / PHY-02
+                </span>
+
+                <span class="open-module">
+                    OPEN →
+                </span>
+
+            </div>
 
         </a>
 
+
+        <!-- UNIT 3 -->
 
         <a href="physics-3.html" class="unit">
 
-            <h3>
-                Unit 3
-            </h3>
+            <div>
 
-            <p>
-                Exploring physics through practical skills and experimental methods.
-            </p>
+                <div class="unit-top">
+
+                    <span class="unit-number">
+                        UNIT 03
+                    </span>
+
+                    <span class="unit-status">
+                        PRACTICAL
+                    </span>
+
+                </div>
+
+                <h3>
+                    Exploring Physics
+                </h3>
+
+                <p>
+                    Experimental methods, measurements, uncertainties
+                    and practical investigation.
+                </p>
+
+            </div>
+
+
+            <div class="unit-footer">
+
+                <span class="module-label">
+                    MODULE / PHY-03
+                </span>
+
+                <span class="open-module">
+                    OPEN →
+                </span>
+
+            </div>
 
         </a>
 
+
+        <!-- UNIT 4 -->
 
         <a href="physics-4.html" class="unit">
 
-            <h3>
-                Unit 4
-            </h3>
+            <div>
 
-            <p>
-                Further mechanics, electric and magnetic fields,
-                nuclear and particle physics.
-            </p>
+                <div class="unit-top">
+
+                    <span class="unit-number">
+                        UNIT 04
+                    </span>
+
+                    <span class="unit-status">
+                        ADVANCED
+                    </span>
+
+                </div>
+
+                <h3>
+                    Further Physics
+                </h3>
+
+                <p>
+                    Further mechanics, electric and magnetic fields,
+                    nuclear and particle physics.
+                </p>
+
+            </div>
+
+
+            <div class="unit-footer">
+
+                <span class="module-label">
+                    MODULE / PHY-04
+                </span>
+
+                <span class="open-module">
+                    OPEN →
+                </span>
+
+            </div>
 
         </a>
 
+
+        <!-- UNIT 5 -->
 
         <a href="physics-5.html" class="unit">
 
-            <h3>
-                Unit 5
-            </h3>
+            <div>
 
-            <p>
-                Thermodynamics, nuclear decay, oscillations,
-                astrophysics and cosmology.
-            </p>
+                <div class="unit-top">
+
+                    <span class="unit-number">
+                        UNIT 05
+                    </span>
+
+                    <span class="unit-status">
+                        FRONTIER
+                    </span>
+
+                </div>
+
+                <h3>
+                    Advanced Physics
+                </h3>
+
+                <p>
+                    Thermodynamics, nuclear decay, oscillations,
+                    astrophysics and cosmology.
+                </p>
+
+            </div>
+
+
+            <div class="unit-footer">
+
+                <span class="module-label">
+                    MODULE / PHY-05
+                </span>
+
+                <span class="open-module">
+                    OPEN →
+                </span>
+
+            </div>
 
         </a>
 
 
+        <!-- UNIT 6 -->
+
         <a href="physics-6.html" class="unit">
 
-            <h3>
-                Unit 6
-            </h3>
+            <div>
 
-            <p>
-                Practical skills, experimental techniques and data analysis.
-            </p>
+                <div class="unit-top">
+
+                    <span class="unit-number">
+                        UNIT 06
+                    </span>
+
+                    <span class="unit-status">
+                        LAB SYSTEM
+                    </span>
+
+                </div>
+
+                <h3>
+                    Experimental Physics
+                </h3>
+
+                <p>
+                    Practical skills, experimental techniques,
+                    data analysis and scientific evaluation.
+                </p>
+
+            </div>
+
+
+            <div class="unit-footer">
+
+                <span class="module-label">
+                    MODULE / PHY-06
+                </span>
+
+                <span class="open-module">
+                    OPEN →
+                </span>
+
+            </div>
 
         </a>
 
@@ -351,10 +1486,63 @@
     </div>
 
 
-    <div style="text-align: center;">
+    <!-- =================================================
+         SYSTEM PANEL
+    ================================================= -->
+
+    <div class="system-panel">
+
+
+        <div class="system-item">
+
+            <span>
+                Curriculum
+            </span>
+
+            <strong>
+                Pearson Edexcel IAL
+            </strong>
+
+        </div>
+
+
+        <div class="system-item">
+
+            <span>
+                Coverage
+            </span>
+
+            <strong>
+                Units 01 — 06
+            </strong>
+
+        </div>
+
+
+        <div class="system-item">
+
+            <span>
+                Resource Type
+            </span>
+
+            <strong>
+                Notes • Revision • Practice
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         BACK
+    ================================================= -->
+
+    <div class="back-container">
 
         <a href="index.html" class="back">
-            ← Back to Subjects
+            ← Return to Atlas
         </a>
 
     </div>
@@ -363,9 +1551,15 @@
 </section>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    © 2026 <span>IAL ATLAS</span>
+    • Independent student resource
+    • Not affiliated with Pearson
 
 </footer>
 
