@@ -1,1142 +1,1265 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-```
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Integration | IAL ATLAS</title>
+    <title>Integration | IAL ATLAS</title>
 
-<meta name="description"
-      content="Integration notes and revision resources for Pearson Edexcel International A Level Mathematics.">
+    <meta name="description"
+          content="Integration notes and revision resources for Pearson Edexcel International A Level Mathematics.">
 
-<style>
+    <style>
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        /* =========================================================
+           IAL ATLAS — DARK FUTURISTIC DESIGN SYSTEM
+        ========================================================= */
 
-    html {
-        scroll-behavior: smooth;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background:
-            radial-gradient(circle at 20% 10%, rgba(0, 183, 255, 0.08), transparent 30%),
-            radial-gradient(circle at 80% 30%, rgba(0, 102, 255, 0.07), transparent 30%),
-            #020812;
-        color: #e8f6ff;
-        line-height: 1.7;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* =========================
-       HEADER
-    ========================= */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(0, 183, 255, 0.08), transparent 30%),
+                radial-gradient(circle at 85% 20%, rgba(91, 72, 255, 0.08), transparent 30%),
+                #050b16;
+            color: #eaf4ff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-    header {
-        background: rgba(2, 10, 22, 0.94);
-        border-bottom: 1px solid rgba(0, 190, 255, 0.22);
-        padding: 20px 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        backdrop-filter: blur(12px);
-    }
-
-    .logo {
-        color: #ffffff;
-        font-size: 28px;
-        font-weight: 800;
-        letter-spacing: 2px;
-        text-decoration: none;
-        text-shadow: 0 0 15px rgba(0, 195, 255, 0.35);
-    }
-
-    header a {
-        color: #a9dfff;
-        text-decoration: none;
-        transition: 0.3s ease;
-    }
-
-    header a:hover {
-        color: #4fd7ff;
-        text-shadow: 0 0 12px rgba(0, 195, 255, 0.65);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-        padding: 100px 20px 90px;
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 23, 49, 0.96),
-                rgba(0, 55, 96, 0.82),
-                rgba(1, 8, 20, 0.98)
-            );
-        border-bottom: 1px solid rgba(0, 190, 255, 0.18);
-    }
-
-    .hero::before {
-        content: "";
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        border: 1px solid rgba(0, 200, 255, 0.12);
-        border-radius: 50%;
-        top: -280px;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow:
-            0 0 80px rgba(0, 180, 255, 0.08),
-            inset 0 0 80px rgba(0, 180, 255, 0.05);
-    }
-
-    .hero::after {
-        content: "";
-        position: absolute;
-        width: 800px;
-        height: 1px;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 205, 255, 0.5),
-            transparent
-        );
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-    }
-
-    .hero h1 {
-        position: relative;
-        z-index: 2;
-        font-size: 56px;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
-        color: #ffffff;
-        text-shadow:
-            0 0 15px rgba(0, 195, 255, 0.35),
-            0 0 35px rgba(0, 130, 255, 0.2);
-    }
-
-    .hero p {
-        position: relative;
-        z-index: 2;
-        color: #9fdfff;
-        font-size: 18px;
-        letter-spacing: 0.5px;
-    }
-
-    /* =========================
-       MAIN SECTION
-    ========================= */
-
-    .section {
-        max-width: 1050px;
-        margin: auto;
-        padding: 65px 20px;
-    }
-
-    /* =========================
-       TOPIC CARDS
-    ========================= */
-
-    .topic-card {
-        position: relative;
-        background:
-            linear-gradient(
-                145deg,
-                rgba(7, 24, 42, 0.96),
-                rgba(3, 14, 27, 0.96)
-            );
-        border: 1px solid rgba(0, 180, 255, 0.16);
-        padding: 34px;
-        margin-bottom: 28px;
-        border-radius: 16px;
-        box-shadow:
-            0 12px 40px rgba(0, 0, 0, 0.35),
-            inset 0 0 25px rgba(0, 150, 255, 0.025);
-        transition:
-            transform 0.3s ease,
-            border-color 0.3s ease,
-            box-shadow 0.3s ease;
-    }
-
-    .topic-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 28px;
-        right: 28px;
-        height: 1px;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 204, 255, 0.45),
-            transparent
-        );
-    }
-
-    .topic-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(0, 200, 255, 0.35);
-        box-shadow:
-            0 18px 45px rgba(0, 0, 0, 0.45),
-            0 0 25px rgba(0, 160, 255, 0.07);
-    }
-
-    .topic-card h2 {
-        font-size: 28px;
-        margin-bottom: 17px;
-        color: #ffffff;
-        letter-spacing: 0.3px;
-    }
-
-    .topic-card h2::first-letter {
-        color: #43d7ff;
-    }
-
-    .topic-card h3 {
-        font-size: 21px;
-        margin-top: 27px;
-        margin-bottom: 10px;
-        color: #63dfff;
-    }
-
-    .topic-card p {
-        color: #a9bfd0;
-        margin-bottom: 15px;
-    }
-
-    /* =========================
-       FORMULAS
-    ========================= */
-
-    .formula {
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 125, 190, 0.13),
-                rgba(0, 55, 100, 0.15)
-            );
-        border: 1px solid rgba(0, 190, 255, 0.16);
-        padding: 17px;
-        margin: 16px 0;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
-        color: #c8efff;
-        box-shadow:
-            inset 0 0 18px rgba(0, 170, 255, 0.025);
-    }
-
-    .formula strong {
-        color: #ffffff;
-    }
-
-    /* =========================
-       DETAILS / SOLUTIONS
-    ========================= */
-
-    details {
-        margin-top: 18px;
-        border: 1px solid rgba(0, 180, 255, 0.12);
-        border-radius: 10px;
-        padding: 13px 16px;
-        background: rgba(0, 40, 70, 0.18);
-    }
-
-    summary {
-        cursor: pointer;
-        font-weight: bold;
-        color: #54d9ff;
-        transition: 0.3s ease;
-    }
-
-    summary:hover {
-        color: #ffffff;
-    }
-
-    details[open] summary {
-        margin-bottom: 10px;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================= */
-
-    .back {
-        display: inline-block;
-        background:
-            linear-gradient(
-                135deg,
-                #008fca,
-                #0066a8
-            );
-        color: white;
-        padding: 12px 22px;
-        border-radius: 9px;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 8px;
-        border: 1px solid rgba(80, 220, 255, 0.35);
-        box-shadow:
-            0 0 18px rgba(0, 160, 255, 0.12);
-        transition: 0.3s ease;
-    }
-
-    .back:hover {
-        transform: translateY(-2px);
-        background:
-            linear-gradient(
-                135deg,
-                #00aeea,
-                #0078c2
-            );
-        box-shadow:
-            0 0 25px rgba(0, 190, 255, 0.3);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-        background: #01060d;
-        border-top: 1px solid rgba(0, 190, 255, 0.16);
-        color: #7894a8;
-        text-align: center;
-        padding: 28px;
-        font-size: 14px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 750px) {
+        /* =========================================================
+           HEADER
+        ========================================================= */
 
         header {
-            flex-direction: column;
-            gap: 10px;
-            padding: 18px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(5, 11, 22, 0.82);
+            border-bottom: 1px solid rgba(61, 180, 255, 0.15);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
 
         .logo {
-            font-size: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            text-shadow:
+                0 0 12px rgba(45, 190, 255, 0.45);
         }
 
+        .nav-back {
+            color: #9ccfff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+
+            padding: 9px 15px;
+
+            border: 1px solid rgba(70, 185, 255, 0.25);
+            border-radius: 8px;
+
+            transition: 0.25s ease;
+        }
+
+        .nav-back:hover {
+            color: #ffffff;
+            border-color: #39bfff;
+            background: rgba(39, 178, 255, 0.09);
+            box-shadow: 0 0 18px rgba(39, 178, 255, 0.18);
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
         .hero {
-            padding: 75px 20px 70px;
+            position: relative;
+            min-height: 430px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 90px 20px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at center, rgba(20, 165, 255, 0.14), transparent 38%),
+                linear-gradient(
+                    135deg,
+                    #050b16 0%,
+                    #081426 50%,
+                    #07101f 100%
+                );
+
+            border-bottom: 1px solid rgba(55, 186, 255, 0.12);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(rgba(75, 190, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(75, 190, 255, 0.035) 1px, transparent 1px);
+
+            background-size: 55px 55px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                transparent,
+                black 25%,
+                black 75%,
+                transparent
+            );
+
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border: 1px solid rgba(44, 190, 255, 0.12);
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 60px rgba(44, 190, 255, 0.08),
+                inset 0 0 60px rgba(44, 190, 255, 0.04);
+
+            animation: rotateOrb 22s linear infinite;
+        }
+
+        @keyframes rotateOrb {
+            from {
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.04);
+            }
+
+            to {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            margin-bottom: 18px;
+            padding: 7px 14px;
+
+            color: #67d2ff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            border: 1px solid rgba(67, 200, 255, 0.28);
+            border-radius: 30px;
+
+            background: rgba(36, 171, 255, 0.06);
         }
 
         .hero h1 {
-            font-size: 40px;
+            font-size: clamp(48px, 8vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+
+            color: #ffffff;
+
+            letter-spacing: -2px;
+
+            text-shadow:
+                0 0 15px rgba(54, 198, 255, 0.3),
+                0 0 50px rgba(54, 198, 255, 0.12);
         }
 
         .hero p {
-            font-size: 16px;
+            color: #9db4cc;
+            font-size: 17px;
+            max-width: 650px;
         }
+
+        /* =========================================================
+           MAIN CONTENT
+        ========================================================= */
 
         .section {
-            padding: 40px 15px;
+            width: min(1050px, 92%);
+            margin: auto;
+            padding: 65px 0 90px;
         }
 
+        /* =========================================================
+           TOPIC CARDS
+        ========================================================= */
+
         .topic-card {
-            padding: 25px 20px;
-            border-radius: 13px;
+            position: relative;
+
+            margin-bottom: 28px;
+            padding: 34px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(14, 29, 49, 0.94),
+                    rgba(7, 17, 31, 0.96)
+                );
+
+            border: 1px solid rgba(85, 177, 230, 0.13);
+            border-radius: 18px;
+
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, 0.25),
+                inset 0 1px rgba(255, 255, 255, 0.025);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .topic-card::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background: linear-gradient(
+                to bottom,
+                #39c7ff,
+                #6a6cff,
+                transparent
+            );
+
+            opacity: 0.65;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-3px);
+
+            border-color: rgba(57, 199, 255, 0.27);
+
+            box-shadow:
+                0 22px 55px rgba(0, 0, 0, 0.34),
+                0 0 28px rgba(36, 176, 255, 0.05);
         }
 
         .topic-card h2 {
-            font-size: 24px;
+            color: #ffffff;
+            font-size: 27px;
+            margin-bottom: 17px;
+            letter-spacing: -0.3px;
         }
 
         .topic-card h3 {
+            color: #a9d9ff;
             font-size: 19px;
+            margin-top: 28px;
+            margin-bottom: 10px;
         }
 
+        .topic-card p {
+            color: #9aadc1;
+            margin-bottom: 15px;
+        }
+
+        /* =========================================================
+           FORMULA BOX
+        ========================================================= */
+
         .formula {
-            font-size: 16px;
-            padding: 14px;
+            margin: 17px 0;
+            padding: 17px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(21, 117, 170, 0.13),
+                    rgba(69, 69, 170, 0.08)
+                );
+
+            border: 1px solid rgba(67, 190, 255, 0.16);
+            border-radius: 11px;
+
+            text-align: center;
+
+            color: #dff5ff;
+
+            font-family:
+                "Cambria Math",
+                "Times New Roman",
+                serif;
+
+            font-size: 19px;
+            font-weight: 600;
+
+            box-shadow:
+                inset 0 0 20px rgba(43, 178, 255, 0.025);
+
             overflow-x: auto;
         }
 
-    }
+        .formula strong {
+            color: #65d5ff;
+        }
 
-</style>
-```
+        /* =========================================================
+           DETAILS / SOLUTIONS
+        ========================================================= */
+
+        details {
+            margin-top: 17px;
+
+            border: 1px solid rgba(91, 173, 222, 0.12);
+            border-radius: 10px;
+
+            background: rgba(4, 13, 24, 0.45);
+
+            overflow: hidden;
+        }
+
+        summary {
+            cursor: pointer;
+
+            padding: 14px 17px;
+
+            color: #63cbff;
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: 0.25s ease;
+        }
+
+        summary:hover {
+            color: #ffffff;
+            background: rgba(45, 181, 255, 0.06);
+        }
+
+        details .formula,
+        details p {
+            margin-left: 17px;
+            margin-right: 17px;
+        }
+
+        /* =========================================================
+           NAVIGATION BUTTONS
+        ========================================================= */
+
+        .navigation {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .back {
+            display: inline-block;
+
+            margin: 8px;
+            padding: 12px 21px;
+
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(31, 166, 231, 0.18),
+                    rgba(83, 89, 226, 0.14)
+                );
+
+            border: 1px solid rgba(63, 194, 255, 0.25);
+            border-radius: 9px;
+
+            transition: 0.25s ease;
+        }
+
+        .back:hover {
+            transform: translateY(-2px);
+
+            border-color: #45c8ff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(31, 166, 231, 0.28),
+                    rgba(83, 89, 226, 0.23)
+                );
+
+            box-shadow:
+                0 0 24px rgba(38, 183, 255, 0.12);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 28px 20px;
+
+            background: #030812;
+
+            border-top: 1px solid rgba(73, 172, 222, 0.12);
+
+            color: #71859b;
+
+            text-align: center;
+
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #55c8fa;
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 17px 5%;
+
+                flex-direction: column;
+                gap: 13px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .nav-back {
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 370px;
+                padding: 70px 18px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .hero::after {
+                width: 280px;
+                height: 280px;
+            }
+
+            .section {
+                width: 94%;
+                padding-top: 40px;
+            }
+
+            .topic-card {
+                padding: 25px 21px;
+                border-radius: 15px;
+            }
+
+            .topic-card h2 {
+                font-size: 23px;
+            }
+
+            .topic-card h3 {
+                font-size: 18px;
+            }
+
+            .formula {
+                font-size: 17px;
+                padding: 15px 12px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body id="top">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
 
-```
-<a href="index.html" class="logo">
-    IAL ATLAS
-</a>
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
 
-<a href="pure-mathematics.html">
-    ← Pure Mathematics
-</a>
-```
+    <a href="pure-mathematics.html" class="nav-back">
+        ← Pure Mathematics
+    </a>
 
 </header>
 
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
 
-```
-<h1>Integration</h1>
+    <div class="hero-content">
 
-<p>
-    Edexcel International A Level Mathematics
-</p>
-```
+        <div class="hero-label">
+            Pure Mathematics
+        </div>
+
+        <h1>Integration</h1>
+
+        <p>
+            Edexcel International A Level Mathematics
+        </p>
+
+    </div>
 
 </section>
+
+
+<!-- =========================================================
+     CONTENT
+========================================================= -->
 
 <section class="section">
 
-```
-<!-- 1. WHAT IS INTEGRATION -->
 
-<div class="topic-card">
+    <!-- 1 -->
 
-    <h2>1. What Is Integration?</h2>
+    <div class="topic-card">
 
-    <p>
-        Integration is the reverse process of differentiation.
-    </p>
+        <h2>1. What Is Integration?</h2>
 
-    <p>
-        If differentiation gives the gradient of a function,
-        integration can be used to recover the original function.
-    </p>
+        <p>
+            Integration is the reverse process of differentiation.
+        </p>
 
-    <div class="formula">
-        ∫ f(x) dx
-    </div>
-
-    <p>
-        The symbol ∫ represents integration.
-    </p>
-
-    <p>
-        The expression dx indicates that we are integrating with
-        respect to x.
-    </p>
-
-</div>
-
-
-<!-- 2. BASIC INTEGRATION -->
-
-<div class="topic-card">
-
-    <h2>2. The Power Rule for Integration</h2>
-
-    <p>
-        For powers of x:
-    </p>
-
-    <div class="formula">
-        ∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C
-    </div>
-
-    <p>
-        provided n ≠ −1.
-    </p>
-
-    <p>
-        C is the constant of integration.
-    </p>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ x³ dx
-    </div>
-
-    <div class="formula">
-        = x⁴/4 + C
-    </div>
-
-    <div class="formula">
-        <strong>∫ x³ dx = x⁴/4 + C</strong>
-    </div>
-
-</div>
-
-
-<!-- 3. CONSTANT MULTIPLIERS -->
-
-<div class="topic-card">
-
-    <h2>3. Integrating Polynomial Functions</h2>
-
-    <p>
-        Integrate each term separately.
-    </p>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ (6x² + 4x − 5) dx
-    </div>
-
-    <div class="formula">
-        = 2x³ + 2x² − 5x + C
-    </div>
-
-    <p>
-        Therefore:
-    </p>
-
-    <div class="formula">
-        <strong>2x³ + 2x² − 5x + C</strong>
-    </div>
-
-</div>
-
-
-<!-- 4. NEGATIVE AND FRACTIONAL POWERS -->
-
-<div class="topic-card">
-
-    <h2>4. Negative and Fractional Powers</h2>
-
-    <p>
-        Rewrite roots and fractions as powers before integrating.
-    </p>
-
-    <div class="formula">
-        √x = x¹ᐟ²
-    </div>
-
-    <div class="formula">
-        1/x² = x⁻²
-    </div>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ √x dx
-    </div>
-
-    <p>
-        Rewrite:
-    </p>
-
-    <div class="formula">
-        ∫ x¹ᐟ² dx
-    </div>
-
-    <div class="formula">
-        = x³ᐟ²/(3/2) + C
-    </div>
-
-    <div class="formula">
-        <strong>= 2/3 x³ᐟ² + C</strong>
-    </div>
-
-</div>
-
-
-<!-- 5. INTEGRATING 1/X -->
-
-<div class="topic-card">
-
-    <h2>5. Integrating 1/x</h2>
-
-    <p>
-        The normal power rule cannot be used when n = −1.
-    </p>
-
-    <p>
-        Instead:
-    </p>
-
-    <div class="formula">
-        ∫ 1/x dx = ln|x| + C
-    </div>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ 5/x dx
-    </div>
-
-    <div class="formula">
-        <strong>= 5ln|x| + C</strong>
-    </div>
-
-</div>
-
-
-<!-- 6. DEFINITE INTEGRALS -->
-
-<div class="topic-card">
-
-    <h2>6. Definite Integration</h2>
-
-    <p>
-        A definite integral has limits.
-    </p>
-
-    <div class="formula">
-        ∫ᵃᵇ f(x) dx
-    </div>
-
-    <p>
-        To evaluate it, find an antiderivative and substitute the
-        upper and lower limits.
-    </p>
-
-    <div class="formula">
-        ∫ᵃᵇ f(x) dx = F(b) − F(a)
-    </div>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Evaluate:
-    </p>
-
-    <div class="formula">
-        ∫₀² x² dx
-    </div>
-
-    <p>
-        First integrate:
-    </p>
-
-    <div class="formula">
-        ∫ x² dx = x³/3
-    </div>
-
-    <p>
-        Apply the limits:
-    </p>
-
-    <div class="formula">
-        [x³/3]₀²
-    </div>
-
-    <div class="formula">
-        = 8/3 − 0
-        <br>
-        <strong>= 8/3</strong>
-    </div>
-
-</div>
-
-
-<!-- 7. AREA UNDER A CURVE -->
-
-<div class="topic-card">
-
-    <h2>7. Area Under a Curve</h2>
-
-    <p>
-        A definite integral can be used to find the area between a
-        curve and the x-axis over an interval where the function is
-        non-negative.
-    </p>
-
-    <div class="formula">
-        Area = ∫ᵃᵇ y dx
-    </div>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Find the area under y = x² from x = 0 to x = 3.
-    </p>
-
-    <div class="formula">
-        Area = ∫₀³ x² dx
-    </div>
-
-    <div class="formula">
-        = [x³/3]₀³
-    </div>
-
-    <div class="formula">
-        = 27/3
-        <br>
-        <strong>= 9</strong>
-    </div>
-
-</div>
-
-
-<!-- 8. AREA BETWEEN CURVES -->
-
-<div class="topic-card">
-
-    <h2>8. Area Between Two Curves</h2>
-
-    <p>
-        When one curve lies above another:
-    </p>
-
-    <div class="formula">
-        Area = ∫ᵃᵇ (upper curve − lower curve) dx
-    </div>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Find the area between:
-    </p>
-
-    <div class="formula">
-        y = x
-        <br>
-        y = x²
-    </div>
-
-    <p>
-        between x = 0 and x = 1.
-    </p>
-
-    <div class="formula">
-        Area = ∫₀¹ (x − x²) dx
-    </div>
-
-    <div class="formula">
-        = [x²/2 − x³/3]₀¹
-    </div>
-
-    <div class="formula">
-        = 1/2 − 1/3
-        <br>
-        <strong>= 1/6</strong>
-    </div>
-
-</div>
-
-
-<!-- 9. CONSTANT OF INTEGRATION -->
-
-<div class="topic-card">
-
-    <h2>9. The Constant of Integration</h2>
-
-    <p>
-        When integrating without limits, always include + C.
-    </p>
-
-    <div class="formula">
-        ∫ 3x² dx = x³ + C
-    </div>
-
-    <p>
-        The constant is required because many different functions
-        have the same derivative.
-    </p>
-
-    <h3>Example</h3>
-
-    <p>
-        If:
-    </p>
-
-    <div class="formula">
-        dy/dx = 6x
-    </div>
-
-    <p>
-        then:
-    </p>
-
-    <div class="formula">
-        <strong>y = 3x² + C</strong>
-    </div>
-
-</div>
-
-
-<!-- 10. USING CONDITIONS -->
-
-<div class="topic-card">
-
-    <h2>10. Finding the Constant Using a Condition</h2>
-
-    <p>
-        Sometimes a point on the curve is given. This allows us to
-        determine C.
-    </p>
-
-    <h3>Worked Example</h3>
-
-    <p>
-        Given:
-    </p>
-
-    <div class="formula">
-        dy/dx = 6x
-    </div>
-
-    <p>
-        and the curve passes through (2, 5), find y.
-    </p>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        y = 3x² + C
-    </div>
-
-    <p>
-        Substitute (2, 5):
-    </p>
-
-    <div class="formula">
-        5 = 3(2²) + C
-    </div>
-
-    <div class="formula">
-        5 = 12 + C
-        <br>
-        C = −7
-    </div>
-
-    <div class="formula">
-        <strong>y = 3x² − 7</strong>
-    </div>
-
-</div>
-
-
-<!-- 11. PRACTICE QUESTIONS -->
-
-<div class="topic-card">
-
-    <h2>🧠 Practice Questions</h2>
-
-    <p>
-        Try each question before opening the solution.
-    </p>
-
-
-    <h3>Question 1 — Basic Integration</h3>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ 4x³ dx
-    </div>
-
-    <details>
-
-        <summary>Show Full Solution</summary>
+        <p>
+            If differentiation gives the gradient of a function,
+            integration can be used to recover the original function.
+        </p>
 
         <div class="formula">
-            <strong>x⁴ + C</strong>
+            ∫ f(x) dx
         </div>
 
-    </details>
+        <p>
+            The symbol ∫ represents integration, while dx indicates that
+            the integration is performed with respect to x.
+        </p>
 
-
-    <h3>Question 2 — Polynomial</h3>
-
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ (6x² + 4x − 3) dx
     </div>
 
-    <details>
 
-        <summary>Show Full Solution</summary>
+    <!-- 2 -->
+
+    <div class="topic-card">
+
+        <h2>2. The Power Rule for Integration</h2>
+
+        <p>
+            For powers of x, increase the power by 1 and divide by the
+            new power.
+        </p>
 
         <div class="formula">
-            2x³ + 2x² − 3x + C
+            ∫ xⁿ dx = xⁿ⁺¹ / (n + 1) + C
         </div>
 
-    </details>
+        <p>
+            This rule applies when n ≠ −1.
+        </p>
 
+        <p>
+            C is the constant of integration.
+        </p>
 
-    <h3>Question 3 — Fractional Power</h3>
+        <h3>Worked Example</h3>
 
-    <p>
-        Integrate:
-    </p>
-
-    <div class="formula">
-        ∫ √x dx
-    </div>
-
-    <details>
-
-        <summary>Show Full Solution</summary>
+        <p>
+            Integrate:
+        </p>
 
         <div class="formula">
-            ∫ x¹ᐟ² dx
+            ∫ x³ dx
+        </div>
+
+        <div class="formula">
+            = x⁴ / 4 + C
+        </div>
+
+        <div class="formula">
+            <strong>∫ x³ dx = x⁴ / 4 + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 3 -->
+
+    <div class="topic-card">
+
+        <h2>3. Integrating Polynomial Functions</h2>
+
+        <p>
+            Polynomial expressions can be integrated term by term.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ (6x² + 4x − 5) dx
+        </div>
+
+        <div class="formula">
+            = 2x³ + 2x² − 5x + C
+        </div>
+
+        <div class="formula">
+            <strong>Answer: 2x³ + 2x² − 5x + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 4 -->
+
+    <div class="topic-card">
+
+        <h2>4. Negative and Fractional Powers</h2>
+
+        <p>
+            Roots and fractions can be rewritten using indices before
+            integration.
+        </p>
+
+        <div class="formula">
+            √x = x¹ᐟ²
+        </div>
+
+        <div class="formula">
+            1/x² = x⁻²
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ √x dx
+        </div>
+
+        <div class="formula">
+            = ∫ x¹ᐟ² dx
+        </div>
+
+        <div class="formula">
+            = x³ᐟ² / (3/2) + C
+        </div>
+
+        <div class="formula">
+            <strong>= 2/3 x³ᐟ² + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 5 -->
+
+    <div class="topic-card">
+
+        <h2>5. Integrating 1/x</h2>
+
+        <p>
+            The normal power rule cannot be used when the power is −1.
+        </p>
+
+        <div class="formula">
+            ∫ 1/x dx = ln|x| + C
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ 5/x dx
+        </div>
+
+        <div class="formula">
+            <strong>= 5ln|x| + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 6 -->
+
+    <div class="topic-card">
+
+        <h2>6. Definite Integration</h2>
+
+        <p>
+            A definite integral has an upper and lower limit.
+        </p>
+
+        <div class="formula">
+            ∫ₐᵇ f(x) dx
+        </div>
+
+        <p>
+            Find an antiderivative and then substitute the upper and lower
+            limits.
+        </p>
+
+        <div class="formula">
+            ∫ₐᵇ f(x) dx = F(b) − F(a)
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Evaluate:
+        </p>
+
+        <div class="formula">
+            ∫₀² x² dx
+        </div>
+
+        <div class="formula">
+            ∫ x² dx = x³ / 3
+        </div>
+
+        <div class="formula">
+            [x³ / 3]₀²
+        </div>
+
+        <div class="formula">
+            = 8/3 − 0
             <br>
-            = <strong>2/3 x³ᐟ² + C</strong>
+            <strong>= 8/3</strong>
         </div>
 
-    </details>
-
-
-    <h3>Question 4 — Definite Integral</h3>
-
-    <p>
-        Evaluate:
-    </p>
-
-    <div class="formula">
-        ∫₁³ 2x dx
     </div>
 
-    <details>
 
-        <summary>Show Full Solution</summary>
+    <!-- 7 -->
+
+    <div class="topic-card">
+
+        <h2>7. Area Under a Curve</h2>
+
+        <p>
+            A definite integral can be used to find the area between a
+            curve and the x-axis when the curve remains above the axis.
+        </p>
 
         <div class="formula">
-            ∫ 2x dx = x²
+            Area = ∫ₐᵇ y dx
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the area under y = x² from x = 0 to x = 3.
+        </p>
+
+        <div class="formula">
+            Area = ∫₀³ x² dx
         </div>
 
         <div class="formula">
-            [x²]₁³
+            = [x³ / 3]₀³
+        </div>
+
+        <div class="formula">
+            = 27/3
             <br>
-            = 9 − 1
+            <strong>= 9</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 8 -->
+
+    <div class="topic-card">
+
+        <h2>8. Area Between Two Curves</h2>
+
+        <p>
+            When one curve lies above another, subtract the lower curve
+            from the upper curve.
+        </p>
+
+        <div class="formula">
+            Area = ∫ₐᵇ (upper curve − lower curve) dx
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Find the area between:
+        </p>
+
+        <div class="formula">
+            y = x
             <br>
-            = <strong>8</strong>
+            y = x²
         </div>
 
-    </details>
-
-
-    <h3>Question 5 — Area</h3>
-
-    <p>
-        Find the area under y = x² between x = 1 and x = 3.
-    </p>
-
-    <details>
-
-        <summary>Show Full Solution</summary>
+        <p>
+            between x = 0 and x = 1.
+        </p>
 
         <div class="formula">
-            Area = ∫₁³ x² dx
+            Area = ∫₀¹ (x − x²) dx
         </div>
 
         <div class="formula">
-            = [x³/3]₁³
+            = [x²/2 − x³/3]₀¹
         </div>
 
         <div class="formula">
-            = 27/3 − 1/3
+            = 1/2 − 1/3
             <br>
-            = <strong>26/3</strong>
+            <strong>= 1/6</strong>
         </div>
 
-    </details>
+    </div>
 
 
-    <h3>Question 6 — Find the Constant</h3>
+    <!-- 9 -->
 
-    <p>
-        Given dy/dx = 4x and the curve passes through (1, 7),
-        find the equation of the curve.
-    </p>
+    <div class="topic-card">
 
-    <details>
+        <h2>9. The Constant of Integration</h2>
 
-        <summary>Show Full Solution</summary>
+        <p>
+            When integrating without limits, always include + C.
+        </p>
 
         <div class="formula">
-            y = 2x² + C
+            ∫ 3x² dx = x³ + C
+        </div>
+
+        <p>
+            The constant is necessary because different functions can
+            have the same derivative.
+        </p>
+
+        <h3>Example</h3>
+
+        <div class="formula">
+            dy/dx = 6x
         </div>
 
         <div class="formula">
-            7 = 2(1²) + C
+            <strong>y = 3x² + C</strong>
+        </div>
+
+    </div>
+
+
+    <!-- 10 -->
+
+    <div class="topic-card">
+
+        <h2>10. Finding the Constant Using a Condition</h2>
+
+        <p>
+            If a point on the curve is known, it can be used to determine
+            the value of C.
+        </p>
+
+        <h3>Worked Example</h3>
+
+        <p>
+            Given:
+        </p>
+
+        <div class="formula">
+            dy/dx = 6x
+        </div>
+
+        <p>
+            and the curve passes through (2, 5), find y.
+        </p>
+
+        <div class="formula">
+            y = 3x² + C
+        </div>
+
+        <div class="formula">
+            5 = 3(2²) + C
+        </div>
+
+        <div class="formula">
+            5 = 12 + C
             <br>
-            C = 5
+            C = −7
         </div>
 
         <div class="formula">
-            <strong>y = 2x² + 5</strong>
+            <strong>y = 3x² − 7</strong>
         </div>
 
-    </details>
-
-</div>
-
-
-<!-- 12. COMMON MISTAKES -->
-
-<div class="topic-card">
-
-    <h2>⚠️ Common Mistakes</h2>
-
-    <h3>1. Forgetting + C</h3>
-
-    <p>
-        For indefinite integration, always include the constant of
-        integration.
-    </p>
-
-    <h3>2. Dividing by the wrong number</h3>
-
-    <p>
-        When integrating xⁿ, increase the power by 1 and divide by
-        the new power.
-    </p>
-
-    <div class="formula">
-        x⁴ → x⁵/5
     </div>
 
-    <h3>3. Using the power rule for 1/x</h3>
 
-    <p>
-        Remember:
-    </p>
+    <!-- 11 -->
 
-    <div class="formula">
-        ∫ 1/x dx = ln|x| + C
+    <div class="topic-card">
+
+        <h2>🧠 Practice Questions</h2>
+
+        <p>
+            Try each question yourself before revealing the solution.
+        </p>
+
+
+        <h3>Question 1 — Basic Integration</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ 4x³ dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                <strong>x⁴ + C</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 2 — Polynomial</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ (6x² + 4x − 3) dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                <strong>2x³ + 2x² − 3x + C</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 3 — Fractional Power</h3>
+
+        <p>
+            Integrate:
+        </p>
+
+        <div class="formula">
+            ∫ √x dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                ∫ x¹ᐟ² dx
+                <br>
+                = <strong>2/3 x³ᐟ² + C</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 4 — Definite Integral</h3>
+
+        <p>
+            Evaluate:
+        </p>
+
+        <div class="formula">
+            ∫₁³ 2x dx
+        </div>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                ∫ 2x dx = x²
+            </div>
+
+            <div class="formula">
+                [x²]₁³
+                <br>
+                = 9 − 1
+                <br>
+                <strong>= 8</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 5 — Area</h3>
+
+        <p>
+            Find the area under y = x² between x = 1 and x = 3.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                Area = ∫₁³ x² dx
+            </div>
+
+            <div class="formula">
+                = [x³/3]₁³
+            </div>
+
+            <div class="formula">
+                = 27/3 − 1/3
+                <br>
+                <strong>= 26/3</strong>
+            </div>
+
+        </details>
+
+
+        <h3>Question 6 — Find the Constant</h3>
+
+        <p>
+            Given dy/dx = 4x and the curve passes through (1, 7),
+            find the equation of the curve.
+        </p>
+
+        <details>
+
+            <summary>Show Full Solution</summary>
+
+            <div class="formula">
+                y = 2x² + C
+            </div>
+
+            <div class="formula">
+                7 = 2(1²) + C
+                <br>
+                C = 5
+            </div>
+
+            <div class="formula">
+                <strong>y = 2x² + 5</strong>
+            </div>
+
+        </details>
+
     </div>
 
-    <h3>4. Reversing upper and lower limits</h3>
 
-    <p>
-        For a definite integral:
-    </p>
+    <!-- 12 -->
 
-    <div class="formula">
-        F(upper) − F(lower)
+    <div class="topic-card">
+
+        <h2>⚠️ Common Mistakes</h2>
+
+        <h3>1. Forgetting + C</h3>
+
+        <p>
+            For indefinite integration, always include the constant of
+            integration.
+        </p>
+
+        <h3>2. Dividing by the wrong number</h3>
+
+        <p>
+            Increase the power by 1, then divide by the new power.
+        </p>
+
+        <div class="formula">
+            x⁴ → x⁵/5
+        </div>
+
+        <h3>3. Using the power rule for 1/x</h3>
+
+        <div class="formula">
+            ∫ 1/x dx = ln|x| + C
+        </div>
+
+        <h3>4. Reversing the limits</h3>
+
+        <p>
+            For a definite integral, use:
+        </p>
+
+        <div class="formula">
+            F(upper) − F(lower)
+        </div>
+
+        <h3>5. Confusing signed area with geometric area</h3>
+
+        <p>
+            If a curve passes below the x-axis, the integral may be
+            negative. Total geometric area may require splitting the
+            interval.
+        </p>
+
     </div>
 
-    <h3>5. Confusing area with signed area</h3>
 
-    <p>
-        If a curve goes below the x-axis, the definite integral can
-        be negative. Finding total geometric area may require splitting
-        the interval.
-    </p>
+    <!-- 13 -->
 
-</div>
+    <div class="topic-card">
 
+        <h2>🎯 Exam Tips</h2>
 
-<!-- 13. EXAM TIPS -->
+        <h3>1. Check whether limits are given</h3>
 
-<div class="topic-card">
+        <p>
+            No limits normally means an indefinite integral, so + C is
+            required.
+        </p>
 
-    <h2>🎯 Exam Tips</h2>
+        <h3>2. Rewrite before integrating</h3>
 
-    <h3>1. Check whether limits are given</h3>
+        <p>
+            Convert roots and fractions into powers where appropriate.
+        </p>
 
-    <p>
-        No limits usually means an indefinite integral and therefore
-        + C is required.
-    </p>
+        <h3>3. Differentiate your answer</h3>
 
-    <h3>2. Rewrite before integrating</h3>
+        <p>
+            Differentiating your result is a useful way to check an
+            integration answer.
+        </p>
 
-    <p>
-        Convert roots and fractions into powers where appropriate.
-    </p>
+        <h3>4. Keep exact values</h3>
 
-    <h3>3. Differentiate your answer</h3>
+        <p>
+            Avoid unnecessary decimal approximations unless the question
+            specifically requests them.
+        </p>
 
-    <p>
-        A quick differentiation check can confirm whether your
-        integration is correct.
-    </p>
+        <h3>5. Identify the correct region</h3>
 
-    <h3>4. Keep exact values</h3>
+        <p>
+            For the area between two curves, remember:
+        </p>
 
-    <p>
-        Avoid unnecessary decimal approximations.
-    </p>
+        <div class="formula">
+            Upper − Lower
+        </div>
 
-    <h3>5. For areas, identify the correct curve</h3>
-
-    <p>
-        When finding the area between two curves, use:
-    </p>
-
-    <div class="formula">
-        Upper − Lower
     </div>
 
-</div>
 
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
 
-<!-- BACK TO TOP -->
+    <div class="navigation">
 
-<div style="text-align: center;">
+        <a href="#top" class="back">
+            ↑ Back to Top
+        </a>
 
-    <a href="#top" class="back">
-        ↑ Back to Top
-    </a>
+        <a href="pure-mathematics.html" class="back">
+            ← Back to Pure Mathematics
+        </a>
 
-</div>
+    </div>
 
-
-<!-- BACK TO PURE MATHEMATICS -->
-
-<div style="text-align: center;">
-
-    <a href="pure-mathematics.html" class="back">
-        ← Back to Pure Mathematics
-    </a>
-
-</div>
-```
 
 </section>
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-```
-© 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
-```
+    © 2026 <span>IAL ATLAS</span>
+    • Independent student resource
+    • Not affiliated with Pearson
 
 </footer>
+
 
 </body>
 
