@@ -6,14 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
     <title>Edexcel IAL Mathematics Notes & Revision | IAL ATLAS</title>
 
     <meta name="description"
-          content="Edexcel International A Level Mathematics notes and revision resources covering Pure Mathematics, Statistics and Mechanics. Explore clear explanations, formulas and study materials on IAL ATLAS.">
+          content="Edexcel International A Level Mathematics notes and revision resources covering Pure Mathematics, Statistics and Mechanics.">
 
     <meta name="keywords"
-          content="Edexcel IAL Mathematics, Edexcel International A Level Mathematics, IAL Maths notes, Edexcel Maths notes, IAL Mathematics revision, International A Level Maths">
+          content="Edexcel IAL Mathematics, Edexcel International A Level Mathematics, IAL Maths notes, Edexcel Maths revision">
 
     <meta name="author" content="Shuvojit Karmakar">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -21,11 +20,9 @@
 
     <meta name="theme-color" content="#050816">
 
-    <!-- Canonical -->
     <link rel="canonical"
           href="https://skskarmakar334-create.github.io/ialatlas.github.io/mathematics.html">
 
-    <!-- Open Graph -->
     <meta property="og:title"
           content="Edexcel IAL Mathematics Notes & Revision | IAL ATLAS">
 
@@ -44,29 +41,25 @@
     <meta property="og:site_name" content="IAL ATLAS">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
 
     <meta name="twitter:title"
           content="Edexcel IAL Mathematics Notes & Revision | IAL ATLAS">
 
     <meta name="twitter:description"
-          content="Edexcel International A Level Mathematics notes and revision resources for Pure Mathematics, Statistics and Mechanics.">
+          content="Edexcel International A Level Mathematics notes and revision resources.">
 
     <meta name="twitter:image"
           content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
 
-    <meta name="twitter:image:alt" content="IAL ATLAS logo">
 
-
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "Edexcel IAL Mathematics Notes & Revision",
         "url": "https://skskarmakar334-create.github.io/ialatlas.github.io/mathematics.html",
-        "description": "Edexcel International A Level Mathematics notes and revision resources covering Pure Mathematics, Statistics and Mechanics.",
+        "description": "Edexcel International A Level Mathematics notes and revision resources.",
         "isPartOf": {
             "@type": "WebSite",
             "name": "IAL ATLAS",
@@ -85,770 +78,1777 @@
     </script>
 
 
-    <style>
+<style>
 
-        /* =========================
-           GLOBAL
-        ========================= */
+/* =========================================================
+   IAL ATLAS — MATHEMATICS // LIVING SYSTEM
+========================================================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050816;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
 
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(0, 217, 255, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(108, 99, 255, 0.08),
+            transparent 25%
+        ),
+        #050816;
 
-        /* =========================
-           BACKGROUND
-        ========================= */
+    color: #ffffff;
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
+    overflow-x: hidden;
 
-            background-image:
-                linear-gradient(rgba(0,217,255,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,217,255,0.035) 1px, transparent 1px);
+    min-height: 100vh;
+}
 
-            background-size: 50px 50px;
 
-            pointer-events: none;
-            z-index: -3;
-        }
+/* =========================================================
+   MOVING GRID
+========================================================= */
 
+body::before {
 
-        body::after {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
+    content: "";
 
-            top: -250px;
-            right: -200px;
+    position: fixed;
 
-            background: radial-gradient(
-                circle,
-                rgba(0,217,255,0.13),
-                transparent 65%
-            );
+    inset: 0;
 
-            pointer-events: none;
-            z-index: -2;
-        }
+    background-image:
+        linear-gradient(
+            rgba(0,217,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,0.035) 1px,
+            transparent 1px
+        );
 
+    background-size: 50px 50px;
 
-        /* =========================
-           HEADER
-        ========================= */
+    animation:
+        gridMove 18s linear infinite;
 
-        header {
-            position: relative;
+    pointer-events: none;
 
-            width: 100%;
+    z-index: -10;
+}
 
-            padding: 20px 7%;
+@keyframes gridMove {
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    from {
+        background-position: 0 0;
+    }
 
-            background: rgba(5,8,22,0.72);
+    to {
+        background-position: 50px 50px;
+    }
+}
 
-            border-bottom: 1px solid rgba(0,217,255,0.12);
 
-            backdrop-filter: blur(18px);
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
 
-            z-index: 20;
-        }
+body::after {
 
+    content: "";
 
-        .logo {
-            color: #ffffff;
+    position: fixed;
 
-            text-decoration: none;
+    width: 700px;
+    height: 700px;
 
-            font-size: 26px;
-            font-weight: 900;
+    top: -300px;
+    right: -200px;
 
-            letter-spacing: 3px;
+    border-radius: 50%;
 
-            position: relative;
-        }
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,0.14),
+            transparent 68%
+        );
 
+    animation:
+        ambientFloat 8s ease-in-out infinite;
 
-        .logo::after {
-            content: "";
+    pointer-events: none;
 
-            position: absolute;
+    z-index: -9;
+}
 
-            left: 0;
-            bottom: -6px;
+@keyframes ambientFloat {
 
-            width: 35%;
+    0%,100% {
+        transform: translate(0,0) scale(1);
+    }
 
-            height: 2px;
+    50% {
+        transform: translate(-80px,60px) scale(1.15);
+    }
+}
 
-            background: #00d9ff;
 
-            box-shadow:
-                0 0 10px #00d9ff,
-                0 0 20px rgba(0,217,255,0.6);
+/* =========================================================
+   FLOATING MATHEMATICS
+========================================================= */
 
-            transition: width 0.3s ease;
-        }
+.math-field {
 
+    position: fixed;
 
-        .logo:hover::after {
-            width: 100%;
-        }
+    inset: 0;
 
+    overflow: hidden;
 
-        header > a:last-child {
-            color: #a9bdd7;
+    pointer-events: none;
 
-            text-decoration: none;
+    z-index: -2;
+}
 
-            font-size: 14px;
-            font-weight: 600;
+.math-symbol {
 
-            padding: 10px 18px;
+    position: absolute;
 
-            border: 1px solid rgba(0,217,255,0.18);
+    color: rgba(0,217,255,0.16);
 
-            border-radius: 8px;
+    font-size: 22px;
 
-            background: rgba(255,255,255,0.025);
+    font-weight: 700;
 
-            transition: all 0.3s ease;
-        }
+    text-shadow:
+        0 0 15px rgba(0,217,255,0.25);
 
+    animation:
+        floatMath linear infinite;
 
-        header > a:last-child:hover {
-            color: #ffffff;
+    user-select: none;
+}
 
-            border-color: #00d9ff;
+@keyframes floatMath {
 
-            box-shadow:
-                0 0 15px rgba(0,217,255,0.18);
+    0% {
+        transform:
+            translateY(110vh)
+            translateX(0)
+            rotate(0deg);
 
-            transform: translateX(-3px);
-        }
+        opacity: 0;
+    }
 
+    10% {
+        opacity: 0.65;
+    }
 
-        /* =========================
-           HERO
-        ========================= */
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(50px)
+            rotate(180deg);
+    }
 
-        .hero {
-            position: relative;
+    90% {
+        opacity: 0.4;
+    }
 
-            min-height: 430px;
+    100% {
+        transform:
+            translateY(-15vh)
+            translateX(-40px)
+            rotate(360deg);
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        opacity: 0;
+    }
+}
 
-            text-align: center;
 
-            padding: 100px 20px 90px;
+/* =========================================================
+   HEADER
+========================================================= */
 
-            overflow: hidden;
+header {
 
-            background:
-                radial-gradient(
-                    circle at 50% 45%,
-                    rgba(0,217,255,0.11),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    180deg,
-                    #071127 0%,
-                    #050816 100%
-                );
-        }
+    position: relative;
 
+    width: 100%;
 
-        /* Atmospheric glow */
+    padding: 20px 7%;
 
-        .hero::before {
-            content: "";
+    display: flex;
 
-            position: absolute;
+    justify-content: space-between;
 
-            width: 500px;
-            height: 500px;
+    align-items: center;
 
-            border: 1px solid rgba(0,217,255,0.08);
+    background:
+        rgba(5,8,22,0.70);
 
-            border-radius: 50%;
+    border-bottom:
+        1px solid rgba(0,217,255,0.14);
 
-            animation: pulse 5s ease-in-out infinite;
+    backdrop-filter: blur(18px);
 
-            pointer-events: none;
-        }
+    z-index: 20;
 
+    box-shadow:
+        0 0 30px rgba(0,217,255,0.025);
+}
 
-        .hero::after {
-            content: "";
 
-            position: absolute;
+.logo {
 
-            width: 720px;
-            height: 720px;
+    color: #ffffff;
 
-            border: 1px solid rgba(108,99,255,0.05);
+    text-decoration: none;
 
-            border-radius: 50%;
+    font-size: 26px;
 
-            pointer-events: none;
-        }
+    font-weight: 900;
 
+    letter-spacing: 3px;
 
-        .hero h1 {
-            position: relative;
+    position: relative;
 
-            z-index: 2;
+    transition:
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
 
-            font-size: clamp(48px, 7vw, 82px);
+.logo:hover {
 
-            font-weight: 900;
+    transform: translateX(5px);
 
-            letter-spacing: -2px;
+    text-shadow:
+        0 0 20px rgba(0,217,255,0.6);
+}
 
-            margin-bottom: 18px;
 
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #8feaff,
-                #ffffff
-            );
+.logo::after {
 
-            -webkit-background-clip: text;
-            background-clip: text;
+    content: "";
 
-            color: transparent;
+    position: absolute;
 
-            text-shadow:
-                0 0 30px rgba(0,217,255,0.15);
-        }
+    left: 0;
 
+    bottom: -6px;
 
-        .hero h1::before {
-            content: "MATH / 01";
+    width: 35%;
 
-            display: block;
+    height: 2px;
 
-            font-size: 11px;
+    background: #00d9ff;
 
-            letter-spacing: 5px;
+    box-shadow:
+        0 0 10px #00d9ff,
+        0 0 20px rgba(0,217,255,0.6);
 
-            font-weight: 700;
+    transition:
+        width 0.4s ease;
+}
 
-            color: #00d9ff;
+.logo:hover::after {
+    width: 100%;
+}
 
-            margin-bottom: 15px;
 
-            text-shadow:
-                0 0 15px rgba(0,217,255,0.7);
-        }
+header > a:last-child {
 
+    color: #a9bdd7;
 
-        .hero p {
-            position: relative;
+    text-decoration: none;
 
-            z-index: 2;
+    font-size: 14px;
 
-            color: #a9bdd7;
+    font-weight: 600;
 
-            font-size: 18px;
+    padding: 10px 18px;
 
-            letter-spacing: 1px;
+    border:
+        1px solid rgba(0,217,255,0.18);
 
-            line-height: 1.7;
-        }
+    border-radius: 8px;
 
+    background:
+        rgba(255,255,255,0.025);
 
-        /* Small HUD decoration */
+    transition:
+        all 0.3s ease;
+}
 
-        .hero .hud-line {
-            position: absolute;
+header > a:last-child:hover {
 
-            bottom: 30px;
+    color: #ffffff;
 
-            left: 50%;
+    border-color: #00d9ff;
 
-            transform: translateX(-50%);
+    box-shadow:
+        0 0 20px rgba(0,217,255,0.18);
 
-            width: min(500px, 70%);
+    transform:
+        translateX(-5px);
+}
 
-            height: 1px;
 
-            background: linear-gradient(
-                90deg,
-                transparent,
-                #00d9ff,
-                transparent
-            );
+/* =========================================================
+   HERO
+========================================================= */
 
-            opacity: 0.5;
-        }
+.hero {
 
+    position: relative;
 
-        /* =========================
-           SECTION
-        ========================= */
+    min-height: 570px;
 
-        .section {
-            position: relative;
+    display: flex;
 
-            max-width: 1150px;
+    flex-direction: column;
 
-            margin: auto;
+    justify-content: center;
 
-            padding: 90px 25px 110px;
-        }
+    align-items: center;
 
+    text-align: center;
 
-        .section h2 {
-            text-align: center;
+    padding: 110px 20px 100px;
 
-            font-size: clamp(30px, 4vw, 42px);
+    overflow: hidden;
 
-            margin-bottom: 15px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,217,255,0.09),
+            transparent 30%
+        );
+}
 
-            letter-spacing: -1px;
-        }
 
+/* =========================================================
+   ORBIT SYSTEM
+========================================================= */
 
-        .section h2::after {
-            content: "";
+.orbit {
 
-            display: block;
+    position: absolute;
 
-            width: 50px;
+    width: 520px;
+    height: 520px;
 
-            height: 2px;
+    border:
+        1px solid rgba(0,217,255,0.10);
 
-            margin: 18px auto 0;
+    border-radius: 50%;
 
-            background: #00d9ff;
+    animation:
+        orbitSpin 25s linear infinite;
 
-            box-shadow:
-                0 0 12px rgba(0,217,255,0.8);
-        }
+    pointer-events: none;
+}
 
+.orbit::before {
 
-        .intro {
-            max-width: 720px;
+    content: "";
 
-            margin: 0 auto 55px;
+    position: absolute;
 
-            text-align: center;
+    width: 10px;
+    height: 10px;
 
-            color: #8295af;
+    border-radius: 50%;
 
-            line-height: 1.8;
+    background: #00d9ff;
 
-            font-size: 15px;
-        }
+    box-shadow:
+        0 0 10px #00d9ff,
+        0 0 25px #00d9ff,
+        0 0 45px rgba(0,217,255,0.8);
 
+    top: 50px;
+    left: 80px;
+}
 
-        /* =========================
-           TOPIC GRID
-        ========================= */
+.orbit::after {
 
-        .topics {
-            display: grid;
+    content: "";
 
-            grid-template-columns: repeat(2, 1fr);
+    position: absolute;
 
-            gap: 22px;
-        }
+    width: 6px;
+    height: 6px;
 
+    border-radius: 50%;
 
-        /* =========================
-           TOPIC CARDS
-        ========================= */
+    background: #6c63ff;
 
-        .topic {
-            position: relative;
+    box-shadow:
+        0 0 12px #6c63ff,
+        0 0 30px #6c63ff;
 
-            overflow: hidden;
+    bottom: 80px;
+    right: 70px;
+}
 
-            min-height: 190px;
+@keyframes orbitSpin {
 
-            padding: 32px;
+    from {
+        transform:
+            rotate(0deg)
+            scale(0.95);
+    }
 
-            border-radius: 18px;
+    50% {
+        transform:
+            rotate(180deg)
+            scale(1.04);
+    }
 
-            border: 1px solid rgba(112,160,200,0.14);
+    to {
+        transform:
+            rotate(360deg)
+            scale(0.95);
+    }
+}
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(20,35,65,0.72),
-                    rgba(7,13,30,0.82)
-                );
 
-            box-shadow:
-                0 15px 50px rgba(0,0,0,0.25),
-                inset 0 1px 0 rgba(255,255,255,0.035);
+/* second orbit */
 
-            text-decoration: none;
+.orbit-two {
 
-            color: inherit;
+    position: absolute;
 
-            display: block;
+    width: 720px;
+    height: 300px;
 
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
+    border:
+        1px solid rgba(108,99,255,0.10);
 
-            backdrop-filter: blur(15px);
-        }
+    border-radius: 50%;
 
+    transform:
+        rotate(-18deg);
 
-        /* glowing corner */
+    animation:
+        orbitTwo 18s linear infinite;
 
-        .topic::before {
-            content: "";
+    pointer-events: none;
+}
 
-            position: absolute;
+@keyframes orbitTwo {
 
-            width: 150px;
-            height: 150px;
+    from {
+        transform:
+            rotate(-18deg);
+    }
 
-            top: -80px;
-            right: -80px;
+    50% {
+        transform:
+            rotate(162deg);
+    }
 
-            background: radial-gradient(
-                circle,
-                rgba(0,217,255,0.2),
-                transparent 70%
-            );
+    to {
+        transform:
+            rotate(342deg);
+    }
+}
 
-            transition: transform 0.5s ease;
-        }
 
+/* =========================================================
+   HERO MATHEMATICAL SYMBOLS
+========================================================= */
 
-        /* top scanning line */
+.hero-symbol {
 
-        .topic::after {
-            content: "";
+    position: absolute;
 
-            position: absolute;
+    color: rgba(0,217,255,0.20);
 
-            left: 0;
-            top: 0;
+    font-size: 28px;
 
-            width: 0;
-            height: 2px;
+    font-weight: bold;
 
-            background: linear-gradient(
-                90deg,
-                #00d9ff,
-                #6c63ff
-            );
+    animation:
+        symbolDrift 6s ease-in-out infinite;
+}
 
-            box-shadow:
-                0 0 15px rgba(0,217,255,0.8);
+.symbol-one {
+    top: 18%;
+    left: 15%;
+}
 
-            transition: width 0.45s ease;
-        }
+.symbol-two {
+    top: 25%;
+    right: 17%;
+    animation-delay: 1s;
+}
 
+.symbol-three {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 2s;
+}
 
-        .topic:hover {
-            transform: translateY(-9px);
+.symbol-four {
+    bottom: 23%;
+    right: 20%;
+    animation-delay: 3s;
+}
 
-            border-color: rgba(0,217,255,0.45);
+@keyframes symbolDrift {
 
-            box-shadow:
-                0 20px 60px rgba(0,0,0,0.4),
-                0 0 30px rgba(0,217,255,0.07);
-        }
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
 
+        opacity: 0.25;
+    }
 
-        .topic:hover::before {
-            transform: scale(1.6);
-        }
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(15deg);
 
+        opacity: 0.8;
+    }
+}
 
-        .topic:hover::after {
-            width: 100%;
-        }
 
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
-        .topic h3 {
-            position: relative;
+.hero h1 {
 
-            z-index: 2;
+    position: relative;
 
-            font-size: 23px;
+    z-index: 3;
 
-            margin-bottom: 13px;
+    font-size:
+        clamp(52px, 8vw, 92px);
 
-            color: #ffffff;
-        }
+    font-weight: 900;
 
+    letter-spacing: -3px;
 
-        .topic p {
-            position: relative;
+    margin-bottom: 18px;
 
-            z-index: 2;
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #8feaff,
+            #ffffff,
+            #6c63ff,
+            #ffffff
+        );
 
-            color: #8396b0;
+    background-size:
+        300% auto;
 
-            line-height: 1.7;
+    -webkit-background-clip: text;
+    background-clip: text;
 
-            font-size: 14px;
-        }
+    color: transparent;
 
+    animation:
+        titleFlow 7s linear infinite,
+        titleFloat 4s ease-in-out infinite;
 
-        /* Subject number */
+    text-shadow:
+        0 0 30px rgba(0,217,255,0.15);
+}
 
-        .topic h3::before {
-            content: "01";
+@keyframes titleFlow {
 
-            display: block;
+    from {
+        background-position: 0% center;
+    }
 
-            color: #00d9ff;
+    to {
+        background-position: 300% center;
+    }
+}
 
-            font-size: 10px;
+@keyframes titleFloat {
 
-            letter-spacing: 3px;
+    0%,100% {
+        transform: translateY(0);
+    }
 
-            margin-bottom: 14px;
+    50% {
+        transform: translateY(-7px);
+    }
+}
 
-            opacity: 0.8;
-        }
 
+.hero h1::before {
 
-        .topic:nth-child(2) h3::before {
-            content: "02";
-        }
+    content: "MATH / 01";
 
+    display: block;
 
-        .topic:nth-child(3) h3::before {
-            content: "03";
-        }
+    font-size: 11px;
 
+    letter-spacing: 6px;
 
-        /* =========================
-           BACK BUTTON
-        ========================= */
+    font-weight: 700;
 
-        .back-wrapper {
-            text-align: center;
+    color: #00d9ff;
 
-            margin-top: 55px;
-        }
+    margin-bottom: 18px;
 
+    text-shadow:
+        0 0 15px rgba(0,217,255,0.8);
 
-        .back {
-            display: inline-flex;
+    animation:
+        labelPulse 2s ease-in-out infinite;
+}
 
-            align-items: center;
-            gap: 10px;
+@keyframes labelPulse {
 
-            color: #dcecff;
+    0%,100% {
+        opacity: 0.5;
+    }
 
-            padding: 13px 22px;
+    50% {
+        opacity: 1;
+    }
+}
 
-            border-radius: 10px;
 
-            border: 1px solid rgba(0,217,255,0.2);
+.hero p {
 
-            background: rgba(0,217,255,0.035);
+    position: relative;
 
-            text-decoration: none;
+    z-index: 3;
 
-            font-size: 14px;
+    color: #a9bdd7;
 
-            font-weight: 700;
+    font-size: 18px;
 
-            transition: all 0.3s ease;
-        }
+    letter-spacing: 1px;
 
+    line-height: 1.7;
 
-        .back:hover {
-            color: #ffffff;
+    animation:
+        fadeUp 1.2s ease both;
+}
 
-            border-color: #00d9ff;
 
-            background: rgba(0,217,255,0.08);
+/* =========================================================
+   EQUATION BAR
+========================================================= */
 
-            box-shadow:
-                0 0 25px rgba(0,217,255,0.12);
+.equation-bar {
 
-            transform: translateY(-3px);
-        }
+    position: relative;
 
+    z-index: 4;
 
-        /* =========================
-           FOOTER
-        ========================= */
+    margin-top: 38px;
 
-        footer {
-            position: relative;
+    display: flex;
 
-            background: #03050d;
+    align-items: center;
 
-            color: #65758c;
+    gap: 28px;
 
-            text-align: center;
+    padding: 13px 25px;
 
-            padding: 30px 20px;
+    border:
+        1px solid rgba(0,217,255,0.16);
 
-            border-top: 1px solid rgba(0,217,255,0.08);
+    background:
+        rgba(0,217,255,0.035);
 
-            font-size: 12px;
+    border-radius: 100px;
 
-            letter-spacing: 0.5px;
-        }
+    backdrop-filter: blur(12px);
 
+    overflow: hidden;
 
-        footer::before {
-            content: "IAL ATLAS // MATHEMATICS";
+    box-shadow:
+        0 0 35px rgba(0,217,255,0.04);
+}
 
-            display: block;
+.equation-bar::before {
 
-            color: #00d9ff;
+    content: "";
 
-            font-size: 9px;
+    position: absolute;
 
-            letter-spacing: 4px;
+    top: 0;
 
-            margin-bottom: 10px;
+    left: -100%;
 
-            opacity: 0.7;
-        }
+    width: 100%;
 
+    height: 1px;
 
-        /* =========================
-           ANIMATIONS
-        ========================= */
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00d9ff,
+            transparent
+        );
 
-        @keyframes pulse {
+    animation:
+        scanEquation 3s linear infinite;
+}
 
-            0%,
-            100% {
-                transform: scale(0.95);
+@keyframes scanEquation {
 
-                opacity: 0.35;
-            }
+    from {
+        left: -100%;
+    }
 
-            50% {
-                transform: scale(1.05);
+    to {
+        left: 100%;
+    }
+}
 
-                opacity: 0.65;
-            }
+.equation {
 
-        }
+    color: #7ddff5;
 
+    font-size: 13px;
 
-        /* =========================
-           MOBILE
-        ========================= */
+    letter-spacing: 2px;
 
-        @media (max-width: 750px) {
+    white-space: nowrap;
 
-            header {
-                padding: 17px 5%;
-            }
+    animation:
+        equationGlow 3s ease-in-out infinite;
+}
 
+.equation:nth-child(2) {
+    animation-delay: 1s;
+}
 
-            .logo {
-                font-size: 21px;
+.equation:nth-child(3) {
+    animation-delay: 2s;
+}
 
-                letter-spacing: 2px;
-            }
+@keyframes equationGlow {
 
+    0%,100% {
+        opacity: 0.45;
+        text-shadow: none;
+    }
 
-            header > a:last-child {
-                font-size: 12px;
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 12px rgba(0,217,255,0.7);
+    }
+}
 
-                padding: 8px 12px;
-            }
 
+/* =========================================================
+   HERO HUD LINE
+========================================================= */
 
-            .hero {
-                min-height: 370px;
+.hud-line {
 
-                padding: 80px 20px;
-            }
+    position: absolute;
 
+    bottom: 35px;
 
-            .hero h1 {
-                font-size: 50px;
-            }
+    left: 50%;
 
+    transform: translateX(-50%);
 
-            .hero p {
-                font-size: 15px;
-            }
+    width: min(650px,75%);
 
+    height: 1px;
 
-            .topics {
-                grid-template-columns: 1fr;
-            }
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00d9ff,
+            transparent
+        );
 
+    opacity: 0.55;
 
-            .topic {
-                min-height: 170px;
+    animation:
+        hudPulse 2.5s ease-in-out infinite;
+}
 
-                padding: 27px;
-            }
+@keyframes hudPulse {
 
+    0%,100% {
+        opacity: 0.2;
+        width: 40%;
+    }
 
-            .section {
-                padding: 70px 18px 90px;
-            }
+    50% {
+        opacity: 0.8;
+        width: 65%;
+    }
+}
 
-        }
 
+/* =========================================================
+   SECTION
+========================================================= */
 
-        /* =========================
-           REDUCED MOTION
-        ========================= */
+.section {
 
-        @media (prefers-reduced-motion: reduce) {
+    position: relative;
 
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
+    max-width: 1150px;
 
-                animation-iteration-count: 1 !important;
+    margin: auto;
 
-                scroll-behavior: auto !important;
+    padding:
+        90px 25px 110px;
+}
 
-                transition-duration: 0.01ms !important;
-            }
 
-        }
+/* =========================================================
+   SECTION HEADER
+========================================================= */
 
-    </style>
+.section h2 {
+
+    text-align: center;
+
+    font-size:
+        clamp(30px,4vw,42px);
+
+    margin-bottom: 15px;
+
+    letter-spacing: -1px;
+
+    animation:
+        sectionFloat 5s ease-in-out infinite;
+}
+
+@keyframes sectionFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+
+.section h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 50px;
+
+    height: 2px;
+
+    margin:
+        18px auto 0;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 12px rgba(0,217,255,0.8);
+
+    animation:
+        lineExpand 3s ease-in-out infinite;
+}
+
+@keyframes lineExpand {
+
+    0%,100% {
+        width: 40px;
+    }
+
+    50% {
+        width: 100px;
+    }
+}
+
+
+.intro {
+
+    max-width: 720px;
+
+    margin:
+        0 auto 55px;
+
+    text-align: center;
+
+    color: #8295af;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   TOPIC GRID
+========================================================= */
+
+.topics {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   TOPIC CARD
+========================================================= */
+
+.topic {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 210px;
+
+    padding: 32px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid rgba(112,160,200,0.14);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,35,65,0.72),
+            rgba(7,13,30,0.82)
+        );
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.035);
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+    backdrop-filter: blur(15px);
+
+    animation:
+        cardAppear 0.8s ease both;
+}
+
+.topic:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.topic:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.topic:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   CARD MOVING LIGHT
+========================================================= */
+
+.topic::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -120px;
+    right: -120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,0.25),
+            transparent 68%
+        );
+
+    transition:
+        transform 0.6s ease;
+
+    animation:
+        cardGlow 6s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+
+    0%,100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* scanning line */
+
+.topic::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -100%;
+
+    top: 0;
+
+    width: 70%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00d9ff,
+            #6c63ff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(0,217,255,0.8);
+
+    animation:
+        cardScan 5s linear infinite;
+}
+
+@keyframes cardScan {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+
+.topic:hover {
+
+    transform:
+        translateY(-12px)
+        scale(1.015);
+
+    border-color:
+        rgba(0,217,255,0.50);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.45),
+        0 0 35px rgba(0,217,255,0.09),
+        inset 0 0 30px rgba(0,217,255,0.025);
+}
+
+
+.topic:hover::before {
+
+    transform:
+        scale(1.8)
+        translate(-30px,30px);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.topic h3 {
+
+    position: relative;
+
+    z-index: 3;
+
+    font-size: 23px;
+
+    margin-bottom: 13px;
+
+    color: #ffffff;
+
+    transition:
+        transform 0.35s ease,
+        text-shadow 0.35s ease;
+}
+
+.topic:hover h3 {
+
+    transform:
+        translateX(5px);
+
+    text-shadow:
+        0 0 15px rgba(0,217,255,0.45);
+}
+
+
+.topic p {
+
+    position: relative;
+
+    z-index: 3;
+
+    color: #8396b0;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CARD MATHEMATICS
+========================================================= */
+
+.card-math {
+
+    position: absolute;
+
+    right: 28px;
+
+    bottom: 20px;
+
+    font-size: 34px;
+
+    color: rgba(0,217,255,0.10);
+
+    font-weight: 900;
+
+    transition:
+        transform 0.5s ease,
+        color 0.5s ease;
+
+    animation:
+        cardMathFloat 4s ease-in-out infinite;
+}
+
+.topic:nth-child(2) .card-math {
+    animation-delay: 1s;
+}
+
+.topic:nth-child(3) .card-math {
+    animation-delay: 2s;
+}
+
+@keyframes cardMathFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+    }
+}
+
+.topic:hover .card-math {
+
+    color:
+        rgba(0,217,255,0.35);
+
+    transform:
+        scale(1.25)
+        rotate(8deg);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.topic h3::before {
+
+    content: "01";
+
+    display: block;
+
+    color: #00d9ff;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 14px;
+
+    opacity: 0.8;
+}
+
+.topic:nth-child(2) h3::before {
+    content: "02";
+}
+
+.topic:nth-child(3) h3::before {
+    content: "03";
+}
+
+
+/* =========================================================
+   MINI EQUATION
+========================================================= */
+
+.mini-equation {
+
+    position: absolute;
+
+    left: 32px;
+
+    bottom: 24px;
+
+    color: rgba(120,210,235,0.35);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.topic:hover .mini-equation {
+
+    color: #00d9ff;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px rgba(0,217,255,0.6);
+}
+
+
+/* =========================================================
+   MATHEMATICAL DATA PANEL
+========================================================= */
+
+.math-panel {
+
+    margin-top: 55px;
+
+    position: relative;
+
+    padding: 25px 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+
+    border:
+        1px solid rgba(0,217,255,0.10);
+
+    background:
+        rgba(3,13,24,0.60);
+
+    backdrop-filter: blur(15px);
+
+    overflow: hidden;
+}
+
+.math-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -20%;
+
+    width: 20%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,217,255,0.04),
+            transparent
+        );
+
+    animation:
+        panelSweep 6s linear infinite;
+}
+
+@keyframes panelSweep {
+
+    from {
+        left: -30%;
+    }
+
+    to {
+        left: 130%;
+    }
+}
+
+
+.data-item {
+
+    text-align: center;
+
+    padding:
+        8px 15px;
+
+    border-right:
+        1px solid rgba(100,180,210,0.08);
+}
+
+.data-item:last-child {
+    border-right: none;
+}
+
+
+.data-symbol {
+
+    color: #00d9ff;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        0 0 12px rgba(0,217,255,0.5);
+
+    animation:
+        dataPulse 2s ease-in-out infinite;
+}
+
+.data-item:nth-child(2) .data-symbol {
+    animation-delay: .5s;
+}
+
+.data-item:nth-child(3) .data-symbol {
+    animation-delay: 1s;
+}
+
+.data-item:nth-child(4) .data-symbol {
+    animation-delay: 1.5s;
+}
+
+@keyframes dataPulse {
+
+    0%,100% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.12);
+    }
+}
+
+
+.data-label {
+
+    color: #587287;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-wrapper {
+
+    text-align: center;
+
+    margin-top: 55px;
+}
+
+
+.back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #dcecff;
+
+    padding:
+        13px 22px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(0,217,255,0.2);
+
+    background:
+        rgba(0,217,255,0.035);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        all 0.35s ease;
+}
+
+.back:hover {
+
+    color: #ffffff;
+
+    border-color:
+        #00d9ff;
+
+    background:
+        rgba(0,217,255,0.08);
+
+    box-shadow:
+        0 0 25px rgba(0,217,255,0.12);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    position: relative;
+
+    background:
+        #03050d;
+
+    color:
+        #65758c;
+
+    text-align: center;
+
+    padding:
+        30px 20px;
+
+    border-top:
+        1px solid rgba(0,217,255,0.08);
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    overflow: hidden;
+}
+
+footer::before {
+
+    content:
+        "∫  ∑  π  √  ∞  Δ  λ  θ  ∂  ∇";
+
+    display: block;
+
+    color:
+        rgba(0,217,255,0.18);
+
+    font-size: 16px;
+
+    letter-spacing: 18px;
+
+    margin-bottom: 12px;
+
+    animation:
+        footerMath 10s linear infinite;
+}
+
+@keyframes footerMath {
+
+    from {
+        transform: translateX(-30px);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    to {
+        transform: translateX(-30px);
+    }
+}
+
+footer span {
+    color: #00d9ff;
+}
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    header {
+        padding: 17px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+
+    header > a:last-child {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .orbit {
+        width: 350px;
+        height: 350px;
+    }
+
+    .orbit-two {
+        width: 450px;
+        height: 220px;
+    }
+
+    .equation-bar {
+        gap: 14px;
+        padding: 11px 15px;
+        max-width: 95%;
+        overflow: hidden;
+    }
+
+    .equation {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .topics {
+        grid-template-columns: 1fr;
+    }
+
+    .topic {
+        min-height: 190px;
+        padding: 27px;
+    }
+
+    .math-panel {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .data-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .data-item {
+        border-bottom:
+            1px solid rgba(100,180,210,0.08);
+    }
+
+    .section {
+        padding:
+            70px 18px 90px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero h1::before {
+        font-size: 9px;
+    }
+
+    .equation-bar {
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 15px;
+    }
+
+    .math-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .data-item,
+    .data-item:nth-child(2) {
+        border-right: none;
+        border-bottom:
+            1px solid rgba(100,180,210,0.08);
+    }
+
+    .data-item:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
+
+</style>
 
 </head>
 
 
 <body>
 
+
+<!-- =========================================================
+     FLOATING MATHEMATICS
+========================================================= -->
+
+<div class="math-field">
+
+    <span class="math-symbol" style="left:5%; animation-duration:18s; animation-delay:-4s;">∫</span>
+
+    <span class="math-symbol" style="left:14%; animation-duration:23s; animation-delay:-10s;">π</span>
+
+    <span class="math-symbol" style="left:25%; animation-duration:19s; animation-delay:-7s;">Σ</span>
+
+    <span class="math-symbol" style="left:36%; animation-duration:27s; animation-delay:-14s;">√x</span>
+
+    <span class="math-symbol" style="left:48%; animation-duration:21s; animation-delay:-3s;">∞</span>
+
+    <span class="math-symbol" style="left:60%; animation-duration:25s; animation-delay:-17s;">Δ</span>
+
+    <span class="math-symbol" style="left:72%; animation-duration:20s; animation-delay:-9s;">λ</span>
+
+    <span class="math-symbol" style="left:84%; animation-duration:24s; animation-delay:-13s;">θ</span>
+
+    <span class="math-symbol" style="left:94%; animation-duration:17s; animation-delay:-6s;">∂</span>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
 
@@ -863,7 +1863,24 @@
 </header>
 
 
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
+
+    <div class="orbit"></div>
+
+    <div class="orbit-two"></div>
+
+    <div class="hero-symbol symbol-one">∫</div>
+
+    <div class="hero-symbol symbol-two">π</div>
+
+    <div class="hero-symbol symbol-three">√</div>
+
+    <div class="hero-symbol symbol-four">∞</div>
+
 
     <h1>
         Mathematics
@@ -873,25 +1890,62 @@
         Edexcel International A Level Mathematics
     </p>
 
+
+    <div class="equation-bar">
+
+        <span class="equation">
+            f(x) = x²
+        </span>
+
+        <span class="equation">
+            ∫ x dx
+        </span>
+
+        <span class="equation">
+            Σn
+        </span>
+
+        <span class="equation">
+            P(A∩B)
+        </span>
+
+    </div>
+
+
     <div class="hud-line"></div>
 
 </section>
 
 
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
 <section class="section">
+
 
     <h2>
         Mathematics Topics
     </h2>
 
+
     <p class="intro">
-        Explore Edexcel IAL Mathematics topics, formulas, explanations,
-        examples and exam-focused revision resources.
+
+        Explore Edexcel IAL Mathematics through structured notes,
+        formulas, explanations, worked examples and exam-focused
+        revision resources.
+
     </p>
 
 
+    <!-- =====================================================
+         TOPICS
+    ===================================================== -->
+
     <div class="topics">
 
+
+        <!-- PURE -->
 
         <a href="pure-mathematics.html" class="topic">
 
@@ -900,11 +1954,22 @@
             </h3>
 
             <p>
-                Functions, algebra, calculus, sequences and more.
+                Functions, algebra, calculus, sequences,
+                trigonometry, logarithms and mathematical proof.
             </p>
+
+            <span class="mini-equation">
+                f(x) → ∫ → dy/dx
+            </span>
+
+            <span class="card-math">
+                ∫
+            </span>
 
         </a>
 
+
+        <!-- STATISTICS -->
 
         <a href="statistics.html" class="topic">
 
@@ -913,11 +1978,22 @@
             </h3>
 
             <p>
-                Probability, distributions, hypothesis testing and data.
+                Probability, distributions, hypothesis testing,
+                statistical modelling and data analysis.
             </p>
+
+            <span class="mini-equation">
+                P(A) → μ → σ
+            </span>
+
+            <span class="card-math">
+                Σ
+            </span>
 
         </a>
 
+
+        <!-- MECHANICS -->
 
         <a href="mechanics.html" class="topic">
 
@@ -926,14 +2002,89 @@
             </h3>
 
             <p>
-                Forces, motion, momentum and mechanical modelling.
+                Forces, motion, momentum, kinematics and
+                mechanical modelling.
             </p>
+
+            <span class="mini-equation">
+                F = ma → s → v
+            </span>
+
+            <span class="card-math">
+                F
+            </span>
 
         </a>
 
 
     </div>
 
+
+    <!-- =====================================================
+         MATHEMATICAL DATA
+    ===================================================== -->
+
+    <div class="math-panel">
+
+
+        <div class="data-item">
+
+            <div class="data-symbol">
+                π
+            </div>
+
+            <div class="data-label">
+                CONSTANT
+            </div>
+
+        </div>
+
+
+        <div class="data-item">
+
+            <div class="data-symbol">
+                ∞
+            </div>
+
+            <div class="data-label">
+                LIMIT
+            </div>
+
+        </div>
+
+
+        <div class="data-item">
+
+            <div class="data-symbol">
+                ∫
+            </div>
+
+            <div class="data-label">
+                INTEGRAL
+            </div>
+
+        </div>
+
+
+        <div class="data-item">
+
+            <div class="data-symbol">
+                Σ
+            </div>
+
+            <div class="data-label">
+                SERIES
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         BACK
+    ===================================================== -->
 
     <div class="back-wrapper">
 
@@ -947,9 +2098,16 @@
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    © 2026
+    <span>IAL ATLAS</span>
+    • Independent student resource
+    • Not affiliated with Pearson
 
 </footer>
 
