@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sequences & Series | IAL ATLAS</title>
 
     <meta name="description"
-          content="Sequences and Series notes for Pearson Edexcel International A Level Mathematics.">
+          content="Sequences and Series notes and revision resources for Pearson Edexcel International A Level Mathematics.">
 
     <style>
+
+        /* =========================================================
+           IAL ATLAS — DARK DESIGN SYSTEM
+           ========================================================= */
 
         * {
             margin: 0;
@@ -18,137 +23,703 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(0, 170, 255, 0.08), transparent 30%),
+                radial-gradient(circle at 85% 25%, rgba(0, 100, 255, 0.07), transparent 30%),
+                #050b16;
+            color: #e8f3ff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* =========================================================
+           BACKGROUND GRID
+           ========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 50px 50px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 90%
+            );
+        }
+
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
         header {
-            background: #071b36;
-            color: white;
-            padding: 22px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(4, 11, 23, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(72, 180, 255, 0.16);
+
+            padding: 20px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            text-shadow:
+                0 0 12px rgba(50, 180, 255, 0.35);
         }
 
-        header a {
-            color: white;
-            text-decoration: none;
+        .logo::after {
+            content: "";
+            display: block;
+
+            width: 35px;
+            height: 2px;
+
+            margin-top: 4px;
+
+            background: #31b8ff;
+            box-shadow: 0 0 10px #31b8ff;
         }
+
+        header > a:last-child {
+            color: #9fc9e8;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            padding: 9px 15px;
+
+            border: 1px solid rgba(70, 181, 255, 0.22);
+            border-radius: 8px;
+
+            background: rgba(15, 47, 76, 0.35);
+
+            transition: 0.25s ease;
+        }
+
+        header > a:last-child:hover {
+            color: #ffffff;
+
+            border-color: #31b8ff;
+
+            background: rgba(25, 91, 140, 0.3);
+
+            box-shadow:
+                0 0 18px rgba(49, 184, 255, 0.18);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================================
+           HERO
+           ========================================================= */
 
         .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
-            color: white;
+            position: relative;
+
+            min-height: 390px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
             text-align: center;
-            padding: 70px 20px;
+
+            padding: 80px 20px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0, 134, 255, 0.14),
+                    transparent 55%
+                );
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            border: 1px solid rgba(50, 184, 255, 0.08);
+            border-radius: 50%;
+
+            animation: pulse 5s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border: 1px solid rgba(50, 184, 255, 0.06);
+            border-radius: 50%;
+
+            animation: pulse 5s infinite ease-in-out reverse;
+        }
+
+        @keyframes pulse {
+
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 1;
+            }
+
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+
+            font-size: clamp(42px, 6vw, 68px);
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 15px;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 20px rgba(46, 179, 255, 0.25);
+        }
+
+        .hero h1::after {
+            content: "";
+
+            display: block;
+
+            width: 75px;
+            height: 3px;
+
+            margin: 18px auto 0;
+
+            border-radius: 10px;
+
+            background: #31b8ff;
+
+            box-shadow:
+                0 0 12px rgba(49, 184, 255, 0.8);
         }
 
         .hero p {
-            color: #dcecff;
+            position: relative;
+            z-index: 2;
+
+            color: #9fc5df;
+
             font-size: 18px;
+
+            letter-spacing: 0.4px;
         }
+
+        .hero .tag {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 25px;
+
+            padding: 7px 15px;
+
+            border-radius: 30px;
+
+            border: 1px solid rgba(49, 184, 255, 0.3);
+
+            background: rgba(22, 93, 140, 0.15);
+
+            color: #54c7ff;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           CONTENT
+           ========================================================= */
 
         .section {
-            max-width: 1000px;
+            width: min(1050px, 92%);
+
             margin: auto;
-            padding: 50px 20px;
+
+            padding: 30px 0 80px;
         }
+
+
+        /* =========================================================
+           TOPIC CARDS
+           ========================================================= */
 
         .topic-card {
-            background: white;
-            padding: 32px;
-            margin-bottom: 25px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(16, 31, 52, 0.88),
+                    rgba(7, 17, 31, 0.94)
+                );
+
+            border: 1px solid rgba(82, 174, 230, 0.13);
+
+            padding: 34px;
+
+            margin-bottom: 26px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.28);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
         }
 
+        .topic-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(49, 184, 255, 0.55),
+                    transparent
+                );
+        }
+
+        .topic-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            top: -100px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(31, 169, 255, 0.05);
+
+            filter: blur(20px);
+
+            pointer-events: none;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(49, 184, 255, 0.3);
+
+            box-shadow:
+                0 20px 55px rgba(0, 0, 0, 0.35),
+                0 0 25px rgba(20, 145, 220, 0.05);
+        }
+
+
+        /* =========================================================
+           HEADINGS
+           ========================================================= */
+
         .topic-card h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #0b3c73;
+            color: #ffffff;
+
+            font-size: 27px;
+
+            margin-bottom: 18px;
+
+            letter-spacing: -0.3px;
+        }
+
+        .topic-card h2::before {
+            content: "// ";
+
+            color: #31b8ff;
+
+            font-weight: 400;
         }
 
         .topic-card h3 {
-            font-size: 21px;
-            margin-top: 25px;
-            margin-bottom: 10px;
+            color: #d9ecfa;
+
+            font-size: 20px;
+
+            margin-top: 28px;
+            margin-bottom: 11px;
         }
+
+
+        /* =========================================================
+           TEXT
+           ========================================================= */
 
         .topic-card p {
-            color: #53657d;
+            color: #9bb0c3;
+
             margin-bottom: 15px;
+
+            font-size: 16px;
         }
+
+        .topic-card strong {
+            color: #ffffff;
+        }
+
+
+        /* =========================================================
+           FORMULA BOXES
+           ========================================================= */
 
         .formula {
-            background: #eef6ff;
-            padding: 16px;
-            margin: 15px 0;
-            border-radius: 10px;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(10, 54, 84, 0.48),
+                    rgba(7, 28, 47, 0.62)
+                );
+
+            border: 1px solid rgba(49, 184, 255, 0.18);
+
+            padding: 17px 20px;
+
+            margin: 17px 0;
+
+            border-radius: 11px;
+
             text-align: center;
+
             font-size: 18px;
-            font-weight: bold;
-            color: #0b3c73;
+
+            font-weight: 700;
+
+            color: #63caff;
+
+            box-shadow:
+                inset 0 0 20px rgba(35, 170, 255, 0.025);
+
+            transition: 0.25s ease;
         }
 
+        .formula:hover {
+            border-color:
+                rgba(49, 184, 255, 0.35);
+
+            box-shadow:
+                0 0 20px rgba(49, 184, 255, 0.06);
+        }
+
+
+        /* =========================================================
+           DETAILS / SOLUTIONS
+           ========================================================= */
+
         details {
-            margin-top: 15px;
+            margin-top: 17px;
+
+            border: 1px solid rgba(82, 174, 230, 0.12);
+
+            border-radius: 10px;
+
+            background: rgba(4, 14, 25, 0.45);
+
+            overflow: hidden;
         }
 
         summary {
             cursor: pointer;
+
+            padding: 13px 16px;
+
+            color: #55c7ff;
+
             font-weight: bold;
-            color: #0b3c73;
+
+            list-style: none;
+
+            transition: 0.2s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "＋";
+
+            margin-right: 9px;
+
+            color: #31b8ff;
+        }
+
+        details[open] summary::before {
+            content: "−";
+        }
+
+        summary:hover {
+            background: rgba(49, 184, 255, 0.06);
+        }
+
+        details > *:not(summary) {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+           ========================================================= */
+
+        .navigation {
+            text-align: center;
+
+            padding-top: 10px;
         }
 
         .back {
             display: inline-block;
-            background: #32a9e8;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #159edb,
+                    #0874b0
+                );
+
             color: white;
+
             padding: 12px 22px;
-            border-radius: 8px;
+
+            border-radius: 9px;
+
             text-decoration: none;
+
             font-weight: bold;
+
             margin: 8px;
+
+            border: 1px solid rgba(93, 211, 255, 0.35);
+
+            box-shadow:
+                0 6px 20px rgba(0, 126, 190, 0.2);
+
+            transition: 0.25s ease;
         }
 
         .back:hover {
-            background: #168dca;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 28px rgba(0, 150, 220, 0.28);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #20b6f2,
+                    #0a83c4
+                );
         }
 
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            position: relative;
+
+            background: #030812;
+
+            border-top: 1px solid rgba(70, 170, 225, 0.12);
+
+            color: #71869a;
+
             text-align: center;
-            padding: 25px;
-            font-size: 14px;
+
+            padding: 30px 20px;
+
+            font-size: 13px;
         }
+
+        footer span {
+            color: #36baff;
+        }
+
+
+        /* =========================================================
+           SCROLLBAR
+           ========================================================= */
+
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #040914;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #123b57;
+
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1c668e;
+        }
+
+
+        /* =========================================================
+           SELECTION
+           ========================================================= */
+
+        ::selection {
+            background: rgba(49, 184, 255, 0.3);
+
+            color: white;
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
 
         @media (max-width: 750px) {
 
-            .hero h1 {
-                font-size: 38px;
+            header {
+                padding: 17px 5%;
+
+                flex-direction: column;
+
+                gap: 13px;
             }
 
-            nav {
-                display: none;
+            .logo {
+                font-size: 24px;
+            }
+
+            header > a:last-child {
+                font-size: 13px;
+
+                padding: 8px 12px;
+            }
+
+            .hero {
+                min-height: 320px;
+
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                width: 92%;
+
+                padding-top: 25px;
             }
 
             .topic-card {
-                padding: 24px;
+                padding: 24px 20px;
+
+                border-radius: 15px;
+            }
+
+            .topic-card h2 {
+                font-size: 23px;
+            }
+
+            .topic-card h3 {
+                font-size: 18px;
+            }
+
+            .topic-card p {
+                font-size: 15px;
+            }
+
+            .formula {
+                font-size: 16px;
+
+                padding: 14px 12px;
+
+                overflow-x: auto;
+            }
+
+            .back {
+                width: 90%;
+
+                margin: 7px auto;
             }
 
         }
@@ -157,11 +728,19 @@
 
 </head>
 
+
 <body id="top">
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
 <header>
 
-    <a href="index.html" class="logo">IAL ATLAS</a>
+    <a href="index.html" class="logo">
+        IAL ATLAS
+    </a>
 
     <a href="pure-mathematics.html">
         ← Pure Mathematics
@@ -170,9 +749,17 @@
 </header>
 
 
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
 <section class="hero">
 
-    <h1>Sequences & Series</h1>
+    <div class="tag">
+        Pure Mathematics
+    </div>
+
+    <h1>Sequences &amp; Series</h1>
 
     <p>
         Edexcel International A Level Mathematics
@@ -181,10 +768,16 @@
 </section>
 
 
+<!-- =========================================================
+     CONTENT
+     ========================================================= -->
+
 <section class="section">
 
 
-    <!-- 1. SEQUENCES -->
+    <!-- =====================================================
+         1. SEQUENCES
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -206,13 +799,16 @@
         </p>
 
         <p>
-            The number of a term in a sequence is represented by n.
+            The number of a term in a sequence is represented by
+            <strong>n</strong>.
         </p>
 
     </div>
 
 
-    <!-- 2. ARITHMETIC SEQUENCES -->
+    <!-- =====================================================
+         2. ARITHMETIC SEQUENCES
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -236,7 +832,8 @@
         </div>
 
         <p>
-            where a is the first term and d is the common difference.
+            where <strong>a</strong> is the first term and
+            <strong>d</strong> is the common difference.
         </p>
 
         <h3>Worked Example</h3>
@@ -278,15 +875,17 @@
     </div>
 
 
-    <!-- 3. GEOMETRIC SEQUENCES -->
+    <!-- =====================================================
+         3. GEOMETRIC SEQUENCES
+         ===================================================== -->
 
     <div class="topic-card">
 
         <h2>3. Geometric Sequences</h2>
 
         <p>
-            A geometric sequence has a constant ratio between consecutive
-            terms.
+            A geometric sequence has a constant ratio between
+            consecutive terms.
         </p>
 
         <div class="formula">
@@ -302,7 +901,8 @@
         </div>
 
         <p>
-            where a is the first term and r is the common ratio.
+            where <strong>a</strong> is the first term and
+            <strong>r</strong> is the common ratio.
         </p>
 
         <h3>Worked Example</h3>
@@ -342,15 +942,17 @@
     </div>
 
 
-    <!-- 4. SIGMA NOTATION -->
+    <!-- =====================================================
+         4. SIGMA NOTATION
+         ===================================================== -->
 
     <div class="topic-card">
 
         <h2>4. Sigma Notation</h2>
 
         <p>
-            Sigma notation provides a compact way of writing the sum of
-            several terms.
+            Sigma notation provides a compact way of writing the sum
+            of several terms.
         </p>
 
         <div class="formula">
@@ -376,7 +978,9 @@
     </div>
 
 
-    <!-- 5. SUM OF ARITHMETIC SERIES -->
+    <!-- =====================================================
+         5. ARITHMETIC SERIES
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -399,7 +1003,7 @@
         </div>
 
         <p>
-            where l is the final term.
+            where <strong>l</strong> is the final term.
         </p>
 
         <h3>Worked Example</h3>
@@ -435,7 +1039,9 @@
     </div>
 
 
-    <!-- 6. GEOMETRIC SERIES -->
+    <!-- =====================================================
+         6. GEOMETRIC SERIES
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -450,7 +1056,7 @@
         </div>
 
         <p>
-            provided r ≠ 1.
+            provided <strong>r ≠ 1</strong>.
         </p>
 
         <h3>Worked Example</h3>
@@ -480,7 +1086,9 @@
     </div>
 
 
-    <!-- 7. PRACTICE QUESTIONS -->
+    <!-- =====================================================
+         7. PRACTICE QUESTIONS
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -674,7 +1282,9 @@
     </div>
 
 
-    <!-- 8. COMMON MISTAKES -->
+    <!-- =====================================================
+         8. COMMON MISTAKES
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -683,8 +1293,8 @@
         <h3>1. Confusing difference with ratio</h3>
 
         <p>
-            Arithmetic sequences use a common difference, while geometric
-            sequences use a common ratio.
+            Arithmetic sequences use a common difference, while
+            geometric sequences use a common ratio.
         </p>
 
         <h3>2. Forgetting n − 1</h3>
@@ -698,27 +1308,29 @@
         </div>
 
         <p>
-            Not a + nd.
+            Not <strong>a + nd</strong>.
         </p>
 
         <h3>3. Using the wrong formula</h3>
 
         <p>
-            Make sure you identify whether the sequence is arithmetic or
-            geometric before choosing a formula.
+            Make sure you identify whether the sequence is arithmetic
+            or geometric before choosing a formula.
         </p>
 
         <h3>4. Sign errors</h3>
 
         <p>
-            Be especially careful when the common difference or ratio is
-            negative.
+            Be especially careful when the common difference or ratio
+            is negative.
         </p>
 
     </div>
 
 
-    <!-- 9. EXAM TIPS -->
+    <!-- =====================================================
+         9. EXAM TIPS
+         ===================================================== -->
 
     <div class="topic-card">
 
@@ -727,8 +1339,8 @@
         <h3>1. Identify the sequence first</h3>
 
         <p>
-            Check whether consecutive terms have a constant difference or
-            a constant ratio.
+            Check whether consecutive terms have a constant difference
+            or a constant ratio.
         </p>
 
         <h3>2. Write down a, d, r and n</h3>
@@ -740,8 +1352,8 @@
         <h3>3. Check the first term</h3>
 
         <p>
-            After finding an nth-term formula, substitute n = 1 to make
-            sure it gives the correct first term.
+            After finding an nth-term formula, substitute n = 1 to
+            make sure it gives the correct first term.
         </p>
 
         <h3>4. Check your final answer</h3>
@@ -754,20 +1366,15 @@
     </div>
 
 
-    <!-- BACK TO TOP -->
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
 
-    <div style="text-align: center;">
+    <div class="navigation">
 
         <a href="#top" class="back">
             ↑ Back to Top
         </a>
-
-    </div>
-
-
-    <!-- BACK TO PURE MATHEMATICS -->
-
-    <div style="text-align: center;">
 
         <a href="pure-mathematics.html" class="back">
             ← Back to Pure Mathematics
@@ -779,9 +1386,15 @@
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    © 2026 <span>IAL ATLAS</span>
+    • Independent student resource
+    • Not affiliated with Pearson
 
 </footer>
 
