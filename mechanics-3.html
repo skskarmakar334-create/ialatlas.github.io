@@ -11,6 +11,12 @@
     <meta name="description"
           content="Complete Edexcel International A Level Mathematics Mechanics 3 course with lessons, worked examples and combined practice questions.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <style>
 
         * {
@@ -23,207 +29,636 @@
             scroll-behavior: smooth;
         }
 
+        :root {
+            --bg: #020712;
+            --bg2: #061121;
+            --panel: rgba(8, 21, 39, 0.74);
+            --panel-dark: rgba(4, 13, 26, 0.82);
+            --cyan: #63dcff;
+            --blue: #348fff;
+            --violet: #807cff;
+            --text: #edf9ff;
+            --muted: #91a9c1;
+            --line: rgba(99, 220, 255, 0.16);
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
             line-height: 1.7;
+            background:
+                radial-gradient(circle at 50% -5%, rgba(65, 110, 255, 0.2), transparent 30%),
+                radial-gradient(circle at 0% 40%, rgba(0, 190, 255, 0.08), transparent 25%),
+                radial-gradient(circle at 100% 65%, rgba(100, 70, 255, 0.08), transparent 25%),
+                var(--bg);
+            overflow-x: hidden;
         }
 
-        header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+            opacity: 0.2;
+            background-image:
+                linear-gradient(rgba(99,220,255,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99,220,255,0.045) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: linear-gradient(to bottom, black, transparent 88%);
         }
 
-        header a {
-            color: white;
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -3;
+            background:
+                radial-gradient(circle at center, transparent 35%, rgba(0,0,0,0.38) 100%);
+        }
+
+        a {
+            color: inherit;
             text-decoration: none;
         }
 
+        /* HEADER */
+
+        header {
+            position: relative;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 21px 7%;
+            background: rgba(2, 7, 18, 0.7);
+            border-bottom: 1px solid rgba(99,220,255,0.1);
+            backdrop-filter: blur(20px);
+        }
+
         .logo {
-            font-size: 27px;
-            font-weight: bold;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 25px;
+            font-weight: 700;
             letter-spacing: 1px;
         }
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+        .logo::after {
+            content: " / M3";
+            color: var(--cyan);
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-left: 6px;
+        }
 
-            color: white;
+        .back-link {
+            color: #b3c7dc;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--cyan);
+            transform: translateX(-4px);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 85px 20px;
+            padding: 110px 20px 100px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
         }
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            color: var(--cyan);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 58px;
-            margin-bottom: 18px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(64px, 10vw, 120px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+            text-shadow:
+                0 0 30px rgba(99,220,255,0.12),
+                0 0 80px rgba(52,143,255,0.08);
         }
 
         .hero h1 span {
-            color: #4db8ff;
+            color: var(--cyan);
         }
 
         .hero p {
             max-width: 760px;
             margin: auto;
-            color: #dcecff;
-            font-size: 18px;
+            color: #a7bdd2;
+            font-size: 17px;
         }
 
+        .hero-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 28px;
+            padding: 8px 14px;
+            border: 1px solid rgba(99,220,255,0.16);
+            border-radius: 30px;
+            background: rgba(7,19,35,0.65);
+            color: #8ea8c0;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 12px var(--cyan);
+            animation: statusPulse 1.8s ease-in-out infinite;
+        }
+
+        /* M3 CORE VISUAL */
+
+        .m3-core {
+            position: absolute;
+            width: 760px;
+            height: 500px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -46%);
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .core-ring {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border: 1px solid rgba(99,220,255,0.13);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .core-ring.r1 {
+            width: 250px;
+            height: 250px;
+            animation: spin 18s linear infinite;
+        }
+
+        .core-ring.r2 {
+            width: 410px;
+            height: 410px;
+            border-style: dashed;
+            animation: spinReverse 25s linear infinite;
+        }
+
+        .core-ring.r3 {
+            width: 620px;
+            height: 340px;
+            transform: translate(-50%, -50%) rotate(22deg);
+            animation: spin 30s linear infinite;
+        }
+
+        .core-node {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 105px;
+            height: 105px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(99,220,255,0.4);
+            border-radius: 50%;
+            background:
+                radial-gradient(circle, rgba(99,220,255,0.15), rgba(3,12,25,0.88) 70%);
+            box-shadow:
+                0 0 25px rgba(99,220,255,0.12),
+                inset 0 0 25px rgba(99,220,255,0.06);
+        }
+
+        .core-node span {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--cyan);
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .trajectory {
+            position: absolute;
+            width: 470px;
+            height: 170px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-13deg);
+            border-top: 1px solid rgba(99,220,255,0.28);
+            border-radius: 50%;
+        }
+
+        .trajectory::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            right: 5%;
+            top: -4px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow:
+                0 0 10px var(--cyan),
+                0 0 25px rgba(99,220,255,0.8);
+            animation: trajectoryMove 4s linear infinite;
+        }
+
+        .motion-line {
+            position: absolute;
+            width: 360px;
+            height: 1px;
+            left: 50%;
+            top: 50%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(99,220,255,0.6),
+                transparent
+            );
+            transform: translate(-50%, -50%) rotate(37deg);
+            animation: linePulse 3s ease-in-out infinite;
+        }
+
+        .force-vector {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--cyan)
+            );
+            box-shadow: 0 0 12px rgba(99,220,255,0.5);
+        }
+
+        .force-vector::after {
+            content: "";
+            position: absolute;
+            right: -1px;
+            top: -5px;
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 11px solid var(--cyan);
+        }
+
+        .force-vector.f1 {
+            left: 10%;
+            top: 38%;
+            transform: rotate(18deg);
+        }
+
+        .force-vector.f2 {
+            right: 10%;
+            top: 64%;
+            transform: rotate(-28deg);
+        }
+
+        .vector-label {
+            position: absolute;
+            color: rgba(145,225,255,0.8);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .vector-label.v1 {
+            left: 21%;
+            top: 31%;
+        }
+
+        .vector-label.v2 {
+            right: 19%;
+            top: 70%;
+        }
+
+        /* DATA */
+
+        .data-strip {
+            position: relative;
+            z-index: 15;
+            max-width: 1050px;
+            margin: -12px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: rgba(99,220,255,0.06);
+            backdrop-filter: blur(20px);
+        }
+
+        .data-item {
+            text-align: center;
+            padding: 21px 12px;
+            background: rgba(4,15,29,0.84);
+        }
+
+        .data-value {
+            display: block;
+            color: var(--cyan);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .data-label {
+            display: block;
+            color: #647e99;
+            font-size: 9px;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        /* COURSE CONTENT */
+
         .contents {
-            max-width: 950px;
-            margin: 40px auto;
+            max-width: 1050px;
+            margin: 85px auto 30px;
             padding: 0 20px;
         }
 
         .contents-box {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--panel);
+            backdrop-filter: blur(18px);
+            overflow: hidden;
+        }
+
+        .contents-box::before {
+            content: "M3 COURSE MAP";
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: rgba(99,220,255,0.28);
+            font-size: 9px;
+            letter-spacing: 3px;
         }
 
         .contents-box h2 {
-            margin-bottom: 20px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 27px;
+            margin-bottom: 23px;
+        }
+
+        .contents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .contents-box a {
-            display: block;
-            padding: 9px 0;
-            color: #168dca;
-            text-decoration: none;
-            font-weight: bold;
+            position: relative;
+            padding: 15px 17px;
+            border: 1px solid rgba(99,220,255,0.1);
+            border-radius: 11px;
+            background: rgba(3,12,24,0.48);
+            color: #a8bed2;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s ease;
         }
 
+        .contents-box a:hover {
+            color: white;
+            border-color: rgba(99,220,255,0.35);
+            transform: translateX(5px);
+            background: rgba(99,220,255,0.05);
+        }
+
+        /* MAIN */
+
         .container {
-            max-width: 950px;
+            max-width: 1050px;
             margin: auto;
-            padding: 20px;
+            padding: 25px 20px 50px;
         }
 
         .section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 35px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+            padding: 42px;
+            margin-bottom: 32px;
+            border: 1px solid var(--line);
+            border-radius: 23px;
+            background: var(--panel);
+            backdrop-filter: blur(18px);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(35px);
+            transition:
+                opacity 0.75s ease,
+                transform 0.75s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -80%;
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(99,220,255,0.8),
+                transparent
+            );
+            transition: 0.8s ease;
+        }
+
+        .section:hover::before {
+            left: 130%;
+        }
+
+        .section:hover {
+            border-color: rgba(99,220,255,0.28);
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.3),
+                0 0 35px rgba(52,143,255,0.05);
         }
 
         .section-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
+            color: var(--cyan);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
         .section h2 {
-            font-size: 32px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 34px;
+            line-height: 1.15;
             margin-bottom: 18px;
         }
 
-        .section h3 {
-            font-size: 23px;
-            margin-top: 30px;
-            margin-bottom: 12px;
-        }
-
-        .section p {
-            color: #53657d;
-            margin-bottom: 15px;
-        }
-
-        .section ul {
-            padding-left: 25px;
-            color: #53657d;
-        }
-
-        .section li {
-            margin-bottom: 8px;
+        .section > p {
+            color: var(--muted);
+            margin-bottom: 20px;
         }
 
         .lesson {
-            border-top: 1px solid #e5ebf2;
-            padding-top: 25px;
+            position: relative;
+            padding: 27px 0 5px;
             margin-top: 25px;
+            border-top: 1px solid rgba(99,220,255,0.1);
         }
 
         .lesson-title {
-            color: #168dca;
+            color: #9ee7ff !important;
+            font-family: "Space Grotesk", sans-serif;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 600;
+            margin-bottom: 13px !important;
         }
+
+        .lesson p,
+        .lesson li,
+        .example p,
+        .question {
+            color: var(--muted);
+        }
+
+        .lesson ul {
+            padding-left: 25px;
+        }
+
+        .lesson li {
+            margin-bottom: 8px;
+        }
+
+        /* DEFINITION */
 
         .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            margin: 22px 0;
+            padding: 20px 22px;
+            border: 1px solid rgba(99,220,255,0.12);
+            border-left: 3px solid var(--cyan);
+            border-radius: 12px;
+            background: rgba(52,143,255,0.055);
         }
+
+        /* FORMULAS */
 
         .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
+            position: relative;
             margin: 20px 0;
-            border-radius: 10px;
+            padding: 19px 15px;
+            border: 1px solid rgba(99,220,255,0.16);
+            border-radius: 13px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(52,143,255,0.05),
+                    rgba(99,220,255,0.11),
+                    rgba(52,143,255,0.05)
+                );
+            color: #e9faff;
             text-align: center;
+            font-family: "Space Grotesk", sans-serif;
             font-size: 19px;
-            font-weight: bold;
+            font-weight: 600;
+            overflow: hidden;
+            box-shadow: inset 0 0 25px rgba(99,220,255,0.025);
         }
 
+        .formula::after {
+            content: "";
+            position: absolute;
+            left: -25%;
+            top: 0;
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.1),
+                transparent
+            );
+            animation: formulaScan 4.5s ease-in-out infinite;
+        }
+
+        /* EXAMPLES */
+
         .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
+            margin-top: 25px;
+            padding: 27px;
+            border: 1px solid rgba(99,220,255,0.11);
+            border-radius: 15px;
+            background: rgba(3,12,24,0.62);
         }
 
         .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
+            color: var(--cyan) !important;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .solution {
-            background: white;
-            padding: 18px;
-            margin-top: 15px;
-            border-radius: 8px;
+            margin-top: 18px;
+            padding: 19px;
+            border-left: 2px solid var(--blue);
+            border-radius: 9px;
+            background: rgba(52,143,255,0.05);
         }
+
+        .solution strong {
+            color: #eafaff;
+        }
+
+        /* QUESTIONS */
 
         .question {
             padding: 22px 0;
-            border-bottom: 1px solid #e5ebf2;
+            border-bottom: 1px solid rgba(99,220,255,0.1);
         }
 
-        .question:last-child {
+        .question:last-of-type {
             border-bottom: none;
+        }
+
+        .question > strong {
+            color: #dceeff;
         }
 
         details {
@@ -231,53 +666,317 @@
         }
 
         summary {
+            display: inline-block;
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+            color: var(--cyan);
+            font-size: 14px;
+            font-weight: 600;
         }
+
+        summary:hover {
+            color: white;
+        }
+
+        details p {
+            margin-top: 10px;
+        }
+
+        /* REVIEW */
 
         .review {
-            background: #eaf6ff;
+            position: relative;
+            margin-top: 28px;
             padding: 25px;
-            border-radius: 12px;
-            margin-top: 25px;
+            border: 1px solid rgba(128,124,255,0.2);
+            border-radius: 14px;
+            background: rgba(128,124,255,0.05);
         }
 
+        .review strong {
+            color: #b7b4ff;
+        }
+
+        /* NAV */
+
         .navigation {
-            text-align: center;
-            padding: 10px 20px 60px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px 20px 75px;
         }
 
         .button {
-            display: inline-block;
-            background: #32a9e8;
-            color: white;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 5px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 150px;
+            padding: 13px 22px;
+            border: 1px solid rgba(99,220,255,0.2);
+            border-radius: 10px;
+            background: rgba(7,20,36,0.75);
+            color: #d9edfc;
+            font-size: 14px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: 0.3s ease;
         }
 
         .button:hover {
-            background: #168dca;
+            color: white;
+            border-color: rgba(99,220,255,0.55);
+            box-shadow: 0 0 25px rgba(52,143,255,0.13);
+            transform: translateY(-3px);
+        }
+
+        .button.primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(52,143,255,0.3),
+                    rgba(99,220,255,0.1)
+                );
         }
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            border-top: 1px solid rgba(99,220,255,0.1);
+            background: rgba(2,6,14,0.92);
+            color: #6d839b;
             text-align: center;
-            padding: 30px 20px;
+            padding: 31px 20px;
+            font-size: 13px;
         }
 
-        @media (max-width: 700px) {
+        /* PARTICLES */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: rgba(99,220,255,0.7);
+            box-shadow: 0 0 8px rgba(99,220,255,0.55);
+            animation: particleFloat linear infinite;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes spin {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes spinReverse {
+            from {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        }
+
+        @keyframes trajectoryMove {
+            0% {
+                right: 5%;
+            }
+            50% {
+                right: 88%;
+            }
+            100% {
+                right: 5%;
+            }
+        }
+
+        @keyframes linePulse {
+            0%, 100% {
+                opacity: 0.25;
+            }
+            50% {
+                opacity: 0.85;
+            }
+        }
+
+        @keyframes statusPulse {
+            0%, 100% {
+                opacity: 0.45;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes formulaScan {
+            0% {
+                left: -25%;
+            }
+            45%, 100% {
+                left: 125%;
+            }
+        }
+
+        @keyframes particleFloat {
+            from {
+                transform: translateY(105vh);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            85% {
+                opacity: 0.7;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .m3-core {
+                transform: translate(-50%, -46%) scale(0.78);
+            }
+
+            .data-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contents-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .back-link {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 85px 18px 65px;
+            }
 
             .hero h1 {
-                font-size: 42px;
+                font-size: 62px;
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .m3-core {
+                width: 700px;
+                transform: translate(-50%, -43%) scale(0.53);
+                opacity: 0.48;
+            }
+
+            .data-strip {
+                margin-top: 0;
+                border-radius: 14px;
+            }
+
+            .data-item {
+                padding: 16px 8px;
+            }
+
+            .data-value {
+                font-size: 13px;
+            }
+
+            .data-label {
+                font-size: 8px;
+            }
+
+            .contents {
+                margin-top: 60px;
+            }
+
+            .contents-box {
+                padding: 25px 21px;
+            }
+
+            .contents-box::before {
+                display: none;
             }
 
             .section {
-                padding: 25px;
+                padding: 28px 22px;
+                border-radius: 18px;
+            }
+
+            .section h2 {
+                font-size: 27px;
+            }
+
+            .lesson-title {
+                font-size: 16px;
+            }
+
+            .formula {
+                font-size: 16px;
+                padding: 17px 10px;
+            }
+
+            .example {
+                padding: 21px;
+            }
+
+            .button {
+                width: 100%;
+                max-width: 310px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+
+            .section {
+                opacity: 1;
+                transform: none;
             }
 
         }
@@ -290,13 +989,28 @@
 <body>
 
 
+<div class="particles" aria-hidden="true">
+
+    <span class="particle" style="left:6%; animation-duration:16s; animation-delay:-4s;"></span>
+    <span class="particle" style="left:14%; animation-duration:20s; animation-delay:-10s;"></span>
+    <span class="particle" style="left:26%; animation-duration:13s; animation-delay:-6s;"></span>
+    <span class="particle" style="left:38%; animation-duration:18s; animation-delay:-12s;"></span>
+    <span class="particle" style="left:49%; animation-duration:15s; animation-delay:-3s;"></span>
+    <span class="particle" style="left:61%; animation-duration:21s; animation-delay:-15s;"></span>
+    <span class="particle" style="left:73%; animation-duration:14s; animation-delay:-7s;"></span>
+    <span class="particle" style="left:86%; animation-duration:19s; animation-delay:-11s;"></span>
+    <span class="particle" style="left:94%; animation-duration:17s; animation-delay:-5s;"></span>
+
+</div>
+
+
 <header>
 
     <a href="index.html" class="logo">
         IAL ATLAS
     </a>
 
-    <a href="mechanics.html">
+    <a href="mechanics.html" class="back-link">
         ← Mechanics
     </a>
 
@@ -305,21 +1019,81 @@
 
 <section class="hero">
 
-    <p class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS
-    </p>
+    <div class="m3-core" aria-hidden="true">
 
-    <h1>
-        Mechanics <span>3</span>
-    </h1>
+        <div class="core-ring r1"></div>
+        <div class="core-ring r2"></div>
+        <div class="core-ring r3"></div>
 
-    <p>
-        Complete M3 lessons covering further kinematics,
-        elastic strings and springs, dynamics, circular motion
-        and statics of rigid bodies.
-    </p>
+        <div class="trajectory"></div>
+
+        <div class="motion-line"></div>
+
+        <div class="force-vector f1"></div>
+        <div class="force-vector f2"></div>
+
+        <span class="vector-label v1">F₁</span>
+        <span class="vector-label v2">F₂</span>
+
+        <div class="core-node">
+            <span>M3</span>
+        </div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <p class="hero-label">
+            EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS
+        </p>
+
+        <h1>
+            Mechanics <span>3</span>
+        </h1>
+
+        <p>
+            Complete M3 lessons covering further kinematics,
+            elastic strings and springs, dynamics, circular motion
+            and statics of rigid bodies.
+        </p>
+
+        <div class="hero-status">
+
+            <span class="status-dot"></span>
+
+            ADVANCED MECHANICS SYSTEM • ONLINE
+
+        </div>
+
+    </div>
 
 </section>
+
+
+<div class="data-strip">
+
+    <div class="data-item">
+        <span class="data-value">a = v dv/dx</span>
+        <span class="data-label">FURTHER KINEMATICS</span>
+    </div>
+
+    <div class="data-item">
+        <span class="data-value">T = λx/l</span>
+        <span class="data-label">ELASTIC SYSTEMS</span>
+    </div>
+
+    <div class="data-item">
+        <span class="data-value">a = −ω²x</span>
+        <span class="data-label">SHM CORE</span>
+    </div>
+
+    <div class="data-item">
+        <span class="data-value">M3 / ADVANCED</span>
+        <span class="data-label">MECHANICS LEVEL</span>
+    </div>
+
+</div>
 
 
 <section class="contents">
@@ -330,29 +1104,33 @@
             M3 Course Contents
         </h2>
 
-        <a href="#kinematics">
-            01. Further Kinematics
-        </a>
+        <div class="contents-grid">
 
-        <a href="#elastic">
-            02. Elastic Strings and Springs
-        </a>
+            <a href="#kinematics">
+                01 / Further Kinematics
+            </a>
 
-        <a href="#dynamics">
-            03. Further Dynamics
-        </a>
+            <a href="#elastic">
+                02 / Elastic Strings and Springs
+            </a>
 
-        <a href="#circle">
-            04. Motion in a Circle
-        </a>
+            <a href="#dynamics">
+                03 / Further Dynamics
+            </a>
 
-        <a href="#statics">
-            05. Statics of Rigid Bodies
-        </a>
+            <a href="#circle">
+                04 / Motion in a Circle
+            </a>
 
-        <a href="#practice">
-            📝 Combined M3 Practice
-        </a>
+            <a href="#statics">
+                05 / Statics of Rigid Bodies
+            </a>
+
+            <a href="#practice">
+                06 / Combined M3 Practice
+            </a>
+
+        </div>
 
     </div>
 
@@ -1145,12 +1923,12 @@
 
 <div class="navigation">
 
-    <a href="mechanics.html" class="button">
-        ← Back to Mechanics
+    <a href="mechanics-2.html" class="button">
+        ← Mechanics 2
     </a>
 
-    <a href="mechanics-2.html" class="button">
-        Mechanics 2
+    <a href="mechanics.html" class="button primary">
+        ↑ Mechanics
     </a>
 
 </div>
@@ -1163,6 +1941,117 @@
 </footer>
 
 
+<script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const sections = document.querySelectorAll(".section");
+
+    const revealObserver = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+    sections.forEach(section => {
+        revealObserver.observe(section);
+    });
+
+
+    /* =========================
+       CARD LIGHT FOLLOW
+    ========================= */
+
+    sections.forEach(section => {
+
+        section.addEventListener("mousemove", event => {
+
+            const rect = section.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            section.style.background =
+                `radial-gradient(
+                    circle at ${x}px ${y}px,
+                    rgba(99,220,255,0.07),
+                    rgba(8,21,39,0.74) 38%
+                )`;
+
+        });
+
+        section.addEventListener("mouseleave", () => {
+
+            section.style.background =
+                "rgba(8,21,39,0.74)";
+
+        });
+
+    });
+
+
+    /* =========================
+       HERO PARALLAX
+    ========================= */
+
+    const core = document.querySelector(".m3-core");
+
+    window.addEventListener("scroll", () => {
+
+        if (!core) return;
+
+        const scroll = window.scrollY;
+
+        if (scroll < window.innerHeight * 1.15) {
+
+            core.style.transform =
+                `translate(-50%, calc(-46% + ${scroll * 0.07}px))`;
+
+        }
+
+    });
+
+
+    /* =========================
+       MOUSE TILT FOR CORE
+    ========================= */
+
+    document.addEventListener("mousemove", event => {
+
+        if (!core) return;
+
+        const x =
+            (event.clientX / window.innerWidth - 0.5) * 5;
+
+        const y =
+            (event.clientY / window.innerHeight - 0.5) * 3;
+
+        core.style.marginLeft = `${x}px`;
+        core.style.marginTop = `${y}px`;
+
+    });
+
+</script>
+
+
 </body>
 
 </html>
+
