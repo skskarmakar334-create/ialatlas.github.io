@@ -9,193 +9,1691 @@
     <title>Mechanics 1 | IAL ATLAS</title>
 
     <meta name="description"
-          content="Edexcel International A Level Mathematics Mechanics 1 resources.">
+          content="Edexcel International A Level Mathematics Mechanics 1 resources — models, vectors, kinematics, dynamics, statics and moments.">
 
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-        }
 
-        header {
-            background: #071b36;
-            color: white;
-            padding: 22px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<style>
 
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
+/* =========================================================
+   IAL ATLAS
+   MECHANICS 1 // YEAR 3000
+   FOUNDATION SYSTEM
+========================================================= */
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
+:root {
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+    --bg: #020711;
+    --bg2: #06172c;
 
-            color: white;
-            text-align: center;
-            padding: 85px 20px;
-        }
+    --glass: rgba(9, 29, 52, 0.62);
+    --glass2: rgba(255,255,255,0.035);
 
-        .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 18px;
-        }
+    --cyan: #6de2ff;
+    --blue: #32a9e8;
+    --electric: #3bbcff;
 
-        .hero h1 {
-            font-size: 58px;
-            margin-bottom: 15px;
-        }
+    --white: #f4fbff;
+    --text: #a9c5d6;
+    --muted: #6f899c;
 
-        .hero h1 span {
-            color: #4db8ff;
-        }
+    --border: rgba(105,221,255,0.15);
+    --border-hover: rgba(105,221,255,0.48);
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #dcecff;
-            font-size: 18px;
-            line-height: 1.7;
-        }
+}
 
-        .section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .section-intro {
-            text-align: center;
-            color: #607089;
-            margin-bottom: 45px;
-            line-height: 1.7;
-        }
+body {
 
-        .topics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
+    font-family: "Inter", Arial, sans-serif;
 
-        .topic {
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: inherit;
-            border: 1px solid rgba(16,35,63,0.06);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
+    color: var(--white);
 
-        .topic:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(16,35,63,0.12);
-        }
+    background:
 
-        .topic-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(50,169,232,0.16),
+            transparent 35%
+        ),
 
-        .topic h3 {
-            font-size: 23px;
-            margin-bottom: 10px;
-        }
+        radial-gradient(
+            circle at 0% 45%,
+            rgba(50,169,232,0.05),
+            transparent 25%
+        ),
 
-        .topic p {
-            color: #68778d;
-            line-height: 1.6;
-            font-size: 15px;
-        }
+        #020711;
 
-        .arrow {
-            display: inline-block;
-            margin-top: 18px;
-            color: #168dca;
-            font-weight: bold;
-        }
+    min-height: 100vh;
 
-        .back {
-            display: inline-block;
-            margin-top: 45px;
-            background: #32a9e8;
-            color: white;
-            padding: 13px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    overflow-x: hidden;
+}
 
-        .back:hover {
-            background: #168dca;
-        }
 
-        footer {
-            background: #071b36;
-            color: #b9c9dc;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-        }
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
 
-        @media (max-width: 750px) {
+body::before {
 
-            .hero h1 {
-                font-size: 44px;
-            }
+    content: "";
 
-            .topics {
-                grid-template-columns: 1fr;
-            }
+    position: fixed;
 
-        }
+    inset: 0;
 
-    </style>
+    background-image:
+
+        linear-gradient(
+            rgba(105,221,255,0.028) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(105,221,255,0.028) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 88%
+        );
+
+    pointer-events: none;
+
+    z-index: -20;
+}
+
+
+/* =========================================================
+   AMBIENT PARTICLES
+========================================================= */
+
+.space {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -10;
+}
+
+.particle {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan),
+        0 0 18px rgba(105,221,255,0.4);
+
+    opacity: 0.35;
+
+    animation:
+        floatParticle linear infinite;
+}
+
+.p1 { left: 7%; top: 18%; animation-duration: 20s; }
+.p2 { left: 15%; top: 70%; animation-duration: 27s; }
+.p3 { left: 27%; top: 38%; animation-duration: 23s; }
+.p4 { left: 39%; top: 82%; animation-duration: 31s; }
+.p5 { left: 53%; top: 20%; animation-duration: 19s; }
+.p6 { left: 65%; top: 65%; animation-duration: 25s; }
+.p7 { left: 78%; top: 30%; animation-duration: 22s; }
+.p8 { left: 91%; top: 75%; animation-duration: 29s; }
+.p9 { left: 48%; top: 50%; animation-duration: 24s; }
+.p10 { left: 84%; top: 48%; animation-duration: 32s; }
+
+@keyframes floatParticle {
+
+    0% {
+        transform: translate(0,0);
+        opacity: 0.05;
+    }
+
+    50% {
+        transform: translate(35px,-55px);
+        opacity: 0.65;
+    }
+
+    100% {
+        transform: translate(-20px,-110px);
+        opacity: 0.03;
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: 74px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background:
+        rgba(2,7,17,0.72);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    border-bottom:
+        1px solid rgba(105,221,255,0.10);
+}
+
+.logo {
+
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 28px;
+
+    height: 2px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
+    transition:
+        width 0.3s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.back-nav {
+
+    color: #b8d9e9;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 10px 16px;
+
+    border:
+        1px solid rgba(105,221,255,0.14);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition:
+        0.3s ease;
+}
+
+.back-nav:hover {
+
+    color: white;
+
+    border-color:
+        var(--border-hover);
+
+    background:
+        rgba(105,221,255,0.08);
+
+    transform:
+        translateX(-4px);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 680px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(50,169,232,0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(50,169,232,0.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(0,200,255,0.07),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #020711,
+            #06172c 70%,
+            #020711
+        );
+}
+
+
+/* =========================================================
+   COORDINATE AXES
+========================================================= */
+
+.axis {
+
+    position: absolute;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(105,221,255,0.35),
+            transparent
+        );
+
+    opacity: 0.4;
+}
+
+.axis-x {
+
+    width: 850px;
+
+    height: 1px;
+
+    left: 50%;
+
+    top: 52%;
+
+    transform:
+        translateX(-50%);
+}
+
+.axis-y {
+
+    width: 1px;
+
+    height: 600px;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translateY(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(105,221,255,0.35),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   MOVING PARTICLE / TRAJECTORY
+========================================================= */
+
+.trajectory {
+
+    position: absolute;
+
+    width: 900px;
+
+    height: 360px;
+
+    border:
+        1px solid rgba(105,221,255,0.12);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-15deg);
+
+    opacity: 0.55;
+}
+
+.trajectory::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    border:
+        1px dashed rgba(105,221,255,0.08);
+
+    border-radius: 50%;
+
+    transform:
+        scale(0.72);
+}
+
+.trajectory-dot {
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan),
+        0 0 30px var(--cyan);
+
+    animation:
+        travel 8s linear infinite;
+}
+
+@keyframes travel {
+
+    0% {
+        left: 0%;
+        top: 49%;
+    }
+
+    25% {
+        left: 25%;
+        top: 10%;
+    }
+
+    50% {
+        left: 50%;
+        top: 0%;
+    }
+
+    75% {
+        left: 75%;
+        top: 20%;
+    }
+
+    100% {
+        left: 100%;
+        top: 49%;
+    }
+
+}
+
+
+/* =========================================================
+   FORCE VECTORS
+========================================================= */
+
+.force {
+
+    position: absolute;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    opacity: 0.45;
+}
+
+.force::after {
+
+    content: "›";
+
+    position: absolute;
+
+    right: 0;
+
+    top: -10px;
+
+    color: var(--cyan);
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 12px var(--cyan);
+}
+
+.force-1 {
+
+    width: 260px;
+
+    left: 5%;
+
+    top: 35%;
+
+    transform:
+        rotate(-17deg);
+}
+
+.force-2 {
+
+    width: 220px;
+
+    right: 5%;
+
+    top: 64%;
+
+    transform:
+        rotate(18deg);
+}
+
+.force-3 {
+
+    width: 150px;
+
+    right: 17%;
+
+    top: 24%;
+
+    transform:
+        rotate(-38deg);
+
+    opacity: 0.2;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 1000px;
+
+    padding: 40px 20px;
+}
+
+.hero-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 17px;
+
+    margin-bottom: 28px;
+
+    border:
+        1px solid rgba(105,221,255,0.20);
+
+    border-radius: 100px;
+
+    background:
+        rgba(105,221,255,0.045);
+
+    color: #8fe4ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.status {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan),
+        0 0 20px var(--cyan);
+
+    animation:
+        pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+.hero h1 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(60px, 10vw, 125px);
+
+    line-height: 0.9;
+
+    font-weight: 700;
+
+    letter-spacing: -6px;
+
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #d4f4ff 38%,
+            #45b9ff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(50,169,232,0.25)
+        );
+
+    animation:
+        heroReveal 1.1s ease forwards;
+}
+
+.hero h1 span {
+
+    color: var(--cyan);
+
+    background: none;
+
+    -webkit-text-fill-color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 35px rgba(105,221,255,0.45);
+}
+
+@keyframes heroReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+        filter:
+            blur(12px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+.hero-description {
+
+    max-width: 680px;
+
+    margin:
+        28px auto 0;
+
+    color:
+        #a9c6d9;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SYSTEM READOUT
+========================================================= */
+
+.system-readout {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    white-space: nowrap;
+
+    color: #648398;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.system-readout span::before {
+
+    content: "◆";
+
+    margin-right: 7px;
+
+    color: var(--cyan);
+
+    font-size: 6px;
+
+    text-shadow:
+        0 0 8px var(--cyan);
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.section {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        105px 25px 100px;
+}
+
+.section-header {
+
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+.section-label {
+
+    color: var(--cyan);
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.section h2 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(38px,5vw,58px);
+
+    letter-spacing: -2px;
+
+    margin-bottom: 16px;
+}
+
+.section-intro {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TOPIC GRID
+========================================================= */
+
+.topics {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   TOPIC CARD
+========================================================= */
+
+.topic {
+
+    --mx: 50%;
+    --my: 20%;
+
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-decoration: none;
+
+    color: white;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    background:
+
+        radial-gradient(
+            circle at var(--mx) var(--my),
+            rgba(105,221,255,0.13),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(16,42,70,0.68),
+            rgba(3,14,29,0.78)
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+
+        inset
+        0 1px 0
+        rgba(255,255,255,0.055),
+
+        0 25px 70px
+        rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* moving glass shine */
+
+.topic::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -120%;
+
+    left: -40%;
+
+    width: 30%;
+
+    height: 320%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.075),
+            transparent
+        );
+
+    transform:
+        rotate(20deg);
+
+    transition:
+        left 0.9s ease;
+
+    pointer-events: none;
+}
+
+
+/* glowing corner */
+
+.topic::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+
+    height: 130px;
+
+    right: -65px;
+
+    bottom: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(105,221,255,0.07);
+
+    filter:
+        blur(5px);
+
+    transition:
+        transform 0.5s ease;
+}
+
+.topic:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.012);
+
+    border-color:
+        var(--border-hover);
+
+    box-shadow:
+
+        inset
+        0 1px 0
+        rgba(255,255,255,0.09),
+
+        0 35px 90px
+        rgba(0,0,0,0.45),
+
+        0 0 45px
+        rgba(50,169,232,0.10);
+}
+
+.topic:hover::before {
+    left: 120%;
+}
+
+.topic:hover::after {
+    transform:
+        scale(1.8);
+}
+
+
+/* =========================================================
+   TOPIC NUMBER
+========================================================= */
+
+.topic-number {
+
+    position: absolute;
+
+    right: 24px;
+
+    top: 12px;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 75px;
+
+    font-weight: 700;
+
+    letter-spacing: -5px;
+
+    color:
+        rgba(105,221,255,0.045);
+
+    transition:
+        0.4s ease;
+}
+
+.topic:hover .topic-number {
+
+    color:
+        rgba(105,221,255,0.10);
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================================================
+   TOPIC CONTENT
+========================================================= */
+
+.topic-label {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--cyan);
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.topic h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
+
+    max-width: 420px;
+
+    margin-bottom: 14px;
+}
+
+.topic p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        #8faabd;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+}
+
+
+/* =========================================================
+   TOPIC ARROW
+========================================================= */
+
+.topic-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+}
+
+.explore {
+
+    color: var(--cyan);
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.arrow {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(105,221,255,0.23);
+
+    border-radius: 50%;
+
+    color: var(--cyan);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.topic:hover .arrow {
+
+    transform:
+        translateX(6px);
+
+    background:
+        rgba(105,221,255,0.10);
+
+    box-shadow:
+        0 0 20px
+        rgba(105,221,255,0.18);
+}
+
+
+/* =========================================================
+   M1 MAP
+========================================================= */
+
+.m1-map {
+
+    position: relative;
+
+    margin-top: 75px;
+
+    padding: 35px;
+
+    border:
+        1px solid rgba(105,221,255,0.12);
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,30,53,0.55),
+            rgba(3,12,24,0.62)
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,0.04);
+}
+
+.map-title {
+
+    text-align: center;
+
+    color:
+        #6f899c;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 35px;
+}
+
+.map-line {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap: 10px;
+}
+
+.map-line::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 16px;
+
+    left: 7%;
+
+    right: 7%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(105,221,255,0.35);
+}
+
+.map-node {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.map-dot {
+
+    width: 33px;
+
+    height: 33px;
+
+    margin:
+        0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(105,221,255,0.30);
+
+    border-radius: 50%;
+
+    background:
+        #06182c;
+
+    color: var(--cyan);
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 18px
+        rgba(105,221,255,0.08);
+
+    transition:
+        0.3s ease;
+}
+
+.map-node:hover .map-dot {
+
+    background:
+        rgba(105,221,255,0.12);
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 25px
+        rgba(105,221,255,0.22);
+
+    transform:
+        scale(1.1);
+}
+
+.map-node span {
+
+    display: block;
+
+    color:
+        #718b9e;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-container {
+
+    text-align: center;
+
+    margin-top: 60px;
+}
+
+.back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        14px 22px;
+
+    border:
+        1px solid rgba(105,221,255,0.20);
+
+    border-radius: 12px;
+
+    background:
+        rgba(105,221,255,0.045);
+
+    color:
+        #bcecff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        0.3s ease;
+}
+
+.back:hover {
+
+    transform:
+        translateX(-5px);
+
+    background:
+        rgba(105,221,255,0.09);
+
+    border-color:
+        rgba(105,221,255,0.40);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(105,221,255,0.08);
+
+    background:
+        #01050c;
+
+    color:
+        #5f778a;
+
+    font-size: 12px;
+}
+
+footer strong {
+    color: #9ccfe2;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .topics {
+        grid-template-columns: 1fr;
+    }
+
+    .topic {
+        min-height: 260px;
+    }
+
+    .map-line {
+        grid-template-columns:
+            repeat(3,1fr);
+
+        row-gap: 25px;
+    }
+
+    .map-line::before {
+        display: none;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    header {
+
+        height: 68px;
+
+        padding:
+            0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .back-nav {
+
+        font-size: 11px;
+
+        padding:
+            8px 11px;
+    }
+
+    .hero {
+
+        min-height: 600px;
+    }
+
+    .hero h1 {
+
+        font-size: 60px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+
+        font-size: 14px;
+    }
+
+    .system-readout {
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        font-size: 7px;
+    }
+
+    .system-readout span:nth-child(2),
+    .system-readout span:nth-child(3) {
+
+        display: none;
+    }
+
+    .trajectory {
+
+        width: 600px;
+
+        height: 280px;
+    }
+
+    .axis-x {
+        width: 550px;
+    }
+
+    .force {
+        display: none;
+    }
+
+    .section {
+
+        padding:
+            75px 18px;
+    }
+
+    .section h2 {
+        font-size: 38px;
+    }
+
+    .topic {
+
+        padding:
+            27px 23px;
+
+        min-height: 270px;
+    }
+
+    .topic-number {
+        font-size: 55px;
+    }
+
+    .m1-map {
+
+        padding:
+            28px 18px;
+    }
+
+    .map-line {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
+
+</style>
 
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     AMBIENT SPACE
+===================================================== -->
+
+<div class="space" aria-hidden="true">
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+    <div class="particle p9"></div>
+    <div class="particle p10"></div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -203,171 +1701,348 @@
         IAL ATLAS
     </a>
 
-    <a href="mechanics.html">
+    <a href="mechanics.html" class="back-nav">
         ← Mechanics
     </a>
 
 </header>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
 
-    <p class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS
-    </p>
+    <div class="axis axis-x"></div>
 
-    <h1>
-        Mechanics <span>1</span>
-    </h1>
+    <div class="axis axis-y"></div>
 
-    <p>
-        Build the foundations of mechanics through models,
-        vectors, motion, forces, equilibrium and moments.
-    </p>
+    <div class="trajectory">
+
+        <div class="trajectory-dot"></div>
+
+    </div>
+
+    <div class="force force-1"></div>
+
+    <div class="force force-2"></div>
+
+    <div class="force force-3"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+
+            <span class="status"></span>
+
+            M1 FOUNDATION SYSTEM ONLINE
+
+        </div>
+
+
+        <h1>
+            Mechanics <span>1</span>
+        </h1>
+
+
+        <p class="hero-description">
+
+            The foundation layer of mechanics.
+
+            <br>
+
+            Model physical systems, represent vectors,
+            analyse motion, understand forces and solve
+            equilibrium and moments problems.
+
+        </p>
+
+    </div>
+
+
+    <div class="system-readout">
+
+        <span>06 TOPIC MODULES</span>
+
+        <span>FOUNDATION LEVEL</span>
+
+        <span>IAL MATHEMATICS</span>
+
+    </div>
 
 </section>
 
 
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
 <section class="section">
 
-    <h2>M1 Topics</h2>
 
-    <p class="section-intro">
-        Choose a topic to learn the concepts, study the key formulae,
-        work through examples and practise exam-style questions.
-    </p>
+    <div class="section-header reveal">
+
+        <div class="section-label">
+            M1 KNOWLEDGE CORE
+        </div>
+
+        <h2>
+            Topic Modules
+        </h2>
+
+        <p class="section-intro">
+
+            Six connected areas form the Mechanics 1
+            foundation. Enter any module to access
+            explanations, formulae, worked examples
+            and exam-focused practice.
+
+        </p>
+
+    </div>
 
 
     <div class="topics">
 
 
-       <a href="mechanics-models.html" class="topic">
+        <!-- TOPIC 01 -->
 
-            <p class="topic-number">
-                TOPIC 01
-            </p>
+        <a href="mechanics-models.html"
+           class="topic reveal">
+
+            <div class="topic-number">
+                01
+            </div>
+
+            <div class="topic-label">
+                MODULE 01 / MODELLING
+            </div>
 
             <h3>
                 Mathematical Models in Mechanics
             </h3>
 
             <p>
-                Learn how physical situations are represented using
-                mathematical models and assumptions.
+
+                Learn how real physical situations are
+                simplified and represented mathematically
+                using assumptions and idealised models.
+
             </p>
 
-            <span class="arrow">
-                Explore topic →
-            </span>
+            <div class="topic-footer">
+
+                <span class="explore">
+                    Explore module
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
 
         </a>
 
 
-      <a href="./mechanics-vectors.html" class="topic">
-            <p class="topic-number">
-                TOPIC 02
-            </p>
+        <!-- TOPIC 02 -->
+
+        <a href="./mechanics-vectors.html"
+           class="topic reveal">
+
+            <div class="topic-number">
+                02
+            </div>
+
+            <div class="topic-label">
+                MODULE 02 / VECTORS
+            </div>
 
             <h3>
                 Vectors in Mechanics
             </h3>
 
             <p>
-                Understand vectors, magnitude, direction and their
-                applications to mechanics.
+
+                Understand magnitude, direction and vector
+                representation and apply vectors to
+                mechanical systems.
+
             </p>
 
-            <span class="arrow">
-                Explore topic →
-            </span>
+            <div class="topic-footer">
+
+                <span class="explore">
+                    Explore module
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
 
         </a>
 
 
-      <a href="./mechanics-kinematics.html" class="topic">
+        <!-- TOPIC 03 -->
 
-            <p class="topic-number">
-                TOPIC 03
-            </p>
+        <a href="./mechanics-kinematics.html"
+           class="topic reveal">
+
+            <div class="topic-number">
+                03
+            </div>
+
+            <div class="topic-label">
+                MODULE 03 / MOTION
+            </div>
 
             <h3>
                 Kinematics in a Straight Line
             </h3>
 
             <p>
-                Study displacement, velocity, acceleration and
-                constant-acceleration motion.
+
+                Study displacement, velocity, acceleration
+                and constant-acceleration motion using
+                mathematical models and equations.
+
             </p>
 
-            <span class="arrow">
-                Explore topic →
-            </span>
+            <div class="topic-footer">
+
+                <span class="explore">
+                    Explore module
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
 
         </a>
 
 
-        <a href="./mechanics-dynamics.html" class="topic">
+        <!-- TOPIC 04 -->
 
-            <p class="topic-number">
-                TOPIC 04
-            </p>
+        <a href="./mechanics-dynamics.html"
+           class="topic reveal">
+
+            <div class="topic-number">
+                04
+            </div>
+
+            <div class="topic-label">
+                MODULE 04 / FORCES
+            </div>
 
             <h3>
                 Dynamics of a Particle
             </h3>
 
             <p>
-                Explore forces, Newton's laws and the relationship
-                between force, mass and acceleration.
+
+                Explore forces, Newton's laws and the
+                relationship between force, mass and
+                acceleration.
+
             </p>
 
-            <span class="arrow">
-                Explore topic →
-            </span>
+            <div class="topic-footer">
+
+                <span class="explore">
+                    Explore module
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
 
         </a>
 
 
-       <a href="./mechanics-statics.html" class="topic">
+        <!-- TOPIC 05 -->
 
-            <p class="topic-number">
-                TOPIC 05
-            </p>
+        <a href="./mechanics-statics.html"
+           class="topic reveal">
+
+            <div class="topic-number">
+                05
+            </div>
+
+            <div class="topic-label">
+                MODULE 05 / EQUILIBRIUM
+            </div>
 
             <h3>
                 Statics of a Particle
             </h3>
 
             <p>
-                Learn how forces balance when a particle is in
-                equilibrium.
+
+                Learn how forces balance when a particle
+                is in equilibrium and how to construct
+                mathematical force systems.
+
             </p>
 
-            <span class="arrow">
-                Explore topic →
-            </span>
+            <div class="topic-footer">
+
+                <span class="explore">
+                    Explore module
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
 
         </a>
 
 
-      <a href="./mechanics-moments.html" class="topic">
+        <!-- TOPIC 06 -->
 
-            <p class="topic-number">
-                TOPIC 06
-            </p>
+        <a href="./mechanics-moments.html"
+           class="topic reveal">
+
+            <div class="topic-number">
+                06
+            </div>
+
+            <div class="topic-label">
+                MODULE 06 / ROTATION
+            </div>
 
             <h3>
                 Moments
             </h3>
 
             <p>
-                Understand turning effects, moments about points
-                and equilibrium.
+
+                Understand turning effects, moments about
+                points and the conditions required for
+                rotational equilibrium.
+
             </p>
 
-            <span class="arrow">
-                Explore topic →
-            </span>
+            <div class="topic-footer">
+
+                <span class="explore">
+                    Explore module
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
 
         </a>
 
@@ -375,24 +2050,304 @@
     </div>
 
 
-    <div style="text-align: center;">
+    <!-- =================================================
+         M1 KNOWLEDGE MAP
+    ================================================== -->
+
+    <div class="m1-map reveal">
+
+        <div class="map-title">
+            M1 KNOWLEDGE PROGRESSION
+        </div>
+
+
+        <div class="map-line">
+
+
+            <div class="map-node">
+
+                <div class="map-dot">
+                    01
+                </div>
+
+                <span>
+                    Models
+                </span>
+
+            </div>
+
+
+            <div class="map-node">
+
+                <div class="map-dot">
+                    02
+                </div>
+
+                <span>
+                    Vectors
+                </span>
+
+            </div>
+
+
+            <div class="map-node">
+
+                <div class="map-dot">
+                    03
+                </div>
+
+                <span>
+                    Kinematics
+                </span>
+
+            </div>
+
+
+            <div class="map-node">
+
+                <div class="map-dot">
+                    04
+                </div>
+
+                <span>
+                    Dynamics
+                </span>
+
+            </div>
+
+
+            <div class="map-node">
+
+                <div class="map-dot">
+                    05
+                </div>
+
+                <span>
+                    Statics
+                </span>
+
+            </div>
+
+
+            <div class="map-node">
+
+                <div class="map-dot">
+                    06
+                </div>
+
+                <span>
+                    Moments
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="back-container">
 
         <a href="mechanics.html" class="back">
+
             ← Back to Mechanics
+
         </a>
 
     </div>
+
 
 </section>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    © 2026
+    <strong>IAL ATLAS</strong>
+    • Independent student resource
+    • Not affiliated with Pearson
 
 </footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   CARD LIGHT TRACKING
+========================================================= */
+
+const cards =
+    document.querySelectorAll(".topic");
+
+
+cards.forEach(card => {
+
+    card.addEventListener(
+        "mousemove",
+        event => {
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                ((event.clientX - rect.left)
+                / rect.width) * 100;
+
+            const y =
+                ((event.clientY - rect.top)
+                / rect.height) * 100;
+
+            card.style.setProperty(
+                "--mx",
+                `${x}%`
+            );
+
+            card.style.setProperty(
+                "--my",
+                `${y}%`
+            );
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.setProperty(
+                "--mx",
+                "50%"
+            );
+
+            card.style.setProperty(
+                "--my",
+                "20%"
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   HERO PARALLAX
+========================================================= */
+
+const hero =
+    document.querySelector(".hero");
+
+const trajectory =
+    document.querySelector(".trajectory");
+
+const axisX =
+    document.querySelector(".axis-x");
+
+const axisY =
+    document.querySelector(".axis-y");
+
+
+hero.addEventListener(
+    "mousemove",
+    event => {
+
+        const x =
+            event.clientX /
+            window.innerWidth - 0.5;
+
+        const y =
+            event.clientY /
+            window.innerHeight - 0.5;
+
+
+        trajectory.style.marginLeft =
+            `${x * 25}px`;
+
+        trajectory.style.marginTop =
+            `${y * 20}px`;
+
+
+        axisX.style.transform =
+            `translateX(calc(-50% + ${x * 12}px))`;
+
+
+        axisY.style.transform =
+            `translateY(calc(-50% + ${y * 12}px))`;
+
+    }
+);
+
+
+hero.addEventListener(
+    "mouseleave",
+    () => {
+
+        trajectory.style.marginLeft = "0px";
+
+        trajectory.style.marginTop = "0px";
+
+        axisX.style.transform =
+            "translateX(-50%)";
+
+        axisY.style.transform =
+            "translateY(-50%)";
+
+    }
+);
+
+</script>
 
 
 </body>
 
 </html>
+
