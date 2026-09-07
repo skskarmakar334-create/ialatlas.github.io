@@ -11,7 +11,24 @@
     <meta name="description"
           content="Edexcel International A Level Mathematics Mechanics 2 Centres of Mass resources.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
+
+        :root {
+            --bg: #030914;
+            --bg-soft: #071322;
+            --panel: rgba(10, 24, 42, 0.74);
+            --panel-strong: rgba(7, 19, 34, 0.9);
+            --cyan: #59d7ff;
+            --blue: #328cff;
+            --text: #edf8ff;
+            --muted: #91a9bf;
+            --soft: #c9deee;
+            --line: rgba(89, 215, 255, 0.16);
+        }
 
         * {
             margin: 0;
@@ -19,145 +36,644 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 50% -10%, rgba(38, 126, 255, 0.18), transparent 36%),
+                radial-gradient(circle at 90% 35%, rgba(0, 210, 255, 0.06), transparent 28%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(83, 184, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(83, 184, 255, 0.035) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(to bottom, black, transparent 88%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(26, 133, 255, 0.055);
+            filter: blur(110px);
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: -3;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* HEADER */
+
         header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 18px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        header a {
-            color: white;
-            text-decoration: none;
+            background: rgba(3, 9, 20, 0.74);
+            border-bottom: 1px solid rgba(89, 215, 255, 0.1);
+            backdrop-filter: blur(20px);
         }
 
         .logo {
-            font-size: 27px;
-            font-weight: bold;
+            text-decoration: none;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
+        .logo::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 16px var(--cyan);
+            animation: pulse 2s infinite;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--soft);
+            font-size: 14px;
+            padding: 9px 15px;
+            border: 1px solid rgba(89, 215, 255, 0.18);
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover {
             color: white;
+            border-color: rgba(89, 215, 255, 0.55);
+            background: rgba(89, 215, 255, 0.07);
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 730px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px 90px;
+            overflow: hidden;
+            transition: transform 0.1s linear;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 830px;
+            height: 830px;
+            border: 1px solid rgba(89, 215, 255, 0.075);
+            border-radius: 50%;
+            animation: rotateSlow 32s linear infinite;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 590px;
+            height: 590px;
+            border: 1px dashed rgba(50, 140, 255, 0.12);
+            border-radius: 50%;
+            animation: rotateReverse 25s linear infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            max-width: 930px;
         }
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: 700;
             letter-spacing: 3px;
-            margin-bottom: 15px;
+            margin-bottom: 22px;
+        }
+
+        .hero-label::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 14px var(--cyan);
         }
 
         .hero h1 {
-            max-width: 850px;
-            margin: auto;
-            font-size: 48px;
-            line-height: 1.2;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(48px, 8vw, 86px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            background: linear-gradient(
+                120deg,
+                #ffffff 15%,
+                #9be9ff 52%,
+                #65a9ff 90%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero p {
             max-width: 720px;
-            margin: 20px auto 0;
-            color: #dcecff;
-            font-size: 18px;
+            margin: 25px auto 0;
+            color: var(--muted);
+            font-size: 17px;
         }
 
+        /* MASS DISTRIBUTION SYSTEM */
+
+        .mass-system {
+            position: relative;
+            width: min(850px, 94vw);
+            height: 285px;
+            margin: 55px auto 0;
+            border: 1px solid rgba(89, 215, 255, 0.16);
+            border-radius: 25px;
+            background: rgba(4, 15, 28, 0.58);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+            box-shadow:
+                inset 0 0 50px rgba(50, 140, 255, 0.04),
+                0 0 80px rgba(0, 150, 255, 0.05);
+        }
+
+        .mass-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(89, 215, 255, 0.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(89, 215, 255, 0.055) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.55;
+        }
+
+        .mass-axis {
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: 61%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(89, 215, 255, 0.7),
+                transparent
+            );
+        }
+
+        .mass-axis::before {
+            content: "x = 0";
+            position: absolute;
+            left: 0;
+            top: 13px;
+            font-size: 10px;
+            color: #65839c;
+        }
+
+        .mass-axis::after {
+            content: "POSITION →";
+            position: absolute;
+            right: 0;
+            top: -26px;
+            color: rgba(155, 233, 255, 0.5);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        .beam {
+            position: absolute;
+            left: 13%;
+            right: 13%;
+            top: 60%;
+            height: 5px;
+            border-radius: 20px;
+            background: linear-gradient(
+                90deg,
+                rgba(89, 215, 255, 0.18),
+                rgba(89, 215, 255, 0.8),
+                rgba(89, 215, 255, 0.18)
+            );
+            box-shadow: 0 0 18px rgba(89, 215, 255, 0.18);
+        }
+
+        .support {
+            position: absolute;
+            left: 50%;
+            top: 61%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 23px solid transparent;
+            border-right: 23px solid transparent;
+            border-top: 43px solid rgba(89, 215, 255, 0.16);
+            filter: drop-shadow(0 0 10px rgba(89, 215, 255, 0.18));
+        }
+
+        .support::after {
+            content: "";
+            position: absolute;
+            width: 75px;
+            height: 2px;
+            background: rgba(89, 215, 255, 0.25);
+            left: -37px;
+            top: 42px;
+        }
+
+        .mass {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--cyan);
+            box-shadow:
+                0 0 15px var(--cyan),
+                0 0 38px rgba(89, 215, 255, 0.65);
+        }
+
+        .mass-one {
+            width: 28px;
+            height: 28px;
+            left: 25%;
+            top: 55%;
+            animation: massFloat1 4s ease-in-out infinite;
+        }
+
+        .mass-two {
+            width: 43px;
+            height: 43px;
+            left: 69%;
+            top: 52%;
+            animation: massFloat2 4.5s ease-in-out infinite;
+        }
+
+        .mass-three {
+            width: 18px;
+            height: 18px;
+            left: 43%;
+            top: 57%;
+            animation: massFloat3 3.7s ease-in-out infinite;
+        }
+
+        .mass-label {
+            position: absolute;
+            color: #8cdfff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .label-one {
+            left: 23.5%;
+            top: 43%;
+        }
+
+        .label-two {
+            left: 68%;
+            top: 37%;
+        }
+
+        .label-three {
+            left: 40.5%;
+            top: 47%;
+        }
+
+        /* CENTRE OF MASS MARKER */
+
+        .com-marker {
+            position: absolute;
+            left: 50%;
+            top: 54%;
+            width: 31px;
+            height: 31px;
+            transform: translate(-50%, -50%);
+            border: 2px solid white;
+            border-radius: 50%;
+            background: rgba(89, 215, 255, 0.12);
+            box-shadow:
+                0 0 12px white,
+                0 0 30px var(--cyan),
+                0 0 70px rgba(89, 215, 255, 0.35);
+            animation: comPulse 2.5s ease-in-out infinite;
+        }
+
+        .com-marker::before,
+        .com-marker::after {
+            content: "";
+            position: absolute;
+            background: var(--cyan);
+        }
+
+        .com-marker::before {
+            width: 54px;
+            height: 1px;
+            left: -13px;
+            top: 13px;
+        }
+
+        .com-marker::after {
+            height: 54px;
+            width: 1px;
+            left: 13px;
+            top: -13px;
+        }
+
+        .com-label {
+            position: absolute;
+            left: 50%;
+            top: 34%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            text-shadow: 0 0 12px rgba(89, 215, 255, 0.7);
+        }
+
+        /* DATA STRIP */
+
+        .data-strip {
+            position: relative;
+            z-index: 10;
+            width: min(900px, 92%);
+            margin: -30px auto 70px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 1px solid rgba(89, 215, 255, 0.15);
+            border-radius: 18px;
+            background: rgba(7, 18, 33, 0.8);
+            backdrop-filter: blur(18px);
+            overflow: hidden;
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .data-item {
+            padding: 20px 15px;
+            text-align: center;
+            border-right: 1px solid rgba(89, 215, 255, 0.1);
+        }
+
+        .data-item:last-child {
+            border-right: none;
+        }
+
+        .data-value {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .data-label {
+            display: block;
+            margin-top: 3px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: #718ca5;
+        }
+
+        /* CONTENT */
+
         .container {
-            max-width: 950px;
+            width: min(980px, 92%);
             margin: auto;
-            padding: 60px 20px;
+            padding-bottom: 30px;
         }
 
         .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+            padding: 38px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(89, 215, 255, 0.13);
+            border-radius: 22px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(10, 27, 47, 0.78),
+                    rgba(5, 15, 28, 0.7)
+                );
+            backdrop-filter: blur(18px);
+            box-shadow:
+                0 18px 60px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255,255,255,0.025);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(35px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .lesson.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .lesson::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 65%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--cyan),
+                transparent
+            );
+            animation: scan 6s linear infinite;
+        }
+
+        .lesson:hover {
+            border-color: rgba(89, 215, 255, 0.27);
+            box-shadow:
+                0 22px 70px rgba(0, 0, 0, 0.28),
+                0 0 45px rgba(50, 140, 255, 0.045);
         }
 
         .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
+            color: var(--cyan);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 9px;
         }
 
         .lesson h2 {
-            font-size: 30px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(25px, 4vw, 34px);
+            line-height: 1.2;
             margin-bottom: 18px;
+            color: #f2fbff;
         }
 
         .lesson p {
-            color: #53657d;
+            color: var(--muted);
             margin-bottom: 15px;
         }
 
         .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
+            padding-left: 24px;
+            color: var(--muted);
         }
 
         .lesson li {
             margin-bottom: 9px;
         }
 
+        /* DEFINITION */
+
         .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            position: relative;
+            margin: 22px 0 5px;
+            padding: 22px 24px;
+            border: 1px solid rgba(89, 215, 255, 0.12);
+            border-left: 3px solid var(--cyan);
+            border-radius: 14px;
+            background: rgba(89, 215, 255, 0.045);
         }
+
+        .definition strong {
+            color: #dff7ff;
+        }
+
+        .definition p {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        /* FORMULAS */
 
         .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
+            position: relative;
+            margin: 21px 0;
+            padding: 20px;
+            border: 1px solid rgba(89, 215, 255, 0.16);
+            border-radius: 14px;
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(17, 55, 86, 0.75),
+                    rgba(6, 21, 38, 0.9)
+                );
+            color: #eafaff;
             text-align: center;
-            font-size: 19px;
-            font-weight: bold;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(89, 215, 255, 0.025);
         }
 
+        .formula::before {
+            content: "";
+            position: absolute;
+            left: -25%;
+            top: 0;
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.08),
+                transparent
+            );
+            transform: skewX(-20deg);
+            animation: formulaSweep 5s infinite;
+        }
+
+        /* EXAMPLES */
+
         .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
+            position: relative;
+            margin-top: 24px;
+            padding: 26px;
+            border: 1px solid rgba(91, 190, 255, 0.13);
+            border-radius: 16px;
+            background: rgba(3, 12, 23, 0.48);
         }
 
         .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
+            color: var(--cyan) !important;
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 12px !important;
         }
 
         .solution {
-            margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 13px;
+            border: 1px solid rgba(89, 215, 255, 0.1);
+            background: rgba(10, 25, 42, 0.72);
         }
 
+        .solution p:last-child {
+            margin-bottom: 0;
+        }
+
+        .solution strong {
+            color: #e8fbff;
+        }
+
+        /* QUESTIONS */
+
         .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(89, 215, 255, 0.1);
+            color: #d9e9f4;
+        }
+
+        .question:last-child {
+            border-bottom: none;
         }
 
         details {
@@ -165,46 +681,325 @@
         }
 
         summary {
+            display: inline-block;
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+            color: var(--cyan);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 7px 0;
         }
 
+        details p {
+            margin-top: 9px;
+        }
+
+        /* NAVIGATION */
+
         .navigation {
-            text-align: center;
-            padding: 10px 20px 60px;
+            width: min(980px, 92%);
+            margin: 25px auto 75px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
         }
 
         .button {
-            display: inline-block;
-            background: #32a9e8;
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 175px;
+            padding: 13px 20px;
+            border: 1px solid rgba(89, 215, 255, 0.18);
+            border-radius: 11px;
+            background: rgba(9, 28, 47, 0.72);
+            color: #dff7ff;
             text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 5px;
+            font-size: 14px;
+            font-weight: 700;
+            backdrop-filter: blur(12px);
+            transition: 0.3s ease;
         }
 
         .button:hover {
-            background: #168dca;
+            transform: translateY(-3px);
+            border-color: rgba(89, 215, 255, 0.55);
+            background: rgba(89, 215, 255, 0.08);
+            box-shadow: 0 0 25px rgba(89, 215, 255, 0.08);
         }
+
+        .button.primary {
+            border-color: rgba(89, 215, 255, 0.4);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(50, 140, 255, 0.3),
+                    rgba(89, 215, 255, 0.12)
+                );
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            border-top: 1px solid rgba(89, 215, 255, 0.1);
+            background: rgba(2, 7, 15, 0.9);
+            color: #71879c;
             text-align: center;
             padding: 30px 20px;
+            font-size: 13px;
         }
 
-        @media (max-width: 700px) {
+        /* PARTICLES */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle-bg {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 8px var(--cyan);
+            opacity: 0.35;
+            animation: drift linear infinite;
+        }
+
+        .p1 { left: 6%; top: 25%; animation-duration: 16s; }
+        .p2 { left: 17%; top: 72%; animation-duration: 20s; animation-delay: -4s; }
+        .p3 { left: 29%; top: 42%; animation-duration: 22s; animation-delay: -8s; }
+        .p4 { left: 72%; top: 18%; animation-duration: 18s; animation-delay: -5s; }
+        .p5 { left: 84%; top: 65%; animation-duration: 21s; animation-delay: -11s; }
+        .p6 { left: 94%; top: 34%; animation-duration: 17s; animation-delay: -3s; }
+        .p7 { left: 51%; top: 77%; animation-duration: 24s; animation-delay: -7s; }
+
+        /* ANIMATIONS */
+
+        @keyframes pulse {
+
+            0%, 100% {
+                opacity: 0.55;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+
+        }
+
+        @keyframes rotateSlow {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        @keyframes rotateReverse {
+
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+
+        }
+
+        @keyframes massFloat1 {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        @keyframes massFloat2 {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+        }
+
+        @keyframes massFloat3 {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        @keyframes comPulse {
+
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.75;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.12);
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes scan {
+
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 150%;
+            }
+
+        }
+
+        @keyframes formulaSweep {
+
+            0%, 55% {
+                left: -25%;
+            }
+
+            100% {
+                left: 130%;
+            }
+
+        }
+
+        @keyframes drift {
+
+            0% {
+                transform: translate3d(0, 0, 0);
+                opacity: 0.15;
+            }
+
+            50% {
+                transform: translate3d(15px, -35px, 0);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translate3d(-10px, -70px, 0);
+                opacity: 0.05;
+            }
+
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 760px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .back-link {
+                font-size: 12px;
+                padding: 8px 11px;
+            }
+
+            .hero {
+                min-height: 680px;
+                padding-top: 80px;
+            }
 
             .hero h1 {
-                font-size: 36px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .mass-system {
+                height: 230px;
+                margin-top: 40px;
+            }
+
+            .data-strip {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -20px;
+            }
+
+            .data-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .data-item:nth-child(-n+2) {
+                border-bottom: 1px solid rgba(89, 215, 255, 0.1);
             }
 
             .lesson {
-                padding: 25px;
+                padding: 26px 22px;
+                border-radius: 18px;
+            }
+
+            .formula {
+                font-size: 17px;
+                padding: 17px 12px;
+            }
+
+            .example {
+                padding: 20px;
+            }
+
+            .navigation {
+                margin-bottom: 55px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .lesson {
+                opacity: 1;
+                transform: none;
             }
 
         }
@@ -216,35 +1011,143 @@
 <body>
 
 
+<div class="particles">
+
+    <span class="particle-bg p1"></span>
+    <span class="particle-bg p2"></span>
+    <span class="particle-bg p3"></span>
+    <span class="particle-bg p4"></span>
+    <span class="particle-bg p5"></span>
+    <span class="particle-bg p6"></span>
+    <span class="particle-bg p7"></span>
+
+</div>
+
+
 <header>
 
     <a href="index.html" class="logo">
         IAL ATLAS
     </a>
 
-    <a href="mechanics-2.html">
+    <a href="mechanics-2.html" class="back-link">
         ← Mechanics 2
     </a>
 
 </header>
 
 
-<section class="hero">
+<section class="hero" id="hero">
 
-    <p class="hero-label">
-        MECHANICS 2 • TOPIC 02
-    </p>
+    <div class="hero-content">
 
-    <h1>
-        Centres of Mass
-    </h1>
+        <p class="hero-label">
+            MECHANICS 2 • TOPIC 02 • MASS DISTRIBUTION LAB
+        </p>
 
-    <p>
-        Learn how the centre of mass of particles and systems
-        can be found and used in mechanics problems.
-    </p>
+        <h1>
+            Centres<br>of Mass
+        </h1>
+
+        <p>
+            Explore how mass and position combine to determine the
+            centre of mass of particles and systems.
+        </p>
+
+
+        <div class="mass-system">
+
+            <div class="mass-grid"></div>
+
+            <div class="mass-axis"></div>
+
+            <div class="beam"></div>
+
+            <div class="support"></div>
+
+            <div class="mass mass-one"></div>
+            <div class="mass mass-two"></div>
+            <div class="mass mass-three"></div>
+
+            <span class="mass-label label-one">
+                m₁
+            </span>
+
+            <span class="mass-label label-two">
+                m₂
+            </span>
+
+            <span class="mass-label label-three">
+                m₃
+            </span>
+
+            <div class="com-marker"></div>
+
+            <div class="com-label">
+                CENTRE OF MASS
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+
+
+<div class="data-strip">
+
+    <div class="data-item">
+
+        <span class="data-value">
+            x̄
+        </span>
+
+        <span class="data-label">
+            CENTRE POSITION
+        </span>
+
+    </div>
+
+
+    <div class="data-item">
+
+        <span class="data-value">
+            Σ(mx)
+        </span>
+
+        <span class="data-label">
+            MASS × POSITION
+        </span>
+
+    </div>
+
+
+    <div class="data-item">
+
+        <span class="data-value">
+            Σm
+        </span>
+
+        <span class="data-label">
+            TOTAL MASS
+        </span>
+
+    </div>
+
+
+    <div class="data-item">
+
+        <span class="data-value">
+            M2
+        </span>
+
+        <span class="data-label">
+            ADVANCED MECHANICS
+        </span>
+
+    </div>
+
+</div>
 
 
 <main class="container">
@@ -268,7 +1171,9 @@
 
         <div class="definition">
 
-            <strong>Key idea</strong>
+            <strong>
+                Key idea
+            </strong>
 
             <p>
                 For particles arranged along a straight line,
@@ -341,7 +1246,9 @@
                 </p>
 
                 <p>
-                    <strong>x̄ = 3 m</strong>
+                    <strong>
+                        x̄ = 3 m
+                    </strong>
                 </p>
 
             </div>
@@ -451,7 +1358,9 @@
                 </p>
 
                 <p>
-                    <strong>x̄ = 4.9 m</strong>
+                    <strong>
+                        x̄ = 4.9 m
+                    </strong>
                 </p>
 
             </div>
@@ -512,7 +1421,9 @@
                 </p>
 
                 <p>
-                    <strong>x̄ = 4 m</strong>
+                    <strong>
+                        x̄ = 4 m
+                    </strong>
                 </p>
 
             </details>
@@ -540,7 +1451,6 @@
             </details>
 
         </div>
-
 
     </section>
 
@@ -579,6 +1489,10 @@
         ← Back to Mechanics 2
     </a>
 
+    <a href="mechanics-work-and-energy.html" class="button primary">
+        Next Topic →
+    </a>
+
     <a href="mechanics.html" class="button">
         Mechanics
     </a>
@@ -591,6 +1505,137 @@
     © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
 
 </footer>
+
+
+<script>
+
+    /* SCROLL REVEAL */
+
+    const lessons = document.querySelectorAll(".lesson");
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    lessons.forEach(lesson => observer.observe(lesson));
+
+
+    /* HERO PARALLAX */
+
+    const hero = document.getElementById("hero");
+
+    window.addEventListener("scroll", () => {
+
+        const scrollY = window.scrollY;
+
+        if (scrollY < 900) {
+
+            hero.style.transform =
+                `translateY(${scrollY * 0.045}px)`;
+
+        }
+
+    });
+
+
+    /* CARD LIGHT EFFECT */
+
+    lessons.forEach(card => {
+
+        card.addEventListener("mousemove", event => {
+
+            const rect = card.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            card.style.background =
+                `radial-gradient(
+                    circle at ${x}px ${y}px,
+                    rgba(89, 215, 255, 0.09),
+                    rgba(10, 27, 47, 0.78) 34%,
+                    rgba(5, 15, 28, 0.7) 75%
+                )`;
+
+        });
+
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.background =
+                "linear-gradient(145deg, rgba(10, 27, 47, 0.78), rgba(5, 15, 28, 0.7))";
+
+        });
+
+    });
+
+
+    /* CENTRE OF MASS DATA PULSE */
+
+    const dataValues =
+        document.querySelectorAll(".data-value");
+
+    setInterval(() => {
+
+        dataValues.forEach((value, index) => {
+
+            if (index === 0) {
+
+                value.style.textShadow =
+                    "0 0 18px rgba(89, 215, 255, 0.8)";
+
+                setTimeout(() => {
+
+                    value.style.textShadow = "none";
+
+                }, 600);
+
+            }
+
+        });
+
+    }, 1900);
+
+
+    /* MASS SYSTEM MICRO-MOVEMENT */
+
+    const massSystem =
+        document.querySelector(".mass-system");
+
+    document.addEventListener("mousemove", event => {
+
+        const x =
+            (event.clientX / window.innerWidth - 0.5) * 2;
+
+        const y =
+            (event.clientY / window.innerHeight - 0.5) * 2;
+
+        massSystem.style.transform =
+            `perspective(700px) rotateY(${x * 2}deg) rotateX(${y * -1.5}deg)`;
+
+    });
+
+    document.addEventListener("mouseleave", () => {
+
+        massSystem.style.transform =
+            "perspective(700px) rotateY(0deg) rotateX(0deg)";
+
+    });
+
+</script>
 
 
 </body>
