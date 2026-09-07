@@ -2,243 +2,1665 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mathematical Models in Mechanics | IAL ATLAS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Mathematical Models in Mechanics | IAL ATLAS</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<meta name="description"
+content="Edexcel International A Level Mathematics Mechanics 1 — Mathematical Models in Mechanics.">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
 
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-        }
+<style>
 
-        .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+/* =========================================================
+   IAL ATLAS
+   MATHEMATICAL MODELS IN MECHANICS
+   YEAR 3000 LEARNING SYSTEM
+========================================================= */
 
-        .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
+:root {
 
-        .hero h1 {
-            max-width: 900px;
-            margin: auto;
-            font-size: 48px;
-            line-height: 1.2;
-        }
+    --bg: #020711;
+    --bg2: #06172c;
 
-        .hero p {
-            max-width: 720px;
-            margin: 20px auto 0;
-            color: #dcecff;
-            font-size: 18px;
-        }
+    --glass: rgba(9,29,52,0.64);
+    --glass-soft: rgba(255,255,255,0.035);
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    --cyan: #6de2ff;
+    --blue: #32a9e8;
+    --electric: #3bbcff;
 
-        .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
-        }
+    --white: #f4fbff;
+    --text: #a9c5d6;
+    --muted: #71899c;
 
-        .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+    --border: rgba(105,221,255,0.15);
+    --border-hover: rgba(105,221,255,0.42);
 
-        .lesson h2 {
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
+}
 
-        .lesson h3 {
-            font-size: 21px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .lesson p {
-            color: #53657d;
-            margin-bottom: 15px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
-        }
+body {
 
-        .lesson li {
-            margin-bottom: 9px;
-        }
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
-        .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
+    color: var(--white);
 
-        .definition strong {
-            color: #10233f;
-        }
+    line-height: 1.75;
 
-        .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
+    background:
 
-        .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(50,169,232,0.16),
+            transparent 35%
+        ),
 
-        .solution {
-            margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
-        }
+        radial-gradient(
+            circle at 5% 45%,
+            rgba(50,169,232,0.06),
+            transparent 25%
+        ),
 
-        .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 19px;
-            font-weight: bold;
-        }
+        #020711;
 
-        .mistake {
-            border-left: 5px solid #e67e22;
-            background: #fff8ef;
-            padding: 18px;
-            margin-top: 15px;
-            border-radius: 8px;
-        }
+    min-height: 100vh;
 
-        .exam-tip {
-            border-left: 5px solid #32a9e8;
-            background: #eef8ff;
-            padding: 18px;
-            margin-top: 15px;
-            border-radius: 8px;
-        }
+    overflow-x: hidden;
+}
 
-        .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
-        }
 
-        .question:last-child {
-            border-bottom: none;
-        }
+/* =========================================================
+   TECH GRID
+========================================================= */
 
-        details {
-            margin-top: 12px;
-        }
+body::before {
 
-        summary {
-            cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
-        }
+    content: "";
 
-        .navigation {
-            text-align: center;
-            padding: 10px 20px 60px;
-        }
+    position: fixed;
 
-        .button {
-            display: inline-block;
-            background: #32a9e8;
-            color: white;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 5px;
-        }
+    inset: 0;
 
-        .button:hover {
-            background: #168dca;
-        }
+    background-image:
 
-        footer {
-            background: #071b36;
-            color: #b9c9dc;
-            text-align: center;
-            padding: 30px 20px;
-        }
+        linear-gradient(
+            rgba(105,221,255,0.025) 1px,
+            transparent 1px
+        ),
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 36px;
-            }
+        linear-gradient(
+            90deg,
+            rgba(105,221,255,0.025) 1px,
+            transparent 1px
+        );
 
-            .lesson {
-                padding: 25px;
-            }
-        }
-    </style>
+    background-size: 58px 58px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    pointer-events: none;
+
+    z-index: -20;
+}
+
+
+/* =========================================================
+   AMBIENT PARTICLES
+========================================================= */
+
+.space {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -10;
+}
+
+.particle {
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan),
+        0 0 18px rgba(105,221,255,0.4);
+
+    opacity: 0.35;
+
+    animation:
+        drift linear infinite;
+}
+
+.p1 { left: 7%; top: 18%; animation-duration: 20s; }
+.p2 { left: 18%; top: 73%; animation-duration: 26s; }
+.p3 { left: 31%; top: 32%; animation-duration: 22s; }
+.p4 { left: 43%; top: 81%; animation-duration: 29s; }
+.p5 { left: 55%; top: 19%; animation-duration: 18s; }
+.p6 { left: 67%; top: 64%; animation-duration: 24s; }
+.p7 { left: 79%; top: 28%; animation-duration: 21s; }
+.p8 { left: 92%; top: 76%; animation-duration: 27s; }
+.p9 { left: 48%; top: 48%; animation-duration: 25s; }
+.p10 { left: 85%; top: 45%; animation-duration: 31s; }
+
+@keyframes drift {
+
+    0% {
+        transform: translate(0,0);
+        opacity: 0.04;
+    }
+
+    50% {
+        transform: translate(35px,-50px);
+        opacity: 0.65;
+    }
+
+    100% {
+        transform: translate(-20px,-105px);
+        opacity: 0.03;
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: 74px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background:
+        rgba(2,7,17,0.75);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    border-bottom:
+        1px solid rgba(105,221,255,0.10);
+}
+
+.logo {
+
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.logo::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 28px;
+
+    height: 2px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
+    transition:
+        width 0.3s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.header-link {
+
+    color: #b8d9e9;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 10px 16px;
+
+    border:
+        1px solid rgba(105,221,255,0.14);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition:
+        0.3s ease;
+}
+
+.header-link:hover {
+
+    color: white;
+
+    border-color:
+        var(--border-hover);
+
+    background:
+        rgba(105,221,255,0.08);
+
+    transform:
+        translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 590px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(50,169,232,0.13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(50,169,232,0.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(0,200,255,0.07),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #020711,
+            #06172c 70%,
+            #020711
+        );
+}
+
+
+/* =========================================================
+   ORBITAL MODEL
+========================================================= */
+
+.orbit {
+
+    position: absolute;
+
+    border:
+        1px solid rgba(105,221,255,0.09);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation:
+        orbitSpin linear infinite;
+}
+
+.orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan),
+        0 0 28px var(--cyan);
+
+    top: 50%;
+
+    right: -4px;
+}
+
+.orbit-one {
+
+    width: 500px;
+
+    height: 300px;
+
+    transform:
+        rotate(-20deg);
+
+    animation-duration: 25s;
+}
+
+.orbit-two {
+
+    width: 720px;
+
+    height: 420px;
+
+    transform:
+        rotate(25deg);
+
+    animation-duration: 34s;
+
+    opacity: 0.5;
+}
+
+.orbit-three {
+
+    width: 950px;
+
+    height: 540px;
+
+    transform:
+        rotate(-12deg);
+
+    animation-duration: 45s;
+
+    opacity: 0.3;
+}
+
+@keyframes orbitSpin {
+
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+
+}
+
+
+/* =========================================================
+   MODEL PARTICLE
+========================================================= */
+
+.model-particle {
+
+    position: absolute;
+
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 12px white,
+        0 0 30px var(--cyan);
+
+    animation:
+        modelTravel 7s ease-in-out infinite;
+}
+
+@keyframes modelTravel {
+
+    0% {
+        transform:
+            translate(-280px,80px);
+    }
+
+    50% {
+        transform:
+            translate(280px,-90px);
+    }
+
+    100% {
+        transform:
+            translate(-280px,80px);
+    }
+
+}
+
+
+/* =========================================================
+   FORCE LINES
+========================================================= */
+
+.force {
+
+    position: absolute;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    opacity: 0.35;
+}
+
+.force::after {
+
+    content: "›";
+
+    position: absolute;
+
+    right: 0;
+
+    top: -10px;
+
+    color: var(--cyan);
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 12px var(--cyan);
+}
+
+.force-one {
+
+    width: 230px;
+
+    left: 5%;
+
+    top: 35%;
+
+    transform:
+        rotate(-18deg);
+}
+
+.force-two {
+
+    width: 210px;
+
+    right: 6%;
+
+    top: 62%;
+
+    transform:
+        rotate(20deg);
+}
+
+.force-three {
+
+    width: 160px;
+
+    right: 15%;
+
+    top: 25%;
+
+    transform:
+        rotate(-40deg);
+
+    opacity: 0.18;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 1050px;
+
+    padding:
+        40px 20px;
+}
+
+.hero-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        9px 17px;
+
+    margin-bottom: 25px;
+
+    border:
+        1px solid rgba(105,221,255,0.20);
+
+    border-radius: 100px;
+
+    background:
+        rgba(105,221,255,0.045);
+
+    color:
+        #8fe4ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.status {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan),
+        0 0 20px var(--cyan);
+
+    animation:
+        pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+.hero h1 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(45px,6.8vw,86px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    font-weight: 700;
+
+    max-width: 1050px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #d4f4ff 45%,
+            #45b9ff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 22px
+            rgba(50,169,232,0.22)
+        );
+
+    animation:
+        titleIn 1s ease forwards;
+}
+
+@keyframes titleIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+        filter:
+            blur(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin:
+        25px auto 0;
+
+    color:
+        #a9c6d9;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.hero-readout {
+
+    position: absolute;
+
+    bottom: 28px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    gap: 28px;
+
+    white-space: nowrap;
+
+    color:
+        #648398;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.hero-readout span::before {
+
+    content: "◆";
+
+    color: var(--cyan);
+
+    margin-right: 7px;
+
+    font-size: 5px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding:
+        100px 22px;
+}
+
+
+/* =========================================================
+   LESSON CARDS
+========================================================= */
+
+.lesson {
+
+    --mx: 50%;
+    --my: 20%;
+
+    position: relative;
+
+    margin-bottom: 28px;
+
+    padding:
+        38px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+    background:
+
+        radial-gradient(
+            circle at var(--mx) var(--my),
+            rgba(105,221,255,0.08),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(16,42,70,0.66),
+            rgba(3,14,29,0.78)
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+
+        inset
+        0 1px 0
+        rgba(255,255,255,0.055),
+
+        0 25px 75px
+        rgba(0,0,0,0.22);
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+.lesson:hover {
+
+    border-color:
+        rgba(105,221,255,0.26);
+
+    box-shadow:
+
+        inset
+        0 1px 0
+        rgba(255,255,255,0.08),
+
+        0 30px 90px
+        rgba(0,0,0,0.35);
+}
+
+
+/* glass sweep */
+
+.lesson::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -130%;
+
+    left: -35%;
+
+    width: 22%;
+
+    height: 350%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.06),
+            transparent
+        );
+
+    transform:
+        rotate(20deg);
+
+    transition:
+        left 1s ease;
+
+    pointer-events: none;
+}
+
+.lesson:hover::before {
+    left: 120%;
+}
+
+
+/* =========================================================
+   LESSON HEADER
+========================================================= */
+
+.lesson-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        var(--cyan);
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 13px;
+}
+
+.lesson-number::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 20px;
+
+    height: 1px;
+
+    margin:
+        0 10px 3px 0;
+
+    background:
+        var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan);
+}
+
+.lesson h2 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(27px,4vw,36px);
+
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 20px;
+}
+
+.lesson h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 20px;
+
+    margin-top: 28px;
+
+    margin-bottom: 10px;
+
+    color:
+        #e7f9ff;
+}
+
+.lesson p,
+.lesson li {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        #91aabd;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.lesson p {
+    margin-bottom: 15px;
+}
+
+.lesson ul {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding-left: 25px;
+
+    margin-top: 10px;
+}
+
+.lesson li {
+    margin-bottom: 8px;
+}
+
+.lesson li::marker {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   DEFINITION PANEL
+========================================================= */
+
+.definition {
+
+    position: relative;
+
+    margin:
+        22px 0;
+
+    padding:
+        22px 24px;
+
+    border:
+        1px solid rgba(105,221,255,0.16);
+
+    border-left:
+        3px solid var(--cyan);
+
+    border-radius:
+        0 14px 14px 0;
+
+    background:
+        rgba(105,221,255,0.045);
+
+    box-shadow:
+        inset
+        0 0 30px
+        rgba(105,221,255,0.025);
+}
+
+.definition strong {
+
+    display: block;
+
+    color:
+        #dff9ff;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.definition p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EXAMPLE PANEL
+========================================================= */
+
+.example {
+
+    position: relative;
+
+    margin-top: 22px;
+
+    padding:
+        26px;
+
+    border:
+        1px solid rgba(105,221,255,0.12);
+
+    border-radius: 16px;
+
+    background:
+        rgba(2,10,22,0.45);
+
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,0.035);
+}
+
+.example-title {
+
+    color:
+        var(--cyan) !important;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        10px !important;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.solution {
+
+    margin-top: 18px;
+
+    padding:
+        20px;
+
+    border:
+        1px solid rgba(105,221,255,0.10);
+
+    border-radius: 12px;
+
+    background:
+        rgba(105,221,255,0.035);
+}
+
+.solution strong {
+    color: #e3f9ff;
+}
+
+
+/* =========================================================
+   MISTAKE / EXAM TIP
+========================================================= */
+
+.mistake,
+.exam-tip {
+
+    position: relative;
+
+    margin-top: 16px;
+
+    padding:
+        19px 21px;
+
+    border-radius:
+        0 13px 13px 0;
+}
+
+.mistake {
+
+    border-left:
+        3px solid #ffae63;
+
+    background:
+        rgba(255,174,99,0.055);
+
+    border-top:
+        1px solid rgba(255,174,99,0.10);
+
+    border-right:
+        1px solid rgba(255,174,99,0.08);
+
+    border-bottom:
+        1px solid rgba(255,174,99,0.08);
+}
+
+.mistake strong {
+    color: #ffc68f;
+}
+
+.exam-tip {
+
+    border-left:
+        3px solid var(--cyan);
+
+    background:
+        rgba(105,221,255,0.045);
+
+    border-top:
+        1px solid rgba(105,221,255,0.10);
+
+    border-right:
+        1px solid rgba(105,221,255,0.08);
+
+    border-bottom:
+        1px solid rgba(105,221,255,0.08);
+}
+
+
+/* =========================================================
+   FORMULA DISPLAY
+========================================================= */
+
+.formula {
+
+    position: relative;
+
+    margin:
+        18px 0;
+
+    padding:
+        21px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(105,221,255,0.18);
+
+    border-radius: 13px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(13,40,66,0.85),
+            rgba(2,12,25,0.90)
+        );
+
+    color:
+        #e7faff;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    box-shadow:
+
+        inset
+        0 1px 0
+        rgba(255,255,255,0.05),
+
+        0 0 25px
+        rgba(50,169,232,0.04);
+}
+
+.formula::before {
+
+    content: "SYSTEM NOTE";
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        rgba(105,221,255,0.55);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   PRACTICE QUESTIONS
+========================================================= */
+
+.question {
+
+    position: relative;
+
+    padding:
+        22px 0;
+
+    border-bottom:
+        1px solid rgba(105,221,255,0.09);
+}
+
+.question:last-child {
+    border-bottom: none;
+}
+
+.question > strong {
+
+    color:
+        #d9f5ff;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 14px;
+}
+
+details {
+    margin-top: 13px;
+}
+
+summary {
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid rgba(105,221,255,0.14);
+
+    border-radius: 8px;
+
+    background:
+        rgba(105,221,255,0.035);
+
+    color:
+        var(--cyan);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+        0.3s ease;
+}
+
+summary:hover {
+
+    background:
+        rgba(105,221,255,0.09);
+
+    border-color:
+        rgba(105,221,255,0.30);
+}
+
+details p {
+
+    margin-top: 15px;
+
+    padding:
+        15px 18px;
+
+    border-left:
+        2px solid var(--cyan);
+
+    background:
+        rgba(105,221,255,0.035);
+
+    border-radius:
+        0 10px 10px 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+
+    text-align: center;
+
+    padding:
+        10px 20px 70px;
+}
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 5px;
+
+    padding:
+        13px 21px;
+
+    border:
+        1px solid rgba(105,221,255,0.18);
+
+    border-radius: 11px;
+
+    background:
+        rgba(105,221,255,0.045);
+
+    color:
+        #bcecff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        0.3s ease;
+}
+
+.button:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(105,221,255,0.40);
+
+    background:
+        rgba(105,221,255,0.09);
+
+    box-shadow:
+        0 10px 30px
+        rgba(50,169,232,0.10);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(105,221,255,0.08);
+
+    background:
+        #01050c;
+
+    color:
+        #5f778a;
+
+    font-size: 12px;
+}
+
+footer strong {
+    color:
+        #9ccfe2;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s ease;
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    header {
+
+        height: 68px;
+
+        padding:
+            0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .header-link {
+
+        font-size: 10px;
+
+        padding:
+            8px 11px;
+    }
+
+    .hero {
+
+        min-height: 570px;
+    }
+
+    .hero h1 {
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+
+        font-size: 14px;
+    }
+
+    .hero-readout {
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        font-size: 7px;
+    }
+
+    .hero-readout span:nth-child(2),
+    .hero-readout span:nth-child(3) {
+        display: none;
+    }
+
+    .orbit-one {
+
+        width: 380px;
+
+        height: 240px;
+    }
+
+    .orbit-two {
+
+        width: 540px;
+
+        height: 320px;
+    }
+
+    .orbit-three {
+        display: none;
+    }
+
+    .force {
+        display: none;
+    }
+
+    .model-particle {
+        animation-duration: 8s;
+    }
+
+    .container {
+
+        padding:
+            75px 16px;
+    }
+
+    .lesson {
+
+        padding:
+            27px 22px;
+
+        border-radius: 18px;
+    }
+
+    .lesson h2 {
+        font-size: 28px;
+    }
+
+    .formula {
+        font-size: 14px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
+
+</style>
+
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     AMBIENT SPACE
+===================================================== -->
+
+<div class="space" aria-hidden="true">
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+    <div class="particle p9"></div>
+    <div class="particle p10"></div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -246,588 +1668,1063 @@
         IAL ATLAS
     </a>
 
-    <a href="mechanics-1.html">
+    <a href="mechanics-1.html"
+       class="header-link">
+
         ← Mechanics 1
+
     </a>
 
 </header>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
 
-    <p class="hero-label">
-        MECHANICS 1 • TOPIC 01
+    <div class="orbit orbit-one"></div>
+
+    <div class="orbit orbit-two"></div>
+
+    <div class="orbit orbit-three"></div>
+
+    <div class="model-particle"></div>
+
+    <div class="force force-one"></div>
+
+    <div class="force force-two"></div>
+
+    <div class="force force-three"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+
+            <span class="status"></span>
+
+            M1 • TOPIC 01 • MODELLING SYSTEM
+
+        </div>
+
+
+        <h1>
+            Mathematical Models in Mechanics
+        </h1>
+
+
+        <p class="hero-description">
+
+            Learn how real physical situations are simplified
+            into mathematical models that can be analysed,
+            solved and tested.
+
+        </p>
+
+    </div>
+
+
+    <div class="hero-readout">
+
+        <span>MODELLING CORE</span>
+
+        <span>FOUNDATION LEVEL</span>
+
+        <span>IAL MATHEMATICS</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LESSON CONTENT
+===================================================== -->
+
+<main class="container">
+
+
+<!-- =====================================================
+     LESSON 01
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 01
     </p>
 
-    <h1>
-        Mathematical Models in Mechanics
-    </h1>
+    <h2>
+        What is a Mathematical Model?
+    </h2>
 
     <p>
-        Learn how mechanics problems are simplified into mathematical models.
+        A mathematical model is a simplified representation
+        of a real-life situation using mathematics.
+    </p>
+
+    <p>
+        In mechanics, real objects and situations can be complicated.
+        A model removes details that are not important to the problem
+        so that mathematical methods can be used.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            DEFINITION
+        </strong>
+
+        <p>
+            A mathematical model represents a physical situation
+            using assumptions and mathematical relationships.
+        </p>
+
+    </div>
+
+
+    <h3>
+        Why do we use models?
+    </h3>
+
+    <ul>
+
+        <li>
+            Real physical situations can be complicated.
+        </li>
+
+        <li>
+            Ignoring unnecessary details makes calculations possible.
+        </li>
+
+        <li>
+            The model allows us to predict motion and forces.
+        </li>
+
+        <li>
+            The model can then be compared with the real situation.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     LESSON 02
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 02
+    </p>
+
+    <h2>
+        Particles
+    </h2>
+
+    <p>
+        A particle is an object whose size and shape are ignored.
+        Its entire mass is treated as though it acts at a single point.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            PARTICLE MODEL
+        </strong>
+
+        <p>
+            The dimensions and shape of the object are ignored,
+            while its mass is considered concentrated at one point.
+        </p>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            WORKED EXAMPLE
+        </p>
+
+        <p>
+            A car travels along a straight road and is modelled
+            as a particle.
+        </p>
+
+
+        <div class="solution">
+
+            <strong>
+                What is being ignored?
+            </strong>
+
+            <p>
+                The size and shape of the car are ignored.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LESSON 03
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 03
+    </p>
+
+    <h2>
+        Strings
+    </h2>
+
+
+    <h3>
+        Light string
+    </h3>
+
+    <p>
+        A string is described as light when its mass is considered
+        negligible.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            LIGHT STRING
+        </strong>
+
+        <p>
+            Negligible mass.
+        </p>
+
+    </div>
+
+
+    <h3>
+        Inextensible string
+    </h3>
+
+    <p>
+        An inextensible string does not stretch.
+        Therefore, its length remains constant while it is taut.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            INEXTENSIBLE STRING
+        </strong>
+
+        <p>
+            Constant length.
+        </p>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            WORKED EXAMPLE
+        </p>
+
+        <p>
+            Two particles are connected by a light,
+            inextensible string.
+        </p>
+
+
+        <div class="solution">
+
+            <p>
+                The string has negligible mass and does not stretch.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LESSON 04
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 04
+    </p>
+
+    <h2>
+        Smooth and Rough Surfaces
+    </h2>
+
+
+    <h3>
+        Smooth surface
+    </h3>
+
+    <p>
+        A smooth surface means that friction is ignored.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            SMOOTH SURFACE
+        </strong>
+
+        <p>
+            No frictional force.
+        </p>
+
+    </div>
+
+
+    <h3>
+        Rough surface
+    </h3>
+
+    <p>
+        A rough surface allows friction to act between the
+        object and the surface.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            ROUGH SURFACE
+        </strong>
+
+        <p>
+            Friction may act.
+        </p>
+
+    </div>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            WORKED EXAMPLE
+        </p>
+
+        <p>
+            A particle moves along a smooth horizontal surface.
+        </p>
+
+
+        <div class="solution">
+
+            <p>
+                Since the surface is smooth, friction is ignored.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LESSON 05
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 05
+    </p>
+
+    <h2>
+        Uniform Objects
+    </h2>
+
+    <p>
+        An object is uniform when its mass is distributed evenly
+        throughout the object.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            UNIFORM OBJECT
+        </strong>
+
+        <p>
+            Mass is distributed evenly.
+        </p>
+
+    </div>
+
+
+    <p>
+        This assumption becomes particularly important later when
+        studying centres of mass and rigid bodies.
     </p>
 
 </section>
 
 
-<main class="container">
+<!-- =====================================================
+     LESSON 06
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 06
+    </p>
+
+    <h2>
+        Rigid Bodies
+    </h2>
+
+    <p>
+        A rigid body is an object whose shape is assumed not to change.
+    </p>
 
 
-    <!-- LESSON 1 -->
+    <div class="definition">
 
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 01</p>
-
-        <h2>What is a Mathematical Model?</h2>
+        <strong>
+            RIGID BODY
+        </strong>
 
         <p>
-            A mathematical model is a simplified representation of a
-            real-life situation using mathematics.
+            Shape does not change.
         </p>
+
+    </div>
+
+
+    <p>
+        This allows us to study forces and turning effects without
+        considering deformation of the object.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     LESSON 07
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        LESSON 07
+    </p>
+
+    <h2>
+        Choosing the Correct Model
+    </h2>
+
+    <p>
+        In an exam question, look carefully at the words used
+        to describe the situation.
+    </p>
+
+
+    <ul>
+
+        <li>
+            <strong>Particle</strong>
+            → ignore size and shape.
+        </li>
+
+        <li>
+            <strong>Light string</strong>
+            → ignore string mass.
+        </li>
+
+        <li>
+            <strong>Inextensible</strong>
+            → string does not stretch.
+        </li>
+
+        <li>
+            <strong>Smooth</strong>
+            → ignore friction.
+        </li>
+
+        <li>
+            <strong>Rough</strong>
+            → friction may act.
+        </li>
+
+        <li>
+            <strong>Uniform</strong>
+            → mass is evenly distributed.
+        </li>
+
+        <li>
+            <strong>Rigid</strong>
+            → shape does not change.
+        </li>
+
+    </ul>
+
+
+    <div class="exam-tip">
+
+        <strong>
+            EXAM TIP
+        </strong>
 
         <p>
-            In mechanics, real objects and situations can be complicated.
-            A model removes details that are not important to the problem
-            so that mathematical methods can be used.
+            When a question gives a modelling assumption,
+            use that exact assumption when deciding which
+            forces or properties can be ignored.
         </p>
 
-        <div class="definition">
+    </div>
 
-            <strong>Definition</strong>
+</section>
+
+
+<!-- =====================================================
+     WORKED EXAMPLE
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        WORKED EXAMPLE
+    </p>
+
+    <h2>
+        Putting the Ideas Together
+    </h2>
+
+
+    <div class="example">
+
+        <p>
+            A particle of mass 4 kg is attached to another particle
+            by a light, inextensible string. The string passes over
+            a smooth pulley.
+        </p>
+
+
+        <h3>
+            Identify the modelling assumptions.
+        </h3>
+
+
+        <div class="solution">
 
             <p>
-                A mathematical model represents a physical situation
-                using assumptions and mathematical relationships.
-            </p>
-
-        </div>
-
-        <h3>Why do we use models?</h3>
-
-        <ul>
-            <li>Real physical situations can be complicated.</li>
-            <li>Ignoring unnecessary details makes calculations possible.</li>
-            <li>The model allows us to predict motion and forces.</li>
-            <li>The model can then be compared with the real situation.</li>
-        </ul>
-
-    </section>
-
-
-    <!-- LESSON 2 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 02</p>
-
-        <h2>Particles</h2>
-
-        <p>
-            A particle is an object whose size and shape are ignored.
-            Its entire mass is treated as though it acts at a single point.
-        </p>
-
-        <div class="definition">
-
-            <strong>Particle model</strong>
-
-            <p>
-                The dimensions and shape of the object are ignored,
-                while its mass is considered concentrated at one point.
-            </p>
-
-        </div>
-
-        <div class="example">
-
-            <p class="example-title">
-                Example
-            </p>
-
-            <p>
-                A car travels along a straight road and is modelled
-                as a particle.
-            </p>
-
-            <div class="solution">
-
-                <strong>What is being ignored?</strong>
-
-                <p>
-                    The size and shape of the car are ignored.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- LESSON 3 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 03</p>
-
-        <h2>Strings</h2>
-
-        <h3>Light string</h3>
-
-        <p>
-            A string is described as light when its mass is considered
-            negligible.
-        </p>
-
-        <div class="definition">
-
-            <strong>Light string = negligible mass</strong>
-
-        </div>
-
-        <h3>Inextensible string</h3>
-
-        <p>
-            An inextensible string does not stretch.
-            Therefore, its length remains constant while it is taut.
-        </p>
-
-        <div class="definition">
-
-            <strong>Inextensible string = constant length</strong>
-
-        </div>
-
-        <div class="example">
-
-            <p class="example-title">
-                Example
-            </p>
-
-            <p>
-                Two particles are connected by a light,
-                inextensible string.
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    The string has negligible mass and does not stretch.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- LESSON 4 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 04</p>
-
-        <h2>Smooth and Rough Surfaces</h2>
-
-        <h3>Smooth surface</h3>
-
-        <p>
-            A smooth surface means that friction is ignored.
-        </p>
-
-        <div class="definition">
-
-            <strong>Smooth surface → no frictional force</strong>
-
-        </div>
-
-        <h3>Rough surface</h3>
-
-        <p>
-            A rough surface allows friction to act between the
-            object and the surface.
-        </p>
-
-        <div class="definition">
-
-            <strong>Rough surface → friction may act</strong>
-
-        </div>
-
-        <div class="example">
-
-            <p class="example-title">
-                Example
+                <strong>Particle:</strong>
+                The sizes and shapes of the objects are ignored.
             </p>
 
             <p>
-                A particle moves along a smooth horizontal surface.
+                <strong>Light string:</strong>
+                The mass of the string is negligible.
             </p>
-
-            <div class="solution">
-
-                <p>
-                    Since the surface is smooth, friction is ignored.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- LESSON 5 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 05</p>
-
-        <h2>Uniform Objects</h2>
-
-        <p>
-            An object is uniform when its mass is distributed evenly
-            throughout the object.
-        </p>
-
-        <div class="definition">
-
-            <strong>
-                Uniform object → mass is distributed evenly.
-            </strong>
-
-        </div>
-
-        <p>
-            This assumption becomes particularly important later when
-            studying centres of mass and rigid bodies.
-        </p>
-
-    </section>
-
-
-    <!-- LESSON 6 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 06</p>
-
-        <h2>Rigid Bodies</h2>
-
-        <p>
-            A rigid body is an object whose shape is assumed not to change.
-        </p>
-
-        <div class="definition">
-
-            <strong>Rigid body → shape does not change.</strong>
-
-        </div>
-
-        <p>
-            This allows us to study forces and turning effects without
-            considering deformation of the object.
-        </p>
-
-    </section>
-
-
-    <!-- LESSON 7 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">LESSON 07</p>
-
-        <h2>Choosing the Correct Model</h2>
-
-        <p>
-            In an exam question, look carefully at the words used
-            to describe the situation.
-        </p>
-
-        <ul>
-
-            <li>
-                <strong>Particle</strong> → ignore size and shape.
-            </li>
-
-            <li>
-                <strong>Light string</strong> → ignore string mass.
-            </li>
-
-            <li>
-                <strong>Inextensible</strong> → string does not stretch.
-            </li>
-
-            <li>
-                <strong>Smooth</strong> → ignore friction.
-            </li>
-
-            <li>
-                <strong>Rough</strong> → friction may act.
-            </li>
-
-            <li>
-                <strong>Uniform</strong> → mass is evenly distributed.
-            </li>
-
-            <li>
-                <strong>Rigid</strong> → shape does not change.
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- WORKED EXAMPLE -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">WORKED EXAMPLE</p>
-
-        <h2>Putting the Ideas Together</h2>
-
-        <div class="example">
 
             <p>
-                A particle of mass 4 kg is attached to another particle
-                by a light, inextensible string. The string passes over
-                a smooth pulley.
+                <strong>Inextensible:</strong>
+                The string does not stretch.
             </p>
-
-            <h3>Identify the modelling assumptions.</h3>
-
-            <div class="solution">
-
-                <p>
-                    <strong>Particle:</strong>
-                    The sizes and shapes of the objects are ignored.
-                </p>
-
-                <p>
-                    <strong>Light string:</strong>
-                    The mass of the string is negligible.
-                </p>
-
-                <p>
-                    <strong>Inextensible:</strong>
-                    The string does not stretch.
-                </p>
-
-                <p>
-                    <strong>Smooth pulley:</strong>
-                    Friction at the pulley is ignored.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRACTICE -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">PRACTICE</p>
-
-        <h2>Test Yourself</h2>
-
-
-        <div class="question">
-
-            <strong>1. What does a particle model ignore?</strong>
-
-            <details>
-                <summary>Show answer</summary>
-
-                <p>
-                    The size and shape of the object.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                2. What does the word "smooth" mean in mechanics?
-            </strong>
-
-            <details>
-                <summary>Show answer</summary>
-
-                <p>
-                    Friction is ignored.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                3. What does "light string" mean?
-            </strong>
-
-            <details>
-                <summary>Show answer</summary>
-
-                <p>
-                    The mass of the string is considered negligible.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                4. What does "inextensible" mean?
-            </strong>
-
-            <details>
-                <summary>Show answer</summary>
-
-                <p>
-                    The string does not stretch, so its length remains constant.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                5. What does a rigid body assumption mean?
-            </strong>
-
-            <details>
-                <summary>Show answer</summary>
-
-                <p>
-                    The shape of the body does not change.
-                </p>
-
-            </details>
-
-        </div>
-
-    </section>
-
-
-    <!-- COMMON MISTAKES -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">EXAM SKILLS</p>
-
-        <h2>Common Mistakes</h2>
-
-        <div class="mistake">
-
-            <strong>Mistake 1:</strong>
 
             <p>
-                Thinking "smooth" means the object moves faster.
-                It actually means friction is ignored.
+                <strong>Smooth pulley:</strong>
+                Friction at the pulley is ignored.
             </p>
 
         </div>
 
-        <div class="mistake">
+    </div>
 
-            <strong>Mistake 2:</strong>
+</section>
+
+
+<!-- =====================================================
+     PRACTICE
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        PRACTICE
+    </p>
+
+    <h2>
+        Test Yourself
+    </h2>
+
+
+    <div class="question">
+
+        <strong>
+            1. What does a particle model ignore?
+        </strong>
+
+        <details>
+
+            <summary>
+                SHOW ANSWER
+            </summary>
 
             <p>
-                Thinking "light" means the string has no tension.
-                A light string can still have tension.
+                The size and shape of the object.
             </p>
 
-        </div>
+        </details>
 
-        <div class="mistake">
+    </div>
 
-            <strong>Mistake 3:</strong>
+
+    <div class="question">
+
+        <strong>
+            2. What does the word "smooth" mean in mechanics?
+        </strong>
+
+        <details>
+
+            <summary>
+                SHOW ANSWER
+            </summary>
 
             <p>
-                Confusing "light" with "inextensible".
-                They describe different properties.
+                Friction is ignored.
             </p>
 
-        </div>
+        </details>
 
-    </section>
+    </div>
 
 
-    <!-- SUMMARY -->
+    <div class="question">
 
-    <section class="lesson">
+        <strong>
+            3. What does "light string" mean?
+        </strong>
 
-        <p class="lesson-number">QUICK REVIEW</p>
+        <details>
 
-        <h2>Remember These</h2>
+            <summary>
+                SHOW ANSWER
+            </summary>
 
-        <div class="formula">
-            Particle → ignore size and shape
-        </div>
+            <p>
+                The mass of the string is considered negligible.
+            </p>
 
-        <div class="formula">
-            Light string → negligible mass
-        </div>
+        </details>
 
-        <div class="formula">
-            Inextensible → constant length
-        </div>
+    </div>
 
-        <div class="formula">
-            Smooth → no friction
-        </div>
 
-        <div class="formula">
-            Uniform → evenly distributed mass
-        </div>
+    <div class="question">
 
-        <div class="formula">
-            Rigid → no change of shape
-        </div>
+        <strong>
+            4. What does "inextensible" mean?
+        </strong>
 
-    </section>
+        <details>
+
+            <summary>
+                SHOW ANSWER
+            </summary>
+
+            <p>
+                The string does not stretch, so its length remains constant.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            5. What does a rigid body assumption mean?
+        </strong>
+
+        <details>
+
+            <summary>
+                SHOW ANSWER
+            </summary>
+
+            <p>
+                The shape of the body does not change.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMMON MISTAKES
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        EXAM SKILLS
+    </p>
+
+    <h2>
+        Common Mistakes
+    </h2>
+
+
+    <div class="mistake">
+
+        <strong>
+            Mistake 1
+        </strong>
+
+        <p>
+            Thinking "smooth" means the object moves faster.
+            It actually means friction is ignored.
+        </p>
+
+    </div>
+
+
+    <div class="mistake">
+
+        <strong>
+            Mistake 2
+        </strong>
+
+        <p>
+            Thinking "light" means the string has no tension.
+            A light string can still have tension.
+        </p>
+
+    </div>
+
+
+    <div class="mistake">
+
+        <strong>
+            Mistake 3
+        </strong>
+
+        <p>
+            Confusing "light" with "inextensible".
+            They describe different properties.
+        </p>
+
+    </div>
+
+
+    <div class="exam-tip">
+
+        <strong>
+            CORE IDEA
+        </strong>
+
+        <p>
+            Modelling words are not decoration — they tell you
+            what assumptions the mathematical model is making.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SUMMARY
+===================================================== -->
+
+<section class="lesson reveal">
+
+    <p class="lesson-number">
+        QUICK REVIEW
+    </p>
+
+    <h2>
+        Remember These
+    </h2>
+
+
+    <div class="formula">
+        Particle → ignore size and shape
+    </div>
+
+    <div class="formula">
+        Light string → negligible mass
+    </div>
+
+    <div class="formula">
+        Inextensible → constant length
+    </div>
+
+    <div class="formula">
+        Smooth → no friction
+    </div>
+
+    <div class="formula">
+        Uniform → evenly distributed mass
+    </div>
+
+    <div class="formula">
+        Rigid → no change of shape
+    </div>
+
+</section>
 
 
 </main>
 
 
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
 <div class="navigation">
 
-    <a href="mechanics-1.html" class="button">
+    <a href="mechanics-1.html"
+       class="button">
+
         ← Back to Mechanics 1
+
     </a>
 
-    <a href="mechanics.html" class="button">
-        Mechanics
+
+    <a href="mechanics-vectors.html"
+       class="button">
+
+        Next Topic →
+        
     </a>
 
 </div>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
+    © 2026
+    <strong>IAL ATLAS</strong>
+    • Independent student resource
+    • Not affiliated with Pearson
+
 </footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.10
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   LESSON CARD LIGHT
+========================================================= */
+
+const lessons =
+    document.querySelectorAll(".lesson");
+
+
+lessons.forEach(lesson => {
+
+    lesson.addEventListener(
+        "mousemove",
+        event => {
+
+            const rect =
+                lesson.getBoundingClientRect();
+
+            const x =
+                ((event.clientX - rect.left)
+                / rect.width) * 100;
+
+            const y =
+                ((event.clientY - rect.top)
+                / rect.height) * 100;
+
+            lesson.style.setProperty(
+                "--mx",
+                `${x}%`
+            );
+
+            lesson.style.setProperty(
+                "--my",
+                `${y}%`
+            );
+
+        }
+    );
+
+
+    lesson.addEventListener(
+        "mouseleave",
+        () => {
+
+            lesson.style.setProperty(
+                "--mx",
+                "50%"
+            );
+
+            lesson.style.setProperty(
+                "--my",
+                "20%"
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   HERO PARALLAX
+========================================================= */
+
+const hero =
+    document.querySelector(".hero");
+
+const orbits =
+    document.querySelectorAll(".orbit");
+
+const particle =
+    document.querySelector(".model-particle");
+
+
+hero.addEventListener(
+    "mousemove",
+    event => {
+
+        const x =
+            event.clientX /
+            window.innerWidth - 0.5;
+
+        const y =
+            event.clientY /
+            window.innerHeight - 0.5;
+
+
+        orbits.forEach(
+            (orbit,index) => {
+
+                const amount =
+                    (index + 1) * 12;
+
+                orbit.style.marginLeft =
+                    `${x * amount}px`;
+
+                orbit.style.marginTop =
+                    `${y * amount}px`;
+
+            }
+        );
+
+
+        particle.style.marginLeft =
+            `${x * -20}px`;
+
+        particle.style.marginTop =
+            `${y * -20}px`;
+
+    }
+);
+
+
+hero.addEventListener(
+    "mouseleave",
+    () => {
+
+        orbits.forEach(orbit => {
+
+            orbit.style.marginLeft =
+                "0px";
+
+            orbit.style.marginTop =
+                "0px";
+
+        });
+
+
+        particle.style.marginLeft =
+            "0px";
+
+        particle.style.marginTop =
+            "0px";
+
+    }
+);
+
+</script>
 
 
 </body>
 
 </html>
+
