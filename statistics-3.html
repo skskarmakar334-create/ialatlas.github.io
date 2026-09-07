@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,13 @@
     <title>Statistics 3 | IAL ATLAS</title>
 
     <meta name="description"
-          content="Edexcel International A Level Mathematics Statistics 3 resources — lessons, worked examples, formulas and mixed practice.">
+          content="Edexcel International A Level Mathematics Statistics 3 — advanced statistical inference, sampling, estimation, hypothesis testing, correlation and chi-squared methods.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
 
@@ -20,217 +25,910 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
+        :root {
+            --bg: #02050d;
+            --panel: rgba(9, 17, 31, 0.72);
+            --panel-strong: rgba(12, 23, 42, 0.9);
+            --cyan: #35e8ff;
+            --blue: #4c8dff;
+            --purple: #a875ff;
+            --green: #4dffb0;
+            --text: #eef7ff;
+            --muted: #91a4bd;
+            --border: rgba(96, 193, 255, 0.17);
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(53,232,255,0.07), transparent 25%),
+                radial-gradient(circle at 90% 30%, rgba(168,117,255,0.07), transparent 28%),
+                radial-gradient(circle at 50% 100%, rgba(76,141,255,0.08), transparent 30%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.34;
+            background-image:
+                linear-gradient(rgba(53,232,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(53,232,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
         header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 18px 7%;
+            background: rgba(2,5,13,0.76);
+            border-bottom: 1px solid rgba(96,193,255,0.13);
+            backdrop-filter: blur(18px);
         }
 
         header a {
-            color: white;
             text-decoration: none;
         }
 
         .logo {
-            font-size: 27px;
-            font-weight: bold;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+        .logo::before {
+            content: "◈ ";
+            color: var(--cyan);
+        }
 
-            color: white;
+        .back-link {
+            color: #b9c9dd;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--cyan);
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            position: relative;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 90px 20px 100px;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 760px;
+            height: 760px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle,
+                    rgba(53,232,255,0.09),
+                    rgba(76,141,255,0.04) 35%,
+                    transparent 70%);
+            z-index: -2;
+            animation: corePulse 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(transparent 96%, rgba(53,232,255,0.07)),
+                radial-gradient(circle at center, transparent 45%, rgba(2,5,13,0.72));
+            z-index: -1;
+            pointer-events: none;
         }
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 40px rgba(53,232,255,0.18);
         }
 
         .hero h1 span {
-            color: #4db8ff;
+            color: var(--cyan);
         }
 
         .hero p {
-            max-width: 720px;
-            margin: auto;
-            color: #dcecff;
+            max-width: 800px;
+            color: #b9c8db;
             font-size: 18px;
         }
 
+        .system-status {
+            margin-top: 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 16px;
+            border: 1px solid rgba(77,255,176,0.22);
+            border-radius: 999px;
+            background: rgba(77,255,176,0.045);
+            color: #91f5c7;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 15px var(--green);
+            animation: blink 1.8s infinite;
+        }
+
+        /* =====================================================
+           INFERENCE CORE VISUAL
+        ===================================================== */
+
+        .inference-core {
+            position: relative;
+            width: min(680px, 92vw);
+            height: 330px;
+            margin: 55px auto 0;
+        }
+
+        .core-ring {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(53,232,255,0.17);
+            border-radius: 50%;
+        }
+
+        .ring-1 {
+            width: 210px;
+            height: 210px;
+            animation: rotate 18s linear infinite;
+        }
+
+        .ring-2 {
+            width: 300px;
+            height: 300px;
+            border-color: rgba(168,117,255,0.15);
+            animation: rotateReverse 25s linear infinite;
+        }
+
+        .ring-3 {
+            width: 390px;
+            height: 390px;
+            border-color: rgba(76,141,255,0.11);
+            animation: rotate 34s linear infinite;
+        }
+
+        .core {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 94px;
+            height: 94px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 35% 30%,
+                    rgba(255,255,255,0.35),
+                    rgba(53,232,255,0.15) 20%,
+                    rgba(53,232,255,0.04) 60%);
+            border: 1px solid rgba(53,232,255,0.65);
+            box-shadow:
+                0 0 35px rgba(53,232,255,0.22),
+                inset 0 0 30px rgba(53,232,255,0.1);
+            z-index: 5;
+        }
+
+        .core span {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .data-node {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 18px var(--cyan);
+            z-index: 6;
+        }
+
+        .node-1 {
+            left: 14%;
+            top: 30%;
+            animation: floatNode 4s ease-in-out infinite;
+        }
+
+        .node-2 {
+            right: 14%;
+            top: 27%;
+            background: var(--purple);
+            box-shadow: 0 0 18px var(--purple);
+            animation: floatNode 4.5s ease-in-out infinite 0.7s;
+        }
+
+        .node-3 {
+            left: 21%;
+            bottom: 20%;
+            background: var(--green);
+            box-shadow: 0 0 18px var(--green);
+            animation: floatNode 5s ease-in-out infinite 0.4s;
+        }
+
+        .node-4 {
+            right: 21%;
+            bottom: 18%;
+            animation: floatNode 4.2s ease-in-out infinite 1s;
+        }
+
+        .connection {
+            position: absolute;
+            height: 1px;
+            transform-origin: left center;
+            background: linear-gradient(90deg, transparent, rgba(53,232,255,0.5), transparent);
+            opacity: 0.65;
+        }
+
+        .connection-1 {
+            width: 250px;
+            left: 17%;
+            top: 37%;
+            transform: rotate(17deg);
+        }
+
+        .connection-2 {
+            width: 260px;
+            right: 16%;
+            top: 37%;
+            transform: rotate(-17deg);
+        }
+
+        .connection-3 {
+            width: 230px;
+            left: 23%;
+            bottom: 28%;
+            transform: rotate(-15deg);
+        }
+
+        .connection-4 {
+            width: 230px;
+            right: 23%;
+            bottom: 27%;
+            transform: rotate(15deg);
+        }
+
+        .signal {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 12px var(--cyan);
+            animation: signalTravel 4s linear infinite;
+        }
+
+        .signal-2 {
+            animation-delay: 1.3s;
+        }
+
+        .signal-3 {
+            animation-delay: 2.6s;
+        }
+
+        /* =====================================================
+           DATA STRIP
+        ===================================================== */
+
+        .data-strip {
+            width: min(1000px, 92%);
+            margin: -20px auto 70px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            background: rgba(7,13,25,0.7);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 20px 70px rgba(0,0,0,0.25);
+        }
+
+        .data-item {
+            padding: 23px;
+            text-align: center;
+            border-right: 1px solid rgba(96,193,255,0.1);
+        }
+
+        .data-item:last-child {
+            border-right: none;
+        }
+
+        .data-value {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .data-label {
+            margin-top: 5px;
+            color: #71869f;
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
         .container {
-            max-width: 950px;
+            width: min(960px, 92%);
             margin: auto;
-            padding: 60px 20px;
         }
 
         .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+            padding: 38px;
+            margin-bottom: 28px;
+            border-radius: 22px;
+            border: 1px solid var(--border);
+            background:
+                linear-gradient(145deg,
+                    rgba(13,24,43,0.78),
+                    rgba(5,11,22,0.7));
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.24),
+                inset 0 1px 0 rgba(255,255,255,0.035);
+            backdrop-filter: blur(18px);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .lesson.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .lesson::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -70px;
+            top: -80px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(53,232,255,0.11), transparent 68%);
+            pointer-events: none;
+        }
+
+        .lesson:hover {
+            border-color: rgba(53,232,255,0.32);
+            box-shadow:
+                0 25px 90px rgba(0,0,0,0.32),
+                0 0 45px rgba(53,232,255,0.035);
         }
 
         .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .lesson h2 {
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
-
-        .lesson h3 {
-            font-size: 21px;
-            margin-top: 25px;
+            color: var(--cyan);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 3px;
             margin-bottom: 10px;
         }
 
+        .lesson h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 31px;
+            line-height: 1.25;
+            margin-bottom: 19px;
+        }
+
+        .lesson h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+            margin-top: 29px;
+            margin-bottom: 11px;
+            color: #f2f8ff;
+        }
+
         .lesson p {
-            color: #53657d;
+            color: var(--muted);
             margin-bottom: 15px;
         }
 
         .lesson ul {
             padding-left: 25px;
-            color: #53657d;
+            color: var(--muted);
         }
 
         .lesson li {
             margin-bottom: 9px;
         }
 
+        /* =====================================================
+           DEFINITION
+        ===================================================== */
+
         .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            position: relative;
+            margin: 23px 0;
+            padding: 20px 22px;
+            border-radius: 14px;
+            border: 1px solid rgba(53,232,255,0.16);
+            border-left: 3px solid var(--cyan);
+            background:
+                linear-gradient(135deg,
+                    rgba(53,232,255,0.055),
+                    rgba(76,141,255,0.025));
         }
+
+        .definition strong {
+            color: #dffaff;
+        }
+
+        .definition p {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        /* =====================================================
+           FORMULAS
+        ===================================================== */
 
         .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
+            position: relative;
             margin: 20px 0;
-            border-radius: 10px;
+            padding: 18px 20px;
+            border-radius: 13px;
             text-align: center;
-            font-size: 19px;
-            font-weight: bold;
             overflow-x: auto;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #f3fbff;
+            background:
+                linear-gradient(135deg,
+                    rgba(53,232,255,0.075),
+                    rgba(76,141,255,0.045));
+            border: 1px solid rgba(53,232,255,0.15);
+            box-shadow:
+                inset 0 0 25px rgba(53,232,255,0.025);
         }
 
+        .formula::before {
+            content: "∑";
+            position: absolute;
+            left: 13px;
+            color: rgba(53,232,255,0.22);
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           EXAMPLES
+        ===================================================== */
+
         .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
+            margin-top: 23px;
             padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(168,117,255,0.16);
+            background:
+                linear-gradient(135deg,
+                    rgba(168,117,255,0.055),
+                    rgba(53,232,255,0.025));
         }
 
         .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
+            color: #c8a9ff !important;
+            font-weight: 800 !important;
+            letter-spacing: 1px;
+            margin-bottom: 13px !important;
         }
 
         .solution {
             margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
+            padding: 19px;
+            border-radius: 12px;
+            background: rgba(2,6,15,0.55);
+            border: 1px solid rgba(96,193,255,0.1);
         }
 
+        /* =====================================================
+           PRACTICE
+        ===================================================== */
+
         .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
+            position: relative;
+            padding: 21px 0;
+            border-bottom: 1px solid rgba(96,193,255,0.1);
         }
 
         .question:last-child {
             border-bottom: none;
         }
 
+        .question strong {
+            color: #e7f4ff;
+        }
+
         details {
-            margin-top: 12px;
+            margin-top: 13px;
         }
 
         summary {
+            display: inline-block;
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+            color: var(--cyan);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 0;
         }
 
+        summary:hover {
+            color: white;
+        }
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
         .navigation {
+            width: min(960px, 92%);
+            margin: 55px auto 80px;
+            padding: 28px;
             text-align: center;
-            padding: 10px 20px 60px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(8,15,28,0.7);
+            backdrop-filter: blur(15px);
         }
 
         .button {
             display: inline-block;
-            background: #32a9e8;
-            color: white;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
             margin: 5px;
+            padding: 13px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            color: white;
+            border: 1px solid rgba(53,232,255,0.25);
+            background:
+                linear-gradient(135deg,
+                    rgba(53,232,255,0.13),
+                    rgba(76,141,255,0.09));
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
         }
 
         .button:hover {
-            background: #168dca;
+            transform: translateY(-3px);
+            border-color: rgba(53,232,255,0.65);
+            box-shadow: 0 0 28px rgba(53,232,255,0.12);
         }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            padding: 35px 20px;
             text-align: center;
-            padding: 30px 20px;
+            color: #6f829b;
+            font-size: 13px;
+            border-top: 1px solid rgba(96,193,255,0.1);
+            background: rgba(2,5,13,0.8);
         }
 
-        @media (max-width: 700px) {
+        /* =====================================================
+           PARTICLES
+        ===================================================== */
+
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(53,232,255,0.65);
+            box-shadow: 0 0 10px rgba(53,232,255,0.55);
+            pointer-events: none;
+            z-index: -1;
+            animation: particleFloat linear infinite;
+        }
+
+        /* =====================================================
+           ANIMATIONS
+        ===================================================== */
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes rotateReverse {
+            from {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        }
+
+        @keyframes corePulse {
+            0%, 100% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatNode {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-13px);
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.35;
+            }
+        }
+
+        @keyframes signalTravel {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg) translateX(55px);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg) translateX(155px);
+                opacity: 1;
+            }
+
+            85% {
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg) translateX(55px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes particleFloat {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.7;
+            }
+
+            85% {
+                opacity: 0.7;
+            }
+
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .data-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .data-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .data-item:nth-child(-n+2) {
+                border-bottom: 1px solid rgba(96,193,255,0.1);
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .inference-core {
+                transform: scale(0.82);
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .back-link {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 70px 18px 90px;
+            }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 47px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .inference-core {
+                transform: scale(0.57);
+                transform-origin: center;
+                height: 245px;
+                margin-top: 35px;
+                margin-bottom: -20px;
+            }
+
+            .data-strip {
+                width: 92%;
+                margin-top: -5px;
+            }
+
+            .data-item {
+                padding: 18px 10px;
+            }
+
+            .data-value {
+                font-size: 16px;
+            }
+
+            .data-label {
+                font-size: 8px;
+                letter-spacing: 1.4px;
             }
 
             .lesson {
-                padding: 25px;
+                padding: 25px 21px;
+                border-radius: 18px;
+            }
+
+            .lesson h2 {
+                font-size: 26px;
+            }
+
+            .lesson h3 {
+                font-size: 18px;
+            }
+
+            .formula {
+                font-size: 16px;
+                padding: 17px 12px;
+            }
+
+        }
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .lesson {
+                opacity: 1;
+                transform: none;
             }
 
         }
@@ -242,18 +940,26 @@
 <body>
 
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
 
     <a href="index.html" class="logo">
         IAL ATLAS
     </a>
 
-    <a href="statistics.html">
-        ← Statistics
+    <a href="statistics.html" class="back-link">
+        ← Statistics Universe
     </a>
 
 </header>
 
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
@@ -262,14 +968,96 @@
     </p>
 
     <h1>
-        Statistics <span>3</span>
+        THE <span>INFERENCE CORE</span>
     </h1>
 
     <p>
-        Build advanced statistical understanding through sampling,
-        random variables, estimation, confidence intervals,
-        hypothesis testing, correlation and chi-squared methods.
+        Enter the deepest region of the statistical universe — where
+        samples become evidence, estimators become signals, hypotheses
+        are tested, relationships are measured, and uncertainty becomes
+        inference.
     </p>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        STATISTICAL INFERENCE SYSTEM ONLINE
+    </div>
+
+
+    <div class="inference-core">
+
+        <div class="core-ring ring-1"></div>
+        <div class="core-ring ring-2"></div>
+        <div class="core-ring ring-3"></div>
+
+        <div class="connection connection-1"></div>
+        <div class="connection connection-2"></div>
+        <div class="connection connection-3"></div>
+        <div class="connection connection-4"></div>
+
+        <div class="data-node node-1"></div>
+        <div class="data-node node-2"></div>
+        <div class="data-node node-3"></div>
+        <div class="data-node node-4"></div>
+
+        <div class="signal"></div>
+        <div class="signal signal-2"></div>
+        <div class="signal signal-3"></div>
+
+        <div class="core">
+            <span>INFER</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DATA STRIP
+========================================================= -->
+
+<section class="data-strip">
+
+    <div class="data-item">
+
+        <div class="data-value">11</div>
+
+        <div class="data-label">
+            INFERENCE TOPICS
+        </div>
+
+    </div>
+
+    <div class="data-item">
+
+        <div class="data-value">X̄</div>
+
+        <div class="data-label">
+            ESTIMATION SIGNAL
+        </div>
+
+    </div>
+
+    <div class="data-item">
+
+        <div class="data-value">H₀</div>
+
+        <div class="data-label">
+            HYPOTHESIS CORE
+        </div>
+
+    </div>
+
+    <div class="data-item">
+
+        <div class="data-value">χ²</div>
+
+        <div class="data-label">
+            DATA ASSOCIATION
+        </div>
+
+    </div>
 
 </section>
 
@@ -277,1122 +1065,1169 @@
 <main class="container">
 
 
-    <!-- SAMPLING -->
+<!-- =========================================================
+     TOPIC 01
+========================================================= -->
 
-    <section class="lesson">
+<section class="lesson">
 
-        <p class="lesson-number">TOPIC 01</p>
+    <p class="lesson-number">TOPIC 01 • SAMPLING SYSTEM</p>
 
-        <h2>Sampling</h2>
+    <h2>Sampling</h2>
+
+    <p>
+        Sampling is the process of selecting observations from a
+        population so that information about the population can be
+        obtained without studying every member.
+    </p>
+
+    <h3>Population and Sample</h3>
+
+    <p>
+        The population is the complete set of individuals or objects
+        being studied. A sample is a subset selected from that population.
+    </p>
+
+    <h3>Simple Random Sampling</h3>
+
+    <p>
+        In simple random sampling, every possible sample of the required
+        size has an equal chance of being selected.
+    </p>
+
+    <div class="definition">
+
+        <strong>Using random numbers:</strong>
 
         <p>
-            Sampling is the process of selecting observations from a
-            population so that information about the population can be
-            obtained without studying every member.
+            Members of a population can be numbered and random numbers
+            can then be used to select the required sample.
         </p>
 
-        <h3>Population and Sample</h3>
+    </div>
+
+    <h3>Stratified Sampling</h3>
+
+    <p>
+        The population is divided into strata according to a relevant
+        characteristic. A sample is then taken from each stratum,
+        usually in proportion to the size of that stratum.
+    </p>
+
+    <div class="formula">
+        Sample from stratum = (stratum size / population size) × total sample size
+    </div>
+
+    <h3>Systematic Sampling</h3>
+
+    <p>
+        Individuals are selected at regular intervals from an ordered
+        sampling frame, usually after choosing a suitable starting point.
+    </p>
+
+    <h3>Quota Sampling</h3>
+
+    <p>
+        The investigator sets quotas for different groups and continues
+        selecting individuals until the required quotas are filled.
+    </p>
+
+    <h3>Comparing Sampling Methods</h3>
+
+    <ul>
+
+        <li>
+            Simple random sampling can reduce selection bias but requires
+            a suitable sampling frame.
+        </li>
+
+        <li>
+            Stratified sampling can ensure important groups are represented
+            appropriately.
+        </li>
+
+        <li>
+            Systematic sampling can be straightforward to administer.
+        </li>
+
+        <li>
+            Quota sampling can be convenient but may introduce interviewer
+            or selection bias.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 02
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 02 • DISTRIBUTION NETWORK</p>
+
+    <h2>Combinations of Random Variables</h2>
+
+    <p>
+        S3 extends the Normal distribution to combinations of independent
+        Normal random variables.
+    </p>
+
+    <h3>Linear Combinations</h3>
+
+    <p>
+        Suppose X and Y are independent Normal random variables:
+    </p>
+
+    <div class="formula">
+        X ~ N(μx, σx²) &nbsp;&nbsp;&nbsp; Y ~ N(μy, σy²)
+    </div>
+
+    <p>
+        Then a linear combination of X and Y is also Normally distributed.
+    </p>
+
+    <div class="formula">
+        aX ± bY ~ N(aμx ± bμy, a²σx² + b²σy²)
+    </div>
+
+    <div class="definition">
+
+        <strong>Important:</strong>
 
         <p>
-            The population is the complete set of individuals or objects
-            being studied. A sample is a subset selected from that population.
+            Variances are added after multiplying them by the squares
+            of the coefficients. The standard deviations themselves
+            are not added.
         </p>
 
-        <h3>Simple Random Sampling</h3>
+    </div>
+
+    <div class="example">
+
+        <p class="example-title">
+            WORKED EXAMPLE
+        </p>
 
         <p>
-            In simple random sampling, every possible sample of the required
-            size has an equal chance of being selected.
+            X ~ N(20, 4²) and Y ~ N(15, 3²), independently.
+            Find the distribution of 2X − Y.
         </p>
 
-        <div class="definition">
-
-            <strong>Using random numbers:</strong>
+        <div class="solution">
 
             <p>
-                Members of a population can be numbered and random numbers
-                can then be used to select the required sample.
+                Mean:
             </p>
 
-        </div>
-
-        <h3>Stratified Sampling</h3>
-
-        <p>
-            The population is divided into strata according to a relevant
-            characteristic. A sample is then taken from each stratum,
-            usually in proportion to the size of that stratum.
-        </p>
-
-        <div class="formula">
-            Sample from stratum = (stratum size / population size) × total sample size
-        </div>
-
-        <h3>Systematic Sampling</h3>
-
-        <p>
-            Individuals are selected at regular intervals from an ordered
-            sampling frame, usually after choosing a suitable starting point.
-        </p>
-
-        <h3>Quota Sampling</h3>
-
-        <p>
-            The investigator sets quotas for different groups and continues
-            selecting individuals until the required quotas are filled.
-        </p>
-
-        <h3>Comparing Sampling Methods</h3>
-
-        <ul>
-
-            <li>
-                Simple random sampling can reduce selection bias but requires
-                a suitable sampling frame.
-            </li>
-
-            <li>
-                Stratified sampling can ensure important groups are represented
-                appropriately.
-            </li>
-
-            <li>
-                Systematic sampling can be straightforward to administer.
-            </li>
-
-            <li>
-                Quota sampling can be convenient but may introduce interviewer
-                or selection bias.
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- COMBINATIONS OF RANDOM VARIABLES -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 02</p>
-
-        <h2>Combinations of Random Variables</h2>
-
-        <p>
-            S3 extends the Normal distribution to combinations of independent
-            Normal random variables.
-        </p>
-
-        <h3>Linear Combinations</h3>
-
-        <p>
-            Suppose X and Y are independent Normal random variables:
-        </p>
-
-        <div class="formula">
-            X ~ N(μx, σx²) &nbsp;&nbsp;&nbsp; Y ~ N(μy, σy²)
-        </div>
-
-        <p>
-            Then a linear combination of X and Y is also Normally distributed.
-        </p>
-
-        <div class="formula">
-            aX ± bY ~ N(aμx ± bμy, a²σx² + b²σy²)
-        </div>
-
-        <div class="definition">
-
-            <strong>Important:</strong>
+            <div class="formula">
+                2(20) − 15 = 25
+            </div>
 
             <p>
-                Variances are added after multiplying them by the squares
-                of the coefficients. The standard deviations themselves
-                are not added.
+                Variance:
             </p>
 
-        </div>
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
+            <div class="formula">
+                2²(4²) + 1²(3²) = 64 + 9 = 73
+            </div>
 
             <p>
-                X ~ N(20, 4²) and Y ~ N(15, 3²), independently.
-                Find the distribution of 2X − Y.
+                Therefore:
             </p>
 
-            <div class="solution">
-
-                <p>
-                    Mean:
-                </p>
-
-                <div class="formula">
-                    2(20) − 15 = 25
-                </div>
-
-                <p>
-                    Variance:
-                </p>
-
-                <div class="formula">
-                    2²(4²) + 1²(3²) = 64 + 9 = 73
-                </div>
-
-                <p>
-                    Therefore:
-                </p>
-
-                <div class="formula">
-                    2X − Y ~ N(25, 73)
-                </div>
-
+            <div class="formula">
+                2X − Y ~ N(25, 73)
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ESTIMATORS -->
+<!-- =========================================================
+     TOPIC 03
+========================================================= -->
 
-    <section class="lesson">
+<section class="lesson">
 
-        <p class="lesson-number">TOPIC 03</p>
+    <p class="lesson-number">TOPIC 03 • ESTIMATION ENGINE</p>
 
-        <h2>Estimators and Standard Error</h2>
+    <h2>Estimators and Standard Error</h2>
+
+    <p>
+        An estimator is a statistic used to estimate an unknown population
+        parameter.
+    </p>
+
+    <h3>Estimator</h3>
+
+    <p>
+        The sample mean is commonly used as an estimator of the population
+        mean μ.
+    </p>
+
+    <div class="formula">
+        X̄ = ΣX / n
+    </div>
+
+    <h3>Bias</h3>
+
+    <p>
+        An estimator is unbiased if its expected value is equal to the
+        population parameter that it estimates.
+    </p>
+
+    <div class="formula">
+        E(X̄) = μ
+    </div>
+
+    <h3>Variance of the Sample Mean</h3>
+
+    <p>
+        For a random sample of n independent observations from a population
+        with variance σ²:
+    </p>
+
+    <div class="formula">
+        Var(X̄) = σ² / n
+    </div>
+
+    <h3>Standard Error</h3>
+
+    <div class="formula">
+        SE(X̄) = σ / √n
+    </div>
+
+    <div class="definition">
+
+        <strong>Key idea:</strong>
 
         <p>
-            An estimator is a statistic used to estimate an unknown population
-            parameter.
+            Increasing the sample size reduces the standard error and
+            therefore generally makes the sample mean a more precise
+            estimator of μ.
         </p>
 
-        <h3>Estimator</h3>
+    </div>
+
+    <h3>Estimator of Population Variance</h3>
+
+    <p>
+        For a random sample, the usual unbiased estimator of the population
+        variance uses n − 1 in the denominator.
+    </p>
+
+    <div class="formula">
+        S² = Σ(Xᵢ − X̄)² / (n − 1)
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 04
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 04 • CONFIDENCE FIELD</p>
+
+    <h2>Confidence Intervals</h2>
+
+    <p>
+        A confidence interval provides a range of plausible values for
+        an unknown population parameter.
+    </p>
+
+    <h3>Normal Mean with Known Variance</h3>
+
+    <p>
+        If the population is Normal with known variance σ², an interval
+        estimate for μ can be constructed using the sampling distribution
+        of X̄.
+    </p>
+
+    <div class="formula">
+        X̄ ± z × σ / √n
+    </div>
+
+    <p>
+        Here z is the appropriate percentage point of the standard Normal
+        distribution for the required confidence level.
+    </p>
+
+    <h3>Interpreting a Confidence Interval</h3>
+
+    <p>
+        A confidence interval should be interpreted in terms of the method
+        used to construct it. For example, a 95% confidence procedure
+        produces intervals that contain the true parameter in approximately
+        95% of repeated samples.
+    </p>
+
+    <h3>Width of an Interval</h3>
+
+    <p>
+        A larger sample size gives a smaller standard error and therefore
+        usually produces a narrower confidence interval.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 05
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 05 • HYPOTHESIS ENGINE</p>
+
+    <h2>Hypothesis Tests for a Normal Mean</h2>
+
+    <p>
+        Hypothesis testing provides a formal method for deciding whether
+        sample evidence is inconsistent with a proposed population parameter.
+    </p>
+
+    <h3>Null and Alternative Hypotheses</h3>
+
+    <div class="definition">
+
+        <strong>Null hypothesis H₀:</strong>
 
         <p>
-            The sample mean is commonly used as an estimator of the population
-            mean μ.
+            The statement assumed to be true unless the sample provides
+            sufficient evidence against it.
         </p>
 
-        <div class="formula">
-            X̄ = ΣX / n
-        </div>
-
-        <h3>Bias</h3>
+        <strong>Alternative hypothesis H₁:</strong>
 
         <p>
-            An estimator is unbiased if its expected value is equal to the
-            population parameter that it estimates.
+            The competing statement supported when the null hypothesis
+            is rejected.
         </p>
 
-        <div class="formula">
-            E(X̄) = μ
-        </div>
+    </div>
 
-        <h3>Variance of the Sample Mean</h3>
+    <h3>Test Statistic</h3>
+
+    <p>
+        When the population variance is known, the sample mean can be
+        standardised using:
+    </p>
+
+    <div class="formula">
+        Z = (X̄ − μ) / (σ / √n)
+    </div>
+
+    <h3>One-Tailed and Two-Tailed Tests</h3>
+
+    <ul>
+
+        <li>
+            A one-tailed test investigates whether a parameter is greater
+            than or less than a specified value.
+        </li>
+
+        <li>
+            A two-tailed test investigates whether a parameter differs
+            from a specified value in either direction.
+        </li>
+
+    </ul>
+
+    <h3>Significance Level</h3>
+
+    <p>
+        The significance level is the probability of rejecting H₀ when H₀
+        is actually true.
+    </p>
+
+    <h3>Conclusion</h3>
+
+    <p>
+        A statistical conclusion should be stated clearly in the context
+        of the question.
+    </p>
+
+    <div class="definition">
+
+        <strong>Remember:</strong>
 
         <p>
-            For a random sample of n independent observations from a population
-            with variance σ²:
+            Do not say that H₀ has been proved true. A test either provides
+            sufficient evidence to reject H₀ or does not provide sufficient
+            evidence to reject H₀.
         </p>
 
-        <div class="formula">
-            Var(X̄) = σ² / n
-        </div>
+    </div>
 
-        <h3>Standard Error</h3>
+</section>
 
-        <div class="formula">
-            SE(X̄) = σ / √n
-        </div>
 
-        <div class="definition">
+<!-- =========================================================
+     TOPIC 06
+========================================================= -->
 
-            <strong>Key idea:</strong>
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 06 • CENTRAL LIMIT FIELD</p>
+
+    <h2>Central Limit Theorem</h2>
+
+    <p>
+        The Central Limit Theorem allows the distribution of a sample mean
+        to be approximated by a Normal distribution for sufficiently large
+        samples, even when the underlying population is not Normal.
+    </p>
+
+    <h3>Sampling Distribution of the Mean</h3>
+
+    <p>
+        For a population with mean μ and variance σ², a sample mean based
+        on n independent observations has:
+    </p>
+
+    <div class="formula">
+        E(X̄) = μ
+    </div>
+
+    <div class="formula">
+        Var(X̄) = σ² / n
+    </div>
+
+    <p>
+        For a Normal population, the sampling distribution of X̄ is exactly
+        Normal. For a sufficiently large sample from a non-Normal population,
+        the Central Limit Theorem provides a Normal approximation.
+    </p>
+
+    <h3>Standardising the Sample Mean</h3>
+
+    <div class="formula">
+        Z = (X̄ − μ) / (σ / √n)
+    </div>
+
+    <div class="definition">
+
+        <strong>Exam idea:</strong>
+
+        <p>
+            Always identify the population mean, population variance,
+            sample size and required probability before standardising.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 07
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 07 • COMPARISON MATRIX</p>
+
+    <h2>Comparing Two Population Means</h2>
+
+    <p>
+        S3 also considers inference about the difference between two
+        population means using independent samples.
+    </p>
+
+    <h3>Difference Between Sample Means</h3>
+
+    <p>
+        If two independent samples are taken from Normal populations with
+        known variances:
+    </p>
+
+    <div class="formula">
+        E(X̄ − Ȳ) = μx − μy
+    </div>
+
+    <div class="formula">
+        Var(X̄ − Ȳ) = σx²/nx + σy²/ny
+    </div>
+
+    <h3>Standardising the Difference</h3>
+
+    <div class="formula">
+        Z = [(X̄ − Ȳ) − (μx − μy)]
+        / √(σx²/nx + σy²/ny)
+    </div>
+
+    <p>
+        This can be used to construct confidence intervals or perform
+        hypothesis tests about the difference between two population means.
+    </p>
+
+    <div class="definition">
+
+        <strong>Large samples:</strong>
+
+        <p>
+            Large-sample methods can also be used when population variances
+            are unknown, using appropriate estimates of variability.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 08
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 08 • RELATIONSHIP NETWORK</p>
+
+    <h2>Spearman's Rank Correlation</h2>
+
+    <p>
+        Spearman's rank correlation coefficient measures the strength and
+        direction of a monotonic relationship between two variables using
+        their ranks.
+    </p>
+
+    <h3>Rank Differences</h3>
+
+    <p>
+        For each observation, calculate the difference d between its two
+        ranks and then calculate d².
+    </p>
+
+    <div class="formula">
+        rₛ = 1 − [6Σd² / n(n² − 1)]
+    </div>
+
+    <h3>Interpreting rₛ</h3>
+
+    <ul>
+
+        <li>
+            A value close to +1 indicates strong positive association.
+        </li>
+
+        <li>
+            A value close to −1 indicates strong negative association.
+        </li>
+
+        <li>
+            A value close to 0 indicates little evidence of a monotonic
+            relationship.
+        </li>
+
+    </ul>
+
+    <h3>Ties</h3>
+
+    <p>
+        When tied values occur, appropriate ranks must be assigned before
+        calculating the correlation coefficient.
+    </p>
+
+    <h3>Limitations</h3>
+
+    <p>
+        Correlation does not establish causation. Spearman's coefficient
+        also describes association rather than proving that one variable
+        causes changes in another.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 09
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 09 • CORRELATION TEST NODE</p>
+
+    <h2>Testing for Zero Correlation</h2>
+
+    <p>
+        A hypothesis test can be used to investigate whether there is
+        evidence of a relationship between two variables.
+    </p>
+
+    <h3>Hypotheses</h3>
+
+    <div class="formula">
+        H₀: ρ = 0
+    </div>
+
+    <div class="formula">
+        H₁: ρ ≠ 0
+    </div>
+
+    <p>
+        Depending on the wording of the question, a one-tailed alternative
+        may be appropriate.
+    </p>
+
+    <h3>Critical Values</h3>
+
+    <p>
+        For Spearman's rank correlation, critical values can be used to
+        determine whether the observed rank correlation is sufficiently
+        extreme to reject the null hypothesis.
+    </p>
+
+    <div class="definition">
+
+        <strong>Decision rule:</strong>
+
+        <p>
+            Compare the calculated statistic with the appropriate critical
+            value for the chosen significance level and alternative hypothesis.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 10
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 10 • CHI-SQUARED ANALYSIS</p>
+
+    <h2>Goodness of Fit Tests</h2>
+
+    <p>
+        A chi-squared goodness-of-fit test can be used to investigate whether
+        observed frequencies are consistent with a proposed probability model.
+    </p>
+
+    <h3>Observed and Expected Frequencies</h3>
+
+    <p>
+        The observed frequencies are the actual data. Expected frequencies
+        are calculated from the model assumed under the null hypothesis.
+    </p>
+
+    <div class="formula">
+        χ² = Σ (O − E)² / E
+    </div>
+
+    <h3>Hypotheses</h3>
+
+    <div class="definition">
+
+        <strong>H₀:</strong>
+
+        <p>
+            The data are consistent with the proposed distribution.
+        </p>
+
+        <strong>H₁:</strong>
+
+        <p>
+            The data are not consistent with the proposed distribution.
+        </p>
+
+    </div>
+
+    <h3>Degrees of Freedom</h3>
+
+    <p>
+        The number of degrees of freedom depends on the number of categories
+        and the number of parameters estimated from the data.
+    </p>
+
+    <div class="formula">
+        Degrees of freedom = number of categories − 1 − number of estimated parameters
+    </div>
+
+    <h3>Expected Frequencies</h3>
+
+    <p>
+        Expected frequencies should generally be sufficiently large for the
+        chi-squared approximation to be appropriate. Where necessary,
+        categories may need to be combined according to the conditions of
+        the test.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 11
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">TOPIC 11 • ASSOCIATION MATRIX</p>
+
+    <h2>Contingency Tables</h2>
+
+    <p>
+        Contingency tables are used to investigate whether two categorical
+        variables are associated.
+    </p>
+
+    <h3>Observed Frequencies</h3>
+
+    <p>
+        The observed frequencies are arranged in rows and columns according
+        to the two categorical variables.
+    </p>
+
+    <h3>Expected Frequency</h3>
+
+    <div class="formula">
+        Expected frequency = (row total × column total) / grand total
+    </div>
+
+    <h3>Chi-Squared Statistic</h3>
+
+    <div class="formula">
+        χ² = Σ (O − E)² / E
+    </div>
+
+    <h3>Degrees of Freedom</h3>
+
+    <div class="formula">
+        df = (number of rows − 1)(number of columns − 1)
+    </div>
+
+    <h3>Hypotheses</h3>
+
+    <div class="definition">
+
+        <strong>H₀:</strong>
+
+        <p>
+            The two categorical variables are independent.
+        </p>
+
+        <strong>H₁:</strong>
+
+        <p>
+            The two categorical variables are associated.
+        </p>
+
+    </div>
+
+    <h3>Conclusion</h3>
+
+    <p>
+        The final conclusion should be written in context and should refer
+        to the evidence for or against independence.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     MIXED PRACTICE
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">INFERENCE SIMULATION • PRACTICE</p>
+
+    <h2>S3 Mixed Practice</h2>
+
+    <p>
+        These questions combine different S3 ideas rather than separating
+        practice by chapter.
+    </p>
+
+
+    <div class="question">
+
+        <strong>
+            1. A population contains 480 students. A stratified sample of
+            60 students is required. If 180 students belong to one stratum,
+            how many students should be selected from that stratum?
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
 
             <p>
-                Increasing the sample size reduces the standard error and
-                therefore generally makes the sample mean a more precise
-                estimator of μ.
+                Proportion = 180 / 480.
             </p>
-
-        </div>
-
-        <h3>Estimator of Population Variance</h3>
-
-        <p>
-            For a random sample, the usual unbiased estimator of the population
-            variance uses n − 1 in the denominator.
-        </p>
-
-        <div class="formula">
-            S² = Σ(Xᵢ − X̄)² / (n − 1)
-        </div>
-
-    </section>
-
-
-    <!-- CONFIDENCE INTERVALS -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 04</p>
-
-        <h2>Confidence Intervals</h2>
-
-        <p>
-            A confidence interval provides a range of plausible values for
-            an unknown population parameter.
-        </p>
-
-        <h3>Normal Mean with Known Variance</h3>
-
-        <p>
-            If the population is Normal with known variance σ², an interval
-            estimate for μ can be constructed using the sampling distribution
-            of X̄.
-        </p>
-
-        <div class="formula">
-            X̄ ± z × σ / √n
-        </div>
-
-        <p>
-            Here z is the appropriate percentage point of the standard Normal
-            distribution for the required confidence level.
-        </p>
-
-        <h3>Interpreting a Confidence Interval</h3>
-
-        <p>
-            A confidence interval should be interpreted in terms of the method
-            used to construct it. For example, a 95% confidence procedure
-            produces intervals that contain the true parameter in approximately
-            95% of repeated samples.
-        </p>
-
-        <h3>Width of an Interval</h3>
-
-        <p>
-            A larger sample size gives a smaller standard error and therefore
-            usually produces a narrower confidence interval.
-        </p>
-
-    </section>
-
-
-    <!-- HYPOTHESIS TESTING -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 05</p>
-
-        <h2>Hypothesis Tests for a Normal Mean</h2>
-
-        <p>
-            Hypothesis testing provides a formal method for deciding whether
-            sample evidence is inconsistent with a proposed population parameter.
-        </p>
-
-        <h3>Null and Alternative Hypotheses</h3>
-
-        <div class="definition">
-
-            <strong>Null hypothesis H₀:</strong>
 
             <p>
-                The statement assumed to be true unless the sample provides
-                sufficient evidence against it.
+                Required sample = (180 / 480) × 60 = 22.5.
             </p>
-
-            <strong>Alternative hypothesis H₁:</strong>
 
             <p>
-                The competing statement supported when the null hypothesis
-                is rejected.
+                In practice, the allocation must be adjusted to whole
+                students while maintaining the required total sample.
             </p>
 
-        </div>
+        </details>
 
-        <h3>Test Statistic</h3>
+    </div>
 
-        <p>
-            When the population variance is known, the sample mean can be
-            standardised using:
-        </p>
 
-        <div class="formula">
-            Z = (X̄ − μ) / (σ / √n)
-        </div>
+    <div class="question">
 
-        <h3>One-Tailed and Two-Tailed Tests</h3>
+        <strong>
+            2. X ~ N(12, 3²) and Y ~ N(8, 2²), independently.
+            Find the distribution of 2X + 3Y.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                Mean = 2(12) + 3(8) = 48.
+            </p>
+
+            <p>
+                Variance = 2²(3²) + 3²(2²)
+                = 36 + 36 = 72.
+            </p>
+
+            <p>
+                Therefore:
+            </p>
+
+            <p>
+                2X + 3Y ~ N(48, 72).
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            3. A population has standard deviation 12. A random sample
+            of 36 observations is taken. Find the standard error of the
+            sample mean.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                SE(X̄) = σ / √n
+            </p>
+
+            <p>
+                = 12 / √36 = 2.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            4. Explain what it means for an estimator to be unbiased.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                An estimator is unbiased if its expected value is equal
+                to the population parameter that it estimates.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            5. State the formula for the variance of the sample mean
+            when the population variance is σ².
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                Var(X̄) = σ² / n.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            6. A sample has mean 51, population standard deviation 10,
+            and sample size 100. State the standardised statistic for
+            testing μ = 50.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                Z = (51 − 50) / (10 / √100) = 1.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            7. What does the Central Limit Theorem allow us to do with
+            a sufficiently large sample from a non-Normal population?
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                It allows the sampling distribution of the sample mean
+                to be approximated by a Normal distribution.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            8. State the formula for Spearman's rank correlation
+            coefficient.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                rₛ = 1 − 6Σd² / [n(n² − 1)].
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            9. A chi-squared goodness-of-fit test has five categories
+            and two parameters have been estimated from the data.
+            Find the degrees of freedom.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                df = 5 − 1 − 2 = 2.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            10. A contingency table has 4 rows and 3 columns.
+            Find the degrees of freedom for a chi-squared test of
+            independence.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                df = (4 − 1)(3 − 1) = 6.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            11. In a contingency table, a row total is 80, a column
+            total is 50 and the grand total is 200. Find the expected
+            frequency for that cell.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                Expected frequency = (80 × 50) / 200 = 20.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            12. Explain the difference between statistical significance
+            and practical importance.
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                Statistical significance means that the sample provides
+                sufficient evidence against the null hypothesis at the
+                chosen significance level. Practical importance concerns
+                whether the size of the observed effect is meaningful
+                in the real-world context.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK REVIEW
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">INFERENCE DATABASE • QUICK REVIEW</p>
+
+    <h2>S3 Key Ideas</h2>
+
+    <div class="formula">
+        aX ± bY ~ N(aμx ± bμy, a²σx² + b²σy²)
+    </div>
+
+    <div class="formula">
+        Var(X̄) = σ² / n
+    </div>
+
+    <div class="formula">
+        SE(X̄) = σ / √n
+    </div>
+
+    <div class="formula">
+        Z = (X̄ − μ) / (σ / √n)
+    </div>
+
+    <div class="formula">
+        rₛ = 1 − 6Σd² / [n(n² − 1)]
+    </div>
+
+    <div class="formula">
+        χ² = Σ(O − E)² / E
+    </div>
+
+    <div class="formula">
+        Expected frequency = (row total × column total) / grand total
+    </div>
+
+    <div class="formula">
+        df = (rows − 1)(columns − 1)
+    </div>
+
+    <div class="definition">
+
+        <strong>S3 exam checklist:</strong>
 
         <ul>
 
             <li>
-                A one-tailed test investigates whether a parameter is greater
-                than or less than a specified value.
+                Identify the population parameter being investigated.
             </li>
 
             <li>
-                A two-tailed test investigates whether a parameter differs
-                from a specified value in either direction.
+                State H₀ and H₁ clearly.
+            </li>
+
+            <li>
+                Choose the correct one-tailed or two-tailed test.
+            </li>
+
+            <li>
+                Calculate the appropriate test statistic.
+            </li>
+
+            <li>
+                Use the correct significance level or critical value.
+            </li>
+
+            <li>
+                State the statistical decision.
+            </li>
+
+            <li>
+                Finish with a conclusion in context.
             </li>
 
         </ul>
 
-        <h3>Significance Level</h3>
+    </div>
 
-        <p>
-            The significance level is the probability of rejecting H₀ when H₀
-            is actually true.
-        </p>
-
-        <h3>Conclusion</h3>
-
-        <p>
-            A statistical conclusion should be stated clearly in the context
-            of the question.
-        </p>
-
-        <div class="definition">
-
-            <strong>Remember:</strong>
-
-            <p>
-                Do not say that H₀ has been proved true. A test either provides
-                sufficient evidence to reject H₀ or does not provide sufficient
-                evidence to reject H₀.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CENTRAL LIMIT THEOREM -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 06</p>
-
-        <h2>Central Limit Theorem</h2>
-
-        <p>
-            The Central Limit Theorem allows the distribution of a sample mean
-            to be approximated by a Normal distribution for sufficiently large
-            samples, even when the underlying population is not Normal.
-        </p>
-
-        <h3>Sampling Distribution of the Mean</h3>
-
-        <p>
-            For a population with mean μ and variance σ², a sample mean based
-            on n independent observations has:
-        </p>
-
-        <div class="formula">
-            E(X̄) = μ
-        </div>
-
-        <div class="formula">
-            Var(X̄) = σ² / n
-        </div>
-
-        <p>
-            For a Normal population, the sampling distribution of X̄ is exactly
-            Normal. For a sufficiently large sample from a non-Normal population,
-            the Central Limit Theorem provides a Normal approximation.
-        </p>
-
-        <h3>Standardising the Sample Mean</h3>
-
-        <div class="formula">
-            Z = (X̄ − μ) / (σ / √n)
-        </div>
-
-        <div class="definition">
-
-            <strong>Exam idea:</strong>
-
-            <p>
-                Always identify the population mean, population variance,
-                sample size and required probability before standardising.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- TWO SAMPLE TESTS -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 07</p>
-
-        <h2>Comparing Two Population Means</h2>
-
-        <p>
-            S3 also considers inference about the difference between two
-            population means using independent samples.
-        </p>
-
-        <h3>Difference Between Sample Means</h3>
-
-        <p>
-            If two independent samples are taken from Normal populations with
-            known variances:
-        </p>
-
-        <div class="formula">
-            E(X̄ − Ȳ) = μx − μy
-        </div>
-
-        <div class="formula">
-            Var(X̄ − Ȳ) = σx²/nx + σy²/ny
-        </div>
-
-        <h3>Standardising the Difference</h3>
-
-        <div class="formula">
-            Z = [(X̄ − Ȳ) − (μx − μy)]
-            / √(σx²/nx + σy²/ny)
-        </div>
-
-        <p>
-            This can be used to construct confidence intervals or perform
-            hypothesis tests about the difference between two population means.
-        </p>
-
-        <div class="definition">
-
-            <strong>Large samples:</strong>
-
-            <p>
-                Large-sample methods can also be used when population variances
-                are unknown, using appropriate estimates of variability.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- CORRELATION -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 08</p>
-
-        <h2>Spearman's Rank Correlation</h2>
-
-        <p>
-            Spearman's rank correlation coefficient measures the strength and
-            direction of a monotonic relationship between two variables using
-            their ranks.
-        </p>
-
-        <h3>Rank Differences</h3>
-
-        <p>
-            For each observation, calculate the difference d between its two
-            ranks and then calculate d².
-        </p>
-
-        <div class="formula">
-            rₛ = 1 − [6Σd² / n(n² − 1)]
-        </div>
-
-        <h3>Interpreting rₛ</h3>
-
-        <ul>
-
-            <li>
-                A value close to +1 indicates strong positive association.
-            </li>
-
-            <li>
-                A value close to −1 indicates strong negative association.
-            </li>
-
-            <li>
-                A value close to 0 indicates little evidence of a monotonic
-                relationship.
-            </li>
-
-        </ul>
-
-        <h3>Ties</h3>
-
-        <p>
-            When tied values occur, appropriate ranks must be assigned before
-            calculating the correlation coefficient.
-        </p>
-
-        <h3>Limitations</h3>
-
-        <p>
-            Correlation does not establish causation. Spearman's coefficient
-            also describes association rather than proving that one variable
-            causes changes in another.
-        </p>
-
-    </section>
-
-
-    <!-- TESTING CORRELATION -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 09</p>
-
-        <h2>Testing for Zero Correlation</h2>
-
-        <p>
-            A hypothesis test can be used to investigate whether there is
-            evidence of a relationship between two variables.
-        </p>
-
-        <h3>Hypotheses</h3>
-
-        <div class="formula">
-            H₀: ρ = 0
-        </div>
-
-        <div class="formula">
-            H₁: ρ ≠ 0
-        </div>
-
-        <p>
-            Depending on the wording of the question, a one-tailed alternative
-            may be appropriate.
-        </p>
-
-        <h3>Critical Values</h3>
-
-        <p>
-            For Spearman's rank correlation, critical values can be used to
-            determine whether the observed rank correlation is sufficiently
-            extreme to reject the null hypothesis.
-        </p>
-
-        <div class="definition">
-
-            <strong>Decision rule:</strong>
-
-            <p>
-                Compare the calculated statistic with the appropriate critical
-                value for the chosen significance level and alternative hypothesis.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- GOODNESS OF FIT -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 10</p>
-
-        <h2>Goodness of Fit Tests</h2>
-
-        <p>
-            A chi-squared goodness-of-fit test can be used to investigate whether
-            observed frequencies are consistent with a proposed probability model.
-        </p>
-
-        <h3>Observed and Expected Frequencies</h3>
-
-        <p>
-            The observed frequencies are the actual data. Expected frequencies
-            are calculated from the model assumed under the null hypothesis.
-        </p>
-
-        <div class="formula">
-            χ² = Σ (O − E)² / E
-        </div>
-
-        <h3>Hypotheses</h3>
-
-        <div class="definition">
-
-            <strong>H₀:</strong>
-
-            <p>
-                The data are consistent with the proposed distribution.
-            </p>
-
-            <strong>H₁:</strong>
-
-            <p>
-                The data are not consistent with the proposed distribution.
-            </p>
-
-        </div>
-
-        <h3>Degrees of Freedom</h3>
-
-        <p>
-            The number of degrees of freedom depends on the number of categories
-            and the number of parameters estimated from the data.
-        </p>
-
-        <div class="formula">
-            Degrees of freedom = number of categories − 1 − number of estimated parameters
-        </div>
-
-        <h3>Expected Frequencies</h3>
-
-        <p>
-            Expected frequencies should generally be sufficiently large for the
-            chi-squared approximation to be appropriate. Where necessary,
-            categories may need to be combined according to the conditions of
-            the test.
-        </p>
-
-    </section>
-
-
-    <!-- CONTINGENCY TABLES -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 11</p>
-
-        <h2>Contingency Tables</h2>
-
-        <p>
-            Contingency tables are used to investigate whether two categorical
-            variables are associated.
-        </p>
-
-        <h3>Observed Frequencies</h3>
-
-        <p>
-            The observed frequencies are arranged in rows and columns according
-            to the two categorical variables.
-        </p>
-
-        <h3>Expected Frequency</h3>
-
-        <div class="formula">
-            Expected frequency = (row total × column total) / grand total
-        </div>
-
-        <h3>Chi-Squared Statistic</h3>
-
-        <div class="formula">
-            χ² = Σ (O − E)² / E
-        </div>
-
-        <h3>Degrees of Freedom</h3>
-
-        <div class="formula">
-            df = (number of rows − 1)(number of columns − 1)
-        </div>
-
-        <h3>Hypotheses</h3>
-
-        <div class="definition">
-
-            <strong>H₀:</strong>
-
-            <p>
-                The two categorical variables are independent.
-            </p>
-
-            <strong>H₁:</strong>
-
-            <p>
-                The two categorical variables are associated.
-            </p>
-
-        </div>
-
-        <h3>Conclusion</h3>
-
-        <p>
-            The final conclusion should be written in context and should refer
-            to the evidence for or against independence.
-        </p>
-
-    </section>
-
-
-    <!-- MIXED PRACTICE -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">PRACTICE</p>
-
-        <h2>S3 Mixed Practice</h2>
-
-        <p>
-            These questions combine different S3 ideas rather than separating
-            practice by chapter.
-        </p>
-
-
-        <div class="question">
-
-            <strong>
-                1. A population contains 480 students. A stratified sample of
-                60 students is required. If 180 students belong to one stratum,
-                how many students should be selected from that stratum?
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Proportion = 180 / 480.
-                </p>
-
-                <p>
-                    Required sample = (180 / 480) × 60 = 22.5.
-                </p>
-
-                <p>
-                    In practice, the allocation must be adjusted to whole
-                    students while maintaining the required total sample.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                2. X ~ N(12, 3²) and Y ~ N(8, 2²), independently.
-                Find the distribution of 2X + 3Y.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Mean = 2(12) + 3(8) = 48.
-                </p>
-
-                <p>
-                    Variance = 2²(3²) + 3²(2²)
-                    = 36 + 36 = 72.
-                </p>
-
-                <p>
-                    Therefore:
-                </p>
-
-                <p>
-                    2X + 3Y ~ N(48, 72).
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                3. A population has standard deviation 12. A random sample
-                of 36 observations is taken. Find the standard error of the
-                sample mean.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    SE(X̄) = σ / √n
-                </p>
-
-                <p>
-                    = 12 / √36 = 2.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                4. Explain what it means for an estimator to be unbiased.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    An estimator is unbiased if its expected value is equal
-                    to the population parameter that it estimates.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                5. State the formula for the variance of the sample mean
-                when the population variance is σ².
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Var(X̄) = σ² / n.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                6. A sample has mean 51, population standard deviation 10,
-                and sample size 100. State the standardised statistic for
-                testing μ = 50.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Z = (51 − 50) / (10 / √100) = 1.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                7. What does the Central Limit Theorem allow us to do with
-                a sufficiently large sample from a non-Normal population?
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    It allows the sampling distribution of the sample mean
-                    to be approximated by a Normal distribution.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                8. State the formula for Spearman's rank correlation
-                coefficient.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    rₛ = 1 − 6Σd² / [n(n² − 1)].
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                9. A chi-squared goodness-of-fit test has five categories
-                and two parameters have been estimated from the data.
-                Find the degrees of freedom.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    df = 5 − 1 − 2 = 2.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                10. A contingency table has 4 rows and 3 columns.
-                Find the degrees of freedom for a chi-squared test of
-                independence.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    df = (4 − 1)(3 − 1) = 6.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                11. In a contingency table, a row total is 80, a column
-                total is 50 and the grand total is 200. Find the expected
-                frequency for that cell.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Expected frequency = (80 × 50) / 200 = 20.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                12. Explain the difference between statistical significance
-                and practical importance.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Statistical significance means that the sample provides
-                    sufficient evidence against the null hypothesis at the
-                    chosen significance level. Practical importance concerns
-                    whether the size of the observed effect is meaningful
-                    in the real-world context.
-                </p>
-
-            </details>
-
-        </div>
-
-
-    </section>
-
-
-    <!-- QUICK REVIEW -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">QUICK REVIEW</p>
-
-        <h2>S3 Key Ideas</h2>
-
-        <div class="formula">
-            aX ± bY ~ N(aμx ± bμy, a²σx² + b²σy²)
-        </div>
-
-        <div class="formula">
-            Var(X̄) = σ² / n
-        </div>
-
-        <div class="formula">
-            SE(X̄) = σ / √n
-        </div>
-
-        <div class="formula">
-            Z = (X̄ − μ) / (σ / √n)
-        </div>
-
-        <div class="formula">
-            rₛ = 1 − 6Σd² / [n(n² − 1)]
-        </div>
-
-        <div class="formula">
-            χ² = Σ(O − E)² / E
-        </div>
-
-        <div class="formula">
-            Expected frequency = (row total × column total) / grand total
-        </div>
-
-        <div class="formula">
-            df = (rows − 1)(columns − 1)
-        </div>
-
-        <div class="definition">
-
-            <strong>S3 exam checklist:</strong>
-
-            <ul>
-
-                <li>Identify the population parameter being investigated.</li>
-
-                <li>State H₀ and H₁ clearly.</li>
-
-                <li>Choose the correct one-tailed or two-tailed test.</li>
-
-                <li>Calculate the appropriate test statistic.</li>
-
-                <li>Use the correct significance level or critical value.</li>
-
-                <li>State the statistical decision.</li>
-
-                <li>Finish with a conclusion in context.</li>
-
-            </ul>
-
-        </div>
-
-    </section>
+</section>
 
 
 </main>
 
 
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <div class="navigation">
 
+    <a href="statistics-2.html" class="button">
+        ← Probability Field
+    </a>
+
     <a href="statistics.html" class="button">
-        ← Back to Statistics
+        Statistics Universe
     </a>
 
     <a href="mathematics.html" class="button">
@@ -1409,7 +2244,129 @@
 </footer>
 
 
+<!-- =========================================================
+     PARTICLES
+========================================================= -->
+
+<script>
+
+    const particleCount = 34;
+
+    for (let i = 0; i < particleCount; i++) {
+
+        const particle = document.createElement("div");
+
+        particle.className = "particle";
+
+        particle.style.left = Math.random() * 100 + "%";
+
+        particle.style.animationDuration =
+            (8 + Math.random() * 14) + "s";
+
+        particle.style.animationDelay =
+            (-Math.random() * 18) + "s";
+
+        particle.style.opacity =
+            0.2 + Math.random() * 0.55;
+
+        document.body.appendChild(particle);
+
+    }
+
+
+    /* Scroll reveal */
+
+    const lessons = document.querySelectorAll(".lesson");
+
+    const observer = new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.08
+        }
+
+    );
+
+    lessons.forEach(lesson => observer.observe(lesson));
+
+
+    /* Mouse-following light */
+
+    document.querySelectorAll(".lesson").forEach(card => {
+
+        card.addEventListener("mousemove", event => {
+
+            const rect = card.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            card.style.background = `
+                radial-gradient(
+                    380px circle at ${x}px ${y}px,
+                    rgba(53,232,255,0.055),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    145deg,
+                    rgba(13,24,43,0.78),
+                    rgba(5,11,22,0.7)
+                )
+            `;
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.background = `
+                linear-gradient(
+                    145deg,
+                    rgba(13,24,43,0.78),
+                    rgba(5,11,22,0.7)
+                )
+            `;
+
+        });
+
+    });
+
+
+    /* Hero parallax */
+
+    const hero = document.querySelector(".hero");
+    const core = document.querySelector(".inference-core");
+
+    window.addEventListener("scroll", () => {
+
+        const scrollY = window.scrollY;
+
+        if (scrollY < 650) {
+
+            core.style.transform =
+                `translateY(${scrollY * 0.08}px)`;
+
+        }
+
+    });
+
+
+</script>
+
+
 </body>
 
 </html>
-```
+
