@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,12 +6,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Statistics 2 | IAL ATLAS</title>
+    <title>Statistics 2 | The Probability Field | IAL ATLAS</title>
 
     <meta name="description"
-          content="Edexcel International A Level Mathematics Statistics 2 — complete lessons, worked examples and mixed practice.">
+          content="Edexcel International A Level Mathematics Statistics 2 — probability distributions, continuous random variables, normal approximations and hypothesis testing.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
+
+        :root {
+            --bg: #020617;
+            --panel: rgba(10, 20, 43, 0.68);
+            --panel-strong: rgba(8, 18, 38, 0.88);
+
+            --cyan: #38d9ff;
+            --blue: #4f8cff;
+            --purple: #9b6cff;
+            --violet: #c77dff;
+            --green: #43e6a0;
+
+            --text: #f4f8ff;
+            --muted: #9eb1cc;
+            --soft: #c8d6eb;
+
+            --border: rgba(110, 190, 255, 0.18);
+            --glow: rgba(56, 217, 255, 0.22);
+        }
 
         * {
             margin: 0;
@@ -20,20 +44,67 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(79, 140, 255, 0.12), transparent 28%),
+                radial-gradient(circle at 85% 30%, rgba(155, 108, 255, 0.10), transparent 28%),
+                radial-gradient(circle at 50% 90%, rgba(56, 217, 255, 0.08), transparent 30%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+
+            background-image:
+                linear-gradient(rgba(87, 153, 220, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(87, 153, 220, 0.035) 1px, transparent 1px);
+
+            background-size: 52px 52px;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+
+            background:
+                radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.48));
+        }
+
+        /* ======================================================
+           HEADER
+        ====================================================== */
+
         header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            padding: 18px 6%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            background: rgba(2, 6, 23, 0.72);
+            border-bottom: 1px solid rgba(100, 190, 255, 0.12);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
 
         header a {
@@ -42,107 +113,555 @@
         }
 
         .logo {
-            font-size: 27px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
+        .logo::before {
+            content: "◈ ";
+            color: var(--cyan);
+        }
+
+        .back-link {
+            color: var(--soft);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--cyan);
+        }
+
+        /* ======================================================
+           HERO
+        ====================================================== */
+
         .hero {
+            min-height: 760px;
+            padding: 105px 20px 90px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 750px;
+            height: 750px;
+
+            border-radius: 50%;
+
             background:
                 radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+                    circle,
+                    rgba(56, 217, 255, 0.11),
+                    rgba(79, 140, 255, 0.06) 35%,
+                    transparent 68%
+                );
 
-            color: white;
-            text-align: center;
-            padding: 85px 20px;
+            filter: blur(10px);
+            animation: pulseField 7s ease-in-out infinite;
         }
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            position: relative;
+
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 4px;
+
+            margin-bottom: 18px;
+
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 54px;
-            margin-bottom: 15px;
-        }
+            position: relative;
 
-        .hero h1 span {
-            color: #4db8ff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(48px, 8vw, 92px);
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #bfeeff,
+                    #8caeff,
+                    #d3b9ff
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            text-shadow: 0 0 45px rgba(56, 217, 255, 0.18);
         }
 
         .hero p {
-            max-width: 760px;
-            margin: auto;
-            color: #dcecff;
+            position: relative;
+
+            max-width: 800px;
+
+            color: #b8c9df;
             font-size: 18px;
         }
 
+        .status {
+            position: relative;
+
+            margin-top: 25px;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 9px 16px;
+
+            border: 1px solid rgba(67, 230, 160, 0.24);
+            border-radius: 999px;
+
+            background: rgba(67, 230, 160, 0.06);
+
+            color: var(--green);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+            background: var(--green);
+
+            box-shadow: 0 0 14px var(--green);
+
+            animation: blink 1.8s infinite;
+        }
+
+        /* ======================================================
+           PROBABILITY FIELD VISUAL
+        ====================================================== */
+
+        .probability-field {
+            position: relative;
+
+            width: min(720px, 92vw);
+            height: 300px;
+
+            margin-top: 65px;
+
+            perspective: 800px;
+        }
+
+        .field-grid {
+            position: absolute;
+            inset: 0;
+
+            transform: rotateX(62deg);
+
+            background-image:
+                linear-gradient(rgba(56, 217, 255, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 217, 255, 0.12) 1px, transparent 1px);
+
+            background-size: 38px 38px;
+
+            mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+
+            animation: gridMove 8s linear infinite;
+        }
+
+        .wave {
+            position: absolute;
+
+            left: 4%;
+            right: 4%;
+            top: 35%;
+
+            height: 110px;
+
+            border-top: 2px solid rgba(56, 217, 255, 0.8);
+            border-radius: 50%;
+
+            transform: rotate(-3deg) scaleY(1.5);
+
+            filter:
+                drop-shadow(0 0 8px rgba(56, 217, 255, 0.8))
+                drop-shadow(0 0 24px rgba(56, 217, 255, 0.45));
+
+            animation: waveFlow 4s ease-in-out infinite;
+        }
+
+        .wave::before,
+        .wave::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            border-top: 1px solid rgba(155, 108, 255, 0.45);
+            border-radius: 50%;
+        }
+
+        .wave::before {
+            transform: translateY(28px) scaleX(0.88);
+        }
+
+        .wave::after {
+            transform: translateY(58px) scaleX(0.74);
+        }
+
+        .probability-core {
+            position: absolute;
+
+            left: 50%;
+            top: 47%;
+
+            width: 78px;
+            height: 78px;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    white 0%,
+                    var(--cyan) 8%,
+                    rgba(79, 140, 255, 0.75) 28%,
+                    rgba(155, 108, 255, 0.25) 55%,
+                    transparent 72%
+                );
+
+            box-shadow:
+                0 0 25px rgba(56, 217, 255, 0.9),
+                0 0 80px rgba(79, 140, 255, 0.5);
+
+            animation: corePulse 2.8s ease-in-out infinite;
+        }
+
+        .orbit {
+            position: absolute;
+
+            left: 50%;
+            top: 47%;
+
+            border: 1px solid rgba(130, 195, 255, 0.28);
+
+            border-radius: 50%;
+
+            transform: translate(-50%, -50%) rotateX(64deg);
+        }
+
+        .orbit.one {
+            width: 190px;
+            height: 90px;
+
+            animation: orbitSpin 9s linear infinite;
+        }
+
+        .orbit.two {
+            width: 330px;
+            height: 145px;
+
+            animation: orbitSpin 13s linear infinite reverse;
+        }
+
+        .orbit.three {
+            width: 510px;
+            height: 210px;
+
+            animation: orbitSpin 17s linear infinite;
+        }
+
+        .field-particle {
+            position: absolute;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            box-shadow: 0 0 16px var(--cyan);
+
+            animation: particleFloat 4s ease-in-out infinite;
+        }
+
+        .p1 { left: 16%; top: 48%; animation-delay: -1s; }
+        .p2 { left: 29%; top: 28%; animation-delay: -2.2s; }
+        .p3 { left: 72%; top: 25%; animation-delay: -0.5s; }
+        .p4 { left: 82%; top: 55%; animation-delay: -3s; }
+        .p5 { left: 61%; top: 72%; animation-delay: -1.8s; }
+        .p6 { left: 37%; top: 70%; animation-delay: -2.7s; }
+
+        /* ======================================================
+           DATA STRIP
+        ====================================================== */
+
+        .data-strip {
+            width: min(1050px, 92%);
+            margin: -15px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            position: relative;
+            z-index: 5;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background: rgba(7, 16, 35, 0.65);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.35),
+                inset 0 0 35px rgba(56, 217, 255, 0.025);
+        }
+
+        .data-cell {
+            padding: 22px;
+            text-align: center;
+
+            border-right: 1px solid rgba(100, 180, 255, 0.10);
+        }
+
+        .data-cell:last-child {
+            border-right: none;
+        }
+
+        .data-value {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 22px;
+            font-weight: 700;
+
+            color: white;
+        }
+
+        .data-label {
+            margin-top: 3px;
+
+            color: #7890af;
+
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* ======================================================
+           CONTENT
+        ====================================================== */
+
         .container {
-            max-width: 950px;
+            width: min(1050px, 92%);
             margin: auto;
-            padding: 65px 20px;
+
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading span {
+            color: var(--cyan);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            margin-top: 8px;
+
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(32px, 5vw, 50px);
+        }
+
+        .section-heading p {
+            max-width: 700px;
+
+            color: var(--muted);
+
+            margin-top: 12px;
         }
 
         .lesson {
-            background: white;
-            padding: 38px;
-            margin-bottom: 32px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+
+            padding: 40px;
+
+            margin-bottom: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(14, 28, 57, 0.78),
+                    rgba(5, 13, 30, 0.72)
+                );
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.28),
+                inset 0 1px rgba(255,255,255,0.035);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.45s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+
+        .lesson::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            right: -70px;
+            top: -70px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(56, 217, 255, 0.13),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+        }
+
+        .lesson::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(56, 217, 255, 0.45),
+                    transparent
+                );
+        }
+
+        .lesson:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(56, 217, 255, 0.32);
+
+            box-shadow:
+                0 30px 90px rgba(0,0,0,0.35),
+                0 0 45px rgba(56, 217, 255, 0.055);
         }
 
         .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            color: var(--cyan);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
             margin-bottom: 8px;
         }
 
         .lesson h2 {
-            font-size: 30px;
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(28px, 4vw, 39px);
+
             margin-bottom: 18px;
         }
 
         .lesson h3 {
-            font-size: 21px;
-            margin-top: 27px;
+            color: #eaf5ff;
+
+            font-size: 20px;
+
+            margin-top: 30px;
             margin-bottom: 10px;
         }
 
-        .lesson p {
-            color: #53657d;
-            margin-bottom: 15px;
+        .lesson p,
+        .lesson li {
+            color: var(--muted);
         }
 
         .lesson ul {
             padding-left: 25px;
-            color: #53657d;
         }
 
         .lesson li {
-            margin-bottom: 9px;
+            margin-bottom: 8px;
         }
 
+        /* ======================================================
+           DEFINITIONS
+        ====================================================== */
+
         .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 22px 0;
-            border-radius: 8px;
+            position: relative;
+
+            margin: 25px 0;
+            padding: 22px 24px;
+
+            border-left: 2px solid var(--cyan);
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(56, 217, 255, 0.09),
+                    rgba(56, 217, 255, 0.025),
+                    transparent
+                );
+
+            box-shadow: inset 0 0 30px rgba(56, 217, 255, 0.025);
+        }
+
+        .definition strong {
+            color: var(--cyan);
         }
 
         .definition p {
@@ -150,101 +669,589 @@
             margin-bottom: 0;
         }
 
+        /* ======================================================
+           FORMULAS
+        ====================================================== */
+
         .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
+            position: relative;
+
             margin: 20px 0;
-            border-radius: 10px;
+            padding: 20px 25px;
+
+            border: 1px solid rgba(105, 185, 255, 0.17);
+
+            border-radius: 14px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(79, 140, 255, 0.11),
+                    transparent 60%
+                ),
+                rgba(3, 10, 25, 0.8);
+
+            color: #f4fbff;
+
             text-align: center;
-            font-size: 19px;
-            font-weight: bold;
+
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+
             overflow-x: auto;
+
+            box-shadow:
+                inset 0 0 30px rgba(79, 140, 255, 0.025),
+                0 0 25px rgba(56, 217, 255, 0.025);
         }
 
+        .formula::before {
+            content: "P(X)";
+
+            position: absolute;
+
+            top: 6px;
+            right: 12px;
+
+            color: rgba(56, 217, 255, 0.22);
+
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+        /* ======================================================
+           EXAMPLES
+        ====================================================== */
+
         .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 22px;
-            border-radius: 12px;
+            margin-top: 25px;
+
+            padding: 27px;
+
+            border: 1px solid rgba(155, 108, 255, 0.20);
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(155, 108, 255, 0.075),
+                    rgba(56, 217, 255, 0.025)
+                );
         }
 
         .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
+            color: var(--violet) !important;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
         }
 
         .solution {
             margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            background: rgba(1, 7, 20, 0.55);
+
+            border: 1px solid rgba(120, 175, 240, 0.11);
         }
 
+        /* ======================================================
+           WARNING
+        ====================================================== */
+
+        .warning {
+            margin: 25px 0;
+
+            padding: 22px 24px;
+
+            border-left: 2px solid #f6c85f;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(246, 200, 95, 0.09),
+                    rgba(246, 200, 95, 0.025),
+                    transparent
+                );
+        }
+
+        .warning strong {
+            color: #f6c85f;
+        }
+
+        /* ======================================================
+           PRACTICE
+        ====================================================== */
+
         .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
+            padding: 21px 0;
+
+            border-bottom: 1px solid rgba(130, 180, 235, 0.10);
         }
 
         .question:last-child {
             border-bottom: none;
         }
 
+        .question strong {
+            color: #eaf4ff;
+        }
+
         details {
             margin-top: 12px;
+
+            padding: 12px 15px;
+
+            border-radius: 10px;
+
+            background: rgba(56, 217, 255, 0.035);
         }
 
         summary {
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+
+            color: var(--cyan);
+
+            font-weight: 700;
         }
 
-        .warning {
-            background: #fff8e8;
-            border-left: 5px solid #f0a500;
-            padding: 20px;
-            margin: 22px 0;
-            border-radius: 8px;
+        details p {
+            margin-top: 10px;
         }
+
+        /* ======================================================
+           UNIVERSE PANEL
+        ====================================================== */
+
+        .universe-panel {
+            margin-top: 55px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            border: 1px solid rgba(56, 217, 255, 0.18);
+            border-radius: 24px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(56, 217, 255, 0.07),
+                    transparent 65%
+                ),
+                rgba(6, 15, 33, 0.72);
+
+            box-shadow:
+                inset 0 0 60px rgba(56, 217, 255, 0.025),
+                0 25px 70px rgba(0,0,0,0.28);
+        }
+
+        .universe-panel h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+        .universe-panel p {
+            color: var(--muted);
+        }
+
+        .flow {
+            margin-top: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .flow-node {
+            padding: 9px 15px;
+
+            border: 1px solid rgba(56, 217, 255, 0.18);
+            border-radius: 999px;
+
+            color: #cceeff;
+
+            background: rgba(56, 217, 255, 0.045);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        .flow-arrow {
+            color: var(--cyan);
+        }
+
+        /* ======================================================
+           NAVIGATION
+        ====================================================== */
 
         .navigation {
             text-align: center;
-            padding: 10px 20px 60px;
+
+            padding: 20px 20px 75px;
         }
 
         .button {
             display: inline-block;
-            background: #32a9e8;
-            color: white;
+
+            margin: 6px;
+            padding: 13px 24px;
+
+            border: 1px solid rgba(56, 217, 255, 0.24);
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(56, 217, 255, 0.13),
+                    rgba(79, 140, 255, 0.08)
+                );
+
+            color: #dff8ff;
+
             text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 5px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 0 25px rgba(56, 217, 255, 0.045);
+
+            transition: 0.3s;
         }
 
         .button:hover {
-            background: #168dca;
+            transform: translateY(-3px);
+
+            border-color: rgba(56, 217, 255, 0.55);
+
+            box-shadow:
+                0 10px 35px rgba(56, 217, 255, 0.10);
         }
+
+        /* ======================================================
+           FOOTER
+        ====================================================== */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            padding: 32px 20px;
+
+            background: rgba(1, 5, 15, 0.92);
+
+            border-top: 1px solid rgba(100, 180, 255, 0.10);
+
+            color: #7185a1;
+
             text-align: center;
-            padding: 30px 20px;
+
+            font-size: 13px;
         }
 
-        @media (max-width: 700px) {
+        /* ======================================================
+           PARTICLES
+        ====================================================== */
 
-            .hero h1 {
-                font-size: 38px;
+        .particle {
+            position: fixed;
+
+            width: 3px;
+            height: 3px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            opacity: 0.25;
+
+            pointer-events: none;
+
+            animation: drift 12s linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            left: 8%;
+            top: 30%;
+            animation-delay: -3s;
+        }
+
+        .particle:nth-child(2) {
+            left: 22%;
+            top: 70%;
+            animation-delay: -8s;
+        }
+
+        .particle:nth-child(3) {
+            left: 48%;
+            top: 20%;
+            animation-delay: -5s;
+        }
+
+        .particle:nth-child(4) {
+            left: 73%;
+            top: 62%;
+            animation-delay: -10s;
+        }
+
+        .particle:nth-child(5) {
+            left: 91%;
+            top: 35%;
+            animation-delay: -1s;
+        }
+
+        .particle:nth-child(6) {
+            left: 58%;
+            top: 88%;
+            animation-delay: -7s;
+        }
+
+        /* ======================================================
+           ANIMATIONS
+        ====================================================== */
+
+        @keyframes pulseField {
+
+            0%, 100% {
+                transform: scale(0.92);
+                opacity: 0.55;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes blink {
+
+            0%, 100% {
+                opacity: 0.35;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes gridMove {
+
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 38px;
+            }
+
+        }
+
+        @keyframes waveFlow {
+
+            0%, 100% {
+                transform: rotate(-3deg) scaleY(1.5) translateY(0);
+            }
+
+            50% {
+                transform: rotate(3deg) scaleY(1.65) translateY(-8px);
+            }
+
+        }
+
+        @keyframes corePulse {
+
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.12);
+            }
+
+        }
+
+        @keyframes orbitSpin {
+
+            from {
+                transform: translate(-50%, -50%) rotateX(64deg) rotateZ(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotateX(64deg) rotateZ(360deg);
+            }
+
+        }
+
+        @keyframes particleFloat {
+
+            0%, 100% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0.35;
+            }
+
+            50% {
+                transform: translateY(-22px) scale(1.35);
+                opacity: 1;
+            }
+
+        }
+
+        @keyframes drift {
+
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-80px) translateX(35px);
+            }
+
+            100% {
+                transform: translateY(-160px) translateX(-20px);
+            }
+
+        }
+
+        /* ======================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ======================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .data-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .data-cell:nth-child(2) {
+                border-right: none;
+            }
+
+            .data-cell:nth-child(-n+2) {
+                border-bottom: 1px solid rgba(100, 180, 255, 0.10);
             }
 
             .lesson {
-                padding: 25px;
+                padding: 28px;
+            }
+
+            .hero {
+                min-height: 690px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .back-link {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding-top: 80px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .probability-field {
+                height: 240px;
+            }
+
+            .orbit.three {
+                width: 390px;
+            }
+
+            .data-strip {
+                width: 94%;
+            }
+
+            .data-cell {
+                padding: 17px 10px;
+            }
+
+            .data-value {
+                font-size: 18px;
+            }
+
+            .lesson {
+                padding: 23px;
+                border-radius: 19px;
+            }
+
+            .formula {
+                font-size: 17px;
+                padding: 18px 12px;
+            }
+
+            .universe-panel {
+                padding: 26px 20px;
+            }
+
+        }
+
+        /* ======================================================
+           REDUCED MOTION
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
             }
 
         }
@@ -253,1194 +1260,1680 @@
 
 </head>
 
+
 <body>
 
+    <!-- Floating statistical particles -->
 
-<header>
-
-    <a href="index.html" class="logo">
-        IAL ATLAS
-    </a>
-
-    <a href="statistics.html">
-        ← Statistics
-    </a>
-
-</header>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
 
 
-<section class="hero">
+    <!-- ======================================================
+         HEADER
+    ====================================================== -->
 
-    <p class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS • S2
-    </p>
+    <header>
 
-    <h1>
-        Statistics <span>2</span>
-    </h1>
+        <a href="index.html" class="logo">
+            IAL ATLAS
+        </a>
 
-    <p>
-        Develop your understanding of probability distributions,
-        continuous random variables, normal approximations and
-        hypothesis testing.
-    </p>
+        <a href="statistics.html" class="back-link">
+            ← Statistics
+        </a>
 
-</section>
+    </header>
 
 
-<main class="container">
+    <!-- ======================================================
+         HERO
+    ====================================================== -->
 
+    <section class="hero">
 
-    <!-- ====================================================== -->
-    <!-- SECTION 1 -->
-    <!-- ====================================================== -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">SECTION 01</p>
-
-        <h2>The Binomial and Poisson Distributions</h2>
-
-        <p>
-            S2 begins by developing the probability distributions
-            introduced in S1. The Binomial and Poisson distributions
-            can be used to model different types of discrete random
-            variables.
+        <p class="hero-label">
+            EDEXCEL INTERNATIONAL A LEVEL MATHEMATICS • S2
         </p>
 
-
-        <h3>Binomial Distribution</h3>
-
-        <p>
-            A random variable X has a Binomial distribution when there
-            is a fixed number of independent trials, each trial has two
-            possible outcomes, and the probability of success remains
-            constant.
-        </p>
-
-        <div class="formula">
-            X ~ B(n, p)
-        </div>
-
-
-        <h3>Conditions for a Binomial Model</h3>
-
-        <ul>
-
-            <li>There is a fixed number of trials, n.</li>
-
-            <li>Each trial has two possible outcomes.</li>
-
-            <li>The probability of success, p, is constant.</li>
-
-            <li>The trials are independent.</li>
-
-        </ul>
-
-
-        <h3>Binomial Probability</h3>
-
-        <div class="formula">
-            P(X = r) = ⁿCᵣ pʳ(1 − p)ⁿ⁻ʳ
-        </div>
-
-
-        <h3>Mean and Variance</h3>
-
-        <div class="formula">
-            E(X) = np
-        </div>
-
-        <div class="formula">
-            Var(X) = np(1 − p)
-        </div>
-
-
-        <h3>Modelling with the Binomial Distribution</h3>
+        <h1>
+            THE PROBABILITY FIELD
+        </h1>
 
         <p>
-            A model should only be used when its assumptions are
-            reasonable. In examination questions, you may need to
-            explain whether a Binomial model is appropriate.
+            Enter the second region of the statistical universe —
+            where discrete events become distributions, continuous
+            variables become probability landscapes, and evidence
+            begins to challenge assumptions.
         </p>
 
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
-
-            <p>
-                A machine produces components. The probability that a
-                component is defective is 0.08. A random sample of
-                20 components is selected. Let X be the number of
-                defective components.
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    Each component has two possible outcomes:
-                    defective or non-defective.
-                </p>
-
-                <p>
-                    The probability of a defective component remains
-                    constant at 0.08.
-                </p>
-
-                <p>
-                    Assuming the components are independent:
-                </p>
-
-                <p>
-                    <strong>X ~ B(20, 0.08)</strong>
-                </p>
-
-                <p>
-                    Mean = 20 × 0.08 = <strong>1.6</strong>
-                </p>
-
-                <p>
-                    Variance = 20 × 0.08 × 0.92 =
-                    <strong>1.472</strong>
-                </p>
-
-            </div>
-
+        <div class="status">
+            <span class="status-dot"></span>
+            PROBABILITY FIELD ONLINE
         </div>
 
 
-        <h3>Poisson Distribution</h3>
+        <!-- Probability visualization -->
 
-        <p>
-            The Poisson distribution can be used to model the number
-            of times an event occurs in a fixed interval of time,
-            length, area or another suitable interval.
-        </p>
+        <div class="probability-field">
 
-        <div class="formula">
-            X ~ Po(λ)
-        </div>
+            <div class="field-grid"></div>
 
+            <div class="orbit one"></div>
+            <div class="orbit two"></div>
+            <div class="orbit three"></div>
 
-        <h3>Poisson Probability</h3>
+            <div class="wave"></div>
 
-        <div class="formula">
-            P(X = r) = e⁻λ λʳ ÷ r!
-        </div>
+            <div class="probability-core"></div>
 
-
-        <h3>Mean and Variance</h3>
-
-        <div class="formula">
-            E(X) = λ
-        </div>
-
-        <div class="formula">
-            Var(X) = λ
-        </div>
-
-
-        <div class="definition">
-
-            <strong>Key idea:</strong>
-
-            <p>
-                For a Poisson distribution, the mean and variance
-                are equal.
-            </p>
-
-        </div>
-
-
-        <h3>Additive Property</h3>
-
-        <p>
-            If two independent Poisson random variables are added,
-            the result is also Poisson.
-        </p>
-
-        <div class="formula">
-            X ~ Po(λ₁), Y ~ Po(λ₂)
-        </div>
-
-        <div class="formula">
-            X + Y ~ Po(λ₁ + λ₂)
-        </div>
-
-
-        <h3>Poisson Approximation to the Binomial</h3>
-
-        <p>
-            Under suitable conditions, a Binomial distribution can be
-            approximated by a Poisson distribution.
-        </p>
-
-        <div class="formula">
-            B(n,p) ≈ Po(np)
-        </div>
-
-        <p>
-            The approximation is particularly useful when n is large
-            and p is small.
-        </p>
-
-
-        <div class="warning">
-
-            <strong>Exam reminder:</strong>
-
-            <p>
-                Always consider whether the assumptions of the model
-                are reasonable before using an approximation.
-            </p>
+            <span class="field-particle p1"></span>
+            <span class="field-particle p2"></span>
+            <span class="field-particle p3"></span>
+            <span class="field-particle p4"></span>
+            <span class="field-particle p5"></span>
+            <span class="field-particle p6"></span>
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- SECTION 2 -->
-    <!-- ====================================================== -->
+    <!-- ======================================================
+         DATA STRIP
+    ====================================================== -->
 
-    <section class="lesson">
+    <section class="data-strip">
 
-        <p class="lesson-number">SECTION 02</p>
+        <div class="data-cell">
 
-        <h2>Continuous Random Variables</h2>
+            <div class="data-value">
+                S2
+            </div>
 
-        <p>
-            Unlike a discrete random variable, a continuous random
-            variable can take any value within an interval.
-        </p>
+            <div class="data-label">
+                PROBABILITY FIELD
+            </div>
+
+        </div>
 
 
-        <h3>Probability Density Function</h3>
+        <div class="data-cell">
 
-        <p>
-            A probability density function, or PDF, describes how
-            probability is distributed over the possible values of X.
-        </p>
+            <div class="data-value">
+                B(n,p)
+            </div>
 
-        <div class="definition">
+            <div class="data-label">
+                DISCRETE EVENTS
+            </div>
 
-            <strong>Conditions for a PDF:</strong>
+        </div>
+
+
+        <div class="data-cell">
+
+            <div class="data-value">
+                f(x)
+            </div>
+
+            <div class="data-label">
+                CONTINUOUS FIELD
+            </div>
+
+        </div>
+
+
+        <div class="data-cell">
+
+            <div class="data-value">
+                H₀ / H₁
+            </div>
+
+            <div class="data-label">
+                INFERENCE SIGNAL
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="container">
+
+
+        <div class="section-heading reveal">
+
+            <span>STATISTICAL UNIVERSE // REGION 02</span>
+
+            <h2>
+                Navigate the Probability Field
+            </h2>
+
+            <p>
+                S2 develops the statistical systems introduced earlier,
+                moving from discrete probability models into continuous
+                distributions, normal approximations and formal
+                hypothesis testing.
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================
+             SECTION 1
+        ================================================== -->
+
+        <section class="lesson reveal">
+
+            <p class="lesson-number">
+                FIELD 01 • DISCRETE DISTRIBUTIONS
+            </p>
+
+            <h2>
+                The Binomial and Poisson Distributions
+            </h2>
+
+            <p>
+                S2 begins by developing the probability distributions
+                introduced in S1. The Binomial and Poisson distributions
+                can be used to model different types of discrete random
+                variables.
+            </p>
+
+
+            <h3>
+                Binomial Distribution
+            </h3>
+
+            <p>
+                A random variable X has a Binomial distribution when there
+                is a fixed number of independent trials, each trial has two
+                possible outcomes, and the probability of success remains
+                constant.
+            </p>
+
+            <div class="formula">
+                X ~ B(n, p)
+            </div>
+
+
+            <h3>
+                Conditions for a Binomial Model
+            </h3>
 
             <ul>
 
-                <li>f(x) ≥ 0 for all possible values of x.</li>
+                <li>
+                    There is a fixed number of trials, n.
+                </li>
 
-                <li>The total area under the curve is 1.</li>
+                <li>
+                    Each trial has two possible outcomes.
+                </li>
+
+                <li>
+                    The probability of success, p, is constant.
+                </li>
+
+                <li>
+                    The trials are independent.
+                </li>
 
             </ul>
 
-        </div>
+
+            <h3>
+                Binomial Probability
+            </h3>
+
+            <div class="formula">
+                P(X = r) = ⁿCᵣ pʳ(1 − p)ⁿ⁻ʳ
+            </div>
 
 
-        <h3>Finding Probabilities</h3>
+            <h3>
+                Mean and Variance
+            </h3>
 
-        <p>
-            For a continuous random variable, probability is represented
-            by area under the probability density function.
-        </p>
+            <div class="formula">
+                E(X) = np
+            </div>
 
-        <div class="formula">
-            P(a &lt; X &lt; b) = ∫ₐᵇ f(x) dx
-        </div>
-
-
-        <h3>Probability at a Single Point</h3>
-
-        <div class="formula">
-            P(X = a) = 0
-        </div>
+            <div class="formula">
+                Var(X) = np(1 − p)
+            </div>
 
 
-        <h3>Cumulative Distribution Function</h3>
-
-        <p>
-            The cumulative distribution function gives the probability
-            that X is less than or equal to a particular value.
-        </p>
-
-        <div class="formula">
-            F(x) = P(X ≤ x)
-        </div>
-
-
-        <h3>Relationship Between PDF and CDF</h3>
-
-        <div class="formula">
-            F(x) = ∫₋∞ˣ f(t) dt
-        </div>
-
-        <div class="formula">
-            f(x) = dF(x) / dx
-        </div>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
+            <h3>
+                Modelling with the Binomial Distribution
+            </h3>
 
             <p>
-                A continuous random variable X has density
-                f(x) = 2x for 0 ≤ x ≤ 1.
-                Find P(X ≤ 0.5).
+                A model should only be used when its assumptions are
+                reasonable. In examination questions, you may need to
+                explain whether a Binomial model is appropriate.
             </p>
 
-            <div class="solution">
 
-                <p>
-                    P(X ≤ 0.5) = ∫₀⁰·⁵ 2x dx
+            <div class="example">
+
+                <p class="example-title">
+                    Worked Example
                 </p>
 
                 <p>
-                    = [x²]₀⁰·⁵
+                    A machine produces components. The probability that a
+                    component is defective is 0.08. A random sample of
+                    20 components is selected. Let X be the number of
+                    defective components.
                 </p>
 
-                <p>
-                    = 0.25
-                </p>
+                <div class="solution">
+
+                    <p>
+                        Each component has two possible outcomes:
+                        defective or non-defective.
+                    </p>
+
+                    <p>
+                        The probability of a defective component remains
+                        constant at 0.08.
+                    </p>
+
+                    <p>
+                        Assuming the components are independent:
+                    </p>
+
+                    <p>
+                        <strong>X ~ B(20, 0.08)</strong>
+                    </p>
+
+                    <p>
+                        Mean = 20 × 0.08 = <strong>1.6</strong>
+                    </p>
+
+                    <p>
+                        Variance = 20 × 0.08 × 0.92 =
+                        <strong>1.472</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>
+                Poisson Distribution
+            </h3>
+
+            <p>
+                The Poisson distribution can be used to model the number
+                of times an event occurs in a fixed interval of time,
+                length, area or another suitable interval.
+            </p>
+
+            <div class="formula">
+                X ~ Po(λ)
+            </div>
+
+
+            <h3>
+                Poisson Probability
+            </h3>
+
+            <div class="formula">
+                P(X = r) = e⁻λ λʳ ÷ r!
+            </div>
+
+
+            <h3>
+                Mean and Variance
+            </h3>
+
+            <div class="formula">
+                E(X) = λ
+            </div>
+
+            <div class="formula">
+                Var(X) = λ
+            </div>
+
+
+            <div class="definition">
+
+                <strong>
+                    Key idea:
+                </strong>
 
                 <p>
-                    <strong>P(X ≤ 0.5) = 0.25</strong>
+                    For a Poisson distribution, the mean and variance
+                    are equal.
                 </p>
 
             </div>
 
-        </div>
 
-
-        <h3>Simple Polynomial Density Functions</h3>
-
-        <p>
-            S2 questions may involve probability density functions
-            defined by simple polynomial expressions over a specified
-            interval.
-        </p>
-
-        <p>
-            You may need to use the condition that the total probability
-            is 1 to find an unknown constant.
-        </p>
-
-        <div class="formula">
-            ∫ f(x) dx = 1
-        </div>
-
-    </section>
-
-
-    <!-- ====================================================== -->
-    <!-- SECTION 3 -->
-    <!-- ====================================================== -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">SECTION 03</p>
-
-        <h2>Continuous Distributions</h2>
-
-        <h3>Mean of a Continuous Random Variable</h3>
-
-        <p>
-            The mean of a continuous random variable is found by
-            weighting each possible value by its probability density.
-        </p>
-
-        <div class="formula">
-            E(X) = ∫ x f(x) dx
-        </div>
-
-
-        <h3>Second Moment</h3>
-
-        <div class="formula">
-            E(X²) = ∫ x² f(x) dx
-        </div>
-
-
-        <h3>Variance</h3>
-
-        <div class="formula">
-            Var(X) = E(X²) − [E(X)]²
-        </div>
-
-
-        <h3>Standard Deviation</h3>
-
-        <div class="formula">
-            σ = √Var(X)
-        </div>
-
-
-        <h3>Mode</h3>
-
-        <p>
-            The mode is the value of X at which the probability
-            density function reaches its maximum.
-        </p>
-
-
-        <h3>Median</h3>
-
-        <p>
-            The median is the value m for which half of the probability
-            lies below m and half lies above m.
-        </p>
-
-        <div class="formula">
-            F(m) = 0.5
-        </div>
-
-
-        <h3>Quartiles</h3>
-
-        <p>
-            Quartiles divide the distribution into four equal
-            probability sections.
-        </p>
-
-        <div class="formula">
-            F(Q₁) = 0.25
-        </div>
-
-        <div class="formula">
-            F(Q₃) = 0.75
-        </div>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
+            <h3>
+                Additive Property
+            </h3>
 
             <p>
-                Suppose the cumulative distribution function is known.
-                To find the median, set the cumulative probability
-                equal to 0.5 and solve for x.
+                If two independent Poisson random variables are added,
+                the result is also Poisson.
             </p>
 
-            <div class="solution">
-
-                <p>
-                    Set:
-                </p>
-
-                <p>
-                    <strong>F(x) = 0.5</strong>
-                </p>
-
-                <p>
-                    Solve the resulting equation for x.
-                </p>
-
-                <p>
-                    The solution is the median.
-                </p>
-
+            <div class="formula">
+                X ~ Po(λ₁), Y ~ Po(λ₂)
             </div>
 
-        </div>
-
-
-        <h3>Continuous Uniform Distribution</h3>
-
-        <p>
-            A continuous uniform distribution has constant probability
-            density throughout a specified interval.
-        </p>
-
-        <div class="formula">
-            X ~ U(a,b)
-        </div>
-
-
-        <h3>Probability Density</h3>
-
-        <div class="formula">
-            f(x) = 1 ÷ (b − a)
-        </div>
-
-
-        <h3>Mean</h3>
-
-        <div class="formula">
-            E(X) = (a + b) ÷ 2
-        </div>
-
-
-        <h3>Variance</h3>
-
-        <div class="formula">
-            Var(X) = (b − a)² ÷ 12
-        </div>
-
-
-        <div class="definition">
-
-            <strong>Key idea:</strong>
-
-            <p>
-                The uniform distribution gives equal probability density
-                across its entire interval.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ====================================================== -->
-    <!-- NORMAL APPROXIMATIONS -->
-    <!-- ====================================================== -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">SECTION 03 • NORMAL APPROXIMATIONS</p>
-
-        <h2>Normal Approximations</h2>
-
-        <p>
-            The Normal distribution can be used to approximate certain
-            Binomial and Poisson distributions when appropriate.
-        </p>
-
-
-        <h3>Normal Distribution</h3>
-
-        <div class="formula">
-            X ~ N(μ, σ²)
-        </div>
-
-
-        <h3>Binomial to Normal</h3>
-
-        <p>
-            If X ~ B(n,p), the approximating Normal distribution has:
-        </p>
-
-        <div class="formula">
-            μ = np
-        </div>
-
-        <div class="formula">
-            σ² = np(1 − p)
-        </div>
-
-
-        <h3>Poisson to Normal</h3>
-
-        <p>
-            If X ~ Po(λ), a suitable Normal approximation has:
-        </p>
-
-        <div class="formula">
-            μ = λ
-        </div>
-
-        <div class="formula">
-            σ² = λ
-        </div>
-
-
-        <h3>Continuity Correction</h3>
-
-        <p>
-            A Binomial or Poisson random variable is discrete, whereas
-            the Normal distribution is continuous. A continuity correction
-            adjusts the boundary by 0.5.
-        </p>
-
-
-        <div class="definition">
-
-            <strong>Examples:</strong>
-
-            <p>
-                P(X ≥ 10) becomes P(Y &gt; 9.5).
-            </p>
-
-            <p>
-                P(X ≤ 20) becomes P(Y &lt; 20.5).
-            </p>
-
-            <p>
-                P(10 ≤ X ≤ 20) becomes
-                P(9.5 &lt; Y &lt; 20.5).
-            </p>
-
-        </div>
-
-
-        <h3>Standardisation</h3>
-
-        <div class="formula">
-            Z = (X − μ) ÷ σ
-        </div>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
-
-            <p>
-                X ~ B(100, 0.4). Approximate P(X ≥ 45)
-                using a Normal distribution.
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    Mean:
-                </p>
-
-                <p>
-                    μ = np = 100 × 0.4 = 40
-                </p>
-
-                <p>
-                    Variance:
-                </p>
-
-                <p>
-                    σ² = np(1 − p)
-                    = 100 × 0.4 × 0.6
-                    = 24
-                </p>
-
-                <p>
-                    Therefore use Y ~ N(40, 24).
-                </p>
-
-                <p>
-                    Apply continuity correction:
-                </p>
-
-                <p>
-                    P(X ≥ 45) ≈ P(Y &gt; 44.5)
-                </p>
-
-                <p>
-                    Then standardise using:
-                </p>
-
-                <p>
-                    Z = (44.5 − 40) / √24
-                </p>
-
+            <div class="formula">
+                X + Y ~ Po(λ₁ + λ₂)
             </div>
 
-        </div>
 
-    </section>
-
-
-    <!-- ====================================================== -->
-    <!-- HYPOTHESIS TESTS -->
-    <!-- ====================================================== -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">SECTION 04</p>
-
-        <h2>Hypothesis Tests</h2>
-
-        <p>
-            Hypothesis testing provides a formal method for deciding
-            whether sample evidence is sufficiently strong to reject
-            a statistical claim.
-        </p>
-
-
-        <h3>Null Hypothesis</h3>
-
-        <p>
-            The null hypothesis, H₀, represents the claim or assumption
-            being tested.
-        </p>
-
-
-        <h3>Alternative Hypothesis</h3>
-
-        <p>
-            The alternative hypothesis, H₁, represents the competing
-            claim.
-        </p>
-
-
-        <h3>Significance Level</h3>
-
-        <p>
-            The significance level is the probability of rejecting H₀
-            when H₀ is actually true.
-        </p>
-
-        <div class="formula">
-            Common significance levels: 5% and 1%
-        </div>
-
-
-        <h3>Critical Region</h3>
-
-        <p>
-            The critical region contains values of the test statistic
-            that would lead to rejection of H₀.
-        </p>
-
-
-        <h3>Binomial Hypothesis Tests</h3>
-
-        <p>
-            Binomial models can be used to test claims about the
-            probability of success p.
-        </p>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example Structure
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    <strong>Step 1:</strong> State H₀ and H₁.
-                </p>
-
-                <p>
-                    <strong>Step 2:</strong> Identify the distribution
-                    under H₀.
-                </p>
-
-                <p>
-                    <strong>Step 3:</strong> Find the relevant probability
-                    or critical value.
-                </p>
-
-                <p>
-                    <strong>Step 4:</strong> Compare the result with the
-                    significance level.
-                </p>
-
-                <p>
-                    <strong>Step 5:</strong> State the conclusion in
-                    context.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <h3>Poisson Hypothesis Tests</h3>
-
-        <p>
-            A Poisson distribution can be used to test claims about
-            the mean rate λ.
-        </p>
-
-
-        <h3>Testing Procedure</h3>
-
-        <ul>
-
-            <li>Define the null and alternative hypotheses.</li>
-
-            <li>Use the null hypothesis to specify the distribution.</li>
-
-            <li>Identify the critical region or calculate a probability.</li>
-
-            <li>Compare the evidence with the significance level.</li>
-
-            <li>Reject or do not reject H₀.</li>
-
-            <li>State the conclusion in the context of the question.</li>
-
-        </ul>
-
-
-        <div class="warning">
-
-            <strong>Important exam language:</strong>
+            <h3>
+                Poisson Approximation to the Binomial
+            </h3>
 
             <p>
-                Do not simply say “H₀ is true” when a test result is
-                not significant. Say that there is insufficient evidence
-                to reject H₀.
-            </p>
-
-        </div>
-
-
-        <h3>Normal Approximation in Hypothesis Testing</h3>
-
-        <p>
-            When appropriate, a Normal approximation can be used for
-            a Binomial hypothesis test. The continuity correction must
-            be applied when making the approximation.
-        </p>
-
-    </section>
-
-
-    <!-- ====================================================== -->
-    <!-- MIXED PRACTICE -->
-    <!-- ====================================================== -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">PRACTICE</p>
-
-        <h2>S2 Mixed Practice</h2>
-
-        <p>
-            These questions combine the major S2 techniques rather than
-            separating practice by topic.
-        </p>
-
-
-        <div class="question">
-
-            <strong>
-                1. State the four conditions required for a Binomial model.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Fixed number of trials, two possible outcomes per
-                    trial, constant probability of success and independent
-                    trials.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                2. X ~ Po(6). Find E(X) and Var(X).
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    E(X) = 6 and Var(X) = 6.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                3. Explain when a Binomial distribution may be
+                Under suitable conditions, a Binomial distribution can be
                 approximated by a Poisson distribution.
-            </strong>
+            </p>
 
-            <details>
+            <div class="formula">
+                B(n,p) ≈ Po(np)
+            </div>
 
-                <summary>Show answer</summary>
-
-                <p>
-                    When n is sufficiently large and p is sufficiently
-                    small, using λ = np.
-                </p>
-
-            </details>
-
-        </div>
+            <p>
+                The approximation is particularly useful when n is large
+                and p is small.
+            </p>
 
 
-        <div class="question">
+            <div class="warning">
 
-            <strong>
-                4. A continuous random variable has PDF f(x).
-                What must the total area under the PDF equal?
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
+                <strong>
+                    Exam reminder:
+                </strong>
 
                 <p>
-                    The total area must equal 1.
+                    Always consider whether the assumptions of the model
+                    are reasonable before using an approximation.
                 </p>
 
-            </details>
+            </div>
 
-        </div>
+        </section>
 
 
-        <div class="question">
+        <!-- ==================================================
+             SECTION 2
+        ================================================== -->
 
-            <strong>
-                5. What is P(X = 4) for a continuous random variable?
-            </strong>
+        <section class="lesson reveal">
 
-            <details>
+            <p class="lesson-number">
+                FIELD 02 • CONTINUOUS VARIABLES
+            </p>
 
-                <summary>Show answer</summary>
+            <h2>
+                Continuous Random Variables
+            </h2>
+
+            <p>
+                Unlike a discrete random variable, a continuous random
+                variable can take any value within an interval.
+            </p>
+
+
+            <h3>
+                Probability Density Function
+            </h3>
+
+            <p>
+                A probability density function, or PDF, describes how
+                probability is distributed over the possible values of X.
+            </p>
+
+            <div class="definition">
+
+                <strong>
+                    Conditions for a PDF:
+                </strong>
+
+                <ul>
+
+                    <li>
+                        f(x) ≥ 0 for all possible values of x.
+                    </li>
+
+                    <li>
+                        The total area under the curve is 1.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <h3>
+                Finding Probabilities
+            </h3>
+
+            <p>
+                For a continuous random variable, probability is represented
+                by area under the probability density function.
+            </p>
+
+            <div class="formula">
+                P(a &lt; X &lt; b) = ∫ₐᵇ f(x) dx
+            </div>
+
+
+            <h3>
+                Probability at a Single Point
+            </h3>
+
+            <div class="formula">
+                P(X = a) = 0
+            </div>
+
+
+            <h3>
+                Cumulative Distribution Function
+            </h3>
+
+            <p>
+                The cumulative distribution function gives the probability
+                that X is less than or equal to a particular value.
+            </p>
+
+            <div class="formula">
+                F(x) = P(X ≤ x)
+            </div>
+
+
+            <h3>
+                Relationship Between PDF and CDF
+            </h3>
+
+            <div class="formula">
+                F(x) = ∫₋∞ˣ f(t) dt
+            </div>
+
+            <div class="formula">
+                f(x) = dF(x) / dx
+            </div>
+
+
+            <div class="example">
+
+                <p class="example-title">
+                    Worked Example
+                </p>
 
                 <p>
-                    P(X = 4) = 0.
+                    A continuous random variable X has density
+                    f(x) = 2x for 0 ≤ x ≤ 1.
+                    Find P(X ≤ 0.5).
                 </p>
 
-            </details>
+                <div class="solution">
 
-        </div>
+                    <p>
+                        P(X ≤ 0.5) = ∫₀⁰·⁵ 2x dx
+                    </p>
+
+                    <p>
+                        = [x²]₀⁰·⁵
+                    </p>
+
+                    <p>
+                        = 0.25
+                    </p>
+
+                    <p>
+                        <strong>
+                            P(X ≤ 0.5) = 0.25
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
 
 
-        <div class="question">
+            <h3>
+                Simple Polynomial Density Functions
+            </h3>
 
-            <strong>
-                6. State the relationship between a PDF f(x)
-                and its CDF F(x).
-            </strong>
+            <p>
+                S2 questions may involve probability density functions
+                defined by simple polynomial expressions over a specified
+                interval.
+            </p>
 
-            <details>
+            <p>
+                You may need to use the condition that the total probability
+                is 1 to find an unknown constant.
+            </p>
 
-                <summary>Show answer</summary>
+            <div class="formula">
+                ∫ f(x) dx = 1
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             SECTION 3
+        ================================================== -->
+
+        <section class="lesson reveal">
+
+            <p class="lesson-number">
+                FIELD 03 • DISTRIBUTION LANDSCAPE
+            </p>
+
+            <h2>
+                Continuous Distributions
+            </h2>
+
+
+            <h3>
+                Mean of a Continuous Random Variable
+            </h3>
+
+            <p>
+                The mean of a continuous random variable is found by
+                weighting each possible value by its probability density.
+            </p>
+
+            <div class="formula">
+                E(X) = ∫ x f(x) dx
+            </div>
+
+
+            <h3>
+                Second Moment
+            </h3>
+
+            <div class="formula">
+                E(X²) = ∫ x² f(x) dx
+            </div>
+
+
+            <h3>
+                Variance
+            </h3>
+
+            <div class="formula">
+                Var(X) = E(X²) − [E(X)]²
+            </div>
+
+
+            <h3>
+                Standard Deviation
+            </h3>
+
+            <div class="formula">
+                σ = √Var(X)
+            </div>
+
+
+            <h3>
+                Mode
+            </h3>
+
+            <p>
+                The mode is the value of X at which the probability
+                density function reaches its maximum.
+            </p>
+
+
+            <h3>
+                Median
+            </h3>
+
+            <p>
+                The median is the value m for which half of the probability
+                lies below m and half lies above m.
+            </p>
+
+            <div class="formula">
+                F(m) = 0.5
+            </div>
+
+
+            <h3>
+                Quartiles
+            </h3>
+
+            <p>
+                Quartiles divide the distribution into four equal
+                probability sections.
+            </p>
+
+            <div class="formula">
+                F(Q₁) = 0.25
+            </div>
+
+            <div class="formula">
+                F(Q₃) = 0.75
+            </div>
+
+
+            <div class="example">
+
+                <p class="example-title">
+                    Worked Example
+                </p>
 
                 <p>
-                    F(x) is obtained by integrating f(x), and
-                    f(x) is the derivative of F(x).
+                    Suppose the cumulative distribution function is known.
+                    To find the median, set the cumulative probability
+                    equal to 0.5 and solve for x.
                 </p>
 
-            </details>
+                <div class="solution">
 
-        </div>
+                    <p>
+                        Set:
+                    </p>
+
+                    <p>
+                        <strong>
+                            F(x) = 0.5
+                        </strong>
+                    </p>
+
+                    <p>
+                        Solve the resulting equation for x.
+                    </p>
+
+                    <p>
+                        The solution is the median.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-        <div class="question">
+            <h3>
+                Continuous Uniform Distribution
+            </h3>
 
-            <strong>
-                7. X ~ U(2, 10). Find E(X).
-            </strong>
+            <p>
+                A continuous uniform distribution has constant probability
+                density throughout a specified interval.
+            </p>
 
-            <details>
+            <div class="formula">
+                X ~ U(a,b)
+            </div>
 
-                <summary>Show answer</summary>
+
+            <h3>
+                Probability Density
+            </h3>
+
+            <div class="formula">
+                f(x) = 1 ÷ (b − a)
+            </div>
+
+
+            <h3>
+                Mean
+            </h3>
+
+            <div class="formula">
+                E(X) = (a + b) ÷ 2
+            </div>
+
+
+            <h3>
+                Variance
+            </h3>
+
+            <div class="formula">
+                Var(X) = (b − a)² ÷ 12
+            </div>
+
+
+            <div class="definition">
+
+                <strong>
+                    Key idea:
+                </strong>
 
                 <p>
-                    E(X) = (2 + 10) / 2 = 6.
+                    The uniform distribution gives equal probability density
+                    across its entire interval.
                 </p>
 
-            </details>
+            </div>
 
-        </div>
+        </section>
 
 
-        <div class="question">
+        <!-- ==================================================
+             NORMAL APPROXIMATIONS
+        ================================================== -->
 
-            <strong>
-                8. X ~ B(100, 0.2). State the mean and variance
-                of the Normal approximation.
-            </strong>
+        <section class="lesson reveal">
 
-            <details>
+            <p class="lesson-number">
+                FIELD 04 • NORMAL TRANSFORMATION
+            </p>
 
-                <summary>Show answer</summary>
+            <h2>
+                Normal Approximations
+            </h2>
+
+            <p>
+                The Normal distribution can be used to approximate certain
+                Binomial and Poisson distributions when appropriate.
+            </p>
+
+
+            <h3>
+                Normal Distribution
+            </h3>
+
+            <div class="formula">
+                X ~ N(μ, σ²)
+            </div>
+
+
+            <h3>
+                Binomial to Normal
+            </h3>
+
+            <p>
+                If X ~ B(n,p), the approximating Normal distribution has:
+            </p>
+
+            <div class="formula">
+                μ = np
+            </div>
+
+            <div class="formula">
+                σ² = np(1 − p)
+            </div>
+
+
+            <h3>
+                Poisson to Normal
+            </h3>
+
+            <p>
+                If X ~ Po(λ), a suitable Normal approximation has:
+            </p>
+
+            <div class="formula">
+                μ = λ
+            </div>
+
+            <div class="formula">
+                σ² = λ
+            </div>
+
+
+            <h3>
+                Continuity Correction
+            </h3>
+
+            <p>
+                A Binomial or Poisson random variable is discrete, whereas
+                the Normal distribution is continuous. A continuity correction
+                adjusts the boundary by 0.5.
+            </p>
+
+
+            <div class="definition">
+
+                <strong>
+                    Examples:
+                </strong>
 
                 <p>
-                    Mean = np = 20.
+                    P(X ≥ 10) becomes P(Y &gt; 9.5).
                 </p>
 
                 <p>
-                    Variance = np(1 − p)
-                    = 100 × 0.2 × 0.8 = 16.
+                    P(X ≤ 20) becomes P(Y &lt; 20.5).
                 </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                9. When approximating P(X ≥ 30) using a Normal
-                distribution, what continuity correction is required?
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
 
                 <p>
-                    Use P(Y &gt; 29.5).
+                    P(10 ≤ X ≤ 20) becomes
+                    P(9.5 &lt; Y &lt; 20.5).
                 </p>
 
-            </details>
-
-        </div>
+            </div>
 
 
-        <div class="question">
+            <h3>
+                Standardisation
+            </h3>
 
-            <strong>
-                10. What should be stated when a hypothesis test
-                does not provide sufficient evidence against H₀?
-            </strong>
+            <div class="formula">
+                Z = (X − μ) ÷ σ
+            </div>
 
-            <details>
 
-                <summary>Show answer</summary>
+            <div class="example">
+
+                <p class="example-title">
+                    Worked Example
+                </p>
 
                 <p>
-                    There is insufficient evidence to reject H₀.
+                    X ~ B(100, 0.4). Approximate P(X ≥ 45)
+                    using a Normal distribution.
                 </p>
 
-            </details>
+                <div class="solution">
 
-        </div>
+                    <p>
+                        Mean:
+                    </p>
 
+                    <p>
+                        μ = np = 100 × 0.4 = 40
+                    </p>
 
-    </section>
+                    <p>
+                        Variance:
+                    </p>
 
+                    <p>
+                        σ² = np(1 − p)
+                        = 100 × 0.4 × 0.6
+                        = 24
+                    </p>
 
-    <!-- ====================================================== -->
-    <!-- QUICK REVIEW -->
-    <!-- ====================================================== -->
+                    <p>
+                        Therefore use Y ~ N(40, 24).
+                    </p>
 
-    <section class="lesson">
+                    <p>
+                        Apply continuity correction:
+                    </p>
 
-        <p class="lesson-number">QUICK REVIEW</p>
+                    <p>
+                        P(X ≥ 45) ≈ P(Y &gt; 44.5)
+                    </p>
 
-        <h2>S2 Key Formulae</h2>
+                    <p>
+                        Then standardise using:
+                    </p>
 
+                    <p>
+                        Z = (44.5 − 40) / √24
+                    </p>
 
-        <div class="formula">
-            X ~ B(n,p)
-        </div>
+                </div>
 
-        <div class="formula">
-            E(X) = np
-        </div>
+            </div>
 
-        <div class="formula">
-            Var(X) = np(1 − p)
-        </div>
-
-        <div class="formula">
-            X ~ Po(λ)
-        </div>
-
-        <div class="formula">
-            E(X) = Var(X) = λ
-        </div>
-
-        <div class="formula">
-            B(n,p) ≈ Po(np)
-        </div>
-
-        <div class="formula">
-            P(a &lt; X &lt; b) = ∫ₐᵇ f(x) dx
-        </div>
-
-        <div class="formula">
-            F(x) = P(X ≤ x)
-        </div>
-
-        <div class="formula">
-            f(x) = dF(x) / dx
-        </div>
-
-        <div class="formula">
-            E(X) = ∫x f(x) dx
-        </div>
-
-        <div class="formula">
-            Var(X) = E(X²) − [E(X)]²
-        </div>
-
-        <div class="formula">
-            X ~ U(a,b)
-        </div>
-
-        <div class="formula">
-            E(X) = (a + b) ÷ 2
-        </div>
-
-        <div class="formula">
-            Var(X) = (b − a)² ÷ 12
-        </div>
-
-        <div class="formula">
-            Z = (X − μ) ÷ σ
-        </div>
-
-        <div class="formula">
-            Continuity correction: ±0.5
-        </div>
+        </section>
 
 
-        <div class="definition">
+        <!-- ==================================================
+             HYPOTHESIS TESTS
+        ================================================== -->
 
-            <strong>S2 exam checklist:</strong>
+        <section class="lesson reveal">
+
+            <p class="lesson-number">
+                FIELD 05 • INFERENCE SIGNAL
+            </p>
+
+            <h2>
+                Hypothesis Tests
+            </h2>
+
+            <p>
+                Hypothesis testing provides a formal method for deciding
+                whether sample evidence is sufficiently strong to reject
+                a statistical claim.
+            </p>
+
+
+            <h3>
+                Null Hypothesis
+            </h3>
+
+            <p>
+                The null hypothesis, H₀, represents the claim or assumption
+                being tested.
+            </p>
+
+
+            <h3>
+                Alternative Hypothesis
+            </h3>
+
+            <p>
+                The alternative hypothesis, H₁, represents the competing
+                claim.
+            </p>
+
+
+            <h3>
+                Significance Level
+            </h3>
+
+            <p>
+                The significance level is the probability of rejecting H₀
+                when H₀ is actually true.
+            </p>
+
+            <div class="formula">
+                Common significance levels: 5% and 1%
+            </div>
+
+
+            <h3>
+                Critical Region
+            </h3>
+
+            <p>
+                The critical region contains values of the test statistic
+                that would lead to rejection of H₀.
+            </p>
+
+
+            <h3>
+                Binomial Hypothesis Tests
+            </h3>
+
+            <p>
+                Binomial models can be used to test claims about the
+                probability of success p.
+            </p>
+
+
+            <div class="example">
+
+                <p class="example-title">
+                    Worked Example Structure
+                </p>
+
+                <div class="solution">
+
+                    <p>
+                        <strong>Step 1:</strong> State H₀ and H₁.
+                    </p>
+
+                    <p>
+                        <strong>Step 2:</strong> Identify the distribution
+                        under H₀.
+                    </p>
+
+                    <p>
+                        <strong>Step 3:</strong> Find the relevant probability
+                        or critical value.
+                    </p>
+
+                    <p>
+                        <strong>Step 4:</strong> Compare the result with the
+                        significance level.
+                    </p>
+
+                    <p>
+                        <strong>Step 5:</strong> State the conclusion in
+                        context.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>
+                Poisson Hypothesis Tests
+            </h3>
+
+            <p>
+                A Poisson distribution can be used to test claims about
+                the mean rate λ.
+            </p>
+
+
+            <h3>
+                Testing Procedure
+            </h3>
 
             <ul>
 
-                <li>Check the assumptions of a probability model.</li>
+                <li>
+                    Define the null and alternative hypotheses.
+                </li>
 
-                <li>Use the correct distribution.</li>
+                <li>
+                    Use the null hypothesis to specify the distribution.
+                </li>
 
-                <li>Remember continuity correction for Normal approximations.</li>
+                <li>
+                    Identify the critical region or calculate a probability.
+                </li>
 
-                <li>Use integration correctly for continuous variables.</li>
+                <li>
+                    Compare the evidence with the significance level.
+                </li>
 
-                <li>State hypothesis-test conclusions in context.</li>
+                <li>
+                    Reject or do not reject H₀.
+                </li>
+
+                <li>
+                    State the conclusion in the context of the question.
+                </li>
 
             </ul>
 
+
+            <div class="warning">
+
+                <strong>
+                    Important exam language:
+                </strong>
+
+                <p>
+                    Do not simply say “H₀ is true” when a test result is
+                    not significant. Say that there is insufficient evidence
+                    to reject H₀.
+                </p>
+
+            </div>
+
+
+            <h3>
+                Normal Approximation in Hypothesis Testing
+            </h3>
+
+            <p>
+                When appropriate, a Normal approximation can be used for
+                a Binomial hypothesis test. The continuity correction must
+                be applied when making the approximation.
+            </p>
+
+        </section>
+
+
+        <!-- ==================================================
+             MIXED PRACTICE
+        ================================================== -->
+
+        <section class="lesson reveal">
+
+            <p class="lesson-number">
+                FIELD TEST • MIXED PRACTICE
+            </p>
+
+            <h2>
+                S2 Mixed Practice
+            </h2>
+
+            <p>
+                These questions combine the major S2 techniques rather than
+                separating practice by topic.
+            </p>
+
+
+            <div class="question">
+
+                <strong>
+                    1. State the four conditions required for a Binomial model.
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        Fixed number of trials, two possible outcomes per
+                        trial, constant probability of success and independent
+                        trials.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    2. X ~ Po(6). Find E(X) and Var(X).
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        E(X) = 6 and Var(X) = 6.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    3. Explain when a Binomial distribution may be
+                    approximated by a Poisson distribution.
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        When n is sufficiently large and p is sufficiently
+                        small, using λ = np.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    4. A continuous random variable has PDF f(x).
+                    What must the total area under the PDF equal?
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        The total area must equal 1.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    5. What is P(X = 4) for a continuous random variable?
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        P(X = 4) = 0.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    6. State the relationship between a PDF f(x)
+                    and its CDF F(x).
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        F(x) is obtained by integrating f(x), and
+                        f(x) is the derivative of F(x).
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    7. X ~ U(2, 10). Find E(X).
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        E(X) = (2 + 10) / 2 = 6.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    8. X ~ B(100, 0.2). State the mean and variance
+                    of the Normal approximation.
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        Mean = np = 20.
+                    </p>
+
+                    <p>
+                        Variance = np(1 − p)
+                        = 100 × 0.2 × 0.8 = 16.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    9. When approximating P(X ≥ 30) using a Normal
+                    distribution, what continuity correction is required?
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        Use P(Y &gt; 29.5).
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="question">
+
+                <strong>
+                    10. What should be stated when a hypothesis test
+                    does not provide sufficient evidence against H₀?
+                </strong>
+
+                <details>
+
+                    <summary>
+                        Show answer
+                    </summary>
+
+                    <p>
+                        There is insufficient evidence to reject H₀.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             QUICK REVIEW
+        ================================================== -->
+
+        <section class="lesson reveal">
+
+            <p class="lesson-number">
+                FIELD MEMORY CORE • QUICK REVIEW
+            </p>
+
+            <h2>
+                S2 Key Formulae
+            </h2>
+
+
+            <div class="formula">
+                X ~ B(n,p)
+            </div>
+
+            <div class="formula">
+                E(X) = np
+            </div>
+
+            <div class="formula">
+                Var(X) = np(1 − p)
+            </div>
+
+            <div class="formula">
+                X ~ Po(λ)
+            </div>
+
+            <div class="formula">
+                E(X) = Var(X) = λ
+            </div>
+
+            <div class="formula">
+                B(n,p) ≈ Po(np)
+            </div>
+
+            <div class="formula">
+                P(a &lt; X &lt; b) = ∫ₐᵇ f(x) dx
+            </div>
+
+            <div class="formula">
+                F(x) = P(X ≤ x)
+            </div>
+
+            <div class="formula">
+                f(x) = dF(x) / dx
+            </div>
+
+            <div class="formula">
+                E(X) = ∫x f(x) dx
+            </div>
+
+            <div class="formula">
+                Var(X) = E(X²) − [E(X)]²
+            </div>
+
+            <div class="formula">
+                X ~ U(a,b)
+            </div>
+
+            <div class="formula">
+                E(X) = (a + b) ÷ 2
+            </div>
+
+            <div class="formula">
+                Var(X) = (b − a)² ÷ 12
+            </div>
+
+            <div class="formula">
+                Z = (X − μ) ÷ σ
+            </div>
+
+            <div class="formula">
+                Continuity correction: ±0.5
+            </div>
+
+
+            <div class="definition">
+
+                <strong>
+                    S2 exam checklist:
+                </strong>
+
+                <ul>
+
+                    <li>
+                        Check the assumptions of a probability model.
+                    </li>
+
+                    <li>
+                        Use the correct distribution.
+                    </li>
+
+                    <li>
+                        Remember continuity correction for Normal approximations.
+                    </li>
+
+                    <li>
+                        Use integration correctly for continuous variables.
+                    </li>
+
+                    <li>
+                        State hypothesis-test conclusions in context.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             STATISTICAL UNIVERSE CONNECTION
+        ================================================== -->
+
+        <div class="universe-panel reveal">
+
+            <h3>
+                THE PROBABILITY FIELD
+            </h3>
+
+            <p>
+                Every observation enters as uncertainty.
+                The field transforms uncertainty into measurable
+                probability, distributions and statistical evidence.
+            </p>
+
+            <div class="flow">
+
+                <span class="flow-node">
+                    EVENT
+                </span>
+
+                <span class="flow-arrow">
+                    →
+                </span>
+
+                <span class="flow-node">
+                    PROBABILITY
+                </span>
+
+                <span class="flow-arrow">
+                    →
+                </span>
+
+                <span class="flow-node">
+                    DISTRIBUTION
+                </span>
+
+                <span class="flow-arrow">
+                    →
+                </span>
+
+                <span class="flow-node">
+                    EVIDENCE
+                </span>
+
+            </div>
+
         </div>
 
-    </section>
+    </main>
 
 
-</main>
+    <!-- ======================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <div class="navigation">
+
+        <a href="statistics.html" class="button">
+            ← Back to Statistics
+        </a>
+
+        <a href="mathematics.html" class="button">
+            Mathematics
+        </a>
+
+    </div>
 
 
-<div class="navigation">
+    <!-- ======================================================
+         FOOTER
+    ====================================================== -->
 
-    <a href="statistics.html" class="button">
-        ← Back to Statistics
-    </a>
+    <footer>
 
-    <a href="mathematics.html" class="button">
-        Mathematics
-    </a>
+        © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
 
-</div>
+    </footer>
 
 
-<footer>
+    <!-- ======================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    <script>
 
-</footer>
+        /* ==================================================
+           SCROLL REVEAL
+        ================================================== */
 
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            revealObserver.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* ==================================================
+           HERO PARALLAX
+        ================================================== */
+
+        const field =
+            document.querySelector(".probability-field");
+
+        window.addEventListener("mousemove", event => {
+
+            if (!field) return;
+
+            const x =
+                (event.clientX / window.innerWidth - 0.5);
+
+            const y =
+                (event.clientY / window.innerHeight - 0.5);
+
+            field.style.transform =
+                `translate(${x * 10}px, ${y * 7}px)`;
+
+        });
+
+
+        /* ==================================================
+           CARD LIGHT EFFECT
+        ================================================== */
+
+        document
+            .querySelectorAll(".lesson")
+            .forEach(card => {
+
+                card.addEventListener("mousemove", event => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        event.clientX - rect.left;
+
+                    const y =
+                        event.clientY - rect.top;
+
+                    card.style.background =
+                        `
+                        radial-gradient(
+                            350px circle at ${x}px ${y}px,
+                            rgba(56,217,255,0.07),
+                            transparent 55%
+                        ),
+                        linear-gradient(
+                            145deg,
+                            rgba(14,28,57,0.78),
+                            rgba(5,13,30,0.72)
+                        )
+                        `;
+
+                });
+
+                card.addEventListener("mouseleave", () => {
+
+                    card.style.background =
+                        `
+                        linear-gradient(
+                            145deg,
+                            rgba(14,28,57,0.78),
+                            rgba(5,13,30,0.72)
+                        )
+                        `;
+
+                });
+
+            });
+
+    </script>
 
 </body>
 
 </html>
-```
+
