@@ -7,158 +7,1093 @@
 
     <title>Kinematics in a Straight Line | IAL ATLAS</title>
 
+    <meta name="description"
+        content="Edexcel International A Level Mathematics Mechanics 1 — Kinematics in a Straight Line.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
+        html {
+            scroll-behavior: smooth;
         }
 
+        :root {
+            --bg: #020812;
+            --panel: rgba(7, 20, 37, 0.68);
+            --cyan: #42c7ff;
+            --cyan-bright: #9be8ff;
+            --blue: #247bff;
+            --text: #edf8ff;
+            --muted: #8ca7bd;
+            --line: rgba(92, 191, 255, 0.15);
+        }
+
+        body {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(36, 123, 255, 0.15),
+                    transparent 35%
+                ),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND GRID
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            pointer-events: none;
+            opacity: 0.34;
+
+            background-image:
+                linear-gradient(
+                    rgba(66, 199, 255, 0.045) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(66, 199, 255, 0.045) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(42, 183, 255, 0.055),
+                    transparent 68%
+                );
+
+            filter: blur(12px);
+            pointer-events: none;
+            z-index: -4;
+        }
+
+        /* =========================
+           PARTICLES
+        ========================= */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+
+            background: var(--cyan-bright);
+
+            box-shadow:
+                0 0 10px var(--cyan),
+                0 0 22px rgba(66, 199, 255, 0.45);
+
+            opacity: 0.4;
+
+            animation: floatParticle linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            left: 7%;
+            top: 20%;
+            animation-duration: 13s;
+        }
+
+        .particle:nth-child(2) {
+            left: 18%;
+            top: 75%;
+            animation-duration: 17s;
+        }
+
+        .particle:nth-child(3) {
+            left: 32%;
+            top: 35%;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(4) {
+            left: 51%;
+            top: 85%;
+            animation-duration: 19s;
+        }
+
+        .particle:nth-child(5) {
+            left: 66%;
+            top: 22%;
+            animation-duration: 14s;
+        }
+
+        .particle:nth-child(6) {
+            left: 79%;
+            top: 63%;
+            animation-duration: 16s;
+        }
+
+        .particle:nth-child(7) {
+            left: 92%;
+            top: 32%;
+            animation-duration: 11s;
+        }
+
+        @keyframes floatParticle {
+
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.45;
+            }
+
+            80% {
+                opacity: 0.45;
+            }
+
+            100% {
+                transform: translateY(-120px);
+                opacity: 0;
+            }
+
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            padding: 17px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            background: rgba(2, 8, 18, 0.72);
+
+            border-bottom:
+                1px solid rgba(103, 204, 255, 0.13);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
         header a {
-            color: white;
+            color: var(--text);
             text-decoration: none;
         }
 
         .logo {
-            font-size: 27px;
-            font-weight: bold;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
+        .logo::before {
+            content: "◈ ";
+            color: var(--cyan);
+        }
+
+        .back-link {
+            color: #a9c5d9;
+            font-size: 13px;
+            transition: 0.25s ease;
+        }
+
+        .back-link:hover {
+            color: var(--cyan-bright);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            background: linear-gradient(135deg, #071b36, #0b3c73);
-            color: white;
+            position: relative;
+
+            min-height: 670px;
+
+            padding: 90px 20px 115px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 80px 20px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 48%,
+                    rgba(27, 139, 255, 0.13),
+                    transparent 31%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(3, 14, 28, 0.9),
+                    rgba(2, 8, 18, 0.97)
+                );
         }
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            position: relative;
+            z-index: 5;
+
+            padding: 8px 15px;
+
+            border:
+                1px solid rgba(66, 199, 255, 0.25);
+
+            border-radius: 999px;
+
+            background:
+                rgba(66, 199, 255, 0.05);
+
+            color: var(--cyan-bright);
+
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            max-width: 850px;
-            margin: auto;
-            font-size: 48px;
-            line-height: 1.2;
+            position: relative;
+            z-index: 5;
+
+            max-width: 1000px;
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(44px, 7vw, 78px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #b9eaff 48%,
+                    #51caff 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            text-shadow:
+                0 0 45px rgba(66, 199, 255, 0.13);
         }
 
         .hero p {
-            max-width: 720px;
-            margin: 20px auto 0;
-            color: #dcecff;
-            font-size: 18px;
+            position: relative;
+            z-index: 5;
+
+            max-width: 700px;
+
+            margin: 25px auto 0;
+
+            color: #9db8ca;
+
+            font-size: 17px;
         }
 
+        /* =========================
+           MOTION TRACK
+        ========================= */
+
+        .motion-system {
+            position: absolute;
+
+            width: min(900px, 96vw);
+            height: 390px;
+
+            left: 50%;
+            top: 51%;
+
+            transform:
+                translate(-50%, -50%);
+
+            opacity: 0.8;
+
+            pointer-events: none;
+        }
+
+        .track-grid {
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(66, 199, 255, 0.055) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(66, 199, 255, 0.055) 1px,
+                    transparent 1px
+                );
+
+            background-size: 42px 42px;
+
+            mask-image:
+                radial-gradient(
+                    ellipse,
+                    black 20%,
+                    transparent 74%
+                );
+        }
+
+        .track {
+            position: absolute;
+
+            left: 8%;
+            right: 8%;
+            top: 62%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(66, 199, 255, 0.22),
+                    rgba(66, 199, 255, 0.65),
+                    rgba(66, 199, 255, 0.22),
+                    transparent
+                );
+
+            box-shadow:
+                0 0 18px rgba(66, 199, 255, 0.15);
+        }
+
+        .track::before,
+        .track::after {
+            content: "";
+
+            position: absolute;
+
+            top: -4px;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(130, 224, 255, 0.5);
+
+            background: #03101e;
+        }
+
+        .track::before {
+            left: 0;
+        }
+
+        .track::after {
+            right: 0;
+        }
+
+        /* Position markers */
+
+        .marker {
+            position: absolute;
+
+            top: calc(62% - 13px);
+
+            width: 1px;
+            height: 27px;
+
+            background:
+                rgba(116, 211, 255, 0.22);
+        }
+
+        .marker span {
+            position: absolute;
+
+            top: 31px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: rgba(146, 213, 239, 0.38);
+
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 9px;
+        }
+
+        .m1 {
+            left: 18%;
+        }
+
+        .m2 {
+            left: 34%;
+        }
+
+        .m3 {
+            left: 50%;
+        }
+
+        .m4 {
+            left: 66%;
+        }
+
+        .m5 {
+            left: 82%;
+        }
+
+        /* =========================
+           MOTION TRAIL
+        ========================= */
+
+        .motion-trail {
+            position: absolute;
+
+            left: 14%;
+            top: 62%;
+
+            width: 270px;
+            height: 1px;
+
+            transform-origin: left;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(66, 199, 255, 0.08),
+                    rgba(66, 199, 255, 0.5)
+                );
+
+            filter:
+                drop-shadow(
+                    0 0 8px rgba(66, 199, 255, 0.4)
+                );
+
+            animation:
+                trailMove 4s ease-in-out infinite;
+        }
+
+        @keyframes trailMove {
+
+            0% {
+                transform: scaleX(0.15);
+                opacity: 0.2;
+            }
+
+            45% {
+                transform: scaleX(1);
+                opacity: 0.9;
+            }
+
+            70% {
+                transform: scaleX(0.7);
+                opacity: 0.55;
+            }
+
+            100% {
+                transform: scaleX(0.15);
+                opacity: 0.2;
+            }
+
+        }
+
+        /* =========================
+           PARTICLE / MOVING OBJECT
+        ========================= */
+
+        .motion-object {
+            position: absolute;
+
+            left: 14%;
+            top: calc(62% - 6px);
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 35%,
+                    white,
+                    var(--cyan-bright) 35%,
+                    var(--cyan) 65%
+                );
+
+            box-shadow:
+                0 0 10px white,
+                0 0 25px var(--cyan),
+                0 0 55px rgba(66, 199, 255, 0.55);
+
+            animation:
+                particleMove 4s ease-in-out infinite;
+        }
+
+        @keyframes particleMove {
+
+            0% {
+                left: 14%;
+            }
+
+            50% {
+                left: 80%;
+            }
+
+            100% {
+                left: 14%;
+            }
+
+        }
+
+        /* =========================
+           VELOCITY ARROW
+        ========================= */
+
+        .velocity-arrow {
+            position: absolute;
+
+            left: 27%;
+            top: calc(62% - 70px);
+
+            width: 150px;
+            height: 3px;
+
+            border-radius: 99px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(66, 199, 255, 0.15),
+                    var(--cyan-bright)
+                );
+
+            box-shadow:
+                0 0 12px rgba(66, 199, 255, 0.55);
+
+            animation:
+                velocityPulse 2.7s ease-in-out infinite;
+        }
+
+        .velocity-arrow::after {
+            content: "";
+
+            position: absolute;
+
+            right: -1px;
+            top: -7px;
+
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 17px solid var(--cyan-bright);
+        }
+
+        .velocity-arrow::before {
+            content: "v";
+
+            position: absolute;
+
+            right: 45px;
+            top: -35px;
+
+            color: var(--cyan-bright);
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        @keyframes velocityPulse {
+
+            0%,
+            100% {
+                opacity: 0.45;
+                transform: scaleX(0.85);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+
+        }
+
+        /* =========================
+           ACCELERATION INDICATOR
+        ========================= */
+
+        .acceleration-line {
+            position: absolute;
+
+            left: 57%;
+            top: calc(62% - 105px);
+
+            width: 115px;
+            height: 2px;
+
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(141, 227, 255, 0.8) 0 7px,
+                    transparent 7px 13px
+                );
+
+            opacity: 0.5;
+        }
+
+        .acceleration-line::after {
+            content: "a";
+
+            position: absolute;
+
+            right: 30px;
+            top: -30px;
+
+            color: rgba(155, 232, 255, 0.65);
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* =========================
+           DATA STRIP
+        ========================= */
+
+        .data-strip {
+            position: relative;
+            z-index: 20;
+
+            width: min(900px, 92%);
+
+            margin: -45px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            border:
+                1px solid rgba(93, 198, 255, 0.15);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            background:
+                rgba(5, 18, 33, 0.78);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35),
+                inset 0 1px rgba(255, 255, 255, 0.04);
+        }
+
+        .data-item {
+            padding: 19px 15px;
+
+            text-align: center;
+
+            border-right:
+                1px solid rgba(93, 198, 255, 0.1);
+        }
+
+        .data-item:last-child {
+            border-right: none;
+        }
+
+        .data-value {
+            color: var(--cyan-bright);
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .data-label {
+            margin-top: 2px;
+
+            color: #6f899d;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
         .container {
-            max-width: 950px;
+            max-width: 1050px;
+
             margin: auto;
-            padding: 60px 20px;
+
+            padding: 85px 20px;
         }
 
         .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+
+            padding: 38px;
+
+            margin-bottom: 28px;
+
+            border:
+                1px solid rgba(95, 194, 255, 0.13);
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(12, 31, 52, 0.78),
+                    rgba(4, 14, 27, 0.7)
+                );
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.22),
+                inset 0 1px rgba(255, 255, 255, 0.035);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            overflow: hidden;
+
+            opacity: 0;
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .lesson.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .lesson::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -70px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(66, 199, 255, 0.13),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+        }
+
+        .lesson:hover {
+            border-color:
+                rgba(92, 202, 255, 0.3);
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.3),
+                0 0 35px rgba(66, 199, 255, 0.04),
+                inset 0 1px rgba(255, 255, 255, 0.05);
         }
 
         .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            color: var(--cyan);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
             margin-bottom: 8px;
         }
 
         .lesson h2 {
+            font-family: "Space Grotesk", sans-serif;
+
+            color: #f1fbff;
+
             font-size: 30px;
+
+            line-height: 1.25;
+
             margin-bottom: 18px;
         }
 
         .lesson h3 {
-            font-size: 21px;
+            color: #dff5ff;
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 20px;
+
             margin-top: 25px;
             margin-bottom: 10px;
         }
 
         .lesson p {
-            color: #53657d;
+            color: var(--muted);
+
             margin-bottom: 15px;
         }
 
         .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
+            padding-left: 24px;
+
+            color: var(--muted);
         }
 
         .lesson li {
             margin-bottom: 9px;
         }
 
+        /* =========================
+           DEFINITION
+        ========================= */
+
         .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35, 151, 217, 0.11),
+                    rgba(35, 151, 217, 0.035)
+                );
+
+            border:
+                1px solid rgba(66, 199, 255, 0.17);
+
+            border-left:
+                3px solid var(--cyan);
+
+            padding: 22px;
+
+            margin: 22px 0;
+
+            border-radius:
+                0 14px 14px 0;
         }
+
+        .definition strong {
+            display: block;
+
+            color: var(--cyan-bright);
+
+            margin-bottom: 5px;
+
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .definition p {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           FORMULA
+        ========================= */
 
         .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(4, 20, 36, 0.95),
+                    rgba(7, 34, 56, 0.82)
+                );
+
+            border:
+                1px solid rgba(66, 199, 255, 0.18);
+
+            color: #d9f7ff;
+
+            padding: 20px;
+
+            margin: 22px 0;
+
+            border-radius: 14px;
+
             text-align: center;
+
+            font-family: "Space Grotesk", sans-serif;
+
             font-size: 20px;
-            font-weight: bold;
+            font-weight: 600;
+
+            box-shadow:
+                inset 0 1px rgba(255,255,255,0.035),
+                0 10px 30px rgba(0,0,0,0.18);
+
+            overflow: hidden;
         }
 
+        .formula::before {
+            content: "";
+
+            position: absolute;
+
+            left: -100%;
+            top: 0;
+
+            width: 70%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(117, 222, 255, 0.08),
+                    transparent
+                );
+
+            animation:
+                formulaScan 5s linear infinite;
+        }
+
+        @keyframes formulaScan {
+
+            to {
+                left: 140%;
+            }
+
+        }
+
+        /* =========================
+           EXAMPLE
+        ========================= */
+
         .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
+            background:
+                rgba(1, 11, 21, 0.55);
+
+            border:
+                1px solid rgba(93, 198, 255, 0.12);
+
             padding: 25px;
+
             margin-top: 20px;
-            border-radius: 12px;
+
+            border-radius: 16px;
         }
 
         .example-title {
-            color: #168dca;
-            font-weight: bold;
+            color: var(--cyan-bright) !important;
+
+            font-family: "Space Grotesk", sans-serif;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
             margin-bottom: 12px;
         }
 
         .solution {
             margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(11, 38, 60, 0.6),
+                    rgba(4, 18, 31, 0.65)
+                );
+
+            border-left:
+                2px solid rgba(66, 199, 255, 0.5);
+
+            border-radius:
+                0 12px 12px 0;
         }
 
+        .solution p:last-child {
+            color: #e7fbff;
+        }
+
+        /* =========================
+           PRACTICE
+        ========================= */
+
         .question {
+            position: relative;
+
             padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
+
+            border-bottom:
+                1px solid rgba(104, 183, 229, 0.1);
+
+            color: #dceefa;
+        }
+
+        .question:last-child {
+            border-bottom: none;
         }
 
         details {
@@ -167,50 +1102,246 @@
 
         summary {
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+
+            color: var(--cyan-bright);
+
+            font-weight: 700;
+
+            transition: 0.2s ease;
         }
+
+        summary:hover {
+            color: white;
+        }
+
+        details p {
+            margin-top: 10px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         .navigation {
             text-align: center;
-            padding: 10px 20px 60px;
+
+            padding:
+                20px 20px 80px;
         }
 
         .button {
+            position: relative;
+
             display: inline-block;
-            background: #32a9e8;
-            color: white;
+
+            color: #dff8ff;
+
             text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
+
+            padding: 13px 24px;
+
             margin: 5px;
+
+            border:
+                1px solid rgba(77, 202, 255, 0.25);
+
+            border-radius: 12px;
+
+            background:
+                rgba(16, 53, 78, 0.48);
+
+            font-weight: 700;
+
+            font-size: 13px;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .button:hover {
-            background: #168dca;
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(77, 202, 255, 0.55);
+
+            background:
+                rgba(26, 94, 132, 0.5);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.25),
+                0 0 25px rgba(66, 199, 255, 0.08);
         }
+
+        .button.primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(37, 151, 216, 0.8),
+                    rgba(25, 87, 150, 0.85)
+                );
+
+            border-color:
+                rgba(110, 218, 255, 0.45);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            position: relative;
+
+            background:
+                rgba(1, 7, 15, 0.9);
+
+            border-top:
+                1px solid rgba(91, 192, 255, 0.1);
+
+            color: #71899d;
+
             text-align: center;
+
             padding: 30px 20px;
+
+            font-size: 12px;
         }
 
-        @media (max-width: 700px) {
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .back-link {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 590px;
+                padding: 75px 20px 95px;
+            }
+
             .hero h1 {
-                font-size: 36px;
+                font-size: 45px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .motion-system {
+                width: 760px;
+                opacity: 0.42;
+            }
+
+            .data-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .data-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .data-item:nth-child(-n+2) {
+                border-bottom:
+                    1px solid rgba(93, 198, 255, 0.1);
+            }
+
+            .container {
+                padding: 55px 15px;
             }
 
             .lesson {
-                padding: 25px;
+                padding: 27px 22px;
+                border-radius: 18px;
             }
+
+            .lesson h2 {
+                font-size: 26px;
+            }
+
+            .formula {
+                font-size: 17px;
+                overflow-x: auto;
+            }
+
         }
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero-label {
+                font-size: 8px;
+                letter-spacing: 2px;
+            }
+
+            .motion-system {
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.72);
+            }
+
+            .data-value {
+                font-size: 14px;
+            }
+
+        }
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+        }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+<div class="particles">
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+</div>
+
 
 <header>
 
@@ -218,7 +1349,7 @@
         IAL ATLAS
     </a>
 
-    <a href="mechanics-1.html">
+    <a href="mechanics-1.html" class="back-link">
         ← Mechanics 1
     </a>
 
@@ -227,20 +1358,117 @@
 
 <section class="hero">
 
+
+    <div class="motion-system">
+
+        <div class="track-grid"></div>
+
+        <div class="track"></div>
+
+        <div class="marker m1">
+            <span>x₁</span>
+        </div>
+
+        <div class="marker m2">
+            <span>x₂</span>
+        </div>
+
+        <div class="marker m3">
+            <span>x₃</span>
+        </div>
+
+        <div class="marker m4">
+            <span>x₄</span>
+        </div>
+
+        <div class="marker m5">
+            <span>x₅</span>
+        </div>
+
+        <div class="motion-trail"></div>
+
+        <div class="motion-object"></div>
+
+        <div class="velocity-arrow"></div>
+
+        <div class="acceleration-line"></div>
+
+    </div>
+
+
     <p class="hero-label">
-        MECHANICS 1 • TOPIC 03
+        MECHANICS 1 • TOPIC 03 • MOTION SYSTEM
     </p>
+
 
     <h1>
         Kinematics in a Straight Line
     </h1>
+
 
     <p>
         Learn how displacement, velocity and acceleration describe
         the motion of particles.
     </p>
 
+
 </section>
+
+
+<div class="data-strip">
+
+    <div class="data-item">
+
+        <div class="data-value">
+            s
+        </div>
+
+        <div class="data-label">
+            Displacement
+        </div>
+
+    </div>
+
+
+    <div class="data-item">
+
+        <div class="data-value">
+            v
+        </div>
+
+        <div class="data-label">
+            Velocity
+        </div>
+
+    </div>
+
+
+    <div class="data-item">
+
+        <div class="data-value">
+            a
+        </div>
+
+        <div class="data-label">
+            Acceleration
+        </div>
+
+    </div>
+
+
+    <div class="data-item">
+
+        <div class="data-value">
+            M1
+        </div>
+
+        <div class="data-label">
+            Mechanics Core
+        </div>
+
+    </div>
+
+</div>
 
 
 <main class="container">
@@ -248,9 +1476,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">LESSON 01</p>
+        <p class="lesson-number">
+            LESSON 01
+        </p>
 
-        <h2>What is Kinematics?</h2>
+        <h2>
+            What is Kinematics?
+        </h2>
 
         <p>
             Kinematics is the study of motion without considering
@@ -258,10 +1490,15 @@
         </p>
 
         <div class="definition">
-            <strong>Key idea</strong>
+
+            <strong>
+                Key idea
+            </strong>
+
             <p>
                 Kinematics describes how an object moves.
             </p>
+
         </div>
 
         <p>
@@ -274,9 +1511,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">LESSON 02</p>
+        <p class="lesson-number">
+            LESSON 02
+        </p>
 
-        <h2>Displacement</h2>
+        <h2>
+            Displacement
+        </h2>
 
         <p>
             Displacement is the directed distance of a particle
@@ -284,10 +1525,15 @@
         </p>
 
         <div class="definition">
-            <strong>Displacement is a vector quantity.</strong>
+
+            <strong>
+                Displacement is a vector quantity.
+            </strong>
+
             <p>
                 Therefore, it has both magnitude and direction.
             </p>
+
         </div>
 
         <p>
@@ -300,9 +1546,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">LESSON 03</p>
+        <p class="lesson-number">
+            LESSON 03
+        </p>
 
-        <h2>Velocity</h2>
+        <h2>
+            Velocity
+        </h2>
 
         <p>
             Velocity describes the rate of change of displacement
@@ -323,9 +1573,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">LESSON 04</p>
+        <p class="lesson-number">
+            LESSON 04
+        </p>
 
-        <h2>Acceleration</h2>
+        <h2>
+            Acceleration
+        </h2>
 
         <p>
             Acceleration describes the rate of change of velocity
@@ -345,9 +1599,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">LESSON 05</p>
+        <p class="lesson-number">
+            LESSON 05
+        </p>
 
-        <h2>Constant Acceleration</h2>
+        <h2>
+            Constant Acceleration
+        </h2>
 
         <p>
             When acceleration is constant, we can use the standard
@@ -375,11 +1633,27 @@
         </p>
 
         <ul>
-            <li><strong>u</strong> = initial velocity</li>
-            <li><strong>v</strong> = final velocity</li>
-            <li><strong>a</strong> = constant acceleration</li>
-            <li><strong>t</strong> = time</li>
-            <li><strong>s</strong> = displacement</li>
+
+            <li>
+                <strong>u</strong> = initial velocity
+            </li>
+
+            <li>
+                <strong>v</strong> = final velocity
+            </li>
+
+            <li>
+                <strong>a</strong> = constant acceleration
+            </li>
+
+            <li>
+                <strong>t</strong> = time
+            </li>
+
+            <li>
+                <strong>s</strong> = displacement
+            </li>
+
         </ul>
 
     </section>
@@ -387,9 +1661,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">WORKED EXAMPLE</p>
+        <p class="lesson-number">
+            WORKED EXAMPLE
+        </p>
 
-        <h2>Using a Constant-Acceleration Equation</h2>
+        <h2>
+            Using a Constant-Acceleration Equation
+        </h2>
 
         <div class="example">
 
@@ -421,7 +1699,9 @@
                 </p>
 
                 <p>
-                    <strong>v = 13 m/s</strong>
+                    <strong>
+                        v = 13 m/s
+                    </strong>
                 </p>
 
             </div>
@@ -433,9 +1713,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">LESSON 06</p>
+        <p class="lesson-number">
+            LESSON 06
+        </p>
 
-        <h2>Speed and Velocity</h2>
+        <h2>
+            Speed and Velocity
+        </h2>
 
         <p>
             Speed tells us how fast a particle is moving.
@@ -443,10 +1727,15 @@
         </p>
 
         <div class="definition">
-            <strong>Speed</strong>
+
+            <strong>
+                Speed
+            </strong>
+
             <p>
                 Magnitude of velocity.
             </p>
+
         </div>
 
         <p>
@@ -459,9 +1748,14 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">PRACTICE</p>
+        <p class="lesson-number">
+            PRACTICE
+        </p>
 
-        <h2>Test Yourself</h2>
+        <h2>
+            Test Yourself
+        </h2>
+
 
         <div class="question">
 
@@ -470,7 +1764,10 @@
             </strong>
 
             <details>
-                <summary>Show answer</summary>
+
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     The motion of objects without considering the
@@ -489,7 +1786,10 @@
             </strong>
 
             <details>
-                <summary>Show answer</summary>
+
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     Speed is a scalar, while velocity is a vector
@@ -509,7 +1809,10 @@
             </strong>
 
             <details>
-                <summary>Show answer</summary>
+
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     v = u + at
@@ -520,7 +1823,9 @@
                 </p>
 
                 <p>
-                    <strong>v = 10 m/s</strong>
+                    <strong>
+                        v = 10 m/s
+                    </strong>
                 </p>
 
             </details>
@@ -535,7 +1840,10 @@
             </strong>
 
             <details>
-                <summary>Show answer</summary>
+
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     The particle is moving in the direction defined
@@ -551,9 +1859,13 @@
 
     <section class="lesson">
 
-        <p class="lesson-number">QUICK REVIEW</p>
+        <p class="lesson-number">
+            QUICK REVIEW
+        </p>
 
-        <h2>Remember These</h2>
+        <h2>
+            Remember These
+        </h2>
 
         <div class="formula">
             v = ds/dt
@@ -583,8 +1895,12 @@
 
 <div class="navigation">
 
-    <a href="mechanics-1.html" class="button">
-        ← Back to Mechanics 1
+    <a href="mechanics-vectors.html" class="button">
+        ← Previous Topic
+    </a>
+
+    <a href="mechanics-dynamics.html" class="button primary">
+        Next Topic →
     </a>
 
     <a href="mechanics.html" class="button">
@@ -595,10 +1911,130 @@
 
 
 <footer>
+
     © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+
 </footer>
+
+
+<script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const lessons =
+        document.querySelectorAll(".lesson");
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    lessons.forEach(
+        lesson => observer.observe(lesson)
+    );
+
+
+    /* =========================
+       HERO PARALLAX
+    ========================= */
+
+    const motionSystem =
+        document.querySelector(".motion-system");
+
+
+    window.addEventListener("mousemove", event => {
+
+        const x =
+            (event.clientX /
+                window.innerWidth - 0.5) * 10;
+
+        const y =
+            (event.clientY /
+                window.innerHeight - 0.5) * 7;
+
+
+        motionSystem.style.transform =
+            `translate(
+                calc(-50% + ${x}px),
+                calc(-50% + ${y}px)
+            )`;
+
+    });
+
+
+    /* =========================
+       CARD LIGHT EFFECT
+    ========================= */
+
+    document.querySelectorAll(".lesson")
+        .forEach(card => {
+
+            card.addEventListener(
+                "mousemove",
+                event => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+
+                    card.style.background =
+                        `radial-gradient(
+                            circle at ${x}px ${y}px,
+                            rgba(66,199,255,0.10),
+                            rgba(12,31,52,0.78) 38%,
+                            rgba(4,14,27,0.72)
+                        )`;
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                () => {
+
+                    card.style.background =
+                        "linear-gradient(145deg, rgba(12,31,52,0.78), rgba(4,14,27,0.7))";
+
+                }
+            );
+
+        });
+
+</script>
 
 
 </body>
 
 </html>
+
