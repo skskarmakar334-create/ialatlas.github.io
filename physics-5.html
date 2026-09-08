@@ -4,854 +4,2088 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Physics Unit 5 | IAL ATLAS</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#030611">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <meta name="author" content="IAL ATLAS">
 
     <meta name="description"
-          content="Edexcel International A Level Physics Unit 5 — Thermodynamics, Nuclear Decay, Oscillations, Astrophysics and Cosmology. Complete lessons, equations, worked examples and exam practice.">
+          content="Edexcel International A Level Physics Unit 5 notes covering thermodynamics, nuclear decay, oscillations, springs, simple pendulums, astrophysics, stellar evolution, luminosity, spectra, cosmology and practical skills.">
 
     <meta name="keywords"
-          content="Edexcel IAL Physics Unit 5, Physics Unit 5, Thermodynamics, Nuclear Decay, Oscillations, Astrophysics, Cosmology, IAL ATLAS">
+          content="Edexcel IAL Physics Unit 5, Physics Unit 5 notes, International A Level Physics Unit 5, Edexcel Physics thermodynamics, nuclear decay, oscillations, astrophysics, cosmology, IAL ATLAS">
 
-    <meta name="author" content="Shuvojit Karmakar">
+    <link rel="canonical"
+          href="https://ialatlas.com/physics-5.html">
 
-    <meta name="theme-color" content="#061326">
+    <title>
+        Physics Unit 5 | Thermodynamics, Astrophysics & Cosmology | IAL ATLAS
+    </title>
 
-    <style>
 
-        /* =========================================================
-           RESET
-        ========================================================= */
+    <!-- Open Graph -->
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta property="og:type"
+          content="website">
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <meta property="og:title"
+          content="Physics Unit 5 | IAL ATLAS">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f8fd;
-            color: #10233f;
-            line-height: 1.75;
-            overflow-x: hidden;
-        }
+    <meta property="og:description"
+          content="Complete Edexcel International A Level Physics Unit 5 study resource covering thermodynamics, nuclear decay, oscillations, astrophysics and cosmology.">
 
-        a {
-            text-decoration: none;
-        }
+    <meta property="og:url"
+          content="https://ialatlas.com/physics-5.html">
 
+    <meta property="og:site_name"
+          content="IAL ATLAS">
 
-        /* =========================================================
-           SCROLL PROGRESS
-        ========================================================= */
-
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 4px;
-            background: linear-gradient(90deg, #32a9e8, #7ed0ff, #32a9e8);
-            z-index: 9999;
-            box-shadow: 0 0 12px rgba(50,169,232,0.8);
-        }
 
+    <!-- Twitter -->
 
-        /* =========================================================
-           HEADER
-        ========================================================= */
+    <meta name="twitter:card"
+          content="summary">
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+    <meta name="twitter:title"
+          content="Physics Unit 5 | IAL ATLAS">
 
-            background: rgba(5, 20, 40, 0.94);
-            backdrop-filter: blur(16px);
+    <meta name="twitter:description"
+          content="Edexcel International A Level Physics Unit 5 notes, equations, examples and practice.">
 
-            color: white;
 
-            padding: 18px 7%;
+    <!-- Structured Data -->
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    <script type="application/ld+json">
 
-            border-bottom: 1px solid rgba(126,208,255,0.12);
-        }
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalResource",
 
-        header a {
-            color: white;
-        }
+        "name": "Edexcel International A Level Physics Unit 5",
 
-        .logo {
-            font-size: 27px;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
+        "description": "Study notes for Edexcel International A Level Physics Unit 5 covering thermodynamics, nuclear decay, oscillations, astrophysics and cosmology.",
 
-        .logo span {
-            color: #4db8ff;
-        }
+        "url": "https://ialatlas.com/physics-5.html",
 
-        .back-link {
-            color: #bfe7ff;
-            font-weight: bold;
-            transition: 0.3s ease;
-        }
+        "inLanguage": "en",
 
-        .back-link:hover {
-            color: #ffffff;
-            transform: translateX(-4px);
-        }
+        "educationalLevel": "International A Level",
+
+        "learningResourceType": "Study notes",
 
+        "publisher": {
+            "@type": "Organization",
+            "name": "IAL ATLAS",
+            "url": "https://ialatlas.com/"
+        },
 
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 15% 25%,
-                    rgba(50,169,232,0.20),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 85% 70%,
-                    rgba(126,208,255,0.14),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #04101f, #092f59, #061326);
-
-            color: white;
-            text-align: center;
-
-            padding: 105px 20px 95px;
+        "about": {
+            "@type": "Thing",
+            "name": "Edexcel International A Level Physics"
         }
+    }
 
-        .hero::before {
-            content: "";
-            position: absolute;
+    </script>
 
-            width: 500px;
-            height: 500px;
 
-            border: 1px solid rgba(126,208,255,0.10);
-            border-radius: 50%;
+<style>
 
-            top: -230px;
-            left: -180px;
+/* =========================================================
+   CORE
+========================================================= */
 
-            animation: rotateSlow 25s linear infinite;
-        }
+:root {
 
-        .hero::after {
-            content: "";
-            position: absolute;
+    --bg: #030611;
 
-            width: 420px;
-            height: 420px;
+    --panel: rgba(11, 18, 37, 0.72);
 
-            border: 1px solid rgba(50,169,232,0.12);
-            border-radius: 50%;
+    --panel-light: rgba(255,255,255,0.045);
 
-            bottom: -230px;
-            right: -130px;
+    --line: rgba(145, 207, 255, 0.13);
 
-            animation: rotateSlowReverse 20s linear infinite;
-        }
+    --line-strong: rgba(84, 196, 255, 0.35);
 
-        @keyframes rotateSlow {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
+    --text: #eef8ff;
 
-        @keyframes rotateSlowReverse {
-            from {
-                transform: rotate(360deg);
-            }
-
-            to {
-                transform: rotate(0deg);
-            }
-        }
+    --muted: #91a8be;
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: auto;
-        }
+    --cyan: #46cfff;
 
-        .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 4px;
-            margin-bottom: 18px;
-        }
+    --blue: #688bff;
 
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 72px);
-            line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-        }
+    --violet: #9a72ff;
 
-        .hero h1 span {
-            color: #4db8ff;
-            text-shadow: 0 0 25px rgba(77,184,255,0.35);
-        }
+    --gold: #ffd36a;
 
-        .hero p {
-            max-width: 780px;
-            margin: auto;
-            color: #d8eaff;
-            font-size: 18px;
-        }
+    --green: #68e6ad;
 
-        .hero-badge {
-            display: inline-block;
+}
 
-            margin-top: 28px;
 
-            padding: 10px 18px;
+* {
 
-            border: 1px solid rgba(126,208,255,0.25);
-            border-radius: 50px;
+    margin: 0;
+    padding: 0;
 
-            background: rgba(255,255,255,0.05);
+    box-sizing: border-box;
 
-            color: #c9ebff;
-            font-size: 13px;
-            font-weight: bold;
+}
 
-            backdrop-filter: blur(10px);
-        }
 
+html {
 
-        /* =========================================================
-           TOPIC NAVIGATION
-        ========================================================= */
+    scroll-behavior: smooth;
 
-        .topic-nav {
-            max-width: 1100px;
-            margin: -30px auto 0;
+    scroll-padding-top: 125px;
 
-            position: relative;
-            z-index: 10;
+}
 
-            padding: 0 20px;
-        }
 
-        .topic-nav-inner {
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(15px);
+body {
 
-            border-radius: 18px;
+    background:
 
-            padding: 18px;
+        radial-gradient(
+            circle at 20% 0%,
+            rgba(57, 190, 255, 0.08),
+            transparent 28%
+        ),
 
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(105, 94, 255, 0.07),
+            transparent 30%
+        ),
 
-            box-shadow:
-                0 15px 45px rgba(8,40,75,0.13);
+        var(--bg);
 
-            border: 1px solid #e2edf8;
-        }
+    color: var(--text);
 
-        .topic-nav a {
-            padding: 9px 14px;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-            border-radius: 30px;
+    line-height: 1.7;
 
-            background: #f1f7fc;
+    overflow-x: hidden;
 
-            color: #245276;
+}
 
-            font-size: 13px;
-            font-weight: bold;
 
-            transition: 0.3s ease;
-        }
+::selection {
 
-        .topic-nav a:hover {
-            background: #32a9e8;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 7px 18px rgba(50,169,232,0.22);
-        }
+    background: rgba(70,207,255,0.28);
 
+    color: white;
 
-        /* =========================================================
-           CONTAINER
-        ========================================================= */
+}
 
-        .container {
-            max-width: 1050px;
-            margin: auto;
-            padding: 65px 20px;
-        }
 
+a {
 
-        /* =========================================================
-           LESSON CARDS
-        ========================================================= */
+    color: inherit;
 
-        .lesson {
-            position: relative;
+}
 
-            background: white;
 
-            padding: 42px;
+/* =========================================================
+   PROGRESS
+========================================================= */
 
-            margin-bottom: 32px;
+#progress {
 
-            border-radius: 22px;
+    position: fixed;
 
-            box-shadow:
-                0 8px 30px rgba(0,0,0,0.055);
+    top: 0;
+    left: 0;
 
-            border: 1px solid #e8f0f7;
+    width: 0%;
 
-            overflow: hidden;
+    height: 3px;
 
-            animation: fadeUp 0.7s ease both;
-        }
+    z-index: 99999;
 
-        .lesson::before {
-            content: "";
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue),
+            var(--violet)
+        );
 
-            position: absolute;
+    box-shadow:
+        0 0 15px rgba(70,207,255,0.8);
 
-            top: 0;
-            left: 0;
+}
 
-            width: 100%;
-            height: 4px;
 
-            background: linear-gradient(
-                90deg,
-                #32a9e8,
-                #7ed0ff,
-                transparent
-            );
-        }
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-        @keyframes fadeUp {
+.space {
 
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+    position: fixed;
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    inset: 0;
 
-        }
+    z-index: -10;
 
-        .lesson-number {
-            color: #32a9e8;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            margin-bottom: 8px;
-        }
+    overflow: hidden;
 
-        .lesson h2 {
-            font-size: 34px;
-            line-height: 1.2;
-            margin-bottom: 18px;
-            color: #0b2442;
-        }
+    pointer-events: none;
 
-        .lesson h3 {
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #12365a;
-        }
+}
 
-        .lesson h4 {
-            font-size: 18px;
-            margin-top: 22px;
-            margin-bottom: 8px;
-            color: #21496d;
-        }
 
-        .lesson p {
-            color: #53657d;
-            margin-bottom: 15px;
-        }
+.star {
 
-        .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
-        }
+    position: absolute;
 
-        .lesson li {
-            margin-bottom: 9px;
-        }
+    width: 2px;
+    height: 2px;
 
+    background: rgba(220,245,255,0.8);
 
-        /* =========================================================
-           DEFINITION BOX
-        ========================================================= */
+    border-radius: 50%;
 
-        .definition {
-            background: linear-gradient(
-                135deg,
-                #eaf6ff,
-                #f6fbff
-            );
+    animation:
+        starFloat 7s infinite alternate;
 
-            border-left: 5px solid #32a9e8;
+}
 
-            padding: 21px;
 
-            margin: 22px 0;
+.star:nth-child(1) { top: 8%; left: 7%; animation-delay: -1s; }
+.star:nth-child(2) { top: 16%; left: 21%; animation-delay: -4s; }
+.star:nth-child(3) { top: 28%; left: 82%; animation-delay: -2s; }
+.star:nth-child(4) { top: 39%; left: 12%; animation-delay: -5s; }
+.star:nth-child(5) { top: 48%; left: 91%; animation-delay: -3s; }
+.star:nth-child(6) { top: 61%; left: 28%; animation-delay: -1.5s; }
+.star:nth-child(7) { top: 72%; left: 73%; animation-delay: -4.5s; }
+.star:nth-child(8) { top: 84%; left: 9%; animation-delay: -2.5s; }
+.star:nth-child(9) { top: 91%; left: 52%; animation-delay: -5s; }
+.star:nth-child(10) { top: 11%; left: 65%; animation-delay: -3.5s; }
+.star:nth-child(11) { top: 53%; left: 57%; animation-delay: -2s; }
+.star:nth-child(12) { top: 77%; left: 43%; animation-delay: -6s; }
 
-            border-radius: 10px;
-        }
 
-        .definition strong {
-            color: #126fa2;
-        }
+@keyframes starFloat {
 
-        .definition p {
-            margin-top: 5px;
-            margin-bottom: 0;
-        }
+    from {
 
+        opacity: 0.2;
 
-        /* =========================================================
-           IMPORTANT BOX
-        ========================================================= */
+        transform:
+            scale(0.7)
+            translateY(0);
 
-        .important {
-            background: #fff8e7;
-            border-left: 5px solid #e7a92b;
-            padding: 20px;
-            margin: 22px 0;
-            border-radius: 10px;
-        }
+    }
 
-        .important strong {
-            color: #a06d08;
-        }
+    to {
 
-        .important p {
-            margin-bottom: 0;
-        }
+        opacity: 0.9;
 
+        transform:
+            scale(1.5)
+            translateY(-8px);
 
-        /* =========================================================
-           FORMULAS
-        ========================================================= */
+    }
 
-        .formula {
-            background:
-                linear-gradient(
-                    135deg,
-                    #061326,
-                    #0b315b
-                );
+}
 
-            color: white;
 
-            padding: 19px;
+/* ambient glow */
 
-            margin: 21px 0;
+.glow {
 
-            border-radius: 12px;
+    position: absolute;
 
-            text-align: center;
+    width: 500px;
+    height: 500px;
 
-            font-size: 20px;
-            font-weight: bold;
+    border-radius: 50%;
 
-            box-shadow:
-                0 8px 22px rgba(5,30,55,0.12);
+    filter: blur(100px);
 
-            transition: 0.3s ease;
-        }
+    opacity: 0.12;
 
-        .formula:hover {
-            transform: translateY(-2px);
-            box-shadow:
-                0 12px 28px rgba(5,30,55,0.18);
-        }
+}
 
 
-        /* =========================================================
-           EQUATION GRID
-        ========================================================= */
+.glow.a {
 
-        .equation-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin-top: 20px;
-        }
+    background: #00bfff;
 
-        .equation-card {
-            background: #f7fbff;
-            border: 1px solid #dcecff;
-            border-radius: 13px;
-            padding: 18px;
-            text-align: center;
-            transition: 0.3s ease;
-        }
+    top: -250px;
+    left: -150px;
 
-        .equation-card:hover {
-            transform: translateY(-3px);
-            border-color: #8ed5f8;
-            box-shadow: 0 10px 25px rgba(50,169,232,0.10);
-        }
+}
 
-        .equation-card .equation {
-            font-size: 19px;
-            font-weight: bold;
-            color: #12365a;
-        }
 
-        .equation-card .label {
-            font-size: 12px;
-            color: #71839a;
-            margin-top: 5px;
-        }
+.glow.b {
 
+    background: #6e63ff;
 
-        /* =========================================================
-           WORKED EXAMPLES
-        ========================================================= */
+    top: 35%;
+    right: -300px;
 
-        .example {
-            background: #f7fbff;
-            border: 1px solid #dcecff;
+}
 
-            padding: 27px;
 
-            margin-top: 22px;
+.glow.c {
 
-            border-radius: 14px;
-        }
+    background: #00d9ff;
 
-        .example-title {
-            color: #168dca;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-        }
+    bottom: -300px;
+    left: 25%;
 
-        .solution {
-            margin-top: 18px;
+}
 
-            padding: 19px;
 
-            background: white;
+/* =========================================================
+   HEADER
+========================================================= */
 
-            border-radius: 9px;
+header {
 
-            border-left: 3px solid #32a9e8;
-        }
+    position: sticky;
 
-        .solution p {
-            margin-bottom: 9px;
-        }
+    top: 0;
 
+    z-index: 5000;
 
-        /* =========================================================
-           PRACTICE
-        ========================================================= */
+    height: 72px;
 
-        .question {
-            padding: 23px 0;
-            border-bottom: 1px solid #e5ebf2;
-        }
+    display: flex;
 
-        .question:last-child {
-            border-bottom: none;
-        }
+    align-items: center;
 
-        .question strong {
-            color: #183a5d;
-        }
+    justify-content: space-between;
 
-        details {
-            margin-top: 13px;
-        }
+    padding:
+        0 clamp(18px, 6vw, 90px);
 
-        summary {
-            cursor: pointer;
+    background:
+        rgba(3,6,17,0.72);
 
-            display: inline-block;
+    backdrop-filter: blur(20px);
 
-            color: #168dca;
-            font-weight: bold;
+    -webkit-backdrop-filter: blur(20px);
 
-            padding: 5px 0;
-        }
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
 
-        summary:hover {
-            color: #0b6d9e;
-        }
+}
 
 
-        /* =========================================================
-           EXAM TIP
-        ========================================================= */
+.logo {
 
-        .exam-tip {
-            background:
-                linear-gradient(
-                    135deg,
-                    #071b36,
-                    #0b4777
-                );
+    text-decoration: none;
 
-            color: white;
+    font-size: 23px;
 
-            padding: 25px;
+    font-weight: 950;
 
-            margin-top: 24px;
+    letter-spacing: 2px;
 
-            border-radius: 14px;
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            #62d8ff
+        );
 
-            box-shadow: 0 10px 25px rgba(7,27,54,0.14);
-        }
+    -webkit-background-clip: text;
 
-        .exam-tip strong {
-            color: #7ed0ff;
-            display: block;
-            margin-bottom: 7px;
-        }
+    background-clip: text;
 
-        .exam-tip p {
-            color: #dcecff;
-            margin-bottom: 0;
-        }
+    color: transparent;
 
+}
 
-        /* =========================================================
-           NAVIGATION BUTTONS
-        ========================================================= */
 
-        .navigation {
-            text-align: center;
-            padding: 15px 20px 70px;
-        }
+.header-right {
 
-        .button {
-            display: inline-block;
+    display: flex;
 
-            background: #32a9e8;
+    align-items: center;
 
-            color: white;
+    gap: 12px;
 
-            padding: 13px 24px;
+}
 
-            border-radius: 9px;
 
-            font-weight: bold;
+.unit-pill {
 
-            margin: 5px;
+    padding:
+        6px 11px;
 
-            transition: 0.3s ease;
+    border:
+        1px solid rgba(75,199,255,0.2);
 
-            box-shadow: 0 6px 18px rgba(50,169,232,0.15);
-        }
+    background:
+        rgba(75,199,255,0.05);
 
-        .button:hover {
-            background: #168dca;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(50,169,232,0.25);
-        }
+    border-radius: 999px;
 
-        .button.secondary {
-            background: #071b36;
-        }
+    color: #68d7ff;
 
-        .button.secondary:hover {
-            background: #0b315b;
-        }
+    font-size: 10px;
 
+    font-weight: 900;
 
-        /* =========================================================
-           BACK TO TOP
-        ========================================================= */
+    letter-spacing: 1.5px;
 
-        .top-button {
-            position: fixed;
+}
 
-            right: 22px;
-            bottom: 22px;
 
-            width: 45px;
-            height: 45px;
+.back {
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    text-decoration: none;
 
-            border-radius: 50%;
+    color: #aac1d5;
 
-            background: #071b36;
-            color: white;
+    font-size: 13px;
 
-            font-size: 20px;
+    font-weight: 700;
 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: 0.25s;
 
-            opacity: 0;
-            visibility: hidden;
+}
 
-            transition: 0.3s ease;
 
-            z-index: 900;
-        }
+.back:hover {
 
-        .top-button.show {
-            opacity: 1;
-            visibility: visible;
-        }
+    color: white;
 
-        .top-button:hover {
-            background: #32a9e8;
-            transform: translateY(-3px);
-        }
+}
 
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+/* =========================================================
+   HERO
+========================================================= */
 
-        footer {
-            background:
-                linear-gradient(
-                    135deg,
-                    #04101f,
-                    #071b36
-                );
+.hero {
 
-            color: #b9c9dc;
+    min-height: 720px;
 
-            text-align: center;
+    display: grid;
 
-            padding: 35px 20px;
-        }
+    place-items: center;
 
-        footer strong {
-            color: white;
-        }
+    position: relative;
 
-        footer p {
-            margin: 5px 0;
-        }
+    text-align: center;
 
+    padding:
+        100px 20px;
 
-        /* =========================================================
-           MOBILE
-        ========================================================= */
+    overflow: hidden;
 
-        @media (max-width: 760px) {
+}
 
-            header {
-                padding: 16px 5%;
-            }
 
-            .logo {
-                font-size: 22px;
-            }
+/* orbit system */
 
-            .back-link {
-                font-size: 14px;
-            }
+.orbit-system {
 
-            .hero {
-                padding: 80px 18px 80px;
-            }
+    position: absolute;
 
-            .hero-label {
-                font-size: 10px;
-                letter-spacing: 2px;
-            }
+    width: 620px;
+    height: 620px;
 
-            .hero p {
-                font-size: 16px;
-            }
+    border-radius: 50%;
 
-            .container {
-                padding: 45px 14px;
-            }
+    border:
+        1px solid rgba(77,202,255,0.08);
 
-            .lesson {
-                padding: 28px 22px;
-                border-radius: 17px;
-            }
+    animation:
+        rotateOrbit 30s linear infinite;
 
-            .lesson h2 {
-                font-size: 28px;
-            }
+}
 
-            .lesson h3 {
-                font-size: 20px;
-            }
 
-            .equation-grid {
-                grid-template-columns: 1fr;
-            }
+.orbit-system::before,
+.orbit-system::after {
 
-            .topic-nav-inner {
-                justify-content: flex-start;
-                overflow-x: auto;
-                flex-wrap: nowrap;
-            }
+    content: "";
 
-            .topic-nav a {
-                white-space: nowrap;
-            }
+    position: absolute;
 
-            .formula {
-                font-size: 17px;
-                overflow-x: auto;
-            }
+    inset: 70px;
 
-        }
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(107,126,255,0.09);
+
+    transform:
+        rotate(60deg)
+        scaleX(1.5);
+
+}
+
+
+.orbit-system::after {
+
+    inset: 150px;
+
+    transform:
+        rotate(-40deg)
+        scaleX(1.7);
+
+}
+
+
+@keyframes rotateOrbit {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+.nucleus {
+
+    position: absolute;
+
+    width: 115px;
+    height: 115px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(109,223,255,0.5),
+            rgba(58,123,255,0.1) 45%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 80px rgba(59,194,255,0.2);
+
+    animation:
+        nucleusPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes nucleusPulse {
+
+    0%,100% {
+
+        transform: scale(0.95);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1000px;
+
+}
+
+
+.eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        8px 15px;
+
+    margin-bottom: 27px;
+
+    border:
+        1px solid rgba(71,204,255,0.25);
+
+    border-radius: 999px;
+
+    background:
+        rgba(50,177,235,0.055);
+
+    color: #67d7ff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.3px;
+
+}
+
+
+.eyebrow-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #55d9ff;
+
+    box-shadow:
+        0 0 12px #55d9ff;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(48px, 9vw, 105px);
+
+    line-height: 0.98;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 27px;
+
+}
+
+
+.gradient-text {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            100deg,
+            #45ceff,
+            #7796ff,
+            #b276ff,
+            #45ceff
+        );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientFlow 7s linear infinite;
+
+}
+
+
+@keyframes gradientFlow {
+
+    to {
+
+        background-position:
+            250% center;
+
+    }
+
+}
+
+
+.hero-description {
+
+    max-width: 790px;
+
+    margin: auto;
+
+    color: #9db4c9;
+
+    font-size:
+        clamp(16px, 2vw, 20px);
+
+}
+
+
+.hero-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 11px;
+
+    margin-top: 35px;
+
+}
+
+
+.hero-button {
+
+    text-decoration: none;
+
+    padding:
+        12px 19px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+
+}
+
+
+.hero-button.primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(62,194,255,0.25),
+            rgba(101,109,255,0.2)
+        );
+
+    border:
+        1px solid rgba(83,202,255,0.32);
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(31,151,220,0.08);
+
+}
+
+
+.hero-button.secondary {
+
+    background:
+        rgba(255,255,255,0.035);
+
+    border:
+        1px solid rgba(255,255,255,0.09);
+
+    color: #a9c2d7;
+
+}
+
+
+.hero-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(86,210,255,0.5);
+
+}
+
+
+/* =========================================================
+   QUICK TOPIC DECK
+========================================================= */
+
+.topic-deck {
+
+    width:
+        min(1120px, 92%);
+
+    margin:
+        -45px auto 0;
+
+    position: relative;
+
+    z-index: 20;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.topic-card {
+
+    min-height: 100px;
+
+    padding: 17px;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(10,17,34,0.72);
+
+    backdrop-filter:
+        blur(16px);
+
+    border-radius: 17px;
+
+    transition: 0.3s;
+
+}
+
+
+.topic-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(71,203,255,0.3);
+
+    background:
+        rgba(22,39,66,0.75);
+
+}
+
+
+.topic-number {
+
+    color: #4ccfff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.topic-card strong {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 13px;
+
+    color: #dcecff;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.container {
+
+    width:
+        min(1080px, 92%);
+
+    margin: auto;
+
+    padding:
+        80px 0;
+
+}
+
+
+.section-heading {
+
+    margin:
+        75px 0 25px;
+
+}
+
+
+.section-heading span {
+
+    color: #4bcfff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        clamp(28px, 5vw, 43px);
+
+    line-height: 1.15;
+
+    margin-top: 7px;
+
+}
+
+
+/* =========================================================
+   GLASS LESSON
+========================================================= */
+
+.lesson {
+
+    position: relative;
+
+    padding:
+        40px;
+
+    margin-bottom: 28px;
+
+    border:
+        1px solid rgba(255,255,255,0.085);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19,29,52,0.72),
+            rgba(7,12,27,0.72)
+        );
+
+    backdrop-filter:
+        blur(16px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.17);
+
+    overflow: hidden;
+
+    transition:
+        border-color .35s,
+        transform .35s,
+        box-shadow .35s;
+
+}
+
+
+.lesson::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -170px;
+    top: -170px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(48,192,255,0.08);
+
+    filter: blur(55px);
+
+    pointer-events: none;
+
+}
+
+
+.lesson:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(70,204,255,0.22);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.25);
+
+}
+
+
+.lesson-label {
+
+    color: #4acfff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 9px;
+
+}
+
+
+.lesson h2 {
+
+    font-size:
+        clamp(25px, 4vw, 36px);
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+
+}
+
+
+.lesson h3 {
+
+    color: #dceeff;
+
+    font-size: 20px;
+
+    margin:
+        28px 0 10px;
+
+}
+
+
+.lesson p {
+
+    color: #9aafc3;
+
+    margin-bottom: 15px;
+
+}
+
+
+.lesson ul {
+
+    color: #9aafc3;
+
+    padding-left: 22px;
+
+}
+
+
+.lesson li {
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   CALLOUTS
+========================================================= */
+
+.callout {
+
+    padding:
+        19px 21px;
+
+    margin:
+        22px 0;
+
+    border-radius: 15px;
+
+    background:
+        rgba(63,190,245,0.055);
+
+    border:
+        1px solid rgba(63,190,245,0.14);
+
+}
+
+
+.callout strong {
+
+    color: #62d4ff;
+
+}
+
+
+.warning {
+
+    background:
+        rgba(255,195,81,0.05);
+
+    border-color:
+        rgba(255,195,81,0.15);
+
+}
+
+
+.warning strong {
+
+    color: var(--gold);
+
+}
+
+
+/* =========================================================
+   FORMULA VAULT
+========================================================= */
+
+.formula {
+
+    position: relative;
+
+    padding:
+        23px;
+
+    margin:
+        21px 0;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(84,203,255,0.18);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(26,63,94,0.4),
+            rgba(8,15,31,0.8)
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(45,185,240,0.025);
+
+    color: #effaff;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-weight: 800;
+
+    font-size:
+        clamp(14px, 2vw, 17px);
+
+}
+
+
+.formula::before {
+
+    content:
+        "PHYSICS EQUATION";
+
+    display: block;
+
+    color: #4ccfff;
+
+    font-family:
+        Inter,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =========================================================
+   INTERACTIVE FORMULA CARDS
+========================================================= */
+
+.formula-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+}
+
+
+.formula-card {
+
+    padding: 20px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.formula-card:hover {
+
+    border-color:
+        rgba(72,204,255,0.28);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.formula-card .tag {
+
+    font-size: 9px;
+
+    color: #50ceff;
+
+    letter-spacing: 1.7px;
+
+    font-weight: 900;
+
+}
+
+
+.formula-card .equation {
+
+    margin-top: 9px;
+
+    color: white;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-weight: 800;
+
+}
+
+
+.formula-card .meaning {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height .35s ease,
+        opacity .35s ease;
+
+    color: #8fa8bd;
+
+    font-size: 13px;
+
+}
+
+
+.formula-card.active .meaning {
+
+    max-height: 100px;
+
+    opacity: 1;
+
+    margin-top: 11px;
+
+}
+
+
+/* =========================================================
+   EXAMPLES
+========================================================= */
+
+.example {
+
+    margin:
+        22px 0;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.025);
+
+}
+
+
+.example-head {
+
+    padding:
+        14px 18px;
+
+    color: #67d5ff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    background:
+        rgba(52,184,242,0.055);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+}
+
+
+.example-body {
+
+    padding: 20px;
+
+}
+
+
+.example-body p {
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+details {
+
+    margin-top: 14px;
+
+    border:
+        1px solid rgba(255,255,255,0.07);
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+}
+
+
+summary {
+
+    list-style: none;
+
+    cursor: pointer;
+
+    padding:
+        13px 16px;
+
+    color: #5fd2ff;
+
+    font-weight: 800;
+
+}
+
+
+summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+
+summary::after {
+
+    content: "+";
+
+    float: right;
+
+    font-size: 18px;
+
+}
+
+
+details[open] summary::after {
+
+    content: "×";
+
+}
+
+
+details > p {
+
+    padding:
+        0 16px 17px;
+
+    margin: 0 !important;
+
+}
+
+
+/* =========================================================
+   PRACTICE
+========================================================= */
+
+.practice-score {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    padding: 17px 20px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border-radius: 15px;
+
+}
+
+
+#score {
+
+    color: #68d7ff;
+
+    font-weight: 900;
+
+}
+
+
+.reset-btn {
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: #a9bfd2;
+
+    border-radius: 9px;
+
+    padding:
+        7px 12px;
+
+    cursor: pointer;
+
+}
+
+
+.practice-question {
+
+    padding:
+        21px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+
+}
+
+
+.practice-question:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.practice-question strong {
+
+    display: block;
+
+    color: #dceeff;
+
+    margin-bottom: 12px;
+
+}
+
+
+.answer-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.answer-buttons button {
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    color: #9eb4c8;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.answer-buttons button:hover {
+
+    border-color:
+        rgba(71,204,255,0.35);
+
+    color: white;
+
+}
+
+
+.answer-buttons button.correct {
+
+    background:
+        rgba(77,218,155,0.12);
+
+    border-color:
+        rgba(77,218,155,0.4);
+
+    color: #78edb7;
+
+}
+
+
+.answer-buttons button.wrong {
+
+    background:
+        rgba(255,96,96,0.1);
+
+    border-color:
+        rgba(255,96,96,0.3);
+
+    color: #ff9b9b;
+
+}
+
+
+.question-result {
+
+    display: block;
+
+    margin-top: 10px;
+
+    min-height: 22px;
+
+    color: #849caf;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   QUICK REVIEW
+========================================================= */
+
+.review {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.review-item {
+
+    padding:
+        19px;
+
+    border:
+        1px solid rgba(255,255,255,0.075);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition: .3s;
+
+}
+
+
+.review-item:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(72,203,255,0.25);
+
+}
+
+
+.review-item small {
+
+    display: block;
+
+    color: #4ccfff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.review-item strong {
+
+    color: #e5f4ff;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 11px;
+
+    padding:
+        15px 20px 80px;
+
+}
+
+
+.nav-button {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-width: 145px;
+
+    padding:
+        12px 19px;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(80,201,255,0.22);
+
+    background:
+        rgba(47,178,238,0.06);
+
+    color: #bfe9ff;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: .3s;
+
+}
+
+
+.nav-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(80,201,255,0.5);
+
+    background:
+        rgba(47,178,238,0.12);
+
+}
+
+
+/* =========================================================
+   BACK TOP
+========================================================= */
+
+#top {
+
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid rgba(73,201,255,0.25);
+
+    border-radius: 50%;
+
+    background:
+        rgba(6,14,29,0.82);
+
+    backdrop-filter: blur(12px);
+
+    color: #64d5ff;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translateY(10px);
+
+    transition: .3s;
+
+    z-index: 4000;
+
+}
+
+
+#top.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        45px 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.06);
+
+    background:
+        rgba(0,0,0,0.2);
+
+    color: #657d93;
+
+    font-size: 13px;
+
+}
+
+
+footer strong {
+
+    color: #b7d3e7;
+
+}
+
+
+.footer-note {
+
+    margin-top: 7px;
+
+    color: #4e657b;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .topic-deck {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+    .review {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+
+        height: 64px;
+
+    }
+
+
+    .unit-pill {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height: 630px;
+
+    }
+
+
+    .orbit-system {
+
+        width: 420px;
+        height: 420px;
+
+    }
+
+
+    .topic-deck {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        margin-top: -30px;
+
+    }
+
+
+    .lesson {
+
+        padding:
+            27px 21px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .formula-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .review {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+
+        font-size: 19px;
+
+    }
+
+
+    .back {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero h1 {
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .topic-deck {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .topic-card {
+
+        min-height: 85px;
+
+    }
+
+
+    .container {
+
+        width: 94%;
+
+    }
+
+
+    .formula {
+
+        overflow-x: auto;
+
+        text-align: left;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
 
-    </style>
+</style>
 
 </head>
 
 
-<body id="top">
+<body>
 
 
 <!-- =========================================================
-     SCROLL PROGRESS
+     PROGRESS
 ========================================================= -->
 
-<div class="progress-bar" id="progressBar"></div>
+<div id="progress"></div>
+
+
+<!-- =========================================================
+     SPACE BACKGROUND
+========================================================= -->
+
+<div class="space">
+
+    <div class="glow a"></div>
+    <div class="glow b"></div>
+    <div class="glow c"></div>
+
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+
+</div>
 
 
 <!-- =========================================================
@@ -861,12 +2095,21 @@
 <header>
 
     <a href="index.html" class="logo">
-        IAL <span>ATLAS</span>
+        IAL ATLAS
     </a>
 
-    <a href="physics.html" class="back-link">
-        ← Physics
-    </a>
+
+    <div class="header-right">
+
+        <span class="unit-pill">
+            PHYSICS • UNIT 05
+        </span>
+
+        <a href="physics.html" class="back">
+            ← Physics
+        </a>
+
+    </div>
 
 </header>
 
@@ -877,25 +2120,59 @@
 
 <section class="hero">
 
+    <div class="orbit-system"></div>
+
+    <div class="nucleus"></div>
+
+
     <div class="hero-content">
 
-        <p class="hero-label">
-            EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 5
-        </p>
+        <div class="eyebrow">
+
+            <span class="eyebrow-dot"></span>
+
+            EDEXCEL INTERNATIONAL A LEVEL PHYSICS
+
+        </div>
+
 
         <h1>
-            Physics <span>Unit 5</span>
+
+            Physics
+
+            <span class="gradient-text">
+                Unit 5
+            </span>
+
         </h1>
 
-        <p>
+
+        <p class="hero-description">
+
             Thermodynamics, nuclear decay, oscillations,
-            astrophysics and cosmology — organised into
-            complete lessons with equations, examples,
-            practical skills and exam-focused practice.
+            astrophysics and cosmology — explored through
+            structured lessons, equations, examples and practice.
+
         </p>
 
-        <div class="hero-badge">
-            COMPLETE UNIT 5 RESOURCE
+
+        <div class="hero-actions">
+
+            <a href="#thermodynamics"
+               class="hero-button primary">
+                Start Unit
+            </a>
+
+            <a href="#formula-vault"
+               class="hero-button secondary">
+                Formula Vault
+            </a>
+
+            <a href="#practice"
+               class="hero-button secondary">
+                Practice
+            </a>
+
         </div>
 
     </div>
@@ -904,182 +2181,266 @@
 
 
 <!-- =========================================================
-     TOPIC NAVIGATION
+     TOPIC DECK
 ========================================================= -->
 
-<nav class="topic-nav">
+<div class="topic-deck">
 
-    <div class="topic-nav-inner">
+    <a href="#thermodynamics"
+       class="topic-card">
 
-        <a href="#thermodynamics">Thermodynamics</a>
+        <span class="topic-number">
+            01
+        </span>
 
-        <a href="#nuclear">Nuclear Decay</a>
+        <strong>
+            Thermodynamics
+        </strong>
 
-        <a href="#oscillations">Oscillations</a>
+    </a>
 
-        <a href="#springs">Springs</a>
 
-        <a href="#pendulum">Pendulum</a>
+    <a href="#nuclear"
+       class="topic-card">
 
-        <a href="#astrophysics">Astrophysics</a>
+        <span class="topic-number">
+            02
+        </span>
 
-        <a href="#stars">Stars</a>
+        <strong>
+            Nuclear Decay
+        </strong>
 
-        <a href="#spectra">Spectra</a>
+    </a>
 
-        <a href="#cosmology">Cosmology</a>
 
-        <a href="#practical">Practical</a>
+    <a href="#oscillations"
+       class="topic-card">
 
-        <a href="#practice">Practice</a>
+        <span class="topic-number">
+            03
+        </span>
 
-    </div>
+        <strong>
+            Oscillations
+        </strong>
 
-</nav>
+    </a>
+
+
+    <a href="#astrophysics"
+       class="topic-card">
+
+        <span class="topic-number">
+            04
+        </span>
+
+        <strong>
+            Astrophysics
+        </strong>
+
+    </a>
+
+
+    <a href="#cosmology"
+       class="topic-card">
+
+        <span class="topic-number">
+            05
+        </span>
+
+        <strong>
+            Cosmology
+        </strong>
+
+    </a>
+
+</div>
 
 
 <main class="container">
 
 
 <!-- =========================================================
-     TOPIC 01 — THERMODYNAMICS
+     UNIT INTRO
 ========================================================= -->
 
-<section class="lesson" id="thermodynamics">
+<section class="lesson reveal">
 
-    <p class="lesson-number">TOPIC 01</p>
+    <div class="lesson-label">
+        UNIT 05 • OVERVIEW
+    </div>
 
-    <h2>Thermodynamics</h2>
+
+    <h2>
+        Further Physics: From Atoms to the Universe
+    </h2>
+
 
     <p>
-        Thermodynamics describes how energy is transferred and
-        transformed in systems involving particles, temperature,
-        pressure and volume.
+        Unit 5 brings together thermal physics, nuclear physics,
+        oscillations and the physics of stars and the universe.
+        Many of the ideas are connected by energy, motion and
+        fundamental physical laws.
     </p>
 
 
-    <h3>Internal Energy</h3>
+    <div class="callout">
 
-    <p>
-        The internal energy of a system is the sum of the random
-        kinetic energy and intermolecular potential energy of
-        all its particles.
-    </p>
-
-    <div class="definition">
-
-        <strong>Key definition:</strong>
+        <strong>
+            The big picture
+        </strong>
 
         <p>
-            Internal energy is the total microscopic energy
-            associated with the particles in a system.
+            Energy transfer → microscopic behaviour →
+            oscillatory motion → stars → galaxies → universe.
         </p>
 
     </div>
 
 
-    <h3>Temperature and Particle Motion</h3>
+    <ul>
+
+        <li>Thermodynamics and thermal energy</li>
+
+        <li>Nuclear decay and radioactive processes</li>
+
+        <li>Simple harmonic motion</li>
+
+        <li>Springs and oscillations</li>
+
+        <li>Simple pendulums</li>
+
+        <li>Gravitational fields and orbital motion</li>
+
+        <li>Astrophysics and stellar evolution</li>
+
+        <li>Luminosity and intensity</li>
+
+        <li>Stellar spectra and temperature</li>
+
+        <li>Redshift and cosmology</li>
+
+    </ul>
+
+</section>
+
+
+<!-- =========================================================
+     THERMODYNAMICS
+========================================================= -->
+
+<section class="lesson reveal"
+         id="thermodynamics">
+
+    <div class="lesson-label">
+        TOPIC 01
+    </div>
+
+
+    <h2>
+        Thermodynamics
+    </h2>
+
 
     <p>
-        Temperature is related to the average kinetic energy
-        of the particles in a substance. Increasing the temperature
-        increases the average random kinetic energy of the particles.
+        Thermodynamics describes energy transfers involving
+        temperature, internal energy and changes of state.
     </p>
 
 
-    <h3>Specific Heat Capacity</h3>
+    <h3>
+        Internal Energy
+    </h3>
 
     <p>
-        The specific heat capacity of a substance is the energy
-        required to raise the temperature of 1 kg of the substance
-        by 1 K without a change of state.
+        The internal energy of a system is the sum of the
+        microscopic kinetic and potential energies of its particles.
     </p>
+
 
     <div class="formula">
+
         ΔE = mcΔθ
+
     </div>
 
 
-    <h3>Specific Latent Heat</h3>
-
     <p>
-        Specific latent heat is the energy required to change the
-        state of 1 kg of a substance without changing its temperature.
+        where ΔE is the change in internal energy,
+        m is mass, c is specific heat capacity and Δθ is
+        the temperature change.
     </p>
 
+
+    <h3>
+        Specific Latent Heat
+    </h3>
+
+    <p>
+        During a change of state, energy can be transferred without
+        changing the temperature of the substance.
+    </p>
+
+
     <div class="formula">
+
         E = ml
+
     </div>
 
 
-    <h3>Changes of State</h3>
-
-    <ul>
-
-        <li>
-            Melting changes a solid into a liquid.
-        </li>
-
-        <li>
-            Boiling changes a liquid into a gas.
-        </li>
-
-        <li>
-            During a change of state, supplied energy changes
-            intermolecular potential energy rather than temperature.
-        </li>
-
-    </ul>
-
-
-    <h3>Ideal Gas Equation</h3>
-
     <p>
-        An ideal gas is modelled as particles whose volume is negligible
-        compared with the volume of the gas and whose intermolecular
-        forces are negligible except during collisions.
+        Here l is the specific latent heat.
     </p>
 
+
+    <h3>
+        Ideal Gas Equation
+    </h3>
+
     <div class="formula">
+
         pV = nRT
-    </div>
 
-    <p>
-        Here p is pressure, V is volume, n is amount of substance,
-        R is the molar gas constant and T is absolute temperature.
-    </p>
-
-
-    <h3>Absolute Temperature</h3>
-
-    <p>
-        Gas equations require temperature to be measured in kelvin.
-    </p>
-
-    <div class="formula">
-        T(K) = θ(°C) + 273.15
     </div>
 
 
-    <h3>Pressure of a Gas</h3>
-
     <p>
-        Gas pressure results from collisions between particles
-        and the walls of the container. Increasing the average
-        particle speed generally increases the pressure if volume
-        is kept constant.
+        This relates pressure, volume, amount of gas and absolute
+        temperature for an ideal gas.
     </p>
 
 
-    <div class="exam-tip">
+    <div class="example">
 
-        <strong>EXAM TIP</strong>
+        <div class="example-head">
+            WORKED IDEA
+        </div>
 
-        <p>
-            Always check that temperature is in kelvin when using
-            gas-law equations. A Celsius temperature cannot be used
-            directly in pV = nRT.
-        </p>
+        <div class="example-body">
+
+            <p>
+                A substance of mass 0.50 kg has a specific heat
+                capacity of 4200 J kg⁻¹ K⁻¹. Its temperature rises
+                by 10 K.
+            </p>
+
+            <div class="formula">
+
+                ΔE = mcΔθ
+
+                <br><br>
+
+                ΔE = 0.50 × 4200 × 10
+
+                <br><br>
+
+                ΔE = 21 000 J
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1087,254 +2448,177 @@
 
 
 <!-- =========================================================
-     TOPIC 02 — NUCLEAR DECAY
+     NUCLEAR
 ========================================================= -->
 
-<section class="lesson" id="nuclear">
+<section class="lesson reveal"
+         id="nuclear">
 
-    <p class="lesson-number">TOPIC 02</p>
+    <div class="lesson-label">
+        TOPIC 02
+    </div>
 
-    <h2>Nuclear Decay</h2>
+
+    <h2>
+        Nuclear Decay
+    </h2>
+
 
     <p>
-        Radioactive decay is a spontaneous and random process in which
-        an unstable nucleus changes into another nucleus.
+        Radioactive decay is a spontaneous and random process
+        in which unstable nuclei transform into more stable
+        configurations.
     </p>
 
 
-    <h3>Activity</h3>
-
-    <p>
-        Activity is the number of nuclear decays occurring per second.
-    </p>
+    <h3>
+        Activity
+    </h3>
 
     <div class="formula">
+
         A = λN
+
     </div>
 
+
     <p>
-        Activity is measured in becquerels (Bq).
+        Activity is the number of nuclear decays per second.
     </p>
 
 
-    <h3>Decay Constant</h3>
-
-    <p>
-        The decay constant λ represents the probability per unit time
-        that an individual nucleus will decay.
-    </p>
-
-
-    <h3>Exponential Decay</h3>
+    <h3>
+        Exponential Decay
+    </h3>
 
     <div class="formula">
+
         N = N₀e<sup>−λt</sup>
+
     </div>
 
-    <p>
-        Activity also follows exponential decay:
-    </p>
+
+    <h3>
+        Half-life
+    </h3>
 
     <div class="formula">
-        A = A₀e<sup>−λt</sup>
+
+        T½ = ln(2) / λ
+
     </div>
 
 
-    <h3>Half-Life</h3>
+    <div class="callout">
 
-    <p>
-        Half-life is the time required for the number of undecayed
-        nuclei, or the activity, to decrease to half its initial value.
-    </p>
-
-    <div class="formula">
-        T<sub>½</sub> = ln(2) / λ
-    </div>
-
-
-    <h3>Types of Nuclear Radiation</h3>
-
-    <ul>
-
-        <li>
-            <strong>Alpha:</strong> helium nuclei consisting of two
-            protons and two neutrons.
-        </li>
-
-        <li>
-            <strong>Beta-minus:</strong> electrons emitted from the nucleus
-            when a neutron changes into a proton.
-        </li>
-
-        <li>
-            <strong>Gamma:</strong> electromagnetic radiation emitted
-            when a nucleus loses excess energy.
-        </li>
-
-    </ul>
-
-
-    <h3>Random Nature of Radioactive Decay</h3>
-
-    <p>
-        The exact time at which an individual nucleus decays cannot
-        be predicted. However, the behaviour of a large collection
-        of nuclei can be predicted statistically.
-    </p>
-
-
-    <div class="important">
-
-        <strong>Important:</strong>
+        <strong>
+            Important
+        </strong>
 
         <p>
-            Half-life is independent of the number of undecayed nuclei
-            present. Each nucleus has the same probability of decaying
-            per unit time.
+            Radioactive decay is random for an individual nucleus,
+            but the behaviour of a very large number of nuclei
+            follows a predictable statistical pattern.
         </p>
 
     </div>
 
 
-    <div class="example">
+    <h3>
+        Decay Constant
+    </h3>
 
-        <p class="example-title">
-            WORKED EXAMPLE
-        </p>
-
-        <p>
-            A radioactive isotope has a decay constant of
-            0.20 s⁻¹. Calculate its half-life.
-        </p>
-
-        <div class="solution">
-
-            <p>
-                T<sub>½</sub> = ln(2) / λ
-            </p>
-
-            <p>
-                T<sub>½</sub> = 0.693 / 0.20
-            </p>
-
-            <p>
-                <strong>T<sub>½</sub> = 3.47 s</strong>
-            </p>
-
-        </div>
-
-    </div>
+    <p>
+        The decay constant λ represents the probability per unit
+        time that a particular unstable nucleus will decay.
+    </p>
 
 </section>
 
 
 <!-- =========================================================
-     TOPIC 03 — OSCILLATIONS
+     OSCILLATIONS
 ========================================================= -->
 
-<section class="lesson" id="oscillations">
+<section class="lesson reveal"
+         id="oscillations">
 
-    <p class="lesson-number">TOPIC 03</p>
+    <div class="lesson-label">
+        TOPIC 03
+    </div>
 
-    <h2>Oscillations and Simple Harmonic Motion</h2>
+
+    <h2>
+        Oscillations and Simple Harmonic Motion
+    </h2>
+
 
     <p>
-        An oscillation is repeated motion about an equilibrium position.
-        Simple harmonic motion is a special type of oscillation.
+        Oscillations occur when an object repeatedly moves around
+        an equilibrium position.
     </p>
 
 
-    <h3>Simple Harmonic Motion</h3>
+    <h3>
+        Simple Harmonic Motion
+    </h3>
 
     <p>
-        An object undergoes simple harmonic motion when its acceleration
-        is proportional to its displacement from equilibrium and directed
-        towards the equilibrium position.
+        In simple harmonic motion, acceleration is proportional
+        to displacement from equilibrium and directed towards
+        equilibrium.
     </p>
+
 
     <div class="formula">
+
         a = −ω²x
+
     </div>
 
 
-    <h3>Angular Frequency</h3>
+    <h3>
+        Angular Frequency
+    </h3>
 
     <div class="formula">
-        ω = 2πf = 2π/T
+
+        ω = 2πf
+
     </div>
 
 
-    <h3>Displacement</h3>
-
-    <p>
-        A sinusoidal function can be used to describe displacement
-        during SHM.
-    </p>
+    <h3>
+        Maximum Speed
+    </h3>
 
     <div class="formula">
-        x = A cos(ωt)
-    </div>
 
-
-    <h3>Velocity</h3>
-
-    <div class="formula">
-        v = −Aω sin(ωt)
-    </div>
-
-
-    <h3>Maximum Speed</h3>
-
-    <div class="formula">
         v<sub>max</sub> = Aω
+
     </div>
 
 
-    <h3>Maximum Acceleration</h3>
+    <h3>
+        Energy in SHM
+    </h3>
 
     <div class="formula">
-        a<sub>max</sub> = Aω²
-    </div>
 
-
-    <h3>Velocity-Displacement Relationship</h3>
-
-    <div class="formula">
-        v² = ω²(A² − x²)
-    </div>
-
-
-    <h3>Energy in SHM</h3>
-
-    <p>
-        In ideal SHM, energy continually transfers between kinetic
-        and potential energy while total mechanical energy remains
-        constant.
-    </p>
-
-    <div class="formula">
         E = ½mω²A²
-    </div>
-
-
-    <div class="definition">
-
-        <strong>At equilibrium:</strong>
-
-        <p>
-            Displacement is zero, speed is maximum and acceleration
-            is zero.
-        </p>
 
     </div>
 
-    <div class="definition">
 
-        <strong>At maximum displacement:</strong>
+    <div class="callout">
+
+        <strong>
+            SHM condition
+        </strong>
 
         <p>
-            Speed is zero, acceleration has maximum magnitude and
-            potential energy is maximum.
+            The acceleration must always act towards the equilibrium
+            position and have magnitude proportional to displacement.
         </p>
 
     </div>
@@ -1343,75 +2627,82 @@
 
 
 <!-- =========================================================
-     TOPIC 04 — SPRINGS
+     SPRINGS
 ========================================================= -->
 
-<section class="lesson" id="springs">
+<section class="lesson reveal">
 
-    <p class="lesson-number">TOPIC 04</p>
+    <div class="lesson-label">
+        TOPIC 04
+    </div>
 
-    <h2>Springs and Oscillating Systems</h2>
+
+    <h2>
+        Springs and Oscillations
+    </h2>
+
 
     <p>
-        A mass attached to a spring can oscillate about its equilibrium
-        position when displaced and released.
+        Springs provide a useful physical system for studying
+        oscillatory motion and elastic potential energy.
     </p>
 
 
-    <h3>Hooke's Law</h3>
+    <h3>
+        Hooke's Law
+    </h3>
 
     <div class="formula">
+
         F = kx
+
     </div>
 
+
     <p>
-        Hooke's law applies while the extension or compression remains
-        within the limit of proportionality.
+        The relationship applies while the spring remains within
+        its limit of proportionality.
     </p>
 
 
-    <h3>Elastic Potential Energy</h3>
+    <h3>
+        Elastic Potential Energy
+    </h3>
 
     <div class="formula">
+
         E = ½kx²
+
     </div>
 
 
-    <h3>Spring-Mass Oscillator</h3>
-
-    <p>
-        The period of a mass-spring system depends on the mass attached
-        to the spring and the spring constant.
-    </p>
+    <h3>
+        Period of a Mass-Spring System
+    </h3>
 
     <div class="formula">
+
         T = 2π√(m/k)
+
     </div>
 
 
     <div class="example">
 
-        <p class="example-title">
-            WORKED EXAMPLE
-        </p>
+        <div class="example-head">
+            WORKED IDEA
+        </div>
 
-        <p>
-            A spring has a spring constant of 200 N m⁻¹ and is stretched
-            by 0.10 m. Calculate the elastic potential energy.
-        </p>
-
-        <div class="solution">
+        <div class="example-body">
 
             <p>
-                E = ½kx²
+                Increasing the mass attached to a spring increases
+                the period of oscillation.
             </p>
 
             <p>
-                E = ½ × 200 × (0.10)²
-            </p>
-
-            <p>
-                <strong>E = 1.0 J</strong>
+                From T = 2π√(m/k), the period is proportional to
+                the square root of the mass.
             </p>
 
         </div>
@@ -1422,137 +2713,188 @@
 
 
 <!-- =========================================================
-     TOPIC 05 — PENDULUM
+     PENDULUM
 ========================================================= -->
 
-<section class="lesson" id="pendulum">
+<section class="lesson reveal">
 
-    <p class="lesson-number">TOPIC 05</p>
-
-    <h2>Simple Pendulum</h2>
-
-    <p>
-        A simple pendulum can approximate simple harmonic motion when
-        the angular displacement is small.
-    </p>
-
-
-    <h3>Period of a Pendulum</h3>
-
-    <div class="formula">
-        T = 2π√(l/g)
+    <div class="lesson-label">
+        TOPIC 05
     </div>
 
 
-    <h3>Factors Affecting the Period</h3>
+    <h2>
+        Simple Pendulum
+    </h2>
+
+
+    <p>
+        For small oscillations, the period of a simple pendulum
+        depends on its length and the gravitational field strength.
+    </p>
+
+
+    <div class="formula">
+
+        T = 2π√(l/g)
+
+    </div>
+
+
+    <p>
+        The mass of the pendulum bob does not affect the period
+        in the ideal model.
+    </p>
+
+
+    <div class="callout">
+
+        <strong>
+            Experimental connection
+        </strong>
+
+        <p>
+            A graph of T² against l should produce a straight line
+            through the origin for an ideal simple pendulum.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GRAVITATIONAL FIELDS
+========================================================= -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-label">
+        TOPIC 06
+    </div>
+
+
+    <h2>
+        Gravitational Fields and Orbits
+    </h2>
+
+
+    <p>
+        Gravitational fields describe the influence of a mass on
+        another mass.
+    </p>
+
+
+    <h3>
+        Gravitational Field Strength
+    </h3>
+
+    <div class="formula">
+
+        g = GM/r²
+
+    </div>
+
+
+    <h3>
+        Gravitational Potential
+    </h3>
+
+    <div class="formula">
+
+        V<sub>g</sub> = −GM/r
+
+    </div>
+
+
+    <h3>
+        Orbital Speed
+    </h3>
+
+    <div class="formula">
+
+        v = √(GM/r)
+
+    </div>
+
+
+    <p>
+        The orbital speed of a circular orbit depends on the
+        mass of the central object and the orbital radius.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     ASTROPHYSICS
+========================================================= -->
+
+<section class="lesson reveal"
+         id="astrophysics">
+
+    <div class="lesson-label">
+        TOPIC 07
+    </div>
+
+
+    <h2>
+        Astrophysics
+    </h2>
+
+
+    <p>
+        Astrophysics applies physics to stars, galaxies and other
+        astronomical objects.
+    </p>
+
+
+    <h3>
+        Stellar Evolution
+    </h3>
+
+    <p>
+        A star's evolution depends strongly on its initial mass.
+        Stars spend much of their lives on the main sequence,
+        where nuclear fusion provides the energy that balances
+        gravitational collapse.
+    </p>
+
 
     <ul>
 
         <li>
-            Increasing the length increases the period.
+            Nebula
         </li>
 
         <li>
-            Increasing gravitational field strength decreases the period.
+            Protostar
         </li>
 
         <li>
-            For small oscillations, the period is approximately independent
-            of the amplitude.
+            Main sequence
+        </li>
+
+        <li>
+            Red giant or supergiant
+        </li>
+
+        <li>
+            Final stellar remnant
         </li>
 
     </ul>
 
 
-    <h3>Experimental Investigation</h3>
+    <div class="callout">
 
-    <p>
-        A common method is to measure the time for several complete
-        oscillations and calculate the period.
-    </p>
-
-    <p>
-        Repeating measurements and using a larger number of oscillations
-        reduces the effect of reaction-time uncertainty.
-    </p>
-
-
-    <div class="formula">
-        T² = (4π²/g)l
-    </div>
-
-    <p>
-        Therefore a graph of T² against l should be approximately linear,
-        with gradient 4π²/g.
-    </p>
-
-</section>
-
-
-<!-- =========================================================
-     TOPIC 06 — ASTROPHYSICS
-========================================================= -->
-
-<section class="lesson" id="astrophysics">
-
-    <p class="lesson-number">TOPIC 06</p>
-
-    <h2>Astrophysics</h2>
-
-    <p>
-        Astrophysics applies physical principles to stars, planets,
-        galaxies and other astronomical systems.
-    </p>
-
-
-    <h3>Gravitational Field Strength</h3>
-
-    <div class="formula">
-        g = GM/r²
-    </div>
-
-
-    <h3>Gravitational Potential</h3>
-
-    <div class="formula">
-        V<sub>g</sub> = −GM/r
-    </div>
-
-
-    <h3>Orbital Motion</h3>
-
-    <p>
-        An object in a circular orbit remains in orbit because the
-        gravitational attraction provides the required centripetal force.
-    </p>
-
-
-    <h3>Orbital Speed</h3>
-
-    <div class="formula">
-        v = √(GM/r)
-    </div>
-
-
-    <h3>Orbital Period</h3>
-
-    <p>
-        For objects orbiting the same central mass:
-    </p>
-
-    <div class="formula">
-        T² ∝ r³
-    </div>
-
-
-    <div class="definition">
-
-        <strong>Key idea:</strong>
+        <strong>
+            Key principle
+        </strong>
 
         <p>
-            A satellite does not require a continuous forward force
-            to remain in orbit. Gravity continuously changes its
-            direction of motion and provides the centripetal force.
+            The greater the initial mass of a star, the more rapidly
+            it generally consumes its nuclear fuel.
         </p>
 
     </div>
@@ -1561,225 +2903,118 @@
 
 
 <!-- =========================================================
-     TOPIC 07 — STARS
+     LUMINOSITY
 ========================================================= -->
 
-<section class="lesson" id="stars">
+<section class="lesson reveal">
 
-    <p class="lesson-number">TOPIC 07</p>
-
-    <h2>Stars and Stellar Evolution</h2>
-
-    <p>
-        Stars form and evolve as the balance between gravitational
-        forces, pressure and nuclear processes changes over time.
-    </p>
-
-
-    <h3>Formation of Stars</h3>
-
-    <p>
-        Stars form from clouds of gas and dust. Gravity causes the
-        cloud to collapse, increasing density and temperature.
-    </p>
-
-
-    <h3>Main Sequence</h3>
-
-    <p>
-        During the main-sequence stage, stars release energy primarily
-        through nuclear fusion in their cores.
-    </p>
-
-
-    <h3>Low and Medium Mass Stars</h3>
-
-    <p>
-        After leaving the main sequence, a lower-mass star can expand
-        into a red giant before eventually leaving behind a white dwarf.
-    </p>
-
-
-    <h3>Massive Stars</h3>
-
-    <p>
-        Massive stars can become red supergiants and undergo supernova
-        explosions. Their remnants can form neutron stars or black holes.
-    </p>
-
-
-    <div class="important">
-
-        <strong>Remember:</strong>
-
-        <p>
-            Initial stellar mass is one of the most important factors
-            determining the later evolution of a star.
-        </p>
-
+    <div class="lesson-label">
+        TOPIC 08
     </div>
 
-</section>
 
+    <h2>
+        Luminosity and Intensity
+    </h2>
 
-<!-- =========================================================
-     TOPIC 08 — LUMINOSITY
-========================================================= -->
-
-<section class="lesson">
-
-    <p class="lesson-number">TOPIC 08</p>
-
-    <h2>Luminosity and Stellar Measurements</h2>
-
-
-    <h3>Luminosity</h3>
 
     <p>
-        Luminosity is the total power emitted by a star.
+        Luminosity is the total power radiated by a star.
+        Intensity describes the power received per unit area.
     </p>
 
+
     <div class="formula">
+
         L = 4πR²σT⁴
+
     </div>
 
 
-    <h3>Stefan-Boltzmann Law</h3>
-
     <p>
-        The Stefan-Boltzmann law relates the luminosity of a star
-        to its radius and absolute surface temperature.
+        This is the Stefan-Boltzmann relationship for a star
+        approximated as a black body.
     </p>
 
 
-    <h3>Intensity</h3>
+    <h3>
+        Intensity
+    </h3>
 
     <div class="formula">
-        I = L / (4πd²)
+
+        I = L/(4πd²)
+
     </div>
 
+
     <p>
-        The intensity received from a source decreases according
-        to the inverse-square law.
+        As distance increases, the intensity received from a source
+        decreases according to the inverse-square relationship.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     SPECTRA
+========================================================= -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-label">
+        TOPIC 09
+    </div>
+
+
+    <h2>
+        Stellar Spectra and Temperature
+    </h2>
+
+
+    <p>
+        The spectrum of a star contains information about its
+        temperature, composition and motion.
     </p>
 
 
-    <h3>Wien's Displacement Law</h3>
+    <h3>
+        Wien's Law
+    </h3>
 
     <div class="formula">
+
         λ<sub>max</sub>T = constant
-    </div>
-
-    <p>
-        A hotter star has its peak wavelength at a shorter wavelength.
-    </p>
-
-
-    <div class="equation-grid">
-
-        <div class="equation-card">
-
-            <div class="equation">
-                L ∝ R²T⁴
-            </div>
-
-            <div class="label">
-                Stefan-Boltzmann relationship
-            </div>
-
-        </div>
-
-
-        <div class="equation-card">
-
-            <div class="equation">
-                I ∝ 1/d²
-            </div>
-
-            <div class="label">
-                Inverse-square relationship
-            </div>
-
-        </div>
 
     </div>
 
-</section>
-
-
-<!-- =========================================================
-     TOPIC 09 — SPECTRA
-========================================================= -->
-
-<section class="lesson" id="spectra">
-
-    <p class="lesson-number">TOPIC 09</p>
-
-    <h2>Stellar Spectra</h2>
 
     <p>
-        Spectroscopy allows scientists to obtain information about
-        the composition, temperature and motion of astronomical objects.
+        Hotter stars have shorter peak wavelengths, while cooler
+        stars have longer peak wavelengths.
     </p>
 
 
-    <h3>Continuous Spectra</h3>
+    <h3>
+        Spectral Lines
+    </h3>
 
     <p>
-        A hot, dense object can produce a continuous spectrum containing
-        a broad range of wavelengths.
+        Absorption and emission lines can be used to identify
+        elements present in astronomical objects.
     </p>
 
 
-    <h3>Emission Spectra</h3>
+    <div class="callout">
 
-    <p>
-        Excited atoms can emit photons at specific wavelengths,
-        producing bright spectral lines.
-    </p>
-
-
-    <h3>Absorption Spectra</h3>
-
-    <p>
-        A cooler gas in front of a continuous source can absorb
-        particular wavelengths, producing dark absorption lines.
-    </p>
-
-
-    <h3>Doppler Effect</h3>
-
-    <p>
-        The observed wavelength of light changes when the source
-        moves relative to the observer.
-    </p>
-
-    <div class="formula">
-        Δλ / λ = v / c
-    </div>
-
-
-    <h3>Redshift</h3>
-
-    <p>
-        If spectral lines are shifted towards longer wavelengths,
-        the light is redshifted. For relatively small velocities:
-    </p>
-
-    <div class="formula">
-        z = Δλ / λ ≈ v/c
-    </div>
-
-
-    <div class="exam-tip">
-
-        <strong>EXAM TIP</strong>
+        <strong>
+            Exam connection
+        </strong>
 
         <p>
-            Compare the observed spectral-line wavelength with its
-            known laboratory wavelength. A shift towards longer
-            wavelengths indicates redshift; a shift towards shorter
-            wavelengths indicates blueshift.
+            Spectral evidence allows astronomers to determine
+            physical properties of objects that cannot be directly
+            sampled.
         </p>
 
     </div>
@@ -1788,90 +3023,81 @@
 
 
 <!-- =========================================================
-     TOPIC 10 — COSMOLOGY
+     COSMOLOGY
 ========================================================= -->
 
-<section class="lesson" id="cosmology">
+<section class="lesson reveal"
+         id="cosmology">
 
-    <p class="lesson-number">TOPIC 10</p>
+    <div class="lesson-label">
+        TOPIC 10
+    </div>
 
-    <h2>Cosmology</h2>
+
+    <h2>
+        Cosmology and the Expanding Universe
+    </h2>
+
 
     <p>
-        Cosmology investigates the origin, structure and evolution
-        of the Universe.
+        Cosmology studies the origin, evolution and large-scale
+        structure of the universe.
     </p>
 
 
-    <h3>Expansion of the Universe</h3>
+    <h3>
+        Redshift
+    </h3>
 
     <p>
-        Observations of distant galaxies show that the Universe
-        is expanding.
+        When light from a distant object is shifted towards longer
+        wavelengths, the object is described as redshifted.
     </p>
 
-
-    <h3>Hubble's Law</h3>
 
     <div class="formula">
+
+        z = Δλ/λ
+
+    </div>
+
+
+    <h3>
+        Hubble's Law
+    </h3>
+
+    <div class="formula">
+
         v = H₀d
-    </div>
 
-    <p>
-        The recession velocity of a galaxy is approximately proportional
-        to its distance from Earth.
-    </p>
-
-
-    <h3>Hubble Constant</h3>
-
-    <p>
-        H₀ represents the current rate of expansion of the Universe.
-        Its numerical value depends on the units used for distance
-        and velocity.
-    </p>
-
-
-    <h3>Big Bang Model</h3>
-
-    <p>
-        The Big Bang model describes a Universe that began in an
-        extremely hot and dense state and has expanded and cooled
-        over time.
-    </p>
-
-
-    <h3>Cosmic Microwave Background Radiation</h3>
-
-    <p>
-        Cosmic microwave background radiation is electromagnetic
-        radiation originating from the early Universe. Its existence
-        provides important evidence supporting the Big Bang model.
-    </p>
-
-
-    <h3>Redshift and Expansion</h3>
-
-    <p>
-        Light from many distant galaxies is observed to be redshifted.
-        This provides evidence that those galaxies are generally
-        receding from us.
-    </p>
-
-
-    <div class="formula">
-        z = Δλ / λ
     </div>
 
 
-    <div class="definition">
+    <p>
+        The approximate proportionality between recession velocity
+        and distance provides evidence that the universe is expanding.
+    </p>
 
-        <strong>Key conclusion:</strong>
+
+    <h3>
+        Density of the Universe
+    </h3>
+
+    <p>
+        The average density of the universe is important when
+        considering its large-scale evolution.
+    </p>
+
+
+    <div class="callout">
+
+        <strong>
+            Big idea
+        </strong>
 
         <p>
-            The observation that more distant galaxies generally have
-            greater recession velocities is consistent with an
-            expanding Universe.
+            Observations such as galactic redshift provide evidence
+            for an expanding universe.
         </p>
 
     </div>
@@ -1880,55 +3106,232 @@
 
 
 <!-- =========================================================
-     TOPIC 11 — CRITICAL DENSITY
+     FORMULA VAULT
 ========================================================= -->
 
-<section class="lesson">
+<section class="lesson reveal"
+         id="formula-vault">
 
-    <p class="lesson-number">TOPIC 11</p>
+    <div class="lesson-label">
+        FORMULA VAULT
+    </div>
 
-    <h2>Critical Density and the Universe</h2>
+
+    <h2>
+        Unit 5 Equation Vault
+    </h2>
+
 
     <p>
-        The large-scale evolution of the Universe depends on the
-        balance between its expansion and gravitational effects.
+        Click a formula to reveal what each relationship is used for.
     </p>
 
 
-    <h3>Critical Density</h3>
-
-    <p>
-        Critical density is the density associated with a particular
-        boundary between different possible large-scale expansion
-        behaviours.
-    </p>
+    <div class="formula-grid">
 
 
-    <h3>Dark Matter</h3>
+        <div class="formula-card">
 
-    <p>
-        Dark matter is proposed to account for gravitational effects
-        that cannot be explained by visible matter alone.
-    </p>
+            <span class="tag">
+                THERMODYNAMICS
+            </span>
+
+            <div class="equation">
+                ΔE = mcΔθ
+            </div>
+
+            <div class="meaning">
+                Heating or cooling without a change of state.
+            </div>
+
+        </div>
 
 
-    <h3>Dark Energy</h3>
+        <div class="formula-card">
 
-    <p>
-        Dark energy is associated with the observed accelerated
-        expansion of the Universe.
-    </p>
+            <span class="tag">
+                LATENT HEAT
+            </span>
+
+            <div class="equation">
+                E = ml
+            </div>
+
+            <div class="meaning">
+                Energy transferred during a change of state.
+            </div>
+
+        </div>
 
 
-    <div class="important">
+        <div class="formula-card">
 
-        <strong>Important distinction:</strong>
+            <span class="tag">
+                IDEAL GAS
+            </span>
 
-        <p>
-            Dark matter is associated primarily with additional
-            gravitational effects, whereas dark energy is associated
-            with the accelerated expansion of the Universe.
-        </p>
+            <div class="equation">
+                pV = nRT
+            </div>
+
+            <div class="meaning">
+                Relates pressure, volume, amount and temperature.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                RADIOACTIVITY
+            </span>
+
+            <div class="equation">
+                A = λN
+            </div>
+
+            <div class="meaning">
+                Activity of a radioactive sample.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                DECAY
+            </span>
+
+            <div class="equation">
+                N = N₀e<sup>−λt</sup>
+            </div>
+
+            <div class="meaning">
+                Number of undecayed nuclei after time t.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                HALF-LIFE
+            </span>
+
+            <div class="equation">
+                T½ = ln(2)/λ
+            </div>
+
+            <div class="meaning">
+                Relationship between half-life and decay constant.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                SHM
+            </span>
+
+            <div class="equation">
+                a = −ω²x
+            </div>
+
+            <div class="meaning">
+                Defining acceleration relationship for SHM.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                ANGULAR FREQUENCY
+            </span>
+
+            <div class="equation">
+                ω = 2πf
+            </div>
+
+            <div class="meaning">
+                Converts frequency into angular frequency.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                SPRING
+            </span>
+
+            <div class="equation">
+                F = kx
+            </div>
+
+            <div class="meaning">
+                Hooke's law within the proportional limit.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                PENDULUM
+            </span>
+
+            <div class="equation">
+                T = 2π√(l/g)
+            </div>
+
+            <div class="meaning">
+                Period of a simple pendulum for small oscillations.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                LUMINOSITY
+            </span>
+
+            <div class="equation">
+                L = 4πR²σT⁴
+            </div>
+
+            <div class="meaning">
+                Luminosity of a star approximated as a black body.
+            </div>
+
+        </div>
+
+
+        <div class="formula-card">
+
+            <span class="tag">
+                HUBBLE
+            </span>
+
+            <div class="equation">
+                v = H₀d
+            </div>
+
+            <div class="meaning">
+                Relates recession velocity and distance.
+            </div>
+
+        </div>
 
     </div>
 
@@ -1936,57 +3339,30 @@
 
 
 <!-- =========================================================
-     TOPIC 12 — PRACTICAL SKILLS
+     PRACTICAL SKILLS
 ========================================================= -->
 
-<section class="lesson" id="practical">
+<section class="lesson reveal">
 
-    <p class="lesson-number">PRACTICAL SKILLS</p>
+    <div class="lesson-label">
+        PRACTICAL SKILLS
+    </div>
 
-    <h2>Unit 5 Practical Skills</h2>
+
+    <h2>
+        Experimental Physics
+    </h2>
+
 
     <p>
-        Practical questions can test planning, measurements, processing
-        data, uncertainties, graphs and evaluation of experimental methods.
+        Unit 5 practical work develops the ability to connect
+        theoretical relationships with real measurements.
     </p>
 
-
-    <h3>Gas Investigation</h3>
-
-    <p>
-        Investigate relationships between pressure, volume and
-        temperature for a fixed mass of gas.
-    </p>
-
-
-    <h3>Radioactive Decay</h3>
-
-    <p>
-        Measurements of count rate over time can be used to investigate
-        radioactive decay and estimate half-life.
-    </p>
-
-
-    <h3>Simple Pendulum</h3>
-
-    <p>
-        Measure the period for different pendulum lengths and use
-        appropriate graphical analysis to determine gravitational
-        field strength.
-    </p>
-
-
-    <h3>Oscillating Spring</h3>
-
-    <p>
-        Measure the period of oscillation for different masses and
-        investigate the relationship between T² and mass.
-    </p>
-
-
-    <h3>Experimental Evaluation</h3>
 
     <ul>
+
+        <li>Plan suitable investigations.</li>
 
         <li>Identify independent and dependent variables.</li>
 
@@ -1994,27 +3370,31 @@
 
         <li>Repeat measurements.</li>
 
-        <li>Calculate mean values where appropriate.</li>
+        <li>Calculate uncertainties.</li>
+
+        <li>Plot and interpret graphs.</li>
+
+        <li>Determine gradients.</li>
 
         <li>Identify anomalous results.</li>
 
-        <li>Consider random and systematic uncertainty.</li>
-
-        <li>Use suitable graphs.</li>
+        <li>Evaluate limitations.</li>
 
         <li>Suggest realistic improvements.</li>
 
     </ul>
 
 
-    <div class="exam-tip">
+    <div class="warning">
 
-        <strong>PRACTICAL EXAM TIP</strong>
+        <strong>
+            Practical reminder
+        </strong>
 
         <p>
-            When suggesting an improvement, explain how it would
-            specifically reduce uncertainty or improve the reliability
-            of the result rather than simply saying "repeat the experiment."
+            An improvement should directly address a specific
+            limitation of the method rather than simply saying
+            "use better equipment."
         </p>
 
     </div>
@@ -2026,408 +3406,406 @@
      MIXED PRACTICE
 ========================================================= -->
 
-<section class="lesson" id="practice">
+<section class="lesson reveal"
+         id="practice">
 
-    <p class="lesson-number">EXAM PRACTICE</p>
+    <div class="lesson-label">
+        PRACTICE MODE
+    </div>
 
-    <h2>Unit 5 Mixed Practice</h2>
+
+    <h2>
+        Unit 5 Challenge
+    </h2>
+
+
+    <p>
+        Test your understanding. Select an answer for each question.
+    </p>
+
+
+    <div class="practice-score">
+
+        <span>
+            Score:
+            <strong id="score">
+                0 / 10
+            </strong>
+        </span>
+
+
+        <button class="reset-btn"
+                id="resetPractice">
+
+            Reset
+
+        </button>
+
+    </div>
 
 
     <!-- Q1 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            1. A 2.0 kg block is heated through 15 K. Its specific heat
-            capacity is 900 J kg⁻¹ K⁻¹. Calculate the energy transferred.
+            1. Which equation relates specific heat capacity
+            to the change in internal energy?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="B">
 
-            <p>
-                ΔE = mcΔθ
-            </p>
+            <button data-choice="A">
+                A. E = ml
+            </button>
 
-            <p>
-                ΔE = 2.0 × 900 × 15
-            </p>
+            <button data-choice="B">
+                B. ΔE = mcΔθ
+            </button>
 
-            <p>
-                <strong>ΔE = 27 000 J</strong>
-            </p>
+            <button data-choice="C">
+                C. pV = nRT
+            </button>
 
-        </details>
+            <button data-choice="D">
+                D. A = λN
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q2 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            2. State the meaning of specific latent heat.
+            2. What does the decay constant represent?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="C">
 
-            <p>
-                The specific latent heat is the energy required to
-                change the state of 1 kg of a substance without
-                changing its temperature.
-            </p>
+            <button data-choice="A">
+                A. Total energy released
+            </button>
 
-        </details>
+            <button data-choice="B">
+                B. Number of nuclei
+            </button>
+
+            <button data-choice="C">
+                C. Probability of decay per unit time
+            </button>
+
+            <button data-choice="D">
+                D. Half the activity
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q3 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            3. A gas has a volume of 0.020 m³ at a pressure of
-            1.5 × 10⁵ Pa. Calculate the product pV.
+            3. In SHM, acceleration is directed:
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="A">
 
-            <p>
-                pV = (1.5 × 10⁵)(0.020)
-            </p>
+            <button data-choice="A">
+                A. Towards equilibrium
+            </button>
 
-            <p>
-                <strong>pV = 3.0 × 10³ Pa m³</strong>
-            </p>
+            <button data-choice="B">
+                B. Away from equilibrium
+            </button>
 
-        </details>
+            <button data-choice="C">
+                C. Always upward
+            </button>
+
+            <button data-choice="D">
+                D. Always downward
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q4 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            4. A radioactive isotope has a half-life of 8.0 days.
-            What fraction remains after 24 days?
+            4. What happens to the period of a mass-spring system
+            if the mass increases?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="B">
 
-            <p>
-                24 days represents three half-lives.
-            </p>
+            <button data-choice="A">
+                A. It decreases
+            </button>
 
-            <p>
-                Initial → 1/2 → 1/4 → 1/8
-            </p>
+            <button data-choice="B">
+                B. It increases
+            </button>
 
-            <p>
-                <strong>Fraction remaining = 1/8</strong>
-            </p>
+            <button data-choice="C">
+                C. It becomes zero
+            </button>
 
-        </details>
+            <button data-choice="D">
+                D. It is always unchanged
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q5 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            5. A radioactive isotope has a decay constant of
-            0.10 s⁻¹. Calculate its half-life.
+            5. Which law is represented by F = kx?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="D">
 
-            <p>
-                T<sub>½</sub> = ln(2) / λ
-            </p>
+            <button data-choice="A">
+                A. Hubble's law
+            </button>
 
-            <p>
-                T<sub>½</sub> = 0.693 / 0.10
-            </p>
+            <button data-choice="B">
+                B. Wien's law
+            </button>
 
-            <p>
-                <strong>T<sub>½</sub> = 6.93 s</strong>
-            </p>
+            <button data-choice="C">
+                C. Stefan's law
+            </button>
 
-        </details>
+            <button data-choice="D">
+                D. Hooke's law
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q6 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            6. State the condition required for simple harmonic motion.
+            6. What does luminosity describe?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="A">
 
-            <p>
-                Acceleration must be proportional to displacement from
-                equilibrium and directed towards the equilibrium position.
-            </p>
+            <button data-choice="A">
+                A. Total power radiated by a star
+            </button>
 
-        </details>
+            <button data-choice="B">
+                B. Surface temperature only
+            </button>
+
+            <button data-choice="C">
+                C. Distance from Earth
+            </button>
+
+            <button data-choice="D">
+                D. Orbital speed
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q7 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            7. An oscillator has amplitude 0.040 m and angular frequency
-            12 rad s⁻¹. Calculate its maximum speed.
+            7. According to Wien's law, hotter stars have:
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="C">
 
-            <p>
-                v<sub>max</sub> = Aω
-            </p>
+            <button data-choice="A">
+                A. Longer peak wavelengths
+            </button>
 
-            <p>
-                v<sub>max</sub> = 0.040 × 12
-            </p>
+            <button data-choice="B">
+                B. No spectrum
+            </button>
 
-            <p>
-                <strong>v<sub>max</sub> = 0.48 m s⁻¹</strong>
-            </p>
+            <button data-choice="C">
+                C. Shorter peak wavelengths
+            </button>
 
-        </details>
+            <button data-choice="D">
+                D. Zero luminosity
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q8 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            8. A spring has k = 150 N m⁻¹ and extension 0.080 m.
-            Calculate its elastic potential energy.
+            8. What does Hubble's law provide evidence for?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="B">
 
-            <p>
-                E = ½kx²
-            </p>
+            <button data-choice="A">
+                A. A static universe
+            </button>
 
-            <p>
-                E = ½ × 150 × (0.080)²
-            </p>
+            <button data-choice="B">
+                B. An expanding universe
+            </button>
 
-            <p>
-                <strong>E = 0.48 J</strong>
-            </p>
+            <button data-choice="C">
+                C. Constant stellar mass
+            </button>
 
-        </details>
+            <button data-choice="D">
+                D. Zero redshift
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q9 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            9. State the equation for the period of a simple pendulum.
+            9. What happens to gravitational field strength
+            as distance from a point mass increases?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="D">
 
-            <p>
-                <strong>
-                    T = 2π√(l/g)
-                </strong>
-            </p>
+            <button data-choice="A">
+                A. It increases linearly
+            </button>
 
-        </details>
+            <button data-choice="B">
+                B. It remains constant
+            </button>
+
+            <button data-choice="C">
+                C. It becomes negative immediately
+            </button>
+
+            <button data-choice="D">
+                D. It decreases according to an inverse-square relationship
+            </button>
+
+        </div>
+
+
+        <span class="question-result"></span>
 
     </div>
 
 
     <!-- Q10 -->
 
-    <div class="question">
+    <div class="practice-question">
 
         <strong>
-            10. What force provides the centripetal force for a planet
-            orbiting a star?
+            10. Which equation gives the period of a simple pendulum
+            for small oscillations?
         </strong>
 
-        <details>
 
-            <summary>Show answer</summary>
+        <div class="answer-buttons"
+             data-answer="C">
 
-            <p>
-                The gravitational attraction between the planet and
-                the star provides the centripetal force.
-            </p>
+            <button data-choice="A">
+                A. T = 2π√(k/m)
+            </button>
 
-        </details>
+            <button data-choice="B">
+                B. T = 2πf
+            </button>
 
-    </div>
+            <button data-choice="C">
+                C. T = 2π√(l/g)
+            </button>
+
+            <button data-choice="D">
+                D. T = λ/c
+            </button>
+
+        </div>
 
 
-    <!-- Q11 -->
-
-    <div class="question">
-
-        <strong>
-            11. A star has luminosity L and is observed from a distance d.
-            State the equation relating intensity to luminosity and distance.
-        </strong>
-
-        <details>
-
-            <summary>Show answer</summary>
-
-            <p>
-                <strong>
-                    I = L / (4πd²)
-                </strong>
-            </p>
-
-        </details>
+        <span class="question-result"></span>
 
     </div>
-
-
-    <!-- Q12 -->
-
-    <div class="question">
-
-        <strong>
-            12. A star's surface temperature increases. What happens
-            to the wavelength at which its emission is maximum?
-        </strong>
-
-        <details>
-
-            <summary>Show answer</summary>
-
-            <p>
-                According to Wien's law, increasing temperature causes
-                the peak wavelength to decrease.
-            </p>
-
-            <p>
-                Therefore the peak shifts towards shorter wavelengths.
-            </p>
-
-        </details>
-
-    </div>
-
-
-    <!-- Q13 -->
-
-    <div class="question">
-
-        <strong>
-            13. State Hubble's law.
-        </strong>
-
-        <details>
-
-            <summary>Show answer</summary>
-
-            <p>
-                The recession velocity of a distant galaxy is
-                approximately proportional to its distance from Earth:
-            </p>
-
-            <p>
-                <strong>v = H₀d</strong>
-            </p>
-
-        </details>
-
-    </div>
-
-
-    <!-- Q14 -->
-
-    <div class="question">
-
-        <strong>
-            14. Explain how redshift provides evidence that the
-            Universe is expanding.
-        </strong>
-
-        <details>
-
-            <summary>Show answer</summary>
-
-            <p>
-                Spectral lines from distant galaxies are observed to
-                be shifted towards longer wavelengths. This indicates
-                that the galaxies are generally moving away from us.
-                The recession velocity increases approximately with
-                distance, providing evidence for an expanding Universe.
-            </p>
-
-        </details>
-
-    </div>
-
-
-    <!-- Q15 -->
-
-    <div class="question">
-
-        <strong>
-            15. Explain why the cosmic microwave background radiation
-            provides evidence supporting the Big Bang model.
-        </strong>
-
-        <details>
-
-            <summary>Show answer</summary>
-
-            <p>
-                The cosmic microwave background is radiation originating
-                from the early Universe. Its near-uniform presence across
-                the Universe is consistent with the prediction that the
-                early Universe was extremely hot and dense and has expanded
-                and cooled over time.
-            </p>
-
-        </details>
-
-    </div>
-
 
 </section>
 
@@ -2436,123 +3814,191 @@
      QUICK REVIEW
 ========================================================= -->
 
-<section class="lesson">
+<section class="lesson reveal">
 
-    <p class="lesson-number">QUICK REVIEW</p>
+    <div class="lesson-label">
+        FINAL REVIEW
+    </div>
 
-    <h2>Unit 5 Key Equations</h2>
 
-    <div class="equation-grid">
+    <h2>
+        Unit 5 in One Screen
+    </h2>
 
-        <div class="equation-card">
-            <div class="equation">ΔE = mcΔθ</div>
-            <div class="label">Specific heat capacity</div>
+
+    <div class="review">
+
+
+        <div class="review-item">
+
+            <small>
+                THERMODYNAMICS
+            </small>
+
+            <strong>
+                ΔE = mcΔθ
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">E = ml</div>
-            <div class="label">Specific latent heat</div>
+
+        <div class="review-item">
+
+            <small>
+                LATENT HEAT
+            </small>
+
+            <strong>
+                E = ml
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">pV = nRT</div>
-            <div class="label">Ideal gas equation</div>
+
+        <div class="review-item">
+
+            <small>
+                IDEAL GAS
+            </small>
+
+            <strong>
+                pV = nRT
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">A = λN</div>
-            <div class="label">Activity</div>
+
+        <div class="review-item">
+
+            <small>
+                RADIOACTIVITY
+            </small>
+
+            <strong>
+                A = λN
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">N = N₀e<sup>−λt</sup></div>
-            <div class="label">Radioactive decay</div>
+
+        <div class="review-item">
+
+            <small>
+                HALF-LIFE
+            </small>
+
+            <strong>
+                T½ = ln(2)/λ
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">T<sub>½</sub> = ln(2)/λ</div>
-            <div class="label">Half-life</div>
+
+        <div class="review-item">
+
+            <small>
+                SHM
+            </small>
+
+            <strong>
+                a = −ω²x
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">a = −ω²x</div>
-            <div class="label">SHM</div>
+
+        <div class="review-item">
+
+            <small>
+                SPRING
+            </small>
+
+            <strong>
+                F = kx
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">ω = 2πf</div>
-            <div class="label">Angular frequency</div>
+
+        <div class="review-item">
+
+            <small>
+                PENDULUM
+            </small>
+
+            <strong>
+                T = 2π√(l/g)
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">v<sub>max</sub> = Aω</div>
-            <div class="label">Maximum SHM speed</div>
+
+        <div class="review-item">
+
+            <small>
+                LUMINOSITY
+            </small>
+
+            <strong>
+                L = 4πR²σT⁴
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">E = ½mω²A²</div>
-            <div class="label">SHM energy</div>
+
+        <div class="review-item">
+
+            <small>
+                INTENSITY
+            </small>
+
+            <strong>
+                I = L/(4πd²)
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">F = kx</div>
-            <div class="label">Hooke's law</div>
+
+        <div class="review-item">
+
+            <small>
+                REDSHIFT
+            </small>
+
+            <strong>
+                z = Δλ/λ
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">E = ½kx²</div>
-            <div class="label">Elastic potential energy</div>
+
+        <div class="review-item">
+
+            <small>
+                HUBBLE
+            </small>
+
+            <strong>
+                v = H₀d
+            </strong>
+
         </div>
 
-        <div class="equation-card">
-            <div class="equation">T = 2π√(m/k)</div>
-            <div class="label">Mass-spring period</div>
-        </div>
+    </div>
 
-        <div class="equation-card">
-            <div class="equation">T = 2π√(l/g)</div>
-            <div class="label">Pendulum period</div>
-        </div>
 
-        <div class="equation-card">
-            <div class="equation">g = GM/r²</div>
-            <div class="label">Gravitational field strength</div>
-        </div>
+    <div class="callout"
+         style="margin-top:25px;">
 
-        <div class="equation-card">
-            <div class="equation">V<sub>g</sub> = −GM/r</div>
-            <div class="label">Gravitational potential</div>
-        </div>
+        <strong>
+            Unit 5 mindset
+        </strong>
 
-        <div class="equation-card">
-            <div class="equation">v = √(GM/r)</div>
-            <div class="label">Orbital speed</div>
-        </div>
-
-        <div class="equation-card">
-            <div class="equation">L = 4πR²σT⁴</div>
-            <div class="label">Stefan-Boltzmann law</div>
-        </div>
-
-        <div class="equation-card">
-            <div class="equation">I = L/(4πd²)</div>
-            <div class="label">Intensity</div>
-        </div>
-
-        <div class="equation-card">
-            <div class="equation">λ<sub>max</sub>T = constant</div>
-            <div class="label">Wien's law</div>
-        </div>
-
-        <div class="equation-card">
-            <div class="equation">v = H₀d</div>
-            <div class="label">Hubble's law</div>
-        </div>
-
-        <div class="equation-card">
-            <div class="equation">z = Δλ/λ</div>
-            <div class="label">Redshift</div>
-        </div>
+        <p>
+            Understand the physics first. Then choose the equation,
+            substitute carefully, track units and interpret the answer
+            in physical terms.
+        </p>
 
     </div>
 
@@ -2568,28 +4014,38 @@
 
 <div class="navigation">
 
-    <a href="physics.html" class="button">
-        ← Back to Physics
+    <a href="physics-4.html"
+       class="nav-button">
+
+        ← Physics Unit 4
+
     </a>
 
-    <a href="physics-4.html" class="button secondary">
-        ← Unit 4
+
+    <a href="physics.html"
+       class="nav-button">
+
+        Physics
+
     </a>
 
-    <a href="physics-6.html" class="button">
-        Unit 6 →
+
+    <a href="physics-6.html"
+       class="nav-button">
+
+        Physics Unit 6 →
+
+    </a>
+
+
+    <a href="index.html"
+       class="nav-button">
+
+        Home
+
     </a>
 
 </div>
-
-
-<!-- =========================================================
-     BACK TO TOP
-========================================================= -->
-
-<a href="#top" class="top-button" id="topButton">
-    ↑
-</a>
 
 
 <!-- =========================================================
@@ -2598,59 +4054,89 @@
 
 <footer>
 
-    <p>
-        <strong>IAL ATLAS</strong>
-    </p>
+    <strong>
+        IAL ATLAS
+    </strong>
 
-    <p>
-        Edexcel International A Level Physics Resources
-    </p>
+    <div>
+        © 2026 IAL ATLAS • Independent student resource
+    </div>
 
-    <p>
-        © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
-    </p>
+    <div class="footer-note">
+        Not affiliated with Pearson Education.
+    </div>
 
 </footer>
 
 
 <!-- =========================================================
-     JAVASCRIPT
+     BACK TO TOP
 ========================================================= -->
+
+<button id="top"
+        aria-label="Back to top"
+        title="Back to top">
+
+    ↑
+
+</button>
+
 
 <script>
 
-    /* =========================================================
-       SCROLL PROGRESS
-    ========================================================= */
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
 
-    window.addEventListener("scroll", function () {
-
-        const scrollTop =
-            document.documentElement.scrollTop || document.body.scrollTop;
-
-        const scrollHeight =
-            document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
-
-        const progress =
-            (scrollTop / scrollHeight) * 100;
-
-        document.getElementById("progressBar").style.width =
-            progress + "%";
-
-    });
+const progress =
+    document.getElementById("progress");
 
 
-    /* =========================================================
-       BACK TO TOP
-    ========================================================= */
+function updateProgress() {
 
-    const topButton =
-        document.getElementById("topButton");
+    const scrollTop =
+        window.scrollY;
 
-    window.addEventListener("scroll", function () {
+    const height =
+        document.documentElement.scrollHeight
+        - document.documentElement.clientHeight;
 
-        if (window.scrollY > 500) {
+
+    const percent =
+        height > 0
+            ? (scrollTop / height) * 100
+            : 0;
+
+
+    progress.style.width =
+        percent + "%";
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateProgress,
+    { passive: true }
+);
+
+
+updateProgress();
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topButton =
+    document.getElementById("top");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 600) {
 
             topButton.classList.add("show");
 
@@ -2660,45 +4146,318 @@
 
         }
 
-    });
+    },
+    { passive: true }
+);
 
 
-    /* =========================================================
-       REVEAL ANIMATION
-    ========================================================= */
+topButton.addEventListener(
+    "click",
+    () => {
 
-    const lessons =
-        document.querySelectorAll(".lesson");
+        window.scrollTo({
 
-    const observer =
-        new IntersectionObserver(
-            entries => {
+            top: 0,
 
-                entries.forEach(entry => {
+            behavior: "smooth"
+
+        });
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const reveal =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
 
                     if (entry.isIntersecting) {
 
-                        entry.target.style.animationPlayState =
-                            "running";
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
 
                     }
 
-                });
+                }
+            );
 
-            },
-            {
-                threshold: 0.08
+        },
+        {
+            threshold: 0.08
+        }
+    );
+
+
+reveal.forEach(
+    element =>
+        revealObserver.observe(element)
+);
+
+
+/* =========================================================
+   FORMULA CARDS
+========================================================= */
+
+const formulaCards =
+    document.querySelectorAll(".formula-card");
+
+
+formulaCards.forEach(
+    card => {
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                card.classList.toggle("active");
+
             }
         );
 
-    lessons.forEach(lesson => {
+    }
+);
 
-        lesson.style.animationPlayState = "paused";
 
-        observer.observe(lesson);
+/* =========================================================
+   PRACTICE SYSTEM
+========================================================= */
 
-    });
+const questions =
+    document.querySelectorAll(".practice-question");
 
+
+const scoreDisplay =
+    document.getElementById("score");
+
+
+let score = 0;
+
+
+questions.forEach(
+    question => {
+
+        const buttons =
+            question.querySelectorAll(
+                ".answer-buttons button"
+            );
+
+
+        const answerBox =
+            question.querySelector(
+                ".answer-buttons"
+            );
+
+
+        const result =
+            question.querySelector(
+                ".question-result"
+            );
+
+
+        let answered = false;
+
+
+        buttons.forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        if (answered) {
+                            return;
+                        }
+
+
+                        answered = true;
+
+
+                        const selected =
+                            button.dataset.choice;
+
+
+                        const correct =
+                            answerBox.dataset.answer;
+
+
+                        buttons.forEach(
+                            item => {
+
+                                item.disabled = true;
+
+
+                                if (
+                                    item.dataset.choice
+                                    === correct
+                                ) {
+
+                                    item.classList.add(
+                                        "correct"
+                                    );
+
+                                }
+
+                            }
+                        );
+
+
+                        if (
+                            selected === correct
+                        ) {
+
+                            score++;
+
+                            result.textContent =
+                                "✓ Correct";
+
+                            result.style.color =
+                                "#78edb7";
+
+                        } else {
+
+                            button.classList.add(
+                                "wrong"
+                            );
+
+                            result.textContent =
+                                "✕ Incorrect — the correct answer is " +
+                                correct;
+
+                            result.style.color =
+                                "#ff9b9b";
+
+                        }
+
+
+                        scoreDisplay.textContent =
+                            score + " / " +
+                            questions.length;
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   RESET PRACTICE
+========================================================= */
+
+document
+    .getElementById("resetPractice")
+    .addEventListener(
+        "click",
+        () => {
+
+            score = 0;
+
+
+            scoreDisplay.textContent =
+                "0 / " +
+                questions.length;
+
+
+            questions.forEach(
+                question => {
+
+                    const buttons =
+                        question.querySelectorAll(
+                            ".practice-question button"
+                        );
+
+
+                    const result =
+                        question.querySelector(
+                            ".question-result"
+                        );
+
+
+                    buttons.forEach(
+                        button => {
+
+                            button.disabled = false;
+
+                            button.classList.remove(
+                                "correct",
+                                "wrong"
+                            );
+
+                        }
+                    );
+
+
+                    result.textContent = "";
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   SMOOTH INTERNAL NAVIGATION
+========================================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const id =
+                        link.getAttribute("href");
+
+
+                    if (id === "#") {
+                        return;
+                    }
+
+
+                    const target =
+                        document.querySelector(id);
+
+
+                    if (target) {
+
+                        event.preventDefault();
+
+
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    }
+
+                }
+            );
+
+        }
+    );
 
 </script>
 
