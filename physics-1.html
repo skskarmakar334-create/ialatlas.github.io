@@ -4,1155 +4,1847 @@
 
 <head>
 
-
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Physics 1 — Mechanics & Materials | IAL ATLAS</title>
 
 <meta name="description"
-      content="Edexcel International A Level Physics Unit 1 — Mechanics and Materials. Study notes, equations, worked examples, practical skills and exam practice from IAL ATLAS.">
+content="Edexcel International A Level Physics Unit 1 — Mechanics and Materials. Futuristic interactive study notes, equations, worked examples, practical skills and exam practice from IAL ATLAS.">
 
 <meta name="keywords"
-      content="Edexcel IAL Physics Unit 1, WPH11, Mechanics and Materials, Physics 1 notes, Edexcel Physics">
+content="Edexcel IAL Physics Unit 1, WPH11, Physics 1, Mechanics and Materials, Edexcel Physics notes">
 
-<meta name="theme-color"
-      content="#020817">
-
-<title>Physics 1 | Mechanics & Materials | IAL ATLAS</title>
+<meta name="theme-color" content="#02030a">
 
 <style>
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+/* =========================================================
+   CORE
+========================================================= */
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+:root {
+
+    --bg: #02030a;
+    --bg2: #050817;
+
+    --cyan: #00d9ff;
+    --blue: #277cff;
+    --violet: #7c4dff;
+
+    --text: #edfaff;
+    --muted: #7e9aac;
+
+    --glass:
+        rgba(255,255,255,0.035);
+
+    --border:
+        rgba(0,217,255,0.16);
+
+    --glow:
+        0 0 35px rgba(0,217,255,0.13);
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(0,217,255,0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 60%,
+            rgba(124,77,255,0.07),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   PARTICLE CANVAS
+========================================================= */
+
+#particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: -10;
+
+    opacity: .75;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -8;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,217,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+}
+
+
+/* =========================================================
+   SCANLINE
+========================================================= */
+
+.scanline {
+
+    position: fixed;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,217,255,.4),
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px rgba(0,217,255,.5);
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    animation:
+        scan 7s linear infinite;
+
+    opacity: .35;
+
+}
+
+@keyframes scan {
+
+    0% {
+        top: -5%;
     }
 
-    html {
-        scroll-behavior: smooth;
+    100% {
+        top: 105%;
     }
 
-    body {
-        font-family:
-            Inter,
-            -apple-system,
-            BlinkMacSystemFont,
-            "Segoe UI",
-            Arial,
-            sans-serif;
+}
 
-        background:
-            radial-gradient(
-                circle at 15% 10%,
-                rgba(0, 183, 255, 0.08),
-                transparent 25%
-            ),
-            radial-gradient(
-                circle at 85% 70%,
-                rgba(75, 0, 255, 0.06),
-                transparent 25%
-            ),
-            #020817;
 
-        color: #eaf6ff;
-        line-height: 1.7;
-        overflow-x: hidden;
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+.cursor-glow {
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,.07),
+            transparent 65%
+        );
+
+    transform:
+        translate(-50%,-50%);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background:
+        rgba(2,3,10,.72);
+
+    backdrop-filter:
+        blur(22px);
+
+    border-bottom:
+        1px solid rgba(0,217,255,.1);
+
+}
+
+
+/* futuristic top border */
+
+header::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px var(--cyan);
+
+}
+
+
+.logo {
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px rgba(0,217,255,.4);
+
+}
+
+.logo span {
+
+    color: var(--cyan);
+
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #76a0b5;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #00ffae;
+
+    box-shadow:
+        0 0 12px #00ffae;
+
+    animation:
+        pulse 1.5s infinite;
+
+}
+
+@keyframes pulse {
+
+    50% {
+        opacity: .3;
+        transform: scale(.65);
     }
 
-    a {
-        color: inherit;
+}
+
+.back {
+
+    text-decoration: none;
+
+    color: #b7dcec;
+
+    padding: 8px 15px;
+
+    border:
+        1px solid rgba(0,217,255,.18);
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    transition: .3s;
+
+}
+
+.back:hover {
+
+    color: white;
+
+    border-color: var(--cyan);
+
+    box-shadow: var(--glow);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 720px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/* orbital system */
+
+.orbit {
+
+    position: absolute;
+
+    border:
+        1px solid rgba(0,217,255,.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+.orbit.one {
+
+    width: 560px;
+    height: 560px;
+
+    animation:
+        orbitRotate 18s linear infinite;
+
+}
+
+.orbit.two {
+
+    width: 410px;
+    height: 410px;
+
+    transform:
+        rotate(60deg);
+
+    animation:
+        orbitRotateReverse 14s linear infinite;
+
+}
+
+.orbit.three {
+
+    width: 700px;
+    height: 250px;
+
+    transform:
+        rotate(-25deg);
+
+    border-color:
+        rgba(124,77,255,.12);
+
+    animation:
+        orbitRotate 25s linear infinite;
+
+}
+
+@keyframes orbitRotate {
+
+    to {
+        transform:
+            rotate(360deg);
     }
 
-    /* =========================================================
-       BACKGROUND EFFECTS
-    ========================================================= */
+}
 
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
+@keyframes orbitRotateReverse {
 
-        background-image:
-            linear-gradient(
-                rgba(0, 183, 255, 0.025) 1px,
-                transparent 1px
-            ),
-            linear-gradient(
-                90deg,
-                rgba(0, 183, 255, 0.025) 1px,
-                transparent 1px
-            );
-
-        background-size: 50px 50px;
-
-        pointer-events: none;
-        z-index: -2;
+    to {
+        transform:
+            rotate(-360deg);
     }
 
-    .orb {
-        position: fixed;
-        width: 350px;
-        height: 350px;
+}
 
-        border-radius: 50%;
 
-        background:
-            radial-gradient(
-                circle,
-                rgba(0, 183, 255, 0.12),
-                transparent 70%
-            );
+/* center energy */
 
-        filter: blur(10px);
+.energy-core {
 
-        pointer-events: none;
-        z-index: -1;
+    position: absolute;
 
-        animation: floatOrb 12s ease-in-out infinite;
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,.32),
+            rgba(39,124,255,.08) 40%,
+            transparent 70%
+        );
+
+    filter:
+        blur(1px);
+
+    animation:
+        corePulse 3s ease-in-out infinite;
+
+}
+
+@keyframes corePulse {
+
+    0%,100% {
+        transform: scale(.9);
+        opacity: .55;
     }
 
-    .orb.one {
-        top: 10%;
-        left: -150px;
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
     }
 
-    .orb.two {
-        right: -150px;
-        bottom: 10%;
-        animation-delay: -6s;
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 950px;
+
+    padding: 30px;
+
+}
+
+
+/* little HUD label */
+
+.hud {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 15px;
+
+    border:
+        1px solid rgba(0,217,255,.2);
+
+    background:
+        rgba(0,217,255,.035);
+
+    border-radius: 5px;
+
+    color: #67dbff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    animation:
+        reveal .8s both;
+
+}
+
+.hud::before {
+
+    content: "◈";
+
+    animation:
+        pulse 2s infinite;
+
+}
+
+
+/* title */
+
+.hero h1 {
+
+    margin-top: 30px;
+
+    font-size:
+        clamp(65px,11vw,145px);
+
+    line-height: .82;
+
+    letter-spacing:
+        -8px;
+
+    font-weight: 900;
+
+    animation:
+        reveal 1s .1s both;
+
+}
+
+.hero h1 .number {
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px var(--cyan);
+
+    text-shadow:
+        0 0 40px rgba(0,217,255,.3);
+
+}
+
+.hero h1 .physics {
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff,
+            #8cecff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero-description {
+
+    max-width: 730px;
+
+    margin: 35px auto 0;
+
+    color: #88a9bc;
+
+    font-size: 17px;
+
+    animation:
+        reveal 1s .25s both;
+
+}
+
+
+/* =========================================================
+   HERO DATA
+========================================================= */
+
+.hero-data {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    animation:
+        reveal 1s .4s both;
+
+}
+
+.data {
+
+    min-width: 120px;
+
+    padding: 12px 18px;
+
+    border:
+        1px solid rgba(0,217,255,.13);
+
+    background:
+        rgba(255,255,255,.025);
+
+    backdrop-filter:
+        blur(10px);
+
+    border-radius: 7px;
+
+}
+
+.data b {
+
+    display: block;
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
+.data span {
+
+    color: #5e8197;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        1s cubic-bezier(.2,.7,.2,1);
+
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
 
-    @keyframes floatOrb {
-
-        0%,
-        100% {
-            transform: translate(0, 0);
-        }
-
-        50% {
-            transform: translate(40px, -30px);
-        }
-
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    /* =========================================================
-       HEADER
-    ========================================================= */
+}
+
+
+/* =========================================================
+   COMMAND NAV
+========================================================= */
+
+.command-nav {
+
+    position: sticky;
+
+    top: 72px;
+
+    z-index: 900;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    padding: 9px;
+
+    background:
+        rgba(2,3,10,.78);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(0,217,255,.08);
+
+    overflow-x: auto;
+
+}
+
+.command-nav a {
+
+    flex: 0 0 auto;
+
+    padding: 8px 13px;
+
+    text-decoration: none;
+
+    color: #63879b;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    border-radius: 5px;
+
+    transition: .25s;
+
+}
+
+.command-nav a:hover {
+
+    color: white;
+
+    background:
+        rgba(0,217,255,.07);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 100px 20px;
+
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-heading {
+
+    margin-bottom: 40px;
+
+}
+
+.section-heading .code {
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+}
+
+.section-heading h2 {
+
+    margin-top: 7px;
+
+    font-size:
+        clamp(35px,5vw,60px);
+
+    letter-spacing:
+        -2px;
+
+}
+
+.section-heading p {
+
+    color: #66879a;
+
+    max-width: 650px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   GLASS CARDS
+========================================================= */
+
+.lesson {
+
+    position: relative;
+
+    margin-bottom: 25px;
+
+    padding: 38px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,22,40,.72),
+            rgba(3,9,20,.76)
+        );
+
+    backdrop-filter:
+        blur(14px);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 80px rgba(0,0,0,.25);
+
+    transition:
+        .45s cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+/* animated border */
+
+.lesson::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(0,217,255,.45),
+            transparent 20%,
+            transparent 70%,
+            rgba(124,77,255,.35),
+            transparent
+        );
+
+    z-index: -1;
+
+    opacity: 0;
+
+    animation:
+        borderSpin 7s linear infinite;
+
+    transition: .4s;
+
+}
+
+.lesson:hover::before {
+
+    opacity: 1;
+
+}
+
+@keyframes borderSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+.lesson:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,217,255,.3);
+
+    box-shadow:
+        0 30px 100px rgba(0,217,255,.07);
+
+}
+
+
+/* top shine */
+
+.lesson::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    opacity: .6;
+
+}
+
+
+.lesson-number {
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
+}
+
+.lesson h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 17px;
+
+}
+
+.lesson h3 {
+
+    color: #dff8ff;
+
+    margin-top: 28px;
+
+    margin-bottom: 9px;
+
+    font-size: 19px;
+
+}
+
+.lesson p,
+.lesson li {
+
+    color: #829eaf;
+
+}
+
+.lesson ul {
+
+    padding-left: 22px;
+
+}
+
+.lesson li {
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =========================================================
+   DEFINITION
+========================================================= */
+
+.definition {
+
+    position: relative;
+
+    padding: 21px;
+
+    margin: 22px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,.07),
+            rgba(0,217,255,.015)
+        );
+
+    border-left:
+        2px solid var(--cyan);
+
+    border-radius: 5px;
+
+}
+
+.definition strong {
+
+    color: #68dcff;
+
+}
+
+.definition p {
+
+    margin-top: 5px;
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   FORMULA SYSTEM
+========================================================= */
+
+.formula-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(210px,1fr));
+
+    gap: 13px;
+
+    margin: 23px 0;
+
+}
+
+.formula {
+
+    position: relative;
+
+    padding: 24px 15px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(0,217,255,.13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,.055),
+            rgba(124,77,255,.035)
+        );
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    overflow: hidden;
+
+    transition:
+        .35s;
+
+}
+
+.formula::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -60px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,217,255,.12);
+
+    filter: blur(20px);
+
+}
+
+.formula:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.015);
+
+    border-color:
+        rgba(0,217,255,.5);
+
+    box-shadow:
+        0 0 30px rgba(0,217,255,.1);
+
+}
+
+
+/* =========================================================
+   EXAMPLE
+========================================================= */
+
+.example {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border:
+        1px solid rgba(124,77,255,.15);
+
+    border-radius: 12px;
+
+    background:
+        rgba(124,77,255,.025);
+
+}
+
+.example-title {
+
+    color: #a78bff !important;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+.solution {
+
+    margin-top: 17px;
+
+    padding: 18px;
+
+    background:
+        rgba(0,0,0,.3);
+
+    border-left:
+        2px solid var(--cyan);
+
+    border-radius: 5px;
+
+}
+
+.solution strong {
+
+    color: #6ee3ff;
+
+}
+
+
+/* =========================================================
+   PRACTICAL CARDS
+========================================================= */
+
+.practical-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap: 16px;
+
+}
+
+.practical {
+
+    position: relative;
+
+    padding: 28px;
+
+    min-height: 300px;
+
+    border:
+        1px solid rgba(0,217,255,.12);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.02);
+
+    overflow: hidden;
+
+    transition:
+        .4s;
+
+}
+
+.practical:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(0,217,255,.35);
+
+    box-shadow:
+        0 20px 60px rgba(0,217,255,.07);
+
+}
+
+.practical-number {
+
+    position: absolute;
+
+    right: 18px;
+    top: 12px;
+
+    font-size: 50px;
+
+    font-weight: 900;
+
+    color:
+        rgba(0,217,255,.04);
+
+}
+
+.practical-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(0,217,255,.2);
+
+    border-radius: 10px;
+
+    color: var(--cyan);
+
+    background:
+        rgba(0,217,255,.05);
+
+    font-size: 20px;
+
+    margin-bottom: 18px;
+
+}
+
+.practical h3 {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   PRACTICE QUESTIONS
+========================================================= */
+
+.question {
+
+    position: relative;
+
+    padding: 22px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+
+}
+
+.question:last-child {
+
+    border-bottom: none;
+
+}
+
+.question-number {
+
+    color: var(--cyan);
+
+    font-family:
+        monospace;
+
+    font-size: 11px;
+
+    margin-right: 8px;
+
+}
+
+.question strong {
+
+    color: #dceef6;
+
+}
+
+details {
+
+    margin-top: 13px;
+
+}
+
+summary {
+
+    display: inline-flex;
+
+    cursor: pointer;
+
+    padding: 7px 12px;
+
+    border:
+        1px solid rgba(0,217,255,.15);
+
+    border-radius: 5px;
+
+    color: #67d9ff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition: .25s;
+
+}
+
+summary:hover {
+
+    background:
+        rgba(0,217,255,.07);
+
+    border-color:
+        rgba(0,217,255,.4);
+
+}
+
+details p {
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================================
+   QUICK EQUATION MATRIX
+========================================================= */
+
+.review-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap: 10px;
+
+}
+
+.review-card {
+
+    padding: 19px 10px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(0,217,255,.1);
+
+    background:
+        rgba(255,255,255,.018);
+
+    border-radius: 8px;
+
+    color: #dff8ff;
+
+    font-family:
+        Georgia,
+        serif;
+
+    transition:
+        .3s;
+
+}
+
+.review-card:hover {
+
+    color: white;
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(0,217,255,.45);
+
+    box-shadow:
+        0 0 25px rgba(0,217,255,.08);
+
+}
+
+
+/* =========================================================
+   TIP
+========================================================= */
+
+.tip {
+
+    margin-top: 25px;
+
+    padding: 21px;
+
+    border:
+        1px solid rgba(255,187,0,.15);
+
+    border-left:
+        2px solid #ffbd32;
+
+    border-radius: 7px;
+
+    background:
+        rgba(255,187,0,.025);
+
+}
+
+.tip strong {
+
+    color: #ffcb55;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    padding:
+        20px 20px 80px;
+
+}
+
+.button {
+
+    display: inline-block;
+
+    padding:
+        13px 22px;
+
+    text-decoration: none;
+
+    color: white;
+
+    border:
+        1px solid rgba(0,217,255,.2);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,.14),
+            rgba(39,124,255,.12)
+        );
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition:
+        .3s;
+
+}
+
+.button:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 30px rgba(0,217,255,.12);
+
+}
+
+
+/* =========================================================
+   BACK TOP
+========================================================= */
+
+.top {
+
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(0,217,255,.3);
+
+    border-radius: 50%;
+
+    color: var(--cyan);
+
+    background:
+        rgba(2,8,18,.85);
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 0 25px rgba(0,217,255,.08);
+
+    z-index: 1000;
+
+    transition:
+        .3s;
+
+}
+
+.top:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 0 35px rgba(0,217,255,.2);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    position: relative;
+
+    padding:
+        45px 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(0,217,255,.08);
+
+    background:
+        rgba(0,0,0,.3);
+
+    color: #527084;
+
+    font-size: 11px;
+
+}
+
+.footer-logo {
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    color: #8ccde3;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
 
     header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        height: 62px;
 
-        padding: 17px 7%;
+        padding:
+            0 5%;
 
-        background:
-            rgba(2, 8, 23, 0.78);
-
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-
-        border-bottom:
-            1px solid rgba(126, 208, 255, 0.12);
     }
 
-    .logo {
-        text-decoration: none;
+    .status {
 
-        font-size: 25px;
-        font-weight: 900;
+        display: none;
 
-        letter-spacing: 2px;
-
-        color: #ffffff;
-
-        text-shadow:
-            0 0 18px rgba(77, 184, 255, 0.4);
     }
 
-    .logo span {
-        color: #4db8ff;
+    .back {
+
+        font-size: 10px;
+
     }
 
-    .header-link {
-        text-decoration: none;
+    .command-nav {
 
-        padding: 9px 16px;
+        top: 62px;
 
-        border:
-            1px solid rgba(126, 208, 255, 0.25);
+        justify-content: flex-start;
 
-        border-radius: 999px;
-
-        color: #cceeff;
-
-        font-size: 14px;
-        font-weight: 700;
-
-        transition: 0.3s ease;
     }
-
-    .header-link:hover {
-        background: rgba(77, 184, 255, 0.1);
-
-        border-color: #4db8ff;
-
-        box-shadow:
-            0 0 20px rgba(77, 184, 255, 0.2);
-
-        transform: translateY(-2px);
-    }
-
-    /* =========================================================
-       HERO
-    ========================================================= */
 
     .hero {
-        position: relative;
 
-        min-height: 610px;
+        min-height:
+            610px;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 90px 20px;
-
-        overflow: hidden;
-
-        background:
-            radial-gradient(
-                circle at 50% 40%,
-                rgba(0, 174, 255, 0.13),
-                transparent 35%
-            ),
-            linear-gradient(
-                135deg,
-                #020817,
-                #041a36 50%,
-                #020817
-            );
-    }
-
-    .hero::after {
-        content: "";
-
-        position: absolute;
-
-        width: 550px;
-        height: 550px;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.13);
-
-        border-radius: 50%;
-
-        animation:
-            rotate 20s linear infinite;
-
-        box-shadow:
-            0 0 80px rgba(77, 184, 255, 0.08);
-
-        pointer-events: none;
-    }
-
-    @keyframes rotate {
-
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
-
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-
-        max-width: 850px;
-    }
-
-    .hero-label {
-        display: inline-block;
-
-        color: #69ccff;
-
-        font-size: 12px;
-        font-weight: 800;
-
-        letter-spacing: 4px;
-
-        margin-bottom: 22px;
-
-        padding: 8px 15px;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.25);
-
-        border-radius: 999px;
-
-        background:
-            rgba(77, 184, 255, 0.05);
-
-        animation:
-            fadeUp 0.8s ease both;
     }
 
     .hero h1 {
-        font-size: clamp(55px, 9vw, 105px);
 
-        line-height: 0.95;
+        font-size:
+            clamp(65px,20vw,100px);
 
-        letter-spacing: -5px;
-
-        margin-bottom: 25px;
-
-        animation:
-            fadeUp 0.9s ease 0.1s both;
-    }
-
-    .hero h1 span {
-        color: #4db8ff;
-
-        text-shadow:
-            0 0 25px rgba(77, 184, 255, 0.55),
-            0 0 70px rgba(77, 184, 255, 0.25);
-    }
-
-    .hero p {
-        max-width: 750px;
-
-        margin: auto;
-
-        color: #b9d7eb;
-
-        font-size: 18px;
-
-        animation:
-            fadeUp 1s ease 0.2s both;
-    }
-
-    .hero-meta {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        margin-top: 30px;
-
-        animation:
-            fadeUp 1s ease 0.3s both;
-    }
-
-    .meta {
-        padding: 9px 15px;
-
-        border:
-            1px solid rgba(126, 208, 255, 0.16);
-
-        background:
-            rgba(255,255,255,0.035);
-
-        border-radius: 10px;
-
-        color: #9cc8e5;
-
-        font-size: 13px;
-    }
-
-    @keyframes fadeUp {
-
-        from {
-            opacity: 0;
-            transform: translateY(25px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        letter-spacing:
+            -5px;
 
     }
 
-    /* =========================================================
-       TOPIC NAVIGATION
-    ========================================================= */
+    .hero-description {
 
-    .topic-nav {
-        position: sticky;
-        top: 68px;
-        z-index: 900;
+        font-size: 15px;
 
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-
-        padding: 12px 15px;
-
-        background:
-            rgba(2, 8, 23, 0.72);
-
-        backdrop-filter: blur(15px);
-
-        border-bottom:
-            1px solid rgba(126, 208, 255, 0.08);
     }
 
-    .topic-nav a {
-        text-decoration: none;
+    .orbit.one {
 
-        color: #8eb4cc;
+        width: 380px;
+        height: 380px;
 
-        font-size: 12px;
-        font-weight: 700;
-
-        padding: 7px 12px;
-
-        border-radius: 999px;
-
-        transition: 0.25s ease;
     }
 
-    .topic-nav a:hover {
-        color: #ffffff;
+    .orbit.two {
 
-        background:
-            rgba(77, 184, 255, 0.1);
+        width: 290px;
+        height: 290px;
 
-        box-shadow:
-            0 0 15px rgba(77, 184, 255, 0.1);
     }
 
-    /* =========================================================
-       MAIN
-    ========================================================= */
+    .orbit.three {
+
+        width: 430px;
+        height: 170px;
+
+    }
 
     .container {
-        max-width: 1100px;
 
-        margin: auto;
+        padding:
+            70px 14px;
 
-        padding: 75px 20px;
     }
-
-    /* =========================================================
-       SECTION HEADERS
-    ========================================================= */
-
-    .section-heading {
-        margin-bottom: 30px;
-
-        text-align: center;
-    }
-
-    .section-heading small {
-        color: #4db8ff;
-
-        font-size: 11px;
-        font-weight: 800;
-
-        letter-spacing: 3px;
-    }
-
-    .section-heading h2 {
-        font-size: clamp(32px, 5vw, 50px);
-
-        margin-top: 8px;
-
-        letter-spacing: -1px;
-    }
-
-    .section-heading p {
-        max-width: 700px;
-
-        margin: 12px auto 0;
-
-        color: #7898ae;
-    }
-
-    /* =========================================================
-       LESSON CARDS
-    ========================================================= */
 
     .lesson {
-        position: relative;
 
-        background:
-            linear-gradient(
-                145deg,
-                rgba(10, 28, 52, 0.88),
-                rgba(4, 14, 29, 0.88)
-            );
+        padding:
+            26px 20px;
 
-        border:
-            1px solid rgba(126, 208, 255, 0.12);
+        border-radius:
+            14px;
 
-        border-radius: 22px;
-
-        padding: 38px;
-
-        margin-bottom: 28px;
-
-        overflow: hidden;
-
-        box-shadow:
-            0 20px 60px rgba(0,0,0,0.18);
-
-        transition:
-            transform 0.35s ease,
-            border-color 0.35s ease,
-            box-shadow 0.35s ease;
-    }
-
-    .lesson::before {
-        content: "";
-
-        position: absolute;
-
-        top: 0;
-        left: 0;
-
-        width: 100%;
-        height: 2px;
-
-        background:
-            linear-gradient(
-                90deg,
-                transparent,
-                #4db8ff,
-                transparent
-            );
-
-        opacity: 0.65;
-    }
-
-    .lesson:hover {
-        transform: translateY(-4px);
-
-        border-color:
-            rgba(77, 184, 255, 0.25);
-
-        box-shadow:
-            0 25px 80px rgba(0, 183, 255, 0.08);
-    }
-
-    .lesson-number {
-        color: #4db8ff;
-
-        font-size: 11px;
-        font-weight: 900;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 8px;
     }
 
     .lesson h2 {
-        font-size: 31px;
 
-        margin-bottom: 18px;
+        font-size:
+            26px;
 
-        color: #f4fbff;
     }
-
-    .lesson h3 {
-        font-size: 20px;
-
-        margin-top: 28px;
-        margin-bottom: 10px;
-
-        color: #dff5ff;
-    }
-
-    .lesson p {
-        color: #8eabbf;
-
-        margin-bottom: 15px;
-    }
-
-    .lesson ul {
-        padding-left: 22px;
-
-        color: #8eabbf;
-    }
-
-    .lesson li {
-        margin-bottom: 8px;
-    }
-
-    /* =========================================================
-       DEFINITION
-    ========================================================= */
-
-    .definition {
-        padding: 20px 22px;
-
-        margin: 22px 0;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.15);
-
-        border-left:
-            4px solid #4db8ff;
-
-        border-radius: 12px;
-
-        background:
-            rgba(77, 184, 255, 0.045);
-    }
-
-    .definition strong {
-        color: #69ccff;
-    }
-
-    .definition p {
-        margin-top: 6px;
-        margin-bottom: 0;
-    }
-
-    /* =========================================================
-       FORMULAS
-    ========================================================= */
 
     .formula-grid {
-        display: grid;
 
         grid-template-columns:
-            repeat(auto-fit, minmax(210px, 1fr));
+            1fr;
 
-        gap: 12px;
-
-        margin: 22px 0;
     }
-
-    .formula {
-        position: relative;
-
-        padding: 20px;
-
-        text-align: center;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.18);
-
-        border-radius: 14px;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(0, 183, 255, 0.08),
-                rgba(77, 0, 255, 0.05)
-            );
-
-        color: #e9f8ff;
-
-        font-family:
-            "Times New Roman",
-            Georgia,
-            serif;
-
-        font-size: 21px;
-        font-weight: 700;
-
-        transition: 0.3s ease;
-    }
-
-    .formula:hover {
-        transform: translateY(-3px);
-
-        border-color:
-            rgba(77, 184, 255, 0.5);
-
-        box-shadow:
-            0 0 25px rgba(77, 184, 255, 0.12);
-    }
-
-    /* =========================================================
-       EXAMPLES
-    ========================================================= */
-
-    .example {
-        margin-top: 25px;
-
-        padding: 25px;
-
-        border:
-            1px solid rgba(126, 208, 255, 0.12);
-
-        border-radius: 15px;
-
-        background:
-            rgba(255,255,255,0.025);
-    }
-
-    .example-title {
-        color: #4db8ff !important;
-
-        font-size: 12px;
-
-        font-weight: 900;
-
-        letter-spacing: 2px;
-
-        text-transform: uppercase;
-    }
-
-    .solution {
-        margin-top: 18px;
-
-        padding: 18px;
-
-        border-radius: 10px;
-
-        background:
-            rgba(0,0,0,0.22);
-
-        border-left:
-            3px solid #32a9e8;
-    }
-
-    .solution strong {
-        color: #7ed0ff;
-    }
-
-    /* =========================================================
-       PRACTICALS
-    ========================================================= */
-
-    .practical-grid {
-        display: grid;
-
-        grid-template-columns:
-            repeat(auto-fit, minmax(260px, 1fr));
-
-        gap: 16px;
-
-        margin-top: 25px;
-    }
-
-    .practical {
-        padding: 25px;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.13);
-
-        border-radius: 16px;
-
-        background:
-            linear-gradient(
-                145deg,
-                rgba(77, 184, 255, 0.055),
-                rgba(255,255,255,0.018)
-            );
-
-        transition: 0.3s ease;
-    }
-
-    .practical:hover {
-        transform: translateY(-4px);
-
-        border-color:
-            rgba(77, 184, 255, 0.3);
-    }
-
-    .practical-icon {
-        width: 45px;
-        height: 45px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 12px;
-
-        background:
-            rgba(77, 184, 255, 0.1);
-
-        color: #69ccff;
-
-        font-size: 20px;
-
-        margin-bottom: 15px;
-    }
-
-    .practical h3 {
-        margin-top: 0;
-
-        color: #e9f8ff;
-    }
-
-    /* =========================================================
-       TIP
-    ========================================================= */
-
-    .tip {
-        margin-top: 22px;
-
-        padding: 20px;
-
-        border:
-            1px solid rgba(228, 167, 44, 0.18);
-
-        border-left:
-            4px solid #e4a72c;
-
-        border-radius: 12px;
-
-        background:
-            rgba(228, 167, 44, 0.045);
-    }
-
-    .tip strong {
-        color: #f1c86a;
-    }
-
-    /* =========================================================
-       PRACTICE
-    ========================================================= */
-
-    .question {
-        padding: 20px 0;
-
-        border-bottom:
-            1px solid rgba(126, 208, 255, 0.08);
-
-        color: #dcecf5;
-    }
-
-    .question:last-child {
-        border-bottom: none;
-    }
-
-    details {
-        margin-top: 12px;
-    }
-
-    summary {
-        display: inline-block;
-
-        cursor: pointer;
-
-        color: #4db8ff;
-
-        font-size: 13px;
-        font-weight: 800;
-
-        padding: 7px 12px;
-
-        border-radius: 8px;
-
-        transition: 0.2s ease;
-    }
-
-    summary:hover {
-        background:
-            rgba(77, 184, 255, 0.08);
-    }
-
-    details p {
-        margin-top: 10px;
-        padding-left: 10px;
-    }
-
-    /* =========================================================
-       QUICK REVIEW
-    ========================================================= */
 
     .review-grid {
-        display: grid;
 
         grid-template-columns:
-            repeat(auto-fit, minmax(180px, 1fr));
-
-        gap: 12px;
-    }
-
-    .review-card {
-        padding: 18px;
-
-        text-align: center;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.12);
-
-        border-radius: 13px;
-
-        background:
-            rgba(255,255,255,0.025);
-
-        font-family:
-            "Times New Roman",
-            Georgia,
-            serif;
-
-        font-size: 18px;
-
-        transition: 0.25s ease;
-    }
-
-    .review-card:hover {
-        transform: scale(1.025);
-
-        border-color:
-            rgba(77, 184, 255, 0.4);
-    }
-
-    /* =========================================================
-       NAVIGATION BUTTONS
-    ========================================================= */
-
-    .navigation {
-        display: flex;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        gap: 12px;
-
-        padding:
-            20px 20px 70px;
-    }
-
-    .button {
-        display: inline-block;
-
-        padding: 13px 22px;
-
-        text-decoration: none;
-
-        border-radius: 10px;
-
-        font-weight: 800;
-
-        font-size: 14px;
-
-        color: #ffffff;
-
-        border:
-            1px solid rgba(77, 184, 255, 0.3);
-
-        background:
-            linear-gradient(
-                135deg,
-                #168dca,
-                #236bb4
-            );
-
-        box-shadow:
-            0 8px 25px rgba(22, 141, 202, 0.16);
-
-        transition: 0.3s ease;
-    }
-
-    .button:hover {
-        transform: translateY(-3px);
-
-        box-shadow:
-            0 12px 35px rgba(77, 184, 255, 0.2);
-    }
-
-    .button.secondary {
-        background:
-            rgba(255,255,255,0.035);
-
-        color: #a9c8db;
-    }
-
-    /* =========================================================
-       BACK TO TOP
-    ========================================================= */
-
-    .top-button {
-        position: fixed;
-
-        right: 22px;
-        bottom: 22px;
-
-        width: 45px;
-        height: 45px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        text-decoration: none;
-
-        border-radius: 50%;
-
-        background:
-            rgba(4, 25, 47, 0.9);
-
-        border:
-            1px solid rgba(77, 184, 255, 0.3);
-
-        color: #69ccff;
-
-        font-size: 18px;
-
-        box-shadow:
-            0 0 25px rgba(77, 184, 255, 0.12);
-
-        transition: 0.3s ease;
-
-        z-index: 1000;
-    }
-
-    .top-button:hover {
-        transform: translateY(-4px);
-
-        box-shadow:
-            0 0 35px rgba(77, 184, 255, 0.25);
-    }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-        text-align: center;
-
-        padding: 35px 20px;
-
-        border-top:
-            1px solid rgba(126, 208, 255, 0.08);
-
-        background:
-            rgba(0,0,0,0.25);
-
-        color: #668399;
-
-        font-size: 13px;
-    }
-
-    footer strong {
-        color: #8ebbd4;
-    }
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 700px) {
-
-        header {
-            padding: 15px 5%;
-        }
-
-        .logo {
-            font-size: 21px;
-        }
-
-        .header-link {
-            font-size: 12px;
-            padding: 7px 11px;
-        }
-
-        .hero {
-            min-height: 530px;
-
-            padding:
-                75px 18px;
-        }
-
-        .hero h1 {
-            letter-spacing: -3px;
-        }
-
-        .hero p {
-            font-size: 16px;
-        }
-
-        .hero::after {
-            width: 350px;
-            height: 350px;
-        }
-
-        .topic-nav {
-            top: 60px;
-
-            justify-content: flex-start;
-
-            overflow-x: auto;
-
-            flex-wrap: nowrap;
-
-            scrollbar-width: none;
-
-            white-space: nowrap;
-        }
-
-        .topic-nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        .container {
-            padding:
-                50px 14px;
-        }
-
-        .lesson {
-            padding: 25px 20px;
-
-            border-radius: 17px;
-        }
-
-        .lesson h2 {
-            font-size: 27px;
-        }
-
-        .formula-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .review-grid {
-            grid-template-columns:
-                repeat(2, 1fr);
-        }
-
-        .practical-grid {
-            grid-template-columns: 1fr;
-        }
+            repeat(2,1fr);
 
     }
 
-    @media (prefers-reduced-motion: reduce) {
+}
 
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            scroll-behavior: auto !important;
-            transition-duration: 0.01ms !important;
-        }
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
 
     }
+
+}
 
 </style>
-
 
 </head>
 
 <body id="top">
 
-<div class="orb one"></div>
-<div class="orb two"></div>
+<canvas id="particles"></canvas>
+
+<div class="grid-overlay"></div>
+
+<div class="scanline"></div>
+
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <!-- =========================================================
      HEADER
@@ -1165,9 +1857,21 @@
     IAL <span>ATLAS</span>
 </a>
 
-<a href="physics.html" class="header-link">
-    ← Physics
-</a>
+<div class="header-right">
+
+    <div class="status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ONLINE
+
+    </div>
+
+    <a href="physics.html" class="back">
+        ← Physics
+    </a>
+
+</div>
 
 
 </header>
@@ -1179,39 +1883,100 @@
 <section class="hero">
 
 
+<div class="orbit one"></div>
+
+<div class="orbit two"></div>
+
+<div class="orbit three"></div>
+
+<div class="energy-core"></div>
+
+
 <div class="hero-content">
 
-    <div class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • WPH11
+    <div class="hud">
+
+        EDEXCEL INTERNATIONAL A LEVEL
+        • WPH11
+
     </div>
 
+
     <h1>
-        Physics <span>1</span>
+
+        <span class="physics">
+            PHYSICS
+        </span>
+
+        <span class="number">
+            01
+        </span>
+
     </h1>
 
-    <p>
-        Mechanics and Materials — build a powerful foundation
-        in Edexcel International A Level Physics through
-        concepts, equations, practical skills and exam practice.
+
+    <p class="hero-description">
+
+        Mechanics & Materials
+
+        <br>
+
+        A high-performance study environment for mastering
+        motion, forces, momentum, energy, materials and
+        experimental physics.
+
     </p>
 
-    <div class="hero-meta">
 
-        <span class="meta">
-            Mechanics
-        </span>
+    <div class="hero-data">
 
-        <span class="meta">
-            Materials
-        </span>
+        <div class="data">
 
-        <span class="meta">
-            Practical Skills
-        </span>
+            <b>
+                MECHANICS
+            </b>
 
-        <span class="meta">
-            Exam Practice
-        </span>
+            <span>
+                CORE PHYSICS
+            </span>
+
+        </div>
+
+        <div class="data">
+
+            <b>
+                MATERIALS
+            </b>
+
+            <span>
+                CORE PHYSICS
+            </span>
+
+        </div>
+
+        <div class="data">
+
+            <b>
+                PRACTICALS
+            </b>
+
+            <span>
+                EXPERIMENTAL
+            </span>
+
+        </div>
+
+        <div class="data">
+
+            <b>
+                PRACTICE
+            </b>
+
+            <span>
+                EXAM PREP
+            </span>
+
+        </div>
 
     </div>
 
@@ -1221,46 +1986,46 @@
 </section>
 
 <!-- =========================================================
-     TOPIC NAVIGATION
+     COMMAND NAVIGATION
 ========================================================= -->
 
-<nav class="topic-nav">
+<nav class="command-nav">
 
 
 <a href="#mechanics">
-    Mechanics
+    MECHANICS
 </a>
 
 <a href="#motion">
-    Motion
+    MOTION
 </a>
 
 <a href="#forces">
-    Forces
+    FORCES
 </a>
 
 <a href="#momentum">
-    Momentum
+    MOMENTUM
 </a>
 
 <a href="#energy">
-    Energy
+    ENERGY
 </a>
 
 <a href="#materials">
-    Materials
+    MATERIALS
 </a>
 
 <a href="#practical">
-    Practicals
+    PRACTICAL
 </a>
 
 <a href="#practice">
-    Practice
+    PRACTICE
 </a>
 
 <a href="#review">
-    Equations
+    EQUATIONS
 </a>
 
 
@@ -1269,21 +2034,25 @@
 <main class="container">
 
 <!-- =========================================================
-     MECHANICS INTRODUCTION
+     MECHANICS
 ========================================================= -->
 
-<section id="mechanics">
+<section id="mechanics" class="reveal">
 
 
 <div class="section-heading">
 
-    <small>PART 01</small>
+    <div class="code">
+        // MODULE 01
+    </div>
 
-    <h2>Mechanics</h2>
+    <h2>
+        Mechanics
+    </h2>
 
     <p>
-        The physics of motion, forces, momentum, energy and
-        rotational effects.
+        Understand how objects move, interact and exchange
+        energy through the language of physics.
     </p>
 
 </div>
@@ -1291,28 +2060,30 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        FOUNDATIONS
-    </p>
+    <div class="lesson-number">
+        FOUNDATION.PROTOCOL
+    </div>
 
     <h2>
-        What is Mechanics?
+        The Physics of Motion
     </h2>
 
     <p>
         Mechanics describes the motion of objects and the forces
-        responsible for changing that motion. It provides the
-        mathematical foundation for many areas of physics.
+        responsible for changing that motion. It forms one of
+        the mathematical foundations of physics.
     </p>
 
     <div class="definition">
 
-        <strong>Core idea</strong>
+        <strong>
+            CORE CONCEPT
+        </strong>
 
         <p>
             Motion is described using quantities such as
-            displacement, velocity and acceleration, while forces
-            explain how and why motion changes.
+            displacement, velocity and acceleration, while
+            forces explain how and why motion changes.
         </p>
 
     </div>
@@ -1323,18 +2094,18 @@
 </section>
 
 <!-- =========================================================
-     SCALARS & VECTORS
+     SCALARS
 ========================================================= -->
 
-<section class="lesson">
+<section class="lesson reveal">
 
 
-<p class="lesson-number">
-    MECHANICS • 01
-</p>
+<div class="lesson-number">
+    MECHANICS // 01
+</div>
 
 <h2>
-    Scalars and Vectors
+    Scalars & Vectors
 </h2>
 
 <p>
@@ -1380,11 +2151,13 @@
 
 <div class="definition">
 
-    <strong>Remember</strong>
+    <strong>
+        MEMORY LOCK
+    </strong>
 
     <p>
-        Distance is a scalar, while displacement is a vector.
-        Speed is a scalar, while velocity is a vector.
+        Distance is scalar while displacement is vector.
+        Speed is scalar while velocity is vector.
     </p>
 
 </div>
@@ -1396,12 +2169,12 @@
      MOTION
 ========================================================= -->
 
-<section class="lesson" id="motion">
+<section id="motion" class="lesson reveal">
 
 
-<p class="lesson-number">
-    MECHANICS • 02
-</p>
+<div class="lesson-number">
+    MECHANICS // 02
+</div>
 
 <h2>
     Motion
@@ -1454,24 +2227,25 @@
 <ul>
 
     <li>
-        The gradient of a displacement-time graph gives velocity.
+        Gradient of displacement-time graph = velocity.
     </li>
 
     <li>
-        The gradient of a velocity-time graph gives acceleration.
+        Gradient of velocity-time graph = acceleration.
     </li>
 
     <li>
-        The area under a velocity-time graph gives displacement.
+        Area under velocity-time graph = displacement.
     </li>
 
 </ul>
 
+
 <div class="example">
 
-    <p class="example-title">
-        Worked Example
-    </p>
+    <div class="example-title">
+        Worked Example // 001
+    </div>
 
     <p>
         A car increases its velocity from 8 m s⁻¹ to
@@ -1501,20 +2275,19 @@
      SUVAT
 ========================================================= -->
 
-<section class="lesson">
+<section class="lesson reveal">
 
 
-<p class="lesson-number">
-    MECHANICS • 03
-</p>
+<div class="lesson-number">
+    MECHANICS // 03
+</div>
 
 <h2>
     Constant Acceleration
 </h2>
 
 <p>
-    For motion with constant acceleration, the SUVAT equations
-    can be used.
+    The SUVAT equations describe motion with constant acceleration.
 </p>
 
 <div class="formula-grid">
@@ -1539,14 +2312,13 @@
 
 <div class="definition">
 
-    <strong>Symbols</strong>
+    <strong>
+        VARIABLE MATRIX
+    </strong>
 
     <p>
-        u = initial velocity,
-        v = final velocity,
-        a = acceleration,
-        s = displacement,
-        t = time.
+        u = initial velocity • v = final velocity •
+        a = acceleration • s = displacement • t = time
     </p>
 
 </div>
@@ -1558,20 +2330,20 @@
      FORCES
 ========================================================= -->
 
-<section class="lesson" id="forces">
+<section id="forces" class="lesson reveal">
 
 
-<p class="lesson-number">
-    MECHANICS • 04
-</p>
+<div class="lesson-number">
+    MECHANICS // 04
+</div>
 
 <h2>
     Forces
 </h2>
 
 <p>
-    A force is an interaction that can change the motion or
-    shape of an object.
+    A force is an interaction that can change the motion
+    or shape of an object.
 </p>
 
 <h3>
@@ -1585,8 +2357,8 @@
 </p>
 
 <p>
-    Newton's Second Law relates resultant force to the rate
-    of change of momentum. For constant mass:
+    Newton's Second Law relates resultant force to acceleration
+    for constant mass.
 </p>
 
 <div class="formula-grid">
@@ -1595,19 +2367,6 @@
         F = ma
     </div>
 
-</div>
-
-<p>
-    Newton's Third Law states that interacting bodies exert
-    equal and opposite forces on each other.
-</p>
-
-<h3>
-    Weight
-</h3>
-
-<div class="formula-grid">
-
     <div class="formula">
         W = mg
     </div>
@@ -1615,7 +2374,8 @@
 </div>
 
 <p>
-    Weight is the gravitational force acting on an object.
+    Newton's Third Law states that interacting bodies exert
+    equal and opposite forces on each other.
 </p>
 
 <h3>
@@ -1634,12 +2394,12 @@
      MOMENTS
 ========================================================= -->
 
-<section class="lesson">
+<section class="lesson reveal">
 
 
-<p class="lesson-number">
-    MECHANICS • 05
-</p>
+<div class="lesson-number">
+    MECHANICS // 05
+</div>
 
 <h2>
     Moments
@@ -1662,28 +2422,23 @@
     Equilibrium
 </h3>
 
-<p>
-    For an object in rotational equilibrium, the clockwise
-    moments equal the anticlockwise moments.
-</p>
-
 <div class="formula-grid">
 
     <div class="formula">
-        Σ clockwise moments = Σ anticlockwise moments
+        Σ clockwise = Σ anticlockwise
     </div>
 
 </div>
 
 <div class="example">
 
-    <p class="example-title">
-        Worked Example
-    </p>
+    <div class="example-title">
+        Worked Example // 002
+    </div>
 
     <p>
-        A 20 N force acts perpendicular to a beam at a distance
-        of 0.5 m from a pivot. Find its moment.
+        A 20 N force acts perpendicular to a beam at
+        a distance of 0.5 m from a pivot.
     </p>
 
     <div class="solution">
@@ -1709,12 +2464,12 @@
      MOMENTUM
 ========================================================= -->
 
-<section class="lesson" id="momentum">
+<section id="momentum" class="lesson reveal">
 
 
-<p class="lesson-number">
-    MECHANICS • 06
-</p>
+<div class="lesson-number">
+    MECHANICS // 06
+</div>
 
 <h2>
     Momentum
@@ -1731,39 +2486,35 @@
         p = mv
     </div>
 
-</div>
-
-<h3>
-    Conservation of Momentum
-</h3>
-
-<p>
-    In an isolated system, total momentum remains constant.
-</p>
-
-<div class="formula-grid">
-
-    <div class="formula">
-        Total momentum before = Total momentum after
-    </div>
-
-</div>
-
-<h3>
-    Impulse
-</h3>
-
-<div class="formula-grid">
-
     <div class="formula">
         Impulse = Ft = Δp
     </div>
 
 </div>
 
-<p>
-    The area under a force-time graph represents the impulse.
-</p>
+<h3>
+    Conservation
+</h3>
+
+<div class="definition">
+
+    <strong>
+        SYSTEM LAW
+    </strong>
+
+    <p>
+        In an isolated system, total momentum remains constant.
+    </p>
+
+</div>
+
+<div class="formula-grid">
+
+    <div class="formula">
+        Momentum before = Momentum after
+    </div>
+
+</div>
 
 
 </section>
@@ -1772,20 +2523,16 @@
      ENERGY
 ========================================================= -->
 
-<section class="lesson" id="energy">
+<section id="energy" class="lesson reveal">
 
-```
-<p class="lesson-number">
-    MECHANICS • 07
-</p>
+
+<div class="lesson-number">
+    MECHANICS // 07
+</div>
 
 <h2>
-    Work, Energy and Power
+    Work, Energy & Power
 </h2>
-
-<h3>
-    Work Done
-</h3>
 
 <div class="formula-grid">
 
@@ -1793,42 +2540,13 @@
         W = Fs
     </div>
 
-</div>
-
-<p>
-    When a force acts in the direction of motion, work is
-    done on the object.
-</p>
-
-<h3>
-    Kinetic Energy
-</h3>
-
-<div class="formula-grid">
-
     <div class="formula">
         Eₖ = ½mv²
     </div>
 
-</div>
-
-<h3>
-    Gravitational Potential Energy
-</h3>
-
-<div class="formula-grid">
-
     <div class="formula">
         Eₚ = mgh
     </div>
-
-</div>
-
-<h3>
-    Power
-</h3>
-
-<div class="formula-grid">
 
     <div class="formula">
         P = W / t
@@ -1839,7 +2557,7 @@
 <div class="definition">
 
     <strong>
-        Conservation of energy
+        CONSERVATION PROTOCOL
     </strong>
 
     <p>
@@ -1848,7 +2566,7 @@
     </p>
 
 </div>
-```
+
 
 </section>
 
@@ -1856,20 +2574,22 @@
      MATERIALS
 ========================================================= -->
 
-<section id="materials">
+<section id="materials" class="reveal">
 
-```
+
 <div class="section-heading">
 
-    <small>PART 02</small>
+    <div class="code">
+        // MODULE 02
+    </div>
 
     <h2>
         Materials
     </h2>
 
     <p>
-        Explore density, deformation, Hooke's law, stress,
-        strain, Young modulus and elastic energy.
+        Explore how matter responds to forces, deformation
+        and energy storage.
     </p>
 
 </div>
@@ -1877,9 +2597,9 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        MATERIALS • 01
-    </p>
+    <div class="lesson-number">
+        MATERIALS // 01
+    </div>
 
     <h2>
         Density
@@ -1898,18 +2618,18 @@
     </div>
 
     <p>
-        The SI unit of density is kg m⁻³.
+        SI unit: kg m⁻³.
     </p>
 
     <div class="example">
 
-        <p class="example-title">
-            Worked Example
-        </p>
+        <div class="example-title">
+            Worked Example // 003
+        </div>
 
         <p>
-            A material has a mass of 0.80 kg and a volume of
-            2.0 × 10⁻⁴ m³. Calculate its density.
+            A material has a mass of 0.80 kg and a volume
+            of 2.0 × 10⁻⁴ m³.
         </p>
 
         <div class="solution">
@@ -1933,42 +2653,40 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        MATERIALS • 02
-    </p>
+    <div class="lesson-number">
+        MATERIALS // 02
+    </div>
 
     <h2>
         Deformation
     </h2>
 
     <p>
-        When a force is applied to an object, it may change shape.
-        This change is called deformation.
+        When a force is applied to an object, it may change
+        its shape.
     </p>
 
     <h3>
-        Elastic Deformation
+        Elastic
     </h3>
 
     <p>
-        An object undergoing elastic deformation returns to its
-        original shape when the deforming force is removed.
+        Elastic deformation is reversible when the deforming
+        force is removed.
     </p>
 
     <h3>
-        Plastic Deformation
+        Plastic
     </h3>
 
     <p>
-        Plastic deformation is permanent. The object does not
-        return completely to its original shape when the force
-        is removed.
+        Plastic deformation produces a permanent change in shape.
     </p>
 
     <div class="definition">
 
         <strong>
-            Elastic limit
+            ELASTIC LIMIT
         </strong>
 
         <p>
@@ -1983,17 +2701,17 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        MATERIALS • 03
-    </p>
+    <div class="lesson-number">
+        MATERIALS // 03
+    </div>
 
     <h2>
         Hooke's Law
     </h2>
 
     <p>
-        For a spring or wire operating within its limit of
-        proportionality, extension is proportional to applied force.
+        Within the limit of proportionality, extension is
+        proportional to applied force.
     </p>
 
     <div class="formula-grid">
@@ -2004,30 +2722,16 @@
 
     </div>
 
-    <p>
-        Here k is the spring constant and x is the extension.
-    </p>
-
-    <h3>
-        Force-Extension Graph
-    </h3>
-
-    <p>
-        A straight-line graph through the origin indicates that
-        force is proportional to extension.
-    </p>
-
     <div class="definition">
 
         <strong>
-            Important distinction
+            IMPORTANT
         </strong>
 
         <p>
-            The limit of proportionality is where the graph stops
-            being directly proportional. The elastic limit is where
-            permanent deformation begins. They are not necessarily
-            the same point.
+            The limit of proportionality and elastic limit are
+            different concepts and are not necessarily at the
+            same point.
         </p>
 
     </div>
@@ -2037,17 +2741,13 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        MATERIALS • 04
-    </p>
+    <div class="lesson-number">
+        MATERIALS // 04
+    </div>
 
     <h2>
-        Stress, Strain and Young Modulus
+        Stress, Strain & Young Modulus
     </h2>
-
-    <h3>
-        Stress
-    </h3>
 
     <div class="formula-grid">
 
@@ -2055,33 +2755,9 @@
             Stress = F / A
         </div>
 
-    </div>
-
-    <p>
-        Stress is the force applied per unit cross-sectional area.
-    </p>
-
-    <h3>
-        Strain
-    </h3>
-
-    <div class="formula-grid">
-
         <div class="formula">
             Strain = ΔL / L
         </div>
-
-    </div>
-
-    <p>
-        Strain is the fractional change in length.
-    </p>
-
-    <h3>
-        Young Modulus
-    </h3>
-
-    <div class="formula-grid">
 
         <div class="formula">
             E = Stress / Strain
@@ -2095,13 +2771,13 @@
 
     <div class="example">
 
-        <p class="example-title">
-            Worked Example
-        </p>
+        <div class="example-title">
+            Worked Example // 004
+        </div>
 
         <p>
-            A wire has cross-sectional area 2.0 × 10⁻⁶ m².
-            A force of 50 N is applied. Calculate the stress.
+            A wire has a cross-sectional area of
+            2.0 × 10⁻⁶ m² and experiences a force of 50 N.
         </p>
 
         <div class="solution">
@@ -2125,17 +2801,17 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        MATERIALS • 05
-    </p>
+    <div class="lesson-number">
+        MATERIALS // 05
+    </div>
 
     <h2>
         Elastic Strain Energy
     </h2>
 
     <p>
-        Work done in stretching a spring or wire is stored as
-        elastic strain energy.
+        Work done in stretching a spring or wire can be stored
+        as elastic strain energy.
     </p>
 
     <div class="formula-grid">
@@ -2146,20 +2822,15 @@
 
     </div>
 
-    <p>
-        For a linear force-extension relationship, this corresponds
-        to the area under the force-extension graph.
-    </p>
-
     <div class="definition">
 
         <strong>
-            Graph interpretation
+            GRAPH ANALYSIS
         </strong>
 
         <p>
             The area under a force-extension graph represents
-            the elastic energy stored.
+            elastic energy stored.
         </p>
 
     </div>
@@ -2167,64 +2838,27 @@
 </section>
 
 
-<section class="lesson">
-
-    <p class="lesson-number">
-        MATERIALS • 06
-    </p>
-
-    <h2>
-        Force-Extension and Stress-Strain Behaviour
-    </h2>
-
-    <p>
-        Force-extension and stress-strain graphs can reveal how
-        a material behaves as it is stretched.
-    </p>
-
-    <h3>
-        Key Features
-    </h3>
-
-    <ul>
-
-        <li>Region of proportional behaviour</li>
-        <li>Elastic behaviour</li>
-        <li>Plastic deformation</li>
-        <li>Yielding</li>
-        <li>Breaking point</li>
-
-    </ul>
-
-    <p>
-        Different materials can behave very differently.
-        A stiff material has a large Young modulus, while a
-        more flexible material has a smaller Young modulus.
-    </p>
-
-</section>
-
-
 </section>
 
 <!-- =========================================================
-     PRACTICAL SKILLS
+     PRACTICAL
 ========================================================= -->
 
-<section id="practical">
+<section id="practical" class="reveal">
 
 
 <div class="section-heading">
 
-    <small>PRACTICAL PHYSICS</small>
+    <div class="code">
+        // MODULE 03
+    </div>
 
     <h2>
-        Experimental Skills
+        Practical Physics
     </h2>
 
     <p>
-        Plan experiments, collect measurements, analyse data
-        and evaluate experimental methods.
+        Experimental planning, measurement, analysis and evaluation.
     </p>
 
 </div>
@@ -2234,36 +2868,42 @@
 
     <div class="practical-grid">
 
+
         <div class="practical">
+
+            <div class="practical-number">
+                01
+            </div>
 
             <div class="practical-icon">
                 ⚡
             </div>
 
             <h3>
-                Investigating Free Fall
+                Free Fall
             </h3>
 
             <p>
-                Measure the motion of an object falling under
-                gravity and use suitable measurements or graphs
-                to determine acceleration due to gravity.
+                Investigate motion under gravity and determine
+                acceleration using suitable measurements or graphs.
             </p>
 
             <ul>
 
-                <li>Measure time and distance carefully.</li>
-
                 <li>
-                    Repeat measurements to improve reliability.
+                    Measure time and distance carefully.
                 </li>
 
                 <li>
-                    Consider reaction time and systematic errors.
+                    Repeat measurements.
                 </li>
 
                 <li>
-                    Use appropriate graph analysis.
+                    Consider reaction time.
+                </li>
+
+                <li>
+                    Analyse suitable graphs.
                 </li>
 
             </ul>
@@ -2273,23 +2913,27 @@
 
         <div class="practical">
 
+            <div class="practical-number">
+                02
+            </div>
+
             <div class="practical-icon">
                 ◉
             </div>
 
             <h3>
-                Investigating Viscosity
+                Viscosity
             </h3>
 
             <p>
-                A falling sphere can be used to investigate
-                viscosity by examining its motion through a fluid.
+                Investigate the motion of a sphere through a
+                fluid and determine its behaviour at terminal velocity.
             </p>
 
             <ul>
 
                 <li>
-                    Allow the sphere to reach terminal velocity.
+                    Allow terminal velocity.
                 </li>
 
                 <li>
@@ -2311,27 +2955,31 @@
 
         <div class="practical">
 
+            <div class="practical-number">
+                03
+            </div>
+
             <div class="practical-icon">
                 ∆
             </div>
 
             <h3>
-                Determining Young Modulus
+                Young Modulus
             </h3>
 
             <p>
-                Load a wire gradually while measuring its
-                extension and use the data to determine Young modulus.
+                Load a wire gradually while measuring extension
+                and determine Young modulus from experimental data.
             </p>
 
             <ul>
 
                 <li>
-                    Measure original length accurately.
+                    Measure original length.
                 </li>
 
                 <li>
-                    Measure diameter at several positions.
+                    Measure diameter at several points.
                 </li>
 
                 <li>
@@ -2339,12 +2987,13 @@
                 </li>
 
                 <li>
-                    Plot an appropriate graph.
+                    Plot appropriate graphs.
                 </li>
 
             </ul>
 
         </div>
+
 
     </div>
 
@@ -2352,13 +3001,13 @@
     <div class="tip">
 
         <strong>
-            Exam tip
+            EXAM PROTOCOL
         </strong>
 
         <p>
-            When evaluating an experiment, don't simply write
-            “repeat the experiment.” Explain what repeating
-            improves and how the repeated results should be used.
+            When evaluating an experiment, explain precisely
+            what a suggested improvement changes and why it
+            improves the quality of the measurement.
         </p>
 
     </div>
@@ -2368,27 +3017,17 @@
 
 <section class="lesson">
 
-    <p class="lesson-number">
-        PRACTICAL SKILLS
-    </p>
+    <div class="lesson-number">
+        PRACTICAL // UNCERTAINTY
+    </div>
 
     <h2>
-        Measurements and Uncertainties
+        Measurements & Uncertainties
     </h2>
 
     <p>
-        Experimental measurements are never perfectly exact.
-        Good experimental analysis identifies and considers
-        measurement uncertainty.
-    </p>
-
-    <h3>
-        Absolute Uncertainty
-    </h3>
-
-    <p>
-        The uncertainty expressed in the same units as the measured
-        quantity is called absolute uncertainty.
+        Experimental measurements always contain some degree
+        of uncertainty.
     </p>
 
     <h3>
@@ -2398,8 +3037,10 @@
     <div class="formula-grid">
 
         <div class="formula">
+
             Percentage uncertainty =
             (absolute uncertainty / measured value) × 100
+
         </div>
 
     </div>
@@ -2414,15 +3055,11 @@
 
         <li>Calculate a mean where appropriate.</li>
 
-        <li>Use instruments with suitable resolution.</li>
+        <li>Use suitable-resolution instruments.</li>
 
-        <li>
-            Increase the measured quantity where possible.
-        </li>
+        <li>Increase the measured quantity where possible.</li>
 
-        <li>
-            Control relevant variables.
-        </li>
+        <li>Control relevant variables.</li>
 
     </ul>
 
@@ -2435,33 +3072,29 @@
      MIXED EXAMPLE
 ========================================================= -->
 
-<section class="lesson">
+<section class="lesson reveal">
 
 
-<p class="lesson-number">
-    WORKED EXAMPLE
-</p>
+<div class="lesson-number">
+    SIMULATION // WORKED EXAMPLE
+</div>
 
 <h2>
-    Mixed Unit 1 Example
+    Mechanics Calculation
 </h2>
 
 <div class="example">
 
-    <p class="example-title">
-        Question
-    </p>
+    <div class="example-title">
+        Problem
+    </div>
 
     <p>
-        A 2.0 kg object accelerates from rest to 6.0 m s⁻¹
-        in 3.0 s. Calculate the resultant force acting on it.
+        A 2.0 kg object accelerates from rest to
+        6.0 m s⁻¹ in 3.0 s. Calculate the resultant force.
     </p>
 
     <div class="solution">
-
-        <p>
-            First find acceleration:
-        </p>
 
         <p>
             a = (6.0 − 0) / 3.0
@@ -2472,7 +3105,7 @@
         </p>
 
         <p>
-            Then use F = ma:
+            F = ma
         </p>
 
         <p>
@@ -2496,19 +3129,21 @@
      PRACTICE
 ========================================================= -->
 
-<section id="practice">
+<section id="practice" class="reveal">
 
-```
+
 <div class="section-heading">
 
-    <small>EXAM PREPARATION</small>
+    <div class="code">
+        // TRAINING MODE
+    </div>
 
     <h2>
-        Unit 1 Mixed Practice
+        Unit 1 Practice
     </h2>
 
     <p>
-        Test your understanding before moving on to the next unit.
+        Activate each solution only after attempting the question.
     </p>
 
 </div>
@@ -2519,19 +3154,23 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q01
+        </span>
+
         <strong>
-            1. Explain the difference between a scalar and a vector.
+            Explain the difference between a scalar and a vector.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
-                A scalar has magnitude only, whereas a vector has
-                both magnitude and direction.
+                A scalar has magnitude only, whereas a vector
+                has both magnitude and direction.
             </p>
 
         </details>
@@ -2541,15 +3180,19 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q02
+        </span>
+
         <strong>
-            2. A car travels from 12 m s⁻¹ to 30 m s⁻¹ in 6 s.
-            Calculate its acceleration.
+            A car changes velocity from 12 m s⁻¹ to 30 m s⁻¹
+            in 6 s. Calculate its acceleration.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
@@ -2569,15 +3212,19 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q03
+        </span>
+
         <strong>
-            3. A 5.0 kg object experiences a resultant force
+            A 5.0 kg object experiences a resultant force
             of 20 N. Calculate its acceleration.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
@@ -2601,15 +3248,19 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q04
+        </span>
+
         <strong>
-            4. A 15 N force acts 0.40 m from a pivot at right
+            A 15 N force acts 0.40 m from a pivot at right
             angles. Calculate the moment.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
@@ -2629,19 +3280,23 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q05
+        </span>
+
         <strong>
-            5. State the principle of conservation of momentum.
+            State the principle of conservation of momentum.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
-                In an isolated system, the total momentum before
-                an interaction equals the total momentum after it.
+                In an isolated system, total momentum before
+                an interaction equals total momentum after it.
             </p>
 
         </details>
@@ -2651,15 +3306,19 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q06
+        </span>
+
         <strong>
-            6. A material has a mass of 0.60 kg and volume
+            A material has mass 0.60 kg and volume
             3.0 × 10⁻⁴ m³. Calculate its density.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
@@ -2683,20 +3342,23 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q07
+        </span>
+
         <strong>
-            7. State Hooke's law.
+            State Hooke's law.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
-                For a spring or wire within its limit of
-                proportionality, the extension is proportional
-                to the applied force.
+                Within the limit of proportionality,
+                extension is proportional to applied force.
             </p>
 
         </details>
@@ -2706,16 +3368,20 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q08
+        </span>
+
         <strong>
-            8. A wire has a cross-sectional area of
-            4.0 × 10⁻⁶ m² and is subjected to a force of
-            80 N. Calculate the stress.
+            A wire has cross-sectional area
+            4.0 × 10⁻⁶ m² and experiences an 80 N force.
+            Calculate the stress.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
@@ -2739,21 +3405,25 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q09
+        </span>
+
         <strong>
-            9. Explain the difference between elastic and
+            Explain the difference between elastic and
             plastic deformation.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
-                Elastic deformation is reversible when the force
-                is removed. Plastic deformation produces a permanent
-                change in shape.
+                Elastic deformation is reversible when the
+                force is removed, whereas plastic deformation
+                produces a permanent change.
             </p>
 
         </details>
@@ -2763,26 +3433,30 @@
 
     <div class="question">
 
+        <span class="question-number">
+            Q10
+        </span>
+
         <strong>
-            10. Explain why repeated measurements are useful
-            in an experiment.
+            Explain why repeated measurements are useful.
         </strong>
 
         <details>
 
             <summary>
-                Show answer
+                REVEAL ANSWER
             </summary>
 
             <p>
-                Repeated measurements can help identify random
-                variation and allow a mean value to be calculated,
-                improving the reliability of the result.
+                Repeated measurements help identify random
+                variation and allow a mean to be calculated,
+                improving reliability.
             </p>
 
         </details>
 
     </div>
+
 
 </section>
 
@@ -2790,23 +3464,24 @@
 </section>
 
 <!-- =========================================================
-     QUICK REVIEW
+     EQUATION MATRIX
 ========================================================= -->
 
-<section id="review">
+<section id="review" class="reveal">
 
-
+      
 <div class="section-heading">
 
-    <small>QUICK REVIEW</small>
+    <div class="code">
+        // EQUATION DATABASE
+    </div>
 
     <h2>
-        Unit 1 Key Equations
+        Unit 1 Equation Matrix
     </h2>
 
     <p>
-        A rapid-reference sheet for the equations used throughout
-        Physics 1.
+        Rapid-access equation reference.
     </p>
 
 </div>
@@ -2825,6 +3500,18 @@
         </div>
 
         <div class="review-card">
+            v = u + at
+        </div>
+
+        <div class="review-card">
+            s = ut + ½at²
+        </div>
+
+        <div class="review-card">
+            v² = u² + 2as
+        </div>
+
+        <div class="review-card">
             F = ma
         </div>
 
@@ -2834,10 +3521,6 @@
 
         <div class="review-card">
             p = mv
-        </div>
-
-        <div class="review-card">
-            Moment = Fd
         </div>
 
         <div class="review-card">
@@ -2873,7 +3556,7 @@
         </div>
 
         <div class="review-card">
-            Elastic energy = ½Fx
+            Elastic Energy = ½Fx
         </div>
 
     </div>
@@ -2886,22 +3569,22 @@
 </main>
 
 <!-- =========================================================
-     BOTTOM NAVIGATION
+     NAVIGATION
 ========================================================= -->
 
 <div class="navigation">
 
 
 <a href="physics.html" class="button">
-    ← Back to Physics
+    ← PHYSICS HUB
 </a>
 
-<a href="mathematics.html" class="button secondary">
-    Mathematics
+<a href="index.html" class="button">
+    IAL ATLAS HOME
 </a>
 
-<a href="index.html" class="button secondary">
-    IAL ATLAS Home
+<a href="mathematics.html" class="button">
+    MATHEMATICS
 </a>
 
 
@@ -2912,7 +3595,7 @@
 ========================================================= -->
 
 <a href="#top"
-class="top-button"
+class="top"
 aria-label="Back to top">
 
 
@@ -2927,19 +3610,361 @@ aria-label="Back to top">
 
 <footer>
 
+```
+<div class="footer-logo">
+    IAL ATLAS
+</div>
 
 <p>
-    © 2026 <strong>IAL ATLAS</strong>
+    Physics 1 • Mechanics & Materials
 </p>
 
 <p>
-    Independent student resource • Not affiliated with Pearson
+    © 2026 IAL ATLAS • Independent student resource
+    • Not affiliated with Pearson
 </p>
 
 
 </footer>
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   PARTICLE ENGINE
+========================================================= */
+
+const canvas =
+    document.getElementById("particles");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+let width;
+let height;
+
+function resizeCanvas() {
+
+    width =
+        canvas.width =
+        window.innerWidth;
+
+    height =
+        canvas.height =
+        window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+/* create particles */
+
+function createParticles() {
+
+    particles = [];
+
+    const amount =
+        Math.min(
+            120,
+            Math.floor(
+                window.innerWidth / 12
+            )
+        );
+
+    for (
+        let i = 0;
+        i < amount;
+        i++
+    ) {
+
+        particles.push({
+
+            x:
+                Math.random() * width,
+
+            y:
+                Math.random() * height,
+
+            vx:
+                (Math.random() - .5) * .25,
+
+            vy:
+                (Math.random() - .5) * .25,
+
+            size:
+                Math.random() * 1.6 + .3,
+
+            alpha:
+                Math.random() * .6 + .1
+
+        });
+
+    }
+
+}
+
+createParticles();
+
+
+function drawParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+    for (
+        let i = 0;
+        i < particles.length;
+        i++
+    ) {
+
+        const p =
+            particles[i];
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0)
+            p.x = width;
+
+        if (p.x > width)
+            p.x = 0;
+
+        if (p.y < 0)
+            p.y = height;
+
+        if (p.y > height)
+            p.y = 0;
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(0,217,255,${p.alpha})`;
+
+        ctx.fill();
+
+
+        /* connect nearby particles */
+
+        for (
+            let j = i + 1;
+            j < particles.length;
+            j++
+        ) {
+
+            const q =
+                particles[j];
+
+            const dx =
+                p.x - q.x;
+
+            const dy =
+                p.y - q.y;
+
+            const distance =
+                Math.sqrt(
+                    dx * dx +
+                    dy * dy
+                );
+
+            if (
+                distance < 115
+            ) {
+
+                ctx.beginPath();
+
+                ctx.moveTo(
+                    p.x,
+                    p.y
+                );
+
+                ctx.lineTo(
+                    q.x,
+                    q.y
+                );
+
+                ctx.strokeStyle =
+                    `rgba(0,217,255,${(
+                        .07 *
+                        (1 - distance / 115)
+                    )})`;
+
+                ctx.lineWidth =
+                    .5;
+
+                ctx.stroke();
+
+            }
+
+        }
+
+    }
+
+    requestAnimationFrame(
+        drawParticles
+    );
+
+}
+
+drawParticles();
+
+
+/* =========================================================
+   CURSOR FIELD
+========================================================= */
+
+const glow =
+    document.getElementById(
+        "cursorGlow"
+    );
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        glow.style.left =
+            event.clientX + "px";
+
+        glow.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: .08
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+        element =>
+            observer.observe(element)
+    );
+
+
+/* =========================================================
+   3D CARD TILT
+========================================================= */
+
+document
+    .querySelectorAll(".lesson")
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                if (
+                    window.innerWidth < 800
+                )
+                    return;
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+                const rotateX =
+                    ((y / rect.height) - .5)
+                    * -3;
+
+                const rotateY =
+                    ((x / rect.width) - .5)
+                    * 3;
+
+                card.style.transform =
+                    `perspective(900px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-5px)`;
+
+            }
+        );
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   RECREATE PARTICLES ON LARGE RESIZE
+========================================================= */
+
+window.addEventListener(
+    "resize",
+    createParticles
+);
+
+</script>
+
 </body>
 
 </html>
+
 
