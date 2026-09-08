@@ -4,14 +4,69 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Edexcel International A Level Physics Unit 4 — Further Mechanics, Electric and Magnetic Fields, Nuclear and Particle Physics, practical skills, worked examples and exam practice.">
+
+    <meta name="keywords"
+          content="Edexcel IAL Physics Unit 4, Physics Unit 4, Further Mechanics, Electric Fields, Magnetic Fields, Nuclear Physics, Particle Physics, IAL ATLAS">
+
+    <meta name="author"
+          content="IAL ATLAS">
+
+    <meta name="theme-color"
+          content="#020617">
 
     <title>Physics Unit 4 | IAL ATLAS</title>
 
-    <meta name="description"
-          content="Edexcel International A Level Physics Unit 4 — Further Mechanics, Fields and Particles.">
-
     <style>
+
+        /* =========================================================
+           IAL ATLAS — PHYSICS UNIT 4
+           FUTURISTIC EDITION
+        ========================================================= */
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
+
+
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+
+            --bg: #020617;
+            --bg-2: #071326;
+
+            --panel: rgba(8, 24, 46, 0.62);
+            --panel-strong: rgba(10, 31, 58, 0.86);
+
+            --line: rgba(86, 196, 255, 0.16);
+            --line-bright: rgba(86, 196, 255, 0.42);
+
+            --blue: #32b5ff;
+            --cyan: #65ddff;
+            --violet: #7c7cff;
+
+            --text: #eef8ff;
+            --muted: #9bb2ca;
+            --soft: #c7d8e9;
+
+            --shadow:
+                0 20px 70px rgba(0, 0, 0, 0.35);
+
+            --glow:
+                0 0 30px rgba(50, 181, 255, 0.16);
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
 
         * {
             margin: 0;
@@ -19,223 +74,1763 @@
             box-sizing: border-box;
         }
 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
-        }
 
-        header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            font-family: "Inter", Arial, Helvetica, sans-serif;
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .hero {
             background:
                 radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
+                    circle at 15% 10%,
+                    rgba(50,181,255,0.09),
+                    transparent 25%
                 ),
+
                 radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
+                    circle at 85% 25%,
+                    rgba(124,124,255,0.07),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(50,181,255,0.06),
                     transparent 30%
                 ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: 9999;
+
+            opacity: 0.035;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.5) 1px,
+                    transparent 1px
+                );
+
+            background-size: 100% 4px;
+        }
+
+
+        ::selection {
+
+            background: rgba(50,181,255,0.28);
 
             color: white;
-            text-align: center;
-            padding: 80px 20px;
         }
+
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================================
+           BACKGROUND GRID
+        ========================================================= */
+
+        .grid-background {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -3;
+
+            opacity: 0.22;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(50,181,255,0.045) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(50,181,255,0.045) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
+        }
+
+
+        /* =========================================================
+           FLOATING ORBS
+        ========================================================= */
+
+        .orb {
+
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            filter: blur(70px);
+
+            z-index: -2;
+
+            opacity: 0.16;
+
+            animation:
+                orbFloat 12s ease-in-out infinite;
+        }
+
+
+        .orb.one {
+
+            width: 300px;
+
+            height: 300px;
+
+            background: #149ee9;
+
+            top: 10%;
+
+            left: -100px;
+        }
+
+
+        .orb.two {
+
+            width: 260px;
+
+            height: 260px;
+
+            background: #5959ff;
+
+            top: 50%;
+
+            right: -100px;
+
+            animation-delay: -4s;
+        }
+
+
+        .orb.three {
+
+            width: 220px;
+
+            height: 220px;
+
+            background: #00d5ff;
+
+            bottom: 5%;
+
+            left: 40%;
+
+            animation-delay: -8s;
+        }
+
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translate3d(0,0,0)
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    translate3d(30px,-35px,0)
+                    scale(1.08);
+            }
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            height: 74px;
+
+            padding: 0 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background:
+                rgba(2, 6, 23, 0.72);
+
+            backdrop-filter: blur(22px);
+
+            -webkit-backdrop-filter: blur(22px);
+
+            border-bottom:
+                1px solid var(--line);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.18);
+        }
+
+
+        .logo {
+
+            text-decoration: none;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            color: white;
+
+            position: relative;
+        }
+
+
+        .logo::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            right: -14px;
+
+            top: 5px;
+
+            box-shadow:
+                0 0 12px var(--cyan);
+        }
+
+
+        .header-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            text-decoration: none;
+
+            color: var(--soft);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            padding: 10px 15px;
+
+            border:
+                1px solid transparent;
+
+            border-radius: 10px;
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .header-link:hover {
+
+            color: white;
+
+            border-color: var(--line-bright);
+
+            background:
+                rgba(50,181,255,0.07);
+
+            box-shadow:
+                var(--glow);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            position: relative;
+
+            min-height: 650px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 110px 20px 100px;
+
+            overflow: hidden;
+
+            border-bottom:
+                1px solid var(--line);
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 620px;
+
+            height: 620px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(50,181,255,0.12);
+
+            box-shadow:
+
+                0 0 0 60px rgba(50,181,255,0.018),
+
+                0 0 0 120px rgba(50,181,255,0.012);
+
+            animation:
+                rotateRing 30s linear infinite;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 2px;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(50,181,255,0.28),
+                    transparent
+                );
+
+            animation:
+                scan 6s linear infinite;
+        }
+
+
+        @keyframes rotateRing {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        @keyframes scan {
+
+            0% {
+                transform: translateX(-450px);
+            }
+
+            100% {
+                transform: translateX(450px);
+            }
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 900px;
+        }
+
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--cyan);
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
             letter-spacing: 3px;
-            margin-bottom: 15px;
+
+            margin-bottom: 25px;
+
+            padding: 9px 15px;
+
+            border:
+                1px solid rgba(101,221,255,0.25);
+
+            border-radius: 999px;
+
+            background:
+                rgba(50,181,255,0.055);
+
+            box-shadow:
+                0 0 25px rgba(50,181,255,0.07);
         }
+
+
+        .hero-label::before {
+
+            content: "";
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            box-shadow:
+                0 0 15px var(--cyan);
+
+            animation:
+                pulse 1.8s ease-in-out infinite;
+        }
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.45;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
+
 
         .hero h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size:
+                clamp(48px, 8vw, 92px);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+
+            text-shadow:
+                0 0 40px rgba(50,181,255,0.14);
         }
+
 
         .hero h1 span {
-            color: #4db8ff;
+
+            color: transparent;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    var(--cyan),
+                    #7c7cff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            animation:
+                gradientShift 5s ease-in-out infinite;
         }
 
-        .hero p {
-            max-width: 750px;
-            margin: auto;
-            color: #dcecff;
-            font-size: 18px;
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.35);
+            }
         }
+
+
+        .hero-description {
+
+            max-width: 730px;
+
+            margin: 0 auto 35px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .hero-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+
+        .hero-button.primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #32b5ff,
+                    #2189e0
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 35px rgba(50,181,255,0.22);
+        }
+
+
+        .hero-button.secondary {
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid var(--line-bright);
+
+            color: var(--soft);
+        }
+
+
+        .hero-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 14px 40px rgba(50,181,255,0.18);
+        }
+
+
+        /* =========================================================
+           HERO PARTICLES
+        ========================================================= */
+
+        .particle {
+
+            position: absolute;
+
+            width: 3px;
+
+            height: 3px;
+
+            background: var(--cyan);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 12px var(--cyan);
+
+            opacity: 0.5;
+
+            animation:
+                particleMove linear infinite;
+        }
+
+
+        .particle:nth-child(1) {
+            top: 15%;
+            left: 12%;
+            animation-duration: 9s;
+        }
+
+        .particle:nth-child(2) {
+            top: 30%;
+            left: 80%;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(3) {
+            top: 75%;
+            left: 15%;
+            animation-duration: 11s;
+        }
+
+        .particle:nth-child(4) {
+            top: 65%;
+            left: 88%;
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(5) {
+            top: 20%;
+            left: 52%;
+            animation-duration: 14s;
+        }
+
+        .particle:nth-child(6) {
+            top: 85%;
+            left: 55%;
+            animation-duration: 10s;
+        }
+
+
+        @keyframes particleMove {
+
+            0% {
+                transform:
+                    translateY(0)
+                    translateX(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-70px)
+                    translateX(35px);
+            }
+
+            100% {
+                transform:
+                    translateY(0)
+                    translateX(0);
+            }
+        }
+
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
 
         .container {
-            max-width: 950px;
+
+            width: min(1100px, 92%);
+
             margin: auto;
-            padding: 60px 20px;
+
+            padding:
+                80px 0 40px;
         }
+
+
+        /* =========================================================
+           TOPIC NAVIGATION
+        ========================================================= */
+
+        .topic-nav {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .topic-nav a {
+
+            text-decoration: none;
+
+            padding: 17px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            text-align: center;
+
+            transition:
+                0.25s ease;
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+
+        .topic-nav a:hover {
+
+            color: white;
+
+            border-color:
+                var(--line-bright);
+
+            background:
+                rgba(50,181,255,0.07);
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                var(--glow);
+        }
+
+
+        /* =========================================================
+           LESSON CARD
+        ========================================================= */
 
         .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+
+            position: relative;
+
+            padding: 42px;
+
+            margin-bottom: 28px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(10,31,58,0.76),
+                    rgba(4,16,33,0.68)
+                );
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                var(--shadow);
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
         }
+
+
+        .lesson.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .lesson:hover {
+
+            border-color:
+                rgba(50,181,255,0.29);
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,0.42),
+                0 0 35px rgba(50,181,255,0.055);
+        }
+
+
+        .lesson::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(101,221,255,0.6),
+                    transparent
+                );
+
+            opacity: 0.55;
+        }
+
+
+        .lesson::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 170px;
+
+            height: 170px;
+
+            right: -90px;
+
+            top: -90px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(50,181,255,0.08);
+
+            pointer-events: none;
+        }
+
 
         .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
 
-        .lesson h2 {
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
+            color: var(--cyan);
 
-        .lesson h3 {
-            font-size: 21px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+            font-family: "Orbitron", sans-serif;
 
-        .lesson h4 {
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 8px;
-        }
+            font-size: 10px;
 
-        .lesson p {
-            color: #53657d;
-            margin-bottom: 15px;
-        }
+            font-weight: 700;
 
-        .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
-        }
+            letter-spacing: 3px;
 
-        .lesson li {
             margin-bottom: 9px;
         }
 
-        .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+
+        .lesson h2 {
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size:
+                clamp(26px, 4vw, 36px);
+
+            margin-bottom: 18px;
+
+            letter-spacing: -1px;
         }
 
-        .definition p {
-            margin-bottom: 0;
-        }
 
-        .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 19px;
-            font-weight: bold;
-        }
+        .lesson h3 {
 
-        .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
+            font-size: 21px;
 
-        .example-title {
-            color: #168dca;
-            font-weight: bold;
+            color: #e9f7ff;
+
+            margin-top: 35px;
+
             margin-bottom: 12px;
         }
 
-        .solution {
-            margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
+
+        .lesson h4 {
+
+            font-size: 17px;
+
+            color: var(--cyan);
+
+            margin-top: 25px;
+
+            margin-bottom: 8px;
         }
+
+
+        .lesson p {
+
+            color: var(--muted);
+
+            margin-bottom: 15px;
+        }
+
+
+        .lesson ul {
+
+            padding-left: 22px;
+
+            color: var(--muted);
+        }
+
+
+        .lesson li {
+
+            margin-bottom: 10px;
+        }
+
+
+        .lesson li::marker {
+
+            color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           DEFINITION
+        ========================================================= */
+
+        .definition {
+
+            position: relative;
+
+            margin: 24px 0;
+
+            padding: 20px 22px;
+
+            border:
+                1px solid rgba(50,181,255,0.18);
+
+            border-left:
+                3px solid var(--cyan);
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(50,181,255,0.09),
+                    rgba(50,181,255,0.025)
+                );
+
+            box-shadow:
+                inset 0 0 30px rgba(50,181,255,0.025);
+        }
+
+
+        .definition strong {
+
+            color: var(--cyan);
+
+            font-size: 13px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        .definition p {
+
+            margin:
+                7px 0 0;
+        }
+
+
+        /* =========================================================
+           FORMULA
+        ========================================================= */
+
+        .formula {
+
+            position: relative;
+
+            padding: 19px 22px;
+
+            margin: 20px 0;
+
+            border:
+                1px solid rgba(101,221,255,0.15);
+
+            border-radius: 13px;
+
+            background:
+                rgba(1,10,24,0.75);
+
+            color: #eafaff;
+
+            text-align: center;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size:
+                clamp(15px, 2.2vw, 19px);
+
+            letter-spacing: 0.5px;
+
+            box-shadow:
+                inset 0 0 25px rgba(50,181,255,0.025);
+
+            overflow: hidden;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .formula::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -100%;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(101,221,255,0.08),
+                    transparent
+                );
+
+            transition:
+                0.6s ease;
+        }
+
+
+        .formula:hover {
+
+            border-color:
+                rgba(101,221,255,0.35);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 35px rgba(50,181,255,0.08);
+        }
+
+
+        .formula:hover::before {
+
+            left: 100%;
+        }
+
+
+        /* =========================================================
+           EXAMPLE
+        ========================================================= */
+
+        .example {
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .example-title {
+
+            color: var(--cyan) !important;
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+        }
+
+
+        .solution {
+
+            margin-top: 18px;
+
+            padding: 19px;
+
+            border:
+                1px solid rgba(101,221,255,0.11);
+
+            border-radius: 11px;
+
+            background:
+                rgba(0,0,0,0.18);
+        }
+
+
+        .solution p:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           QUESTIONS
+        ========================================================= */
 
         .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
+
+            padding:
+                22px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
         }
+
+
+        .question:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .question > strong {
+
+            color: #e6f4ff;
+
+            font-size: 15px;
+
+            line-height: 1.75;
+        }
+
 
         details {
-            margin-top: 12px;
+
+            margin-top: 14px;
         }
+
 
         summary {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+
+            list-style: none;
+
+            color: var(--cyan);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            padding: 7px 0;
+
+            transition:
+                0.2s ease;
         }
+
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+        summary::before {
+
+            content: "+";
+
+            display: grid;
+
+            place-items: center;
+
+            width: 20px;
+
+            height: 20px;
+
+            border:
+                1px solid rgba(101,221,255,0.3);
+
+            border-radius: 50%;
+
+            font-size: 15px;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        details[open] summary::before {
+
+            transform:
+                rotate(45deg);
+        }
+
+
+        summary:hover {
+
+            color: white;
+        }
+
+
+        details p {
+
+            margin-top: 8px;
+
+            padding-left: 28px;
+        }
+
+
+        /* =========================================================
+           SECTION ICON
+        ========================================================= */
+
+        .section-tag {
+
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            padding: 5px 10px;
+
+            border:
+                1px solid rgba(50,181,255,0.18);
+
+            border-radius: 7px;
+
+            background:
+                rgba(50,181,255,0.05);
+
+            color: var(--cyan);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        /* =========================================================
+           QUICK EQUATION GRID
+        ========================================================= */
+
+        .equation-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .equation-grid .formula {
+
+            margin: 0;
+
+            min-height: 62px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        /* =========================================================
+           PROGRESS INDICATOR
+        ========================================================= */
+
+        .progress {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            height: 2px;
+
+            width: 0%;
+
+            z-index: 2000;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--cyan),
+                    var(--violet)
+                );
+
+            box-shadow:
+                0 0 15px rgba(101,221,255,0.8);
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        .back-top {
+
+            position: fixed;
+
+            right: 22px;
+
+            bottom: 22px;
+
+            width: 45px;
+
+            height: 45px;
+
+            border:
+                1px solid rgba(101,221,255,0.25);
+
+            border-radius: 12px;
+
+            background:
+                rgba(2,12,27,0.78);
+
+            backdrop-filter:
+                blur(15px);
+
+            color: var(--cyan);
+
+            display: grid;
+
+            place-items: center;
+
+            cursor: pointer;
+
+            font-size: 18px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(15px);
+
+            transition:
+                0.3s ease;
+
+            z-index: 1000;
+        }
+
+
+        .back-top.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .back-top:hover {
+
+            background:
+                rgba(50,181,255,0.1);
+
+            border-color:
+                rgba(101,221,255,0.5);
+
+            box-shadow:
+                var(--glow);
+        }
+
+
+        /* =========================================================
+           NAVIGATION BUTTONS
+        ========================================================= */
 
         .navigation {
+
+            width: min(1100px, 92%);
+
+            margin: auto;
+
+            padding:
+                15px 0 80px;
+
             text-align: center;
-            padding: 10px 20px 60px;
         }
+
 
         .button {
-            display: inline-block;
-            background: #32a9e8;
-            color: white;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            color: var(--soft);
+
             text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
+
+            padding:
+                13px 21px;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
             margin: 5px;
+
+            transition:
+                0.25s ease;
         }
+
 
         .button:hover {
-            background: #168dca;
+
+            color: white;
+
+            border-color:
+                var(--line-bright);
+
+            background:
+                rgba(50,181,255,0.08);
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                var(--glow);
         }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+
+            border-top:
+                1px solid var(--line);
+
+            background:
+                rgba(1,6,18,0.85);
+
+            color: #7189a3;
+
             text-align: center;
-            padding: 30px 20px;
+
+            padding:
+                35px 20px;
+
+            font-size: 12px;
         }
 
-        @media (max-width: 700px) {
 
-            .hero h1 {
-                font-size: 38px;
+        footer strong {
+
+            color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .topic-nav {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .lesson {
-                padding: 25px;
+
+                padding: 30px;
+            }
+
+            .hero {
+
+                min-height: 570px;
+            }
+
+            .hero::before {
+
+                width: 450px;
+
+                height: 450px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 0 20px;
+
+                height: 66px;
+            }
+
+
+            .logo {
+
+                font-size: 17px;
+            }
+
+
+            .header-link {
+
+                font-size: 12px;
+
+                padding: 8px 10px;
+            }
+
+
+            .hero {
+
+                min-height: 540px;
+
+                padding:
+                    90px 18px 80px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 45px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .hero-description {
+
+                font-size: 15px;
+            }
+
+
+            .topic-nav {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 8px;
+            }
+
+
+            .topic-nav a {
+
+                padding: 13px 7px;
+
+                font-size: 11px;
+            }
+
+
+            .container {
+
+                width: 94%;
+
+                padding-top: 55px;
+            }
+
+
+            .lesson {
+
+                padding: 24px 19px;
+
+                border-radius: 17px;
+            }
+
+
+            .lesson h2 {
+
+                font-size: 25px;
+            }
+
+
+            .lesson h3 {
+
+                font-size: 19px;
+            }
+
+
+            .formula {
+
+                padding: 16px 10px;
+
+                overflow-x: auto;
+
+                font-size: 13px;
+
+                white-space: nowrap;
+            }
+
+
+            .equation-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .example {
+
+                padding: 19px;
+            }
+
+
+            .back-top {
+
+                right: 15px;
+
+                bottom: 15px;
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
             }
 
         }
@@ -244,8 +1839,31 @@
 
 </head>
 
+
 <body>
 
+
+<!-- =========================================================
+     VISUAL BACKGROUND
+========================================================= -->
+
+<div class="grid-background"></div>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+
+<!-- =========================================================
+     SCROLL PROGRESS
+========================================================= -->
+
+<div class="progress" id="progress"></div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
 
@@ -253,58 +1871,138 @@
         IAL ATLAS
     </a>
 
-    <a href="physics.html">
+    <a href="physics.html" class="header-link">
         ← Physics
     </a>
 
 </header>
 
 
-<section class="hero">
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-    <p class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 4
-    </p>
+<section class="hero" id="top">
 
-    <h1>
-        Physics <span>Unit 4</span>
-    </h1>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
 
-    <p>
-        Further mechanics, electric and magnetic fields,
-        nuclear and particle physics.
-    </p>
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            EDEXCEL INTERNATIONAL A LEVEL PHYSICS • UNIT 4
+        </div>
+
+
+        <h1>
+            Physics <span>Unit 4</span>
+        </h1>
+
+
+        <p class="hero-description">
+
+            Further mechanics, electric and magnetic fields,
+            nuclear and particle physics — with practical skills,
+            worked examples and exam-focused practice.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#mechanics"
+                class="hero-button primary"
+            >
+                Explore Unit 4 ↓
+            </a>
+
+
+            <a
+                href="#equations"
+                class="hero-button secondary"
+            >
+                Key equations
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
 <main class="container">
 
 
-    <!-- FURTHER MECHANICS -->
+    <!-- =====================================================
+         TOPIC NAVIGATION
+    ====================================================== -->
 
-    <section class="lesson">
+    <nav class="topic-nav">
 
-        <p class="lesson-number">TOPIC 01</p>
+        <a href="#mechanics">
+            01 · Mechanics
+        </a>
 
-        <h2>Further Mechanics</h2>
+        <a href="#fields">
+            02 · Fields
+        </a>
+
+        <a href="#particles">
+            03 · Particles
+        </a>
+
+        <a href="#practicals">
+            04 · Practicals
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         TOPIC 01
+    ====================================================== -->
+
+    <section class="lesson reveal" id="mechanics">
+
+        <p class="lesson-number">
+            TOPIC 01
+        </p>
+
+        <h2>
+            Further Mechanics
+        </h2>
 
         <p>
-            Unit 4 extends mechanics into impulse, two-dimensional
-            momentum and circular motion.
+            Unit 4 extends mechanics into impulse,
+            two-dimensional momentum and circular motion.
         </p>
 
 
-        <h3>Impulse and Change of Momentum</h3>
+        <h3>
+            Impulse and Change of Momentum
+        </h3>
 
         <p>
             Impulse is the product of force and the time for which
             the force acts. It is equal to the change in momentum.
         </p>
 
+
         <div class="formula">
             Impulse = FΔt = Δp
         </div>
+
 
         <p>
             A large force acting for a short time can therefore
@@ -313,31 +2011,40 @@
         </p>
 
 
-        <h3>Conservation of Momentum in Two Dimensions</h3>
+        <h3>
+            Conservation of Momentum in Two Dimensions
+        </h3>
 
         <p>
             In an isolated system, the total momentum before an
             interaction equals the total momentum after the interaction.
         </p>
 
+
         <div class="definition">
 
-            <strong>Key idea:</strong>
+            <strong>
+                Key idea
+            </strong>
 
             <p>
                 Momentum is a vector, so horizontal and vertical
-                components must be considered separately in two-dimensional
-                collisions.
+                components must be considered separately in
+                two-dimensional collisions.
             </p>
 
         </div>
 
-        <h3>Elastic and Inelastic Collisions</h3>
+
+        <h3>
+            Elastic and Inelastic Collisions
+        </h3>
 
         <p>
             Momentum is conserved in both elastic and inelastic
             collisions when external resultant forces are negligible.
         </p>
+
 
         <ul>
 
@@ -352,46 +2059,58 @@
         </ul>
 
 
-        <h3>Kinetic Energy and Momentum</h3>
+        <h3>
+            Kinetic Energy and Momentum
+        </h3>
 
         <p>
             For a non-relativistic particle, kinetic energy can be
             expressed in terms of momentum.
         </p>
 
+
         <div class="formula">
             E<sub>k</sub> = p² / 2m
         </div>
 
 
-        <h3>Angular Displacement</h3>
+        <h3>
+            Angular Displacement
+        </h3>
 
         <p>
             Angular displacement may be measured in radians or degrees.
         </p>
+
 
         <div class="formula">
             2π radians = 360°
         </div>
 
 
-        <h3>Angular Velocity</h3>
+        <h3>
+            Angular Velocity
+        </h3>
 
         <p>
             Angular velocity describes the rate at which angular
             displacement changes.
         </p>
 
+
         <div class="formula">
             v = ωr
         </div>
+
 
         <div class="formula">
             ω = 2π / T
         </div>
 
 
-        <h3>Centripetal Acceleration</h3>
+        <h3>
+            Centripetal Acceleration
+        </h3>
 
         <p>
             An object moving in a circle at constant speed is
@@ -399,30 +2118,37 @@
             an acceleration directed towards the centre of the circle.
         </p>
 
+
         <div class="formula">
             a = v² / r = rω²
         </div>
 
 
-        <h3>Centripetal Force</h3>
+        <h3>
+            Centripetal Force
+        </h3>
 
         <p>
             The resultant force directed towards the centre of the
             circular path is called the centripetal force.
         </p>
 
+
         <div class="formula">
             F = mv² / r = mrω²
         </div>
 
+
         <div class="definition">
 
-            <strong>Important:</strong>
+            <strong>
+                Important
+            </strong>
 
             <p>
-                Centripetal force is not a new type of force. It is the
-                name given to the resultant force acting towards the
-                centre of circular motion.
+                Centripetal force is not a new type of force.
+                It is the name given to the resultant force acting
+                towards the centre of circular motion.
             </p>
 
         </div>
@@ -439,6 +2165,7 @@
                 0.50 m at a speed of 4.0 m s⁻¹. Find the centripetal force.
             </p>
 
+
             <div class="solution">
 
                 <p>
@@ -450,7 +2177,9 @@
                 </p>
 
                 <p>
-                    <strong>F = 64 N</strong>
+                    <strong>
+                        F = 64 N
+                    </strong>
                 </p>
 
             </div>
@@ -460,21 +2189,29 @@
     </section>
 
 
-    <!-- ELECTRIC FIELDS -->
+    <!-- =====================================================
+         TOPIC 02
+    ====================================================== -->
 
-    <section class="lesson">
+    <section class="lesson reveal" id="fields">
 
-        <p class="lesson-number">TOPIC 02</p>
+        <p class="lesson-number">
+            TOPIC 02
+        </p>
 
-        <h2>Electric Fields</h2>
+        <h2>
+            Electric & Magnetic Fields
+        </h2>
 
         <p>
-            Electric fields describe the forces experienced by
-            charged particles.
+            Electric and magnetic fields describe interactions between
+            charged particles, conductors and electromagnetic systems.
         </p>
 
 
-        <h3>Electric Field</h3>
+        <h3>
+            Electric Field
+        </h3>
 
         <p>
             An electric field is a region in which a charged particle
@@ -482,26 +2219,34 @@
         </p>
 
 
-        <h3>Electric Field Strength</h3>
+        <h3>
+            Electric Field Strength
+        </h3>
+
 
         <div class="formula">
             E = F / Q
         </div>
+
 
         <p>
             Electric field strength is measured in N C⁻¹.
         </p>
 
 
-        <h3>Force Between Two Point Charges</h3>
+        <h3>
+            Force Between Two Point Charges
+        </h3>
 
         <p>
             Coulomb's law describes the force between two point charges.
         </p>
 
+
         <div class="formula">
             F = Q₁Q₂ / (4πε₀r²)
         </div>
+
 
         <p>
             The force is attractive for opposite charges and repulsive
@@ -509,14 +2254,19 @@
         </p>
 
 
-        <h3>Electric Field of a Point Charge</h3>
+        <h3>
+            Electric Field of a Point Charge
+        </h3>
+
 
         <div class="formula">
             E = Q / (4πε₀r²)
         </div>
 
 
-        <h3>Electric Potential</h3>
+        <h3>
+            Electric Potential
+        </h3>
 
         <p>
             Electric potential is the work done per unit charge in
@@ -528,20 +2278,26 @@
             of electric potential with distance.
         </p>
 
+
         <div class="formula">
             E = ΔV / d
         </div>
 
+
         <p>
             For a radial electric field:
         </p>
+
 
         <div class="formula">
             V = Q / (4πε₀r)
         </div>
 
 
-        <h3>Electric Field Lines and Equipotentials</h3>
+        <h3>
+            Electric Field Lines and Equipotentials
+        </h3>
+
 
         <ul>
 
@@ -555,92 +2311,116 @@
             </li>
 
             <li>
-                Equipotential lines represent points of equal electric
-                potential.
+                Equipotential lines represent points of equal
+                electric potential.
             </li>
 
             <li>
-                Electric field lines are perpendicular to equipotential
-                lines.
+                Electric field lines are perpendicular to
+                equipotential lines.
             </li>
 
         </ul>
 
 
-        <h3>Capacitance</h3>
+        <h3>
+            Capacitance
+        </h3>
 
         <p>
             Capacitance is the charge stored per unit potential difference.
         </p>
+
 
         <div class="formula">
             C = Q / V
         </div>
 
 
-        <h3>Energy Stored in a Capacitor</h3>
+        <h3>
+            Energy Stored in a Capacitor
+        </h3>
+
 
         <div class="formula">
             W = ½QV
         </div>
 
+
         <div class="formula">
             W = ½CV²
         </div>
+
 
         <div class="formula">
             W = Q² / 2C
         </div>
 
 
-        <h3>Charging and Discharging Capacitors</h3>
+        <h3>
+            Charging and Discharging Capacitors
+        </h3>
 
         <p>
             A resistor-capacitor circuit has a time constant given by:
         </p>
 
+
         <div class="formula">
             τ = RC
         </div>
+
 
         <p>
             During discharge, charge, current and potential difference
             decrease exponentially.
         </p>
 
+
         <div class="formula">
             Q = Q₀e<sup>−t/RC</sup>
         </div>
 
+
         <div class="formula">
             I = I₀e<sup>−t/RC</sup>
         </div>
+
 
         <div class="formula">
             V = V₀e<sup>−t/RC</sup>
         </div>
 
 
-        <h3>Magnetic Flux Density</h3>
+        <h3>
+            Magnetic Flux Density
+        </h3>
 
         <p>
             Magnetic flux density describes the strength of a magnetic
             field.
         </p>
 
-        <h3>Magnetic Flux</h3>
+
+        <h3>
+            Magnetic Flux
+        </h3>
 
         <p>
-            Magnetic flux is represented by φ, while flux linkage is
-            represented by Nφ.
+            Magnetic flux is represented by φ, while flux linkage
+            is represented by Nφ.
         </p>
 
 
-        <h3>Force on a Moving Charge</h3>
+        <h3>
+            Force on a Moving Charge
+        </h3>
+
 
         <div class="formula">
             F = BQv sin θ
         </div>
+
 
         <p>
             The direction of the force can be determined using
@@ -648,27 +2428,35 @@
         </p>
 
 
-        <h3>Force on a Current-Carrying Conductor</h3>
+        <h3>
+            Force on a Current-Carrying Conductor
+        </h3>
+
 
         <div class="formula">
             F = BIl sin θ
         </div>
 
 
-        <h3>Electromagnetic Induction</h3>
+        <h3>
+            Electromagnetic Induction
+        </h3>
 
         <p>
-            An electromotive force can be induced when there is a change
-            in magnetic flux linkage.
+            An electromotive force can be induced when there is a
+            change in magnetic flux linkage.
         </p>
+
 
         <p>
             Faraday's law and Lenz's law give:
         </p>
 
+
         <div class="formula">
             E = −N dφ/dt
         </div>
+
 
         <p>
             The negative sign represents Lenz's law: the induced effect
@@ -678,13 +2466,19 @@
     </section>
 
 
-    <!-- NUCLEAR AND PARTICLE PHYSICS -->
+    <!-- =====================================================
+         TOPIC 03
+    ====================================================== -->
 
-    <section class="lesson">
+    <section class="lesson reveal" id="particles">
 
-        <p class="lesson-number">TOPIC 03</p>
+        <p class="lesson-number">
+            TOPIC 03
+        </p>
 
-        <h2>Nuclear and Particle Physics</h2>
+        <h2>
+            Nuclear & Particle Physics
+        </h2>
 
         <p>
             This section explores atomic structure, particle accelerators,
@@ -693,7 +2487,9 @@
         </p>
 
 
-        <h3>Nucleon Number and Proton Number</h3>
+        <h3>
+            Nucleon Number and Proton Number
+        </h3>
 
         <p>
             The proton number is the number of protons in a nucleus.
@@ -701,12 +2497,15 @@
             neutrons.
         </p>
 
+
         <div class="formula">
             Nucleon number = protons + neutrons
         </div>
 
 
-        <h3>Alpha Scattering and the Nuclear Model</h3>
+        <h3>
+            Alpha Scattering and the Nuclear Model
+        </h3>
 
         <p>
             Large-angle alpha-particle scattering provided evidence
@@ -720,11 +2519,13 @@
         </p>
 
 
-        <h3>Thermionic Emission</h3>
+        <h3>
+            Thermionic Emission
+        </h3>
 
         <p>
-            Thermionic emission is the release of electrons from a
-            heated material.
+            Thermionic emission is the release of electrons from
+            a heated material.
         </p>
 
         <p>
@@ -733,22 +2534,30 @@
         </p>
 
 
-        <h3>Particle Accelerators</h3>
+        <h3>
+            Particle Accelerators
+        </h3>
 
         <p>
-            Particle accelerators use electric fields to increase the
-            energy of charged particles and magnetic fields to control
-            their paths.
+            Particle accelerators use electric fields to increase
+            the energy of charged particles and magnetic fields to
+            control their paths.
         </p>
 
-        <h4>Linear Accelerators</h4>
+
+        <h4>
+            Linear Accelerators
+        </h4>
 
         <p>
             In a linear accelerator, particles are accelerated through
             a series of electric fields along a straight path.
         </p>
 
-        <h4>Cyclotrons</h4>
+
+        <h4>
+            Cyclotrons
+        </h4>
 
         <p>
             A cyclotron uses alternating electric fields for acceleration
@@ -756,89 +2565,121 @@
         </p>
 
 
-        <h3>Charged Particles in Magnetic Fields</h3>
+        <h3>
+            Charged Particles in Magnetic Fields
+        </h3>
 
         <p>
             A charged particle moving perpendicular to a magnetic field
             experiences a force that can produce circular motion.
         </p>
 
+
         <div class="formula">
             p = BQr
         </div>
 
+
         <p>
             Therefore:
         </p>
+
 
         <div class="formula">
             r = p / BQ
         </div>
 
 
-        <h3>Particle Detectors</h3>
+        <h3>
+            Particle Detectors
+        </h3>
 
         <p>
-            Particle detectors provide evidence about the properties and
-            interactions of high-energy particles.
+            Particle detectors provide evidence about the properties
+            and interactions of high-energy particles.
         </p>
 
         <p>
-            Ionisation and deflection in magnetic fields can be used to
-            identify and study charged particles.
+            Ionisation and deflection in magnetic fields can be used
+            to identify and study charged particles.
         </p>
 
 
-        <h3>Conservation Laws</h3>
+        <h3>
+            Conservation Laws
+        </h3>
 
         <p>
             Particle interactions must obey conservation laws.
         </p>
 
+
         <ul>
 
-            <li>Conservation of charge</li>
+            <li>
+                Conservation of charge
+            </li>
 
-            <li>Conservation of energy</li>
+            <li>
+                Conservation of energy
+            </li>
 
-            <li>Conservation of momentum</li>
+            <li>
+                Conservation of momentum
+            </li>
 
-            <li>Conservation of baryon number</li>
+            <li>
+                Conservation of baryon number
+            </li>
 
-            <li>Conservation of lepton number</li>
+            <li>
+                Conservation of lepton number
+            </li>
 
         </ul>
 
 
-        <h3>Mass-Energy Equivalence</h3>
+        <h3>
+            Mass-Energy Equivalence
+        </h3>
 
         <p>
             Matter and antimatter can be created or annihilated when
             the relevant conservation laws are satisfied.
         </p>
 
+
         <div class="formula">
             ΔE = Δmc²
         </div>
 
 
-        <h3>Particle Energy and Mass Units</h3>
+        <h3>
+            Particle Energy and Mass Units
+        </h3>
 
         <p>
             Particle physics commonly uses MeV and GeV for energy and
             MeV/c² and GeV/c² for mass.
         </p>
 
+
         <ul>
 
-            <li>1 GeV = 1000 MeV</li>
+            <li>
+                1 GeV = 1000 MeV
+            </li>
 
-            <li>1 MeV = 10⁶ eV</li>
+            <li>
+                1 MeV = 10⁶ eV
+            </li>
 
         </ul>
 
 
-        <h3>Relativistic Particle Lifetime</h3>
+        <h3>
+            Relativistic Particle Lifetime
+        </h3>
 
         <p>
             Fast-moving unstable particles can have significantly longer
@@ -847,37 +2688,39 @@
         </p>
 
 
-        <h3>The Standard Quark-Lepton Model</h3>
+        <h3>
+            The Standard Quark-Lepton Model
+        </h3>
 
         <p>
             The Standard Model classifies particles into several groups.
         </p>
 
 
-        <h4>Quarks</h4>
+        <h4>
+            Quarks
+        </h4>
 
         <p>
             The six quarks are:
         </p>
 
+
         <ul>
 
             <li>Up</li>
-
             <li>Down</li>
-
             <li>Strange</li>
-
             <li>Charm</li>
-
             <li>Top</li>
-
             <li>Bottom</li>
 
         </ul>
 
 
-        <h4>Baryons</h4>
+        <h4>
+            Baryons
+        </h4>
 
         <p>
             Baryons are made from three quarks. Protons and neutrons
@@ -885,7 +2728,9 @@
         </p>
 
 
-        <h4>Mesons</h4>
+        <h4>
+            Mesons
+        </h4>
 
         <p>
             Mesons are made from a quark and an antiquark.
@@ -893,7 +2738,9 @@
         </p>
 
 
-        <h4>Leptons</h4>
+        <h4>
+            Leptons
+        </h4>
 
         <p>
             Leptons are fundamental particles. Examples include
@@ -901,7 +2748,9 @@
         </p>
 
 
-        <h4>Photons</h4>
+        <h4>
+            Photons
+        </h4>
 
         <p>
             Photons are fundamental particles associated with the
@@ -909,7 +2758,9 @@
         </p>
 
 
-        <h3>Antiparticles</h3>
+        <h3>
+            Antiparticles
+        </h3>
 
         <p>
             Every particle has a corresponding antiparticle.
@@ -918,16 +2769,21 @@
         </p>
 
 
-        <h3>Particle Equations</h3>
+        <h3>
+            Particle Equations
+        </h3>
 
         <p>
             Particle equations can be tested by applying conservation
             laws to both sides of an interaction.
         </p>
 
+
         <div class="definition">
 
-            <strong>Exam technique:</strong>
+            <strong>
+                Exam technique
+            </strong>
 
             <p>
                 When checking whether an interaction is possible,
@@ -940,35 +2796,50 @@
     </section>
 
 
-    <!-- CORE PRACTICALS -->
+    <!-- =====================================================
+         PRACTICALS
+    ====================================================== -->
 
-    <section class="lesson">
+    <section class="lesson reveal" id="practicals">
 
-        <p class="lesson-number">PRACTICAL SKILLS</p>
+        <p class="lesson-number">
+            PRACTICAL SKILLS
+        </p>
 
-        <h2>Unit 4 Practical Work</h2>
+        <h2>
+            Unit 4 Practical Work
+        </h2>
 
         <p>
             Practical knowledge is important because Unit 4 examination
-            questions can assess understanding developed through practical
-            activities.
+            questions can assess understanding developed through
+            practical activities.
         </p>
 
-        <h3>Core Practical 9</h3>
+
+        <h3>
+            Core Practical 9
+        </h3>
 
         <p>
-            Investigate the relationship between the force exerted on
-            an object and its change of momentum.
+            Investigate the relationship between the force exerted
+            on an object and its change of momentum.
         </p>
 
-        <h3>Core Practical 10</h3>
+
+        <h3>
+            Core Practical 10
+        </h3>
 
         <p>
             Use ICT to analyse collisions between small spheres,
             such as ball bearings on a table.
         </p>
 
-        <h3>Core Practical 11</h3>
+
+        <h3>
+            Core Practical 11
+        </h3>
 
         <p>
             Use an oscilloscope or data logger to display and analyse
@@ -976,9 +2847,12 @@
             and discharges through a resistor.
         </p>
 
+
         <div class="definition">
 
-            <strong>Practical focus:</strong>
+            <strong>
+                Practical focus
+            </strong>
 
             <p>
                 Be prepared to discuss variables, apparatus, measurements,
@@ -991,13 +2865,19 @@
     </section>
 
 
-    <!-- MIXED PRACTICE -->
+    <!-- =====================================================
+         MIXED PRACTICE
+    ====================================================== -->
 
-    <section class="lesson">
+    <section class="lesson reveal" id="practice">
 
-        <p class="lesson-number">PRACTICE</p>
+        <p class="lesson-number">
+            PRACTICE
+        </p>
 
-        <h2>Unit 4 Mixed Practice</h2>
+        <h2>
+            Unit 4 Mixed Practice
+        </h2>
 
 
         <div class="question">
@@ -1008,9 +2888,12 @@
                 of the average force acting on the ball.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     Take east as positive.
@@ -1021,15 +2904,19 @@
                 </p>
 
                 <p>
-                    Δp = 0.50(−4.0 − 8.0) = −6.0 kg m s⁻¹
+                    Δp = 0.50(−4.0 − 8.0)
+                    = −6.0 kg m s⁻¹
                 </p>
 
                 <p>
-                    F = Δp / Δt = −6.0 / 0.20
+                    F = Δp / Δt
+                    = −6.0 / 0.20
                 </p>
 
                 <p>
-                    <strong>Magnitude = 30 N</strong>
+                    <strong>
+                        Magnitude = 30 N
+                    </strong>
                 </p>
 
             </details>
@@ -1044,9 +2931,12 @@
                 radius 50 m at 10 m s⁻¹. Calculate the centripetal force.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     F = mv² / r
@@ -1057,7 +2947,9 @@
                 </p>
 
                 <p>
-                    <strong>F = 2400 N</strong>
+                    <strong>
+                        F = 2400 N
+                    </strong>
                 </p>
 
             </details>
@@ -1074,9 +2966,12 @@
                 to point charge.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     E = Q / (4πε₀r²)
@@ -1094,9 +2989,12 @@
                 to 12 V. Calculate the energy stored.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     W = ½CV²
@@ -1107,7 +3005,9 @@
                 </p>
 
                 <p>
-                    <strong>W = 0.0158 J</strong>
+                    <strong>
+                        W = 0.0158 J
+                    </strong>
                 </p>
 
             </details>
@@ -1123,20 +3023,25 @@
                 for the magnetic force.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     F = BQv sin θ
                 </p>
 
                 <p>
-                    Since θ = 90°, sin θ = 1, so:
+                    Since θ = 90°, sin θ = 1:
                 </p>
 
                 <p>
-                    <strong>F = BQv</strong>
+                    <strong>
+                        F = BQv
+                    </strong>
                 </p>
 
             </details>
@@ -1151,9 +3056,12 @@
                 to a uniform magnetic field can follow a circular path.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     The magnetic force acts perpendicular to the particle's
@@ -1175,9 +3083,12 @@
                 evidence for a small, dense nucleus.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     Most alpha particles passed through the atom with
@@ -1198,9 +3109,12 @@
                 8. State the quark composition of a proton and a neutron.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     Proton = uud
@@ -1222,9 +3136,12 @@
                 whether a particle interaction is possible.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     The relevant quantities must have the same total value
@@ -1247,9 +3164,12 @@
                 is 1.60 × 10⁻¹⁹ C. Calculate the radius of its path.
             </strong>
 
+
             <details>
 
-                <summary>Show answer</summary>
+                <summary>
+                    Show answer
+                </summary>
 
                 <p>
                     p = BQr
@@ -1266,87 +3186,99 @@
                 </p>
 
                 <p>
-                    <strong>r = 0.375 m</strong>
+                    <strong>
+                        r = 0.375 m
+                    </strong>
                 </p>
 
             </details>
 
         </div>
 
-
     </section>
 
 
-    <!-- QUICK REVIEW -->
+    <!-- =====================================================
+         QUICK REVIEW
+    ====================================================== -->
 
-    <section class="lesson">
+    <section class="lesson reveal" id="equations">
 
-        <p class="lesson-number">QUICK REVIEW</p>
+        <p class="lesson-number">
+            QUICK REVIEW
+        </p>
 
-        <h2>Unit 4 Key Equations</h2>
+        <h2>
+            Unit 4 Key Equations
+        </h2>
 
-        <div class="formula">
-            Impulse = FΔt = Δp
-        </div>
 
-        <div class="formula">
-            E<sub>k</sub> = p² / 2m
-        </div>
+        <div class="equation-grid">
 
-        <div class="formula">
-            v = ωr
-        </div>
+            <div class="formula">
+                Impulse = FΔt = Δp
+            </div>
 
-        <div class="formula">
-            a = v² / r = rω²
-        </div>
+            <div class="formula">
+                E<sub>k</sub> = p² / 2m
+            </div>
 
-        <div class="formula">
-            F = mv² / r = mrω²
-        </div>
+            <div class="formula">
+                v = ωr
+            </div>
 
-        <div class="formula">
-            E = F / Q
-        </div>
+            <div class="formula">
+                a = v² / r = rω²
+            </div>
 
-        <div class="formula">
-            F = Q₁Q₂ / (4πε₀r²)
-        </div>
+            <div class="formula">
+                F = mv² / r = mrω²
+            </div>
 
-        <div class="formula">
-            E = Q / (4πε₀r²)
-        </div>
+            <div class="formula">
+                E = F / Q
+            </div>
 
-        <div class="formula">
-            C = Q / V
-        </div>
+            <div class="formula">
+                F = Q₁Q₂ / (4πε₀r²)
+            </div>
 
-        <div class="formula">
-            W = ½CV²
-        </div>
+            <div class="formula">
+                E = Q / (4πε₀r²)
+            </div>
 
-        <div class="formula">
-            τ = RC
-        </div>
+            <div class="formula">
+                C = Q / V
+            </div>
 
-        <div class="formula">
-            F = BQv sin θ
-        </div>
+            <div class="formula">
+                W = ½CV²
+            </div>
 
-        <div class="formula">
-            F = BIl sin θ
-        </div>
+            <div class="formula">
+                τ = RC
+            </div>
 
-        <div class="formula">
-            E = −N dφ/dt
-        </div>
+            <div class="formula">
+                F = BQv sin θ
+            </div>
 
-        <div class="formula">
-            p = BQr
-        </div>
+            <div class="formula">
+                F = BIl sin θ
+            </div>
 
-        <div class="formula">
-            ΔE = Δmc²
+            <div class="formula">
+                E = −N dφ/dt
+            </div>
+
+            <div class="formula">
+                p = BQr
+            </div>
+
+            <div class="formula">
+                ΔE = Δmc²
+            </div>
+
         </div>
 
     </section>
@@ -1355,26 +3287,286 @@
 </main>
 
 
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <div class="navigation">
 
-    <a href="physics.html" class="button">
+    <a
+        href="physics.html"
+        class="button"
+    >
         ← Back to Physics
     </a>
 
-    <a href="index.html" class="button">
-        Home
+
+    <a
+        href="index.html"
+        class="button"
+    >
+        ⌂ Home
     </a>
 
 </div>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    <p>
+        <strong>IAL ATLAS</strong>
+        • Edexcel International A Level Resources
+    </p>
+
+    <p>
+        © 2026 IAL ATLAS • Independent student resource •
+        Not affiliated with Pearson
+    </p>
 
 </footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.08
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* =========================================================
+       PROGRESS BAR
+    ========================================================= */
+
+    const progress =
+        document.getElementById("progress");
+
+
+    function updateProgress() {
+
+        const scrollTop =
+            window.scrollY;
+
+        const height =
+            document.documentElement.scrollHeight
+            - window.innerHeight;
+
+        const percentage =
+            height > 0
+                ? (scrollTop / height) * 100
+                : 0;
+
+        progress.style.width =
+            percentage + "%";
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateProgress,
+        { passive: true }
+    );
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const backTop =
+        document.getElementById("backTop");
+
+
+    window.addEventListener(
+
+        "scroll",
+
+        () => {
+
+            if (window.scrollY > 600) {
+
+                backTop.classList.add("show");
+
+            } else {
+
+                backTop.classList.remove("show");
+
+            }
+
+        },
+
+        { passive: true }
+
+    );
+
+
+    backTop.addEventListener(
+
+        "click",
+
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    );
+
+
+    /* =========================================================
+       FORMULA INTERACTION
+    ========================================================= */
+
+    document
+        .querySelectorAll(".formula")
+        .forEach(formula => {
+
+            formula.addEventListener(
+
+                "click",
+
+                () => {
+
+                    formula.animate(
+
+                        [
+
+                            {
+                                transform:
+                                    "scale(1)"
+                            },
+
+                            {
+                                transform:
+                                    "scale(1.015)"
+                            },
+
+                            {
+                                transform:
+                                    "scale(1)"
+                            }
+
+                        ],
+
+                        {
+
+                            duration: 260,
+
+                            easing:
+                                "ease-out"
+
+                        }
+
+                    );
+
+                }
+
+            );
+
+        });
+
+
+    /* =========================================================
+       HEADER SHADOW
+    ========================================================= */
+
+    const header =
+        document.querySelector("header");
+
+
+    window.addEventListener(
+
+        "scroll",
+
+        () => {
+
+            if (window.scrollY > 20) {
+
+                header.style.boxShadow =
+                    "0 12px 45px rgba(0,0,0,0.35)";
+
+            } else {
+
+                header.style.boxShadow =
+                    "0 10px 40px rgba(0,0,0,0.18)";
+
+            }
+
+        },
+
+        { passive: true }
+
+    );
+
+
+</script>
 
 
 </body>
 
 </html>
+
