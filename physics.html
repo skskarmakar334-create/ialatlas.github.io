@@ -6,29 +6,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Edexcel IAL Physics | IAL ATLAS</title>
+<title>Edexcel IAL Physics | IAL ATLAS Research Environment</title>
 
 <meta name="description"
-content="Explore Edexcel International A Level Physics through the IAL ATLAS futuristic learning system. Access Units 1–6, concepts, equations, practical skills and exam-focused resources.">
+content="Explore Edexcel International A Level Physics through IAL ATLAS — an advanced research-style learning environment covering Units 1–6, theory, experiments, equations, simulations and scientific analysis.">
 
 <meta name="keywords"
-content="Edexcel IAL Physics, Edexcel International A Level Physics, IAL Physics notes, Edexcel Physics revision, International A Level Physics">
+content="Edexcel IAL Physics, Edexcel International A Level Physics, IAL Physics notes, Edexcel Physics revision, International A Level Physics, Physics Unit 1, Physics Unit 2, Physics Unit 3, Physics Unit 4, Physics Unit 5, Physics Unit 6">
 
 <meta name="author" content="Shuvojit Karmakar">
 
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="googlebot" content="index, follow">
 
-<meta name="theme-color" content="#020711">
+<meta name="theme-color" content="#05070a">
 
 <link rel="canonical"
 href="https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html">
 
 <meta property="og:title"
-content="Edexcel IAL Physics | IAL ATLAS">
+content="Edexcel IAL Physics | IAL ATLAS Research Environment">
 
 <meta property="og:description"
-content="Explore Edexcel International A Level Physics Units 1–6 with IAL ATLAS.">
+content="An advanced research-style learning environment for Edexcel International A Level Physics. Explore Units 1–6, experiments, equations, simulations and scientific analysis.">
 
 <meta property="og:type" content="website">
 
@@ -39,7 +39,7 @@ content="https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html
 content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
 
 <meta property="og:image:alt"
-content="IAL ATLAS logo">
+content="IAL ATLAS Physics Research Environment">
 
 <meta property="og:site_name"
 content="IAL ATLAS">
@@ -47,14 +47,13 @@ content="IAL ATLAS">
 <meta property="og:locale"
 content="en_US">
 
-<meta name="twitter:card"
-content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">
 
 <meta name="twitter:title"
 content="Edexcel IAL Physics | IAL ATLAS">
 
 <meta name="twitter:description"
-content="Edexcel International A Level Physics Units 1–6.">
+content="Advanced Edexcel International A Level Physics learning environment covering Units 1–6.">
 
 <meta name="twitter:image"
 content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
@@ -66,7 +65,7 @@ content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
     "@type": "CollectionPage",
     "name": "Edexcel IAL Physics",
     "url": "https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html",
-    "description": "Edexcel International A Level Physics notes and revision resources covering Units 1–6.",
+    "description": "Edexcel International A Level Physics notes and learning resources covering Units 1–6.",
     "isPartOf": {
         "@type": "WebSite",
         "name": "IAL ATLAS",
@@ -89,7 +88,37 @@ content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
 
 /* =========================================================
    IAL ATLAS
-   PHYSICS // LIVING KNOWLEDGE SYSTEM
+   PHYSICS RESEARCH ENVIRONMENT
+   VERSION 3.0
+========================================================= */
+
+:root {
+
+    --bg: #05070a;
+    --bg-2: #080d12;
+    --panel: rgba(10,16,21,.82);
+    --panel-soft: rgba(14,22,28,.68);
+
+    --line: rgba(160,190,205,.13);
+    --line-bright: rgba(115,225,255,.34);
+
+    --cyan: #72e7ff;
+    --cyan-soft: rgba(114,231,255,.15);
+
+    --green: #72f2ad;
+    --amber: #ffc85c;
+    --violet: #a99cff;
+
+    --text: #edf8fc;
+    --muted: #8297a2;
+    --dim: #50616b;
+
+    --max: 1320px;
+}
+
+
+/* =========================================================
+   RESET
 ========================================================= */
 
 * {
@@ -104,43 +133,45 @@ html {
 
 body {
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    min-height: 100vh;
 
     background:
         radial-gradient(
-            circle at 50% 0%,
-            rgba(0, 190, 255, 0.14),
-            transparent 32%
+            circle at 50% -10%,
+            rgba(80,205,255,.11),
+            transparent 30%
         ),
         radial-gradient(
-            circle at 15% 45%,
-            rgba(0, 110, 255, 0.09),
+            circle at 0% 55%,
+            rgba(82,120,255,.055),
             transparent 28%
         ),
         radial-gradient(
-            circle at 85% 70%,
-            rgba(0, 220, 255, 0.055),
-            transparent 30%
+            circle at 100% 75%,
+            rgba(112,255,190,.035),
+            transparent 25%
         ),
-        #020711;
+        var(--bg);
 
-    color: #eaf7ff;
+    color: var(--text);
 
-    min-height: 100vh;
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
     line-height: 1.6;
 
     overflow-x: hidden;
-
-    cursor: default;
 }
 
 
 /* =========================================================
-   MOVING GRID
+   TECHNICAL GRID
 ========================================================= */
 
 body::before {
@@ -157,43 +188,43 @@ body::before {
 
     background-image:
         linear-gradient(
-            rgba(0, 200, 255, 0.035) 1px,
+            rgba(130,210,235,.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(0, 200, 255, 0.035) 1px,
+            rgba(130,210,235,.025) 1px,
             transparent 1px
         );
 
-    background-size: 50px 50px;
-
-    animation:
-        gridMove 18s linear infinite;
+    background-size: 42px 42px;
 
     mask-image:
         linear-gradient(
             to bottom,
-            black 0%,
-            rgba(0,0,0,.7) 55%,
-            transparent 100%
+            black,
+            rgba(0,0,0,.7) 60%,
+            transparent
         );
+
+    animation:
+        gridDrift 24s linear infinite;
 }
 
-@keyframes gridMove {
+@keyframes gridDrift {
 
     from {
-        transform: translate3d(0,0,0);
+        transform: translate(0,0);
     }
 
     to {
-        transform: translate3d(50px,50px,0);
+        transform: translate(42px,42px);
     }
 }
 
 
 /* =========================================================
-   SCANLINE
+   SCAN LINE
 ========================================================= */
 
 body::after {
@@ -202,46 +233,46 @@ body::after {
 
     position: fixed;
 
+    top: -10px;
+
     left: 0;
 
-    right: 0;
+    width: 100%;
 
-    height: 2px;
+    height: 1px;
 
-    top: -5px;
+    z-index: 9999;
+
+    pointer-events: none;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(0,217,255,.35),
+            rgba(114,231,255,.55),
             transparent
         );
 
     box-shadow:
-        0 0 15px rgba(0,217,255,.25);
-
-    pointer-events: none;
-
-    z-index: 999;
+        0 0 15px rgba(114,231,255,.45);
 
     animation:
-        scan 9s linear infinite;
+        scanner 11s linear infinite;
 }
 
-@keyframes scan {
+@keyframes scanner {
 
     0% {
-        top: -5px;
+        top: -10px;
         opacity: 0;
     }
 
-    8% {
+    10% {
         opacity: .8;
     }
 
     50% {
-        opacity: .4;
+        opacity: .35;
     }
 
     100% {
@@ -252,10 +283,43 @@ body::after {
 
 
 /* =========================================================
-   FLOATING PARTICLES
+   CURSOR FIELD
 ========================================================= */
 
-.particles {
+.cursor-field {
+
+    position: fixed;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(114,231,255,.055),
+            transparent 67%
+        );
+
+    transition:
+        opacity .3s ease;
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle-field {
 
     position: fixed;
 
@@ -265,7 +329,7 @@ body::after {
 
     pointer-events: none;
 
-    z-index: 0;
+    z-index: 1;
 }
 
 .particle {
@@ -278,116 +342,120 @@ body::after {
 
     border-radius: 50%;
 
-    background: #00d9ff;
+    background: var(--cyan);
 
     box-shadow:
-        0 0 6px #00d9ff,
-        0 0 12px rgba(0,217,255,.5);
+        0 0 7px var(--cyan);
 
-    opacity: .45;
+    opacity: .4;
 
     animation:
-        particleFloat linear infinite;
+        particleTravel linear infinite;
 }
 
 .particle:nth-child(1) {
-    left: 8%;
-    top: 20%;
-    animation-duration: 14s;
-    animation-delay: -4s;
+    left: 5%;
+    top: 70%;
+    animation-duration: 17s;
 }
 
 .particle:nth-child(2) {
-    left: 18%;
-    top: 70%;
-    animation-duration: 19s;
-    animation-delay: -8s;
+    left: 12%;
+    top: 30%;
+    animation-duration: 21s;
 }
 
 .particle:nth-child(3) {
-    left: 31%;
-    top: 32%;
-    animation-duration: 17s;
-    animation-delay: -3s;
+    left: 21%;
+    top: 82%;
+    animation-duration: 14s;
 }
 
 .particle:nth-child(4) {
-    left: 44%;
-    top: 82%;
-    animation-duration: 21s;
-    animation-delay: -11s;
+    left: 31%;
+    top: 45%;
+    animation-duration: 19s;
 }
 
 .particle:nth-child(5) {
-    left: 56%;
-    top: 18%;
-    animation-duration: 15s;
-    animation-delay: -7s;
+    left: 42%;
+    top: 15%;
+    animation-duration: 23s;
 }
 
 .particle:nth-child(6) {
-    left: 67%;
-    top: 60%;
+    left: 54%;
+    top: 73%;
     animation-duration: 18s;
-    animation-delay: -12s;
 }
 
 .particle:nth-child(7) {
-    left: 78%;
-    top: 27%;
-    animation-duration: 22s;
-    animation-delay: -5s;
+    left: 66%;
+    top: 34%;
+    animation-duration: 16s;
 }
 
 .particle:nth-child(8) {
-    left: 89%;
+    left: 77%;
     top: 78%;
-    animation-duration: 16s;
-    animation-delay: -10s;
+    animation-duration: 22s;
 }
 
 .particle:nth-child(9) {
-    left: 12%;
-    top: 48%;
-    animation-duration: 20s;
-    animation-delay: -15s;
+    left: 88%;
+    top: 22%;
+    animation-duration: 15s;
 }
 
 .particle:nth-child(10) {
     left: 94%;
-    top: 42%;
-    animation-duration: 13s;
-    animation-delay: -6s;
+    top: 58%;
+    animation-duration: 20s;
 }
 
-@keyframes particleFloat {
+.particle:nth-child(11) {
+    left: 37%;
+    top: 91%;
+    animation-duration: 25s;
+}
+
+.particle:nth-child(12) {
+    left: 71%;
+    top: 91%;
+    animation-duration: 18s;
+}
+
+@keyframes particleTravel {
 
     0% {
         transform:
-            translate3d(0,40px,0)
-            scale(.7);
+            translate(0,50px)
+            scale(.5);
+
         opacity: 0;
     }
 
     20% {
-        opacity: .5;
+        opacity: .45;
     }
 
     50% {
         transform:
-            translate3d(30px,-50px,0)
+            translate(35px,-70px)
             scale(1.2);
+
         opacity: .7;
     }
 
     80% {
-        opacity: .35;
+        opacity: .25;
     }
 
     100% {
         transform:
-            translate3d(-25px,-150px,0)
-            scale(.5);
+            translate(-25px,-180px)
+            scale(.4);
+
         opacity: 0;
     }
 }
@@ -399,144 +467,179 @@ body::after {
 
 header {
 
-    position: relative;
+    position: sticky;
 
-    z-index: 20;
+    top: 0;
 
-    height: 78px;
+    z-index: 500;
 
-    padding: 0 7%;
+    height: 72px;
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
+
+    padding:
+        0 clamp(18px,5vw,70px);
+
+    background:
+        rgba(5,7,10,.76);
+
+    border-bottom:
+        1px solid var(--line);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+}
+
+.brand {
+
+    display: flex;
 
     align-items: center;
 
-    background:
-        rgba(2,7,17,.72);
-
-    border-bottom:
-        1px solid rgba(0,204,255,.15);
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        0 0 35px rgba(0,150,255,.06);
-
-    animation:
-        headerAppear .8s ease both;
-}
-
-@keyframes headerAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.logo {
-
-    color: #fff;
+    gap: 14px;
 
     text-decoration: none;
 
-    font-size: 27px;
+    color: white;
+}
 
-    font-weight: 900;
+.brand-mark {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid rgba(114,231,255,.4);
+
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    box-shadow:
+        inset 0 0 15px rgba(114,231,255,.04),
+        0 0 15px rgba(114,231,255,.05);
+
+    transform:
+        rotate(45deg);
+}
+
+.brand-mark span {
+    transform: rotate(-45deg);
+}
+
+.brand-name {
+
+    font-size: 18px;
+
+    font-weight: 850;
+
+    letter-spacing: 2px;
+}
+
+.brand-sub {
+
+    color: var(--dim);
+
+    font-size: 8px;
 
     letter-spacing: 2px;
 
-    position: relative;
+    margin-top: -3px;
+}
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.system-state {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.state-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 8px var(--green);
+
+    animation:
+        statePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes statePulse {
+
+    0%,
+    100% {
+        opacity: .4;
+        transform: scale(.75);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+.home-link {
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 
     transition: .3s ease;
 }
 
-.logo:hover {
+.home-link:hover {
 
-    transform:
-        translateX(4px);
+    color: var(--cyan);
 
-    text-shadow:
-        0 0 15px rgba(0,217,255,.8);
-}
-
-.logo::after {
-
-    content: "";
-
-    display: inline-block;
-
-    width: 7px;
-
-    height: 7px;
-
-    margin-left: 7px;
-
-    border-radius: 50%;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 8px #00d9ff,
-        0 0 18px #00d9ff;
-
-    vertical-align: middle;
-
-    animation:
-        logoPulse 1.8s ease-in-out infinite;
-}
-
-@keyframes logoPulse {
-
-    0%,
-    100% {
-        transform: scale(.8);
-        opacity: .65;
-    }
-
-    50% {
-        transform: scale(1.35);
-        opacity: 1;
-    }
-}
-
-
-header > a:last-child {
-
-    color: #91b8ce;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-
-    transition: .3s;
-}
-
-header > a:last-child:hover {
-
-    color: #00d9ff;
-
-    transform:
-        translateX(-5px);
-
-    text-shadow:
-        0 0 12px rgba(0,217,255,.8);
+    transform: translateX(-4px);
 }
 
 
@@ -548,588 +651,642 @@ header > a:last-child:hover {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
 
-    min-height: 570px;
+    min-height: 720px;
 
-    display: flex;
+    max-width: var(--max);
 
-    flex-direction: column;
+    margin: auto;
 
-    justify-content: center;
+    padding:
+        85px 28px 75px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr .92fr;
 
     align-items: center;
 
-    text-align: center;
-
-    padding: 110px 20px 100px;
-
-    overflow: hidden;
-
-    border-bottom:
-        1px solid rgba(0,204,255,.12);
+    gap: 70px;
 }
 
 
-/* Atmospheric glow */
+/* =========================================================
+   HERO LEFT
+========================================================= */
 
-.hero-glow {
+.hero-left {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.kicker {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--cyan);
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 24px;
+}
+
+.kicker::before {
+
+    content: "";
+
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan);
+}
+
+.hero h1 {
+
+    max-width: 850px;
+
+    font-size:
+        clamp(62px,8.5vw,122px);
+
+    line-height: .82;
+
+    letter-spacing: -.07em;
+
+    font-weight: 900;
+
+    color: #f4fbfd;
+
+    margin-bottom: 32px;
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(114,231,255,.72);
+
+    text-shadow:
+        0 0 35px rgba(114,231,255,.12);
+}
+
+.hero-description {
+
+    max-width: 680px;
+
+    color: #91a5af;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   RESEARCH PATH
+========================================================= */
+
+.research-path {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 34px;
+}
+
+.path-node {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 12px;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        rgba(255,255,255,.018);
+
+    color: #6f828c;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.path-node::before {
+
+    content: "";
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    opacity: .6;
+}
+
+.path-node:hover {
+
+    color: var(--cyan);
+
+    border-color:
+        var(--line-bright);
+
+    background:
+        rgba(114,231,255,.035);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.action {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 19px;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(114,231,255,.3);
+
+    color: var(--cyan);
+
+    background:
+        rgba(114,231,255,.035);
+
+    font-size: 9px;
+
+    font-weight: 750;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.action::before {
+
+    content: "";
 
     position: absolute;
 
-    width: 600px;
+    inset: 0;
 
-    height: 600px;
+    transform:
+        translateX(-110%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(114,231,255,.1),
+            transparent
+        );
+
+    transition: .5s ease;
+}
+
+.action:hover::before {
+    transform: translateX(110%);
+}
+
+.action:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(114,231,255,.7);
+
+    background:
+        rgba(114,231,255,.07);
+
+    box-shadow:
+        0 12px 35px rgba(114,231,255,.08);
+}
+
+.action.primary {
+
+    background:
+        rgba(114,231,255,.09);
+
+    color: white;
+}
+
+
+/* =========================================================
+   HERO RESEARCH DISPLAY
+========================================================= */
+
+.hero-display {
+
+    position: relative;
+
+    min-height: 510px;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.science-core {
+
+    position: relative;
+
+    width: min(470px,90vw);
+
+    height: 470px;
+
+    border:
+        1px solid rgba(114,231,255,.1);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(0,190,255,.15),
-            rgba(0,100,255,.04) 45%,
-            transparent 70%
+            rgba(114,231,255,.05),
+            transparent 58%
         );
 
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    animation:
-        breathe 5s ease-in-out infinite;
-
-    pointer-events: none;
+    box-shadow:
+        inset 0 0 80px rgba(114,231,255,.025);
 }
 
-@keyframes breathe {
-
-    0%,
-    100% {
-        transform:
-            translate(-50%,-50%)
-            scale(.85);
-
-        opacity: .55;
-    }
-
-    50% {
-        transform:
-            translate(-50%,-50%)
-            scale(1.15);
-
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   ORBIT SYSTEM
-========================================================= */
-
-.orbit-system {
+.core-ring {
 
     position: absolute;
 
-    width: 620px;
+    inset: 8%;
 
-    height: 620px;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    pointer-events: none;
-
-    opacity: .75;
-}
-
-.orbit {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
+    border:
+        1px solid rgba(114,231,255,.13);
 
     border-radius: 50%;
 
-    border:
-        1px solid rgba(0,217,255,.11);
-
-    transform:
-        translate(-50%,-50%);
+    animation:
+        rotateRing 24s linear infinite;
 }
 
-.orbit.one {
+.core-ring.two {
 
-    width: 300px;
-    height: 300px;
+    inset: 18%;
+
+    border-color:
+        rgba(169,156,255,.16);
+
+    transform:
+        rotate(55deg)
+        scaleY(.5);
 
     animation:
-        orbitRotate 14s linear infinite;
+        rotateRingReverse 17s linear infinite;
 }
 
-.orbit.two {
+.core-ring.three {
 
-    width: 430px;
-    height: 430px;
+    inset: 29%;
 
-    transform:
-        translate(-50%,-50%)
-        rotate(65deg)
-        scaleY(.55);
-
-    animation:
-        orbitRotateReverse 19s linear infinite;
-}
-
-.orbit.three {
-
-    width: 550px;
-    height: 550px;
+    border-color:
+        rgba(114,242,173,.15);
 
     transform:
-        translate(-50%,-50%)
         rotate(-35deg)
         scaleY(.4);
 
     animation:
-        orbitRotate 27s linear infinite;
+        rotateRing 13s linear infinite;
 }
 
-@keyframes orbitRotate {
+@keyframes rotateRing {
 
     from {
         transform:
-            translate(-50%,-50%)
             rotate(0deg);
     }
 
     to {
         transform:
-            translate(-50%,-50%)
             rotate(360deg);
     }
 }
 
-@keyframes orbitRotateReverse {
+@keyframes rotateRingReverse {
 
     from {
         transform:
-            translate(-50%,-50%)
-            rotate(65deg)
-            scaleY(.55);
+            rotate(55deg)
+            scaleY(.5);
     }
 
     to {
         transform:
-            translate(-50%,-50%)
-            rotate(-295deg)
-            scaleY(.55);
+            rotate(-305deg)
+            scaleY(.5);
     }
 }
 
-
-/* Orbit nodes */
-
-.orbit-node {
+.core-center {
 
     position: absolute;
 
-    width: 7px;
+    left: 50%;
 
-    height: 7px;
+    top: 50%;
+
+    width: 100px;
+
+    height: 100px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        1px solid rgba(114,231,255,.45);
 
     border-radius: 50%;
 
-    background: #00eaff;
+    display: grid;
+
+    place-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(114,231,255,.13),
+            rgba(4,9,13,.9) 68%
+        );
 
     box-shadow:
-        0 0 8px #00eaff,
-        0 0 20px rgba(0,217,255,.8);
-}
-
-.node-one {
-
-    top: -3px;
-    left: 50%;
+        0 0 45px rgba(114,231,255,.08),
+        inset 0 0 35px rgba(114,231,255,.08);
 
     animation:
-        nodePulse 1.7s ease-in-out infinite;
+        coreBreath 4s ease-in-out infinite;
 }
 
-.node-two {
-
-    right: -3px;
-    top: 50%;
-
-    animation:
-        nodePulse 2.2s ease-in-out infinite;
-}
-
-.node-three {
-
-    bottom: -3px;
-    left: 50%;
-
-    animation:
-        nodePulse 1.9s ease-in-out infinite;
-}
-
-@keyframes nodePulse {
+@keyframes coreBreath {
 
     0%,
     100% {
-        transform: scale(.6);
-        opacity: .5;
-    }
-
-    50% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    animation:
-        heroReveal 1.1s cubic-bezier(.2,.8,.2,1) both;
-}
-
-@keyframes heroReveal {
-
-    from {
-        opacity: 0;
         transform:
-            translateY(35px)
+            translate(-50%,-50%)
             scale(.96);
     }
 
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-.system-label {
-
-    color: #00d9ff;
-
-    font-size: 11px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 22px;
-
-    text-shadow:
-        0 0 12px rgba(0,217,255,.8);
-
-    animation:
-        labelFlicker 3s ease-in-out infinite;
-}
-
-@keyframes labelFlicker {
-
-    0%,
-    100% {
-        opacity: .65;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-
-.hero h1 {
-
-    font-size:
-        clamp(60px,9vw,110px);
-
-    font-weight: 900;
-
-    letter-spacing: -5px;
-
-    line-height: .9;
-
-    color: #fff;
-
-    text-shadow:
-        0 0 20px rgba(0,180,255,.2),
-        0 0 70px rgba(0,180,255,.08);
-
-    animation:
-        titleFloat 4s ease-in-out infinite;
-}
-
-@keyframes titleFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
     50% {
         transform:
-            translateY(-7px);
+            translate(-50%,-50%)
+            scale(1.06);
     }
 }
 
-
-.hero h1 span {
-
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 15px rgba(0,217,255,.9),
-        0 0 40px rgba(0,170,255,.5),
-        0 0 90px rgba(0,170,255,.25);
-}
-
-
-.hero p {
-
-    margin-top: 28px;
-
-    color: #8daabd;
-
-    font-size: 17px;
-
-    letter-spacing: 2px;
-}
-
-
-/* =========================================================
-   FLOATING EQUATIONS
-========================================================= */
-
-.physics-symbol {
-
-    position: absolute;
-
-    color: rgba(0,217,255,.13);
+.core-symbol {
 
     font-family:
         Georgia,
         serif;
 
-    font-size: 28px;
+    font-size: 25px;
 
-    pointer-events: none;
+    color: white;
 
-    white-space: nowrap;
-
-    animation:
-        symbolFloat 8s ease-in-out infinite;
+    text-shadow:
+        0 0 20px rgba(114,231,255,.5);
 }
 
-.symbol-one {
+.orbit-particle {
 
-    left: 8%;
-    top: 25%;
+    position: absolute;
 
-    animation-delay: -2s;
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan),
+        0 0 25px rgba(114,231,255,.7);
+
+    top: 0;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
 }
 
-.symbol-two {
+.orbit-particle.p2 {
 
-    right: 9%;
-    top: 35%;
+    top: auto;
 
-    animation-delay: -5s;
+    left: auto;
 
-    font-size: 22px;
+    right: 1%;
+
+    bottom: 49%;
+
+    background: var(--violet);
+
+    box-shadow:
+        0 0 10px var(--violet),
+        0 0 22px rgba(169,156,255,.6);
 }
 
-.symbol-three {
+.orbit-particle.p3 {
 
-    left: 15%;
+    top: auto;
+
+    left: 12%;
+
     bottom: 20%;
 
-    animation-delay: -7s;
+    background: var(--green);
 
-    font-size: 20px;
-}
-
-.symbol-four {
-
-    right: 14%;
-    bottom: 18%;
-
-    animation-delay: -3s;
-
-    font-size: 25px;
-}
-
-@keyframes symbolFloat {
-
-    0%,
-    100% {
-        transform:
-            translate3d(0,0,0)
-            rotate(0deg);
-    }
-
-    50% {
-        transform:
-            translate3d(15px,-25px,0)
-            rotate(3deg);
-    }
+    box-shadow:
+        0 0 10px var(--green),
+        0 0 22px rgba(114,242,173,.6);
 }
 
 
 /* =========================================================
-   STATUS
+   DISPLAY HUD
 ========================================================= */
 
-.hero-status {
+.hud {
 
-    display: flex;
+    position: absolute;
 
-    align-items: center;
+    min-width: 145px;
 
-    gap: 10px;
-
-    margin-top: 38px;
-
-    padding: 11px 20px;
+    padding: 12px 14px;
 
     border:
-        1px solid rgba(0,217,255,.2);
+        1px solid rgba(114,231,255,.15);
 
     background:
-        rgba(0,217,255,.035);
-
-    border-radius: 100px;
-
-    color: #6f96a9;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
+        rgba(5,9,13,.78);
 
     backdrop-filter:
         blur(12px);
 
     box-shadow:
-        0 0 25px rgba(0,150,255,.04);
-
-    animation:
-        statusGlow 3s ease-in-out infinite;
+        0 12px 35px rgba(0,0,0,.3);
 }
 
-@keyframes statusGlow {
+.hud small {
 
-    0%,
-    100% {
-        box-shadow:
-            0 0 15px rgba(0,150,255,.03);
-    }
+    display: block;
 
-    50% {
-        box-shadow:
-            0 0 35px rgba(0,150,255,.12);
-    }
+    color: #526771;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
 }
 
+.hud strong {
 
-.status-dot {
+    color: #cde7ef;
 
-    width: 6px;
+    font-size: 12px;
 
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #00e5ff;
-
-    box-shadow:
-        0 0 8px #00e5ff,
-        0 0 18px #00e5ff;
-
-    animation:
-        statusPulse 1.4s ease-in-out infinite;
+    letter-spacing: 1px;
 }
 
-@keyframes statusPulse {
+.hud-a {
+    left: -2%;
+    top: 17%;
+}
 
-    0%,
-    100% {
-        transform: scale(.7);
-        opacity: .5;
-    }
+.hud-b {
+    right: -2%;
+    top: 33%;
+}
 
-    50% {
-        transform: scale(1.4);
-        opacity: 1;
-    }
+.hud-c {
+    left: 7%;
+    bottom: 12%;
+}
+
+.hud-d {
+    right: 6%;
+    bottom: 18%;
 }
 
 
 /* =========================================================
-   MAIN
+   SECTION
 ========================================================= */
 
 .section {
 
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 
-    max-width: 1200px;
+    max-width: var(--max);
 
     margin: auto;
 
-    padding: 100px 25px;
+    padding:
+        100px 28px;
 }
 
 
 /* =========================================================
-   SECTION HEADING
+   SECTION HEADER
 ========================================================= */
 
-.section-heading {
+.section-header {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: flex-end;
 
-    margin-bottom: 45px;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 22px;
+
+    margin-bottom: 38px;
 
     border-bottom:
-        1px solid rgba(0,217,255,.12);
-
-    padding-bottom: 20px;
+        1px solid var(--line);
 
     position: relative;
 }
 
-.section-heading::after {
+.section-header::after {
 
     content: "";
 
@@ -1139,75 +1296,218 @@ header > a:last-child:hover {
 
     left: 0;
 
-    width: 90px;
+    width: 110px;
 
     height: 1px;
 
-    background:
-        #00d9ff;
+    background: var(--cyan);
 
     box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        headingLine 4s ease-in-out infinite;
+        0 0 12px var(--cyan);
 }
 
-@keyframes headingLine {
+.section-index {
 
-    0%,
-    100% {
-        width: 70px;
-    }
+    color: var(--cyan);
 
-    50% {
-        width: 180px;
-    }
+    font-family:
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
 }
 
+.section-header h2 {
 
-.heading-left h2 {
+    font-size:
+        clamp(27px,3vw,42px);
 
-    font-size: 30px;
+    line-height: 1;
 
-    font-weight: 800;
+    letter-spacing: -.04em;
 
-    letter-spacing: 1px;
+    font-weight: 850;
 }
 
-.heading-left p {
+.section-header p {
 
-    margin-top: 7px;
+    color: var(--muted);
 
-    color: #607d8d;
+    font-size: 13px;
 
-    font-size: 14px;
+    margin-top: 10px;
 }
 
 .section-code {
 
-    color: #426272;
+    color: #4c5e67;
 
-    font-size: 10px;
+    font-family:
+        monospace;
 
-    letter-spacing: 3px;
+    font-size: 9px;
 
-    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   UNIT GRID
+   TELEMETRY
 ========================================================= */
 
-.units {
+.telemetry {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border:
+        1px solid var(--line);
+
+    background:
+        rgba(8,13,18,.7);
+
+    margin-bottom: 90px;
+}
+
+.telemetry-cell {
+
+    position: relative;
+
+    min-height: 125px;
+
+    padding: 22px;
+
+    border-right:
+        1px solid var(--line);
+
+    overflow: hidden;
+}
+
+.telemetry-cell:last-child {
+    border-right: none;
+}
+
+.telemetry-cell::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 40%;
+
+    height: 1px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
+    animation:
+        telemetryLine 3s ease-in-out infinite;
+}
+
+.telemetry-cell:nth-child(2)::after {
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+    animation-delay: -.8s;
+}
+
+.telemetry-cell:nth-child(3)::after {
+    background: var(--amber);
+    box-shadow: 0 0 12px var(--amber);
+    animation-delay: -1.5s;
+}
+
+.telemetry-cell:nth-child(4)::after {
+    background: var(--violet);
+    box-shadow: 0 0 12px var(--violet);
+    animation-delay: -2.2s;
+}
+
+@keyframes telemetryLine {
+
+    0%,
+    100% {
+        width: 25%;
+        opacity: .35;
+    }
+
+    50% {
+        width: 75%;
+        opacity: .8;
+    }
+}
+
+.telemetry-label {
+
+    color: #4f626c;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.telemetry-value {
+
+    color: #e8f6fa;
+
+    font-size: 23px;
+
+    font-weight: 750;
+
+    letter-spacing: -.5px;
+}
+
+.telemetry-value span {
+
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    margin-left: 4px;
+}
+
+.telemetry-note {
+
+    color: #566973;
+
+    font-size: 8px;
+
+    margin-top: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   UNIT ARCHITECTURE
+========================================================= */
+
+.unit-grid {
 
     display: grid;
 
     grid-template-columns:
         repeat(2,minmax(0,1fr));
 
-    gap: 20px;
+    gap: 16px;
 }
 
 
@@ -1215,19 +1515,19 @@ header > a:last-child:hover {
    UNIT CARD
 ========================================================= */
 
-.unit {
+.unit-card {
 
     position: relative;
 
-    min-height: 245px;
-
-    padding: 30px;
+    min-height: 300px;
 
     display: flex;
 
     flex-direction: column;
 
     justify-content: space-between;
+
+    padding: 27px;
 
     text-decoration: none;
 
@@ -1236,286 +1536,108 @@ header > a:last-child:hover {
     overflow: hidden;
 
     border:
-        1px solid rgba(105,175,205,.13);
+        1px solid var(--line);
 
     background:
         linear-gradient(
             145deg,
-            rgba(12,28,43,.75),
-            rgba(3,11,21,.88)
+            rgba(14,22,28,.85),
+            rgba(6,10,14,.92)
         );
-
-    border-radius: 5px;
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
-
-    transform:
-        translateY(0);
 
     transition:
         transform .45s cubic-bezier(.2,.8,.2,1),
-        border-color .4s ease,
-        box-shadow .4s ease;
+        border-color .35s ease,
+        box-shadow .35s ease;
 
-    animation:
-        cardFloat 6s ease-in-out infinite;
+    transform-style:
+        preserve-3d;
 }
 
-
-/* Different floating rhythm */
-
-.unit:nth-child(2) {
-    animation-delay: -1.5s;
-}
-
-.unit:nth-child(3) {
-    animation-delay: -3s;
-}
-
-.unit:nth-child(4) {
-    animation-delay: -4.5s;
-}
-
-.unit:nth-child(5) {
-    animation-delay: -2s;
-}
-
-.unit:nth-child(6) {
-    animation-delay: -5s;
-}
-
-@keyframes cardFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-5px);
-    }
-}
-
-
-/* Animated border */
-
-.unit::before {
+.unit-card::before {
 
     content: "";
 
     position: absolute;
 
-    top: 0;
-
-    left: -100%;
-
-    width: 100%;
-
-    height: 1px;
+    inset: 0;
 
     background:
         linear-gradient(
-            90deg,
-            transparent,
-            #00d9ff,
-            transparent
+            120deg,
+            transparent 25%,
+            rgba(114,231,255,.045),
+            transparent 75%
         );
 
-    box-shadow:
-        0 0 15px rgba(0,217,255,.8);
+    transform:
+        translateX(-100%);
 
-    animation:
-        cardScan 5s linear infinite;
+    transition:
+        .8s ease;
 }
 
-@keyframes cardScan {
-
-    0% {
-        left: -100%;
-    }
-
-    100% {
-        left: 100%;
-    }
+.unit-card:hover::before {
+    transform:
+        translateX(100%);
 }
 
-
-/* Card atmospheric light */
-
-.unit::after {
+.unit-card::after {
 
     content: "";
 
     position: absolute;
 
-    right: -130px;
+    width: 220px;
 
-    bottom: -130px;
-
-    width: 280px;
-
-    height: 280px;
+    height: 220px;
 
     border-radius: 50%;
+
+    right: -120px;
+
+    bottom: -130px;
 
     background:
         radial-gradient(
             circle,
-            rgba(0,180,255,.11),
+            rgba(114,231,255,.1),
             transparent 70%
         );
 
     transition:
-        .6s cubic-bezier(.2,.8,.2,1);
-
-    animation:
-        cardGlow 5s ease-in-out infinite;
+        .6s ease;
 }
 
-@keyframes cardGlow {
-
-    0%,
-    100% {
-        opacity: .55;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-
-.unit:hover {
-
-    transform:
-        translateY(-13px)
-        scale(1.015);
+.unit-card:hover {
 
     border-color:
-        rgba(0,217,255,.5);
+        rgba(114,231,255,.42);
 
     box-shadow:
-        0 20px 70px rgba(0,100,180,.18),
-        0 0 35px rgba(0,180,255,.06),
-        inset 0 0 35px rgba(0,180,255,.035);
-
-    animation-play-state:
-        paused;
-}
-
-.unit:hover::after {
-
-    right: -65px;
-
-    bottom: -65px;
+        0 25px 80px rgba(0,0,0,.35),
+        0 0 35px rgba(114,231,255,.055);
 
     transform:
-        scale(1.25);
+        translateY(-9px);
+}
+
+.unit-card:hover::after {
+
+    transform:
+        scale(1.5);
+
+    right: -70px;
+
+    bottom: -80px;
 }
 
 
 /* =========================================================
-   CARD CONTENT
+   UNIT CARD TOP
 ========================================================= */
 
-.unit-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.unit-number {
-
-    color: #00d9ff;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    text-shadow:
-        0 0 10px rgba(0,217,255,.6);
-}
-
-.unit-status {
-
-    color: #3e5d6d;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.unit h3 {
-
-    margin-top: 25px;
-
-    font-size: 25px;
-
-    font-weight: 800;
-
-    letter-spacing: .5px;
-
-    color: #f2fbff;
-
-    position: relative;
-
-    z-index: 2;
-
-    transition:
-        .35s ease;
-}
-
-.unit:hover h3 {
-
-    color: #fff;
-
-    transform:
-        translateX(5px);
-
-    text-shadow:
-        0 0 20px rgba(0,217,255,.25);
-}
-
-.unit p {
-
-    margin-top: 10px;
-
-    max-width: 480px;
-
-    color: #7591a0;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* =========================================================
-   CARD FOOTER
-========================================================= */
-
-.unit-footer {
+.unit-meta {
 
     display: flex;
 
@@ -1523,116 +1645,371 @@ header > a:last-child:hover {
 
     align-items: center;
 
-    margin-top: 28px;
+    position: relative;
 
-    padding-top: 15px;
+    z-index: 2;
+}
+
+.unit-id {
+
+    color: var(--cyan);
+
+    font-family:
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.unit-class {
+
+    color: #536873;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.unit-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 27px;
+
+    letter-spacing: -.03em;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+    transition: .3s ease;
+}
+
+.unit-card:hover h3 {
+
+    transform:
+        translateX(5px);
+
+    color: white;
+}
+
+.unit-card p {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #738791;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    max-width: 540px;
+}
+
+
+/* =========================================================
+   UNIT TAGS
+========================================================= */
+
+.unit-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 18px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.tag {
+
+    padding: 5px 7px;
+
+    border:
+        1px solid rgba(120,160,175,.1);
+
+    color: #536b75;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.unit-card:hover .tag {
+
+    color: #7896a2;
+
+    border-color:
+        rgba(114,231,255,.14);
+}
+
+
+/* =========================================================
+   UNIT FOOTER
+========================================================= */
+
+.unit-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 18px;
+
+    margin-top: 24px;
 
     border-top:
-        1px solid rgba(130,190,215,.08);
+        1px solid var(--line);
 
     position: relative;
 
     z-index: 3;
 }
 
-.module-label {
+.unit-code {
 
-    color: #486676;
+    color: #40545e;
 
-    font-size: 9px;
+    font-family:
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+}
+
+.unit-open {
+
+    color: var(--cyan);
+
+    font-size: 8px;
+
+    font-weight: 800;
 
     letter-spacing: 2px;
 
-    text-transform: uppercase;
+    transition: .35s ease;
 }
 
-.open-module {
-
-    color: #00d9ff;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition:
-        .35s ease;
-}
-
-.unit:hover .open-module {
+.unit-card:hover .unit-open {
 
     letter-spacing: 4px;
 
-    transform:
-        translateX(4px);
-
     text-shadow:
-        0 0 12px rgba(0,217,255,.8);
+        0 0 15px rgba(114,231,255,.7);
 }
 
 
 /* =========================================================
-   SYSTEM PANEL
+   SCIENCE LAB
 ========================================================= */
 
-.system-panel {
-
-    margin-top: 65px;
-
-    padding: 25px 30px;
+.lab-layout {
 
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        1fr 1fr;
 
-    gap: 20px;
+    gap: 18px;
 
-    border:
-        1px solid rgba(0,217,255,.10);
+    margin-top: 30px;
+}
 
-    background:
-        rgba(3,13,24,.65);
+.lab-panel {
 
-    backdrop-filter:
-        blur(15px);
+    min-height: 370px;
 
     position: relative;
 
     overflow: hidden;
 
-    animation:
-        panelPulse 5s ease-in-out infinite;
+    border:
+        1px solid var(--line);
+
+    background:
+        rgba(8,13,18,.72);
 }
 
-@keyframes panelPulse {
+.lab-panel-header {
 
-    0%,
-    100% {
-        box-shadow:
-            0 0 20px rgba(0,150,255,.02);
-    }
+    height: 54px;
 
-    50% {
-        box-shadow:
-            0 0 45px rgba(0,150,255,.08);
-    }
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 18px;
+
+    border-bottom:
+        1px solid var(--line);
 }
 
-.system-panel::before {
+.lab-title {
 
-    content: "";
+    color: #78909b;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.lab-status {
+
+    color: var(--green);
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   FIELD VISUAL
+========================================================= */
+
+.field-visual {
 
     position: absolute;
 
-    left: 0;
+    inset: 54px 0 0;
 
-    top: 0;
+    overflow: hidden;
 
-    width: 100%;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(114,231,255,.045),
+            transparent 45%
+        );
+}
+
+.field-line {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 70%;
+
+    height: 70%;
+
+    border:
+        1px solid rgba(114,231,255,.14);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%,-50%)
+        scaleY(.45);
+
+    animation:
+        fieldPulse 4s ease-in-out infinite;
+}
+
+.field-line:nth-child(2) {
+    width: 52%;
+    height: 52%;
+    animation-delay: -.8s;
+}
+
+.field-line:nth-child(3) {
+    width: 36%;
+    height: 36%;
+    animation-delay: -1.6s;
+}
+
+.field-line:nth-child(4) {
+    width: 85%;
+    height: 85%;
+    animation-delay: -2.2s;
+}
+
+@keyframes fieldPulse {
+
+    0%,
+    100% {
+        opacity: .3;
+        transform:
+            translate(-50%,-50%)
+            scaleY(.43);
+    }
+
+    50% {
+        opacity: .75;
+        transform:
+            translate(-50%,-50%)
+            scaleY(.5);
+    }
+}
+
+.charge {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 54px;
+
+    height: 54px;
+
+    margin:
+        -27px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(114,231,255,.55);
+
+    background:
+        rgba(114,231,255,.08);
+
+    color: var(--cyan);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 0 35px rgba(114,231,255,.12);
+}
+
+.field-vector {
+
+    position: absolute;
+
+    width: 75px;
 
     height: 1px;
 
@@ -1640,89 +2017,669 @@ header > a:last-child:hover {
         linear-gradient(
             90deg,
             transparent,
-            rgba(0,217,255,.7),
-            transparent
+            var(--cyan)
         );
 
-    animation:
-        panelScan 4s linear infinite;
+    transform-origin:
+        left center;
+
+    opacity: .55;
 }
 
-@keyframes panelScan {
-
-    from {
-        transform:
-            translateX(-100%);
-    }
-
-    to {
-        transform:
-            translateX(100%);
-    }
+.vector-1 {
+    left: 22%;
+    top: 35%;
+    transform: rotate(-25deg);
 }
 
-
-.system-item {
-
-    border-right:
-        1px solid rgba(100,180,210,.08);
-
-    padding-right: 20px;
+.vector-2 {
+    right: 18%;
+    top: 42%;
+    transform: rotate(205deg);
 }
 
-.system-item:last-child {
-
-    border-right: none;
+.vector-3 {
+    left: 25%;
+    bottom: 27%;
+    transform: rotate(22deg);
 }
 
-.system-item span {
-
-    display: block;
-
-    color: #3d6070;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 6px;
+.vector-4 {
+    right: 20%;
+    bottom: 30%;
+    transform: rotate(158deg);
 }
 
-.system-item strong {
-
-    color: #b8d8e6;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    transition:
-        .3s ease;
-}
-
-.system-item:hover strong {
-
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 12px rgba(0,217,255,.45);
+.vector-5 {
+    left: 43%;
+    top: 18%;
+    transform: rotate(90deg);
 }
 
 
 /* =========================================================
-   BACK BUTTON
+   GRAPH
 ========================================================= */
 
-.back-container {
+.graph {
 
-    text-align: center;
+    position: absolute;
 
-    margin-top: 55px;
+    inset: 80px 30px 30px;
+
+    overflow: hidden;
 }
 
-.back {
+.graph-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(114,231,255,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(114,231,255,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        42px 42px;
+}
+
+.graph-axis-x {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 20%;
+
+    height: 1px;
+
+    background:
+        rgba(180,210,220,.25);
+}
+
+.graph-axis-y {
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 12%;
+
+    width: 1px;
+
+    background:
+        rgba(180,210,220,.25);
+}
+
+.wave {
+
+    position: absolute;
+
+    left: 12%;
+
+    top: 0;
+
+    width: 88%;
+
+    height: 80%;
+
+    overflow: hidden;
+}
+
+.wave svg {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: visible;
+}
+
+.wave-path {
+
+    fill: none;
+
+    stroke: var(--cyan);
+
+    stroke-width: 1.6;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(114,231,255,.65)
+        );
+
+    stroke-dasharray: 1000;
+
+    stroke-dashoffset: 1000;
+
+    animation:
+        drawWave 5s ease-in-out infinite alternate;
+}
+
+@keyframes drawWave {
+
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.graph-label {
+
+    position: absolute;
+
+    color: #526974;
+
+    font-family:
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+.graph-label.x {
+    right: 2%;
+    bottom: 16%;
+}
+
+.graph-label.y {
+    left: 3%;
+    top: 5%;
+    transform: rotate(-90deg);
+}
+
+
+/* =========================================================
+   RESEARCH MATRIX
+========================================================= */
+
+.matrix {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.matrix-card {
+
+    min-height: 145px;
+
+    padding: 20px;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        rgba(9,15,20,.7);
+
+    transition: .35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.matrix-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    right: -35px;
+
+    bottom: -35px;
+
+    background:
+        rgba(114,231,255,.06);
+
+    transition: .4s ease;
+}
+
+.matrix-card:hover {
+
+    border-color:
+        rgba(114,231,255,.3);
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+}
+
+.matrix-card:hover::after {
+
+    transform:
+        scale(2);
+}
+
+.matrix-index {
+
+    color: #435963;
+
+    font-family:
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.matrix-card h3 {
+
+    font-size: 16px;
+
+    margin-top: 17px;
+
+    margin-bottom: 7px;
+}
+
+.matrix-card p {
+
+    color: #627883;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   EQUATION CONSOLE
+========================================================= */
+
+.equation-console {
+
+    margin-top: 35px;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,18,23,.9),
+            rgba(5,9,13,.94)
+        );
+
+    overflow: hidden;
+}
+
+.console-top {
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        0 17px;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+.console-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 7px var(--cyan);
+}
+
+.console-title {
+
+    margin-left: 8px;
+
+    color: #536873;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.equation-content {
+
+    padding:
+        28px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 1px;
+
+    background:
+        var(--line);
+}
+
+.equation {
+
+    padding:
+        28px 22px;
+
+    background:
+        #070c10;
+
+    text-align: center;
+}
+
+.equation-symbol {
+
+    font-family:
+        Georgia,
+        serif;
+
+    color: #eaf8fb;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.equation-name {
+
+    color: #536a74;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   KNOWLEDGE MAP
+========================================================= */
+
+.knowledge-map {
+
+    margin-top: 35px;
+
+    min-height: 330px;
+
+    position: relative;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(114,231,255,.035),
+            transparent 50%
+        ),
+        rgba(7,12,16,.75);
+
+    overflow: hidden;
+}
+
+.map-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(114,231,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(114,231,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+}
+
+.map-node {
+
+    position: absolute;
+
+    padding: 10px 13px;
+
+    border:
+        1px solid rgba(114,231,255,.17);
+
+    background:
+        rgba(5,10,14,.85);
+
+    color: #728b96;
+
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+
+    z-index: 2;
+
+    transition: .3s ease;
+}
+
+.map-node:hover {
+
+    color: var(--cyan);
+
+    border-color:
+        rgba(114,231,255,.5);
+
+    box-shadow:
+        0 0 25px rgba(114,231,255,.08);
+
+    transform:
+        scale(1.05);
+}
+
+.map-core {
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    padding: 18px 23px;
+
+    color: white;
+
+    border-color:
+        rgba(114,231,255,.45);
+
+    box-shadow:
+        0 0 35px rgba(114,231,255,.08);
+}
+
+.map-1 {
+    left: 12%;
+    top: 22%;
+}
+
+.map-2 {
+    left: 37%;
+    top: 12%;
+}
+
+.map-3 {
+    right: 13%;
+    top: 23%;
+}
+
+.map-4 {
+    left: 10%;
+    bottom: 19%;
+}
+
+.map-5 {
+    right: 34%;
+    bottom: 13%;
+}
+
+.map-6 {
+    right: 9%;
+    bottom: 20%;
+}
+
+.map-line {
+
+    position: absolute;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(114,231,255,.18),
+            transparent
+        );
+
+    transform-origin:
+        left center;
+
+    z-index: 1;
+}
+
+.line-1 {
+    left: 21%;
+    top: 34%;
+    width: 28%;
+    transform: rotate(20deg);
+}
+
+.line-2 {
+    left: 50%;
+    top: 43%;
+    width: 26%;
+    transform: rotate(-22deg);
+}
+
+.line-3 {
+    left: 24%;
+    top: 58%;
+    width: 29%;
+    transform: rotate(-20deg);
+}
+
+.line-4 {
+    left: 51%;
+    top: 59%;
+    width: 28%;
+    transform: rotate(19deg);
+}
+
+
+/* =========================================================
+   RESEARCH NOTE
+========================================================= */
+
+.research-note {
+
+    margin-top: 55px;
+
+    padding: 30px;
+
+    border-left:
+        2px solid var(--cyan);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(114,231,255,.055),
+            transparent
+        );
+}
+
+.note-label {
+
+    color: var(--cyan);
+
+    font-family:
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.research-note h3 {
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.research-note p {
+
+    max-width: 800px;
+
+    color: #71858e;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER NAV
+========================================================= */
+
+.return-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 20px;
+}
+
+.return {
 
     display: inline-flex;
 
@@ -1730,80 +2687,36 @@ header > a:last-child:hover {
 
     gap: 12px;
 
-    padding: 13px 25px;
+    padding: 13px 22px;
+
+    color: #6e8994;
 
     border:
-        1px solid rgba(0,217,255,.25);
-
-    background:
-        rgba(0,217,255,.045);
-
-    color: #82b7ca;
+        1px solid var(--line);
 
     text-decoration: none;
 
-    font-size: 11px;
-
-    font-weight: bold;
+    font-size: 8px;
 
     letter-spacing: 2px;
 
     text-transform: uppercase;
 
-    transition:
-        .4s ease;
-
-    position: relative;
-
-    overflow: hidden;
+    transition: .35s ease;
 }
 
-.back::before {
+.return:hover {
 
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -100%;
-
-    width: 100%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0,217,255,.1),
-            transparent
-        );
-
-    transition:
-        .5s ease;
-}
-
-.back:hover::before {
-
-    left: 100%;
-}
-
-.back:hover {
-
-    color: #fff;
+    color: white;
 
     border-color:
-        rgba(0,217,255,.65);
-
-    background:
-        rgba(0,217,255,.09);
-
-    box-shadow:
-        0 0 30px rgba(0,180,255,.12);
+        rgba(114,231,255,.4);
 
     transform:
         translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
 }
 
 
@@ -1815,215 +2728,360 @@ footer {
 
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 
-    padding: 30px 20px;
+    padding:
+        32px 20px;
 
     text-align: center;
 
     border-top:
-        1px solid rgba(0,217,255,.10);
+        1px solid var(--line);
+
+    color: #43555e;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
 
     background:
-        rgba(1,5,12,.85);
-
-    color: #486372;
-
-    font-size: 11px;
-
-    letter-spacing: .5px;
+        rgba(3,6,9,.85);
 }
 
 footer span {
 
-    color: #00bddd;
-
-    text-shadow:
-        0 0 10px rgba(0,217,255,.3);
+    color: #7dc8d9;
 }
 
 
 /* =========================================================
-   CURSOR LIGHT
+   SCROLL REVEAL
 ========================================================= */
 
-.cursor-light {
+.reveal {
 
-    position: fixed;
-
-    width: 300px;
-
-    height: 300px;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,217,255,.06),
-            transparent 65%
-        );
+    opacity: 0;
 
     transform:
-        translate(-50%,-50%);
-
-    opacity: .8;
+        translateY(25px);
 
     transition:
-        opacity .3s ease;
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 1050px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 80px;
+    }
+
+    .hero-left {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-description {
+
+        max-width: 700px;
+    }
+
+    .hero-display {
+
+        min-height: 440px;
+    }
+
+    .science-core {
+
+        width: 400px;
+
+        height: 400px;
+    }
+
+    .telemetry {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .telemetry-cell:nth-child(2) {
+        border-right: none;
+    }
+
+    .telemetry-cell:nth-child(1),
+    .telemetry-cell:nth-child(2) {
+        border-bottom:
+            1px solid var(--line);
+    }
+
+    .matrix {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 760px) {
 
     header {
-        padding: 0 5%;
+
+        height: 66px;
+    }
+
+    .brand-sub,
+    .system-state {
+
+        display: none;
     }
 
     .hero {
-        min-height: 500px;
-        padding: 90px 20px;
+
+        min-height: auto;
+
+        padding:
+            80px 18px 65px;
+
+        gap: 30px;
     }
 
-    .orbit-system {
-        width: 430px;
-        height: 430px;
+    .hero h1 {
+
+        font-size:
+            clamp(58px,17vw,90px);
     }
 
-    .orbit.one {
-        width: 220px;
-        height: 220px;
+    .hero-description {
+
+        font-size: 13px;
     }
 
-    .orbit.two {
-        width: 300px;
-        height: 300px;
+    .research-path {
+
+        justify-content: center;
     }
 
-    .orbit.three {
-        width: 390px;
-        height: 390px;
+    .hero-actions {
+
+        justify-content: center;
     }
 
-    .physics-symbol {
-        opacity: .5;
+    .hero-display {
+
+        min-height: 350px;
     }
 
-    .units {
-        grid-template-columns: 1fr;
+    .science-core {
+
+        width: 320px;
+
+        height: 320px;
+    }
+
+    .core-center {
+
+        width: 72px;
+
+        height: 72px;
+    }
+
+    .core-symbol {
+
+        font-size: 18px;
+    }
+
+    .hud {
+
+        min-width: 105px;
+
+        padding: 9px;
+    }
+
+    .hud strong {
+
+        font-size: 9px;
+    }
+
+    .hud-a {
+        left: 0;
+    }
+
+    .hud-b {
+        right: 0;
+    }
+
+    .hud-c {
+        left: 0;
+    }
+
+    .hud-d {
+        right: 0;
     }
 
     .section {
-        padding: 70px 18px;
+
+        padding:
+            75px 18px;
     }
 
-    .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
+    .section-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
         gap: 12px;
     }
 
-    .system-panel {
-        grid-template-columns: 1fr;
+    .section-code {
+
+        display: none;
     }
 
-    .system-item {
+    .telemetry {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .telemetry-cell {
+
         border-right: none;
 
         border-bottom:
-            1px solid rgba(100,180,210,.08);
-
-        padding:
-            0 0 15px;
+            1px solid var(--line);
     }
 
-    .system-item:last-child {
+    .telemetry-cell:last-child {
+
         border-bottom: none;
-        padding-bottom: 0;
     }
 
-    .cursor-light {
-        display: none;
+    .unit-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .lab-layout {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .equation-content {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .matrix {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .knowledge-map {
+
+        min-height: 420px;
+    }
+
+    .map-node {
+
+        font-size: 6px;
+
+        padding: 8px;
+    }
+
+    .map-1 {
+        left: 5%;
+    }
+
+    .map-3 {
+        right: 5%;
+    }
+
+    .map-4 {
+        left: 5%;
+    }
+
+    .map-6 {
+        right: 5%;
     }
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
 
-    header {
-        height: 70px;
+    .home-link {
 
-        flex-direction: column;
-
-        justify-content: center;
-
-        gap: 5px;
-    }
-
-    .logo {
-        font-size: 23px;
-    }
-
-    header > a:last-child {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .hero h1 {
-        font-size: 55px;
-        letter-spacing: -3px;
+
+        letter-spacing:
+            -.06em;
     }
 
-    .hero p {
-        font-size: 13px;
-        letter-spacing: 1px;
+    .science-core {
+
+        width: 275px;
+
+        height: 275px;
     }
 
-    .hero-status {
-        font-size: 8px;
-        padding: 10px 15px;
+    .hud {
+
+        transform:
+            scale(.8);
     }
 
-    .orbit-system {
-        width: 350px;
-        height: 350px;
+    .matrix {
+
+        grid-template-columns:
+            1fr;
     }
 
-    .orbit.one {
-        width: 180px;
-        height: 180px;
+    .equation-content {
+
+        grid-template-columns:
+            1fr;
     }
 
-    .orbit.two {
-        width: 250px;
-        height: 250px;
-    }
+    .research-note {
 
-    .orbit.three {
-        width: 320px;
-        height: 320px;
-    }
-
-    .unit {
-        padding: 25px;
-        min-height: 230px;
-    }
-
-    .unit h3 {
-        font-size: 22px;
+        padding: 22px;
     }
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2032,13 +3090,17 @@ footer span {
     *::before,
     *::after {
 
-        animation-duration: .01ms !important;
+        animation-duration:
+            .01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
 
-        scroll-behavior: auto !important;
+        scroll-behavior:
+            auto !important;
 
-        transition-duration: .01ms !important;
+        transition-duration:
+            .01ms !important;
     }
 }
 
@@ -2051,11 +3113,13 @@ footer span {
 
 
 <!-- =====================================================
-     PARTICLES
+     PARTICLE FIELD
 ===================================================== -->
 
-<div class="particles">
+<div class="particle-field">
 
+    <div class="particle"></div>
+    <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
@@ -2070,11 +3134,7 @@ footer span {
 </div>
 
 
-<!-- =====================================================
-     CURSOR LIGHT
-===================================================== -->
-
-<div class="cursor-light" id="cursorLight"></div>
+<div class="cursor-field" id="cursorField"></div>
 
 
 <!-- =====================================================
@@ -2083,13 +3143,42 @@ footer span {
 
 <header>
 
-    <a href="index.html" class="logo">
-        IAL ATLAS
+    <a href="index.html" class="brand">
+
+        <div class="brand-mark">
+            <span>IA</span>
+        </div>
+
+        <div>
+
+            <div class="brand-name">
+                IAL ATLAS
+            </div>
+
+            <div class="brand-sub">
+                PHYSICS RESEARCH ENVIRONMENT
+            </div>
+
+        </div>
+
     </a>
 
-    <a href="index.html">
-        ← Home
-    </a>
+
+    <div class="header-right">
+
+        <div class="system-state">
+
+            <span class="state-dot"></span>
+
+            RESEARCH SYSTEM ACTIVE
+
+        </div>
+
+        <a href="index.html" class="home-link">
+            ← Atlas
+        </a>
+
+    </div>
 
 </header>
 
@@ -2101,81 +3190,168 @@ footer span {
 <section class="hero">
 
 
-    <div class="hero-glow"></div>
+    <div class="hero-left reveal">
 
 
-    <!-- ORBITAL PHYSICS SYSTEM -->
-
-    <div class="orbit-system">
-
-        <div class="orbit one">
-
-            <span class="orbit-node node-one"></span>
-
-        </div>
-
-        <div class="orbit two">
-
-            <span class="orbit-node node-two"></span>
-
-        </div>
-
-        <div class="orbit three">
-
-            <span class="orbit-node node-three"></span>
-
-        </div>
-
-    </div>
-
-
-    <!-- FLOATING EQUATIONS -->
-
-    <div class="physics-symbol symbol-one">
-        F = ma
-    </div>
-
-    <div class="physics-symbol symbol-two">
-        E = mc²
-    </div>
-
-    <div class="physics-symbol symbol-three">
-        Δp = FΔt
-    </div>
-
-    <div class="physics-symbol symbol-four">
-        λ = h/p
-    </div>
-
-
-    <!-- HERO CONTENT -->
-
-    <div class="hero-content">
-
-        <div class="system-label">
-            IAL ATLAS // KNOWLEDGE SYSTEM
+        <div class="kicker">
+            IAL ATLAS // PHYSICS DIVISION
         </div>
 
 
         <h1>
-            PHY<span>SICS</span>
+
+            UNDERSTAND
+
+            <span>PHYSICS.</span>
+
         </h1>
 
 
-        <p>
-            Edexcel International A Level Physics
+        <p class="hero-description">
+
+            Enter an advanced learning environment for
+            Edexcel International A Level Physics.
+            Move from theory to visualization, experimentation,
+            mathematical analysis and problem solving.
+
         </p>
 
 
-        <div class="hero-status">
+        <div class="research-path">
 
-            <span class="status-dot"></span>
+            <div class="path-node">
+                THEORY
+            </div>
 
-            SYSTEM ONLINE
+            <div class="path-node">
+                VISUALISE
+            </div>
 
-            <span>•</span>
+            <div class="path-node">
+                SIMULATE
+            </div>
 
-            UNITS 01–06
+            <div class="path-node">
+                EXPERIMENT
+            </div>
+
+            <div class="path-node">
+                ANALYSE
+            </div>
+
+            <div class="path-node">
+                MASTER
+            </div>
+
+        </div>
+
+
+        <div class="hero-actions">
+
+            <a href="#modules" class="action primary">
+                Explore modules →
+            </a>
+
+            <a href="#laboratory" class="action">
+                Enter laboratory
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SCIENCE CORE
+    ================================================= -->
+
+    <div class="hero-display reveal">
+
+
+        <div class="science-core">
+
+
+            <div class="core-ring">
+
+                <span class="orbit-particle"></span>
+
+            </div>
+
+
+            <div class="core-ring two">
+
+                <span class="orbit-particle p2"></span>
+
+            </div>
+
+
+            <div class="core-ring three">
+
+                <span class="orbit-particle p3"></span>
+
+            </div>
+
+
+            <div class="core-center">
+
+                <div class="core-symbol">
+                    ∫ F · dr
+                </div>
+
+            </div>
+
+
+            <div class="hud hud-a">
+
+                <small>
+                    FIELD STATE
+                </small>
+
+                <strong>
+                    STABLE
+                </strong>
+
+            </div>
+
+
+            <div class="hud hud-b">
+
+                <small>
+                    PARTICLE
+                </small>
+
+                <strong>
+                    q = +e
+                </strong>
+
+            </div>
+
+
+            <div class="hud hud-c">
+
+                <small>
+                    ENERGY
+                </small>
+
+                <strong>
+                    E = mc²
+                </strong>
+
+            </div>
+
+
+            <div class="hud hud-d">
+
+                <small>
+                    SYSTEM
+                </small>
+
+                <strong>
+                    ONLINE
+                </strong>
+
+            </div>
+
 
         </div>
 
@@ -2185,79 +3361,175 @@ footer span {
 
 
 <!-- =====================================================
-     MAIN
+     TELEMETRY
 ===================================================== -->
 
-<section class="section">
+<section class="section" style="padding-top:25px; padding-bottom:50px;">
 
 
-    <div class="section-heading">
+    <div class="telemetry reveal">
 
-        <div class="heading-left">
+
+        <div class="telemetry-cell">
+
+            <div class="telemetry-label">
+                Curriculum
+            </div>
+
+            <div class="telemetry-value">
+                IAL
+            </div>
+
+            <div class="telemetry-note">
+                PEARSON EDEXCEL
+            </div>
+
+        </div>
+
+
+        <div class="telemetry-cell">
+
+            <div class="telemetry-label">
+                Research Modules
+            </div>
+
+            <div class="telemetry-value">
+                06
+            </div>
+
+            <div class="telemetry-note">
+                UNITS 01 — 06
+            </div>
+
+        </div>
+
+
+        <div class="telemetry-cell">
+
+            <div class="telemetry-label">
+                Knowledge Modes
+            </div>
+
+            <div class="telemetry-value">
+                05
+            </div>
+
+            <div class="telemetry-note">
+                THEORY / LAB / ANALYSIS
+            </div>
+
+        </div>
+
+
+        <div class="telemetry-cell">
+
+            <div class="telemetry-label">
+                Environment
+            </div>
+
+            <div class="telemetry-value">
+                ACTIVE
+            </div>
+
+            <div class="telemetry-note">
+                PHYSICS DIVISION
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODULES
+===================================================== -->
+
+<section class="section" id="modules">
+
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="section-index">
+                RESEARCH ARCHIVE / 01
+            </div>
 
             <h2>
                 Physics Modules
             </h2>
 
             <p>
-                Navigate the complete Edexcel International A Level Physics curriculum.
+                Six interconnected modules forming the complete
+                Edexcel International A Level Physics pathway.
             </p>
 
         </div>
 
 
         <div class="section-code">
-            PHY / 2026 / ATLAS
+            PHY / MODULE MATRIX
         </div>
 
     </div>
 
 
-    <!-- =================================================
-         UNIT GRID
-    ================================================= -->
-
-    <div class="units">
+    <div class="unit-grid">
 
 
         <!-- UNIT 1 -->
 
-        <a href="physics-1.html" class="unit">
+        <a href="physics-1.html" class="unit-card reveal">
 
             <div>
 
-                <div class="unit-top">
+                <div class="unit-meta">
 
-                    <span class="unit-number">
-                        UNIT 01
+                    <span class="unit-id">
+                        PHY-01
                     </span>
 
-                    <span class="unit-status">
-                        FOUNDATION
+                    <span class="unit-class">
+                        FOUNDATION SYSTEM
                     </span>
 
                 </div>
+
 
                 <h3>
                     Physics on the Go
                 </h3>
 
+
                 <p>
-                    Mechanics, materials and electricity — the foundations
-                    of physical systems and motion.
+                    Mechanics, materials and electricity —
+                    the foundations used to describe motion,
+                    forces and physical systems.
                 </p>
+
+
+                <div class="unit-tags">
+
+                    <span class="tag">Mechanics</span>
+                    <span class="tag">Materials</span>
+                    <span class="tag">Electricity</span>
+
+                </div>
 
             </div>
 
 
             <div class="unit-footer">
 
-                <span class="module-label">
-                    MODULE / PHY-01
+                <span class="unit-code">
+                    MODULE / 01
                 </span>
 
-                <span class="open-module">
-                    OPEN →
+                <span class="unit-open">
+                    ACCESS MODULE →
                 </span>
 
             </div>
@@ -2267,42 +3539,54 @@ footer span {
 
         <!-- UNIT 2 -->
 
-        <a href="physics-2.html" class="unit">
+        <a href="physics-2.html" class="unit-card reveal">
 
             <div>
 
-                <div class="unit-top">
+                <div class="unit-meta">
 
-                    <span class="unit-number">
-                        UNIT 02
+                    <span class="unit-id">
+                        PHY-02
                     </span>
 
-                    <span class="unit-status">
-                        CORE
+                    <span class="unit-class">
+                        CORE SYSTEM
                     </span>
 
                 </div>
+
 
                 <h3>
                     Physics at Work
                 </h3>
 
+
                 <p>
-                    Waves, electricity and particle physics with
-                    applications across modern physical science.
+                    Waves, electricity and particle physics,
+                    connecting mathematical models with
+                    physical applications.
                 </p>
+
+
+                <div class="unit-tags">
+
+                    <span class="tag">Waves</span>
+                    <span class="tag">Electricity</span>
+                    <span class="tag">Particles</span>
+
+                </div>
 
             </div>
 
 
             <div class="unit-footer">
 
-                <span class="module-label">
-                    MODULE / PHY-02
+                <span class="unit-code">
+                    MODULE / 02
                 </span>
 
-                <span class="open-module">
-                    OPEN →
+                <span class="unit-open">
+                    ACCESS MODULE →
                 </span>
 
             </div>
@@ -2312,42 +3596,54 @@ footer span {
 
         <!-- UNIT 3 -->
 
-        <a href="physics-3.html" class="unit">
+        <a href="physics-3.html" class="unit-card reveal">
 
             <div>
 
-                <div class="unit-top">
+                <div class="unit-meta">
 
-                    <span class="unit-number">
-                        UNIT 03
+                    <span class="unit-id">
+                        PHY-03
                     </span>
 
-                    <span class="unit-status">
-                        PRACTICAL
+                    <span class="unit-class">
+                        EXPERIMENTAL SYSTEM
                     </span>
 
                 </div>
+
 
                 <h3>
                     Exploring Physics
                 </h3>
 
+
                 <p>
-                    Experimental methods, measurements, uncertainties
-                    and practical investigation.
+                    Experimental methods, measurements,
+                    uncertainties and practical investigation
+                    through scientific reasoning.
                 </p>
+
+
+                <div class="unit-tags">
+
+                    <span class="tag">Practical</span>
+                    <span class="tag">Uncertainty</span>
+                    <span class="tag">Analysis</span>
+
+                </div>
 
             </div>
 
 
             <div class="unit-footer">
 
-                <span class="module-label">
-                    MODULE / PHY-03
+                <span class="unit-code">
+                    MODULE / 03
                 </span>
 
-                <span class="open-module">
-                    OPEN →
+                <span class="unit-open">
+                    ACCESS MODULE →
                 </span>
 
             </div>
@@ -2357,42 +3653,53 @@ footer span {
 
         <!-- UNIT 4 -->
 
-        <a href="physics-4.html" class="unit">
+        <a href="physics-4.html" class="unit-card reveal">
 
             <div>
 
-                <div class="unit-top">
+                <div class="unit-meta">
 
-                    <span class="unit-number">
-                        UNIT 04
+                    <span class="unit-id">
+                        PHY-04
                     </span>
 
-                    <span class="unit-status">
-                        ADVANCED
+                    <span class="unit-class">
+                        ADVANCED SYSTEM
                     </span>
 
                 </div>
+
 
                 <h3>
                     Further Physics
                 </h3>
 
+
                 <p>
-                    Further mechanics, electric and magnetic fields,
-                    nuclear and particle physics.
+                    Further mechanics, electric and magnetic
+                    fields, nuclear physics and particle physics.
                 </p>
+
+
+                <div class="unit-tags">
+
+                    <span class="tag">Fields</span>
+                    <span class="tag">Nuclear</span>
+                    <span class="tag">Particles</span>
+
+                </div>
 
             </div>
 
 
             <div class="unit-footer">
 
-                <span class="module-label">
-                    MODULE / PHY-04
+                <span class="unit-code">
+                    MODULE / 04
                 </span>
 
-                <span class="open-module">
-                    OPEN →
+                <span class="unit-open">
+                    ACCESS MODULE →
                 </span>
 
             </div>
@@ -2402,42 +3709,54 @@ footer span {
 
         <!-- UNIT 5 -->
 
-        <a href="physics-5.html" class="unit">
+        <a href="physics-5.html" class="unit-card reveal">
 
             <div>
 
-                <div class="unit-top">
+                <div class="unit-meta">
 
-                    <span class="unit-number">
-                        UNIT 05
+                    <span class="unit-id">
+                        PHY-05
                     </span>
 
-                    <span class="unit-status">
-                        FRONTIER
+                    <span class="unit-class">
+                        FRONTIER SYSTEM
                     </span>
 
                 </div>
+
 
                 <h3>
                     Advanced Physics
                 </h3>
 
+
                 <p>
                     Thermodynamics, nuclear decay, oscillations,
-                    astrophysics and cosmology.
+                    astrophysics and cosmology — from microscopic
+                    processes to the structure of the universe.
                 </p>
+
+
+                <div class="unit-tags">
+
+                    <span class="tag">Thermodynamics</span>
+                    <span class="tag">Oscillations</span>
+                    <span class="tag">Cosmology</span>
+
+                </div>
 
             </div>
 
 
             <div class="unit-footer">
 
-                <span class="module-label">
-                    MODULE / PHY-05
+                <span class="unit-code">
+                    MODULE / 05
                 </span>
 
-                <span class="open-module">
-                    OPEN →
+                <span class="unit-open">
+                    ACCESS MODULE →
                 </span>
 
             </div>
@@ -2447,42 +3766,53 @@ footer span {
 
         <!-- UNIT 6 -->
 
-        <a href="physics-6.html" class="unit">
+        <a href="physics-6.html" class="unit-card reveal">
 
             <div>
 
-                <div class="unit-top">
+                <div class="unit-meta">
 
-                    <span class="unit-number">
-                        UNIT 06
+                    <span class="unit-id">
+                        PHY-06
                     </span>
 
-                    <span class="unit-status">
+                    <span class="unit-class">
                         LAB SYSTEM
                     </span>
 
                 </div>
 
+
                 <h3>
                     Experimental Physics
                 </h3>
+
 
                 <p>
                     Practical skills, experimental techniques,
                     data analysis and scientific evaluation.
                 </p>
 
+
+                <div class="unit-tags">
+
+                    <span class="tag">Laboratory</span>
+                    <span class="tag">Data</span>
+                    <span class="tag">Evaluation</span>
+
+                </div>
+
             </div>
 
 
             <div class="unit-footer">
 
-                <span class="module-label">
-                    MODULE / PHY-06
+                <span class="unit-code">
+                    MODULE / 06
                 </span>
 
-                <span class="open-module">
-                    OPEN →
+                <span class="unit-open">
+                    ACCESS MODULE →
                 </span>
 
             </div>
@@ -2492,68 +3822,515 @@ footer span {
 
     </div>
 
-
-    <!-- =================================================
-         SYSTEM PANEL
-    ================================================= -->
-
-    <div class="system-panel">
+</section>
 
 
-        <div class="system-item">
+<!-- =====================================================
+     RESEARCH MATRIX
+===================================================== -->
 
-            <span>
-                Curriculum
-            </span>
-
-            <strong>
-                Pearson Edexcel IAL
-            </strong>
-
-        </div>
+<section class="section">
 
 
-        <div class="system-item">
+    <div class="section-header reveal">
 
-            <span>
-                Coverage
-            </span>
+        <div>
 
-            <strong>
-                Units 01 — 06
-            </strong>
+            <div class="section-index">
+                KNOWLEDGE ARCHITECTURE / 02
+            </div>
+
+            <h2>
+                How Physics Is Explored
+            </h2>
+
+            <p>
+                Every concept can be approached from multiple scientific perspectives.
+            </p>
 
         </div>
 
 
-        <div class="system-item">
+        <div class="section-code">
+            ANALYSIS / FRAMEWORK
+        </div>
 
-            <span>
-                Resource Type
-            </span>
+    </div>
 
-            <strong>
-                Notes • Revision • Practice
-            </strong>
+
+    <div class="matrix">
+
+
+        <div class="matrix-card reveal">
+
+            <div class="matrix-index">
+                01 / THEORY
+            </div>
+
+            <h3>
+                Build the model
+            </h3>
+
+            <p>
+                Understand definitions, principles, assumptions
+                and mathematical relationships.
+            </p>
+
+        </div>
+
+
+        <div class="matrix-card reveal">
+
+            <div class="matrix-index">
+                02 / VISUAL
+            </div>
+
+            <h3>
+                See the physics
+            </h3>
+
+            <p>
+                Convert abstract equations into fields,
+                vectors, waves, particles and motion.
+            </p>
+
+        </div>
+
+
+        <div class="matrix-card reveal">
+
+            <div class="matrix-index">
+                03 / EXPERIMENT
+            </div>
+
+            <h3>
+                Test the model
+            </h3>
+
+            <p>
+                Connect theory with measurements,
+                apparatus, uncertainty and real observations.
+            </p>
+
+        </div>
+
+
+        <div class="matrix-card reveal">
+
+            <div class="matrix-index">
+                04 / ANALYSIS
+            </div>
+
+            <h3>
+                Interpret data
+            </h3>
+
+            <p>
+                Investigate graphs, gradients, relationships,
+                errors and experimental conclusions.
+            </p>
 
         </div>
 
 
     </div>
 
+</section>
 
-    <!-- =================================================
-         BACK
-    ================================================= -->
 
-    <div class="back-container">
+<!-- =====================================================
+     LABORATORY
+===================================================== -->
 
-        <a href="index.html" class="back">
-            ← Return to Atlas
+<section class="section" id="laboratory">
+
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="section-index">
+                VIRTUAL LABORATORY / 03
+            </div>
+
+            <h2>
+                Physics Visual Laboratory
+            </h2>
+
+            <p>
+                A visual interface for thinking about physical systems.
+            </p>
+
+        </div>
+
+
+        <div class="section-code">
+            SIMULATION NODE
+        </div>
+
+    </div>
+
+
+    <div class="lab-layout">
+
+
+        <!-- FIELD PANEL -->
+
+        <div class="lab-panel reveal">
+
+
+            <div class="lab-panel-header">
+
+                <span class="lab-title">
+                    FIELD VISUALISATION
+                </span>
+
+                <span class="lab-status">
+                    ● MODEL ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="field-visual">
+
+
+                <div class="field-line"></div>
+
+                <div class="field-line"></div>
+
+                <div class="field-line"></div>
+
+                <div class="field-line"></div>
+
+
+                <div class="charge">
+                    +
+                </div>
+
+
+                <div class="field-vector vector-1"></div>
+
+                <div class="field-vector vector-2"></div>
+
+                <div class="field-vector vector-3"></div>
+
+                <div class="field-vector vector-4"></div>
+
+                <div class="field-vector vector-5"></div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- GRAPH PANEL -->
+
+        <div class="lab-panel reveal">
+
+
+            <div class="lab-panel-header">
+
+                <span class="lab-title">
+                    OSCILLATORY MODEL
+                </span>
+
+                <span class="lab-status">
+                    ∿ DATA STREAM
+                </span>
+
+            </div>
+
+
+            <div class="graph">
+
+
+                <div class="graph-grid"></div>
+
+
+                <div class="graph-axis-x"></div>
+
+                <div class="graph-axis-y"></div>
+
+
+                <div class="wave">
+
+                    <svg
+                        viewBox="0 0 600 250"
+                        preserveAspectRatio="none">
+
+                        <path
+                            class="wave-path"
+                            d="
+                            M0,125
+                            C25,20 50,20 75,125
+                            S125,230 150,125
+                            S200,20 225,125
+                            S275,230 300,125
+                            S350,20 375,125
+                            S425,230 450,125
+                            S500,20 525,125
+                            S575,230 600,125
+                            "/>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="graph-label x">
+                    TIME → t
+                </div>
+
+                <div class="graph-label y">
+                    DISPLACEMENT x
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EQUATION CONSOLE
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="section-index">
+                MATHEMATICAL ENGINE / 04
+            </div>
+
+            <h2>
+                Equation Console
+            </h2>
+
+            <p>
+                Physics is expressed through mathematical models.
+            </p>
+
+        </div>
+
+
+        <div class="section-code">
+            MATHEMATICAL LANGUAGE
+        </div>
+
+    </div>
+
+
+    <div class="equation-console reveal">
+
+
+        <div class="console-top">
+
+            <span class="console-dot"></span>
+
+            <span class="console-dot"></span>
+
+            <span class="console-dot"></span>
+
+            <span class="console-title">
+                PHYSICS / EQUATION VAULT
+            </span>
+
+        </div>
+
+
+        <div class="equation-content">
+
+
+            <div class="equation">
+
+                <div class="equation-symbol">
+                    F = ma
+                </div>
+
+                <div class="equation-name">
+                    Newton's second law
+                </div>
+
+            </div>
+
+
+            <div class="equation">
+
+                <div class="equation-symbol">
+                    p = mv
+                </div>
+
+                <div class="equation-name">
+                    Linear momentum
+                </div>
+
+            </div>
+
+
+            <div class="equation">
+
+                <div class="equation-symbol">
+                    E = mc²
+                </div>
+
+                <div class="equation-name">
+                    Mass–energy relation
+                </div>
+
+            </div>
+
+
+            <div class="equation">
+
+                <div class="equation-symbol">
+                    V = W/q
+                </div>
+
+                <div class="equation-name">
+                    Electric potential
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     KNOWLEDGE MAP
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <div class="section-index">
+                CONCEPT NETWORK / 05
+            </div>
+
+            <h2>
+                Physics Knowledge Map
+            </h2>
+
+            <p>
+                Physics is not a collection of isolated chapters.
+                It is a connected system.
+            </p>
+
+        </div>
+
+
+        <div class="section-code">
+            CONCEPT RELATIONSHIP GRAPH
+        </div>
+
+    </div>
+
+
+    <div class="knowledge-map reveal">
+
+
+        <div class="map-grid"></div>
+
+
+        <div class="map-line line-1"></div>
+
+        <div class="map-line line-2"></div>
+
+        <div class="map-line line-3"></div>
+
+        <div class="map-line line-4"></div>
+
+
+        <div class="map-node map-1">
+            Mechanics
+        </div>
+
+        <div class="map-node map-2">
+            Energy
+        </div>
+
+        <div class="map-node map-3">
+            Electricity
+        </div>
+
+        <div class="map-node map-4">
+            Waves
+        </div>
+
+        <div class="map-node map-5">
+            Nuclear Physics
+        </div>
+
+        <div class="map-node map-6">
+            Astrophysics
+        </div>
+
+
+        <div class="map-node map-core">
+            PHYSICS
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESEARCH MESSAGE
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="research-note reveal">
+
+        <div class="note-label">
+            IAL ATLAS / RESEARCH NOTE
+        </div>
+
+
+        <h3>
+            You are not here just to memorise equations.
+        </h3>
+
+
+        <p>
+            The purpose of this environment is to help you understand
+            what the equations mean, why physical systems behave the
+            way they do, how experiments reveal those relationships,
+            and how mathematical models can describe the world around us.
+        </p>
+
+    </div>
+
+
+    <div class="return-area">
+
+        <a href="index.html" class="return">
+            ← Return to IAL ATLAS
         </a>
 
     </div>
-
 
 </section>
 
@@ -2564,7 +4341,8 @@ footer span {
 
 <footer>
 
-    © 2026 <span>IAL ATLAS</span>
+    © 2026
+    <span>IAL ATLAS</span>
     • Independent student resource
     • Not affiliated with Pearson
 
@@ -2572,119 +4350,446 @@ footer span {
 
 
 <!-- =====================================================
-     CURSOR JAVASCRIPT
+     JAVASCRIPT
 ===================================================== -->
 
 <script>
 
-const cursorLight =
-    document.getElementById("cursorLight");
+/* =========================================================
+   CURSOR FIELD
+========================================================= */
 
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
+const cursorField =
+    document.getElementById("cursorField");
 
-let currentX = mouseX;
-let currentY = mouseY;
+let mouseX =
+    window.innerWidth / 2;
+
+let mouseY =
+    window.innerHeight / 2;
+
+let cursorX =
+    mouseX;
+
+let cursorY =
+    mouseY;
 
 
-document.addEventListener("mousemove", function(event) {
+document.addEventListener(
+    "mousemove",
+    function(event) {
 
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+        mouseX =
+            event.clientX;
 
-});
+        mouseY =
+            event.clientY;
+
+    }
+);
 
 
 function animateCursor() {
 
-    currentX +=
-        (mouseX - currentX) * 0.08;
+    cursorX +=
+        (mouseX - cursorX) * .075;
 
-    currentY +=
-        (mouseY - currentY) * 0.08;
+    cursorY +=
+        (mouseY - cursorY) * .075;
 
-    cursorLight.style.left =
-        currentX + "px";
+    cursorField.style.left =
+        cursorX + "px";
 
-    cursorLight.style.top =
-        currentY + "px";
+    cursorField.style.top =
+        cursorY + "px";
 
-    requestAnimationFrame(animateCursor);
+    requestAnimationFrame(
+        animateCursor
+    );
 
 }
 
 animateCursor();
 
 
-/* =====================================================
-   CARD MAGNETIC MOVEMENT
-===================================================== */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: .12
+        }
+
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        revealObserver.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =========================================================
+   3D UNIT CARDS
+========================================================= */
 
 const cards =
-    document.querySelectorAll(".unit");
+    document.querySelectorAll(
+        ".unit-card"
+    );
 
 
 cards.forEach(card => {
 
-    card.addEventListener("mousemove", function(e) {
 
-        const rect =
-            card.getBoundingClientRect();
-
-        const x =
-            e.clientX - rect.left;
-
-        const y =
-            e.clientY - rect.top;
-
-        const centerX =
-            rect.width / 2;
-
-        const centerY =
-            rect.height / 2;
-
-        const rotateX =
-            ((y - centerY) / centerY) * -2;
-
-        const rotateY =
-            ((x - centerX) / centerX) * 2;
-
-        card.style.transform =
-            `translateY(-13px) scale(1.015)
-             perspective(800px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)`;
-
-    });
+    card.addEventListener(
+        "mousemove",
+        function(event) {
 
 
-    card.addEventListener("mouseleave", function() {
+            const rect =
+                card.getBoundingClientRect();
 
-        card.style.transform = "";
 
-    });
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const centerX =
+                rect.width / 2;
+
+
+            const centerY =
+                rect.height / 2;
+
+
+            const rotateX =
+                ((y - centerY) /
+                centerY) * -2.2;
+
+
+            const rotateY =
+                ((x - centerX) /
+                centerX) * 2.2;
+
+
+            card.style.transform =
+                `
+                translateY(-9px)
+                perspective(900px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                scale(1.008)
+                `;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        function() {
+
+            card.style.transform =
+                "";
+
+        }
+    );
 
 });
 
 
-/* =====================================================
-   DYNAMIC TIME / SYSTEM FEEL
-===================================================== */
+/* =========================================================
+   PATH NODE INTERACTION
+========================================================= */
 
-const statusDot =
-    document.querySelector(".status-dot");
+const pathNodes =
+    document.querySelectorAll(
+        ".path-node"
+    );
 
-setInterval(() => {
 
-    statusDot.style.opacity = "0.25";
+pathNodes.forEach(
+    node => {
 
-    setTimeout(() => {
+        node.addEventListener(
+            "mouseenter",
+            function() {
 
-        statusDot.style.opacity = "1";
+                node.style.transform =
+                    "translateY(-3px) scale(1.03)";
 
-    }, 180);
+            }
+        );
 
-}, 3000);
+
+        node.addEventListener(
+            "mouseleave",
+            function() {
+
+                node.style.transform =
+                    "";
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   TELEMETRY NUMBER MICRO-ANIMATION
+========================================================= */
+
+const telemetryValues =
+    document.querySelectorAll(
+        ".telemetry-value"
+    );
+
+
+telemetryValues.forEach(
+    (value, index) => {
+
+        value.animate(
+            [
+                {
+                    opacity: .35,
+                    transform:
+                        "translateY(4px)"
+                },
+
+                {
+                    opacity: 1,
+                    transform:
+                        "translateY(0)"
+                }
+            ],
+            {
+                duration: 900,
+                delay: index * 130,
+                easing:
+                    "cubic-bezier(.2,.8,.2,1)",
+                fill: "both"
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   KNOWLEDGE MAP PARALLAX
+========================================================= */
+
+const map =
+    document.querySelector(
+        ".knowledge-map"
+    );
+
+
+if (map) {
+
+    map.addEventListener(
+        "mousemove",
+        function(event) {
+
+            const rect =
+                map.getBoundingClientRect();
+
+            const x =
+                (event.clientX -
+                rect.left) /
+                rect.width;
+
+            const y =
+                (event.clientY -
+                rect.top) /
+                rect.height;
+
+            const moveX =
+                (x - .5) * 12;
+
+            const moveY =
+                (y - .5) * 12;
+
+            map.style.backgroundPosition =
+                `${moveX}px ${moveY}px`;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ACTION FEEDBACK
+========================================================= */
+
+document
+    .querySelectorAll(".action, .return")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                this.style.transform =
+                    "scale(.97)";
+
+                setTimeout(
+                    () => {
+
+                        this.style.transform =
+                            "";
+
+                    },
+                    130
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   DYNAMIC SYSTEM CLOCK
+========================================================= */
+
+function updateSystemClock() {
+
+    const now =
+        new Date();
+
+    const seconds =
+        String(
+            now.getSeconds()
+        ).padStart(2,"0");
+
+    document.title =
+        `Physics Research Environment · ${seconds}`;
+
+}
+
+
+setInterval(
+    updateSystemClock,
+    1000
+);
+
+
+/* =========================================================
+   CONSOLE EQUATION HOVER
+========================================================= */
+
+document
+    .querySelectorAll(".equation")
+    .forEach(eq => {
+
+        eq.addEventListener(
+            "mouseenter",
+            function() {
+
+                this.style.boxShadow =
+                    "inset 0 0 30px rgba(114,231,255,.045)";
+
+                this.style.transform =
+                    "translateY(-2px)";
+
+            }
+        );
+
+
+        eq.addEventListener(
+            "mouseleave",
+            function() {
+
+                this.style.boxShadow =
+                    "";
+
+                this.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   ESCAPE CURSOR EFFECT ON MOBILE
+========================================================= */
+
+if (
+    window.matchMedia(
+        "(max-width: 760px)"
+    ).matches
+) {
+
+    cursorField.style.display =
+        "none";
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION DETECTION
+========================================================= */
+
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+if (reducedMotion.matches) {
+
+    document.documentElement.style.scrollBehavior =
+        "auto";
+
+}
 
 </script>
 
