@@ -9,9 +9,32 @@
     <title>Chemistry 4 | IAL ATLAS</title>
 
     <meta name="description"
-          content="Edexcel International A Level Chemistry Unit 4 resources — rates, equilibria and further organic chemistry.">
+          content="Edexcel International A Level Chemistry Unit 4 — rates, rate equations, Arrhenius, entropy, equilibria, acid-base chemistry, organic chemistry, spectroscopy and exam practice.">
+
+    <meta name="keywords"
+          content="Edexcel IAL Chemistry Unit 4, Chemistry 4, rates, rate equations, Arrhenius, entropy, equilibria, acid base, organic chemistry, NMR, IAL ATLAS">
+
+    <meta name="author" content="Shuvojit Karmakar">
+
+    <meta name="theme-color" content="#050711">
 
     <style>
+
+        :root {
+            --bg: #050711;
+            --bg2: #080d1c;
+            --panel: rgba(13, 20, 39, 0.72);
+            --panel2: rgba(18, 29, 53, 0.82);
+            --line: rgba(120, 190, 255, 0.18);
+            --cyan: #43d9ff;
+            --blue: #4c8dff;
+            --purple: #9b6cff;
+            --text: #f4f8ff;
+            --muted: #9eacc4;
+            --green: #52f5b5;
+            --pink: #ff6fba;
+            --warning: #ffd166;
+        }
 
         * {
             margin: 0;
@@ -19,205 +42,1356 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(circle at 10% 10%, rgba(67,217,255,.09), transparent 25%),
+                radial-gradient(circle at 90% 20%, rgba(155,108,255,.08), transparent 25%),
+                radial-gradient(circle at 50% 90%, rgba(76,141,255,.08), transparent 30%),
+                var(--bg);
+
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+
+            background-size: 55px 55px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+            z-index: -3;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle,
+                rgba(67,217,255,.08),
+                transparent 65%);
+
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            pointer-events: none;
+            z-index: -2;
+            animation: ambient 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes ambient {
+            from {
+                transform: translateX(-50%) scale(.9);
+                opacity: .55;
+            }
+
+            to {
+                transform: translateX(-50%) scale(1.15);
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================
+           SCROLL PROGRESS
+        ========================= */
+
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--cyan),
+                    var(--blue),
+                    var(--purple)
+                );
+
+            box-shadow:
+                0 0 12px var(--cyan),
+                0 0 25px rgba(67,217,255,.6);
+
+            z-index: 9999;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
 
-        header a {
-            color: white;
-            text-decoration: none;
+            padding: 17px 6%;
+
+            background: rgba(5,7,17,.72);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            border-bottom: 1px solid var(--line);
         }
 
         .logo {
-            font-size: 27px;
-            font-weight: bold;
+            color: white;
+            text-decoration: none;
+
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            text-shadow:
+                0 0 12px rgba(67,217,255,.55);
         }
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+        .header-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
 
+        .header-link {
+            color: #dbeaff;
+            text-decoration: none;
+
+            padding: 9px 15px;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 999px;
+
+            transition: .25s;
+        }
+
+        .header-link:hover {
             color: white;
+            border-color: rgba(67,217,255,.5);
+            background: rgba(67,217,255,.08);
+            box-shadow: 0 0 20px rgba(67,217,255,.12);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            min-height: 670px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 80px 20px;
+
+            padding: 100px 20px 90px;
+
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 950px;
         }
 
         .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
+            display: inline-block;
+
+            padding: 8px 15px;
+            margin-bottom: 25px;
+
+            border: 1px solid rgba(67,217,255,.35);
+            border-radius: 999px;
+
+            background: rgba(67,217,255,.06);
+
+            color: var(--cyan);
+
+            font-size: 12px;
+            font-weight: 800;
             letter-spacing: 3px;
-            margin-bottom: 15px;
+
+            box-shadow:
+                0 0 25px rgba(67,217,255,.08);
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: clamp(60px, 9vw, 115px);
+            line-height: .95;
+
+            font-weight: 900;
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    white,
+                    #a9dcff,
+                    var(--cyan),
+                    #b899ff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            animation: titleGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from {
+                filter:
+                    drop-shadow(0 0 10px rgba(67,217,255,.15));
+            }
+
+            to {
+                filter:
+                    drop-shadow(0 0 30px rgba(67,217,255,.35));
+            }
         }
 
         .hero h1 span {
-            color: #4db8ff;
+            color: var(--cyan);
         }
 
-        .hero p {
-            max-width: 750px;
+        .hero-subtitle {
+            max-width: 760px;
             margin: auto;
-            color: #dcecff;
-            font-size: 18px;
+
+            color: #b9c9df;
+            font-size: 19px;
         }
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            text-decoration: none;
+            color: white;
+
+            padding: 13px 22px;
+
+            border-radius: 12px;
+            border: 1px solid rgba(67,217,255,.3);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(67,217,255,.15),
+                    rgba(76,141,255,.08)
+                );
+
+            transition: .3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-4px);
+
+            border-color: var(--cyan);
+
+            box-shadow:
+                0 0 25px rgba(67,217,255,.22);
+        }
+
+        .hero-button.primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple)
+                );
+
+            border-color: transparent;
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           MOLECULE
+        ========================= */
+
+        .molecule {
+            position: absolute;
+            width: 440px;
+            height: 440px;
+
+            right: -80px;
+            top: 80px;
+
+            opacity: .65;
+
+            animation: moleculeFloat 8s ease-in-out infinite;
+        }
+
+        .molecule.left {
+            right: auto;
+            left: -100px;
+            top: 270px;
+            transform: scale(.65);
+            opacity: .3;
+        }
+
+        @keyframes moleculeFloat {
+            0%,100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(8deg);
+            }
+        }
+
+        .atom {
+            position: absolute;
+
+            width: 70px;
+            height: 70px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: 900;
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    white,
+                    var(--cyan) 10%,
+                    #09668e 45%,
+                    #06182c 75%
+                );
+
+            box-shadow:
+                0 0 20px rgba(67,217,255,.55),
+                inset 0 0 20px rgba(255,255,255,.15);
+        }
+
+        .atom.a1 {
+            left: 50px;
+            top: 150px;
+        }
+
+        .atom.a2 {
+            right: 80px;
+            top: 70px;
+        }
+
+        .atom.a3 {
+            right: 60px;
+            bottom: 70px;
+        }
+
+        .atom.a4 {
+            left: 160px;
+            bottom: 25px;
+        }
+
+        .bond {
+            position: absolute;
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--cyan),
+                    transparent
+                );
+
+            box-shadow: 0 0 12px var(--cyan);
+            transform-origin: left center;
+        }
+
+        .bond.b1 {
+            width: 170px;
+            left: 100px;
+            top: 185px;
+            transform: rotate(-27deg);
+        }
+
+        .bond.b2 {
+            width: 155px;
+            left: 210px;
+            top: 125px;
+            transform: rotate(52deg);
+        }
+
+        .bond.b3 {
+            width: 145px;
+            left: 210px;
+            top: 250px;
+            transform: rotate(40deg);
+        }
+
+
+        /* =========================
+           TOPIC NAV
+        ========================= */
+
+        .topic-nav {
+            position: sticky;
+            top: 69px;
+            z-index: 900;
+
+            display: flex;
+            gap: 8px;
+
+            overflow-x: auto;
+
+            padding: 12px 6%;
+
+            background: rgba(5,7,17,.8);
+            backdrop-filter: blur(18px);
+
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            scrollbar-width: none;
+        }
+
+        .topic-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .topic-nav a {
+            white-space: nowrap;
+
+            color: #91a6c2;
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            padding: 8px 13px;
+
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,.08);
+
+            transition: .25s;
+        }
+
+        .topic-nav a:hover,
+        .topic-nav a.active {
+            color: white;
+
+            border-color: rgba(67,217,255,.45);
+
+            background: rgba(67,217,255,.08);
+
+            box-shadow:
+                0 0 15px rgba(67,217,255,.1);
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
-            max-width: 950px;
+            max-width: 1120px;
             margin: auto;
-            padding: 60px 20px;
+            padding: 75px 20px;
         }
 
+
+        /* =========================
+           LESSON CARDS
+        ========================= */
+
         .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
+            position: relative;
+
+            margin-bottom: 35px;
+            padding: 38px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(15,25,48,.86),
+                    rgba(7,12,25,.76)
+                );
+
+            border: 1px solid var(--line);
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.28),
+                inset 0 1px 0 rgba(255,255,255,.04);
+
+            overflow: hidden;
+
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease,
+                border-color .3s,
+                box-shadow .3s;
+        }
+
+        .lesson.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .lesson:hover {
+            border-color: rgba(67,217,255,.3);
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.35),
+                0 0 40px rgba(67,217,255,.05);
+        }
+
+        .lesson::before {
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            right: -100px;
+            top: -100px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(67,217,255,.09),
+                    transparent 65%
+                );
+
+            pointer-events: none;
         }
 
         .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            color: var(--cyan);
+
+            font-size: 11px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
             margin-bottom: 8px;
         }
 
         .lesson h2 {
-            font-size: 30px;
-            margin-bottom: 18px;
+            font-size: clamp(27px, 4vw, 38px);
+            line-height: 1.15;
+
+            margin-bottom: 20px;
         }
 
         .lesson h3 {
-            font-size: 21px;
-            margin-top: 25px;
+            color: #dbeaff;
+
+            font-size: 20px;
+
+            margin-top: 27px;
             margin-bottom: 10px;
         }
 
         .lesson p {
-            color: #53657d;
+            color: var(--muted);
             margin-bottom: 15px;
         }
 
         .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
+            padding-left: 24px;
+            color: var(--muted);
         }
 
         .lesson li {
             margin-bottom: 9px;
         }
 
-        .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+        .lesson li::marker {
+            color: var(--cyan);
         }
+
+
+        /* =========================
+           DEFINITION
+        ========================= */
+
+        .definition {
+            margin: 25px 0;
+            padding: 20px 22px;
+
+            border-left: 3px solid var(--cyan);
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(67,217,255,.08),
+                    rgba(67,217,255,.025)
+                );
+
+            box-shadow:
+                inset 0 0 25px rgba(67,217,255,.025);
+        }
+
+        .definition strong {
+            color: var(--cyan);
+        }
+
+
+        /* =========================
+           FORMULA
+        ========================= */
 
         .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
+            position: relative;
+
+            padding: 20px;
+
+            margin: 22px 0;
+
+            border-radius: 16px;
+
             text-align: center;
-            font-size: 19px;
-            font-weight: bold;
+
+            color: white;
+
+            font-size: 20px;
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(67,217,255,.08),
+                    rgba(155,108,255,.1)
+                );
+
+            border: 1px solid rgba(67,217,255,.2);
+
+            box-shadow:
+                inset 0 0 30px rgba(67,217,255,.03),
+                0 0 20px rgba(67,217,255,.03);
+
+            overflow: hidden;
         }
 
-        .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
+        .formula::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -100%;
+
+            width: 50%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.08),
+                    transparent
+                );
+
+            animation: formulaScan 4s linear infinite;
+        }
+
+        @keyframes formulaScan {
+            to {
+                left: 150%;
+            }
+        }
+
+
+        /* =========================
+           VISUAL PANEL
+        ========================= */
+
+        .visual {
+            margin: 28px 0;
+
             padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
+
+            border-radius: 20px;
+
+            background: rgba(0,0,0,.2);
+
+            border: 1px solid rgba(255,255,255,.07);
+
+            overflow: hidden;
         }
 
-        .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
+        .visual-title {
+            color: #cfe5ff;
+            font-weight: 800;
+            margin-bottom: 18px;
         }
+
+
+        /* =========================
+           RATE VISUAL
+        ========================= */
+
+        .particles {
+            position: relative;
+            height: 190px;
+
+            border-radius: 15px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(67,217,255,.05),
+                    transparent 65%
+                );
+
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: var(--cyan);
+
+            box-shadow:
+                0 0 12px var(--cyan);
+
+            animation:
+                particleMove var(--duration) linear infinite;
+        }
+
+        @keyframes particleMove {
+            0% {
+                transform:
+                    translate(0,0);
+            }
+
+            25% {
+                transform:
+                    translate(var(--x1), var(--y1));
+            }
+
+            50% {
+                transform:
+                    translate(var(--x2), var(--y2));
+            }
+
+            75% {
+                transform:
+                    translate(var(--x3), var(--y3));
+            }
+
+            100% {
+                transform:
+                    translate(0,0);
+            }
+        }
+
+
+        /* =========================
+           GRAPH
+        ========================= */
+
+        .graph {
+            position: relative;
+            height: 280px;
+
+            border-left: 2px solid #71839d;
+            border-bottom: 2px solid #71839d;
+
+            margin: 20px 15px 10px 45px;
+
+            background:
+                linear-gradient(
+                    rgba(67,217,255,.05) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(67,217,255,.05) 1px,
+                    transparent 1px
+                );
+
+            background-size: 40px 40px;
+        }
+
+        .curve {
+            position: absolute;
+
+            width: 85%;
+            height: 170px;
+
+            left: 7%;
+            bottom: 20px;
+
+            border-top: 3px solid var(--cyan);
+
+            border-radius: 50%;
+
+            transform:
+                rotate(-22deg)
+                skewX(-20deg);
+
+            filter:
+                drop-shadow(0 0 8px var(--cyan));
+        }
+
+        .graph-label {
+            position: absolute;
+            color: #8498b5;
+            font-size: 12px;
+        }
+
+        .graph-label.y {
+            left: -42px;
+            top: 5px;
+        }
+
+        .graph-label.x {
+            right: 0;
+            bottom: -35px;
+        }
+
+
+        /* =========================
+           EQUILIBRIUM
+        ========================= */
+
+        .equilibrium {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .eq-box {
+            padding: 22px;
+
+            min-height: 180px;
+
+            border-radius: 18px;
+
+            background: rgba(0,0,0,.2);
+
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .eq-title {
+            color: var(--cyan);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .eq-particles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 8px;
+            flex-wrap: wrap;
+
+            min-height: 100px;
+        }
+
+        .eq-particle {
+            width: 28px;
+            height: 28px;
+
+            border-radius: 50%;
+
+            animation:
+                pulseParticle 1.8s ease-in-out infinite alternate;
+        }
+
+        .reactant {
+            background: var(--blue);
+            box-shadow: 0 0 15px rgba(76,141,255,.65);
+        }
+
+        .product {
+            background: var(--pink);
+            box-shadow: 0 0 15px rgba(255,111,186,.65);
+        }
+
+        @keyframes pulseParticle {
+            from {
+                transform: scale(.8);
+            }
+
+            to {
+                transform: scale(1.15);
+            }
+        }
+
+
+        /* =========================
+           REACTION PATHWAY
+        ========================= */
+
+        .pathway {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            padding: 20px 0;
+        }
+
+        .compound {
+            min-width: 145px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(67,217,255,.1),
+                    rgba(155,108,255,.08)
+                );
+
+            border: 1px solid rgba(67,217,255,.2);
+
+            transition: .3s;
+        }
+
+        .compound:hover {
+            transform: translateY(-7px) scale(1.03);
+
+            border-color: var(--cyan);
+
+            box-shadow:
+                0 0 25px rgba(67,217,255,.12);
+        }
+
+        .compound strong {
+            display: block;
+            color: white;
+        }
+
+        .compound small {
+            color: #8194b1;
+        }
+
+        .arrow {
+            color: var(--cyan);
+            font-size: 28px;
+            animation: arrowPulse 1.4s ease-in-out infinite alternate;
+        }
+
+        @keyframes arrowPulse {
+            from {
+                opacity: .4;
+                transform: translateX(-3px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(3px);
+            }
+        }
+
+
+        /* =========================
+           NMR
+        ========================= */
+
+        .nmr {
+            height: 190px;
+
+            display: flex;
+            align-items: flex-end;
+            gap: 25px;
+
+            padding: 20px;
+
+            border-bottom: 2px solid #64758d;
+
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0,
+                    transparent 48px,
+                    rgba(67,217,255,.045) 49px
+                );
+        }
+
+        .peak {
+            width: 5px;
+
+            background:
+                linear-gradient(
+                    to top,
+                    var(--cyan),
+                    white
+                );
+
+            box-shadow:
+                0 0 12px var(--cyan);
+
+            transform-origin: bottom;
+
+            animation: peakPulse 2s ease-in-out infinite alternate;
+        }
+
+        .peak:nth-child(1) {
+            height: 50px;
+        }
+
+        .peak:nth-child(2) {
+            height: 125px;
+        }
+
+        .peak:nth-child(3) {
+            height: 75px;
+        }
+
+        .peak:nth-child(4) {
+            height: 160px;
+        }
+
+        .peak:nth-child(5) {
+            height: 60px;
+        }
+
+        @keyframes peakPulse {
+            from {
+                transform: scaleY(.7);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
+        }
+
+
+        /* =========================
+           PRACTICE
+        ========================= */
 
         .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
+            padding: 22px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+        }
+
+        .question:last-child {
+            border-bottom: none;
+        }
+
+        .question strong {
+            color: #e8f2ff;
         }
 
         details {
-            margin-top: 12px;
+            margin-top: 13px;
         }
 
         summary {
             cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
+
+            display: inline-flex;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            color: var(--cyan);
+
+            border: 1px solid rgba(67,217,255,.2);
+
+            background: rgba(67,217,255,.05);
+
+            font-weight: 800;
+
+            transition: .25s;
         }
+
+        summary:hover {
+            background: rgba(67,217,255,.1);
+            border-color: rgba(67,217,255,.5);
+        }
+
+        details p {
+            margin-top: 15px;
+
+            padding: 16px;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,.035);
+        }
+
+
+        /* =========================
+           QUICK REVIEW
+        ========================= */
+
+        .review-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(210px, 1fr));
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .review-card {
+            padding: 20px;
+
+            border-radius: 17px;
+
+            border: 1px solid rgba(67,217,255,.14);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(67,217,255,.06),
+                    rgba(155,108,255,.04)
+                );
+
+            transition: .3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(67,217,255,.4);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.2);
+        }
+
+        .review-card strong {
+            display: block;
+
+            color: var(--cyan);
+
+            font-size: 21px;
+
+            margin-bottom: 5px;
+        }
+
+        .review-card span {
+            color: #93a6c1;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         .navigation {
             text-align: center;
-            padding: 10px 20px 60px;
+            padding: 15px 20px 80px;
         }
 
         .button {
             display: inline-block;
-            background: #32a9e8;
+
             color: white;
             text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
+
+            padding: 13px 23px;
+
             margin: 5px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(67,217,255,.15),
+                    rgba(76,141,255,.1)
+                );
+
+            border: 1px solid rgba(67,217,255,.25);
+
+            transition: .3s;
         }
 
         .button:hover {
-            background: #168dca;
+            transform: translateY(-4px);
+
+            border-color: var(--cyan);
+
+            box-shadow:
+                0 0 25px rgba(67,217,255,.14);
         }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #071b36;
-            color: #b9c9dc;
+            padding: 35px 20px;
+
             text-align: center;
-            padding: 30px 20px;
+
+            color: #70839e;
+
+            background: #03050c;
+
+            border-top:
+                1px solid rgba(255,255,255,.07);
         }
 
-        @media (max-width: 700px) {
+        footer strong {
+            color: #a9bed8;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 760px) {
+
+            header {
+                padding: 14px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .header-link {
+                font-size: 12px;
+                padding: 7px 11px;
+            }
+
+            .hero {
+                min-height: 570px;
+                padding-top: 80px;
+            }
 
             .hero h1 {
-                font-size: 38px;
+                letter-spacing: -3px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .molecule {
+                transform: scale(.65);
+                right: -170px;
+                opacity: .25;
+            }
+
+            .molecule.left {
+                display: none;
+            }
+
+            .topic-nav {
+                top: 59px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .container {
+                padding-top: 45px;
             }
 
             .lesson {
-                padding: 25px;
+                padding: 25px 21px;
+                border-radius: 20px;
+            }
+
+            .equilibrium {
+                grid-template-columns: 1fr;
+            }
+
+            .pathway {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .nmr {
+                gap: 15px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+
+            .lesson {
+                opacity: 1;
+                transform: none;
             }
 
         }
@@ -226,7 +1400,11 @@
 
 </head>
 
+
 <body>
+
+
+<div id="progress"></div>
 
 
 <header>
@@ -235,39 +1413,106 @@
         IAL ATLAS
     </a>
 
-    <a href="chemistry.html">
-        ← Chemistry
-    </a>
+    <div class="header-right">
+
+        <a href="chemistry.html" class="header-link">
+            ← Chemistry
+        </a>
+
+    </div>
 
 </header>
 
 
 <section class="hero">
 
-    <p class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • UNIT 4
-    </p>
+    <div class="molecule">
 
-    <h1>
-        Chemistry <span>4</span>
-    </h1>
+        <div class="bond b1"></div>
+        <div class="bond b2"></div>
+        <div class="bond b3"></div>
 
-    <p>
-        General Principles of Chemistry I — Rates, Equilibria
-        and Further Organic Chemistry.
-    </p>
+        <div class="atom a1">C</div>
+        <div class="atom a2">O</div>
+        <div class="atom a3">H</div>
+        <div class="atom a4">C</div>
+
+    </div>
+
+    <div class="molecule left">
+
+        <div class="bond b1"></div>
+        <div class="bond b2"></div>
+        <div class="bond b3"></div>
+
+        <div class="atom a1">N</div>
+        <div class="atom a2">O</div>
+        <div class="atom a3">H</div>
+        <div class="atom a4">C</div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <p class="hero-label">
+            EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • UNIT 4
+        </p>
+
+        <h1>
+            Chemistry <span>4</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            General Principles of Chemistry I —
+            Rates, Equilibria, Entropy,
+            Acid–Base Chemistry and Further Organic Chemistry.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#rates" class="hero-button primary">
+                Explore Unit 4
+            </a>
+
+            <a href="#practice" class="hero-button">
+                Practice Questions
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
+
+
+<nav class="topic-nav">
+
+    <a href="#rates">Rates</a>
+    <a href="#rate-equations">Rate Equations</a>
+    <a href="#arrhenius">Arrhenius</a>
+    <a href="#entropy">Entropy</a>
+    <a href="#equilibria">Equilibria</a>
+    <a href="#acid-base">Acid–Base</a>
+    <a href="#carbonyl">Carbonyl</a>
+    <a href="#carboxylic">Carboxylic</a>
+    <a href="#synthesis">Synthesis</a>
+    <a href="#practical">Practical</a>
+    <a href="#practice">Practice</a>
+
+</nav>
 
 
 <main class="container">
 
 
-    <!-- RATES -->
+    <!-- =====================
+         RATES
+    ====================== -->
 
-    <section class="lesson">
+    <section class="lesson" id="rates">
 
-        <p class="lesson-number">TOPIC 01</p>
+        <p class="lesson-number">TOPIC 01 • KINETICS</p>
 
         <h2>How Fast? — Rates of Reaction</h2>
 
@@ -300,13 +1545,9 @@
         <ul>
 
             <li>Concentration of reactants</li>
-
             <li>Pressure of gaseous reactants</li>
-
             <li>Temperature</li>
-
             <li>Surface area</li>
-
             <li>Presence of a catalyst</li>
 
         </ul>
@@ -315,10 +1556,35 @@
 
         <p>
             Particles must collide with sufficient energy and suitable
-            orientation for a successful reaction to occur.
+            orientation for a successful reaction.
         </p>
 
-        <h3>Activation Energy</h3>
+        <div class="visual">
+
+            <div class="visual-title">
+                Molecular Collision Field
+            </div>
+
+            <div class="particles">
+
+                <span class="particle"
+                      style="left:10%;top:20%;--x1:100px;--y1:50px;--x2:220px;--y2:-20px;--x3:300px;--y3:70px;--duration:5s;"></span>
+
+                <span class="particle"
+                      style="left:70%;top:60%;--x1:-90px;--y1:-50px;--x2:-200px;--y2:20px;--x3:-270px;--y3:-30px;--duration:4s;"></span>
+
+                <span class="particle"
+                      style="left:40%;top:80%;--x1:80px;--y1:-80px;--x2:160px;--y2:-10px;--x3:250px;--y3:-70px;--duration:6s;"></span>
+
+                <span class="particle"
+                      style="left:80%;top:20%;--x1:-120px;--y1:70px;--x2:-220px;--y2:0;--x3:-320px;--y3:80px;--duration:5.5s;"></span>
+
+                <span class="particle"
+                      style="left:20%;top:70%;--x1:130px;--y1:-40px;--x2:230px;--y2:-90px;--x3:330px;--y3:-20px;--duration:4.5s;"></span>
+
+            </div>
+
+        </div>
 
         <div class="definition">
 
@@ -336,71 +1602,80 @@
 
     <!-- RATE EQUATIONS -->
 
-    <section class="lesson">
+    <section class="lesson" id="rate-equations">
 
-        <p class="lesson-number">TOPIC 02</p>
+        <p class="lesson-number">TOPIC 02 • RATE EQUATIONS</p>
 
         <h2>Rate Equations</h2>
 
         <p>
             Experimental data can be used to determine how the
-            concentrations of reactants affect the rate.
+            concentrations of reactants affect reaction rate.
         </p>
 
         <div class="formula">
-            Rate = k[A]ᵐ[B]ⁿ
+            Rate = k[A]<sup>m</sup>[B]<sup>n</sup>
         </div>
 
-        <h3>Order of Reaction</h3>
-
-        <p>
-            The order with respect to a reactant is the power of its
-            concentration in the experimentally determined rate equation.
-        </p>
+        <h3>Orders of Reaction</h3>
 
         <ul>
 
-            <li>Zero order — rate is independent of concentration.</li>
+            <li>
+                <strong>Zero order:</strong>
+                rate is independent of concentration.
+            </li>
 
-            <li>First order — rate is proportional to concentration.</li>
+            <li>
+                <strong>First order:</strong>
+                rate is proportional to concentration.
+            </li>
 
-            <li>Second order — rate is proportional to concentration squared.</li>
+            <li>
+                <strong>Second order:</strong>
+                rate is proportional to concentration squared.
+            </li>
 
         </ul>
 
         <h3>Overall Order</h3>
 
-        <p>
-            The overall order is the sum of the individual orders
-            in the rate equation.
-        </p>
-
         <div class="formula">
             Overall order = m + n
         </div>
 
-        <h3>Rate Constant</h3>
-
         <p>
-            The value and units of the rate constant depend on the
-            overall order of the reaction.
+            The rate constant, k, depends on temperature and its units
+            depend on the overall order of the reaction.
         </p>
+
+        <div class="definition">
+
+            <strong>Exam strategy:</strong>
+
+            <p>
+                Compare experiments where only one concentration changes.
+                This allows the order with respect to that reactant
+                to be determined.
+            </p>
+
+        </div>
 
     </section>
 
 
     <!-- ARRHENIUS -->
 
-    <section class="lesson">
+    <section class="lesson" id="arrhenius">
 
-        <p class="lesson-number">TOPIC 03</p>
+        <p class="lesson-number">TOPIC 03 • ARRHENIUS</p>
 
         <h2>Temperature and the Arrhenius Equation</h2>
 
         <p>
-            Increasing temperature generally increases the rate of
-            reaction because a greater proportion of particles have
-            energy greater than the activation energy.
+            Increasing temperature generally increases reaction rate
+            because a greater proportion of particles have energy
+            greater than the activation energy.
         </p>
 
         <div class="formula">
@@ -411,37 +1686,61 @@
 
         <ul>
 
-            <li>k = rate constant</li>
-
-            <li>A = pre-exponential factor</li>
-
-            <li>Eₐ = activation energy</li>
-
-            <li>R = gas constant</li>
-
-            <li>T = temperature in kelvin</li>
+            <li><strong>k</strong> = rate constant</li>
+            <li><strong>A</strong> = pre-exponential factor</li>
+            <li><strong>Eₐ</strong> = activation energy</li>
+            <li><strong>R</strong> = gas constant</li>
+            <li><strong>T</strong> = temperature in kelvin</li>
 
         </ul>
-
-        <h3>Arrhenius Plots</h3>
 
         <div class="formula">
             ln k = ln A − Eₐ / RT
         </div>
 
-        <p>
-            A graph of ln k against 1/T can be used to determine
-            the activation energy from its gradient.
-        </p>
+        <h3>Arrhenius Plot</h3>
+
+        <div class="visual">
+
+            <div class="visual-title">
+                ln k against 1/T
+            </div>
+
+            <div class="graph">
+
+                <div class="curve"></div>
+
+                <span class="graph-label y">
+                    ln k
+                </span>
+
+                <span class="graph-label x">
+                    1/T
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="definition">
+
+            <strong>Key relationship:</strong>
+
+            <p>
+                For a graph of ln k against 1/T, the gradient is
+                −Eₐ/R.
+            </p>
+
+        </div>
 
     </section>
 
 
     <!-- ENTROPY -->
 
-    <section class="lesson">
+    <section class="lesson" id="entropy">
 
-        <p class="lesson-number">TOPIC 04</p>
+        <p class="lesson-number">TOPIC 04 • THERMODYNAMICS</p>
 
         <h2>How Far? — Entropy</h2>
 
@@ -450,30 +1749,37 @@
             energy and particles in a system.
         </p>
 
-        <h3>Entropy Change</h3>
-
         <div class="formula">
             ΔS = ΣS(products) − ΣS(reactants)
         </div>
 
-        <p>
-            Entropy generally increases when particles become more
-            dispersed, particularly when a solid or liquid forms a gas.
-        </p>
+        <h3>Entropy and Physical State</h3>
+
+        <ul>
+
+            <li>Gases generally have higher entropy than liquids.</li>
+
+            <li>Liquids generally have higher entropy than solids.</li>
+
+            <li>Increasing the number of gas particles generally increases entropy.</li>
+
+        </ul>
 
         <h3>Total Entropy Change</h3>
 
         <div class="formula">
-            ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub>
+            ΔS<sub>total</sub> =
+            ΔS<sub>system</sub> +
+            ΔS<sub>surroundings</sub>
         </div>
 
         <div class="definition">
 
-            <strong>Spontaneous change:</strong>
+            <strong>Thermodynamic feasibility:</strong>
 
             <p>
-                A reaction is thermodynamically feasible when the
-                total entropy change is positive.
+                A process is thermodynamically feasible when
+                ΔS<sub>total</sub> is positive.
             </p>
 
         </div>
@@ -483,9 +1789,9 @@
 
     <!-- EQUILIBRIA -->
 
-    <section class="lesson">
+    <section class="lesson" id="equilibria">
 
-        <p class="lesson-number">TOPIC 05</p>
+        <p class="lesson-number">TOPIC 05 • EQUILIBRIUM</p>
 
         <h2>Equilibria</h2>
 
@@ -497,14 +1803,10 @@
         <h3>Equilibrium Constant</h3>
 
         <div class="formula">
-            K<sub>c</sub> = [products]<sup>coefficients</sup> /
+            K<sub>c</sub> =
+            [products]<sup>coefficients</sup> /
             [reactants]<sup>coefficients</sup>
         </div>
-
-        <p>
-            The equilibrium constant provides information about the
-            position of equilibrium at a particular temperature.
-        </p>
 
         <h3>Le Chatelier's Principle</h3>
 
@@ -514,21 +1816,58 @@
             opposes the change.
         </p>
 
-        <ul>
+        <div class="visual">
 
-            <li>Changing concentration</li>
+            <div class="visual-title">
+                Dynamic Equilibrium
+            </div>
 
-            <li>Changing pressure</li>
+            <div class="equilibrium">
 
-            <li>Changing temperature</li>
+                <div class="eq-box">
 
-        </ul>
+                    <div class="eq-title">
+                        Forward reaction
+                    </div>
+
+                    <div class="eq-particles">
+
+                        <span class="eq-particle reactant"></span>
+                        <span class="eq-particle reactant"></span>
+                        <span class="eq-particle reactant"></span>
+                        <span class="eq-particle reactant"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="eq-box">
+
+                    <div class="eq-title">
+                        Reverse reaction
+                    </div>
+
+                    <div class="eq-particles">
+
+                        <span class="eq-particle product"></span>
+                        <span class="eq-particle product"></span>
+                        <span class="eq-particle product"></span>
+                        <span class="eq-particle product"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
         <h3>Industrial Equilibria</h3>
 
         <p>
-            Industrial processes use equilibrium principles to balance
-            yield, rate, cost and safety.
+            Industrial processes must balance equilibrium yield,
+            reaction rate, economic cost, energy requirements
+            and safety.
         </p>
 
     </section>
@@ -536,36 +1875,38 @@
 
     <!-- ACID BASE -->
 
-    <section class="lesson">
+    <section class="lesson" id="acid-base">
 
-        <p class="lesson-number">TOPIC 06</p>
+        <p class="lesson-number">TOPIC 06 • ACID–BASE</p>
 
-        <h2>Acid-Base Equilibria</h2>
+        <h2>Acid–Base Equilibria</h2>
 
         <p>
             Acids and bases can be treated as equilibrium systems,
             particularly when considering weak acids and weak bases.
         </p>
 
-        <h3>Weak Acids</h3>
+        <h3>Weak Acid Equilibrium</h3>
 
         <div class="formula">
-            HA ⇌ H⁺ + A⁻
+            HA ⇌ H<sup>+</sup> + A<sup>−</sup>
         </div>
 
         <h3>Acid Dissociation Constant</h3>
 
         <div class="formula">
-            K<sub>a</sub> = [H⁺][A⁻] / [HA]
+            K<sub>a</sub> =
+            [H<sup>+</sup>][A<sup>−</sup>] /
+            [HA]
         </div>
 
         <h3>pH</h3>
 
         <div class="formula">
-            pH = −log₁₀[H⁺]
+            pH = −log<sub>10</sub>[H<sup>+</sup>]
         </div>
 
-        <h3>Buffers</h3>
+        <h3>Buffer Solutions</h3>
 
         <p>
             Buffer solutions resist changes in pH when small amounts
@@ -576,18 +1917,30 @@
 
         <p>
             Titration curves show how pH changes as acid or alkali
-            is added. They can be used to identify equivalence points
-            and appropriate indicators.
+            is added and can help identify the equivalence point
+            and suitable indicator.
         </p>
+
+        <div class="definition">
+
+            <strong>Exam reminder:</strong>
+
+            <p>
+                A buffer contains a weak acid/base and its conjugate
+                partner, allowing added H<sup>+</sup> or OH<sup>−</sup>
+                to be removed by equilibrium reactions.
+            </p>
+
+        </div>
 
     </section>
 
 
     <!-- CARBONYL -->
 
-    <section class="lesson">
+    <section class="lesson" id="carbonyl">
 
-        <p class="lesson-number">TOPIC 07</p>
+        <p class="lesson-number">TOPIC 07 • ORGANIC CHEMISTRY</p>
 
         <h2>Carbonyl Compounds</h2>
 
@@ -620,9 +1973,44 @@
         <h3>Reaction with Hydrogen Cyanide</h3>
 
         <p>
-            Aldehydes and ketones can react with hydrogen cyanide to
-            form hydroxynitriles.
+            Aldehydes and ketones can react with hydrogen cyanide
+            to form hydroxynitriles.
         </p>
+
+        <div class="visual">
+
+            <div class="visual-title">
+                Carbonyl Reaction Pathway
+            </div>
+
+            <div class="pathway">
+
+                <div class="compound">
+                    <strong>C=O</strong>
+                    <small>Carbonyl</small>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="compound">
+                    <strong>Nu⁻</strong>
+                    <small>Nucleophile</small>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="compound">
+                    <strong>C–Nu</strong>
+                    <small>Addition product</small>
+                </div>
+
+            </div>
+
+        </div>
 
         <div class="definition">
 
@@ -638,11 +2026,11 @@
     </section>
 
 
-    <!-- CARBOXYLIC ACIDS -->
+    <!-- CARBOXYLIC -->
 
-    <section class="lesson">
+    <section class="lesson" id="carboxylic">
 
-        <p class="lesson-number">TOPIC 08</p>
+        <p class="lesson-number">TOPIC 08 • CARBOXYLIC ACIDS</p>
 
         <h2>Carboxylic Acids and Their Derivatives</h2>
 
@@ -661,16 +2049,11 @@
 
             <li>They react with bases to form salts.</li>
 
-            <li>They can react with alcohols to form esters.</li>
+            <li>They react with alcohols to form esters.</li>
 
         </ul>
 
         <h3>Esters</h3>
-
-        <p>
-            Esters can be formed by the reaction between a carboxylic
-            acid and an alcohol.
-        </p>
 
         <div class="formula">
             Carboxylic acid + alcohol ⇌ ester + water
@@ -692,11 +2075,11 @@
     </section>
 
 
-    <!-- ORGANIC SYNTHESIS -->
+    <!-- SYNTHESIS -->
 
-    <section class="lesson">
+    <section class="lesson" id="synthesis">
 
-        <p class="lesson-number">TOPIC 09</p>
+        <p class="lesson-number">TOPIC 09 • ORGANIC SYNTHESIS</p>
 
         <h2>Organic Synthesis and Analysis</h2>
 
@@ -731,29 +2114,44 @@
         <ul>
 
             <li>Number of signals</li>
-
             <li>Chemical shift</li>
-
             <li>Integration</li>
-
             <li>Splitting patterns</li>
 
         </ul>
+
+        <div class="visual">
+
+            <div class="visual-title">
+                Simplified NMR Spectrum
+            </div>
+
+            <div class="nmr">
+
+                <span class="peak"></span>
+                <span class="peak"></span>
+                <span class="peak"></span>
+                <span class="peak"></span>
+                <span class="peak"></span>
+
+            </div>
+
+        </div>
 
     </section>
 
 
     <!-- PRACTICAL -->
 
-    <section class="lesson">
+    <section class="lesson" id="practical">
 
         <p class="lesson-number">PRACTICAL SKILLS</p>
 
         <h2>Unit 4 Practical Chemistry</h2>
 
         <p>
-            Practical knowledge is embedded throughout Unit 4 and
-            practical work can be assessed in the written examination.
+            Practical knowledge is embedded throughout Unit 4
+            and can be assessed through written examination questions.
         </p>
 
         <ul>
@@ -764,7 +2162,7 @@
 
             <li>Investigating equilibrium systems</li>
 
-            <li>Acid-base titrations</li>
+            <li>Acid–base titrations</li>
 
             <li>Organic preparations</li>
 
@@ -779,8 +2177,8 @@
             <strong>Exam focus:</strong>
 
             <p>
-                Be prepared to analyse experimental results, identify
-                sources of uncertainty and evaluate the reliability
+                Be prepared to analyse experimental results,
+                identify uncertainties and evaluate the reliability
                 of conclusions.
             </p>
 
@@ -789,11 +2187,11 @@
     </section>
 
 
-    <!-- MIXED PRACTICE -->
+    <!-- PRACTICE -->
 
-    <section class="lesson">
+    <section class="lesson" id="practice">
 
-        <p class="lesson-number">PRACTICE</p>
+        <p class="lesson-number">EXAM PRACTICE</p>
 
         <h2>Unit 4 Mixed Practice</h2>
 
@@ -801,8 +2199,8 @@
         <div class="question">
 
             <strong>
-                1. What is meant by the order of a reaction with respect
-                to a reactant?
+                1. What is meant by the order of a reaction
+                with respect to a reactant?
             </strong>
 
             <details>
@@ -810,9 +2208,9 @@
                 <summary>Show answer</summary>
 
                 <p>
-                    It is the power to which the concentration of that
-                    reactant is raised in the experimentally determined
-                    rate equation.
+                    It is the power to which the concentration of
+                    that reactant is raised in the experimentally
+                    determined rate equation.
                 </p>
 
             </details>
@@ -823,7 +2221,8 @@
         <div class="question">
 
             <strong>
-                2. State two factors that can increase the rate of a reaction.
+                2. State two factors that can increase the rate
+                of a reaction.
             </strong>
 
             <details>
@@ -831,8 +2230,8 @@
                 <summary>Show answer</summary>
 
                 <p>
-                    Increasing temperature and increasing concentration
-                    are two possible factors.
+                    Increasing temperature and increasing
+                    concentration are two possible factors.
                 </p>
 
             </details>
@@ -851,8 +2250,8 @@
                 <summary>Show answer</summary>
 
                 <p>
-                    A positive total entropy change indicates that the
-                    reaction is thermodynamically feasible.
+                    A positive total entropy change indicates that
+                    the process is thermodynamically feasible.
                 </p>
 
             </details>
@@ -871,9 +2270,9 @@
                 <summary>Show answer</summary>
 
                 <p>
-                    When a system at equilibrium is subjected to a change,
-                    the equilibrium position shifts in the direction that
-                    opposes the change.
+                    When a system at equilibrium is subjected to
+                    a change, the equilibrium position shifts in
+                    the direction that opposes the change.
                 </p>
 
             </details>
@@ -884,7 +2283,7 @@
         <div class="question">
 
             <strong>
-                5. What is the functional group present in aldehydes?
+                5. What functional group is present in aldehydes?
             </strong>
 
             <details>
@@ -903,8 +2302,8 @@
         <div class="question">
 
             <strong>
-                6. What type of reaction occurs when an aldehyde reacts
-                with hydrogen cyanide?
+                6. What type of reaction occurs when an aldehyde
+                reacts with hydrogen cyanide?
             </strong>
 
             <details>
@@ -929,30 +2328,85 @@
 
         <p class="lesson-number">QUICK REVIEW</p>
 
-        <h2>Unit 4 Key Ideas</h2>
+        <h2>Unit 4 Formula Vault</h2>
 
-        <div class="formula">
-            Rate = change in concentration / time
+        <div class="review-grid">
+
+            <div class="review-card">
+
+                <strong>Rate</strong>
+
+                <span>
+                    Rate = change in concentration / time
+                </span>
+
+            </div>
+
+            <div class="review-card">
+
+                <strong>Rate Equation</strong>
+
+                <span>
+                    Rate = k[A]<sup>m</sup>[B]<sup>n</sup>
+                </span>
+
+            </div>
+
+            <div class="review-card">
+
+                <strong>Arrhenius</strong>
+
+                <span>
+                    k = Ae<sup>−Eₐ/RT</sup>
+                </span>
+
+            </div>
+
+            <div class="review-card">
+
+                <strong>Entropy</strong>
+
+                <span>
+                    ΔS<sub>total</sub> =
+                    ΔS<sub>system</sub> +
+                    ΔS<sub>surroundings</sub>
+                </span>
+
+            </div>
+
+            <div class="review-card">
+
+                <strong>Kₐ</strong>
+
+                <span>
+                    Kₐ = [H⁺][A⁻] / [HA]
+                </span>
+
+            </div>
+
+            <div class="review-card">
+
+                <strong>pH</strong>
+
+                <span>
+                    pH = −log₁₀[H⁺]
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="formula">
-            Rate = k[A]ᵐ[B]ⁿ
-        </div>
+        <div class="definition">
 
-        <div class="formula">
-            k = Ae<sup>−Eₐ/RT</sup>
-        </div>
+            <strong>UNIT 4 MINDSET:</strong>
 
-        <div class="formula">
-            ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub>
-        </div>
+            <p>
+                Connect equations, experimental evidence and chemical
+                reasoning. In unfamiliar questions, identify what
+                changes, determine what is being measured and justify
+                every conclusion from the information provided.
+            </p>
 
-        <div class="formula">
-            K<sub>a</sub> = [H⁺][A⁻] / [HA]
-        </div>
-
-        <div class="formula">
-            pH = −log₁₀[H⁺]
         </div>
 
     </section>
@@ -967,6 +2421,14 @@
         ← Back to Chemistry
     </a>
 
+    <a href="chemistry-3.html" class="button">
+        Chemistry 3
+    </a>
+
+    <a href="chemistry-5.html" class="button">
+        Chemistry 5 →
+    </a>
+
     <a href="index.html" class="button">
         Home
     </a>
@@ -976,12 +2438,209 @@
 
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    © 2026 <strong>IAL ATLAS</strong>
+    • Independent student resource
+    • Not affiliated with Pearson
 
 </footer>
 
 
+<script>
+
+    /* =========================
+       SCROLL PROGRESS
+    ========================= */
+
+    const progress = document.getElementById("progress");
+
+    window.addEventListener("scroll", () => {
+
+        const scrollTop =
+            document.documentElement.scrollTop;
+
+        const scrollHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+
+        const percentage =
+            (scrollTop / scrollHeight) * 100;
+
+        progress.style.width = percentage + "%";
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const lessons =
+        document.querySelectorAll(".lesson");
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+    lessons.forEach(lesson => {
+
+        observer.observe(lesson);
+
+    });
+
+
+    /* =========================
+       ACTIVE TOPIC NAV
+    ========================= */
+
+    const sections =
+        document.querySelectorAll(
+            ".lesson[id]"
+        );
+
+    const navLinks =
+        document.querySelectorAll(
+            ".topic-nav a"
+        );
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const top =
+                section.offsetTop - 180;
+
+            if (window.scrollY >= top) {
+
+                current = section.id;
+
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") ===
+                "#" + current
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       BUTTON FEEDBACK
+    ========================= */
+
+    document.querySelectorAll(
+        ".hero-button, .button"
+    ).forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                button.style.transform =
+                    "scale(.96)";
+
+                setTimeout(() => {
+
+                    button.style.transform = "";
+
+                }, 140);
+
+            }
+        );
+
+    });
+
+
+    /* =========================
+       MOLECULE MOUSE MOVEMENT
+    ========================= */
+
+    const molecules =
+        document.querySelectorAll(
+            ".molecule"
+        );
+
+    document.addEventListener(
+        "mousemove",
+        event => {
+
+            const x =
+                (event.clientX /
+                window.innerWidth - .5) * 12;
+
+            const y =
+                (event.clientY /
+                window.innerHeight - .5) * 12;
+
+            molecules.forEach(
+                (molecule, index) => {
+
+                    const multiplier =
+                        index === 0 ? 1 : -0.5;
+
+                    molecule.style.marginLeft =
+                        (x * multiplier) + "px";
+
+                    molecule.style.marginTop =
+                        (y * multiplier) + "px";
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================
+       RANDOM PARTICLE SPEED
+    ========================= */
+
+    document.querySelectorAll(
+        ".particle"
+    ).forEach(
+        particle => {
+
+            particle.style.animationDelay =
+                (Math.random() * -5) + "s";
+
+        }
+    );
+
+
+</script>
+
+
 </body>
+
 </html>
 
 
