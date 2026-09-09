@@ -6,80 +6,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Edexcel IAL Physics | IAL ATLAS Research Environment</title>
+<title>Edexcel IAL Physics | IAL ATLAS</title>
 
 <meta name="description"
-content="Explore Edexcel International A Level Physics through IAL ATLAS — an advanced research-style learning environment covering Units 1–6, theory, experiments, equations, simulations and scientific analysis.">
+content="Explore Edexcel International A Level Physics through the IAL ATLAS advanced scientific learning platform. Access Units 1–6, concepts, equations, practical skills and exam-focused resources.">
 
 <meta name="keywords"
-content="Edexcel IAL Physics, Edexcel International A Level Physics, IAL Physics notes, Edexcel Physics revision, International A Level Physics, Physics Unit 1, Physics Unit 2, Physics Unit 3, Physics Unit 4, Physics Unit 5, Physics Unit 6">
+content="Edexcel IAL Physics, Edexcel International A Level Physics, IAL Physics notes, Edexcel Physics revision, International A Level Physics">
 
 <meta name="author" content="Shuvojit Karmakar">
-
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="googlebot" content="index, follow">
 
-<meta name="theme-color" content="#05070a">
+<meta name="theme-color" content="#030508">
 
 <link rel="canonical"
 href="https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html">
 
-<meta property="og:title"
-content="Edexcel IAL Physics | IAL ATLAS Research Environment">
-
+<meta property="og:title" content="Edexcel IAL Physics | IAL ATLAS">
 <meta property="og:description"
-content="An advanced research-style learning environment for Edexcel International A Level Physics. Explore Units 1–6, experiments, equations, simulations and scientific analysis.">
-
+content="Advanced Edexcel International A Level Physics learning environment by IAL ATLAS.">
 <meta property="og:type" content="website">
-
 <meta property="og:url"
 content="https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html">
-
 <meta property="og:image"
 content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
-
-<meta property="og:image:alt"
-content="IAL ATLAS Physics Research Environment">
-
-<meta property="og:site_name"
-content="IAL ATLAS">
-
-<meta property="og:locale"
-content="en_US">
+<meta property="og:site_name" content="IAL ATLAS">
 
 <meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title"
-content="Edexcel IAL Physics | IAL ATLAS">
-
+<meta name="twitter:title" content="Edexcel IAL Physics | IAL ATLAS">
 <meta name="twitter:description"
-content="Advanced Edexcel International A Level Physics learning environment covering Units 1–6.">
-
+content="Edexcel International A Level Physics Units 1–6.">
 <meta name="twitter:image"
 content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
 
 
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Edexcel IAL Physics",
-    "url": "https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html",
-    "description": "Edexcel International A Level Physics notes and learning resources covering Units 1–6.",
-    "isPartOf": {
-        "@type": "WebSite",
-        "name": "IAL ATLAS",
-        "url": "https://skskarmakar334-create.github.io/ialatlas.github.io/"
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Edexcel IAL Physics",
+    "url":"https://skskarmakar334-create.github.io/ialatlas.github.io/physics.html",
+    "description":"Edexcel International A Level Physics notes and revision resources covering Units 1–6.",
+    "isPartOf":{
+        "@type":"WebSite",
+        "name":"IAL ATLAS",
+        "url":"https://skskarmakar334-create.github.io/ialatlas.github.io/"
     },
-    "about": {
-        "@type": "Thing",
-        "name": "Edexcel International A Level Physics"
+    "about":{
+        "@type":"Thing",
+        "name":"Edexcel International A Level Physics"
     },
-    "author": {
-        "@type": "Person",
-        "name": "Shuvojit Karmakar"
+    "author":{
+        "@type":"Person",
+        "name":"Shuvojit Karmakar"
     },
-    "inLanguage": "en"
+    "inLanguage":"en"
 }
 </script>
 
@@ -88,85 +69,74 @@ content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
 
 /* =========================================================
    IAL ATLAS
-   PHYSICS RESEARCH ENVIRONMENT
-   VERSION 3.0
+   PHYSICS // ADVANCED RESEARCH INTERFACE
 ========================================================= */
 
-:root {
+:root{
 
-    --bg: #05070a;
-    --bg-2: #080d12;
-    --panel: rgba(10,16,21,.82);
-    --panel-soft: rgba(14,22,28,.68);
+    --bg:#030508;
+    --bg2:#070b10;
+    --panel:rgba(9,15,21,.72);
 
-    --line: rgba(160,190,205,.13);
-    --line-bright: rgba(115,225,255,.34);
+    --cyan:#61e7ff;
+    --cyan2:#00b7ff;
 
-    --cyan: #72e7ff;
-    --cyan-soft: rgba(114,231,255,.15);
+    --green:#79ffbc;
+    --amber:#ffc866;
+    --violet:#a999ff;
 
-    --green: #72f2ad;
-    --amber: #ffc85c;
-    --violet: #a99cff;
+    --white:#f3fbff;
+    --text:#a3b8c4;
+    --muted:#536875;
 
-    --text: #edf8fc;
-    --muted: #8297a2;
-    --dim: #50616b;
+    --line:rgba(130,205,230,.13);
 
-    --max: 1320px;
+    --ease:cubic-bezier(.16,1,.3,1);
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-
-    min-height: 100vh;
+body{
 
     background:
         radial-gradient(
             circle at 50% -10%,
-            rgba(80,205,255,.11),
+            rgba(0,190,255,.13),
             transparent 30%
         ),
         radial-gradient(
-            circle at 0% 55%,
-            rgba(82,120,255,.055),
+            circle at 10% 45%,
+            rgba(40,100,255,.055),
             transparent 28%
         ),
         radial-gradient(
-            circle at 100% 75%,
-            rgba(112,255,190,.035),
+            circle at 90% 75%,
+            rgba(0,255,190,.035),
             transparent 25%
         ),
         var(--bg);
 
-    color: var(--text);
+    color:var(--white);
 
     font-family:
         Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
         "Segoe UI",
+        Arial,
         sans-serif;
 
-    line-height: 1.6;
+    min-height:100vh;
 
-    overflow-x: hidden;
+    overflow-x:hidden;
+
+    line-height:1.6;
 }
 
 
@@ -174,110 +144,111 @@ body {
    TECHNICAL GRID
 ========================================================= */
 
-body::before {
+body::before{
 
-    content: "";
+    content:"";
 
-    position: fixed;
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    pointer-events: none;
+    pointer-events:none;
 
-    z-index: 0;
+    z-index:0;
 
     background-image:
+
         linear-gradient(
-            rgba(130,210,235,.025) 1px,
+            rgba(100,210,240,.035) 1px,
             transparent 1px
         ),
+
         linear-gradient(
             90deg,
-            rgba(130,210,235,.025) 1px,
+            rgba(100,210,240,.035) 1px,
             transparent 1px
         );
 
-    background-size: 42px 42px;
+    background-size:
+        48px 48px;
+
+    animation:
+        gridDrift 22s linear infinite;
 
     mask-image:
         linear-gradient(
             to bottom,
             black,
-            rgba(0,0,0,.7) 60%,
+            rgba(0,0,0,.65),
             transparent
         );
-
-    animation:
-        gridDrift 24s linear infinite;
 }
 
-@keyframes gridDrift {
+@keyframes gridDrift{
 
-    from {
-        transform: translate(0,0);
+    from{
+        transform:translate3d(0,0,0);
     }
 
-    to {
-        transform: translate(42px,42px);
+    to{
+        transform:translate3d(48px,48px,0);
     }
 }
 
 
 /* =========================================================
-   SCAN LINE
+   SCANLINE
 ========================================================= */
 
-body::after {
+.scanline{
 
-    content: "";
+    position:fixed;
 
-    position: fixed;
+    left:0;
+    top:-10px;
 
-    top: -10px;
+    width:100%;
+    height:2px;
 
-    left: 0;
+    z-index:999;
 
-    width: 100%;
-
-    height: 1px;
-
-    z-index: 9999;
-
-    pointer-events: none;
+    pointer-events:none;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(114,231,255,.55),
+            var(--cyan),
             transparent
         );
 
     box-shadow:
-        0 0 15px rgba(114,231,255,.45);
+        0 0 20px var(--cyan);
+
+    opacity:.5;
 
     animation:
-        scanner 11s linear infinite;
+        scanline 8s linear infinite;
 }
 
-@keyframes scanner {
+@keyframes scanline{
 
-    0% {
-        top: -10px;
-        opacity: 0;
+    0%{
+        top:-10px;
+        opacity:0;
     }
 
-    10% {
-        opacity: .8;
+    10%{
+        opacity:.65;
     }
 
-    50% {
-        opacity: .35;
+    80%{
+        opacity:.25;
     }
 
-    100% {
-        top: 105vh;
-        opacity: 0;
+    100%{
+        top:100vh;
+        opacity:0;
     }
 }
 
@@ -286,19 +257,18 @@ body::after {
    CURSOR FIELD
 ========================================================= */
 
-.cursor-field {
+.cursor-field{
 
-    position: fixed;
+    position:fixed;
 
-    width: 420px;
+    width:360px;
+    height:360px;
 
-    height: 420px;
+    border-radius:50%;
 
-    border-radius: 50%;
+    pointer-events:none;
 
-    pointer-events: none;
-
-    z-index: 1;
+    z-index:1;
 
     transform:
         translate(-50%,-50%);
@@ -306,158 +276,35 @@ body::after {
     background:
         radial-gradient(
             circle,
-            rgba(114,231,255,.055),
-            transparent 67%
+            rgba(80,220,255,.075),
+            rgba(0,170,255,.025) 35%,
+            transparent 68%
         );
 
-    transition:
-        opacity .3s ease;
+    filter:blur(2px);
+
+    mix-blend-mode:screen;
 }
 
 
 /* =========================================================
-   PARTICLES
+   PARTICLE CANVAS
 ========================================================= */
 
-.particle-field {
+#physicsCanvas{
 
-    position: fixed;
+    position:fixed;
 
-    inset: 0;
+    inset:0;
 
-    overflow: hidden;
+    width:100%;
+    height:100%;
 
-    pointer-events: none;
+    pointer-events:none;
 
-    z-index: 1;
-}
+    z-index:1;
 
-.particle {
-
-    position: absolute;
-
-    width: 2px;
-
-    height: 2px;
-
-    border-radius: 50%;
-
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 7px var(--cyan);
-
-    opacity: .4;
-
-    animation:
-        particleTravel linear infinite;
-}
-
-.particle:nth-child(1) {
-    left: 5%;
-    top: 70%;
-    animation-duration: 17s;
-}
-
-.particle:nth-child(2) {
-    left: 12%;
-    top: 30%;
-    animation-duration: 21s;
-}
-
-.particle:nth-child(3) {
-    left: 21%;
-    top: 82%;
-    animation-duration: 14s;
-}
-
-.particle:nth-child(4) {
-    left: 31%;
-    top: 45%;
-    animation-duration: 19s;
-}
-
-.particle:nth-child(5) {
-    left: 42%;
-    top: 15%;
-    animation-duration: 23s;
-}
-
-.particle:nth-child(6) {
-    left: 54%;
-    top: 73%;
-    animation-duration: 18s;
-}
-
-.particle:nth-child(7) {
-    left: 66%;
-    top: 34%;
-    animation-duration: 16s;
-}
-
-.particle:nth-child(8) {
-    left: 77%;
-    top: 78%;
-    animation-duration: 22s;
-}
-
-.particle:nth-child(9) {
-    left: 88%;
-    top: 22%;
-    animation-duration: 15s;
-}
-
-.particle:nth-child(10) {
-    left: 94%;
-    top: 58%;
-    animation-duration: 20s;
-}
-
-.particle:nth-child(11) {
-    left: 37%;
-    top: 91%;
-    animation-duration: 25s;
-}
-
-.particle:nth-child(12) {
-    left: 71%;
-    top: 91%;
-    animation-duration: 18s;
-}
-
-@keyframes particleTravel {
-
-    0% {
-        transform:
-            translate(0,50px)
-            scale(.5);
-
-        opacity: 0;
-    }
-
-    20% {
-        opacity: .45;
-    }
-
-    50% {
-        transform:
-            translate(35px,-70px)
-            scale(1.2);
-
-        opacity: .7;
-    }
-
-    80% {
-        opacity: .25;
-    }
-
-    100% {
-        transform:
-            translate(-25px,-180px)
-            scale(.4);
-
-        opacity: 0;
-    }
+    opacity:.72;
 }
 
 
@@ -465,181 +312,122 @@ body::after {
    HEADER
 ========================================================= */
 
-header {
+header{
 
-    position: sticky;
+    height:76px;
 
-    top: 0;
+    position:relative;
 
-    z-index: 500;
+    z-index:50;
 
-    height: 72px;
+    display:flex;
 
-    display: flex;
+    align-items:center;
 
-    align-items: center;
+    justify-content:space-between;
 
-    justify-content: space-between;
-
-    padding:
-        0 clamp(18px,5vw,70px);
+    padding:0 6%;
 
     background:
-        rgba(5,7,10,.76);
+        rgba(3,5,8,.72);
 
     border-bottom:
         1px solid var(--line);
 
     backdrop-filter:
-        blur(22px);
+        blur(24px);
 
     -webkit-backdrop-filter:
-        blur(22px);
-}
-
-.brand {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    text-decoration: none;
-
-    color: white;
-}
-
-.brand-mark {
-
-    width: 32px;
-
-    height: 32px;
-
-    display: grid;
-
-    place-items: center;
-
-    border:
-        1px solid rgba(114,231,255,.4);
-
-    color: var(--cyan);
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
+        blur(24px);
 
     box-shadow:
-        inset 0 0 15px rgba(114,231,255,.04),
-        0 0 15px rgba(114,231,255,.05);
-
-    transform:
-        rotate(45deg);
+        0 12px 50px rgba(0,0,0,.25);
 }
 
-.brand-mark span {
-    transform: rotate(-45deg);
+.logo{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    position:relative;
+
+    transition:.4s var(--ease);
 }
 
-.brand-name {
+.logo::after{
 
-    font-size: 18px;
+    content:"";
 
-    font-weight: 850;
+    display:inline-block;
 
-    letter-spacing: 2px;
-}
+    width:6px;
+    height:6px;
 
-.brand-sub {
+    margin-left:7px;
 
-    color: var(--dim);
+    border-radius:50%;
 
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    margin-top: -3px;
-}
-
-.header-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-}
-
-.system-state {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: var(--green);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.state-dot {
-
-    width: 6px;
-
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: var(--green);
+    background:var(--green);
 
     box-shadow:
-        0 0 8px var(--green);
+        0 0 8px var(--green),
+        0 0 22px rgba(121,255,188,.65);
 
     animation:
-        statePulse 1.8s ease-in-out infinite;
+        beacon 1.5s ease-in-out infinite;
 }
 
-@keyframes statePulse {
+@keyframes beacon{
 
-    0%,
-    100% {
-        opacity: .4;
-        transform: scale(.75);
+    0%,100%{
+        transform:scale(.7);
+        opacity:.5;
     }
 
-    50% {
-        opacity: 1;
-        transform: scale(1.25);
+    50%{
+        transform:scale(1.45);
+        opacity:1;
     }
 }
 
-.home-link {
+.logo:hover{
 
-    color: var(--muted);
+    transform:translateX(5px);
 
-    text-decoration: none;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition: .3s ease;
+    text-shadow:
+        0 0 25px rgba(97,231,255,.5);
 }
 
-.home-link:hover {
+.home-link{
 
-    color: var(--cyan);
+    color:#718895;
 
-    transform: translateX(-4px);
+    text-decoration:none;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.home-link:hover{
+
+    color:var(--cyan);
+
+    transform:translateX(-5px);
+
+    text-shadow:
+        0 0 15px rgba(97,231,255,.7);
 }
 
 
@@ -647,618 +435,727 @@ header {
    HERO
 ========================================================= */
 
-.hero {
+.hero{
 
-    position: relative;
+    min-height:
+        calc(100vh - 76px);
 
-    z-index: 5;
+    position:relative;
 
-    min-height: 720px;
+    z-index:2;
 
-    max-width: var(--max);
+    display:flex;
 
-    margin: auto;
+    align-items:center;
 
-    padding:
-        85px 28px 75px;
+    justify-content:center;
 
-    display: grid;
+    overflow:hidden;
 
-    grid-template-columns:
-        1.08fr .92fr;
-
-    align-items: center;
-
-    gap: 70px;
-}
-
-
-/* =========================================================
-   HERO LEFT
-========================================================= */
-
-.hero-left {
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.kicker {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color: var(--cyan);
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 24px;
-}
-
-.kicker::before {
-
-    content: "";
-
-    width: 35px;
-
-    height: 1px;
-
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 10px var(--cyan);
-}
-
-.hero h1 {
-
-    max-width: 850px;
-
-    font-size:
-        clamp(62px,8.5vw,122px);
-
-    line-height: .82;
-
-    letter-spacing: -.07em;
-
-    font-weight: 900;
-
-    color: #f4fbfd;
-
-    margin-bottom: 32px;
-}
-
-.hero h1 span {
-
-    display: block;
-
-    color: transparent;
-
-    -webkit-text-stroke:
-        1px rgba(114,231,255,.72);
-
-    text-shadow:
-        0 0 35px rgba(114,231,255,.12);
-}
-
-.hero-description {
-
-    max-width: 680px;
-
-    color: #91a5af;
-
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   RESEARCH PATH
-========================================================= */
-
-.research-path {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-bottom: 34px;
-}
-
-.path-node {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding: 9px 12px;
-
-    border:
+    border-bottom:
         1px solid var(--line);
-
-    background:
-        rgba(255,255,255,.018);
-
-    color: #6f828c;
-
-    font-size: 8px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-    transition: .3s ease;
-}
-
-.path-node::before {
-
-    content: "";
-
-    width: 4px;
-
-    height: 4px;
-
-    border-radius: 50%;
-
-    background: var(--cyan);
-
-    opacity: .6;
-}
-
-.path-node:hover {
-
-    color: var(--cyan);
-
-    border-color:
-        var(--line-bright);
-
-    background:
-        rgba(114,231,255,.035);
-
-    transform:
-        translateY(-2px);
 }
 
 
 /* =========================================================
-   HERO ACTIONS
+   RADAR
 ========================================================= */
 
-.hero-actions {
+.radar{
 
-    display: flex;
+    position:absolute;
 
-    flex-wrap: wrap;
+    width:650px;
+    height:650px;
 
-    gap: 12px;
-}
-
-.action {
-
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 13px 19px;
-
-    text-decoration: none;
-
-    border:
-        1px solid rgba(114,231,255,.3);
-
-    color: var(--cyan);
-
-    background:
-        rgba(114,231,255,.035);
-
-    font-size: 9px;
-
-    font-weight: 750;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    overflow: hidden;
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        background .3s ease;
-}
-
-.action::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    transform:
-        translateX(-110%);
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(114,231,255,.1),
-            transparent
-        );
-
-    transition: .5s ease;
-}
-
-.action:hover::before {
-    transform: translateX(110%);
-}
-
-.action:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        rgba(114,231,255,.7);
-
-    background:
-        rgba(114,231,255,.07);
-
-    box-shadow:
-        0 12px 35px rgba(114,231,255,.08);
-}
-
-.action.primary {
-
-    background:
-        rgba(114,231,255,.09);
-
-    color: white;
-}
-
-
-/* =========================================================
-   HERO RESEARCH DISPLAY
-========================================================= */
-
-.hero-display {
-
-    position: relative;
-
-    min-height: 510px;
-
-    display: grid;
-
-    place-items: center;
-}
-
-.science-core {
-
-    position: relative;
-
-    width: min(470px,90vw);
-
-    height: 470px;
-
-    border:
-        1px solid rgba(114,231,255,.1);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(114,231,255,.05),
-            transparent 58%
-        );
-
-    box-shadow:
-        inset 0 0 80px rgba(114,231,255,.025);
-}
-
-.core-ring {
-
-    position: absolute;
-
-    inset: 8%;
-
-    border:
-        1px solid rgba(114,231,255,.13);
-
-    border-radius: 50%;
-
-    animation:
-        rotateRing 24s linear infinite;
-}
-
-.core-ring.two {
-
-    inset: 18%;
-
-    border-color:
-        rgba(169,156,255,.16);
-
-    transform:
-        rotate(55deg)
-        scaleY(.5);
-
-    animation:
-        rotateRingReverse 17s linear infinite;
-}
-
-.core-ring.three {
-
-    inset: 29%;
-
-    border-color:
-        rgba(114,242,173,.15);
-
-    transform:
-        rotate(-35deg)
-        scaleY(.4);
-
-    animation:
-        rotateRing 13s linear infinite;
-}
-
-@keyframes rotateRing {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-}
-
-@keyframes rotateRingReverse {
-
-    from {
-        transform:
-            rotate(55deg)
-            scaleY(.5);
-    }
-
-    to {
-        transform:
-            rotate(-305deg)
-            scaleY(.5);
-    }
-}
-
-.core-center {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    width: 100px;
-
-    height: 100px;
+    left:50%;
+    top:50%;
 
     transform:
         translate(-50%,-50%);
 
+    border-radius:50%;
+
+    opacity:.45;
+
+    pointer-events:none;
+}
+
+.radar-ring{
+
+    position:absolute;
+
+    inset:0;
+
     border:
-        1px solid rgba(114,231,255,.45);
+        1px solid rgba(97,231,255,.08);
 
-    border-radius: 50%;
+    border-radius:50%;
+}
 
-    display: grid;
+.radar-ring:nth-child(2){
+    inset:12%;
+}
 
-    place-items: center;
+.radar-ring:nth-child(3){
+    inset:25%;
+}
+
+.radar-ring:nth-child(4){
+    inset:38%;
+}
+
+.radar-cross-x,
+.radar-cross-y{
+
+    position:absolute;
 
     background:
-        radial-gradient(
-            circle,
-            rgba(114,231,255,.13),
-            rgba(4,9,13,.9) 68%
+        rgba(97,231,255,.06);
+}
+
+.radar-cross-x{
+
+    width:100%;
+    height:1px;
+
+    top:50%;
+}
+
+.radar-cross-y{
+
+    width:1px;
+    height:100%;
+
+    left:50%;
+}
+
+.radar-sweep{
+
+    position:absolute;
+
+    width:50%;
+    height:50%;
+
+    left:50%;
+    top:50%;
+
+    transform-origin:0 0;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(97,231,255,.18),
+            transparent 55deg
         );
 
-    box-shadow:
-        0 0 45px rgba(114,231,255,.08),
-        inset 0 0 35px rgba(114,231,255,.08);
+    animation:
+        radarSweep 5s linear infinite;
+}
+
+@keyframes radarSweep{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.orbital-system{
+
+    position:absolute;
+
+    width:780px;
+    height:780px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    pointer-events:none;
+
+    perspective:900px;
+}
+
+.orbit{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    border:
+        1px solid rgba(97,231,255,.12);
+
+    border-radius:50%;
+
+    transform-style:preserve-3d;
+}
+
+.orbit-a{
+
+    width:290px;
+    height:290px;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(67deg);
 
     animation:
-        coreBreath 4s ease-in-out infinite;
+        orbitA 13s linear infinite;
 }
 
-@keyframes coreBreath {
+.orbit-b{
 
-    0%,
-    100% {
+    width:440px;
+    height:440px;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(67deg)
+        rotateY(22deg);
+
+    animation:
+        orbitB 19s linear infinite reverse;
+}
+
+.orbit-c{
+
+    width:610px;
+    height:610px;
+
+    transform:
+        translate(-50%,-50%)
+        rotateX(70deg)
+        rotateY(-18deg);
+
+    animation:
+        orbitC 29s linear infinite;
+}
+
+@keyframes orbitA{
+
+    from{
         transform:
             translate(-50%,-50%)
-            scale(.96);
+            rotateX(67deg)
+            rotateZ(0deg);
     }
 
-    50% {
+    to{
         transform:
             translate(-50%,-50%)
-            scale(1.06);
+            rotateX(67deg)
+            rotateZ(360deg);
     }
 }
 
-.core-symbol {
+@keyframes orbitB{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotateX(67deg)
+            rotateY(22deg)
+            rotateZ(0deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotateX(67deg)
+            rotateY(22deg)
+            rotateZ(360deg);
+    }
+}
+
+@keyframes orbitC{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotateX(70deg)
+            rotateY(-18deg)
+            rotateZ(0deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotateX(70deg)
+            rotateY(-18deg)
+            rotateZ(360deg);
+    }
+}
+
+
+/* =========================================================
+   ORBIT PARTICLES
+========================================================= */
+
+.orbit-particle{
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan),
+        0 0 25px rgba(97,231,255,.7);
+}
+
+.p1{
+    left:50%;
+    top:-4px;
+}
+
+.p2{
+    right:-4px;
+    top:50%;
+}
+
+.p3{
+    bottom:-4px;
+    left:50%;
+}
+
+.p4{
+    left:-4px;
+    top:50%;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:min(1100px,90%);
+
+    text-align:center;
+
+    animation:
+        heroEntry 1.5s var(--ease) both;
+}
+
+@keyframes heroEntry{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(45px)
+            scale(.95);
+        filter:blur(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+        filter:blur(0);
+    }
+}
+
+.kicker{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:8px 16px;
+
+    border:
+        1px solid rgba(97,231,255,.18);
+
+    background:
+        rgba(97,231,255,.025);
+
+    color:#6c98a9;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    backdrop-filter:blur(15px);
+
+    margin-bottom:30px;
+
+    animation:
+        kickerPulse 4s ease-in-out infinite;
+}
+
+.kicker::before{
+
+    content:"";
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 10px var(--green);
+}
+
+@keyframes kickerPulse{
+
+    0%,100%{
+        border-color:rgba(97,231,255,.13);
+    }
+
+    50%{
+        border-color:rgba(97,231,255,.35);
+    }
+}
+
+.hero h1{
+
+    font-size:
+        clamp(70px,13vw,170px);
+
+    line-height:.82;
+
+    letter-spacing:
+        -9px;
+
+    font-weight:950;
+
+    color:#f7fdff;
+
+    position:relative;
+
+    text-shadow:
+        0 0 35px rgba(97,231,255,.12),
+        0 0 100px rgba(97,231,255,.06);
+
+    animation:
+        titleBreathing 5s ease-in-out infinite;
+}
+
+@keyframes titleBreathing{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.hero h1 span{
+
+    color:var(--cyan);
+
+    text-shadow:
+        0 0 20px rgba(97,231,255,.8),
+        0 0 60px rgba(0,183,255,.45),
+        0 0 120px rgba(0,183,255,.2);
+}
+
+.hero-sub{
+
+    margin-top:32px;
+
+    color:#7e98a5;
+
+    font-size:
+        clamp(14px,2vw,18px);
+
+    letter-spacing:
+        3px;
+}
+
+.hero-description{
+
+    max-width:700px;
+
+    margin:17px auto 0;
+
+    color:#526b77;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   HERO TELEMETRY
+========================================================= */
+
+.telemetry{
+
+    width:min(850px,100%);
+
+    margin:45px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border:
+        1px solid rgba(97,231,255,.13);
+
+    background:
+        rgba(3,9,14,.58);
+
+    backdrop-filter:
+        blur(20px);
+
+    overflow:hidden;
+}
+
+.telemetry-cell{
+
+    padding:17px;
+
+    border-right:
+        1px solid rgba(130,205,230,.08);
+
+    position:relative;
+}
+
+.telemetry-cell:last-child{
+    border-right:none;
+}
+
+.telemetry-label{
+
+    display:block;
+
+    color:#3e5965;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.telemetry-value{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#b9d9e5;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:12px;
+}
+
+.telemetry-value.live{
+    color:var(--green);
+}
+
+.telemetry-cell::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    height:1px;
+
+    width:30%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
+    animation:
+        telemetryScan 3s ease-in-out infinite;
+}
+
+@keyframes telemetryScan{
+
+    0%,100%{
+        left:0;
+        width:20%;
+    }
+
+    50%{
+        left:65%;
+        width:35%;
+    }
+}
+
+
+/* =========================================================
+   HERO EQUATIONS
+========================================================= */
+
+.equation{
+
+    position:absolute;
+
+    color:rgba(125,220,245,.16);
 
     font-family:
         Georgia,
         serif;
 
-    font-size: 25px;
+    pointer-events:none;
 
-    color: white;
+    white-space:nowrap;
 
-    text-shadow:
-        0 0 20px rgba(114,231,255,.5);
+    animation:
+        equationFloat 8s ease-in-out infinite;
 }
 
-.orbit-particle {
-
-    position: absolute;
-
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 10px var(--cyan),
-        0 0 25px rgba(114,231,255,.7);
-
-    top: 0;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
+.eq1{
+    left:8%;
+    top:28%;
+    font-size:27px;
 }
 
-.orbit-particle.p2 {
-
-    top: auto;
-
-    left: auto;
-
-    right: 1%;
-
-    bottom: 49%;
-
-    background: var(--violet);
-
-    box-shadow:
-        0 0 10px var(--violet),
-        0 0 22px rgba(169,156,255,.6);
+.eq2{
+    right:8%;
+    top:35%;
+    font-size:22px;
+    animation-delay:-3s;
 }
 
-.orbit-particle.p3 {
+.eq3{
+    left:12%;
+    bottom:20%;
+    font-size:20px;
+    animation-delay:-5s;
+}
 
-    top: auto;
+.eq4{
+    right:13%;
+    bottom:18%;
+    font-size:25px;
+    animation-delay:-2s;
+}
 
-    left: 12%;
+@keyframes equationFloat{
 
-    bottom: 20%;
+    0%,100%{
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
 
-    background: var(--green);
-
-    box-shadow:
-        0 0 10px var(--green),
-        0 0 22px rgba(114,242,173,.6);
+    50%{
+        transform:
+            translate3d(18px,-28px,0)
+            rotate(3deg);
+    }
 }
 
 
 /* =========================================================
-   DISPLAY HUD
+   SCROLL INDICATOR
 ========================================================= */
 
-.hud {
+.scroll-indicator{
 
-    position: absolute;
+    position:absolute;
 
-    min-width: 145px;
+    bottom:28px;
 
-    padding: 12px 14px;
+    left:50%;
 
-    border:
-        1px solid rgba(114,231,255,.15);
+    transform:translateX(-50%);
+
+    color:#38535f;
+
+    font-size:8px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+.scroll-indicator::after{
+
+    content:"";
+
+    display:block;
+
+    width:1px;
+    height:38px;
+
+    margin:10px auto 0;
 
     background:
-        rgba(5,9,13,.78);
+        linear-gradient(
+            to bottom,
+            var(--cyan),
+            transparent
+        );
 
-    backdrop-filter:
-        blur(12px);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.3);
+    animation:
+        scrollPulse 2s ease-in-out infinite;
 }
 
-.hud small {
+@keyframes scrollPulse{
 
-    display: block;
+    0%,100%{
+        transform:scaleY(.5);
+        transform-origin:top;
+        opacity:.3;
+    }
 
-    color: #526771;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 5px;
-}
-
-.hud strong {
-
-    color: #cde7ef;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-.hud-a {
-    left: -2%;
-    top: 17%;
-}
-
-.hud-b {
-    right: -2%;
-    top: 33%;
-}
-
-.hud-c {
-    left: 7%;
-    bottom: 12%;
-}
-
-.hud-d {
-    right: 6%;
-    bottom: 18%;
+    50%{
+        transform:scaleY(1);
+        opacity:1;
+    }
 }
 
 
 /* =========================================================
-   SECTION
+   MAIN
 ========================================================= */
 
-.section {
+main{
 
-    position: relative;
+    position:relative;
 
-    z-index: 5;
+    z-index:3;
+}
 
-    max-width: var(--max);
+.section{
 
-    margin: auto;
+    max-width:1280px;
+
+    margin:auto;
 
     padding:
-        100px 28px;
+        110px 25px;
 }
 
 
@@ -1266,248 +1163,118 @@ header {
    SECTION HEADER
 ========================================================= */
 
-.section-header {
+.section-heading{
 
-    display: flex;
+    display:flex;
 
-    align-items: flex-end;
+    align-items:flex-end;
 
-    justify-content: space-between;
+    justify-content:space-between;
 
-    gap: 30px;
+    gap:30px;
 
-    padding-bottom: 22px;
+    margin-bottom:45px;
 
-    margin-bottom: 38px;
+    padding-bottom:20px;
 
     border-bottom:
         1px solid var(--line);
 
-    position: relative;
+    position:relative;
 }
 
-.section-header::after {
+.section-heading::after{
 
-    content: "";
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    bottom: -1px;
+    left:0;
+    bottom:-1px;
 
-    left: 0;
+    width:130px;
+    height:1px;
 
-    width: 110px;
-
-    height: 1px;
-
-    background: var(--cyan);
+    background:var(--cyan);
 
     box-shadow:
-        0 0 12px var(--cyan);
-}
-
-.section-index {
-
-    color: var(--cyan);
-
-    font-family:
-        monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 8px;
-}
-
-.section-header h2 {
-
-    font-size:
-        clamp(27px,3vw,42px);
-
-    line-height: 1;
-
-    letter-spacing: -.04em;
-
-    font-weight: 850;
-}
-
-.section-header p {
-
-    color: var(--muted);
-
-    font-size: 13px;
-
-    margin-top: 10px;
-}
-
-.section-code {
-
-    color: #4c5e67;
-
-    font-family:
-        monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   TELEMETRY
-========================================================= */
-
-.telemetry {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    border:
-        1px solid var(--line);
-
-    background:
-        rgba(8,13,18,.7);
-
-    margin-bottom: 90px;
-}
-
-.telemetry-cell {
-
-    position: relative;
-
-    min-height: 125px;
-
-    padding: 22px;
-
-    border-right:
-        1px solid var(--line);
-
-    overflow: hidden;
-}
-
-.telemetry-cell:last-child {
-    border-right: none;
-}
-
-.telemetry-cell::after {
-
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 40%;
-
-    height: 1px;
-
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 12px var(--cyan);
+        0 0 15px var(--cyan);
 
     animation:
-        telemetryLine 3s ease-in-out infinite;
+        headingPulse 4s ease-in-out infinite;
 }
 
-.telemetry-cell:nth-child(2)::after {
-    background: var(--green);
-    box-shadow: 0 0 12px var(--green);
-    animation-delay: -.8s;
-}
+@keyframes headingPulse{
 
-.telemetry-cell:nth-child(3)::after {
-    background: var(--amber);
-    box-shadow: 0 0 12px var(--amber);
-    animation-delay: -1.5s;
-}
-
-.telemetry-cell:nth-child(4)::after {
-    background: var(--violet);
-    box-shadow: 0 0 12px var(--violet);
-    animation-delay: -2.2s;
-}
-
-@keyframes telemetryLine {
-
-    0%,
-    100% {
-        width: 25%;
-        opacity: .35;
+    0%,100%{
+        width:80px;
     }
 
-    50% {
-        width: 75%;
-        opacity: .8;
+    50%{
+        width:260px;
     }
 }
 
-.telemetry-label {
+.section-label{
 
-    color: #4f626c;
+    color:var(--cyan);
 
-    font-size: 8px;
+    font-size:9px;
 
-    letter-spacing: 2px;
+    letter-spacing:4px;
 
-    text-transform: uppercase;
+    text-transform:uppercase;
 
-    margin-bottom: 12px;
+    margin-bottom:9px;
 }
 
-.telemetry-value {
+.heading-left h2{
 
-    color: #e8f6fa;
+    font-size:
+        clamp(27px,4vw,42px);
 
-    font-size: 23px;
+    font-weight:850;
 
-    font-weight: 750;
-
-    letter-spacing: -.5px;
+    letter-spacing:-1px;
 }
 
-.telemetry-value span {
+.heading-left p{
 
-    color: var(--cyan);
+    margin-top:8px;
 
-    font-size: 11px;
+    color:#536b77;
 
-    font-weight: 500;
-
-    margin-left: 4px;
+    font-size:13px;
 }
 
-.telemetry-note {
+.section-code{
 
-    color: #566973;
+    color:#344b56;
 
-    font-size: 8px;
+    font-family:
+        "Courier New",
+        monospace;
 
-    margin-top: 7px;
+    font-size:9px;
 
-    letter-spacing: 1px;
+    letter-spacing:2px;
 }
 
 
 /* =========================================================
-   UNIT ARCHITECTURE
+   UNIT GRID
 ========================================================= */
 
-.unit-grid {
+.units{
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(2,1fr);
 
-    gap: 16px;
+    gap:20px;
+
+    perspective:1200px;
 }
 
 
@@ -1515,1208 +1282,867 @@ header {
    UNIT CARD
 ========================================================= */
 
-.unit-card {
+.unit{
 
-    position: relative;
+    min-height:300px;
 
-    min-height: 300px;
+    position:relative;
 
-    display: flex;
+    overflow:hidden;
 
-    flex-direction: column;
+    text-decoration:none;
 
-    justify-content: space-between;
+    color:inherit;
 
-    padding: 27px;
-
-    text-decoration: none;
-
-    color: inherit;
-
-    overflow: hidden;
-
-    border:
-        1px solid var(--line);
+    padding:31px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(14,22,28,.85),
-            rgba(6,10,14,.92)
+            rgba(12,20,27,.78),
+            rgba(4,9,13,.88)
         );
 
-    transition:
-        transform .45s cubic-bezier(.2,.8,.2,1),
-        border-color .35s ease,
-        box-shadow .35s ease;
+    border:
+        1px solid rgba(130,205,230,.11);
 
-    transform-style:
-        preserve-3d;
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .55s var(--ease),
+        border-color .4s ease,
+        box-shadow .5s ease;
+
+    opacity:0;
+
+    transform:
+        translateY(45px);
 }
 
-.unit-card::before {
+.unit.visible{
 
-    content: "";
+    opacity:1;
 
-    position: absolute;
+    transform:
+        translateY(0);
 
-    inset: 0;
+    transition:
+        opacity .8s ease,
+        transform .9s var(--ease),
+        border-color .4s ease,
+        box-shadow .5s ease;
+}
 
-    background:
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.unit .technical-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
         linear-gradient(
-            120deg,
-            transparent 25%,
-            rgba(114,231,255,.045),
+            rgba(97,231,255,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(97,231,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        30px 30px;
+
+    mask-image:
+        linear-gradient(
+            to bottom right,
+            black,
             transparent 75%
         );
 
-    transform:
-        translateX(-100%);
-
-    transition:
-        .8s ease;
-}
-
-.unit-card:hover::before {
-    transform:
-        translateX(100%);
-}
-
-.unit-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-
-    height: 220px;
-
-    border-radius: 50%;
-
-    right: -120px;
-
-    bottom: -130px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(114,231,255,.1),
-            transparent 70%
-        );
-
-    transition:
-        .6s ease;
-}
-
-.unit-card:hover {
-
-    border-color:
-        rgba(114,231,255,.42);
-
-    box-shadow:
-        0 25px 80px rgba(0,0,0,.35),
-        0 0 35px rgba(114,231,255,.055);
-
-    transform:
-        translateY(-9px);
-}
-
-.unit-card:hover::after {
-
-    transform:
-        scale(1.5);
-
-    right: -70px;
-
-    bottom: -80px;
+    pointer-events:none;
 }
 
 
 /* =========================================================
-   UNIT CARD TOP
+   CARD ENERGY LINE
 ========================================================= */
 
-.unit-meta {
+.unit::before{
 
-    display: flex;
+    content:"";
 
-    justify-content: space-between;
+    position:absolute;
 
-    align-items: center;
+    top:0;
+    left:-120%;
 
-    position: relative;
-
-    z-index: 2;
-}
-
-.unit-id {
-
-    color: var(--cyan);
-
-    font-family:
-        monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-}
-
-.unit-class {
-
-    color: #536873;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.unit-card h3 {
-
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 27px;
-
-    letter-spacing: -.03em;
-
-    margin-top: 25px;
-
-    margin-bottom: 10px;
-
-    transition: .3s ease;
-}
-
-.unit-card:hover h3 {
-
-    transform:
-        translateX(5px);
-
-    color: white;
-}
-
-.unit-card p {
-
-    position: relative;
-
-    z-index: 2;
-
-    color: #738791;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-
-    max-width: 540px;
-}
-
-
-/* =========================================================
-   UNIT TAGS
-========================================================= */
-
-.unit-tags {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 6px;
-
-    margin-top: 18px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.tag {
-
-    padding: 5px 7px;
-
-    border:
-        1px solid rgba(120,160,175,.1);
-
-    color: #536b75;
-
-    font-size: 7px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-.unit-card:hover .tag {
-
-    color: #7896a2;
-
-    border-color:
-        rgba(114,231,255,.14);
-}
-
-
-/* =========================================================
-   UNIT FOOTER
-========================================================= */
-
-.unit-footer {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding-top: 18px;
-
-    margin-top: 24px;
-
-    border-top:
-        1px solid var(--line);
-
-    position: relative;
-
-    z-index: 3;
-}
-
-.unit-code {
-
-    color: #40545e;
-
-    font-family:
-        monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 1.5px;
-}
-
-.unit-open {
-
-    color: var(--cyan);
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    transition: .35s ease;
-}
-
-.unit-card:hover .unit-open {
-
-    letter-spacing: 4px;
-
-    text-shadow:
-        0 0 15px rgba(114,231,255,.7);
-}
-
-
-/* =========================================================
-   SCIENCE LAB
-========================================================= */
-
-.lab-layout {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 18px;
-
-    margin-top: 30px;
-}
-
-.lab-panel {
-
-    min-height: 370px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    border:
-        1px solid var(--line);
-
-    background:
-        rgba(8,13,18,.72);
-}
-
-.lab-panel-header {
-
-    height: 54px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding:
-        0 18px;
-
-    border-bottom:
-        1px solid var(--line);
-}
-
-.lab-title {
-
-    color: #78909b;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.lab-status {
-
-    color: var(--green);
-
-    font-size: 7px;
-
-    letter-spacing: 1.5px;
-}
-
-
-/* =========================================================
-   FIELD VISUAL
-========================================================= */
-
-.field-visual {
-
-    position: absolute;
-
-    inset: 54px 0 0;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(114,231,255,.045),
-            transparent 45%
-        );
-}
-
-.field-line {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    width: 70%;
-
-    height: 70%;
-
-    border:
-        1px solid rgba(114,231,255,.14);
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%,-50%)
-        scaleY(.45);
-
-    animation:
-        fieldPulse 4s ease-in-out infinite;
-}
-
-.field-line:nth-child(2) {
-    width: 52%;
-    height: 52%;
-    animation-delay: -.8s;
-}
-
-.field-line:nth-child(3) {
-    width: 36%;
-    height: 36%;
-    animation-delay: -1.6s;
-}
-
-.field-line:nth-child(4) {
-    width: 85%;
-    height: 85%;
-    animation-delay: -2.2s;
-}
-
-@keyframes fieldPulse {
-
-    0%,
-    100% {
-        opacity: .3;
-        transform:
-            translate(-50%,-50%)
-            scaleY(.43);
-    }
-
-    50% {
-        opacity: .75;
-        transform:
-            translate(-50%,-50%)
-            scaleY(.5);
-    }
-}
-
-.charge {
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    width: 54px;
-
-    height: 54px;
-
-    margin:
-        -27px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(114,231,255,.55);
-
-    background:
-        rgba(114,231,255,.08);
-
-    color: var(--cyan);
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 19px;
-
-    box-shadow:
-        0 0 35px rgba(114,231,255,.12);
-}
-
-.field-vector {
-
-    position: absolute;
-
-    width: 75px;
-
-    height: 1px;
+    width:120%;
+    height:1px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            var(--cyan)
+            var(--cyan),
+            transparent
         );
 
-    transform-origin:
-        left center;
+    box-shadow:
+        0 0 20px var(--cyan);
 
-    opacity: .55;
+    animation:
+        energyScan 4.5s linear infinite;
 }
 
-.vector-1 {
-    left: 22%;
-    top: 35%;
-    transform: rotate(-25deg);
-}
+@keyframes energyScan{
 
-.vector-2 {
-    right: 18%;
-    top: 42%;
-    transform: rotate(205deg);
-}
+    from{
+        left:-120%;
+    }
 
-.vector-3 {
-    left: 25%;
-    bottom: 27%;
-    transform: rotate(22deg);
-}
-
-.vector-4 {
-    right: 20%;
-    bottom: 30%;
-    transform: rotate(158deg);
-}
-
-.vector-5 {
-    left: 43%;
-    top: 18%;
-    transform: rotate(90deg);
+    to{
+        left:120%;
+    }
 }
 
 
 /* =========================================================
-   GRAPH
+   CARD RADIAL ENERGY
 ========================================================= */
 
-.graph {
+.unit::after{
 
-    position: absolute;
+    content:"";
 
-    inset: 80px 30px 30px;
+    position:absolute;
 
-    overflow: hidden;
+    width:300px;
+    height:300px;
+
+    right:-150px;
+    bottom:-150px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(97,231,255,.11),
+            transparent 68%
+        );
+
+    transition:
+        .7s var(--ease);
 }
 
-.graph-grid {
+.unit:hover::after{
 
-    position: absolute;
+    transform:
+        scale(1.45);
 
-    inset: 0;
+    right:-90px;
+    bottom:-90px;
+}
 
-    background-image:
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.unit-content{
+
+    position:relative;
+
+    z-index:5;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+}
+
+.unit-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.unit-number{
+
+    color:var(--cyan);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 0 12px rgba(97,231,255,.55);
+}
+
+.unit-status{
+
+    color:#415b67;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.unit h3{
+
+    margin-top:30px;
+
+    font-size:
+        clamp(23px,3vw,31px);
+
+    line-height:1.1;
+
+    letter-spacing:-.5px;
+
+    transition:
+        .4s var(--ease);
+}
+
+.unit:hover h3{
+
+    transform:
+        translateX(7px);
+
+    color:white;
+
+    text-shadow:
+        0 0 25px rgba(97,231,255,.28);
+}
+
+.unit p{
+
+    margin-top:13px;
+
+    max-width:540px;
+
+    color:#617b87;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.unit-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:30px;
+
+    padding-top:15px;
+
+    border-top:
+        1px solid rgba(130,205,230,.07);
+}
+
+.module-label{
+
+    color:#344d59;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+}
+
+.open-module{
+
+    color:var(--cyan);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.4s var(--ease);
+}
+
+.unit:hover .open-module{
+
+    letter-spacing:4px;
+
+    text-shadow:
+        0 0 15px var(--cyan);
+}
+
+
+/* =========================================================
+   UNIT CORNER MARKERS
+========================================================= */
+
+.corner{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border-color:
+        rgba(97,231,255,.28);
+
+    border-style:solid;
+
+    pointer-events:none;
+
+    transition:.4s;
+}
+
+.corner.tl{
+    left:8px;
+    top:8px;
+    border-width:1px 0 0 1px;
+}
+
+.corner.tr{
+    right:8px;
+    top:8px;
+    border-width:1px 1px 0 0;
+}
+
+.corner.bl{
+    left:8px;
+    bottom:8px;
+    border-width:0 0 1px 1px;
+}
+
+.corner.br{
+    right:8px;
+    bottom:8px;
+    border-width:0 1px 1px 0;
+}
+
+.unit:hover .corner{
+
+    width:30px;
+    height:30px;
+
+    border-color:
+        rgba(97,231,255,.75);
+}
+
+
+/* =========================================================
+   CARD HOVER GLOW
+========================================================= */
+
+.unit:hover{
+
+    border-color:
+        rgba(97,231,255,.45);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.45),
+        0 0 50px rgba(0,170,255,.08),
+        inset 0 0 45px rgba(97,231,255,.025);
+}
+
+
+/* =========================================================
+   SCIENTIFIC DATA STRIP
+========================================================= */
+
+.data-section{
+
+    margin-top:100px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap:20px;
+}
+
+.data-panel{
+
+    min-height:300px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:25px;
+
+    border:
+        1px solid rgba(130,205,230,.11);
+
+    background:
+        rgba(6,12,17,.68);
+
+    backdrop-filter:blur(20px);
+}
+
+.panel-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.panel-title{
+
+    color:#86a4b1;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.panel-live{
+
+    color:var(--green);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+}
+
+.panel-live::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:5px;
+    height:5px;
+
+    margin-right:7px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 9px var(--green);
+
+    animation:
+        beacon 1.4s infinite;
+}
+
+
+/* =========================================================
+   WAVEFORM
+========================================================= */
+
+.wave-container{
+
+    height:210px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid rgba(130,205,230,.07);
+
+    background:
         linear-gradient(
-            rgba(114,231,255,.045) 1px,
+            rgba(97,231,255,.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(114,231,255,.045) 1px,
+            rgba(97,231,255,.025) 1px,
             transparent 1px
         );
 
     background-size:
-        42px 42px;
+        35px 35px;
 }
 
-.graph-axis-x {
+.wave{
 
-    position: absolute;
+    position:absolute;
 
-    left: 0;
+    left:0;
 
-    right: 0;
+    width:200%;
 
-    bottom: 20%;
-
-    height: 1px;
+    height:100%;
 
     background:
-        rgba(180,210,220,.25);
-}
-
-.graph-axis-y {
-
-    position: absolute;
-
-    top: 0;
-
-    bottom: 0;
-
-    left: 12%;
-
-    width: 1px;
-
-    background:
-        rgba(180,210,220,.25);
-}
-
-.wave {
-
-    position: absolute;
-
-    left: 12%;
-
-    top: 0;
-
-    width: 88%;
-
-    height: 80%;
-
-    overflow: hidden;
-}
-
-.wave svg {
-
-    width: 100%;
-
-    height: 100%;
-
-    overflow: visible;
-}
-
-.wave-path {
-
-    fill: none;
-
-    stroke: var(--cyan);
-
-    stroke-width: 1.6;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='210' viewBox='0 0 700 210'%3E%3Cpath d='M0 105 C30 105 35 35 70 35 S110 175 145 175 S185 65 220 65 S260 145 295 145 S330 50 365 50 S405 165 440 165 S480 80 515 80 S555 130 590 130 S630 45 665 45 S695 105 700 105' fill='none' stroke='%2361e7ff' stroke-width='2'/%3E%3C/svg%3E")
+        repeat-x
+        center;
 
     filter:
-        drop-shadow(
-            0 0 5px rgba(114,231,255,.65)
-        );
-
-    stroke-dasharray: 1000;
-
-    stroke-dashoffset: 1000;
+        drop-shadow(0 0 8px rgba(97,231,255,.7));
 
     animation:
-        drawWave 5s ease-in-out infinite alternate;
+        waveform 6s linear infinite;
 }
 
-@keyframes drawWave {
+@keyframes waveform{
 
-    from {
-        stroke-dashoffset: 1000;
+    from{
+        transform:translateX(0);
     }
 
-    to {
-        stroke-dashoffset: 0;
+    to{
+        transform:translateX(-700px);
     }
 }
 
-.graph-label {
+.axis-x{
 
-    position: absolute;
+    position:absolute;
 
-    color: #526974;
+    left:0;
+    right:0;
 
-    font-family:
-        monospace;
+    top:50%;
 
-    font-size: 7px;
+    height:1px;
 
-    letter-spacing: 1px;
+    background:
+        rgba(130,205,230,.1);
 }
 
-.graph-label.x {
-    right: 2%;
-    bottom: 16%;
-}
+.axis-y{
 
-.graph-label.y {
-    left: 3%;
-    top: 5%;
-    transform: rotate(-90deg);
+    position:absolute;
+
+    top:0;
+    bottom:0;
+
+    left:50%;
+
+    width:1px;
+
+    background:
+        rgba(130,205,230,.1);
 }
 
 
 /* =========================================================
-   RESEARCH MATRIX
+   METRIC PANEL
 ========================================================= */
 
-.matrix {
+.metrics{
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(2,1fr);
 
-    gap: 10px;
-
-    margin-top: 35px;
+    gap:12px;
 }
 
-.matrix-card {
+.metric{
 
-    min-height: 145px;
-
-    padding: 20px;
+    padding:18px;
 
     border:
-        1px solid var(--line);
+        1px solid rgba(130,205,230,.08);
 
     background:
-        rgba(9,15,20,.7);
+        rgba(255,255,255,.012);
 
-    transition: .35s ease;
-
-    position: relative;
-
-    overflow: hidden;
+    transition:.35s;
 }
 
-.matrix-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 70px;
-
-    height: 70px;
-
-    border-radius: 50%;
-
-    right: -35px;
-
-    bottom: -35px;
-
-    background:
-        rgba(114,231,255,.06);
-
-    transition: .4s ease;
-}
-
-.matrix-card:hover {
+.metric:hover{
 
     border-color:
-        rgba(114,231,255,.3);
+        rgba(97,231,255,.3);
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(97,231,255,.025);
+}
+
+.metric-label{
+
+    color:#405965;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.metric-value{
+
+    margin-top:7px;
+
+    color:#b8dce8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:18px;
+}
+
+.metric-value.cyan{
+    color:var(--cyan);
+}
+
+.metric-value.green{
+    color:var(--green);
+}
+
+.metric-value.amber{
+    color:var(--amber);
+}
+
+.metric-value.violet{
+    color:var(--violet);
+}
+
+
+/* =========================================================
+   SYSTEM ARCHIVE
+========================================================= */
+
+.archive{
+
+    margin-top:20px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.archive-item{
+
+    min-height:120px;
+
+    padding:22px;
+
+    border:
+        1px solid rgba(130,205,230,.09);
+
+    background:
+        rgba(7,13,18,.65);
+
+    transition:
+        .4s var(--ease);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.archive-item:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(97,231,255,.3);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.3);
+}
+
+.archive-index{
+
+    color:#324b57;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:9px;
+}
+
+.archive-item h4{
+
+    margin-top:14px;
+
+    font-size:14px;
+
+    color:#a8c4cf;
+}
+
+.archive-item p{
+
+    margin-top:5px;
+
+    color:#526b77;
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   SYSTEM PANEL
+========================================================= */
+
+.system-panel{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border:
+        1px solid rgba(130,205,230,.1);
+
+    background:
+        rgba(5,11,16,.7);
+
+    backdrop-filter:
+        blur(20px);
+}
+
+.system-item{
+
+    padding:24px;
+
+    border-right:
+        1px solid rgba(130,205,230,.07);
+}
+
+.system-item:last-child{
+    border-right:none;
+}
+
+.system-item span{
+
+    display:block;
+
+    color:#3c5661;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.system-item strong{
+
+    display:block;
+
+    margin-top:7px;
+
+    color:#a9c6d1;
+
+    font-size:13px;
+
+    font-weight:500;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.back-container{
+
+    text-align:center;
+
+    margin-top:70px;
+}
+
+.back{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:14px 25px;
+
+    color:#65818d;
+
+    text-decoration:none;
+
+    border:
+        1px solid rgba(97,231,255,.18);
+
+    background:
+        rgba(97,231,255,.025);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.4s var(--ease);
+}
+
+.back:hover{
+
+    color:white;
+
+    border-color:
+        rgba(97,231,255,.5);
 
     transform:
         translateY(-5px);
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.25);
-}
-
-.matrix-card:hover::after {
-
-    transform:
-        scale(2);
-}
-
-.matrix-index {
-
-    color: #435963;
-
-    font-family:
-        monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-}
-
-.matrix-card h3 {
-
-    font-size: 16px;
-
-    margin-top: 17px;
-
-    margin-bottom: 7px;
-}
-
-.matrix-card p {
-
-    color: #627883;
-
-    font-size: 10px;
-
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   EQUATION CONSOLE
-========================================================= */
-
-.equation-console {
-
-    margin-top: 35px;
-
-    border:
-        1px solid var(--line);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(12,18,23,.9),
-            rgba(5,9,13,.94)
-        );
-
-    overflow: hidden;
-}
-
-.console-top {
-
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding:
-        0 17px;
-
-    border-bottom:
-        1px solid var(--line);
-}
-
-.console-dot {
-
-    width: 7px;
-
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--cyan);
-
-    box-shadow:
-        0 0 7px var(--cyan);
-}
-
-.console-title {
-
-    margin-left: 8px;
-
-    color: #536873;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.equation-content {
-
-    padding:
-        28px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap: 1px;
-
-    background:
-        var(--line);
-}
-
-.equation {
-
-    padding:
-        28px 22px;
-
-    background:
-        #070c10;
-
-    text-align: center;
-}
-
-.equation-symbol {
-
-    font-family:
-        Georgia,
-        serif;
-
-    color: #eaf8fb;
-
-    font-size: 24px;
-
-    margin-bottom: 10px;
-}
-
-.equation-name {
-
-    color: #536a74;
-
-    font-size: 7px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   KNOWLEDGE MAP
-========================================================= */
-
-.knowledge-map {
-
-    margin-top: 35px;
-
-    min-height: 330px;
-
-    position: relative;
-
-    border:
-        1px solid var(--line);
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(114,231,255,.035),
-            transparent 50%
-        ),
-        rgba(7,12,16,.75);
-
-    overflow: hidden;
-}
-
-.map-grid {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(114,231,255,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(114,231,255,.025) 1px,
-            transparent 1px
-        );
-
-    background-size: 35px 35px;
-}
-
-.map-node {
-
-    position: absolute;
-
-    padding: 10px 13px;
-
-    border:
-        1px solid rgba(114,231,255,.17);
-
-    background:
-        rgba(5,10,14,.85);
-
-    color: #728b96;
-
-    font-size: 8px;
-
-    letter-spacing: 1.3px;
-
-    text-transform: uppercase;
-
-    z-index: 2;
-
-    transition: .3s ease;
-}
-
-.map-node:hover {
-
-    color: var(--cyan);
-
-    border-color:
-        rgba(114,231,255,.5);
-
-    box-shadow:
-        0 0 25px rgba(114,231,255,.08);
-
-    transform:
-        scale(1.05);
-}
-
-.map-core {
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    padding: 18px 23px;
-
-    color: white;
-
-    border-color:
-        rgba(114,231,255,.45);
-
-    box-shadow:
-        0 0 35px rgba(114,231,255,.08);
-}
-
-.map-1 {
-    left: 12%;
-    top: 22%;
-}
-
-.map-2 {
-    left: 37%;
-    top: 12%;
-}
-
-.map-3 {
-    right: 13%;
-    top: 23%;
-}
-
-.map-4 {
-    left: 10%;
-    bottom: 19%;
-}
-
-.map-5 {
-    right: 34%;
-    bottom: 13%;
-}
-
-.map-6 {
-    right: 9%;
-    bottom: 20%;
-}
-
-.map-line {
-
-    position: absolute;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(114,231,255,.18),
-            transparent
-        );
-
-    transform-origin:
-        left center;
-
-    z-index: 1;
-}
-
-.line-1 {
-    left: 21%;
-    top: 34%;
-    width: 28%;
-    transform: rotate(20deg);
-}
-
-.line-2 {
-    left: 50%;
-    top: 43%;
-    width: 26%;
-    transform: rotate(-22deg);
-}
-
-.line-3 {
-    left: 24%;
-    top: 58%;
-    width: 29%;
-    transform: rotate(-20deg);
-}
-
-.line-4 {
-    left: 51%;
-    top: 59%;
-    width: 28%;
-    transform: rotate(19deg);
-}
-
-
-/* =========================================================
-   RESEARCH NOTE
-========================================================= */
-
-.research-note {
-
-    margin-top: 55px;
-
-    padding: 30px;
-
-    border-left:
-        2px solid var(--cyan);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(114,231,255,.055),
-            transparent
-        );
-}
-
-.note-label {
-
-    color: var(--cyan);
-
-    font-family:
-        monospace;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 12px;
-}
-
-.research-note h3 {
-
-    font-size: 21px;
-
-    margin-bottom: 10px;
-}
-
-.research-note p {
-
-    max-width: 800px;
-
-    color: #71858e;
-
-    font-size: 12px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   FOOTER NAV
-========================================================= */
-
-.return-area {
-
-    display: flex;
-
-    justify-content: center;
-
-    padding-top: 20px;
-}
-
-.return {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 13px 22px;
-
-    color: #6e8994;
-
-    border:
-        1px solid var(--line);
-
-    text-decoration: none;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition: .35s ease;
-}
-
-.return:hover {
-
-    color: white;
-
-    border-color:
-        rgba(114,231,255,.4);
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.25);
+        0 15px 45px rgba(0,150,255,.1);
 }
 
 
@@ -2724,33 +2150,32 @@ header {
    FOOTER
 ========================================================= */
 
-footer {
+footer{
 
-    position: relative;
+    position:relative;
 
-    z-index: 5;
+    z-index:4;
 
-    padding:
-        32px 20px;
+    padding:30px 20px;
 
-    text-align: center;
+    text-align:center;
 
     border-top:
-        1px solid var(--line);
+        1px solid rgba(130,205,230,.08);
 
-    color: #43555e;
+    color:#344d58;
 
-    font-size: 9px;
+    font-size:10px;
 
-    letter-spacing: 1px;
+    letter-spacing:.5px;
 
     background:
-        rgba(3,6,9,.85);
+        rgba(2,5,8,.8);
 }
 
-footer span {
+footer span{
 
-    color: #7dc8d9;
+    color:#63bfd6;
 }
 
 
@@ -2758,21 +2183,21 @@ footer span {
    SCROLL REVEAL
 ========================================================= */
 
-.reveal {
+.reveal{
 
-    opacity: 0;
+    opacity:0;
 
     transform:
-        translateY(25px);
+        translateY(40px);
 
     transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1);
+        opacity 1s ease,
+        transform 1s var(--ease);
 }
 
-.reveal.visible {
+.reveal.visible{
 
-    opacity: 1;
+    opacity:1;
 
     transform:
         translateY(0);
@@ -2783,299 +2208,152 @@ footer span {
    MOBILE
 ========================================================= */
 
-@media (max-width: 1050px) {
+@media(max-width:850px){
 
-    .hero {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        padding-top: 80px;
+    .hero{
+        min-height:720px;
     }
 
-    .hero-left {
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
+    .orbital-system{
+        width:520px;
+        height:520px;
     }
 
-    .hero-description {
-
-        max-width: 700px;
+    .radar{
+        width:520px;
+        height:520px;
     }
 
-    .hero-display {
-
-        min-height: 440px;
-    }
-
-    .science-core {
-
-        width: 400px;
-
-        height: 400px;
-    }
-
-    .telemetry {
-
+    .telemetry{
         grid-template-columns:
             repeat(2,1fr);
     }
 
-    .telemetry-cell:nth-child(2) {
-        border-right: none;
+    .telemetry-cell:nth-child(2){
+        border-right:none;
     }
 
-    .telemetry-cell:nth-child(1),
-    .telemetry-cell:nth-child(2) {
+    .units{
+        grid-template-columns:1fr;
+    }
+
+    .data-section{
+        grid-template-columns:1fr;
+    }
+
+    .archive{
+        grid-template-columns:1fr;
+    }
+
+    .system-panel{
+        grid-template-columns:1fr;
+    }
+
+    .system-item{
+        border-right:none;
+
         border-bottom:
-            1px solid var(--line);
+            1px solid rgba(130,205,230,.07);
     }
 
-    .matrix {
+    .system-item:last-child{
+        border-bottom:none;
+    }
 
-        grid-template-columns:
-            repeat(2,1fr);
+    .equation{
+        opacity:.4;
+    }
+
+    .cursor-field{
+        display:none;
     }
 }
 
 
-@media (max-width: 760px) {
+@media(max-width:520px){
 
-    header {
-
-        height: 66px;
-    }
-
-    .brand-sub,
-    .system-state {
-
-        display: none;
-    }
-
-    .hero {
-
-        min-height: auto;
+    header{
+        height:68px;
 
         padding:
-            80px 18px 65px;
-
-        gap: 30px;
+            0 18px;
     }
 
-    .hero h1 {
+    .logo{
+        font-size:20px;
+    }
+
+    .home-link{
+        font-size:8px;
+    }
+
+    .hero{
+        min-height:700px;
+    }
+
+    .hero h1{
 
         font-size:
-            clamp(58px,17vw,90px);
+            clamp(58px,18vw,90px);
+
+        letter-spacing:-5px;
     }
 
-    .hero-description {
-
-        font-size: 13px;
+    .hero-sub{
+        font-size:11px;
+        letter-spacing:2px;
     }
 
-    .research-path {
-
-        justify-content: center;
+    .hero-description{
+        font-size:11px;
     }
 
-    .hero-actions {
-
-        justify-content: center;
+    .telemetry{
+        grid-template-columns:1fr 1fr;
     }
 
-    .hero-display {
-
-        min-height: 350px;
+    .telemetry-cell{
+        padding:12px;
     }
 
-    .science-core {
-
-        width: 320px;
-
-        height: 320px;
-    }
-
-    .core-center {
-
-        width: 72px;
-
-        height: 72px;
-    }
-
-    .core-symbol {
-
-        font-size: 18px;
-    }
-
-    .hud {
-
-        min-width: 105px;
-
-        padding: 9px;
-    }
-
-    .hud strong {
-
-        font-size: 9px;
-    }
-
-    .hud-a {
-        left: 0;
-    }
-
-    .hud-b {
-        right: 0;
-    }
-
-    .hud-c {
-        left: 0;
-    }
-
-    .hud-d {
-        right: 0;
-    }
-
-    .section {
-
+    .section{
         padding:
-            75px 18px;
+            75px 16px;
     }
 
-    .section-header {
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
-
-        gap: 12px;
+    .section-heading{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .section-code {
-
-        display: none;
+    .unit{
+        min-height:270px;
+        padding:24px;
     }
 
-    .telemetry {
-
-        grid-template-columns:
-            1fr;
+    .data-panel{
+        padding:17px;
     }
 
-    .telemetry-cell {
-
-        border-right: none;
-
-        border-bottom:
-            1px solid var(--line);
+    .metrics{
+        grid-template-columns:1fr;
     }
 
-    .telemetry-cell:last-child {
-
-        border-bottom: none;
+    .orbital-system{
+        width:390px;
+        height:390px;
     }
 
-    .unit-grid {
-
-        grid-template-columns:
-            1fr;
+    .radar{
+        width:400px;
+        height:400px;
     }
 
-    .lab-layout {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .equation-content {
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-    .matrix {
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-    .knowledge-map {
-
-        min-height: 420px;
-    }
-
-    .map-node {
-
-        font-size: 6px;
-
-        padding: 8px;
-    }
-
-    .map-1 {
-        left: 5%;
-    }
-
-    .map-3 {
-        right: 5%;
-    }
-
-    .map-4 {
-        left: 5%;
-    }
-
-    .map-6 {
-        right: 5%;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .home-link {
-
-        font-size: 8px;
-    }
-
-    .hero h1 {
-
-        letter-spacing:
-            -.06em;
-    }
-
-    .science-core {
-
-        width: 275px;
-
-        height: 275px;
-    }
-
-    .hud {
-
-        transform:
-            scale(.8);
-    }
-
-    .matrix {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .equation-content {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .research-note {
-
-        padding: 22px;
+    .eq1,
+    .eq2,
+    .eq3,
+    .eq4{
+        display:none;
     }
 }
 
@@ -3084,23 +2362,23 @@ footer span {
    REDUCED MOTION
 ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce){
 
     *,
     *::before,
-    *::after {
+    *::after{
 
-        animation-duration:
-            .01ms !important;
+        animation-duration:.01ms !important;
 
-        animation-iteration-count:
-            1 !important;
+        animation-iteration-count:1 !important;
 
-        scroll-behavior:
-            auto !important;
+        scroll-behavior:auto !important;
 
-        transition-duration:
-            .01ms !important;
+        transition-duration:.01ms !important;
+    }
+
+    #physicsCanvas{
+        display:none;
     }
 }
 
@@ -3111,351 +2389,194 @@ footer span {
 
 <body>
 
-
-<!-- =====================================================
-     PARTICLE FIELD
-===================================================== -->
-
-<div class="particle-field">
-
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-
-</div>
-
+<div class="scanline"></div>
 
 <div class="cursor-field" id="cursorField"></div>
 
+<canvas id="physicsCanvas"></canvas>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header>
 
-    <a href="index.html" class="brand">
-
-        <div class="brand-mark">
-            <span>IA</span>
-        </div>
-
-        <div>
-
-            <div class="brand-name">
-                IAL ATLAS
-            </div>
-
-            <div class="brand-sub">
-                PHYSICS RESEARCH ENVIRONMENT
-            </div>
-
-        </div>
-
+    <a href="index.html" class="logo">
+        IAL ATLAS
     </a>
 
-
-    <div class="header-right">
-
-        <div class="system-state">
-
-            <span class="state-dot"></span>
-
-            RESEARCH SYSTEM ACTIVE
-
-        </div>
-
-        <a href="index.html" class="home-link">
-            ← Atlas
-        </a>
-
-    </div>
+    <a href="index.html" class="home-link">
+        ← Home
+    </a>
 
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="hero">
 
 
-    <div class="hero-left reveal">
+    <!-- RADAR -->
 
+    <div class="radar">
+
+        <div class="radar-ring"></div>
+        <div class="radar-ring"></div>
+        <div class="radar-ring"></div>
+        <div class="radar-ring"></div>
+
+        <div class="radar-cross-x"></div>
+        <div class="radar-cross-y"></div>
+
+        <div class="radar-sweep"></div>
+
+    </div>
+
+
+    <!-- ORBITAL SYSTEM -->
+
+    <div class="orbital-system">
+
+        <div class="orbit orbit-a">
+
+            <span class="orbit-particle p1"></span>
+
+        </div>
+
+        <div class="orbit orbit-b">
+
+            <span class="orbit-particle p2"></span>
+
+        </div>
+
+        <div class="orbit orbit-c">
+
+            <span class="orbit-particle p3"></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- EQUATIONS -->
+
+    <div class="equation eq1">
+        F = ma
+    </div>
+
+    <div class="equation eq2">
+        E = mc²
+    </div>
+
+    <div class="equation eq3">
+        Δp = FΔt
+    </div>
+
+    <div class="equation eq4">
+        λ = h/p
+    </div>
+
+
+    <div class="hero-content">
 
         <div class="kicker">
-            IAL ATLAS // PHYSICS DIVISION
+            IAL ATLAS // PHYSICS RESEARCH NODE
         </div>
 
 
         <h1>
-
-            UNDERSTAND
-
-            <span>PHYSICS.</span>
-
+            PHY<span>SICS</span>
         </h1>
+
+
+        <div class="hero-sub">
+            EDexcel INTERNATIONAL A LEVEL PHYSICS
+        </div>
 
 
         <p class="hero-description">
 
-            Enter an advanced learning environment for
-            Edexcel International A Level Physics.
-            Move from theory to visualization, experimentation,
-            mathematical analysis and problem solving.
+            A scientific learning environment for mechanics,
+            fields, waves, particles, nuclear physics,
+            astrophysics and experimental investigation.
 
         </p>
 
 
-        <div class="research-path">
+        <div class="telemetry">
 
-            <div class="path-node">
-                THEORY
-            </div>
+            <div class="telemetry-cell">
 
-            <div class="path-node">
-                VISUALISE
-            </div>
-
-            <div class="path-node">
-                SIMULATE
-            </div>
-
-            <div class="path-node">
-                EXPERIMENT
-            </div>
-
-            <div class="path-node">
-                ANALYSE
-            </div>
-
-            <div class="path-node">
-                MASTER
-            </div>
-
-        </div>
-
-
-        <div class="hero-actions">
-
-            <a href="#modules" class="action primary">
-                Explore modules →
-            </a>
-
-            <a href="#laboratory" class="action">
-                Enter laboratory
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- =================================================
-         SCIENCE CORE
-    ================================================= -->
-
-    <div class="hero-display reveal">
-
-
-        <div class="science-core">
-
-
-            <div class="core-ring">
-
-                <span class="orbit-particle"></span>
-
-            </div>
-
-
-            <div class="core-ring two">
-
-                <span class="orbit-particle p2"></span>
-
-            </div>
-
-
-            <div class="core-ring three">
-
-                <span class="orbit-particle p3"></span>
-
-            </div>
-
-
-            <div class="core-center">
-
-                <div class="core-symbol">
-                    ∫ F · dr
-                </div>
-
-            </div>
-
-
-            <div class="hud hud-a">
-
-                <small>
-                    FIELD STATE
-                </small>
-
-                <strong>
-                    STABLE
-                </strong>
-
-            </div>
-
-
-            <div class="hud hud-b">
-
-                <small>
-                    PARTICLE
-                </small>
-
-                <strong>
-                    q = +e
-                </strong>
-
-            </div>
-
-
-            <div class="hud hud-c">
-
-                <small>
-                    ENERGY
-                </small>
-
-                <strong>
-                    E = mc²
-                </strong>
-
-            </div>
-
-
-            <div class="hud hud-d">
-
-                <small>
+                <span class="telemetry-label">
                     SYSTEM
-                </small>
+                </span>
 
-                <strong>
+                <span class="telemetry-value live">
                     ONLINE
-                </strong>
+                </span>
 
             </div>
 
+
+            <div class="telemetry-cell">
+
+                <span class="telemetry-label">
+                    CURRICULUM
+                </span>
+
+                <span class="telemetry-value">
+                    EDEXCEL IAL
+                </span>
+
+            </div>
+
+
+            <div class="telemetry-cell">
+
+                <span class="telemetry-label">
+                    MODULES
+                </span>
+
+                <span class="telemetry-value">
+                    06 ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="telemetry-cell">
+
+                <span class="telemetry-label">
+                    TIME
+                </span>
+
+                <span class="telemetry-value" id="clock">
+                    --:--:--
+                </span>
+
+            </div>
 
         </div>
 
     </div>
 
-</section>
 
-
-<!-- =====================================================
-     TELEMETRY
-===================================================== -->
-
-<section class="section" style="padding-top:25px; padding-bottom:50px;">
-
-
-    <div class="telemetry reveal">
-
-
-        <div class="telemetry-cell">
-
-            <div class="telemetry-label">
-                Curriculum
-            </div>
-
-            <div class="telemetry-value">
-                IAL
-            </div>
-
-            <div class="telemetry-note">
-                PEARSON EDEXCEL
-            </div>
-
-        </div>
-
-
-        <div class="telemetry-cell">
-
-            <div class="telemetry-label">
-                Research Modules
-            </div>
-
-            <div class="telemetry-value">
-                06
-            </div>
-
-            <div class="telemetry-note">
-                UNITS 01 — 06
-            </div>
-
-        </div>
-
-
-        <div class="telemetry-cell">
-
-            <div class="telemetry-label">
-                Knowledge Modes
-            </div>
-
-            <div class="telemetry-value">
-                05
-            </div>
-
-            <div class="telemetry-note">
-                THEORY / LAB / ANALYSIS
-            </div>
-
-        </div>
-
-
-        <div class="telemetry-cell">
-
-            <div class="telemetry-label">
-                Environment
-            </div>
-
-            <div class="telemetry-value">
-                ACTIVE
-            </div>
-
-            <div class="telemetry-note">
-                PHYSICS DIVISION
-            </div>
-
-        </div>
-
-
+    <div class="scroll-indicator">
+        EXPLORE
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     MODULES
-===================================================== -->
 
-<section class="section" id="modules">
+<main>
 
 
-    <div class="section-header reveal">
+<section class="section">
 
-        <div>
 
-            <div class="section-index">
-                RESEARCH ARCHIVE / 01
+    <div class="section-heading reveal">
+
+        <div class="heading-left">
+
+            <div class="section-label">
+                PHYS / MODULE ARCHITECTURE
             </div>
 
             <h2>
@@ -3463,881 +2584,599 @@ footer span {
             </h2>
 
             <p>
-                Six interconnected modules forming the complete
-                Edexcel International A Level Physics pathway.
+                Navigate the complete Edexcel International A Level Physics curriculum.
             </p>
 
         </div>
 
 
         <div class="section-code">
-            PHY / MODULE MATRIX
+            ATLAS.PHY // NODE-01
         </div>
 
     </div>
 
 
-    <div class="unit-grid">
+
+    <div class="units">
 
 
         <!-- UNIT 1 -->
 
-        <a href="physics-1.html" class="unit-card reveal">
+        <a href="physics-1.html" class="unit">
 
-            <div>
+            <div class="technical-grid"></div>
 
-                <div class="unit-meta">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
 
-                    <span class="unit-id">
-                        PHY-01
-                    </span>
+            <div class="unit-content">
 
-                    <span class="unit-class">
-                        FOUNDATION SYSTEM
-                    </span>
+                <div>
+
+                    <div class="unit-top">
+
+                        <span class="unit-number">
+                            PHY / 01
+                        </span>
+
+                        <span class="unit-status">
+                            FOUNDATION
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Physics on the Go
+                    </h3>
+
+                    <p>
+                        Mechanics, materials and electricity —
+                        the foundations of physical systems,
+                        motion and interaction.
+                    </p>
 
                 </div>
 
 
-                <h3>
-                    Physics on the Go
-                </h3>
+                <div class="unit-footer">
 
+                    <span class="module-label">
+                        RESEARCH NODE / 001
+                    </span>
 
-                <p>
-                    Mechanics, materials and electricity —
-                    the foundations used to describe motion,
-                    forces and physical systems.
-                </p>
-
-
-                <div class="unit-tags">
-
-                    <span class="tag">Mechanics</span>
-                    <span class="tag">Materials</span>
-                    <span class="tag">Electricity</span>
+                    <span class="open-module">
+                        ACCESS →
+                    </span>
 
                 </div>
-
-            </div>
-
-
-            <div class="unit-footer">
-
-                <span class="unit-code">
-                    MODULE / 01
-                </span>
-
-                <span class="unit-open">
-                    ACCESS MODULE →
-                </span>
 
             </div>
 
         </a>
+
 
 
         <!-- UNIT 2 -->
 
-        <a href="physics-2.html" class="unit-card reveal">
+        <a href="physics-2.html" class="unit">
 
-            <div>
+            <div class="technical-grid"></div>
 
-                <div class="unit-meta">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
 
-                    <span class="unit-id">
-                        PHY-02
-                    </span>
+            <div class="unit-content">
 
-                    <span class="unit-class">
-                        CORE SYSTEM
-                    </span>
+                <div>
+
+                    <div class="unit-top">
+
+                        <span class="unit-number">
+                            PHY / 02
+                        </span>
+
+                        <span class="unit-status">
+                            CORE SYSTEMS
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Physics at Work
+                    </h3>
+
+                    <p>
+                        Waves, electricity and particle physics
+                        with applications across modern
+                        physical science.
+                    </p>
 
                 </div>
 
 
-                <h3>
-                    Physics at Work
-                </h3>
+                <div class="unit-footer">
 
+                    <span class="module-label">
+                        RESEARCH NODE / 002
+                    </span>
 
-                <p>
-                    Waves, electricity and particle physics,
-                    connecting mathematical models with
-                    physical applications.
-                </p>
-
-
-                <div class="unit-tags">
-
-                    <span class="tag">Waves</span>
-                    <span class="tag">Electricity</span>
-                    <span class="tag">Particles</span>
+                    <span class="open-module">
+                        ACCESS →
+                    </span>
 
                 </div>
-
-            </div>
-
-
-            <div class="unit-footer">
-
-                <span class="unit-code">
-                    MODULE / 02
-                </span>
-
-                <span class="unit-open">
-                    ACCESS MODULE →
-                </span>
 
             </div>
 
         </a>
+
 
 
         <!-- UNIT 3 -->
 
-        <a href="physics-3.html" class="unit-card reveal">
+        <a href="physics-3.html" class="unit">
 
-            <div>
+            <div class="technical-grid"></div>
 
-                <div class="unit-meta">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
 
-                    <span class="unit-id">
-                        PHY-03
-                    </span>
+            <div class="unit-content">
 
-                    <span class="unit-class">
-                        EXPERIMENTAL SYSTEM
-                    </span>
+                <div>
+
+                    <div class="unit-top">
+
+                        <span class="unit-number">
+                            PHY / 03
+                        </span>
+
+                        <span class="unit-status">
+                            EXPERIMENTAL
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Exploring Physics
+                    </h3>
+
+                    <p>
+                        Experimental methods, measurements,
+                        uncertainties and practical
+                        investigation.
+                    </p>
 
                 </div>
 
 
-                <h3>
-                    Exploring Physics
-                </h3>
+                <div class="unit-footer">
 
+                    <span class="module-label">
+                        RESEARCH NODE / 003
+                    </span>
 
-                <p>
-                    Experimental methods, measurements,
-                    uncertainties and practical investigation
-                    through scientific reasoning.
-                </p>
-
-
-                <div class="unit-tags">
-
-                    <span class="tag">Practical</span>
-                    <span class="tag">Uncertainty</span>
-                    <span class="tag">Analysis</span>
+                    <span class="open-module">
+                        ACCESS →
+                    </span>
 
                 </div>
-
-            </div>
-
-
-            <div class="unit-footer">
-
-                <span class="unit-code">
-                    MODULE / 03
-                </span>
-
-                <span class="unit-open">
-                    ACCESS MODULE →
-                </span>
 
             </div>
 
         </a>
+
 
 
         <!-- UNIT 4 -->
 
-        <a href="physics-4.html" class="unit-card reveal">
+        <a href="physics-4.html" class="unit">
 
-            <div>
+            <div class="technical-grid"></div>
 
-                <div class="unit-meta">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
 
-                    <span class="unit-id">
-                        PHY-04
-                    </span>
+            <div class="unit-content">
 
-                    <span class="unit-class">
-                        ADVANCED SYSTEM
-                    </span>
+                <div>
+
+                    <div class="unit-top">
+
+                        <span class="unit-number">
+                            PHY / 04
+                        </span>
+
+                        <span class="unit-status">
+                            ADVANCED
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Further Physics
+                    </h3>
+
+                    <p>
+                        Further mechanics, electric and magnetic
+                        fields, nuclear and particle physics.
+                    </p>
 
                 </div>
 
 
-                <h3>
-                    Further Physics
-                </h3>
+                <div class="unit-footer">
 
+                    <span class="module-label">
+                        RESEARCH NODE / 004
+                    </span>
 
-                <p>
-                    Further mechanics, electric and magnetic
-                    fields, nuclear physics and particle physics.
-                </p>
-
-
-                <div class="unit-tags">
-
-                    <span class="tag">Fields</span>
-                    <span class="tag">Nuclear</span>
-                    <span class="tag">Particles</span>
+                    <span class="open-module">
+                        ACCESS →
+                    </span>
 
                 </div>
-
-            </div>
-
-
-            <div class="unit-footer">
-
-                <span class="unit-code">
-                    MODULE / 04
-                </span>
-
-                <span class="unit-open">
-                    ACCESS MODULE →
-                </span>
 
             </div>
 
         </a>
+
 
 
         <!-- UNIT 5 -->
 
-        <a href="physics-5.html" class="unit-card reveal">
+        <a href="physics-5.html" class="unit">
 
-            <div>
+            <div class="technical-grid"></div>
 
-                <div class="unit-meta">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
 
-                    <span class="unit-id">
-                        PHY-05
-                    </span>
+            <div class="unit-content">
 
-                    <span class="unit-class">
-                        FRONTIER SYSTEM
-                    </span>
+                <div>
+
+                    <div class="unit-top">
+
+                        <span class="unit-number">
+                            PHY / 05
+                        </span>
+
+                        <span class="unit-status">
+                            FRONTIER
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Advanced Physics
+                    </h3>
+
+                    <p>
+                        Thermodynamics, nuclear decay,
+                        oscillations, astrophysics and
+                        cosmology.
+                    </p>
 
                 </div>
 
 
-                <h3>
-                    Advanced Physics
-                </h3>
+                <div class="unit-footer">
 
+                    <span class="module-label">
+                        RESEARCH NODE / 005
+                    </span>
 
-                <p>
-                    Thermodynamics, nuclear decay, oscillations,
-                    astrophysics and cosmology — from microscopic
-                    processes to the structure of the universe.
-                </p>
-
-
-                <div class="unit-tags">
-
-                    <span class="tag">Thermodynamics</span>
-                    <span class="tag">Oscillations</span>
-                    <span class="tag">Cosmology</span>
+                    <span class="open-module">
+                        ACCESS →
+                    </span>
 
                 </div>
-
-            </div>
-
-
-            <div class="unit-footer">
-
-                <span class="unit-code">
-                    MODULE / 05
-                </span>
-
-                <span class="unit-open">
-                    ACCESS MODULE →
-                </span>
 
             </div>
 
         </a>
+
 
 
         <!-- UNIT 6 -->
 
-        <a href="physics-6.html" class="unit-card reveal">
+        <a href="physics-6.html" class="unit">
 
-            <div>
+            <div class="technical-grid"></div>
 
-                <div class="unit-meta">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
 
-                    <span class="unit-id">
-                        PHY-06
-                    </span>
+            <div class="unit-content">
 
-                    <span class="unit-class">
-                        LAB SYSTEM
-                    </span>
+                <div>
+
+                    <div class="unit-top">
+
+                        <span class="unit-number">
+                            PHY / 06
+                        </span>
+
+                        <span class="unit-status">
+                            LABORATORY
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Experimental Physics
+                    </h3>
+
+                    <p>
+                        Practical skills, experimental techniques,
+                        data analysis and scientific evaluation.
+                    </p>
 
                 </div>
 
 
-                <h3>
-                    Experimental Physics
-                </h3>
+                <div class="unit-footer">
 
+                    <span class="module-label">
+                        RESEARCH NODE / 006
+                    </span>
 
-                <p>
-                    Practical skills, experimental techniques,
-                    data analysis and scientific evaluation.
-                </p>
-
-
-                <div class="unit-tags">
-
-                    <span class="tag">Laboratory</span>
-                    <span class="tag">Data</span>
-                    <span class="tag">Evaluation</span>
+                    <span class="open-module">
+                        ACCESS →
+                    </span>
 
                 </div>
-
-            </div>
-
-
-            <div class="unit-footer">
-
-                <span class="unit-code">
-                    MODULE / 06
-                </span>
-
-                <span class="unit-open">
-                    ACCESS MODULE →
-                </span>
 
             </div>
 
         </a>
 
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     RESEARCH MATRIX
-===================================================== -->
-
-<section class="section">
-
-
-    <div class="section-header reveal">
-
-        <div>
-
-            <div class="section-index">
-                KNOWLEDGE ARCHITECTURE / 02
-            </div>
-
-            <h2>
-                How Physics Is Explored
-            </h2>
-
-            <p>
-                Every concept can be approached from multiple scientific perspectives.
-            </p>
-
-        </div>
-
-
-        <div class="section-code">
-            ANALYSIS / FRAMEWORK
-        </div>
-
     </div>
 
 
-    <div class="matrix">
+
+    <!-- SCIENTIFIC DATA -->
+
+    <div class="data-section reveal">
 
 
-        <div class="matrix-card reveal">
+        <div class="data-panel">
 
-            <div class="matrix-index">
-                01 / THEORY
-            </div>
+            <div class="panel-header">
 
-            <h3>
-                Build the model
-            </h3>
-
-            <p>
-                Understand definitions, principles, assumptions
-                and mathematical relationships.
-            </p>
-
-        </div>
-
-
-        <div class="matrix-card reveal">
-
-            <div class="matrix-index">
-                02 / VISUAL
-            </div>
-
-            <h3>
-                See the physics
-            </h3>
-
-            <p>
-                Convert abstract equations into fields,
-                vectors, waves, particles and motion.
-            </p>
-
-        </div>
-
-
-        <div class="matrix-card reveal">
-
-            <div class="matrix-index">
-                03 / EXPERIMENT
-            </div>
-
-            <h3>
-                Test the model
-            </h3>
-
-            <p>
-                Connect theory with measurements,
-                apparatus, uncertainty and real observations.
-            </p>
-
-        </div>
-
-
-        <div class="matrix-card reveal">
-
-            <div class="matrix-index">
-                04 / ANALYSIS
-            </div>
-
-            <h3>
-                Interpret data
-            </h3>
-
-            <p>
-                Investigate graphs, gradients, relationships,
-                errors and experimental conclusions.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     LABORATORY
-===================================================== -->
-
-<section class="section" id="laboratory">
-
-
-    <div class="section-header reveal">
-
-        <div>
-
-            <div class="section-index">
-                VIRTUAL LABORATORY / 03
-            </div>
-
-            <h2>
-                Physics Visual Laboratory
-            </h2>
-
-            <p>
-                A visual interface for thinking about physical systems.
-            </p>
-
-        </div>
-
-
-        <div class="section-code">
-            SIMULATION NODE
-        </div>
-
-    </div>
-
-
-    <div class="lab-layout">
-
-
-        <!-- FIELD PANEL -->
-
-        <div class="lab-panel reveal">
-
-
-            <div class="lab-panel-header">
-
-                <span class="lab-title">
-                    FIELD VISUALISATION
+                <span class="panel-title">
+                    LIVE PHYSICAL SIGNAL
                 </span>
 
-                <span class="lab-status">
-                    ● MODEL ACTIVE
+                <span class="panel-live">
+                    STREAM ACTIVE
                 </span>
 
             </div>
 
 
-            <div class="field-visual">
+            <div class="wave-container">
 
+                <div class="axis-x"></div>
+                <div class="axis-y"></div>
 
-                <div class="field-line"></div>
-
-                <div class="field-line"></div>
-
-                <div class="field-line"></div>
-
-                <div class="field-line"></div>
-
-
-                <div class="charge">
-                    +
-                </div>
-
-
-                <div class="field-vector vector-1"></div>
-
-                <div class="field-vector vector-2"></div>
-
-                <div class="field-vector vector-3"></div>
-
-                <div class="field-vector vector-4"></div>
-
-                <div class="field-vector vector-5"></div>
-
+                <div class="wave"></div>
 
             </div>
 
         </div>
 
 
-        <!-- GRAPH PANEL -->
 
-        <div class="lab-panel reveal">
+        <div class="data-panel">
 
+            <div class="panel-header">
 
-            <div class="lab-panel-header">
-
-                <span class="lab-title">
-                    OSCILLATORY MODEL
+                <span class="panel-title">
+                    SYSTEM TELEMETRY
                 </span>
 
-                <span class="lab-status">
-                    ∿ DATA STREAM
+                <span class="panel-live">
+                    NOMINAL
                 </span>
 
             </div>
 
 
-            <div class="graph">
+            <div class="metrics">
 
 
-                <div class="graph-grid"></div>
+                <div class="metric">
 
+                    <div class="metric-label">
+                        ENERGY
+                    </div>
 
-                <div class="graph-axis-x"></div>
-
-                <div class="graph-axis-y"></div>
-
-
-                <div class="wave">
-
-                    <svg
-                        viewBox="0 0 600 250"
-                        preserveAspectRatio="none">
-
-                        <path
-                            class="wave-path"
-                            d="
-                            M0,125
-                            C25,20 50,20 75,125
-                            S125,230 150,125
-                            S200,20 225,125
-                            S275,230 300,125
-                            S350,20 375,125
-                            S425,230 450,125
-                            S500,20 525,125
-                            S575,230 600,125
-                            "/>
-
-                    </svg>
+                    <div class="metric-value cyan">
+                        E = mc²
+                    </div>
 
                 </div>
 
 
-                <div class="graph-label x">
-                    TIME → t
+                <div class="metric">
+
+                    <div class="metric-label">
+                        FORCE
+                    </div>
+
+                    <div class="metric-value green">
+                        F = ma
+                    </div>
+
                 </div>
 
-                <div class="graph-label y">
-                    DISPLACEMENT x
+
+                <div class="metric">
+
+                    <div class="metric-label">
+                        MOMENTUM
+                    </div>
+
+                    <div class="metric-value amber">
+                        p = mv
+                    </div>
+
                 </div>
 
+
+                <div class="metric">
+
+                    <div class="metric-label">
+                        WAVES
+                    </div>
+
+                    <div class="metric-value violet">
+                        v = fλ
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
-
 
     </div>
 
-</section>
 
 
-<!-- =====================================================
-     EQUATION CONSOLE
-===================================================== -->
+    <!-- ARCHIVE -->
 
-<section class="section">
+    <div class="archive reveal">
 
 
-    <div class="section-header reveal">
+        <div class="archive-item">
 
-        <div>
-
-            <div class="section-index">
-                MATHEMATICAL ENGINE / 04
+            <div class="archive-index">
+                ARCHIVE / 01
             </div>
 
-            <h2>
-                Equation Console
-            </h2>
+            <h4>
+                Theoretical Framework
+            </h4>
 
             <p>
-                Physics is expressed through mathematical models.
+                Concepts, equations and physical models.
             </p>
 
         </div>
 
 
-        <div class="section-code">
-            MATHEMATICAL LANGUAGE
+        <div class="archive-item">
+
+            <div class="archive-index">
+                ARCHIVE / 02
+            </div>
+
+            <h4>
+                Experimental Analysis
+            </h4>
+
+            <p>
+                Measurements, uncertainty and evaluation.
+            </p>
+
+        </div>
+
+
+        <div class="archive-item">
+
+            <div class="archive-index">
+                ARCHIVE / 03
+            </div>
+
+            <h4>
+                Examination Intelligence
+            </h4>
+
+            <p>
+                Structured preparation and problem solving.
+            </p>
+
         </div>
 
     </div>
 
 
-    <div class="equation-console reveal">
 
+    <!-- SYSTEM INFORMATION -->
 
-        <div class="console-top">
+    <div class="system-panel reveal">
 
-            <span class="console-dot"></span>
+        <div class="system-item">
 
-            <span class="console-dot"></span>
-
-            <span class="console-dot"></span>
-
-            <span class="console-title">
-                PHYSICS / EQUATION VAULT
+            <span>
+                Curriculum
             </span>
 
+            <strong>
+                Pearson Edexcel IAL
+            </strong>
+
         </div>
 
 
-        <div class="equation-content">
+        <div class="system-item">
+
+            <span>
+                Coverage
+            </span>
+
+            <strong>
+                Units 01 — 06
+            </strong>
+
+        </div>
 
 
-            <div class="equation">
+        <div class="system-item">
 
-                <div class="equation-symbol">
-                    F = ma
-                </div>
+            <span>
+                Resource Architecture
+            </span>
 
-                <div class="equation-name">
-                    Newton's second law
-                </div>
-
-            </div>
-
-
-            <div class="equation">
-
-                <div class="equation-symbol">
-                    p = mv
-                </div>
-
-                <div class="equation-name">
-                    Linear momentum
-                </div>
-
-            </div>
-
-
-            <div class="equation">
-
-                <div class="equation-symbol">
-                    E = mc²
-                </div>
-
-                <div class="equation-name">
-                    Mass–energy relation
-                </div>
-
-            </div>
-
-
-            <div class="equation">
-
-                <div class="equation-symbol">
-                    V = W/q
-                </div>
-
-                <div class="equation-name">
-                    Electric potential
-                </div>
-
-            </div>
-
+            <strong>
+                Notes • Revision • Practice
+            </strong>
 
         </div>
 
     </div>
 
-</section>
 
 
-<!-- =====================================================
-     KNOWLEDGE MAP
-===================================================== -->
+    <div class="back-container reveal">
 
-<section class="section">
-
-
-    <div class="section-header reveal">
-
-        <div>
-
-            <div class="section-index">
-                CONCEPT NETWORK / 05
-            </div>
-
-            <h2>
-                Physics Knowledge Map
-            </h2>
-
-            <p>
-                Physics is not a collection of isolated chapters.
-                It is a connected system.
-            </p>
-
-        </div>
-
-
-        <div class="section-code">
-            CONCEPT RELATIONSHIP GRAPH
-        </div>
-
-    </div>
-
-
-    <div class="knowledge-map reveal">
-
-
-        <div class="map-grid"></div>
-
-
-        <div class="map-line line-1"></div>
-
-        <div class="map-line line-2"></div>
-
-        <div class="map-line line-3"></div>
-
-        <div class="map-line line-4"></div>
-
-
-        <div class="map-node map-1">
-            Mechanics
-        </div>
-
-        <div class="map-node map-2">
-            Energy
-        </div>
-
-        <div class="map-node map-3">
-            Electricity
-        </div>
-
-        <div class="map-node map-4">
-            Waves
-        </div>
-
-        <div class="map-node map-5">
-            Nuclear Physics
-        </div>
-
-        <div class="map-node map-6">
-            Astrophysics
-        </div>
-
-
-        <div class="map-node map-core">
-            PHYSICS
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     RESEARCH MESSAGE
-===================================================== -->
-
-<section class="section">
-
-
-    <div class="research-note reveal">
-
-        <div class="note-label">
-            IAL ATLAS / RESEARCH NOTE
-        </div>
-
-
-        <h3>
-            You are not here just to memorise equations.
-        </h3>
-
-
-        <p>
-            The purpose of this environment is to help you understand
-            what the equations mean, why physical systems behave the
-            way they do, how experiments reveal those relationships,
-            and how mathematical models can describe the world around us.
-        </p>
-
-    </div>
-
-
-    <div class="return-area">
-
-        <a href="index.html" class="return">
-            ← Return to IAL ATLAS
+        <a href="index.html" class="back">
+            ← Return to Atlas
         </a>
 
     </div>
 
 </section>
 
+</main>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+
 
 <footer>
 
@@ -4349,14 +3188,11 @@ footer span {
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script>
 
 /* =========================================================
-   CURSOR FIELD
+   CURSOR PHYSICS
 ========================================================= */
 
 const cursorField =
@@ -4374,22 +3210,18 @@ let cursorX =
 let cursorY =
     mouseY;
 
-
 document.addEventListener(
     "mousemove",
-    function(event) {
+    e => {
 
-        mouseX =
-            event.clientX;
-
-        mouseY =
-            event.clientY;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
 
     }
 );
 
 
-function animateCursor() {
+function animateCursor(){
 
     cursorX +=
         (mouseX - cursorX) * .075;
@@ -4406,123 +3238,288 @@ function animateCursor() {
     requestAnimationFrame(
         animateCursor
     );
-
 }
 
 animateCursor();
 
 
 /* =========================================================
-   SCROLL REVEAL
+   CANVAS PARTICLE PHYSICS
 ========================================================= */
 
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-    new IntersectionObserver(
-
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-            threshold: .12
-        }
-
+const canvas =
+    document.getElementById(
+        "physicsCanvas"
     );
 
+const ctx =
+    canvas.getContext("2d");
 
-revealElements.forEach(
-    element => {
+let particles = [];
 
-        revealObserver.observe(
-            element
-        );
+function resizeCanvas(){
 
-    }
+    canvas.width =
+        window.innerWidth *
+        devicePixelRatio;
+
+    canvas.height =
+        window.innerHeight *
+        devicePixelRatio;
+
+    canvas.style.width =
+        window.innerWidth + "px";
+
+    canvas.style.height =
+        window.innerHeight + "px";
+
+    ctx.setTransform(
+        devicePixelRatio,
+        0,
+        0,
+        devicePixelRatio,
+        0,
+        0
+    );
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
 );
 
 
+const particleCount =
+    window.innerWidth < 700
+        ? 38
+        : 75;
+
+
+for(let i=0;i<particleCount;i++){
+
+    particles.push({
+
+        x:
+            Math.random() *
+            window.innerWidth,
+
+        y:
+            Math.random() *
+            window.innerHeight,
+
+        vx:
+            (Math.random()-.5)
+            *.22,
+
+        vy:
+            (Math.random()-.5)
+            *.22,
+
+        size:
+            Math.random()*1.7+.4
+
+    });
+}
+
+
+function particleAnimation(){
+
+    ctx.clearRect(
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+    );
+
+
+    for(const p of particles){
+
+        const dx =
+            mouseX-p.x;
+
+        const dy =
+            mouseY-p.y;
+
+        const distance =
+            Math.sqrt(
+                dx*dx+dy*dy
+            );
+
+
+        if(distance < 180){
+
+            p.vx +=
+                dx /
+                distance *
+                .002;
+
+            p.vy +=
+                dy /
+                distance *
+                .002;
+
+        }
+
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+
+        if(p.x < -20)
+            p.x =
+                window.innerWidth+20;
+
+        if(p.x >
+            window.innerWidth+20)
+            p.x=-20;
+
+        if(p.y < -20)
+            p.y =
+                window.innerHeight+20;
+
+        if(p.y >
+            window.innerHeight+20)
+            p.y=-20;
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle =
+            "rgba(97,231,255,.55)";
+
+        ctx.fill();
+
+    }
+
+
+    /* CONNECTION FIELD */
+
+    for(
+        let i=0;
+        i<particles.length;
+        i++
+    ){
+
+        for(
+            let j=i+1;
+            j<particles.length;
+            j++
+        ){
+
+            const a =
+                particles[i];
+
+            const b =
+                particles[j];
+
+            const dx =
+                a.x-b.x;
+
+            const dy =
+                a.y-b.y;
+
+            const dist =
+                Math.sqrt(
+                    dx*dx+dy*dy
+                );
+
+
+            if(dist < 105){
+
+                const opacity =
+                    .08 *
+                    (1-dist/105);
+
+                ctx.beginPath();
+
+                ctx.moveTo(
+                    a.x,
+                    a.y
+                );
+
+                ctx.lineTo(
+                    b.x,
+                    b.y
+                );
+
+                ctx.strokeStyle =
+                    `rgba(97,231,255,${opacity})`;
+
+                ctx.lineWidth=.5;
+
+                ctx.stroke();
+
+            }
+
+        }
+
+    }
+
+    requestAnimationFrame(
+        particleAnimation
+    );
+}
+
+particleAnimation();
+
+
 /* =========================================================
-   3D UNIT CARDS
+   MAGNETIC 3D UNIT CARDS
 ========================================================= */
 
 const cards =
     document.querySelectorAll(
-        ".unit-card"
+        ".unit"
     );
 
 
 cards.forEach(card => {
 
-
     card.addEventListener(
         "mousemove",
-        function(event) {
-
+        e => {
 
             const rect =
                 card.getBoundingClientRect();
 
-
             const x =
-                event.clientX -
+                e.clientX -
                 rect.left;
 
-
             const y =
-                event.clientY -
+                e.clientY -
                 rect.top;
 
-
             const centerX =
-                rect.width / 2;
-
+                rect.width/2;
 
             const centerY =
-                rect.height / 2;
-
-
-            const rotateX =
-                ((y - centerY) /
-                centerY) * -2.2;
-
+                rect.height/2;
 
             const rotateY =
-                ((x - centerX) /
-                centerX) * 2.2;
+                ((x-centerX) /
+                centerX) * 4;
 
+            const rotateX =
+                ((y-centerY) /
+                centerY) * -4;
 
             card.style.transform =
-                `
-                translateY(-9px)
-                perspective(900px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                scale(1.008)
-                `;
+                `translateY(-10px)
+                 scale(1.015)
+                 perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)`;
 
         }
     );
@@ -4530,10 +3527,22 @@ cards.forEach(card => {
 
     card.addEventListener(
         "mouseleave",
-        function() {
+        () => {
 
             card.style.transform =
                 "";
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseenter",
+        () => {
+
+            createEnergyBurst(
+                card
+            );
 
         }
     );
@@ -4542,45 +3551,205 @@ cards.forEach(card => {
 
 
 /* =========================================================
-   PATH NODE INTERACTION
+   ENERGY BURST
 ========================================================= */
 
-const pathNodes =
-    document.querySelectorAll(
-        ".path-node"
+function createEnergyBurst(card){
+
+    const burst =
+        document.createElement(
+            "span"
+        );
+
+    burst.style.position =
+        "absolute";
+
+    burst.style.width =
+        "10px";
+
+    burst.style.height =
+        "10px";
+
+    burst.style.borderRadius =
+        "50%";
+
+    burst.style.background =
+        "#61e7ff";
+
+    burst.style.boxShadow =
+        "0 0 25px #61e7ff";
+
+    burst.style.left =
+        "50%";
+
+    burst.style.top =
+        "50%";
+
+    burst.style.transform =
+        "translate(-50%,-50%)";
+
+    burst.style.pointerEvents =
+        "none";
+
+    burst.style.zIndex =
+        "20";
+
+    burst.style.transition =
+        "1s cubic-bezier(.16,1,.3,1)";
+
+    card.appendChild(
+        burst
+    );
+
+    requestAnimationFrame(
+        () => {
+
+            burst.style.width =
+                "420px";
+
+            burst.style.height =
+                "420px";
+
+            burst.style.opacity =
+                "0";
+
+        }
+    );
+
+    setTimeout(
+        () => burst.remove(),
+        1000
+    );
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
     );
 
 
-pathNodes.forEach(
-    node => {
+document
+    .querySelectorAll(
+        ".reveal,.unit"
+    )
+    .forEach(
+        el =>
+            revealObserver.observe(el)
+    );
 
-        node.addEventListener(
-            "mouseenter",
-            function() {
 
-                node.style.transform =
-                    "translateY(-3px) scale(1.03)";
+/* =========================================================
+   LIVE CLOCK
+========================================================= */
 
+const clock =
+    document.getElementById(
+        "clock"
+    );
+
+
+function updateClock(){
+
+    const now =
+        new Date();
+
+    clock.textContent =
+        now.toLocaleTimeString(
+            [],
+            {
+                hour12:false
             }
         );
 
+}
 
-        node.addEventListener(
-            "mouseleave",
-            function() {
+updateClock();
 
-                node.style.transform =
-                    "";
+setInterval(
+    updateClock,
+    1000
+);
 
-            }
-        );
+
+/* =========================================================
+   PARALLAX HERO
+========================================================= */
+
+const hero =
+    document.querySelector(
+        ".hero"
+    );
+
+const orbital =
+    document.querySelector(
+        ".orbital-system"
+    );
+
+const radar =
+    document.querySelector(
+        ".radar"
+    );
+
+
+window.addEventListener(
+    "mousemove",
+    e => {
+
+        const x =
+            (e.clientX /
+            window.innerWidth
+            -.5);
+
+        const y =
+            (e.clientY /
+            window.innerHeight
+            -.5);
+
+
+        orbital.style.transform =
+            `translate(-50%,-50%)
+             translate(${x*18}px,${y*18}px)
+             rotateX(${y*-2}deg)
+             rotateY(${x*2}deg)`;
+
+
+        radar.style.transform =
+            `translate(-50%,-50%)
+             translate(${x*-10}px,${y*-10}px)`;
 
     }
 );
 
 
 /* =========================================================
-   TELEMETRY NUMBER MICRO-ANIMATION
+   RANDOM TELEMETRY MICRO EFFECT
 ========================================================= */
 
 const telemetryValues =
@@ -4589,210 +3758,63 @@ const telemetryValues =
     );
 
 
-telemetryValues.forEach(
-    (value, index) => {
+setInterval(
+    () => {
 
-        value.animate(
-            [
-                {
-                    opacity: .35,
-                    transform:
-                        "translateY(4px)"
+        const target =
+            telemetryValues[
+                Math.floor(
+                    Math.random() *
+                    telemetryValues.length
+                )
+            ];
+
+        if(
+            target &&
+            !target.classList.contains(
+                "live"
+            )
+        ){
+
+            target.style.opacity=".35";
+
+            setTimeout(
+                () => {
+
+                    target.style.opacity="1";
+
                 },
-
-                {
-                    opacity: 1,
-                    transform:
-                        "translateY(0)"
-                }
-            ],
-            {
-                duration: 900,
-                delay: index * 130,
-                easing:
-                    "cubic-bezier(.2,.8,.2,1)",
-                fill: "both"
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   KNOWLEDGE MAP PARALLAX
-========================================================= */
-
-const map =
-    document.querySelector(
-        ".knowledge-map"
-    );
-
-
-if (map) {
-
-    map.addEventListener(
-        "mousemove",
-        function(event) {
-
-            const rect =
-                map.getBoundingClientRect();
-
-            const x =
-                (event.clientX -
-                rect.left) /
-                rect.width;
-
-            const y =
-                (event.clientY -
-                rect.top) /
-                rect.height;
-
-            const moveX =
-                (x - .5) * 12;
-
-            const moveY =
-                (y - .5) * 12;
-
-            map.style.backgroundPosition =
-                `${moveX}px ${moveY}px`;
+                120
+            );
 
         }
-    );
 
-}
-
-
-/* =========================================================
-   ACTION FEEDBACK
-========================================================= */
-
-document
-    .querySelectorAll(".action, .return")
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function() {
-
-                this.style.transform =
-                    "scale(.97)";
-
-                setTimeout(
-                    () => {
-
-                        this.style.transform =
-                            "";
-
-                    },
-                    130
-                );
-
-            }
-        );
-
-    });
-
-
-/* =========================================================
-   DYNAMIC SYSTEM CLOCK
-========================================================= */
-
-function updateSystemClock() {
-
-    const now =
-        new Date();
-
-    const seconds =
-        String(
-            now.getSeconds()
-        ).padStart(2,"0");
-
-    document.title =
-        `Physics Research Environment · ${seconds}`;
-
-}
-
-
-setInterval(
-    updateSystemClock,
-    1000
+    },
+    1200
 );
 
 
 /* =========================================================
-   CONSOLE EQUATION HOVER
+   DOCUMENT TITLE LIVE SIGNAL
 ========================================================= */
 
-document
-    .querySelectorAll(".equation")
-    .forEach(eq => {
+let titleState=false;
 
-        eq.addEventListener(
-            "mouseenter",
-            function() {
+setInterval(
+    () => {
 
-                this.style.boxShadow =
-                    "inset 0 0 30px rgba(114,231,255,.045)";
+        titleState=!titleState;
 
-                this.style.transform =
-                    "translateY(-2px)";
+        document.title =
+            titleState
+                ? "Physics // IAL ATLAS"
+                : "Edexcel IAL Physics | IAL ATLAS";
 
-            }
-        );
-
-
-        eq.addEventListener(
-            "mouseleave",
-            function() {
-
-                this.style.boxShadow =
-                    "";
-
-                this.style.transform =
-                    "";
-
-            }
-        );
-
-    });
-
-
-/* =========================================================
-   ESCAPE CURSOR EFFECT ON MOBILE
-========================================================= */
-
-if (
-    window.matchMedia(
-        "(max-width: 760px)"
-    ).matches
-) {
-
-    cursorField.style.display =
-        "none";
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION DETECTION
-========================================================= */
-
-const reducedMotion =
-    window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    );
-
-
-if (reducedMotion.matches) {
-
-    document.documentElement.style.scrollBehavior =
-        "auto";
-
-}
+    },
+    5000
+);
 
 </script>
-
 
 </body>
 
