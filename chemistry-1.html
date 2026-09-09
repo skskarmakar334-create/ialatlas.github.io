@@ -1,290 +1,1065 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry Unit 1 | IAL ATLAS</title>
 
-    <title>Chemistry Unit 1 | IAL ATLAS</title>
+<meta name="description"
+content="Edexcel International A Level Chemistry Unit 1 — Structure, Bonding and Introduction to Organic Chemistry. Notes, formulas, worked examples and practice.">
 
-    <meta name="description"
-          content="Edexcel International A Level Chemistry Unit 1 — Structure, Bonding and Introduction to Organic Chemistry.">
+<meta name="keywords"
+content="Edexcel IAL Chemistry Unit 1, WCH11, Chemistry Unit 1 notes, Edexcel Chemistry, IAL Chemistry">
 
-    <style>
+<meta name="theme-color" content="#06111f">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+/* =========================================================
+   RESET
+========================================================= */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
+body{
+    font-family:Inter,Arial,Helvetica,sans-serif;
+    background:#020711;
+    color:#eaf6ff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
 
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-5;
 
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+    background:
+        radial-gradient(circle at 15% 20%,rgba(0,200,255,.12),transparent 28%),
+        radial-gradient(circle at 85% 70%,rgba(112,75,255,.10),transparent 30%),
+        radial-gradient(circle at 50% 100%,rgba(0,255,170,.06),transparent 35%);
+}
 
-        .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-4;
+    opacity:.25;
 
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
 
-        .hero h1 span {
-            color: #4db8ff;
-        }
+    background-size:50px 50px;
+}
 
-        .hero p {
-            max-width: 760px;
-            margin: auto;
-            color: #dcecff;
-            font-size: 18px;
-        }
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    width:0%;
+    background:linear-gradient(90deg,#00d9ff,#7c5cff,#00ffaa);
+    z-index:9999;
+    box-shadow:0 0 15px #00d9ff;
+}
 
-        .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
-        }
+/* =========================================================
+   PARTICLES
+========================================================= */
 
-        .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+    overflow:hidden;
+}
 
-        .lesson h2 {
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#4ddfff;
+    box-shadow:0 0 12px #4ddfff;
+    opacity:.5;
+    animation:floatParticle linear infinite;
+}
 
-        .lesson h3 {
-            font-size: 21px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+.particle:nth-child(1){left:8%;animation-duration:18s;animation-delay:-5s;}
+.particle:nth-child(2){left:18%;animation-duration:23s;animation-delay:-12s;}
+.particle:nth-child(3){left:31%;animation-duration:20s;animation-delay:-3s;}
+.particle:nth-child(4){left:44%;animation-duration:26s;animation-delay:-17s;}
+.particle:nth-child(5){left:57%;animation-duration:19s;animation-delay:-9s;}
+.particle:nth-child(6){left:69%;animation-duration:24s;animation-delay:-14s;}
+.particle:nth-child(7){left:81%;animation-duration:21s;animation-delay:-7s;}
+.particle:nth-child(8){left:92%;animation-duration:28s;animation-delay:-20s;}
 
-        .lesson h4 {
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 8px;
-        }
+@keyframes floatParticle{
+    0%{
+        transform:translateY(110vh) translateX(0);
+        opacity:0;
+    }
+    15%{opacity:.5;}
+    50%{
+        transform:translateY(50vh) translateX(35px);
+    }
+    85%{opacity:.5;}
+    100%{
+        transform:translateY(-10vh) translateX(-25px);
+        opacity:0;
+    }
+}
 
-        .lesson p {
-            color: #53657d;
-            margin-bottom: 15px;
-        }
+/* =========================================================
+   HEADER
+========================================================= */
 
-        .lesson ul,
-        .lesson ol {
-            padding-left: 25px;
-            color: #53657d;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-        .lesson li {
-            margin-bottom: 9px;
-        }
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
+    padding:17px 7%;
 
-        .definition p {
-            margin-bottom: 0;
-        }
+    background:rgba(2,10,20,.72);
+    border-bottom:1px solid rgba(255,255,255,.08);
 
-        .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 19px;
-            font-weight: bold;
-        }
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
 
-        .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
 
-        .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+    text-shadow:
+        0 0 10px rgba(0,217,255,.45);
+}
 
-        .solution {
-            margin-top: 18px;
-            padding: 18px;
-            background: white;
-            border-radius: 8px;
-        }
+.back-link{
+    color:#9edfff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
 
-        .warning {
-            background: #fff8e8;
-            border-left: 5px solid #e5a500;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
+.back-link:hover{
+    color:#fff;
+    text-shadow:0 0 12px #00d9ff;
+}
 
-        .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
-        }
+/* =========================================================
+   HERO
+========================================================= */
 
-        .question:last-child {
-            border-bottom: none;
-        }
+.hero{
+    position:relative;
+    min-height:720px;
 
-        details {
-            margin-top: 12px;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
-        summary {
-            cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
-        }
+    padding:90px 20px;
+    overflow:hidden;
 
-        .quick-review {
-            background: #eef8ff;
-            border-left: 5px solid #32a9e8;
-            padding: 25px;
-            border-radius: 10px;
-        }
+    background:
+        radial-gradient(circle at 50% 45%,rgba(0,200,255,.13),transparent 30%),
+        linear-gradient(135deg,#020711,#061a30 55%,#081126);
+}
 
-        .navigation {
-            text-align: center;
-            padding: 10px 20px 60px;
-        }
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:900px;
+}
 
-        .button {
-            display: inline-block;
-            background: #32a9e8;
-            color: white;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 5px;
-        }
+.hero-label{
+    color:#55ddff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
 
-        .button:hover {
-            background: #168dca;
-        }
+.hero h1{
+    font-size:clamp(44px,7vw,82px);
+    line-height:1.05;
+    margin-bottom:22px;
 
-        footer {
-            background: #071b36;
-            color: #b9c9dc;
-            text-align: center;
-            padding: 30px 20px;
-        }
+    letter-spacing:-3px;
 
-        @media (max-width: 700px) {
+    text-shadow:
+        0 0 20px rgba(0,217,255,.18);
+}
 
-            .hero h1 {
-                font-size: 38px;
-            }
+.hero h1 span{
+    background:linear-gradient(90deg,#4ddfff,#7d68ff,#42ffc0);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
 
-            .lesson {
-                padding: 25px;
-            }
+.hero p{
+    max-width:720px;
+    margin:auto;
+    color:#aac4d9;
+    font-size:19px;
+}
 
-        }
+/* =========================================================
+   ATOM ANIMATION
+========================================================= */
 
-    </style>
+.atom{
+    position:absolute;
+    width:280px;
+    height:280px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    opacity:.85;
+    pointer-events:none;
+}
+
+.nucleus{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:54px;
+    height:54px;
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#48dfff 35%,#075b91 70%);
+
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 60px rgba(0,217,255,.6);
+}
+
+.nucleus::before,
+.nucleus::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 8px #fff;
+}
+
+.nucleus::before{
+    width:12px;
+    height:12px;
+    left:12px;
+    top:10px;
+}
+
+.nucleus::after{
+    width:9px;
+    height:9px;
+    right:11px;
+    bottom:12px;
+}
+
+.orbit{
+    position:absolute;
+    left:50%;
+    top:50%;
+    border:1px solid rgba(78,220,255,.45);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+}
+
+.orbit.one{
+    width:130px;
+    height:70px;
+    animation:orbitRotate 7s linear infinite;
+}
+
+.orbit.two{
+    width:190px;
+    height:105px;
+    transform:translate(-50%,-50%) rotate(60deg);
+    animation:orbitRotateReverse 10s linear infinite;
+}
+
+.orbit.three{
+    width:245px;
+    height:130px;
+    transform:translate(-50%,-50%) rotate(-45deg);
+    animation:orbitRotate 13s linear infinite;
+}
+
+.electron{
+    position:absolute;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+
+    background:#7dffff;
+    box-shadow:
+        0 0 8px #7dffff,
+        0 0 20px #00d9ff;
+}
+
+.orbit.one .electron{
+    right:-5px;
+    top:50%;
+}
+
+.orbit.two .electron{
+    left:50%;
+    top:-5px;
+}
+
+.orbit.three .electron{
+    left:-5px;
+    top:50%;
+}
+
+@keyframes orbitRotate{
+    from{transform:translate(-50%,-50%) rotate(0deg);}
+    to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+@keyframes orbitRotateReverse{
+    from{transform:translate(-50%,-50%) rotate(60deg);}
+    to{transform:translate(-50%,-50%) rotate(-300deg);}
+}
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:40px;
+}
+
+.stat{
+    padding:12px 18px;
+
+    border:1px solid rgba(91,220,255,.18);
+    border-radius:100px;
+
+    background:rgba(255,255,255,.035);
+    backdrop-filter:blur(10px);
+
+    color:#a9cce0;
+    font-size:13px;
+}
+
+.stat strong{
+    color:#fff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+    padding:70px 0;
+}
+
+/* =========================================================
+   TOPIC NAV
+========================================================= */
+
+.topic-nav{
+    position:sticky;
+    top:72px;
+    z-index:50;
+
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+
+    padding:10px;
+    margin-bottom:40px;
+
+    background:rgba(4,15,28,.78);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+
+    backdrop-filter:blur(16px);
+}
+
+.topic-nav::-webkit-scrollbar{
+    height:3px;
+}
+
+.topic-nav a{
+    white-space:nowrap;
+    color:#91b2c7;
+    text-decoration:none;
+
+    padding:9px 14px;
+    border-radius:10px;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.topic-nav a:hover{
+    background:rgba(0,217,255,.1);
+    color:#5ee7ff;
+}
+
+/* =========================================================
+   LESSON CARDS
+========================================================= */
+
+.lesson{
+    position:relative;
+
+    padding:42px;
+    margin-bottom:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:24px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.25),
+        inset 0 1px rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    overflow:hidden;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.lesson::before{
+    content:"";
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    right:-100px;
+    top:-100px;
+
+    border-radius:50%;
+
+    background:rgba(0,217,255,.07);
+    filter:blur(20px);
+}
+
+.lesson:hover{
+    transform:translateY(-4px);
+    border-color:rgba(0,217,255,.2);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.35),
+        0 0 40px rgba(0,217,255,.04);
+}
+
+.lesson-number{
+    color:#55dcff;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:3px;
+    margin-bottom:8px;
+}
+
+.lesson h2{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.lesson h3{
+    color:#dff7ff;
+    font-size:22px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.lesson h4{
+    color:#7fe6ff;
+    margin-top:22px;
+    margin-bottom:8px;
+}
+
+.lesson p,
+.lesson li{
+    color:#9db4c6;
+}
+
+.lesson ul,
+.lesson ol{
+    padding-left:25px;
+}
+
+.lesson li{
+    margin-bottom:8px;
+}
+
+/* =========================================================
+   DEFINITION
+========================================================= */
+
+.definition{
+    margin:25px 0;
+    padding:22px;
+
+    border-left:3px solid #00d9ff;
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,.09),
+            rgba(0,217,255,.025)
+        );
+
+    box-shadow:inset 0 0 30px rgba(0,217,255,.025);
+}
+
+.definition strong{
+    color:#5de3ff;
+}
+
+/* =========================================================
+   FORMULAS
+========================================================= */
+
+.formula{
+    position:relative;
+
+    margin:24px 0;
+    padding:21px;
+
+    text-align:center;
+
+    border:1px solid rgba(98,221,255,.16);
+    border-radius:15px;
+
+    background:#030c18;
+
+    color:#8eeaff;
+
+    font-size:20px;
+    font-weight:800;
+
+    box-shadow:
+        inset 0 0 25px rgba(0,217,255,.035),
+        0 0 25px rgba(0,217,255,.03);
+
+    overflow:hidden;
+}
+
+.formula::after{
+    content:"";
+
+    position:absolute;
+    left:-100%;
+    top:0;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    animation:formulaScan 5s infinite;
+}
+
+@keyframes formulaScan{
+    0%{left:-100%;}
+    45%,100%{left:150%;}
+}
+
+/* =========================================================
+   EXAMPLES
+========================================================= */
+
+.example{
+    margin-top:25px;
+    padding:25px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+}
+
+.example-title{
+    color:#50dcff !important;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.solution{
+    margin-top:18px;
+    padding:18px;
+
+    background:rgba(0,0,0,.22);
+    border-radius:12px;
+}
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.warning{
+    margin:22px 0;
+    padding:20px;
+
+    border-left:3px solid #ffc857;
+    border-radius:13px;
+
+    background:rgba(255,200,87,.06);
+}
+
+.warning strong{
+    color:#ffd76d;
+}
+
+/* =========================================================
+   CHEMISTRY VISUAL
+========================================================= */
+
+.chem-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:220px;
+    margin:30px 0;
+
+    position:relative;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,.08),
+            transparent 55%
+        );
+}
+
+/* MOLECULE */
+
+.molecule{
+    position:relative;
+    width:280px;
+    height:150px;
+}
+
+.atom-node{
+    position:absolute;
+
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 30% 25%,#fff,#54dcff 35%,#074e78);
+
+    color:white;
+    font-weight:900;
+
+    box-shadow:
+        0 0 20px rgba(0,217,255,.7),
+        0 0 45px rgba(0,217,255,.25);
+
+    animation:pulseAtom 2.5s ease-in-out infinite;
+}
+
+.atom-node.a{
+    left:15px;
+    top:46px;
+}
+
+.atom-node.b{
+    right:15px;
+    top:46px;
+}
+
+.atom-node.c{
+    left:111px;
+    top:5px;
+}
+
+.bond{
+    position:absolute;
+    height:7px;
+
+    background:linear-gradient(90deg,#3ee3ff,#fff,#3ee3ff);
+
+    border-radius:10px;
+
+    box-shadow:0 0 12px #00d9ff;
+
+    transform-origin:left center;
+}
+
+.bond.ab{
+    left:70px;
+    top:72px;
+    width:140px;
+}
+
+.bond.ac{
+    left:61px;
+    top:61px;
+    width:82px;
+    transform:rotate(-29deg);
+}
+
+.bond.cb{
+    left:143px;
+    top:61px;
+    width:82px;
+    transform:rotate(29deg);
+}
+
+@keyframes pulseAtom{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.question{
+    padding:22px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.question strong{
+    color:#dff7ff;
+}
+
+details{
+    margin-top:13px;
+}
+
+summary{
+    cursor:pointer;
+    color:#55dcff;
+    font-weight:800;
+}
+
+details p{
+    margin-top:12px;
+}
+
+/* =========================================================
+   QUICK REVIEW
+========================================================= */
+
+.quick-review{
+    padding:28px;
+
+    border:1px solid rgba(0,217,255,.12);
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,.08),
+            rgba(124,92,255,.05)
+        );
+}
+
+.quick-review li{
+    margin-bottom:11px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.navigation{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+
+    padding:20px 20px 70px;
+}
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:150px;
+
+    padding:13px 21px;
+
+    border:1px solid rgba(0,217,255,.2);
+    border-radius:12px;
+
+    background:rgba(0,217,255,.07);
+
+    color:#bfefff;
+    text-decoration:none;
+
+    font-weight:800;
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+
+    background:rgba(0,217,255,.16);
+    border-color:#00d9ff;
+
+    color:white;
+
+    box-shadow:
+        0 0 25px rgba(0,217,255,.15);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+
+    background:#01050b;
+
+    border-top:1px solid rgba(255,255,255,.07);
+
+    color:#60788d;
+    font-size:13px;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .back-link{
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:650px;
+        padding:70px 20px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .atom{
+        transform:translate(-50%,-50%) scale(.72);
+    }
+
+    .container{
+        width:94%;
+        padding-top:40px;
+    }
+
+    .topic-nav{
+        top:62px;
+    }
+
+    .lesson{
+        padding:27px 22px;
+        border-radius:20px;
+    }
+
+    .lesson h2{
+        font-size:29px;
+    }
+
+    .formula{
+        font-size:17px;
+        overflow-x:auto;
+    }
+
+    .chem-visual{
+        min-height:190px;
+    }
+
+    .molecule{
+        transform:scale(.75);
+    }
+
+    .stats{
+        gap:8px;
+    }
+
+    .stat{
+        font-size:11px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition:none !important;
+    }
+
+}
+</style>
 
 </head>
 
 <body>
 
+<div id="progress"></div>
+
+<div class="particles">
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+</div>
 
 <header>
-
-    <a href="index.html" class="logo">
-        IAL ATLAS
-    </a>
-
-    <a href="chemistry.html">
-        ← Chemistry
-    </a>
-
+    <a href="index.html" class="logo">IAL ATLAS</a>
+    <a href="chemistry.html" class="back-link">← Chemistry</a>
 </header>
 
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
-    <p class="hero-label">
+```
+<div class="atom">
+
+    <div class="nucleus"></div>
+
+    <div class="orbit one">
+        <div class="electron"></div>
+    </div>
+
+    <div class="orbit two">
+        <div class="electron"></div>
+    </div>
+
+    <div class="orbit three">
+        <div class="electron"></div>
+    </div>
+
+</div>
+
+<div class="hero-content">
+
+    <div class="hero-label">
         EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • WCH11
-    </p>
+    </div>
 
     <h1>
         Chemistry <span>Unit 1</span>
@@ -294,1199 +1069,1236 @@
         Structure, Bonding and Introduction to Organic Chemistry
     </p>
 
-</section>
+    <div class="stats">
+        <div class="stat"><strong>WCH11</strong> Unit 1</div>
+        <div class="stat"><strong>5</strong> Core Topics</div>
+        <div class="stat"><strong>10</strong> Practice Questions</div>
+        <div class="stat"><strong>Formula</strong> Review</div>
+    </div>
 
+</div>
+```
+
+</section>
 
 <main class="container">
 
+<!-- =========================================================
+     TOPIC NAVIGATION
+========================================================= -->
 
-    <!-- ========================================================= -->
-    <!-- TOPIC 01 -->
-    <!-- ========================================================= -->
+<nav class="topic-nav">
 
-    <section class="lesson">
+```
+<a href="#topic1">01 Amount</a>
+<a href="#topic2">02 Atomic Structure</a>
+<a href="#topic3">03 Bonding</a>
+<a href="#topic4">04 Alkanes</a>
+<a href="#topic5">05 Alkenes</a>
+<a href="#practice">Practice</a>
+<a href="#review">Review</a>
+```
 
-        <p class="lesson-number">TOPIC 01</p>
+</nav>
 
-        <h2>Formulae, Equations and Amount of Substance</h2>
+<!-- =========================================================
+     TOPIC 01
+========================================================= -->
 
-        <p>
-            Chemistry uses formulae and equations to represent substances
-            and chemical reactions. Quantitative chemistry allows the amounts
-            of reactants and products to be calculated.
-        </p>
+<section class="lesson reveal" id="topic1">
 
+<p class="lesson-number">TOPIC 01</p>
 
-        <h3>Relative Atomic Mass</h3>
+<h2>Formulae, Equations and Amount of Substance</h2>
 
-        <p>
-            Relative atomic mass, A<sub>r</sub>, is the weighted average mass
-            of an atom of an element compared with one-twelfth of the mass
-            of an atom of carbon-12.
-        </p>
+<p>
+Chemistry uses formulae and equations to represent substances
+and chemical reactions. Quantitative chemistry allows the amounts
+of reactants and products to be calculated.
+</p>
 
+<div class="chem-visual">
 
-        <h3>Relative Formula Mass</h3>
+<div class="molecule">
 
-        <p>
-            Relative formula mass, M<sub>r</sub>, is obtained by adding the
-            relative atomic masses of all the atoms represented in a formula.
-        </p>
+<div class="atom-node a">C</div>
+<div class="atom-node b">O</div>
+<div class="atom-node c">O</div>
 
-
-        <div class="formula">
-            M<sub>r</sub> = sum of all A<sub>r</sub> values in the formula
-        </div>
-
-
-        <h3>The Mole</h3>
-
-        <p>
-            The mole is the amount of substance containing the Avogadro
-            constant number of specified particles.
-        </p>
-
-        <div class="formula">
-            N<sub>A</sub> = 6.02 × 10<sup>23</sup> mol<sup>−1</sup>
-        </div>
-
-
-        <h3>Amount of Substance</h3>
-
-        <div class="formula">
-            n = m / M
-        </div>
-
-        <p>
-            where n is amount in mol, m is mass in g and M is molar mass
-            in g mol<sup>−1</sup>.
-        </p>
-
-
-        <h3>Number of Particles</h3>
-
-        <div class="formula">
-            N = nN<sub>A</sub>
-        </div>
-
-
-        <h3>Concentration</h3>
-
-        <div class="formula">
-            c = n / V
-        </div>
-
-        <p>
-            For concentration in mol dm<sup>−3</sup>, volume must be expressed
-            in dm<sup>3</sup>.
-        </p>
-
-
-        <div class="warning">
-            <strong>Remember:</strong>
-            1000 cm<sup>3</sup> = 1 dm<sup>3</sup>.
-        </div>
-
-
-        <h3>Empirical Formula</h3>
-
-        <p>
-            The empirical formula gives the simplest whole-number ratio
-            of atoms in a compound.
-        </p>
-
-
-        <h3>Molecular Formula</h3>
-
-        <p>
-            The molecular formula gives the actual number of atoms of each
-            element in one molecule.
-        </p>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
-
-            <p>
-                A compound contains 24.0 g of carbon and 4.0 g of hydrogen.
-                Determine its empirical formula.
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    Carbon:
-                    24.0 / 12.0 = 2.00 mol
-                </p>
-
-                <p>
-                    Hydrogen:
-                    4.0 / 1.0 = 4.00 mol
-                </p>
-
-                <p>
-                    Divide by the smallest amount:
-                </p>
-
-                <p>
-                    C : H = 1 : 2
-                </p>
-
-                <p>
-                    Empirical formula = <strong>CH<sub>2</sub></strong>
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <h3>Percentage Yield</h3>
-
-        <div class="formula">
-            Percentage yield =
-            (actual yield / theoretical yield) × 100
-        </div>
-
-
-        <h3>Atom Economy</h3>
-
-        <div class="formula">
-            Atom economy =
-            (M<sub>r</sub> of desired product /
-            total M<sub>r</sub> of reactants) × 100
-        </div>
-
-
-        <h3>Writing Equations</h3>
-
-        <p>
-            Chemical equations must conserve atoms and charge. Equations
-            should be balanced using the smallest whole-number coefficients.
-        </p>
-
-        <div class="definition">
-
-            <strong>Exam habit:</strong>
-
-            <p>
-                Always check that every element has the same number of atoms
-                on both sides of an equation.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- TOPIC 02 -->
-    <!-- ========================================================= -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 02</p>
-
-        <h2>Atomic Structure and the Periodic Table</h2>
-
-        <p>
-            The arrangement of electrons in atoms explains many of the
-            patterns observed in the Periodic Table.
-        </p>
-
-
-        <h3>Subatomic Particles</h3>
-
-        <ul>
-
-            <li>Protons have a relative charge of +1.</li>
-
-            <li>Neutrons have a relative charge of 0.</li>
-
-            <li>Electrons have a relative charge of −1.</li>
-
-        </ul>
-
-
-        <h3>Atomic Number and Mass Number</h3>
-
-        <p>
-            Atomic number is the number of protons in an atom.
-            Mass number is the total number of protons and neutrons.
-        </p>
-
-        <div class="formula">
-            Number of neutrons = mass number − atomic number
-        </div>
-
-
-        <h3>Isotopes</h3>
-
-        <p>
-            Isotopes are atoms of the same element with the same number
-            of protons but different numbers of neutrons.
-        </p>
-
-
-        <h3>Electron Configuration</h3>
-
-        <p>
-            Electrons occupy shells and orbitals around the nucleus.
-            The orbitals relevant to Unit 1 include s, p and d orbitals.
-        </p>
-
-        <ul>
-
-            <li>s subshell — one orbital</li>
-
-            <li>p subshell — three orbitals</li>
-
-            <li>d subshell — five orbitals</li>
-
-        </ul>
-
-
-        <h3>Electron Capacity</h3>
-
-        <p>
-            Each orbital can contain a maximum of two electrons.
-            Electrons in the same orbital have opposite spins.
-        </p>
-
-
-        <h3>Ionisation Energy</h3>
-
-        <p>
-            First ionisation energy is the energy required to remove one
-            electron from each atom in one mole of gaseous atoms to form
-            one mole of gaseous singly charged ions.
-        </p>
-
-
-        <div class="definition">
-
-            <strong>Important factors affecting ionisation energy:</strong>
-
-            <ul>
-
-                <li>Distance of the outer electron from the nucleus.</li>
-
-                <li>Nuclear charge.</li>
-
-                <li>Shielding by inner electrons.</li>
-
-                <li>Subshell and electron pairing effects.</li>
-
-            </ul>
-
-        </div>
-
-
-        <h3>Trends Across a Period</h3>
-
-        <p>
-            Across a period, nuclear charge generally increases while
-            electrons are added to the same main shell. This produces
-            characteristic trends in atomic properties.
-        </p>
-
-
-        <h3>Periodic Table Blocks</h3>
-
-        <ul>
-
-            <li>s-block elements have their outer electrons in an s subshell.</li>
-
-            <li>p-block elements have their outer electrons in a p subshell.</li>
-
-            <li>d-block elements involve occupation of d subshells.</li>
-
-        </ul>
-
-
-        <h3>Mass Spectrometry</h3>
-
-        <p>
-            Mass spectrometry can be used to determine isotopic masses
-            and relative abundances.
-        </p>
-
-        <p>
-            A mass spectrum contains peaks corresponding to ions with
-            particular mass-to-charge ratios.
-        </p>
-
-
-        <div class="formula">
-            A<sub>r</sub> =
-            Σ(isotopic mass × fractional abundance)
-        </div>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
-
-            <p>
-                An element has two isotopes with masses 10 and 11.
-                Their abundances are 20% and 80% respectively.
-                Find its relative atomic mass.
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    A<sub>r</sub> = (10 × 0.20) + (11 × 0.80)
-                </p>
-
-                <p>
-                    A<sub>r</sub> = 2.00 + 8.80
-                </p>
-
-                <p>
-                    <strong>A<sub>r</sub> = 10.80</strong>
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- TOPIC 03 -->
-    <!-- ========================================================= -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 03</p>
-
-        <h2>Bonding and Structure</h2>
-
-        <p>
-            The properties of substances depend strongly on the type of
-            bonding and structure present.
-        </p>
-
-
-        <h3>Ionic Bonding</h3>
-
-        <p>
-            Ionic bonding is the strong electrostatic attraction between
-            oppositely charged ions.
-        </p>
-
-        <p>
-            Ions are formed when atoms gain or lose electrons.
-        </p>
-
-
-        <h3>Ionic Structures</h3>
-
-        <p>
-            Ionic compounds form giant lattices containing positive and
-            negative ions arranged in a regular structure.
-        </p>
-
-        <ul>
-
-            <li>High melting and boiling points.</li>
-
-            <li>Usually solid at room temperature.</li>
-
-            <li>Conduct electricity when molten or dissolved in water.</li>
-
-            <li>Do not conduct electricity when solid.</li>
-
-        </ul>
-
-
-        <h3>Covalent Bonding</h3>
-
-        <p>
-            A covalent bond is a shared pair of electrons between atoms.
-        </p>
-
-
-        <h3>Electronegativity and Bond Polarity</h3>
-
-        <p>
-            Electronegativity describes the tendency of an atom to attract
-            the bonding pair of electrons towards itself.
-        </p>
-
-        <p>
-            A difference in electronegativity can produce a polar covalent
-            bond.
-        </p>
-
-
-        <h3>Shapes of Molecules</h3>
-
-        <p>
-            Electron pairs repel each other and arrange themselves as far
-            apart as possible. Lone pairs repel more strongly than bonding
-            pairs.
-        </p>
-
-        <div class="definition">
-
-            <strong>Electron-pair repulsion order:</strong>
-
-            <p>
-                lone pair–lone pair &gt; lone pair–bond pair &gt;
-                bond pair–bond pair
-            </p>
-
-        </div>
-
-
-        <h3>Common Molecular Shapes</h3>
-
-        <ul>
-
-            <li>Two electron pairs → linear, approximately 180°.</li>
-
-            <li>Three bonding pairs → trigonal planar, approximately 120°.</li>
-
-            <li>Four bonding pairs → tetrahedral, approximately 109.5°.</li>
-
-            <li>Three bonding pairs and one lone pair → trigonal pyramidal.</li>
-
-            <li>Two bonding pairs and two lone pairs → bent / V-shaped.</li>
-
-        </ul>
-
-
-        <h3>Metallic Bonding</h3>
-
-        <p>
-            Metallic bonding consists of positive metal ions surrounded
-            by delocalised electrons.
-        </p>
-
-
-        <h3>Intermolecular Forces</h3>
-
-        <p>
-            Molecules can attract one another through intermolecular forces.
-            These are weaker than the covalent bonds within a molecule.
-        </p>
-
-        <h4>Van der Waals Forces</h4>
-
-        <p>
-            Temporary fluctuations in electron distribution can produce
-            temporary dipoles and attractions between molecules.
-        </p>
-
-        <h4>Permanent Dipole-Dipole Attractions</h4>
-
-        <p>
-            Polar molecules can attract one another because of permanent
-            partial charges.
-        </p>
-
-        <h4>Hydrogen Bonding</h4>
-
-        <p>
-            Hydrogen bonding is a particularly strong intermolecular
-            attraction involving hydrogen bonded to a highly electronegative
-            atom and a lone pair on another electronegative atom.
-        </p>
-
-
-        <h3>Structure and Physical Properties</h3>
-
-        <p>
-            The type of structure affects melting point, boiling point,
-            electrical conductivity and solubility.
-        </p>
-
-        <div class="example">
-
-            <p class="example-title">
-                Exam Comparison
-            </p>
-
-            <p>
-                A giant ionic compound generally has a high melting point
-                because strong electrostatic attractions act throughout
-                its lattice.
-            </p>
-
-            <p>
-                A simple molecular substance usually has a much lower
-                melting point because only intermolecular forces need to
-                be overcome during melting.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- TOPIC 04 -->
-    <!-- ========================================================= -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 04</p>
-
-        <h2>Introductory Organic Chemistry and Alkanes</h2>
-
-        <p>
-            Organic chemistry is the study of carbon-containing compounds.
-            Unit 1 introduces organic structures, naming, isomerism and
-            the chemistry of alkanes.
-        </p>
-
-
-        <h3>Homologous Series</h3>
-
-        <p>
-            A homologous series is a family of compounds with the same
-            functional group and general formula, showing similar chemical
-            properties. Successive members differ by CH<sub>2</sub>.
-        </p>
-
-
-        <h3>Alkanes</h3>
-
-        <p>
-            Alkanes are saturated hydrocarbons containing only carbon-carbon
-            single bonds.
-        </p>
-
-        <div class="formula">
-            General formula: C<sub>n</sub>H<sub>2n+2</sub>
-        </div>
-
-
-        <h3>Names of Simple Alkanes</h3>
-
-        <ul>
-
-            <li>Methane — CH<sub>4</sub></li>
-
-            <li>Ethane — C<sub>2</sub>H<sub>6</sub></li>
-
-            <li>Propane — C<sub>3</sub>H<sub>8</sub></li>
-
-            <li>Butane — C<sub>4</sub>H<sub>10</sub></li>
-
-            <li>Pentane — C<sub>5</sub>H<sub>12</sub></li>
-
-            <li>Hexane — C<sub>6</sub>H<sub>14</sub></li>
-
-        </ul>
-
-
-        <h3>Structural Formulae</h3>
-
-        <p>
-            Organic compounds can be represented using displayed,
-            structural, skeletal and molecular formulae.
-        </p>
-
-
-        <h3>Structural Isomerism</h3>
-
-        <p>
-            Structural isomers have the same molecular formula but
-            different structural arrangements.
-        </p>
-
-
-        <h3>Combustion</h3>
-
-        <p>
-            Alkanes undergo combustion in oxygen.
-        </p>
-
-        <div class="formula">
-            hydrocarbon + oxygen → carbon dioxide + water
-        </div>
-
-        <p>
-            Complete combustion requires sufficient oxygen. Incomplete
-            combustion can produce carbon monoxide and/or carbon.
-        </p>
-
-
-        <h3>Cracking</h3>
-
-        <p>
-            Cracking breaks larger hydrocarbon molecules into smaller,
-            more useful molecules.
-        </p>
-
-        <p>
-            Cracking can produce both alkanes and alkenes.
-        </p>
-
-
-        <h3>Free-Radical Substitution</h3>
-
-        <p>
-            Alkanes can react with halogens in the presence of ultraviolet
-            radiation.
-        </p>
-
-        <h4>Initiation</h4>
-
-        <p>
-            Ultraviolet radiation causes a halogen molecule to undergo
-            homolytic fission, producing radicals.
-        </p>
-
-
-        <h4>Propagation</h4>
-
-        <p>
-            Radicals react with molecules to produce new radicals,
-            allowing the chain reaction to continue.
-        </p>
-
-
-        <h4>Termination</h4>
-
-        <p>
-            Two radicals combine, removing radicals from the reaction chain.
-        </p>
-
-
-        <div class="definition">
-
-            <strong>Homolytic fission:</strong>
-
-            <p>
-                Bond breaking in which one electron from the bonding pair
-                goes to each atom, producing radicals.
-            </p>
-
-        </div>
-
-
-        <h3>Petroleum and Fractional Distillation</h3>
-
-        <p>
-            Crude oil is a mixture of hydrocarbons. Fractional distillation
-            separates hydrocarbons according to differences in boiling point.
-        </p>
-
-        <p>
-            Smaller molecules generally have lower boiling points and are
-            more volatile than larger molecules.
-        </p>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- TOPIC 05 -->
-    <!-- ========================================================= -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 05</p>
-
-        <h2>Alkenes</h2>
-
-        <p>
-            Alkenes are unsaturated hydrocarbons containing a carbon-carbon
-            double bond.
-        </p>
-
-
-        <div class="formula">
-            General formula: C<sub>n</sub>H<sub>2n</sub>
-        </div>
-
-
-        <h3>The C=C Double Bond</h3>
-
-        <p>
-            A carbon-carbon double bond consists of a sigma bond and a
-            pi bond. The presence of the pi bond makes alkenes more
-            reactive than alkanes.
-        </p>
-
-
-        <h3>Naming Alkenes</h3>
-
-        <p>
-            The longest carbon chain containing the double bond is selected.
-            The chain is numbered so that the double bond receives the
-            lowest possible number.
-        </p>
-
-
-        <h3>Electrophilic Addition</h3>
-
-        <p>
-            Alkenes undergo addition reactions because the electron-rich
-            double bond attracts electrophiles.
-        </p>
-
-
-        <h3>Addition of Hydrogen</h3>
-
-        <p>
-            Hydrogen can add across the double bond in the presence of a
-            suitable catalyst.
-        </p>
-
-
-        <h3>Addition of Halogens</h3>
-
-        <p>
-            Alkenes react with halogens by addition across the carbon-carbon
-            double bond.
-        </p>
-
-
-        <h3>Addition of Hydrogen Halides</h3>
-
-        <p>
-            Hydrogen halides can add across an alkene double bond to form
-            a haloalkane.
-        </p>
-
-
-        <h3>Hydration of Alkenes</h3>
-
-        <p>
-            Alkenes can react with steam to produce alcohols under suitable
-            industrial conditions.
-        </p>
-
-
-        <h3>Test for an Alkene</h3>
-
-        <p>
-            Bromine water can be used to test for carbon-carbon double bonds.
-            An alkene rapidly decolourises bromine water.
-        </p>
-
-
-        <h3>Polymerisation</h3>
-
-        <p>
-            Addition polymerisation occurs when many alkene molecules
-            join together to form a polymer.
-        </p>
-
-        <div class="definition">
-
-            <strong>Key idea:</strong>
-
-            <p>
-                The C=C bond opens during addition polymerisation and forms
-                new carbon-carbon single bonds linking monomer units.
-            </p>
-
-        </div>
-
-
-        <div class="example">
-
-            <p class="example-title">
-                Worked Example
-            </p>
-
-            <p>
-                Propene undergoes addition polymerisation.
-                Identify the repeating unit of the polymer.
-            </p>
-
-            <div class="solution">
-
-                <p>
-                    The carbon-carbon double bond opens and the carbon chain
-                    becomes linked to neighbouring monomer units.
-                </p>
-
-                <p>
-                    The repeating unit is based on:
-                </p>
-
-                <div class="formula">
-                    −CH<sub>2</sub>−CH(CH<sub>3</sub>)−
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- MIXED PRACTICE -->
-    <!-- ========================================================= -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">PRACTICE</p>
-
-        <h2>Unit 1 Mixed Practice</h2>
-
-        <p>
-            These questions combine the five Unit 1 specification areas.
-            Try them without looking at the answers first.
-        </p>
-
-
-        <div class="question">
-
-            <strong>
-                1. Calculate the amount of substance in 5.85 g of NaCl.
-                Use A<sub>r</sub>(Na) = 23.0 and A<sub>r</sub>(Cl) = 35.5.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    M<sub>r</sub>(NaCl) = 23.0 + 35.5 = 58.5
-                </p>
-
-                <p>
-                    n = m / M = 5.85 / 58.5
-                </p>
-
-                <p>
-                    <strong>n = 0.100 mol</strong>
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                2. An ion has 17 protons, 18 electrons and 18 neutrons.
-                Identify the ion and give its mass number.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    17 protons means the element is chlorine.
-                </p>
-
-                <p>
-                    18 electrons means it has gained one electron,
-                    so the ion is Cl<sup>−</sup>.
-                </p>
-
-                <p>
-                    Mass number = 17 + 18 = <strong>35</strong>.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                3. Explain why magnesium oxide has a much higher melting
-                point than methane.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Magnesium oxide has a giant ionic lattice with strong
-                    electrostatic attractions between oppositely charged ions.
-                    A large amount of energy is required to overcome these
-                    attractions.
-                </p>
-
-                <p>
-                    Methane is a simple molecular substance with relatively
-                    weak intermolecular forces.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                4. State the general formula of an alkane and an alkene.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Alkane:
-                    C<sub>n</sub>H<sub>2n+2</sub>
-                </p>
-
-                <p>
-                    Alkene:
-                    C<sub>n</sub>H<sub>2n</sub>
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                5. Explain why alkenes are generally more reactive than alkanes.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Alkenes contain a carbon-carbon double bond containing
-                    a pi bond. The pi bond provides an electron-rich region
-                    that can attract electrophiles and undergo addition
-                    reactions.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                6. A sample contains 60% isotope X-35 and 40% isotope X-37.
-                Calculate the relative atomic mass.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    A<sub>r</sub> = (35 × 0.60) + (37 × 0.40)
-                </p>
-
-                <p>
-                    A<sub>r</sub> = 21.0 + 14.8
-                </p>
-
-                <p>
-                    <strong>A<sub>r</sub> = 35.8</strong>
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                7. State the products of complete combustion of a hydrocarbon.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Carbon dioxide and water.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                8. What type of reaction occurs when bromine reacts
-                with an alkene?
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Addition across the carbon-carbon double bond.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                9. Explain what is meant by structural isomers.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Structural isomers have the same molecular formula
-                    but different structural arrangements of atoms.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                10. Explain why ionic compounds conduct electricity
-                when molten but not when solid.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    When solid, the ions are fixed in position and cannot
-                    move to carry charge. When molten, the ions are free
-                    to move and can carry electric charge.
-                </p>
-
-            </details>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- QUICK REVIEW -->
-    <!-- ========================================================= -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">QUICK REVIEW</p>
-
-        <h2>Unit 1 Key Ideas</h2>
-
-        <div class="quick-review">
-
-            <ul>
-
-                <li>
-                    n = m / M
-                </li>
-
-                <li>
-                    N = nN<sub>A</sub>
-                </li>
-
-                <li>
-                    c = n / V
-                </li>
-
-                <li>
-                    Percentage yield =
-                    actual yield / theoretical yield × 100
-                </li>
-
-                <li>
-                    Atom economy =
-                    desired product M<sub>r</sub> /
-                    total reactant M<sub>r</sub> × 100
-                </li>
-
-                <li>
-                    Isotopes have the same number of protons but different
-                    numbers of neutrons.
-                </li>
-
-                <li>
-                    Ionic, covalent and metallic bonding are different
-                    forms of strong chemical bonding.
-                </li>
-
-                <li>
-                    Alkanes are saturated hydrocarbons.
-                </li>
-
-                <li>
-                    Alkenes contain a carbon-carbon double bond.
-                </li>
-
-                <li>
-                    Alkenes commonly undergo addition reactions.
-                </li>
-
-                <li>
-                    Alkanes can undergo free-radical substitution under
-                    suitable conditions.
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-<div class="navigation">
-
-    <a href="chemistry.html" class="button">
-        ← Back to Chemistry
-    </a>
-
-    <a href="chemistry-2.html" class="button">
-        Chemistry Unit 2 →
-    </a>
-
-    <a href="index.html" class="button">
-        Home
-    </a>
+<div class="bond ab"></div>
+<div class="bond ac"></div>
+<div class="bond cb"></div>
 
 </div>
 
+</div>
+
+<h3>Relative Atomic Mass</h3>
+
+<p>
+Relative atomic mass, A<sub>r</sub>, is the weighted average mass
+of an atom of an element compared with one-twelfth of the mass
+of an atom of carbon-12.
+</p>
+
+<h3>Relative Formula Mass</h3>
+
+<p>
+Relative formula mass, M<sub>r</sub>, is obtained by adding the
+relative atomic masses of all the atoms represented in a formula.
+</p>
+
+<div class="formula">
+M<sub>r</sub> = sum of all A<sub>r</sub> values in the formula
+</div>
+
+<h3>The Mole</h3>
+
+<p>
+The mole is the amount of substance containing the Avogadro
+constant number of specified particles.
+</p>
+
+<div class="formula">
+N<sub>A</sub> = 6.02 × 10<sup>23</sup> mol<sup>−1</sup>
+</div>
+
+<h3>Amount of Substance</h3>
+
+<div class="formula">
+n = m / M
+</div>
+
+<p>
+where n is amount in mol, m is mass in g and M is molar mass
+in g mol<sup>−1</sup>.
+</p>
+
+<h3>Number of Particles</h3>
+
+<div class="formula">
+N = nN<sub>A</sub>
+</div>
+
+<h3>Concentration</h3>
+
+<div class="formula">
+c = n / V
+</div>
+
+<p>
+For concentration in mol dm<sup>−3</sup>, volume must be expressed
+in dm<sup>3</sup>.
+</p>
+
+<div class="warning">
+<strong>Remember:</strong>
+1000 cm<sup>3</sup> = 1 dm<sup>3</sup>.
+</div>
+
+<h3>Empirical Formula</h3>
+
+<p>
+The empirical formula gives the simplest whole-number ratio
+of atoms in a compound.
+</p>
+
+<h3>Molecular Formula</h3>
+
+<p>
+The molecular formula gives the actual number of atoms of each
+element in one molecule.
+</p>
+
+<div class="example">
+
+<p class="example-title">WORKED EXAMPLE</p>
+
+<p>
+A compound contains 24.0 g of carbon and 4.0 g of hydrogen.
+Determine its empirical formula.
+</p>
+
+<div class="solution">
+
+<p>
+Carbon: 24.0 / 12.0 = 2.00 mol
+</p>
+
+<p>
+Hydrogen: 4.0 / 1.0 = 4.00 mol
+</p>
+
+<p>
+Divide by the smallest amount:
+</p>
+
+<p>
+C : H = 1 : 2
+</p>
+
+<p>
+Empirical formula =
+<strong>CH<sub>2</sub></strong>
+</p>
+
+</div>
+</div>
+
+<h3>Percentage Yield</h3>
+
+<div class="formula">
+Percentage yield =
+(actual yield / theoretical yield) × 100
+</div>
+
+<h3>Atom Economy</h3>
+
+<div class="formula">
+Atom economy =
+(M<sub>r</sub> of desired product /
+total M<sub>r</sub> of reactants) × 100
+</div>
+
+<h3>Writing Equations</h3>
+
+<p>
+Chemical equations must conserve atoms and charge. Equations
+should be balanced using the smallest whole-number coefficients.
+</p>
+
+<div class="definition">
+<strong>Exam habit:</strong>
+<p>
+Always check that every element has the same number of atoms
+on both sides of an equation.
+</p>
+</div>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 02
+========================================================= -->
+
+<section class="lesson reveal" id="topic2">
+
+<p class="lesson-number">TOPIC 02</p>
+
+<h2>Atomic Structure and the Periodic Table</h2>
+
+<p>
+The arrangement of electrons in atoms explains many of the
+patterns observed in the Periodic Table.
+</p>
+
+<h3>Subatomic Particles</h3>
+
+<ul>
+<li>Protons have a relative charge of +1.</li>
+<li>Neutrons have a relative charge of 0.</li>
+<li>Electrons have a relative charge of −1.</li>
+</ul>
+
+<h3>Atomic Number and Mass Number</h3>
+
+<p>
+Atomic number is the number of protons in an atom.
+Mass number is the total number of protons and neutrons.
+</p>
+
+<div class="formula">
+Number of neutrons = mass number − atomic number
+</div>
+
+<h3>Isotopes</h3>
+
+<p>
+Isotopes are atoms of the same element with the same number
+of protons but different numbers of neutrons.
+</p>
+
+<h3>Electron Configuration</h3>
+
+<p>
+Electrons occupy shells and orbitals around the nucleus.
+The orbitals relevant to Unit 1 include s, p and d orbitals.
+</p>
+
+<ul>
+<li>s subshell — one orbital</li>
+<li>p subshell — three orbitals</li>
+<li>d subshell — five orbitals</li>
+</ul>
+
+<h3>Electron Capacity</h3>
+
+<p>
+Each orbital can contain a maximum of two electrons.
+Electrons in the same orbital have opposite spins.
+</p>
+
+<h3>Ionisation Energy</h3>
+
+<p>
+First ionisation energy is the energy required to remove one
+electron from each atom in one mole of gaseous atoms to form
+one mole of gaseous singly charged ions.
+</p>
+
+<div class="definition">
+
+<strong>Important factors affecting ionisation energy:</strong>
+
+<ul>
+<li>Distance of the outer electron from the nucleus.</li>
+<li>Nuclear charge.</li>
+<li>Shielding by inner electrons.</li>
+<li>Subshell and electron pairing effects.</li>
+</ul>
+
+</div>
+
+<h3>Trends Across a Period</h3>
+
+<p>
+Across a period, nuclear charge generally increases while
+electrons are added to the same main shell. This produces
+characteristic trends in atomic properties.
+</p>
+
+<h3>Periodic Table Blocks</h3>
+
+<ul>
+<li>s-block elements have their outer electrons in an s subshell.</li>
+<li>p-block elements have their outer electrons in a p subshell.</li>
+<li>d-block elements involve occupation of d subshells.</li>
+</ul>
+
+<h3>Mass Spectrometry</h3>
+
+<p>
+Mass spectrometry can be used to determine isotopic masses
+and relative abundances.
+</p>
+
+<p>
+A mass spectrum contains peaks corresponding to ions with
+particular mass-to-charge ratios.
+</p>
+
+<div class="formula">
+A<sub>r</sub> =
+Σ(isotopic mass × fractional abundance)
+</div>
+
+<div class="example">
+
+<p class="example-title">WORKED EXAMPLE</p>
+
+<p>
+An element has two isotopes with masses 10 and 11.
+Their abundances are 20% and 80% respectively.
+Find its relative atomic mass.
+</p>
+
+<div class="solution">
+
+<p>
+A<sub>r</sub> = (10 × 0.20) + (11 × 0.80)
+</p>
+
+<p>
+A<sub>r</sub> = 2.00 + 8.80
+</p>
+
+<p>
+<strong>A<sub>r</sub> = 10.80</strong>
+</p>
+
+</div>
+</div>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 03
+========================================================= -->
+
+<section class="lesson reveal" id="topic3">
+
+<p class="lesson-number">TOPIC 03</p>
+
+<h2>Bonding and Structure</h2>
+
+<p>
+The properties of substances depend strongly on the type of
+bonding and structure present.
+</p>
+
+<div class="chem-visual">
+
+<div class="molecule">
+
+<div class="atom-node a">Na</div>
+<div class="atom-node b">Cl</div>
+
+<div class="bond ab"></div>
+
+</div>
+
+</div>
+
+<h3>Ionic Bonding</h3>
+
+<p>
+Ionic bonding is the strong electrostatic attraction between
+oppositely charged ions.
+</p>
+
+<p>
+Ions are formed when atoms gain or lose electrons.
+</p>
+
+<h3>Ionic Structures</h3>
+
+<p>
+Ionic compounds form giant lattices containing positive and
+negative ions arranged in a regular structure.
+</p>
+
+<ul>
+<li>High melting and boiling points.</li>
+<li>Usually solid at room temperature.</li>
+<li>Conduct electricity when molten or dissolved in water.</li>
+<li>Do not conduct electricity when solid.</li>
+</ul>
+
+<h3>Covalent Bonding</h3>
+
+<p>
+A covalent bond is a shared pair of electrons between atoms.
+</p>
+
+<h3>Electronegativity and Bond Polarity</h3>
+
+<p>
+Electronegativity describes the tendency of an atom to attract
+the bonding pair of electrons towards itself.
+</p>
+
+<p>
+A difference in electronegativity can produce a polar covalent
+bond.
+</p>
+
+<h3>Shapes of Molecules</h3>
+
+<p>
+Electron pairs repel each other and arrange themselves as far
+apart as possible. Lone pairs repel more strongly than bonding
+pairs.
+</p>
+
+<div class="definition">
+
+<strong>Electron-pair repulsion order:</strong>
+
+<p>
+lone pair–lone pair &gt; lone pair–bond pair &gt;
+bond pair–bond pair
+</p>
+
+</div>
+
+<h3>Common Molecular Shapes</h3>
+
+<ul>
+<li>Two electron pairs → linear, approximately 180°.</li>
+<li>Three bonding pairs → trigonal planar, approximately 120°.</li>
+<li>Four bonding pairs → tetrahedral, approximately 109.5°.</li>
+<li>Three bonding pairs and one lone pair → trigonal pyramidal.</li>
+<li>Two bonding pairs and two lone pairs → bent / V-shaped.</li>
+</ul>
+
+<h3>Metallic Bonding</h3>
+
+<p>
+Metallic bonding consists of positive metal ions surrounded
+by delocalised electrons.
+</p>
+
+<h3>Intermolecular Forces</h3>
+
+<p>
+Molecules can attract one another through intermolecular forces.
+These are weaker than the covalent bonds within a molecule.
+</p>
+
+<h4>Van der Waals Forces</h4>
+
+<p>
+Temporary fluctuations in electron distribution can produce
+temporary dipoles and attractions between molecules.
+</p>
+
+<h4>Permanent Dipole-Dipole Attractions</h4>
+
+<p>
+Polar molecules can attract one another because of permanent
+partial charges.
+</p>
+
+<h4>Hydrogen Bonding</h4>
+
+<p>
+Hydrogen bonding is a particularly strong intermolecular
+attraction involving hydrogen bonded to a highly electronegative
+atom and a lone pair on another electronegative atom.
+</p>
+
+<h3>Structure and Physical Properties</h3>
+
+<p>
+The type of structure affects melting point, boiling point,
+electrical conductivity and solubility.
+</p>
+
+<div class="example">
+
+<p class="example-title">EXAM COMPARISON</p>
+
+<p>
+A giant ionic compound generally has a high melting point
+because strong electrostatic attractions act throughout
+its lattice.
+</p>
+
+<p>
+A simple molecular substance usually has a much lower
+melting point because only intermolecular forces need to
+be overcome during melting.
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 04
+========================================================= -->
+
+<section class="lesson reveal" id="topic4">
+
+<p class="lesson-number">TOPIC 04</p>
+
+<h2>Introductory Organic Chemistry and Alkanes</h2>
+
+<p>
+Organic chemistry is the study of carbon-containing compounds.
+Unit 1 introduces organic structures, naming, isomerism and
+the chemistry of alkanes.
+</p>
+
+<h3>Homologous Series</h3>
+
+<p>
+A homologous series is a family of compounds with the same
+functional group and general formula, showing similar chemical
+properties. Successive members differ by CH<sub>2</sub>.
+</p>
+
+<h3>Alkanes</h3>
+
+<p>
+Alkanes are saturated hydrocarbons containing only carbon-carbon
+single bonds.
+</p>
+
+<div class="formula">
+General formula: C<sub>n</sub>H<sub>2n+2</sub>
+</div>
+
+<h3>Names of Simple Alkanes</h3>
+
+<ul>
+<li>Methane — CH<sub>4</sub></li>
+<li>Ethane — C<sub>2</sub>H<sub>6</sub></li>
+<li>Propane — C<sub>3</sub>H<sub>8</sub></li>
+<li>Butane — C<sub>4</sub>H<sub>10</sub></li>
+<li>Pentane — C<sub>5</sub>H<sub>12</sub></li>
+<li>Hexane — C<sub>6</sub>H<sub>14</sub></li>
+</ul>
+
+<h3>Structural Formulae</h3>
+
+<p>
+Organic compounds can be represented using displayed,
+structural, skeletal and molecular formulae.
+</p>
+
+<h3>Structural Isomerism</h3>
+
+<p>
+Structural isomers have the same molecular formula but
+different structural arrangements.
+</p>
+
+<h3>Combustion</h3>
+
+<p>
+Alkanes undergo combustion in oxygen.
+</p>
+
+<div class="formula">
+hydrocarbon + oxygen → carbon dioxide + water
+</div>
+
+<p>
+Complete combustion requires sufficient oxygen. Incomplete
+combustion can produce carbon monoxide and/or carbon.
+</p>
+
+<h3>Cracking</h3>
+
+<p>
+Cracking breaks larger hydrocarbon molecules into smaller,
+more useful molecules.
+</p>
+
+<p>
+Cracking can produce both alkanes and alkenes.
+</p>
+
+<h3>Free-Radical Substitution</h3>
+
+<p>
+Alkanes can react with halogens in the presence of ultraviolet
+radiation.
+</p>
+
+<h4>Initiation</h4>
+
+<p>
+Ultraviolet radiation causes a halogen molecule to undergo
+homolytic fission, producing radicals.
+</p>
+
+<h4>Propagation</h4>
+
+<p>
+Radicals react with molecules to produce new radicals,
+allowing the chain reaction to continue.
+</p>
+
+<h4>Termination</h4>
+
+<p>
+Two radicals combine, removing radicals from the reaction chain.
+</p>
+
+<div class="definition">
+
+<strong>Homolytic fission:</strong>
+
+<p>
+Bond breaking in which one electron from the bonding pair
+goes to each atom, producing radicals.
+</p>
+
+</div>
+
+<h3>Petroleum and Fractional Distillation</h3>
+
+<p>
+Crude oil is a mixture of hydrocarbons. Fractional distillation
+separates hydrocarbons according to differences in boiling point.
+</p>
+
+<p>
+Smaller molecules generally have lower boiling points and are
+more volatile than larger molecules.
+</p>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 05
+========================================================= -->
+
+<section class="lesson reveal" id="topic5">
+
+<p class="lesson-number">TOPIC 05</p>
+
+<h2>Alkenes</h2>
+
+<p>
+Alkenes are unsaturated hydrocarbons containing a carbon-carbon
+double bond.
+</p>
+
+<div class="chem-visual">
+
+<div class="molecule">
+
+<div class="atom-node a">C</div>
+<div class="atom-node b">C</div>
+
+<div class="bond ab"></div>
+<div class="bond" style="top:65px;left:70px;width:140px;transform:translateY(9px);"></div>
+
+</div>
+
+</div>
+
+<div class="formula">
+General formula: C<sub>n</sub>H<sub>2n</sub>
+</div>
+
+<h3>The C=C Double Bond</h3>
+
+<p>
+A carbon-carbon double bond consists of a sigma bond and a
+pi bond. The presence of the pi bond makes alkenes more
+reactive than alkanes.
+</p>
+
+<h3>Naming Alkenes</h3>
+
+<p>
+The longest carbon chain containing the double bond is selected.
+The chain is numbered so that the double bond receives the
+lowest possible number.
+</p>
+
+<h3>Electrophilic Addition</h3>
+
+<p>
+Alkenes undergo addition reactions because the electron-rich
+double bond attracts electrophiles.
+</p>
+
+<h3>Addition of Hydrogen</h3>
+
+<p>
+Hydrogen can add across the double bond in the presence of a
+suitable catalyst.
+</p>
+
+<h3>Addition of Halogens</h3>
+
+<p>
+Alkenes react with halogens by addition across the carbon-carbon
+double bond.
+</p>
+
+<h3>Addition of Hydrogen Halides</h3>
+
+<p>
+Hydrogen halides can add across an alkene double bond to form
+a haloalkane.
+</p>
+
+<h3>Hydration of Alkenes</h3>
+
+<p>
+Alkenes can react with steam to produce alcohols under suitable
+industrial conditions.
+</p>
+
+<h3>Test for an Alkene</h3>
+
+<p>
+Bromine water can be used to test for carbon-carbon double bonds.
+An alkene rapidly decolourises bromine water.
+</p>
+
+<h3>Polymerisation</h3>
+
+<p>
+Addition polymerisation occurs when many alkene molecules
+join together to form a polymer.
+</p>
+
+<div class="definition">
+
+<strong>Key idea:</strong>
+
+<p>
+The C=C bond opens during addition polymerisation and forms
+new carbon-carbon single bonds linking monomer units.
+</p>
+
+</div>
+
+<div class="example">
+
+<p class="example-title">WORKED EXAMPLE</p>
+
+<p>
+Propene undergoes addition polymerisation.
+Identify the repeating unit of the polymer.
+</p>
+
+<div class="solution">
+
+<p>
+The carbon-carbon double bond opens and the carbon chain
+becomes linked to neighbouring monomer units.
+</p>
+
+<p>
+The repeating unit is based on:
+</p>
+
+<div class="formula">
+−CH<sub>2</sub>−CH(CH<sub>3</sub>)−
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     PRACTICE
+========================================================= -->
+
+<section class="lesson reveal" id="practice">
+
+<p class="lesson-number">PRACTICE</p>
+
+<h2>Unit 1 Mixed Practice</h2>
+
+<p>
+These questions combine the five Unit 1 specification areas.
+Try them without looking at the answers first.
+</p>
+
+<div class="question">
+<strong>
+1. Calculate the amount of substance in 5.85 g of NaCl.
+Use A<sub>r</sub>(Na) = 23.0 and A<sub>r</sub>(Cl) = 35.5.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+M<sub>r</sub>(NaCl) = 23.0 + 35.5 = 58.5
+</p>
+
+<p>
+n = m / M = 5.85 / 58.5
+</p>
+
+<p>
+<strong>n = 0.100 mol</strong>
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+2. An ion has 17 protons, 18 electrons and 18 neutrons.
+Identify the ion and give its mass number.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+17 protons means the element is chlorine.
+</p>
+
+<p>
+18 electrons means it has gained one electron,
+so the ion is Cl<sup>−</sup>.
+</p>
+
+<p>
+Mass number = 17 + 18 = <strong>35</strong>.
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+3. Explain why magnesium oxide has a much higher melting
+point than methane.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+Magnesium oxide has a giant ionic lattice with strong
+electrostatic attractions between oppositely charged ions.
+A large amount of energy is required to overcome these
+attractions.
+</p>
+
+<p>
+Methane is a simple molecular substance with relatively
+weak intermolecular forces.
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+4. State the general formula of an alkane and an alkene.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+Alkane:
+C<sub>n</sub>H<sub>2n+2</sub>
+</p>
+
+<p>
+Alkene:
+C<sub>n</sub>H<sub>2n</sub>
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+5. Explain why alkenes are generally more reactive than alkanes.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+Alkenes contain a carbon-carbon double bond containing
+a pi bond. The pi bond provides an electron-rich region
+that can attract electrophiles and undergo addition
+reactions.
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+6. A sample contains 60% isotope X-35 and 40% isotope X-37.
+Calculate the relative atomic mass.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+A<sub>r</sub> = (35 × 0.60) + (37 × 0.40)
+</p>
+
+<p>
+A<sub>r</sub> = 21.0 + 14.8
+</p>
+
+<p>
+<strong>A<sub>r</sub> = 35.8</strong>
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+7. State the products of complete combustion of a hydrocarbon.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+Carbon dioxide and water.
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+8. What type of reaction occurs when bromine reacts
+with an alkene?
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+Addition across the carbon-carbon double bond.
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+9. Explain what is meant by structural isomers.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+Structural isomers have the same molecular formula
+but different structural arrangements of atoms.
+</p>
+
+</details>
+</div>
+
+<div class="question">
+
+<strong>
+10. Explain why ionic compounds conduct electricity
+when molten but not when solid.
+</strong>
+
+<details>
+<summary>Show answer</summary>
+
+<p>
+When solid, the ions are fixed in position and cannot
+move to carry charge. When molten, the ions are free
+to move and can carry electric charge.
+</p>
+
+</details>
+</div>
+
+</section>
+
+<!-- =========================================================
+     QUICK REVIEW
+========================================================= -->
+
+<section class="lesson reveal" id="review">
+
+<p class="lesson-number">QUICK REVIEW</p>
+
+<h2>Unit 1 Key Ideas</h2>
+
+<div class="quick-review">
+
+<ul>
+
+<li>n = m / M</li>
+
+<li>N = nN<sub>A</sub></li>
+
+<li>c = n / V</li>
+
+<li>
+Percentage yield =
+actual yield / theoretical yield × 100
+</li>
+
+<li>
+Atom economy =
+desired product M<sub>r</sub> /
+total reactant M<sub>r</sub> × 100
+</li>
+
+<li>
+Isotopes have the same number of protons but different
+numbers of neutrons.
+</li>
+
+<li>
+Ionic, covalent and metallic bonding are different
+forms of strong chemical bonding.
+</li>
+
+<li>
+Alkanes are saturated hydrocarbons.
+</li>
+
+<li>
+Alkenes contain a carbon-carbon double bond.
+</li>
+
+<li>
+Alkenes commonly undergo addition reactions.
+</li>
+
+<li>
+Alkanes can undergo free-radical substitution under
+suitable conditions.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<div class="navigation">
+
+<a href="chemistry.html" class="button">
+← Back to Chemistry
+</a>
+
+<a href="chemistry-2.html" class="button">
+Chemistry Unit 2 →
+</a>
+
+<a href="index.html" class="button">
+Home
+</a>
+
+</div>
 
 <footer>
-
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
-
+© 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
 </footer>
 
+<script>
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+window.addEventListener("scroll",function(){
+
+    const scrollTop =
+        window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const percentage =
+        (scrollTop / documentHeight) * 100;
+
+    document.getElementById("progress").style.width =
+        percentage + "%";
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:0.12
+        }
+    );
+
+revealElements.forEach(element => {
+    observer.observe(element);
+});
+
+
+/* =========================================================
+   RANDOM PARTICLE MOVEMENT
+========================================================= */
+
+const particles =
+    document.querySelectorAll(".particle");
+
+particles.forEach((particle,index)=>{
+
+    particle.style.top =
+        Math.random()*100 + "%";
+
+    particle.style.transform =
+        `scale(${0.5 + Math.random()*1.5})`;
+
+});
+
+
+/* =========================================================
+   MOLECULE INTERACTION
+========================================================= */
+
+document.querySelectorAll(".chem-visual").forEach(visual=>{
+
+    visual.addEventListener("mousemove",event=>{
+
+        const rect =
+            visual.getBoundingClientRect();
+
+        const x =
+            (event.clientX - rect.left) / rect.width - .5;
+
+        const y =
+            (event.clientY - rect.top) / rect.height - .5;
+
+        const molecule =
+            visual.querySelector(".molecule");
+
+        if(molecule){
+
+            molecule.style.transform =
+                `translate(${x*18}px,${y*18}px)`;
+
+        }
+
+    });
+
+    visual.addEventListener("mouseleave",()=>{
+
+        const molecule =
+            visual.querySelector(".molecule");
+
+        if(molecule){
+            molecule.style.transform =
+                "translate(0,0)";
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
+
 
 
