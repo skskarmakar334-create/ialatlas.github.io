@@ -6,10 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- =========================================================
-         SEO
-    ========================================================== -->
-
     <title>IAL ATLAS | Edexcel IAL Notes, Revision & Study Resources</title>
 
     <meta name="description"
@@ -21,18 +17,12 @@
     <meta name="author" content="Shuvojit Karmakar">
 
     <meta name="robots" content="index, follow, max-image-preview:large">
-
     <meta name="googlebot" content="index, follow">
 
     <meta name="theme-color" content="#05070d">
 
     <link rel="canonical"
           href="https://skskarmakar334-create.github.io/ialatlas.github.io/">
-
-
-    <!-- =========================================================
-         OPEN GRAPH
-    ========================================================== -->
 
     <meta property="og:title"
           content="IAL ATLAS | Edexcel IAL Notes & Revision Resources">
@@ -55,14 +45,6 @@
     <meta property="og:site_name"
           content="IAL ATLAS">
 
-    <meta property="og:locale"
-          content="en_US">
-
-
-    <!-- =========================================================
-         TWITTER / X
-    ========================================================== -->
-
     <meta name="twitter:card"
           content="summary_large_image">
 
@@ -74,14 +56,6 @@
 
     <meta name="twitter:image"
           content="https://skskarmakar334-create.github.io/ialatlas.github.io/logo.png">
-
-    <meta name="twitter:image:alt"
-          content="IAL ATLAS logo">
-
-
-    <!-- =========================================================
-         STRUCTURED DATA
-    ========================================================== -->
 
     <script type="application/ld+json">
     {
@@ -103,11 +77,6 @@
     }
     </script>
 
-
-    <!-- =========================================================
-         FONTS
-    ========================================================== -->
-
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -118,2689 +87,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
           rel="stylesheet">
 
-
-<style>
-
-/* =========================================================
-   CORE
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background: #05070d;
-    color: #eef7ff;
-    overflow-x: hidden;
-    cursor: default;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-::selection {
-    background: #00d9ff;
-    color: #02060b;
-}
-
-
-/* =========================================================
-   CUSTOM CURSOR GLOW
-========================================================= */
-
-.cursor-glow {
-    position: fixed;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,210,255,0.12),
-            rgba(0,210,255,0.035) 30%,
-            transparent 70%
-        );
-
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
-    mix-blend-mode: screen;
-}
-
-
-/* =========================================================
-   GLOBAL ATMOSPHERE
-========================================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.018) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.018) 1px,
-            transparent 1px
-        );
-
-    background-size: 65px 65px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 90%
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 90%
-        );
-
-    pointer-events: none;
-    z-index: -20;
-
-    animation: gridDrift 18s linear infinite;
-}
-
-@keyframes gridDrift {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(65px);
-    }
-}
-
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0,180,255,0.08),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(100,60,255,0.07),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(0,210,255,0.06),
-            transparent 30%
-        );
-
-    pointer-events: none;
-    z-index: -19;
-
-    animation: atmosphere 12s ease-in-out infinite alternate;
-}
-
-@keyframes atmosphere {
-
-    from {
-        opacity: 0.65;
-        transform: scale(1);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1.08);
-    }
-}
-
-
-/* =========================================================
-   PARTICLE CANVAS
-========================================================= */
-
-#particleCanvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -15;
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   SCANLINES
-========================================================= */
-
-.scanlines {
-    position: fixed;
-    inset: 0;
-    z-index: 9998;
-    pointer-events: none;
-
-    background:
-        repeating-linear-gradient(
-            to bottom,
-            rgba(255,255,255,0.012) 0px,
-            rgba(255,255,255,0.012) 1px,
-            transparent 2px,
-            transparent 5px
-        );
-
-    opacity: 0.25;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-::-webkit-scrollbar-track {
-    background: #03050a;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #12374d;
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #00d9ff;
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    z-index: 1000;
-
-    padding: 16px 6%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background:
-        rgba(4,7,13,0.58);
-
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.06);
-
-    transition:
-        background 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-header.scrolled {
-    background:
-        rgba(3,6,11,0.88);
-
-    box-shadow:
-        0 10px 50px rgba(0,0,0,0.35),
-        0 0 40px rgba(0,210,255,0.03);
-}
-
-.logo-image {
-    height: 48px;
-    width: auto;
-    display: block;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(0,210,255,0.25)
-        );
-
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-.logo-image:hover {
-    transform:
-        scale(1.04)
-        rotate(-1deg);
-
-    filter:
-        drop-shadow(
-            0 0 20px
-            rgba(0,210,255,0.55)
-        );
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 34px;
-}
-
-nav a {
-    position: relative;
-
-    color: #91a7ba;
-
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-
-    transition: 0.3s ease;
-}
-
-nav a::before {
-    content: "";
-
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-
-    width: 0;
-    height: 1px;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff,
-        0 0 20px rgba(0,217,255,0.5);
-
-    transform: translateX(-50%);
-
-    transition: width 0.35s ease;
-}
-
-nav a:hover {
-    color: white;
-}
-
-nav a:hover::before {
-    width: 100%;
-}
-
-.nav-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 8px 13px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid rgba(0,210,255,0.18);
-
-    background:
-        rgba(0,210,255,0.035);
-
-    color: #65e5ff;
-
-    font-size: 9px;
-    letter-spacing: 1.5px;
-
-    box-shadow:
-        inset 0 0 20px rgba(0,210,255,0.025);
-}
-
-.status-dot {
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #00e5ff;
-
-    box-shadow:
-        0 0 8px #00e5ff,
-        0 0 20px #00e5ff;
-
-    animation:
-        systemPulse 1.5s infinite;
-}
-
-@keyframes systemPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(0.55);
-        opacity: 0.4;
-    }
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 100vh;
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding:
-        150px 20px
-        100px;
-
-    overflow: hidden;
-
-    isolation: isolate;
-}
-
-
-/* =========================================================
-   HERO LIGHT BEAMS
-========================================================= */
-
-.hero-beam {
-    position: absolute;
-
-    width: 2px;
-    height: 120%;
-
-    top: -10%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(0,210,255,0.5),
-            transparent
-        );
-
-    filter:
-        blur(1px);
-
-    opacity: 0.25;
-
-    transform-origin: center;
-
-    pointer-events: none;
-}
-
-.beam-one {
-    left: 15%;
-    transform: rotate(18deg);
-
-    animation:
-        beamMoveOne 8s ease-in-out infinite alternate;
-}
-
-.beam-two {
-    right: 20%;
-    transform: rotate(-25deg);
-
-    animation:
-        beamMoveTwo 10s ease-in-out infinite alternate;
-}
-
-.beam-three {
-    left: 70%;
-    transform: rotate(12deg);
-
-    animation:
-        beamMoveThree 7s ease-in-out infinite alternate;
-}
-
-@keyframes beamMoveOne {
-
-    from {
-        transform:
-            translateX(-50px)
-            rotate(18deg);
-        opacity: 0.1;
-    }
-
-    to {
-        transform:
-            translateX(70px)
-            rotate(18deg);
-        opacity: 0.4;
-    }
-}
-
-@keyframes beamMoveTwo {
-
-    from {
-        transform:
-            translateX(80px)
-            rotate(-25deg);
-        opacity: 0.08;
-    }
-
-    to {
-        transform:
-            translateX(-80px)
-            rotate(-25deg);
-        opacity: 0.35;
-    }
-}
-
-@keyframes beamMoveThree {
-
-    from {
-        transform:
-            translateX(-40px)
-            rotate(12deg);
-    }
-
-    to {
-        transform:
-            translateX(50px)
-            rotate(12deg);
-    }
-}
-
-
-/* =========================================================
-   GLOBE
-========================================================= */
-
-.hero-globe {
-    position: absolute;
-
-    width: 560px;
-    height: 560px;
-
-    left: 50%;
-    top: 50%;
-
-    object-fit: contain;
-
-    opacity: 0.20;
-
-    z-index: -3;
-
-    pointer-events: none;
-
-    user-select: none;
-
-    filter:
-        drop-shadow(
-            0 0 25px
-            rgba(0,210,255,0.3)
-        )
-        drop-shadow(
-            0 0 90px
-            rgba(0,210,255,0.14)
-        );
-
-    animation:
-        globeSpin 28s linear infinite,
-        globeFloat 7s ease-in-out infinite;
-}
-
-@keyframes globeSpin {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-@keyframes globeFloat {
-
-    0%,
-    100% {
-        margin-top: 0;
-    }
-
-    50% {
-        margin-top: -16px;
-    }
-}
-
-
-/* =========================================================
-   GLOBE ATMOSPHERE
-========================================================= */
-
-.globe-atmosphere {
-    position: absolute;
-
-    width: 590px;
-    height: 590px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(0,210,255,0.07);
-
-    box-shadow:
-        inset 0 0 80px rgba(0,210,255,0.03),
-        0 0 100px rgba(0,210,255,0.06);
-
-    animation:
-        atmospherePulse 5s ease-in-out infinite;
-}
-
-@keyframes atmospherePulse {
-
-    0%,
-    100% {
-        transform:
-            translate(-50%, -50%)
-            scale(0.98);
-
-        opacity: 0.45;
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.04);
-
-        opacity: 0.8;
-    }
-}
-
-
-/* =========================================================
-   ORBITAL SYSTEM
-========================================================= */
-
-.orbital-system {
-    position: absolute;
-
-    width: 720px;
-    height: 720px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-
-    z-index: -1;
-
-    animation:
-        orbitalFloat 9s ease-in-out infinite;
-}
-
-@keyframes orbitalFloat {
-
-    0%,
-    100% {
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.025);
-    }
-}
-
-.orbit {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border:
-        1px solid
-        rgba(0,210,255,0.09);
-}
-
-.orbit:nth-child(1) {
-    width: 270px;
-    height: 270px;
-
-    animation:
-        orbitOne 8s linear infinite;
-}
-
-.orbit:nth-child(2) {
-    width: 440px;
-    height: 440px;
-
-    border-color:
-        rgba(130,90,255,0.10);
-
-    animation:
-        orbitTwo 14s linear infinite reverse;
-}
-
-.orbit:nth-child(3) {
-    width: 650px;
-    height: 330px;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(-25deg);
-
-    animation:
-        orbitThree 18s linear infinite;
-}
-
-@keyframes orbitOne {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-@keyframes orbitTwo {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(55deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(415deg);
-    }
-}
-
-@keyframes orbitThree {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(-25deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(335deg);
-    }
-}
-
-.orbit::after {
-    content: "";
-
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    top: -4px;
-    left: 50%;
-
-    border-radius: 50%;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff,
-        0 0 25px #00d9ff,
-        0 0 50px rgba(0,217,255,0.5);
-}
-
-
-/* =========================================================
-   FLOATING SCIENCE SYMBOLS
-========================================================= */
-
-.science-symbol {
-    position: absolute;
-
-    color: rgba(101,229,255,0.65);
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size: 16px;
-
-    pointer-events: none;
-
-    text-shadow:
-        0 0 12px rgba(0,210,255,0.8);
-
-    opacity: 0;
-
-    animation:
-        symbolFloat 8s ease-in-out infinite;
-}
-
-.symbol-1 {
-    left: 13%;
-    top: 28%;
-    animation-delay: 0s;
-}
-
-.symbol-2 {
-    right: 15%;
-    top: 25%;
-    animation-delay: 2s;
-}
-
-.symbol-3 {
-    left: 20%;
-    bottom: 25%;
-    animation-delay: 4s;
-}
-
-.symbol-4 {
-    right: 18%;
-    bottom: 20%;
-    animation-delay: 1s;
-}
-
-.symbol-5 {
-    left: 32%;
-    top: 18%;
-    animation-delay: 3s;
-}
-
-.symbol-6 {
-    right: 34%;
-    bottom: 17%;
-    animation-delay: 5s;
-}
-
-@keyframes symbolFloat {
-
-    0% {
-        opacity: 0;
-        transform:
-            translateY(30px)
-            rotate(-15deg);
-    }
-
-    20% {
-        opacity: 0.65;
-    }
-
-    50% {
-        transform:
-            translateY(-30px)
-            rotate(15deg);
-    }
-
-    80% {
-        opacity: 0.4;
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateY(-70px)
-            rotate(30deg);
-    }
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content {
-    position: relative;
-
-    z-index: 10;
-
-    max-width: 950px;
-    width: 100%;
-
-    animation:
-        heroAppear 1.5s ease both;
-}
-
-@keyframes heroAppear {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(35px)
-            scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-.hero-label {
-    display: inline-flex;
-
-    align-items: center;
-    gap: 10px;
-
-    color: #72e9ff;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 30px;
-
-    text-transform: uppercase;
-
-    animation:
-        labelPulse 4s ease-in-out infinite;
-}
-
-@keyframes labelPulse {
-
-    0%,
-    100% {
-        text-shadow:
-            0 0 0 transparent;
-    }
-
-    50% {
-        text-shadow:
-            0 0 18px rgba(0,210,255,0.4);
-    }
-}
-
-.hero-label::before,
-.hero-label::after {
-    content: "";
-
-    width: 28px;
-    height: 1px;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff;
-
-    animation:
-        linePulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes linePulse {
-
-    from {
-        width: 15px;
-        opacity: 0.4;
-    }
-
-    to {
-        width: 40px;
-        opacity: 1;
-    }
-}
-
-.hero h1 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        clamp(55px, 9vw, 105px);
-
-    line-height: 0.96;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 30px;
-
-    font-weight: 700;
-
-    animation:
-        titleFloat 6s ease-in-out infinite;
-}
-
-@keyframes titleFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-.hero h1 span {
-    background:
-        linear-gradient(
-            100deg,
-            #ffffff 0%,
-            #70eaff 45%,
-            #8e7cff 100%
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    background-size: 200% auto;
-
-    animation:
-        gradientFlow 5s linear infinite;
-}
-
-@keyframes gradientFlow {
-
-    to {
-        background-position: 200% center;
-    }
-}
-
-.hero-description {
-    max-width: 690px;
-
-    margin:
-        0 auto 40px;
-
-    color: #9eb2c5;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.hero-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-}
-
-.button {
-    position: relative;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 14px 25px;
-
-    border-radius: 9px;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.button::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 70%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.35),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    animation:
-        buttonSweep 4s infinite;
-}
-
-@keyframes buttonSweep {
-
-    0% {
-        left: -100%;
-    }
-
-    35%,
-    100% {
-        left: 150%;
-    }
-}
-
-.primary-button {
-    color: #021017;
-
-    background:
-        linear-gradient(
-            135deg,
-            #78efff,
-            #00c9ff
-        );
-
-    box-shadow:
-        0 0 25px
-        rgba(0,210,255,0.16);
-}
-
-.primary-button:hover {
-    transform:
-        translateY(-4px)
-        scale(1.02);
-
-    box-shadow:
-        0 0 45px
-        rgba(0,210,255,0.4);
-}
-
-.secondary-button {
-    color: #d9e9f7;
-
-    background:
-        rgba(255,255,255,0.035);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.12);
-
-    backdrop-filter:
-        blur(12px);
-}
-
-.secondary-button:hover {
-    transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(0,210,255,0.5);
-
-    box-shadow:
-        0 0 30px
-        rgba(0,210,255,0.08);
-}
-
-
-/* =========================================================
-   HERO SUBJECTS
-========================================================= */
-
-.hero-subjects {
-    margin-top: 48px;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-}
-
-.hero-subjects span {
-    position: relative;
-
-    padding: 8px 14px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.08);
-
-    background:
-        rgba(255,255,255,0.025);
-
-    color: #7f96aa;
-
-    font-size: 10px;
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
-
-    animation:
-        chipFloat 5s ease-in-out infinite;
-}
-
-.hero-subjects span:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.hero-subjects span:nth-child(3) {
-    animation-delay: 2s;
-}
-
-@keyframes chipFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-.hero-subjects span:hover {
-    color: #baf5ff;
-
-    border-color:
-        rgba(0,210,255,0.35);
-
-    transform:
-        translateY(-5px)
-        scale(1.04);
-
-    box-shadow:
-        0 0 20px
-        rgba(0,210,255,0.08);
-}
-
-
-/* =========================================================
-   SCROLL INDICATOR
-========================================================= */
-
-.scroll-indicator {
-    position: absolute;
-
-    bottom: 27px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    color: #4e6678;
-
-    font-size: 8px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-.scroll-line {
-    width: 1px;
-    height: 30px;
-
-    margin:
-        9px auto 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #00d9ff,
-            transparent
-        );
-
-    animation:
-        scrollPulse 2s infinite;
-}
-
-@keyframes scrollPulse {
-
-    0% {
-        transform:
-            scaleY(0.3)
-            translateY(-5px);
-
-        opacity: 0.2;
-    }
-
-    50% {
-        transform:
-            scaleY(1)
-            translateY(0);
-
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            scaleY(0.3)
-            translateY(5px);
-
-        opacity: 0.2;
-    }
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section {
-    position: relative;
-
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding:
-        120px 25px;
-}
-
-.section-label {
-    text-align: center;
-
-    color: #48dfff;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 15px;
-}
-
-.section h2 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    text-align: center;
-
-    font-size:
-        clamp(35px, 5vw, 55px);
-
-    letter-spacing: -2px;
-
-    margin-bottom: 15px;
-}
-
-.section-intro {
-    max-width: 650px;
-
-    margin:
-        0 auto 55px;
-
-    text-align: center;
-
-    color: #74899d;
-
-    line-height: 1.8;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   SUBJECTS
-========================================================= */
-
-.subjects {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-}
-
-
-/* =========================================================
-   HOLOGRAPHIC CARDS
-========================================================= */
-
-.card {
-    position: relative;
-
-    min-height: 330px;
-
-    padding:
-        35px 30px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.055),
-            rgba(255,255,255,0.012)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,0.08);
-
-    overflow: hidden;
-
-    transform:
-        translateY(35px);
-
-    opacity: 0;
-
-    transition:
-        transform 0.8s cubic-bezier(.2,.8,.2,1),
-        opacity 0.8s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-.card.visible {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-.card:nth-child(1) {
-    transition-delay: 0.05s;
-}
-
-.card:nth-child(2) {
-    transition-delay: 0.15s;
-}
-
-.card:nth-child(3) {
-    transition-delay: 0.25s;
-}
-
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    right: -100px;
-    top: -100px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,210,255,0.14),
-            transparent 65%
-        );
-
-    filter:
-        blur(12px);
-
-    animation:
-        cardGlow 6s ease-in-out infinite;
-}
-
-@keyframes cardGlow {
-
-    0%,
-    100% {
-        transform: scale(0.9);
-        opacity: 0.5;
-    }
-
-    50% {
-        transform: scale(1.3);
-        opacity: 1;
-    }
-}
-
-.card::after {
-    content: "01";
-
-    position: absolute;
-
-    right: 20px;
-    bottom: 8px;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size: 75px;
-
-    font-weight: 700;
-
-    color:
-        rgba(255,255,255,0.018);
-}
-
-.card:nth-child(2)::after {
-    content: "02";
-}
-
-.card:nth-child(3)::after {
-    content: "03";
-}
-
-.card:hover {
-    transform:
-        translateY(-12px)
-        perspective(800px)
-        rotateX(2deg)
-        rotateY(-2deg);
-
-    border-color:
-        rgba(0,210,255,0.32);
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,0.45),
-        0 0 40px rgba(0,210,255,0.08);
-}
-
-.card-top {
-    position: relative;
-
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items: center;
-
-    margin-bottom: 48px;
-
-    z-index: 2;
-}
-
-.card-number {
-    color: #4e7185;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
-}
-
-.card-status {
-    color: #62e7ff;
-
-    font-size: 8px;
-
-    letter-spacing: 1.5px;
-
-    padding: 5px 8px;
-
-    border-radius: 4px;
-
-    border:
-        1px solid
-        rgba(0,210,255,0.16);
-
-    background:
-        rgba(0,210,255,0.04);
-
-    animation:
-        statusBlink 3s infinite;
-}
-
-@keyframes statusBlink {
-
-    0%,
-    100% {
-        opacity: 0.65;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-.card .icon {
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 35px;
-
-    margin-bottom: 18px;
-
-    display: inline-block;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            rgba(0,210,255,0.2)
-        );
-
-    animation:
-        iconFloat 4s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-8px)
-            rotate(3deg);
-    }
-}
-
-.card h3 {
-    position: relative;
-
-    z-index: 2;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size: 27px;
-
-    margin-bottom: 12px;
-}
-
-.card p {
-    position: relative;
-
-    z-index: 2;
-
-    color: #7890a3;
-
-    line-height: 1.7;
-
-    font-size: 13px;
-
-    max-width: 280px;
-}
-
-.card-arrow {
-    position: absolute;
-
-    left: 30px;
-    bottom: 28px;
-
-    color: #56e5ff;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    transition:
-        letter-spacing 0.3s ease,
-        transform 0.3s ease;
-}
-
-.card:hover .card-arrow {
-    letter-spacing: 2.5px;
-
-    transform:
-        translateX(4px);
-}
-
-
-/* =========================================================
-   ENERGY DIVIDER
-========================================================= */
-
-.energy-divider {
-    width: 100%;
-    height: 1px;
-
-    position: relative;
-
-    overflow: visible;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0,210,255,0.15),
-            transparent
-        );
-}
-
-.energy-divider::after {
-    content: "";
-
-    position: absolute;
-
-    top: -2px;
-    left: -10%;
-
-    width: 10%;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff,
-        0 0 30px #00d9ff;
-
-    animation:
-        energyTravel 5s linear infinite;
-}
-
-@keyframes energyTravel {
-
-    from {
-        left: -10%;
-    }
-
-    to {
-        left: 110%;
-    }
-}
-
-
-/* =========================================================
-   WHY SECTION
-========================================================= */
-
-.why-ial {
-    position: relative;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(0,210,255,0.07),
-            transparent 40%
-        );
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.04);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.04);
-
-    overflow: hidden;
-}
-
-.why-ial::before {
-    content: "";
-
-    position: absolute;
-
-    width: 600px;
-    height: 600px;
-
-    left: 50%;
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(0,210,255,0.035);
-
-    animation:
-        whyRing 12s linear infinite;
-}
-
-@keyframes whyRing {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg)
-            scale(1);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg)
-            scale(1.15);
-    }
-}
-
-.why-inner {
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding:
-        120px 25px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.why-ial h2 span {
-    background:
-        linear-gradient(
-            90deg,
-            #6beaff,
-            #987dff
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    background-size: 200% auto;
-
-    animation:
-        gradientFlow 5s linear infinite;
-}
-
-.why-intro {
-    max-width: 650px;
-
-    margin:
-        0 auto 50px;
-
-    text-align: center;
-
-    color: #74899d;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-.why-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    max-width: 1000px;
-
-    margin: auto;
-}
-
-.why-card {
-    position: relative;
-
-    padding:
-        34px 28px;
-
-    background:
-        rgba(255,255,255,0.025);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.07);
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.4s ease,
-        border-color 0.4s ease,
-        background 0.4s ease;
-}
-
-.why-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    right: -50px;
-    bottom: -50px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(0,210,255,0.08);
-
-    filter:
-        blur(15px);
-
-    animation:
-        miniGlow 5s ease-in-out infinite alternate;
-}
-
-@keyframes miniGlow {
-
-    from {
-        transform: scale(0.7);
-    }
-
-    to {
-        transform: scale(1.5);
-    }
-}
-
-.why-card:hover {
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(0,210,255,0.25);
-
-    background:
-        rgba(0,210,255,0.035);
-}
-
-.why-icon {
-    font-size: 30px;
-
-    margin-bottom: 22px;
-
-    display: inline-block;
-
-    animation:
-        whyIcon 4s ease-in-out infinite;
-}
-
-@keyframes whyIcon {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-7px)
-            rotate(5deg);
-    }
-}
-
-.why-card h3 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size: 20px;
-
-    margin-bottom: 10px;
-}
-
-.why-card p {
-    color: #71879a;
-
-    line-height: 1.7;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   SYSTEM PANEL
-========================================================= */
-
-.system-panel {
-    max-width: 900px;
-
-    margin:
-        30px auto 0;
-
-    padding:
-        18px 20px;
-
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-
-    background:
-        rgba(255,255,255,0.018);
-
-    border:
-        1px solid
-        rgba(0,210,255,0.08);
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    position: relative;
-}
-
-.system-panel::before {
-    content: "";
-
-    position: absolute;
-
-    left: -100%;
-
-    top: 0;
-
-    width: 60%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0,210,255,0.06),
-            transparent
-        );
-
-    animation:
-        panelScan 5s linear infinite;
-}
-
-@keyframes panelScan {
-
-    to {
-        left: 160%;
-    }
-}
-
-.system-stat {
-    text-align: center;
-    min-width: 130px;
-}
-
-.system-stat strong {
-    display: block;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    color: #7cecff;
-
-    font-size: 21px;
-
-    margin-bottom: 4px;
-}
-
-.system-stat span {
-    color: #526a7c;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   FOUNDER
-========================================================= */
-
-.founder {
-    text-align: center;
-
-    position: relative;
-}
-
-.founder-content {
-    max-width: 820px;
-
-    margin: auto;
-
-    position: relative;
-}
-
-.founder-label {
-    color: #48dfff;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 18px;
-}
-
-.founder h2 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size:
-        clamp(40px, 6vw, 65px);
-
-    letter-spacing: -3px;
-
-    margin-bottom: 8px;
-}
-
-.founder h2 span {
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #68eaff
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    background-size: 200% auto;
-
-    animation:
-        gradientFlow 5s linear infinite;
-}
-
-.founder-role {
-    color: #5f778b;
-
-    font-size: 12px;
-
-    margin-bottom: 40px;
-}
-
-.founder-quote {
-    position: relative;
-
-    padding:
-        35px 40px;
-
-    margin-bottom: 38px;
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,210,255,0.05),
-            rgba(130,80,255,0.04)
-        );
-
-    border:
-        1px solid
-        rgba(0,210,255,0.1);
-
-    color: #c9dce9;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    box-shadow:
-        0 0 60px rgba(0,210,255,0.025);
-
-    animation:
-        quoteGlow 5s ease-in-out infinite alternate;
-}
-
-@keyframes quoteGlow {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-5px);
-    }
-}
-
-.founder-quote::before {
-    content: "“";
-
-    position: absolute;
-
-    left: 18px;
-    top: 5px;
-
-    font-size: 60px;
-
-    color:
-        rgba(0,210,255,0.2);
-
-    font-family:
-        Georgia,
-        serif;
-}
-
-.founder-content >
-p:not(.founder-label):not(.founder-role) {
-    color: #74899d;
-
-    font-size: 14px;
-
-    line-height: 1.9;
-
-    margin-bottom: 22px;
-}
-
-.founder-content strong {
-    color: #dcecf7;
-}
-
-.founder-signature {
-    margin-top: 38px;
-
-    color: #70e8ff;
-
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    font-size: 14px;
-}
-
-.founder-signature span {
-    color: #596f81;
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    position: relative;
-
-    background:
-        #03050a;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,0.06);
-
-    color: #617789;
-
-    text-align: center;
-
-    padding:
-        75px 20px
-        30px;
-
-    overflow: hidden;
-}
-
-footer::before {
-    content: "";
-
-    position: absolute;
-
-    width: 600px;
-    height: 220px;
-
-    left: 50%;
-    top: -120px;
-
-    transform:
-        translateX(-50%);
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(0,210,255,0.1),
-            transparent 70%
-        );
-
-    filter:
-        blur(20px);
-
-    animation:
-        footerGlow 5s ease-in-out infinite alternate;
-}
-
-@keyframes footerGlow {
-
-    from {
-        opacity: 0.4;
-        transform:
-            translateX(-50%)
-            scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateX(-50%)
-            scale(1.2);
-    }
-}
-
-.footer-content {
-    position: relative;
-
-    max-width: 800px;
-
-    margin: auto;
-}
-
-.footer-content h2 {
-    font-family:
-        "Space Grotesk",
-        sans-serif;
-
-    color: white;
-
-    font-size: 31px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 10px;
-
-    animation:
-        footerTitle 4s ease-in-out infinite;
-}
-
-@keyframes footerTitle {
-
-    0%,
-    100% {
-        text-shadow:
-            0 0 0 transparent;
-    }
-
-    50% {
-        text-shadow:
-            0 0 25px rgba(0,210,255,0.35);
-    }
-}
-
-.footer-tagline {
-    color: #55e5ff;
-
-    font-size: 9px;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 22px;
-}
-
-.footer-description {
-    max-width: 600px;
-
-    margin: auto;
-
-    color: #62798c;
-
-    line-height: 1.7;
-
-    font-size: 12px;
-}
-
-.footer-links {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 28px;
-
-    margin-top: 32px;
-
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: #a8bac8;
-
-    font-size: 11px;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #5de7ff;
-
-    transform:
-        translateY(-2px);
-}
-
-.footer-line {
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.1),
-            transparent
-        );
-
-    max-width: 650px;
-
-    margin:
-        38px auto 25px;
-}
-
-.footer-copy {
-    font-size: 10px;
-
-    color: #506576;
-
-    margin-bottom: 8px;
-}
-
-.footer-disclaimer {
-    font-size: 9px;
-
-    color: #3f5262;
-}
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity 0.9s ease,
-        transform 0.9s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal.active {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    nav {
-        display: none;
-    }
-
-    .nav-status {
-        display: none;
-    }
-
-    header {
-        padding:
-            14px 20px;
-    }
-
-    .hero-globe {
-        width: 470px;
-        height: 470px;
-    }
-
-    .globe-atmosphere {
-        width: 500px;
-        height: 500px;
-    }
-
-    .orbital-system {
-        width: 580px;
-        height: 580px;
-    }
-
-    .subjects {
-        grid-template-columns: 1fr;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .system-panel {
-        justify-content: center;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .logo-image {
-        height: 41px;
-    }
-
-    .hero {
-        min-height: 100svh;
-
-        padding:
-            125px 18px
-            90px;
-    }
-
-    .hero-globe {
-        width: 330px;
-        height: 330px;
-
-        opacity: 0.14;
-    }
-
-    .globe-atmosphere {
-        width: 350px;
-        height: 350px;
-    }
-
-    .orbital-system {
-        width: 390px;
-        height: 390px;
-    }
-
-    .orbit:nth-child(1) {
-        width: 190px;
-        height: 190px;
-    }
-
-    .orbit:nth-child(2) {
-        width: 300px;
-        height: 300px;
-    }
-
-    .orbit:nth-child(3) {
-        width: 390px;
-        height: 200px;
-    }
-
-    .hero h1 {
-        font-size: 52px;
-        letter-spacing: -3px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .hero-label {
-        font-size: 8px;
-        letter-spacing: 2.5px;
-    }
-
-    .hero-label::before,
-    .hero-label::after {
-        width: 16px;
-    }
-
-    .hero-subjects {
-        gap: 7px;
-    }
-
-    .hero-subjects span {
-        font-size: 9px;
-    }
-
-    .section,
-    .why-inner {
-        padding:
-            85px 18px;
-    }
-
-    .section h2 {
-        letter-spacing: -1.5px;
-    }
-
-    .card {
-        min-height: 290px;
-    }
-
-    .founder-quote {
-        padding:
-            28px 23px;
-
-        font-size: 15px;
-    }
-
-    .footer-links {
-        gap: 18px;
-    }
-
-    .science-symbol {
-        display: none;
-    }
-
-    .system-stat {
-        min-width: 100px;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    #particleCanvas,
-    .cursor-glow {
-        display: none;
-    }
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 
 <body>
 
-
-<!-- =========================================================
-     CURSOR
-========================================================= -->
-
 <div class="cursor-glow"></div>
-
-
-<!-- =========================================================
-     SCANLINES
-========================================================= -->
 
 <div class="scanlines"></div>
 
-
-<!-- =========================================================
-     PARTICLE SYSTEM
-========================================================= -->
-
 <canvas id="particleCanvas"></canvas>
 
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
 
 <header id="mainHeader">
 
@@ -2814,7 +113,6 @@ footer::before {
 
     </a>
 
-
     <nav>
 
         <a href="#subjects">
@@ -2825,12 +123,11 @@ footer::before {
             Why IAL ATLAS
         </a>
 
-        <a href="#about">
-            Founder
+        <a href="about.html">
+            About IAL ATLAS
         </a>
 
     </nav>
-
 
     <div class="nav-status">
 
@@ -2843,38 +140,18 @@ footer::before {
 </header>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-
 <section class="hero">
 
-
-    <!-- MOVING LIGHT BEAMS -->
-
     <div class="hero-beam beam-one"></div>
-
     <div class="hero-beam beam-two"></div>
-
     <div class="hero-beam beam-three"></div>
 
-
-    <!-- FLOATING SCIENCE SYMBOLS -->
-
     <div class="science-symbol symbol-1">∫</div>
-
     <div class="science-symbol symbol-2">λ</div>
-
     <div class="science-symbol symbol-3">E = mc²</div>
-
     <div class="science-symbol symbol-4">∑</div>
-
     <div class="science-symbol symbol-5">Δ</div>
-
     <div class="science-symbol symbol-6">ψ</div>
-
-
-    <!-- GLOBE -->
 
     <img
         src="ial-atlas-globe.png"
@@ -2883,45 +160,27 @@ footer::before {
         aria-hidden="true"
     >
 
-
     <div class="globe-atmosphere"></div>
-
-
-    <!-- ORBITS -->
 
     <div class="orbital-system">
 
         <div class="orbit"></div>
-
         <div class="orbit"></div>
-
         <div class="orbit"></div>
 
     </div>
 
 
-    <!-- HERO CONTENT -->
-
     <div class="hero-content">
 
-
         <p class="hero-label">
-
             EDEXCEL INTERNATIONAL A LEVELS
-
         </p>
 
-
         <h1>
-
             Learn without<br>
-
-            <span>
-                the confusion.
-            </span>
-
+            <span>the confusion.</span>
         </h1>
-
 
         <p class="hero-description">
 
@@ -2938,19 +197,14 @@ footer::before {
                 href="#subjects"
                 class="button primary-button"
             >
-
                 Explore the Atlas →
-
             </a>
 
-
             <a
-                href="#about"
+                href="about.html"
                 class="button secondary-button"
             >
-
-                Meet the Founder
-
+                About IAL ATLAS
             </a>
 
         </div>
@@ -2958,25 +212,14 @@ footer::before {
 
         <div class="hero-subjects">
 
-            <span>
-                📐 Mathematics
-            </span>
-
-            <span>
-                ⚛️ Physics
-            </span>
-
-            <span>
-                🧪 Chemistry
-            </span>
+            <span>📐 Mathematics</span>
+            <span>⚛️ Physics</span>
+            <span>🧪 Chemistry</span>
 
         </div>
 
-
     </div>
 
-
-    <!-- SCROLL -->
 
     <div class="scroll-indicator">
 
@@ -2989,32 +232,21 @@ footer::before {
 </section>
 
 
-<!-- =========================================================
-     ENERGY DIVIDER
-========================================================= -->
-
 <div class="energy-divider"></div>
 
-
-<!-- =========================================================
-     SUBJECTS
-========================================================= -->
 
 <section
     class="section"
     id="subjects"
 >
 
-
     <p class="section-label reveal">
         KNOWLEDGE SYSTEM
     </p>
 
-
     <h2 class="reveal">
         Explore the Atlas.
     </h2>
-
 
     <p class="section-intro reveal">
 
@@ -3027,8 +259,6 @@ footer::before {
 
     <div class="subjects">
 
-
-        <!-- MATHEMATICS -->
 
         <a
             href="mathematics.html"
@@ -3047,24 +277,18 @@ footer::before {
 
             </div>
 
-
             <div class="icon">
                 📐
             </div>
-
 
             <h3>
                 Mathematics
             </h3>
 
-
             <p>
-
                 Topic notes, formulas, worked examples
                 and revision resources.
-
             </p>
-
 
             <div class="card-arrow">
                 ENTER SUBJECT →
@@ -3072,8 +296,6 @@ footer::before {
 
         </a>
 
-
-        <!-- PHYSICS -->
 
         <a
             href="physics.html"
@@ -3092,24 +314,18 @@ footer::before {
 
             </div>
 
-
             <div class="icon">
                 ⚛️
             </div>
-
 
             <h3>
                 Physics
             </h3>
 
-
             <p>
-
                 Concept explanations, equations,
                 examples and exam-focused revision.
-
             </p>
-
 
             <div class="card-arrow">
                 ENTER SUBJECT →
@@ -3117,8 +333,6 @@ footer::before {
 
         </a>
 
-
-        <!-- CHEMISTRY -->
 
         <a
             href="chemistry.html"
@@ -3137,24 +351,18 @@ footer::before {
 
             </div>
 
-
             <div class="icon">
                 🧪
             </div>
-
 
             <h3>
                 Chemistry
             </h3>
 
-
             <p>
-
                 Clear explanations, reactions,
                 calculations and revision guides.
-
             </p>
-
 
             <div class="card-arrow">
                 ENTER SUBJECT →
@@ -3162,63 +370,29 @@ footer::before {
 
         </a>
 
-
     </div>
 
-
-    <!-- SYSTEM STATISTICS -->
 
     <div class="system-panel reveal">
 
         <div class="system-stat">
-
-            <strong data-target="3">
-                0
-            </strong>
-
-            <span>
-                Subjects
-            </span>
-
+            <strong data-target="3">0</strong>
+            <span>Subjects</span>
         </div>
 
-
         <div class="system-stat">
-
-            <strong data-target="6">
-                0
-            </strong>
-
-            <span>
-                Units / Subject
-            </span>
-
+            <strong data-target="6">0</strong>
+            <span>Units / Subject</span>
         </div>
 
-
         <div class="system-stat">
-
-            <strong data-target="100">
-                0%
-            </strong>
-
-            <span>
-                Student Built
-            </span>
-
+            <strong data-target="100">0%</strong>
+            <span>Student Built</span>
         </div>
 
-
         <div class="system-stat">
-
-            <strong>
-                24/7
-            </strong>
-
-            <span>
-                Access
-            </span>
-
+            <strong>24/7</strong>
+            <span>Access</span>
         </div>
 
     </div>
@@ -3226,23 +400,16 @@ footer::before {
 </section>
 
 
-<!-- =========================================================
-     WHY
-========================================================= -->
-
 <section
     class="why-ial"
     id="why"
 >
 
-
     <div class="why-inner">
-
 
         <p class="section-label reveal">
             WHY IAL ATLAS?
         </p>
-
 
         <h2 class="reveal">
 
@@ -3253,7 +420,6 @@ footer::before {
             </span>
 
         </h2>
-
 
         <p class="why-intro reveal">
 
@@ -3278,10 +444,8 @@ footer::before {
                 </h3>
 
                 <p>
-
                     Clear explanations that make difficult
                     topics easier to understand.
-
                 </p>
 
             </div>
@@ -3298,10 +462,8 @@ footer::before {
                 </h3>
 
                 <p>
-
                     Worked examples and questions that turn
                     understanding into confidence.
-
                 </p>
 
             </div>
@@ -3318,15 +480,12 @@ footer::before {
                 </h3>
 
                 <p>
-
                     Organised, exam-focused resources to help
                     you prepare effectively.
-
                 </p>
 
             </div>
 
-
         </div>
 
     </div>
@@ -3335,131 +494,56 @@ footer::before {
 
 
 <!-- =========================================================
-     FOUNDER
+     ABOUT GATEWAY
 ========================================================= -->
 
-<section
-    class="section founder"
-    id="about"
->
+<div class="about-gateway">
 
+    <a
+        href="about.html"
+        class="about-gateway-card reveal"
+    >
 
-    <div class="founder-content">
+        <div class="gateway-inner">
 
+            <p class="gateway-label">
+                SYSTEM / ABOUT
+            </p>
 
-        <p class="founder-label reveal">
+            <h2 class="gateway-title">
+                Discover IAL ATLAS.
+            </h2>
 
-            THE PERSON BEHIND IAL ATLAS
+            <p class="gateway-description">
 
-        </p>
+                What is IAL ATLAS? Why was it created?
+                Who built it? Explore the story, mission,
+                philosophy and future behind the platform.
 
+            </p>
 
-        <h2 class="reveal">
-
-            Meet
-
-            <span>
-                Shuvojit.
-            </span>
-
-        </h2>
-
-
-        <p class="founder-role reveal">
-
-            Founder & Creator of IAL ATLAS
-
-        </p>
-
-
-        <div class="founder-quote reveal">
-
-            “I created IAL ATLAS with a simple belief:
-            learning should be easier to access, easier to understand,
-            and never feel like something you have to figure out alone.”
+            <div class="gateway-arrow">
+                ENTER ABOUT IAL ATLAS →
+            </div>
 
         </div>
 
+    </a>
 
-        <p class="reveal">
+</div>
 
-            As a student, I know how overwhelming International
-            A Levels can be. There are countless topics to learn,
-            formulas to remember, questions to practise and exams
-            to prepare for. Sometimes, what a student needs isn't
-            more information — it's a clearer way of understanding it.
-
-        </p>
-
-
-        <p class="reveal">
-
-            That's why I created
-
-            <strong>
-                IAL ATLAS
-            </strong>
-
-            — an independent, student-built platform designed
-            to bring clear explanations, worked examples,
-            practice questions and revision resources together
-            in one place.
-
-        </p>
-
-
-        <p class="reveal">
-
-            This isn't just a website.
-
-            <strong>
-                It's a project built to help students.
-            </strong>
-
-        </p>
-
-
-        <div class="founder-signature reveal">
-
-            <strong>
-                Built for students, by a student.
-            </strong>
-
-            <br>
-
-            <span>
-                — Shuvojit Karmakar
-            </span>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 
 <footer>
 
-
     <div class="footer-content">
-
 
         <h2>
             IAL ATLAS
         </h2>
 
-
         <p class="footer-tagline">
-
             Explore • Learn • Master
-
         </p>
-
 
         <p class="footer-description">
 
@@ -3468,7 +552,6 @@ footer::before {
             to understand.
 
         </p>
-
 
         <div class="footer-links">
 
@@ -3480,8 +563,8 @@ footer::before {
                 Why IAL ATLAS
             </a>
 
-            <a href="#about">
-                Founder
+            <a href="about.html">
+                About IAL ATLAS
             </a>
 
             <a href="#">
@@ -3490,38 +573,22 @@ footer::before {
 
         </div>
 
-
         <div class="footer-line"></div>
 
-
         <p class="footer-copy">
-
             © 2026 IAL ATLAS • Independent student resource
-
         </p>
-
 
         <p class="footer-disclaimer">
-
             Not affiliated with Pearson
-
         </p>
-
 
     </div>
 
 </footer>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
-
-/* =========================================================
-   PARTICLE ENGINE
-========================================================= */
 
 const canvas =
     document.getElementById("particleCanvas");
@@ -3539,13 +606,14 @@ let mouse = {
 
 function resizeCanvas() {
 
+    const dpr =
+        window.devicePixelRatio || 1;
+
     canvas.width =
-        window.innerWidth *
-        window.devicePixelRatio;
+        window.innerWidth * dpr;
 
     canvas.height =
-        window.innerHeight *
-        window.devicePixelRatio;
+        window.innerHeight * dpr;
 
     canvas.style.width =
         window.innerWidth + "px";
@@ -3553,9 +621,13 @@ function resizeCanvas() {
     canvas.style.height =
         window.innerHeight + "px";
 
-    ctx.scale(
-        window.devicePixelRatio,
-        window.devicePixelRatio
+    ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
     );
 }
 
@@ -3600,11 +672,8 @@ class Particle {
     update() {
 
         this.x += this.speedX;
-
         this.y += this.speedY;
-
         this.phase += 0.01;
-
 
         if (this.x < 0)
             this.x = window.innerWidth;
@@ -3638,10 +707,16 @@ class Particle {
         );
 
         ctx.fillStyle =
-            `rgba(0,210,255,${this.opacity * pulse})`;
+            `rgba(
+                0,
+                210,
+                255,
+                ${this.opacity * pulse}
+            )`;
 
         ctx.fill();
     }
+
 }
 
 
@@ -3660,6 +735,7 @@ for (
     particles.push(
         new Particle()
     );
+
 }
 
 
@@ -3711,14 +787,22 @@ function connectParticles() {
                 );
 
                 ctx.strokeStyle =
-                    `rgba(0,210,255,${opacity})`;
+                    `rgba(
+                        0,
+                        210,
+                        255,
+                        ${opacity}
+                    )`;
 
                 ctx.lineWidth = 0.5;
 
                 ctx.stroke();
             }
+
         }
+
     }
+
 }
 
 
@@ -3731,23 +815,21 @@ function animateParticles() {
         window.innerHeight
     );
 
-
     particles.forEach(
         particle => {
 
             particle.update();
-
             particle.draw();
 
         }
     );
-
 
     connectParticles();
 
     requestAnimationFrame(
         animateParticles
     );
+
 }
 
 
@@ -3761,7 +843,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   MOUSE TRACKING
+   CURSOR
 ========================================================= */
 
 const cursor =
@@ -3780,34 +862,28 @@ document.addEventListener(
         mouse.y =
             event.clientY;
 
-
         cursor.style.left =
             mouse.x + "px";
 
         cursor.style.top =
             mouse.y + "px";
+
     }
 );
 
 
 /* =========================================================
-   MOUSE PARALLAX
+   PARALLAX
 ========================================================= */
 
 const hero =
-    document.querySelector(
-        ".hero"
-    );
+    document.querySelector(".hero");
 
 const globe =
-    document.querySelector(
-        ".hero-globe"
-    );
+    document.querySelector(".hero-globe");
 
 const orbit =
-    document.querySelector(
-        ".orbital-system"
-    );
+    document.querySelector(".orbital-system");
 
 
 document.addEventListener(
@@ -3818,17 +894,15 @@ document.addEventListener(
             window.innerWidth < 800
         ) return;
 
-
         const x =
-            (event.clientX /
-                window.innerWidth -
-                0.5);
+            event.clientX /
+            window.innerWidth -
+            0.5;
 
         const y =
-            (event.clientY /
-                window.innerHeight -
-                0.5);
-
+            event.clientY /
+            window.innerHeight -
+            0.5;
 
         globe.style.marginLeft =
             `${x * 25}px`;
@@ -3836,13 +910,11 @@ document.addEventListener(
         globe.style.marginTop =
             `${y * 25}px`;
 
-
         orbit.style.marginLeft =
             `${x * -15}px`;
 
         orbit.style.marginTop =
             `${y * -15}px`;
-
 
         hero.style.background =
             `
@@ -3854,12 +926,13 @@ document.addEventListener(
                 transparent 32%
             )
             `;
+
     }
 );
 
 
 /* =========================================================
-   NAVBAR SCROLL
+   HEADER
 ========================================================= */
 
 const header =
@@ -3885,6 +958,7 @@ window.addEventListener(
             header.classList.remove(
                 "scrolled"
             );
+
         }
 
     }
@@ -3892,7 +966,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL
 ========================================================= */
 
 const revealElements =
@@ -3923,6 +997,7 @@ const observer =
                         observer.unobserve(
                             entry.target
                         );
+
                     }
 
                 }
@@ -3947,7 +1022,7 @@ revealElements.forEach(
 
 
 /* =========================================================
-   LIVE COUNTERS
+   COUNTERS
 ========================================================= */
 
 const counters =
@@ -3984,7 +1059,6 @@ function animateCounter(
                 1
             );
 
-
         const eased =
             1 -
             Math.pow(
@@ -3992,25 +1066,15 @@ function animateCounter(
                 3
             );
 
-
         current =
             Math.floor(
                 eased * target
             );
 
-
-        if (
+        element.textContent =
             target === 100
-        ) {
-
-            element.textContent =
-                current + "%";
-
-        } else {
-
-            element.textContent =
-                current;
-        }
+                ? current + "%"
+                : current;
 
 
         if (
@@ -4023,25 +1087,20 @@ function animateCounter(
 
         } else {
 
-            if (
+            element.textContent =
                 target === 100
-            ) {
+                    ? "100%"
+                    : target;
 
-                element.textContent =
-                    "100%";
-
-            } else {
-
-                element.textContent =
-                    target;
-            }
         }
+
     }
 
 
     requestAnimationFrame(
         updateCounter
     );
+
 }
 
 
@@ -4063,6 +1122,7 @@ const counterObserver =
                         counterObserver.unobserve(
                             entry.target
                         );
+
                     }
 
                 }
@@ -4107,10 +1167,8 @@ cards.forEach(
                     window.innerWidth < 900
                 ) return;
 
-
                 const rect =
                     card.getBoundingClientRect();
-
 
                 const x =
                     event.clientX -
@@ -4120,13 +1178,11 @@ cards.forEach(
                     event.clientY -
                     rect.top;
 
-
                 const centerX =
                     rect.width / 2;
 
                 const centerY =
                     rect.height / 2;
-
 
                 const rotateX =
                     (y - centerY) /
@@ -4136,7 +1192,6 @@ cards.forEach(
                     (centerX - x) /
                     30;
 
-
                 card.style.transform =
                     `
                     translateY(-12px)
@@ -4144,6 +1199,7 @@ cards.forEach(
                     rotateX(${rotateX}deg)
                     rotateY(${rotateY}deg)
                     `;
+
             }
         );
 
@@ -4154,6 +1210,7 @@ cards.forEach(
 
                 card.style.transform =
                     "";
+
             }
         );
 
@@ -4162,7 +1219,7 @@ cards.forEach(
 
 
 /* =========================================================
-   RANDOM ENERGY FLASH
+   ENERGY FLASH
 ========================================================= */
 
 setInterval(
@@ -4173,26 +1230,20 @@ setInterval(
                 "div"
             );
 
-
         beam.style.position =
             "fixed";
 
         beam.style.left =
-            Math.random() *
-            100 +
-            "%";
+            Math.random() * 100 + "%";
 
         beam.style.top =
-            Math.random() *
-            100 +
-            "%";
+            Math.random() * 100 + "%";
 
         beam.style.width =
             "2px";
 
         beam.style.height =
-            Math.random() *
-            80 +
+            Math.random() * 80 +
             20 +
             "px";
 
@@ -4211,7 +1262,6 @@ setInterval(
         document.body.appendChild(
             beam
         );
-
 
         beam.animate(
             [
@@ -4232,11 +1282,8 @@ setInterval(
                 }
             ],
             {
-                duration:
-                    1800,
-
-                easing:
-                    "ease-in-out"
+                duration: 1800,
+                easing: "ease-in-out"
             }
         ).onfinish =
             () => beam.remove();
@@ -4245,10 +1292,6 @@ setInterval(
     1700
 );
 
-
-/* =========================================================
-   INITIAL PAGE LOAD
-========================================================= */
 
 window.addEventListener(
     "load",
@@ -4262,7 +1305,6 @@ window.addEventListener(
 );
 
 </script>
-
 
 </body>
 
