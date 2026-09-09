@@ -3,258 +3,2317 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Chemistry 2 | IAL ATLAS</title>
+<title>Chemistry Unit 2 | IAL ATLAS</title>
 
-    <meta name="description"
-          content="Edexcel International A Level Chemistry Unit 2 — Energetics, Group Chemistry, Halogenoalkanes and Alcohols.">
+<meta name="description"
+content="Edexcel International A Level Chemistry Unit 2 — Energetics, Group Chemistry, Kinetics, Equilibria, Alcohols, Halogenoalkanes and Spectroscopy.">
 
-    <style>
+<meta name="keywords"
+content="Edexcel IAL Chemistry Unit 2, WCH12, Chemistry Unit 2 notes, IAL Chemistry, Edexcel Chemistry">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta name="author" content="Shuvojit Karmakar">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f8fc;
-            color: #10233f;
-            line-height: 1.7;
-        }
+<style>
 
-        header {
-            background: #071b36;
-            color: white;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* =========================================================
+   RESET
+========================================================= */
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .hero {
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(50,169,232,0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(50,169,232,0.12),
-                    transparent 30%
-                ),
-                linear-gradient(135deg, #071b36, #0b3c73);
+body{
 
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+    font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
-        .hero-label {
-            color: #7ed0ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
+    background:#030914;
+    color:#eaf7ff;
 
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
+    line-height:1.7;
 
-        .hero h1 span {
-            color: #4db8ff;
-        }
+    overflow-x:hidden;
+}
 
-        .hero p {
-            max-width: 760px;
-            margin: auto;
-            color: #dcecff;
-            font-size: 18px;
-        }
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
 
-        .lesson {
-            background: white;
-            padding: 35px;
-            margin-bottom: 30px;
-            border-radius: 18px;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.07);
-        }
+#progress{
 
-        .lesson-number {
-            color: #32a9e8;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+    position:fixed;
 
-        .lesson h2 {
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
+    top:0;
+    left:0;
 
-        .lesson h3 {
-            font-size: 21px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+    width:0%;
+    height:4px;
 
-        .lesson p {
-            color: #53657d;
-            margin-bottom: 15px;
-        }
+    background:linear-gradient(
+        90deg,
+        #32a9e8,
+        #8be9ff,
+        #32a9e8
+    );
 
-        .lesson ul {
-            padding-left: 25px;
-            color: #53657d;
-        }
+    box-shadow:
+        0 0 12px #32a9e8,
+        0 0 30px rgba(50,169,232,.7);
 
-        .lesson li {
-            margin-bottom: 9px;
-        }
+    z-index:9999;
+}
 
-        .definition {
-            background: #eaf6ff;
-            border-left: 5px solid #32a9e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
 
-        .formula {
-            background: #071b36;
-            color: white;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 19px;
-            font-weight: bold;
-        }
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-        .example {
-            background: #f8fbff;
-            border: 1px solid #dcecff;
-            padding: 25px;
-            margin-top: 20px;
-            border-radius: 12px;
-        }
+.background{
 
-        .example-title {
-            color: #168dca;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+    position:fixed;
 
-        .question {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5ebf2;
-        }
+    inset:0;
 
-        details {
-            margin-top: 12px;
-        }
+    overflow:hidden;
 
-        summary {
-            cursor: pointer;
-            color: #168dca;
-            font-weight: bold;
-        }
+    pointer-events:none;
 
-        .navigation {
-            text-align: center;
-            padding: 10px 20px 60px;
-        }
+    z-index:-5;
 
-        .button {
-            display: inline-block;
-            background: #32a9e8;
-            color: white;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 5px;
-        }
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,153,255,.13),
+            transparent 28%
+        ),
 
-        .button:hover {
-            background: #168dca;
-        }
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(0,225,255,.09),
+            transparent 28%
+        ),
 
-        footer {
-            background: #071b36;
-            color: #b9c9dc;
-            text-align: center;
-            padding: 30px 20px;
-        }
+        linear-gradient(
+            135deg,
+            #020812,
+            #061528,
+            #020812
+        );
+}
 
-        @media (max-width: 700px) {
 
-            .hero h1 {
-                font-size: 38px;
-            }
+/* =========================================================
+   GRID
+========================================================= */
 
-            .lesson {
-                padding: 25px;
-            }
+.grid{
 
-        }
+    position:absolute;
 
-    </style>
+    inset:0;
+
+    opacity:.15;
+
+    background-image:
+
+        linear-gradient(
+            rgba(87,202,255,.16) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(87,202,255,.16) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:#7edfff;
+
+    box-shadow:
+        0 0 8px #32a9e8,
+        0 0 18px #32a9e8;
+
+    animation:
+        floatParticle
+        linear infinite;
+}
+
+.particle:nth-child(1){
+    left:8%;
+    top:20%;
+    animation-duration:13s;
+}
+
+.particle:nth-child(2){
+    left:18%;
+    top:70%;
+    animation-duration:18s;
+}
+
+.particle:nth-child(3){
+    left:31%;
+    top:40%;
+    animation-duration:15s;
+}
+
+.particle:nth-child(4){
+    left:48%;
+    top:80%;
+    animation-duration:20s;
+}
+
+.particle:nth-child(5){
+    left:63%;
+    top:25%;
+    animation-duration:16s;
+}
+
+.particle:nth-child(6){
+    left:76%;
+    top:65%;
+    animation-duration:19s;
+}
+
+.particle:nth-child(7){
+    left:89%;
+    top:35%;
+    animation-duration:14s;
+}
+
+.particle:nth-child(8){
+    left:95%;
+    top:82%;
+    animation-duration:21s;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translateY(0) translateX(0);
+        opacity:.2;
+    }
+
+    50%{
+        transform:
+            translateY(-100px)
+            translateX(30px);
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-200px)
+            translateX(-20px);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:
+        rgba(3,9,20,.78);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(90,210,255,.12);
+}
+
+.logo{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 15px rgba(50,169,232,.6);
+}
+
+.logo span{
+    color:#4dc7ff;
+}
+
+.header-link{
+
+    color:#a9dfff;
+
+    text-decoration:none;
+
+    padding:9px 16px;
+
+    border:1px solid rgba(90,210,255,.2);
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.header-link:hover{
+
+    color:white;
+
+    border-color:#32a9e8;
+
+    box-shadow:
+        0 0 20px rgba(50,169,232,.25);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:650px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(50,169,232,.2),
+            transparent 65%
+        );
+
+    filter:blur(10px);
+
+    animation:
+        heroPulse
+        5s ease-in-out infinite;
+}
+
+@keyframes heroPulse{
+
+    0%,100%{
+        transform:scale(.9);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scale(1.15);
+        opacity:1;
+    }
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+}
+
+.hero-label{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    margin-bottom:25px;
+
+    border:
+        1px solid rgba(83,210,255,.3);
+
+    border-radius:50px;
+
+    background:
+        rgba(50,169,232,.07);
+
+    color:#7edfff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    box-shadow:
+        0 0 25px rgba(50,169,232,.08);
+
+    animation:
+        labelGlow
+        3s ease-in-out infinite;
+}
+
+@keyframes labelGlow{
+
+    0%,100%{
+        box-shadow:
+            0 0 10px rgba(50,169,232,.08);
+    }
+
+    50%{
+        box-shadow:
+            0 0 30px rgba(50,169,232,.25);
+    }
+
+}
+
+.hero h1{
+
+    font-size:
+        clamp(55px,9vw,100px);
+
+    line-height:1;
+
+    margin-bottom:28px;
+
+    letter-spacing:-4px;
+
+    font-weight:900;
+
+    text-shadow:
+        0 0 35px rgba(80,210,255,.25);
+}
+
+.hero h1 span{
+
+    color:#4dc7ff;
+
+    text-shadow:
+        0 0 25px rgba(50,169,232,.65),
+        0 0 70px rgba(50,169,232,.25);
+}
+
+.hero-description{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:#a8c9dd;
+
+    font-size:19px;
+}
+
+.hero-buttons{
+
+    margin-top:35px;
+}
+
+.hero-button{
+
+    display:inline-block;
+
+    margin:7px;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.primary{
+
+    color:#00111c;
+
+    background:#58d1ff;
+
+    box-shadow:
+        0 0 25px rgba(50,169,232,.35);
+}
+
+.primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 40px rgba(50,169,232,.65);
+}
+
+.secondary{
+
+    color:#bcecff;
+
+    border:
+        1px solid rgba(90,210,255,.3);
+
+    background:
+        rgba(50,169,232,.05);
+}
+
+.secondary:hover{
+
+    border-color:#58d1ff;
+
+    transform:translateY(-4px);
+}
+
+
+/* =========================================================
+   MOLECULE
+========================================================= */
+
+.molecule{
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    opacity:.45;
+
+    animation:
+        moleculeFloat
+        9s ease-in-out infinite;
+}
+
+.molecule.left{
+    left:-90px;
+    top:120px;
+}
+
+.molecule.right{
+    right:-80px;
+    bottom:50px;
+    animation-delay:2s;
+}
+
+.atom{
+
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    background:#071e34;
+
+    border:2px solid #52d5ff;
+
+    box-shadow:
+        0 0 15px #32a9e8,
+        inset 0 0 12px rgba(50,169,232,.5);
+}
+
+.atom.a1{
+    left:120px;
+    top:40px;
+}
+
+.atom.a2{
+    left:45px;
+    top:140px;
+}
+
+.atom.a3{
+    left:190px;
+    top:145px;
+}
+
+.atom.a4{
+    left:120px;
+    top:210px;
+}
+
+.bond{
+
+    position:absolute;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #4dc7ff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px #32a9e8;
+
+    transform-origin:left center;
+}
+
+.b1{
+    width:125px;
+    left:75px;
+    top:85px;
+    transform:rotate(55deg);
+}
+
+.b2{
+    width:125px;
+    left:150px;
+    top:85px;
+    transform:rotate(125deg);
+}
+
+.b3{
+    width:110px;
+    left:65px;
+    top:160px;
+    transform:rotate(-25deg);
+}
+
+.b4{
+    width:110px;
+    left:190px;
+    top:165px;
+    transform:rotate(-150deg);
+}
+
+@keyframes moleculeFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(4deg);
+    }
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+
+    width:min(1120px,92%);
+
+    margin:auto;
+
+    padding:50px 0 80px;
+}
+
+
+/* =========================================================
+   TOPIC NAVIGATION
+========================================================= */
+
+.topic-nav{
+
+    position:sticky;
+
+    top:76px;
+
+    z-index:50;
+
+    margin-bottom:45px;
+
+    padding:14px;
+
+    display:flex;
+
+    gap:8px;
+
+    overflow-x:auto;
+
+    background:
+        rgba(4,14,27,.78);
+
+    backdrop-filter:blur(15px);
+
+    border:
+        1px solid rgba(90,210,255,.12);
+
+    border-radius:16px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+}
+
+.topic-nav a{
+
+    white-space:nowrap;
+
+    color:#8db9cd;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    padding:9px 13px;
+
+    border-radius:9px;
+
+    transition:.25s;
+}
+
+.topic-nav a:hover{
+
+    color:white;
+
+    background:
+        rgba(50,169,232,.12);
+
+}
+
+
+/* =========================================================
+   LESSON CARD
+========================================================= */
+
+.lesson{
+
+    position:relative;
+
+    padding:42px;
+
+    margin-bottom:35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,30,49,.88),
+            rgba(4,15,28,.92)
+        );
+
+    border:
+        1px solid rgba(92,211,255,.13);
+
+    border-radius:24px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.lesson.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.lesson:hover{
+
+    border-color:
+        rgba(92,211,255,.27);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 35px rgba(50,169,232,.05);
+}
+
+.lesson::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #32a9e8,
+            transparent
+        );
+
+    opacity:.7;
+}
+
+.lesson-number{
+
+    color:#4dc7ff;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    margin-bottom:8px;
+}
+
+.lesson h2{
+
+    font-size:
+        clamp(28px,4vw,42px);
+
+    margin-bottom:20px;
+
+    letter-spacing:-1px;
+
+    color:#f1fbff;
+}
+
+.lesson h3{
+
+    color:#c8efff;
+
+    font-size:22px;
+
+    margin-top:32px;
+
+    margin-bottom:10px;
+}
+
+.lesson h4{
+
+    color:#82d9ff;
+
+    margin-top:23px;
+
+    margin-bottom:8px;
+}
+
+.lesson p{
+
+    color:#91adbe;
+
+    margin-bottom:15px;
+}
+
+.lesson ul{
+
+    padding-left:24px;
+
+    color:#91adbe;
+}
+
+.lesson li{
+
+    margin-bottom:9px;
+}
+
+
+/* =========================================================
+   DEFINITION
+========================================================= */
+
+.definition{
+
+    padding:22px;
+
+    margin:24px 0;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50,169,232,.1),
+            rgba(50,169,232,.025)
+        );
+
+    border-left:
+        4px solid #32a9e8;
+
+    box-shadow:
+        inset 0 0 30px rgba(50,169,232,.025);
+}
+
+.definition strong{
+
+    color:#65d5ff;
+}
+
+
+/* =========================================================
+   FORMULA
+========================================================= */
+
+.formula{
+
+    position:relative;
+
+    padding:20px;
+
+    margin:22px 0;
+
+    text-align:center;
+
+    color:#dff8ff;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061827,
+            #08263b
+        );
+
+    border:
+        1px solid rgba(75,208,255,.18);
+
+    box-shadow:
+        inset 0 0 25px rgba(50,169,232,.05),
+        0 0 20px rgba(50,169,232,.04);
+}
+
+.formula::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(100,230,255,.08),
+            transparent
+        );
+
+    transform:
+        translateX(-100%);
+
+    animation:
+        formulaScan
+        5s infinite;
+}
+
+@keyframes formulaScan{
+
+    0%{
+        transform:translateX(-100%);
+    }
+
+    40%,100%{
+        transform:translateX(100%);
+    }
+}
+
+
+/* =========================================================
+   EXAMPLE
+========================================================= */
+
+.example{
+
+    padding:26px;
+
+    margin-top:25px;
+
+    border-radius:17px;
+
+    background:
+        rgba(7,27,45,.75);
+
+    border:
+        1px solid rgba(77,199,255,.14);
+}
+
+.example-title{
+
+    color:#4dc7ff !important;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.solution{
+
+    margin-top:18px;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(255,255,255,.05);
+}
+
+
+/* =========================================================
+   CHEMICAL PARTICLE BOX
+========================================================= */
+
+.reaction-box{
+
+    position:relative;
+
+    min-height:180px;
+
+    margin:30px 0;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(50,169,232,.12),
+            transparent 65%
+        );
+
+    border:
+        1px solid rgba(75,208,255,.14);
+}
+
+.reaction-label{
+
+    position:absolute;
+
+    top:12px;
+    left:15px;
+
+    font-size:10px;
+
+    color:#63cfff;
+
+    letter-spacing:2px;
+
+    font-weight:800;
+}
+
+.chem-particle{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #a5edff,
+            #168dca 45%,
+            #06243a
+        );
+
+    color:white;
+
+    font-weight:900;
+
+    box-shadow:
+        0 0 20px rgba(50,169,232,.5);
+
+    animation:
+        particleBounce
+        2.5s ease-in-out infinite;
+}
+
+.chem-particle:nth-child(3){
+    animation-delay:.3s;
+}
+
+.chem-particle:nth-child(4){
+    animation-delay:.6s;
+}
+
+.chem-particle:nth-child(5){
+    animation-delay:.9s;
+}
+
+@keyframes particleBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-16px);
+    }
+}
+
+.arrow{
+
+    color:#67d8ff;
+
+    font-size:28px;
+
+    animation:
+        arrowPulse
+        1.5s infinite;
+}
+
+@keyframes arrowPulse{
+
+    0%,100%{
+        opacity:.4;
+        transform:translateX(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateX(6px);
+    }
+}
+
+
+/* =========================================================
+   ENERGY VISUAL
+========================================================= */
+
+.energy-visual{
+
+    position:relative;
+
+    height:260px;
+
+    margin:30px 0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.025),
+            rgba(0,0,0,.08)
+        );
+
+    border:
+        1px solid rgba(90,210,255,.12);
+}
+
+.energy-axis{
+
+    position:absolute;
+
+    left:45px;
+    right:30px;
+    bottom:45px;
+
+    height:1px;
+
+    background:#4c7284;
+}
+
+.energy-reactant,
+.energy-product{
+
+    position:absolute;
+
+    height:4px;
+
+    border-radius:20px;
+
+    background:#56d4ff;
+
+    box-shadow:
+        0 0 14px rgba(50,169,232,.8);
+}
+
+.energy-reactant{
+
+    width:30%;
+
+    left:8%;
+
+    bottom:90px;
+}
+
+.energy-product{
+
+    width:30%;
+
+    right:8%;
+
+    bottom:125px;
+}
+
+.energy-curve{
+
+    position:absolute;
+
+    width:48%;
+
+    height:100px;
+
+    left:26%;
+
+    bottom:90px;
+
+    border-top:
+        4px solid #73dcff;
+
+    border-radius:
+        50% 50% 0 0;
+
+    transform:
+        perspective(100px)
+        rotateX(0deg);
+
+    box-shadow:
+        0 -5px 20px rgba(50,169,232,.3);
+}
+
+.energy-dot{
+
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#d9f9ff;
+
+    box-shadow:
+        0 0 20px #32a9e8;
+
+    left:49%;
+
+    bottom:183px;
+
+    animation:
+        energyPulse
+        1.5s infinite;
+}
+
+@keyframes energyPulse{
+
+    0%,100%{
+        transform:scale(.8);
+        opacity:.6;
+    }
+
+    50%{
+        transform:scale(1.4);
+        opacity:1;
+    }
+}
+
+.energy-text{
+
+    position:absolute;
+
+    font-size:12px;
+
+    color:#80cfe9;
+}
+
+.energy-text.reactant{
+
+    left:8%;
+    bottom:65px;
+}
+
+.energy-text.product{
+
+    right:8%;
+    bottom:100px;
+}
+
+.energy-text.peak{
+
+    left:46%;
+    top:28px;
+}
+
+
+/* =========================================================
+   GROUP VISUAL
+========================================================= */
+
+.group-visual{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin:30px 0;
+}
+
+.element{
+
+    position:relative;
+
+    padding:25px 15px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,53,75,.65),
+            rgba(5,20,34,.8)
+        );
+
+    border:
+        1px solid rgba(80,210,255,.12);
+
+    transition:.35s;
+}
+
+.element:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    border-color:#32a9e8;
+
+    box-shadow:
+        0 15px 35px rgba(50,169,232,.12);
+}
+
+.element-symbol{
+
+    font-size:35px;
+
+    font-weight:900;
+
+    color:#62d7ff;
+
+    text-shadow:
+        0 0 18px rgba(50,169,232,.5);
+}
+
+.element-name{
+
+    color:#9bb9c9;
+
+    font-size:13px;
+}
+
+.element-arrow{
+
+    margin-top:10px;
+
+    color:#54d4ff;
+
+    font-size:20px;
+}
+
+
+/* =========================================================
+   KINETICS VISUAL
+========================================================= */
+
+.kinetics{
+
+    position:relative;
+
+    height:230px;
+
+    margin:30px 0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:
+        1px solid rgba(90,210,255,.12);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10,34,51,.7),
+            rgba(2,12,22,.8)
+        );
+}
+
+.kinetic-particle{
+
+    position:absolute;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#65dfff;
+
+    box-shadow:
+        0 0 14px #32a9e8;
+
+    animation:
+        kineticMove
+        linear infinite;
+}
+
+.k1{
+    left:10%;
+    top:65%;
+    animation-duration:4s;
+}
+
+.k2{
+    left:20%;
+    top:35%;
+    animation-duration:2.7s;
+}
+
+.k3{
+    left:35%;
+    top:75%;
+    animation-duration:3.3s;
+}
+
+.k4{
+    left:50%;
+    top:40%;
+    animation-duration:2.2s;
+}
+
+.k5{
+    left:70%;
+    top:70%;
+    animation-duration:3.8s;
+}
+
+.k6{
+    left:82%;
+    top:30%;
+    animation-duration:2.5s;
+}
+
+@keyframes kineticMove{
+
+    0%{
+        transform:
+            translate(0,0);
+    }
+
+    25%{
+        transform:
+            translate(80px,-35px);
+    }
+
+    50%{
+        transform:
+            translate(140px,35px);
+    }
+
+    75%{
+        transform:
+            translate(60px,60px);
+    }
+
+    100%{
+        transform:
+            translate(0,0);
+    }
+}
+
+.activation-line{
+
+    position:absolute;
+
+    left:10%;
+    right:10%;
+
+    bottom:35px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #3abfff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px #32a9e8;
+}
+
+
+/* =========================================================
+   EQUILIBRIUM
+========================================================= */
+
+.equilibrium{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin:30px 0;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    background:
+        rgba(50,169,232,.04);
+
+    border:
+        1px solid rgba(50,169,232,.13);
+}
+
+.eq-side{
+
+    display:flex;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    max-width:230px;
+}
+
+.eq-particle{
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#4dc7ff;
+
+    box-shadow:
+        0 0 12px rgba(50,169,232,.5);
+
+    animation:
+        eqFloat
+        2s ease-in-out infinite;
+}
+
+.eq-particle:nth-child(even){
+
+    animation-delay:.6s;
+}
+
+@keyframes eqFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+.eq-arrow{
+
+    font-size:32px;
+
+    color:#68d8ff;
+
+    animation:
+        eqArrow
+        2s infinite;
+}
+
+@keyframes eqArrow{
+
+    0%,100%{
+        opacity:.4;
+    }
+
+    50%{
+        opacity:1;
+        text-shadow:
+            0 0 15px #32a9e8;
+    }
+}
+
+
+/* =========================================================
+   REACTION PATHWAY
+========================================================= */
+
+.pathway{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin:30px 0;
+
+}
+
+.path-node{
+
+    padding:17px 20px;
+
+    border-radius:14px;
+
+    color:#d9f8ff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50,169,232,.13),
+            rgba(50,169,232,.035)
+        );
+
+    border:
+        1px solid rgba(80,210,255,.2);
+
+    box-shadow:
+        0 0 20px rgba(50,169,232,.04);
+
+    animation:
+        nodeGlow
+        3s ease-in-out infinite;
+}
+
+.path-node:nth-child(2){
+    animation-delay:.5s;
+}
+
+.path-node:nth-child(3){
+    animation-delay:1s;
+}
+
+@keyframes nodeGlow{
+
+    0%,100%{
+        box-shadow:
+            0 0 8px rgba(50,169,232,.03);
+    }
+
+    50%{
+        box-shadow:
+            0 0 25px rgba(50,169,232,.15);
+    }
+}
+
+.path-arrow{
+
+    color:#54d4ff;
+
+    font-size:24px;
+}
+
+
+/* =========================================================
+   SPECTRUM
+========================================================= */
+
+.spectrum{
+
+    height:190px;
+
+    position:relative;
+
+    margin:30px 0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,22,36,.8),
+            rgba(1,10,19,.9)
+        );
+
+    border:
+        1px solid rgba(80,210,255,.13);
+}
+
+.spectrum::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:8%;
+    right:8%;
+    bottom:35px;
+
+    height:2px;
+
+    background:#5abfe0;
+
+    box-shadow:
+        0 0 10px rgba(50,169,232,.4);
+}
+
+.peak{
+
+    position:absolute;
+
+    bottom:37px;
+
+    width:3px;
+
+    background:#7de5ff;
+
+    box-shadow:
+        0 0 12px #32a9e8;
+
+    transform-origin:bottom;
+
+    animation:
+        spectrumPulse
+        2.5s ease-in-out infinite;
+}
+
+.peak1{
+    left:25%;
+    height:70px;
+}
+
+.peak2{
+    left:45%;
+    height:110px;
+    animation-delay:.4s;
+}
+
+.peak3{
+    left:66%;
+    height:55px;
+    animation-delay:.8s;
+}
+
+.peak4{
+    left:78%;
+    height:90px;
+    animation-delay:1.2s;
+}
+
+@keyframes spectrumPulse{
+
+    0%,100%{
+        opacity:.45;
+        transform:scaleY(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scaleY(1);
+    }
+}
+
+
+/* =========================================================
+   PRACTICE
+========================================================= */
+
+.question{
+
+    padding:22px 0;
+
+    border-bottom:
+        1px solid rgba(120,190,220,.08);
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.question strong{
+
+    color:#d5f2ff;
+
+    font-size:16px;
+}
+
+details{
+
+    margin-top:13px;
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    background:
+        rgba(50,169,232,.035);
+}
+
+summary{
+
+    cursor:pointer;
+
+    color:#4dc7ff;
+
+    font-weight:800;
+
+    list-style:none;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::before{
+
+    content:"+";
+
+    display:inline-block;
+
+    margin-right:8px;
+
+    font-size:18px;
+}
+
+details[open] summary::before{
+    content:"−";
+}
+
+details p{
+
+    margin-top:15px;
+}
+
+
+/* =========================================================
+   QUICK REVIEW
+========================================================= */
+
+.quick-review{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+    margin-top:25px;
+}
+
+.review-item{
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50,169,232,.08),
+            rgba(50,169,232,.02)
+        );
+
+    border:
+        1px solid rgba(80,210,255,.11);
+
+    transition:.3s;
+}
+
+.review-item:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(80,210,255,.3);
+}
+
+.review-icon{
+
+    color:#54d4ff;
+
+    font-size:20px;
+
+    margin-bottom:5px;
+}
+
+.review-item p{
+
+    margin:0;
+
+    color:#9db9c8;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation{
+
+    text-align:center;
+
+    padding:15px 20px 80px;
+}
+
+.button{
+
+    display:inline-block;
+
+    margin:6px;
+
+    padding:14px 23px;
+
+    color:#dff8ff;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    background:
+        rgba(50,169,232,.08);
+
+    border:
+        1px solid rgba(80,210,255,.2);
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.button:hover{
+
+    transform:translateY(-4px);
+
+    color:white;
+
+    border-color:#32a9e8;
+
+    box-shadow:
+        0 10px 30px rgba(50,169,232,.15);
+}
+
+.button.primary-nav{
+
+    background:#32a9e8;
+
+    color:#00121e;
+
+    border-color:#32a9e8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    color:#648093;
+
+    background:
+        #020812;
+
+    border-top:
+        1px solid rgba(80,210,255,.08);
+}
+
+.footer-logo{
+
+    font-size:24px;
+
+    font-weight:900;
+
+    color:#dff8ff;
+
+    margin-bottom:8px;
+}
+
+footer span{
+    color:#4dc7ff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:16px 5%;
+    }
+
+    .header-link{
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:560px;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .container{
+        width:94%;
+    }
+
+    .lesson{
+        padding:28px 22px;
+        border-radius:19px;
+    }
+
+    .topic-nav{
+        top:68px;
+    }
+
+    .group-visual{
+        grid-template-columns:1fr;
+    }
+
+    .quick-review{
+        grid-template-columns:1fr;
+    }
+
+    .molecule{
+        opacity:.18;
+        transform:scale(.7);
+    }
+
+    .equilibrium{
+        flex-direction:column;
+    }
+
+    .energy-visual{
+        height:230px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:20px;
+    }
+
+    .header-link{
+        padding:7px 10px;
+        font-size:11px;
+    }
+
+    .hero-label{
+        font-size:9px;
+        letter-spacing:2px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .lesson h2{
+        font-size:27px;
+    }
+
+    .formula{
+        font-size:17px;
+        padding:16px 10px;
+    }
+
+    .reaction-box{
+        gap:12px;
+    }
+
+    .chem-particle{
+        width:42px;
+        height:42px;
+        font-size:13px;
+    }
+
+    .arrow{
+        font-size:20px;
+    }
+
+    .path-arrow{
+        width:100%;
+        text-align:center;
+        transform:rotate(90deg);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+</style>
 
 </head>
 
+
 <body>
+
+
+<div id="progress"></div>
+
+
+<div class="background">
+
+    <div class="grid"></div>
+
+    <div class="particles">
+
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+    </div>
+
+</div>
 
 
 <header>
 
     <a href="index.html" class="logo">
-        IAL ATLAS
+        IAL <span>ATLAS</span>
     </a>
 
-    <a href="chemistry.html">
+    <a href="chemistry.html" class="header-link">
         ← Chemistry
     </a>
 
 </header>
 
 
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
 
-    <p class="hero-label">
-        EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • UNIT 2
-    </p>
+    <div class="molecule left">
 
-    <h1>
-        Chemistry <span>2</span>
-    </h1>
+        <div class="atom a1"></div>
+        <div class="atom a2"></div>
+        <div class="atom a3"></div>
+        <div class="atom a4"></div>
 
-    <p>
-        Energetics, Group Chemistry, Halogenoalkanes and Alcohols
-    </p>
+        <div class="bond b1"></div>
+        <div class="bond b2"></div>
+        <div class="bond b3"></div>
+        <div class="bond b4"></div>
+
+    </div>
+
+
+    <div class="molecule right">
+
+        <div class="atom a1"></div>
+        <div class="atom a2"></div>
+        <div class="atom a3"></div>
+        <div class="atom a4"></div>
+
+        <div class="bond b1"></div>
+        <div class="bond b2"></div>
+        <div class="bond b3"></div>
+        <div class="bond b4"></div>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+
+            EDEXCEL INTERNATIONAL A LEVEL CHEMISTRY • WCH12
+
+        </div>
+
+        <h1>
+            Chemistry <span>Unit 2</span>
+        </h1>
+
+        <p class="hero-description">
+
+            Energetics, Group Chemistry, Kinetics, Equilibria,
+            Alcohols, Halogenoalkanes and Spectroscopy.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#energetics"
+               class="hero-button primary">
+
+                Start Learning →
+
+            </a>
+
+            <a href="#practice"
+               class="hero-button secondary">
+
+                Jump to Practice
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -262,970 +2321,1788 @@
 <main class="container">
 
 
-    <!-- ENERGETICS -->
+<!-- =========================================================
+     TOPIC NAV
+========================================================= -->
 
-    <section class="lesson">
+<nav class="topic-nav">
 
-        <p class="lesson-number">TOPIC 01</p>
+    <a href="#energetics">Energetics</a>
+    <a href="#intermolecular">Forces</a>
+    <a href="#redox">Redox</a>
+    <a href="#group1">Group 1</a>
+    <a href="#group2">Group 2</a>
+    <a href="#group7">Group 7</a>
+    <a href="#kinetics">Kinetics</a>
+    <a href="#equilibria">Equilibria</a>
+    <a href="#alcohols">Alcohols</a>
+    <a href="#halogenoalkanes">Halogenoalkanes</a>
+    <a href="#spectroscopy">Spectroscopy</a>
+    <a href="#practice">Practice</a>
 
-        <h2>Energetics</h2>
+</nav>
+
+
+<!-- =========================================================
+     TOPIC 01
+========================================================= -->
+
+<section class="lesson" id="energetics">
+
+    <p class="lesson-number">
+        TOPIC 01
+    </p>
+
+    <h2>
+        Energetics
+    </h2>
+
+    <p>
+        Energetics is the study of energy changes that occur
+        during chemical reactions.
+    </p>
+
+
+    <h3>
+        Enthalpy Change
+    </h3>
+
+    <p>
+        The enthalpy change of a reaction is the heat energy change
+        when reactants are converted into products under specified
+        conditions.
+    </p>
+
+    <div class="formula">
+
+        ΔH = H(products) − H(reactants)
+
+    </div>
+
+
+    <h3>
+        Exothermic vs Endothermic
+    </h3>
+
+    <div class="reaction-box">
+
+        <span class="reaction-label">
+            ENERGY TRANSFER
+        </span>
+
+        <div class="chem-particle">
+            R
+        </div>
+
+        <div class="arrow">
+            →
+        </div>
+
+        <div class="chem-particle">
+            P
+        </div>
+
+    </div>
+
+
+    <div class="definition">
+
+        <strong>
+            Exothermic:
+        </strong>
 
         <p>
-            Energetics is the study of energy changes that occur during
-            chemical reactions.
+            Energy is released to the surroundings and
+            ΔH &lt; 0.
         </p>
 
-        <h3>Enthalpy Change</h3>
+        <strong>
+            Endothermic:
+        </strong>
 
         <p>
-            The enthalpy change of a reaction is the heat energy change
-            when reactants are converted into products under specified
-            conditions.
+            Energy is absorbed from the surroundings and
+            ΔH &gt; 0.
+        </p>
+
+    </div>
+
+
+    <h3>
+        Calorimetry
+    </h3>
+
+    <p>
+        Calorimetry can be used to determine the energy transferred
+        during a reaction.
+    </p>
+
+    <div class="formula">
+
+        q = mcΔT
+
+    </div>
+
+    <ul>
+
+        <li>q = energy transferred</li>
+        <li>m = mass of solution</li>
+        <li>c = specific heat capacity</li>
+        <li>ΔT = temperature change</li>
+
+    </ul>
+
+
+    <div class="example">
+
+        <p class="example-title">
+            WORKED EXAMPLE
+        </p>
+
+        <p>
+            A reaction heats 100 g of water by 15 °C.
+            Take the specific heat capacity of water as
+            4.18 J g⁻¹ K⁻¹.
         </p>
 
         <div class="formula">
-            ΔH = H(products) − H(reactants)
-        </div>
 
-        <h3>Exothermic Reactions</h3>
+            q = 100 × 4.18 × 15
+            = 6270 J
+
+        </div>
 
         <p>
-            An exothermic reaction releases energy to the surroundings.
-            The products have lower enthalpy than the reactants.
+            Therefore, 6.27 kJ of energy is transferred
+            to the water.
         </p>
 
-        <div class="formula">
-            ΔH &lt; 0
+    </div>
+
+
+    <h3>
+        Bond Enthalpy
+    </h3>
+
+    <p>
+        Bond breaking requires energy, while bond formation
+        releases energy.
+    </p>
+
+    <div class="formula">
+
+        ΔH =
+        Σ(bonds broken)
+        −
+        Σ(bonds formed)
+
+    </div>
+
+
+    <h3>
+        Hess's Law
+    </h3>
+
+    <p>
+        Hess's Law states that the total enthalpy change for a reaction
+        is independent of the route taken between reactants and products.
+    </p>
+
+
+    <div class="energy-visual">
+
+        <div class="energy-reactant"></div>
+
+        <div class="energy-product"></div>
+
+        <div class="energy-curve"></div>
+
+        <div class="energy-dot"></div>
+
+        <span class="energy-text reactant">
+            Reactants
+        </span>
+
+        <span class="energy-text product">
+            Products
+        </span>
+
+        <span class="energy-text peak">
+            Activation energy
+        </span>
+
+        <div class="energy-axis"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 02
+========================================================= -->
+
+<section class="lesson" id="intermolecular">
+
+    <p class="lesson-number">
+        TOPIC 02
+    </p>
+
+    <h2>
+        Intermolecular Forces
+    </h2>
+
+    <p>
+        Intermolecular forces act between molecules and influence
+        physical properties such as boiling point and melting point.
+    </p>
+
+
+    <h3>
+        London Forces
+    </h3>
+
+    <p>
+        London forces arise from temporary fluctuations in electron
+        density and occur between all atoms and molecules.
+    </p>
+
+    <p>
+        Larger molecules generally have stronger London forces because
+        they contain more electrons and have more easily polarised
+        electron clouds.
+    </p>
+
+
+    <h3>
+        Permanent Dipole-Dipole Forces
+    </h3>
+
+    <p>
+        These occur between polar molecules because of attractions
+        between permanent partial charges.
+    </p>
+
+
+    <h3>
+        Hydrogen Bonding
+    </h3>
+
+    <p>
+        Hydrogen bonding is a particularly strong intermolecular force
+        involving hydrogen bonded to a highly electronegative atom,
+        such as nitrogen, oxygen or fluorine.
+    </p>
+
+
+    <div class="reaction-box">
+
+        <span class="reaction-label">
+            MOLECULAR ATTRACTION
+        </span>
+
+        <div class="chem-particle">
+            δ+
         </div>
 
-        <h3>Endothermic Reactions</h3>
+        <div class="arrow">
+            ···
+        </div>
+
+        <div class="chem-particle">
+            δ−
+        </div>
+
+        <div class="arrow">
+            ···
+        </div>
+
+        <div class="chem-particle">
+            δ+
+        </div>
+
+    </div>
+
+
+    <div class="definition">
+
+        <strong>
+            Key idea:
+        </strong>
 
         <p>
-            An endothermic reaction absorbs energy from the surroundings.
-            The products have higher enthalpy than the reactants.
+            Stronger intermolecular forces generally require more
+            energy to overcome, leading to higher boiling temperatures.
         </p>
 
-        <div class="formula">
-            ΔH &gt; 0
-        </div>
+    </div>
 
-        <h3>Calorimetry</h3>
+</section>
+
+
+<!-- =========================================================
+     TOPIC 03
+========================================================= -->
+
+<section class="lesson" id="redox">
+
+    <p class="lesson-number">
+        TOPIC 03
+    </p>
+
+    <h2>
+        Redox Chemistry
+    </h2>
+
+    <p>
+        Redox reactions involve the transfer of electrons.
+    </p>
+
+
+    <h3>
+        Oxidation and Reduction
+    </h3>
+
+    <div class="definition">
+
+        <strong>
+            OIL RIG
+        </strong>
 
         <p>
-            Calorimetry can be used to determine the energy transferred
-            during a reaction.
+            Oxidation Is Loss of electrons.
+            Reduction Is Gain of electrons.
         </p>
 
-        <div class="formula">
-            q = mcΔT
+    </div>
+
+
+    <div class="reaction-box">
+
+        <span class="reaction-label">
+            ELECTRON TRANSFER
+        </span>
+
+        <div class="chem-particle">
+            Zn
         </div>
 
-        <ul>
+        <div class="arrow">
+            e⁻ →
+        </div>
 
-            <li>q = energy transferred</li>
+        <div class="chem-particle">
+            Cu²⁺
+        </div>
 
-            <li>m = mass of solution</li>
+    </div>
 
-            <li>c = specific heat capacity</li>
 
-            <li>ΔT = temperature change</li>
+    <h3>
+        Oxidation Numbers
+    </h3>
 
-        </ul>
+    <ul>
 
-        <div class="example">
+        <li>
+            Oxidation number increases → oxidation.
+        </li>
 
-            <p class="example-title">Worked Example</p>
+        <li>
+            Oxidation number decreases → reduction.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Half Equations
+    </h3>
+
+    <p>
+        Half equations show the electron transfer occurring
+        during oxidation or reduction.
+    </p>
+
+    <div class="formula">
+
+        Zn → Zn²⁺ + 2e⁻
+
+    </div>
+
+    <div class="formula">
+
+        Cu²⁺ + 2e⁻ → Cu
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 04
+========================================================= -->
+
+<section class="lesson" id="group1">
+
+    <p class="lesson-number">
+        TOPIC 04
+    </p>
+
+    <h2>
+        Group 1 — The Alkali Metals
+    </h2>
+
+    <p>
+        Group 1 contains lithium, sodium, potassium and other
+        alkali metals.
+    </p>
+
+
+    <h3>
+        Reactivity
+    </h3>
+
+    <p>
+        Reactivity increases down the group because the outer electron
+        is further from the nucleus and is more easily removed.
+    </p>
+
+
+    <div class="group-visual">
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Li
+            </div>
+
+            <div class="element-name">
+                Lithium
+            </div>
+
+            <div class="element-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Na
+            </div>
+
+            <div class="element-name">
+                Sodium
+            </div>
+
+            <div class="element-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <div class="element">
+
+            <div class="element-symbol">
+                K
+            </div>
+
+            <div class="element-name">
+                Potassium
+            </div>
+
+            <div class="element-arrow">
+                ↑ Reactivity
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Reaction with Water
+    </h3>
+
+    <p>
+        Group 1 metals react with water to produce an alkaline
+        solution and hydrogen gas.
+    </p>
+
+    <div class="formula">
+
+        2Na + 2H₂O → 2NaOH + H₂
+
+    </div>
+
+
+    <h3>
+        Reaction with Oxygen
+    </h3>
+
+    <p>
+        Group 1 metals react with oxygen to form oxides and,
+        for some heavier members, other oxygen-containing compounds.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 05
+========================================================= -->
+
+<section class="lesson" id="group2">
+
+    <p class="lesson-number">
+        TOPIC 05
+    </p>
+
+    <h2>
+        Group 2 — The Alkaline Earth Metals
+    </h2>
+
+    <p>
+        Group 2 contains beryllium, magnesium, calcium, strontium,
+        barium and radium.
+    </p>
+
+
+    <h3>
+        Reactivity
+    </h3>
+
+    <p>
+        Reactivity generally increases down the group because the
+        outer electrons become easier to remove.
+    </p>
+
+
+    <div class="group-visual">
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Mg
+            </div>
+
+            <div class="element-name">
+                Magnesium
+            </div>
+
+            <div class="element-arrow">
+                →
+            </div>
+
+        </div>
+
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Ca
+            </div>
+
+            <div class="element-name">
+                Calcium
+            </div>
+
+            <div class="element-arrow">
+                →
+            </div>
+
+        </div>
+
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Ba
+            </div>
+
+            <div class="element-name">
+                Barium
+            </div>
+
+            <div class="element-arrow">
+                ↑ Reactivity
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Reaction with Water
+    </h3>
+
+    <p>
+        The reactions generally become more vigorous down the group.
+    </p>
+
+    <div class="formula">
+
+        Ca + 2H₂O → Ca(OH)₂ + H₂
+
+    </div>
+
+
+    <h3>
+        Solubility Trends
+    </h3>
+
+    <div class="definition">
+
+        <strong>
+            Remember:
+        </strong>
+
+        <p>
+            Group 2 hydroxide solubility generally increases
+            down the group.
+        </p>
+
+        <p>
+            Group 2 sulfate solubility generally decreases
+            down the group.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 06
+========================================================= -->
+
+<section class="lesson" id="group7">
+
+    <p class="lesson-number">
+        TOPIC 06
+    </p>
+
+    <h2>
+        Group 7 — The Halogens
+    </h2>
+
+    <p>
+        Group 7 elements are reactive non-metals that exist as
+        diatomic molecules.
+    </p>
+
+
+    <div class="formula">
+
+        F₂ • Cl₂ • Br₂ • I₂
+
+    </div>
+
+
+    <h3>
+        Reactivity
+    </h3>
+
+    <p>
+        Reactivity decreases down the group because the outer shell
+        is further from the nucleus and attraction for an incoming
+        electron becomes weaker.
+    </p>
+
+
+    <div class="group-visual">
+
+        <div class="element">
+
+            <div class="element-symbol">
+                F₂
+            </div>
+
+            <div class="element-name">
+                Fluorine
+            </div>
+
+            <div class="element-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Cl₂
+            </div>
+
+            <div class="element-name">
+                Chlorine
+            </div>
+
+            <div class="element-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <div class="element">
+
+            <div class="element-symbol">
+                Br₂
+            </div>
+
+            <div class="element-name">
+                Bromine
+            </div>
+
+            <div class="element-arrow">
+                Reactivity ↓
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Displacement Reactions
+    </h3>
+
+    <p>
+        A more reactive halogen can displace a less reactive halide
+        ion from solution.
+    </p>
+
+    <div class="reaction-box">
+
+        <span class="reaction-label">
+            DISPLACEMENT
+        </span>
+
+        <div class="chem-particle">
+            Cl₂
+        </div>
+
+        <div class="arrow">
+            +
+        </div>
+
+        <div class="chem-particle">
+            Br⁻
+        </div>
+
+        <div class="arrow">
+            →
+        </div>
+
+        <div class="chem-particle">
+            Br₂
+        </div>
+
+    </div>
+
+
+    <div class="formula">
+
+        Cl₂ + 2KBr → 2KCl + Br₂
+
+    </div>
+
+
+    <h3>
+        Halide Ion Tests
+    </h3>
+
+    <p>
+        Aqueous silver nitrate can be used to distinguish chloride,
+        bromide and iodide ions.
+    </p>
+
+    <ul>
+
+        <li>
+            Chloride → white precipitate.
+        </li>
+
+        <li>
+            Bromide → cream precipitate.
+        </li>
+
+        <li>
+            Iodide → yellow precipitate.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 07
+========================================================= -->
+
+<section class="lesson" id="kinetics">
+
+    <p class="lesson-number">
+        TOPIC 07
+    </p>
+
+    <h2>
+        Introduction to Kinetics
+    </h2>
+
+    <p>
+        Kinetics concerns the rate at which chemical reactions occur.
+    </p>
+
+
+    <h3>
+        Collision Theory
+    </h3>
+
+    <p>
+        For a reaction to occur, particles must collide with sufficient
+        energy and with the appropriate orientation.
+    </p>
+
+
+    <div class="kinetics">
+
+        <div class="kinetic-particle k1"></div>
+        <div class="kinetic-particle k2"></div>
+        <div class="kinetic-particle k3"></div>
+        <div class="kinetic-particle k4"></div>
+        <div class="kinetic-particle k5"></div>
+        <div class="kinetic-particle k6"></div>
+
+        <div class="activation-line"></div>
+
+    </div>
+
+
+    <h3>
+        Activation Energy
+    </h3>
+
+    <p>
+        Activation energy is the minimum energy required for a
+        successful reaction.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            Catalyst:
+        </strong>
+
+        <p>
+            A catalyst provides an alternative reaction pathway
+            with lower activation energy.
+        </p>
+
+    </div>
+
+
+    <h3>
+        Factors Affecting Rate
+    </h3>
+
+    <ul>
+
+        <li>Temperature</li>
+        <li>Concentration</li>
+        <li>Pressure for gaseous reactions</li>
+        <li>Surface area of a solid</li>
+        <li>Presence of a catalyst</li>
+
+    </ul>
+
+
+    <h3>
+        Maxwell-Boltzmann Distribution
+    </h3>
+
+    <p>
+        Increasing temperature gives particles greater average kinetic
+        energy and increases the proportion of particles with energy
+        greater than the activation energy.
+
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 08
+========================================================= -->
+
+<section class="lesson" id="equilibria">
+
+    <p class="lesson-number">
+        TOPIC 08
+    </p>
+
+    <h2>
+        Introduction to Equilibria
+    </h2>
+
+    <p>
+        A reversible reaction can reach a state of dynamic equilibrium.
+    </p>
+
+
+    <div class="equilibrium">
+
+        <div class="eq-side">
+
+            <div class="eq-particle"></div>
+            <div class="eq-particle"></div>
+            <div class="eq-particle"></div>
+            <div class="eq-particle"></div>
+
+        </div>
+
+
+        <div class="eq-arrow">
+            ⇌
+        </div>
+
+
+        <div class="eq-side">
+
+            <div class="eq-particle"></div>
+            <div class="eq-particle"></div>
+            <div class="eq-particle"></div>
+            <div class="eq-particle"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula">
+
+        Forward rate = Reverse rate
+
+    </div>
+
+
+    <p>
+        At equilibrium, concentrations of reactants and products
+        remain constant, although both forward and reverse reactions
+        continue.
+    </p>
+
+
+    <h3>
+        Le Chatelier's Principle
+    </h3>
+
+    <p>
+        When a system at equilibrium is disturbed, the equilibrium
+        position shifts in the direction that opposes the change.
+    </p>
+
+
+    <h3>
+        Temperature
+    </h3>
+
+    <p>
+        Increasing temperature favours the endothermic direction.
+        Decreasing temperature favours the exothermic direction.
+    </p>
+
+
+    <h3>
+        Pressure
+    </h3>
+
+    <p>
+        For gaseous equilibria, increasing pressure favours the side
+        with fewer moles of gas.
+    </p>
+
+
+    <h3>
+        Catalysts
+    </h3>
+
+    <p>
+        A catalyst speeds up both forward and reverse reactions equally.
+        It does not change the equilibrium position.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 09
+========================================================= -->
+
+<section class="lesson" id="alcohols">
+
+    <p class="lesson-number">
+        TOPIC 09
+    </p>
+
+    <h2>
+        Alcohols
+    </h2>
+
+    <p>
+        Alcohols contain the hydroxyl functional group, −OH.
+    </p>
+
+
+    <div class="formula">
+
+        General functional group: R−OH
+
+    </div>
+
+
+    <h3>
+        Classification
+    </h3>
+
+    <ul>
+
+        <li>Primary alcohols</li>
+        <li>Secondary alcohols</li>
+        <li>Tertiary alcohols</li>
+
+    </ul>
+
+
+    <h3>
+        Combustion
+    </h3>
+
+    <p>
+        Alcohols can undergo complete combustion to form carbon dioxide
+        and water.
+    </p>
+
+    <div class="formula">
+
+        CH₃CH₂OH + 3O₂ → 2CO₂ + 3H₂O
+
+    </div>
+
+
+    <h3>
+        Oxidation
+    </h3>
+
+    <p>
+        Primary alcohols can be oxidised first to aldehydes and then
+        to carboxylic acids.
+    </p>
+
+
+    <div class="pathway">
+
+        <div class="path-node">
+            Primary alcohol
+        </div>
+
+        <div class="path-arrow">
+            →
+        </div>
+
+        <div class="path-node">
+            Aldehyde
+        </div>
+
+        <div class="path-arrow">
+            →
+        </div>
+
+        <div class="path-node">
+            Carboxylic acid
+        </div>
+
+    </div>
+
+
+    <p>
+        Secondary alcohols can be oxidised to ketones.
+        Tertiary alcohols are resistant to oxidation under typical
+        laboratory conditions.
+    </p>
+
+
+    <h3>
+        Dehydration
+    </h3>
+
+    <p>
+        Alcohols can undergo dehydration to form alkenes.
+    </p>
+
+    <div class="formula">
+
+        Alcohol → Alkene + H₂O
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 10
+========================================================= -->
+
+<section class="lesson" id="halogenoalkanes">
+
+    <p class="lesson-number">
+        TOPIC 10
+    </p>
+
+    <h2>
+        Halogenoalkanes
+    </h2>
+
+    <p>
+        Halogenoalkanes contain a halogen atom bonded to a carbon atom.
+    </p>
+
+
+    <div class="formula">
+
+        R−X
+
+    </div>
+
+
+    <p>
+        X may be F, Cl, Br or I.
+    </p>
+
+
+    <h3>
+        Nucleophilic Substitution
+    </h3>
+
+    <p>
+        Halogenoalkanes can react with nucleophiles in substitution
+        reactions.
+    </p>
+
+
+    <div class="reaction-box">
+
+        <span class="reaction-label">
+            NUCLEOPHILIC SUBSTITUTION
+        </span>
+
+        <div class="chem-particle">
+            R−Br
+        </div>
+
+        <div class="arrow">
+            +
+        </div>
+
+        <div class="chem-particle">
+            OH⁻
+        </div>
+
+        <div class="arrow">
+            →
+        </div>
+
+        <div class="chem-particle">
+            R−OH
+        </div>
+
+    </div>
+
+
+    <h3>
+        Reaction with Aqueous Hydroxide
+    </h3>
+
+    <p>
+        Aqueous hydroxide ions can replace the halogen atom to
+        produce an alcohol.
+    </p>
+
+    <div class="formula">
+
+        R−Br + OH⁻ → R−OH + Br⁻
+
+    </div>
+
+
+    <h3>
+        Reaction with Cyanide
+    </h3>
+
+    <p>
+        Cyanide ions can replace the halogen and increase the carbon
+        chain by one carbon atom.
+    </p>
+
+    <div class="formula">
+
+        R−Br + CN⁻ → R−CN + Br⁻
+
+    </div>
+
+
+    <h3>
+        Reaction with Ammonia
+    </h3>
+
+    <p>
+        Halogenoalkanes can react with ammonia to form amines.
+    </p>
+
+
+    <h3>
+        Hydrolysis
+    </h3>
+
+    <p>
+        Iodoalkanes generally hydrolyse more readily than bromoalkanes,
+        which hydrolyse more readily than chloroalkanes.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 11
+========================================================= -->
+
+<section class="lesson" id="spectroscopy">
+
+    <p class="lesson-number">
+        TOPIC 11
+    </p>
+
+    <h2>
+        Organic Spectra
+    </h2>
+
+    <p>
+        Spectroscopic techniques provide information that can be used
+        to identify organic compounds.
+    </p>
+
+
+    <h3>
+        Infrared Spectroscopy
+    </h3>
+
+    <p>
+        Infrared spectroscopy can be used to identify functional groups
+        from characteristic absorption regions.
+    </p>
+
+
+    <div class="spectrum">
+
+        <div class="peak peak1"></div>
+        <div class="peak peak2"></div>
+        <div class="peak peak3"></div>
+        <div class="peak peak4"></div>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+            O−H absorption → broad absorption at higher wavenumbers.
+        </li>
+
+        <li>
+            C=O absorption → strong absorption around 1700 cm⁻¹.
+        </li>
+
+        <li>
+            C−H bonds → absorptions in the appropriate C−H region.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Mass Spectrometry
+    </h3>
+
+    <p>
+        Mass spectrometry can provide information about molecular
+        mass and fragmentation.
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            Molecular ion:
+        </strong>
+
+        <p>
+            The molecular ion peak can provide the relative molecular
+            mass of an organic compound.
+        </p>
+
+    </div>
+
+
+    <h3>
+        Using Spectra Together
+    </h3>
+
+    <p>
+        Different analytical techniques can be combined to identify
+        an unknown organic compound.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     PRACTICE
+========================================================= -->
+
+<section class="lesson" id="practice">
+
+    <p class="lesson-number">
+        PRACTICE
+    </p>
+
+    <h2>
+        Unit 2 Mixed Practice
+    </h2>
+
+    <p>
+        Try each question before opening the answer.
+    </p>
+
+
+    <div class="question">
+
+        <strong>
+            1. A reaction transfers 8.36 kJ of energy to 200 g
+            of water. Calculate the temperature rise.
+            Take c = 4.18 J g⁻¹ K⁻¹.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
 
             <p>
-                A reaction heats 100 g of water by 15 °C.
-                Take the specific heat capacity of water as
-                4.18 J g⁻¹ K⁻¹.
+                q = mcΔT
             </p>
 
-            <div class="formula">
-                q = 100 × 4.18 × 15 = 6270 J
+            <p>
+                8360 = 200 × 4.18 × ΔT
+            </p>
+
+            <p>
+                <strong>
+                    ΔT = 10.0 K
+                </strong>
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            2. Explain why boiling temperatures generally increase
+            as molecular size increases.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Larger molecules generally have more electrons and
+                are more polarizable, producing stronger London forces.
+                More energy is therefore required to separate the molecules.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            3. Explain why Group 1 reactivity increases down the group.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                The outer electron is further from the nucleus and
+                increasingly shielded by inner electron shells.
+                The attraction between the nucleus and outer electron
+                decreases, so the electron is lost more easily.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            4. Chlorine is added to potassium bromide solution.
+            Write the ionic equation.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            5. Explain why increasing temperature increases
+            reaction rate.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Particles have greater average kinetic energy.
+                A greater proportion of particles have energy greater
+                than the activation energy and successful collisions
+                occur more frequently.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            6. State what happens to a gaseous equilibrium when
+            pressure is increased.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                The equilibrium shifts towards the side with fewer
+                moles of gas, provided the two sides contain different
+                numbers of gaseous moles.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            7. Give the oxidation products of a primary alcohol.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                A primary alcohol can be oxidised to an aldehyde and
+                then further oxidised to a carboxylic acid.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            8. Write the reaction of bromoethane with aqueous
+            hydroxide ions.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                CH₃CH₂Br + OH⁻ → CH₃CH₂OH + Br⁻
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            9. Which halide ion gives a cream precipitate
+            with aqueous silver nitrate?
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Bromide ions, Br⁻.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            10. State the role of a catalyst in an equilibrium reaction.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                A catalyst provides an alternative pathway with lower
+                activation energy. It speeds up both the forward and
+                reverse reactions and does not change the equilibrium
+                position.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK REVIEW
+========================================================= -->
+
+<section class="lesson">
+
+    <p class="lesson-number">
+        QUICK REVIEW
+    </p>
+
+    <h2>
+        Unit 2 Key Ideas
+    </h2>
+
+
+    <div class="quick-review">
+
+
+        <div class="review-item">
+
+            <div class="review-icon">
+                ⚡
             </div>
 
             <p>
-                Therefore, 6.27 kJ of energy is transferred to the water.
+                q = mcΔT
             </p>
 
         </div>
 
-        <h3>Bond Enthalpy</h3>
 
-        <p>
-            Bond breaking requires energy, while bond formation releases
-            energy.
-        </p>
+        <div class="review-item">
 
-        <div class="formula">
-            ΔH = Σ(bonds broken) − Σ(bonds formed)
-        </div>
-
-        <h3>Hess's Law</h3>
-
-        <p>
-            Hess's Law states that the total enthalpy change for a reaction
-            is independent of the route taken between reactants and products.
-        </p>
-
-    </section>
-
-
-    <!-- INTERMOLECULAR FORCES -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 02</p>
-
-        <h2>Intermolecular Forces</h2>
-
-        <p>
-            Intermolecular forces act between molecules and influence
-            physical properties such as boiling point and melting point.
-        </p>
-
-        <h3>London Forces</h3>
-
-        <p>
-            London forces arise from temporary fluctuations in electron
-            density and occur between all atoms and molecules.
-        </p>
-
-        <p>
-            Larger molecules generally have stronger London forces because
-            they contain more electrons and have more easily polarised
-            electron clouds.
-        </p>
-
-        <h3>Permanent Dipole-Dipole Forces</h3>
-
-        <p>
-            These occur between polar molecules because of attractions
-            between permanent partial charges.
-        </p>
-
-        <h3>Hydrogen Bonding</h3>
-
-        <p>
-            Hydrogen bonding is a particularly strong intermolecular force
-            involving hydrogen bonded to a highly electronegative atom,
-            such as nitrogen, oxygen or fluorine.
-        </p>
-
-        <div class="definition">
-
-            <strong>Key idea:</strong>
+            <div class="review-icon">
+                🔗
+            </div>
 
             <p>
-                Stronger intermolecular forces generally require more energy
-                to overcome, leading to higher boiling temperatures.
+                ΔH = Σ bonds broken − Σ bonds formed
             </p>
 
         </div>
 
-    </section>
 
+        <div class="review-item">
 
-    <!-- REDOX -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 03</p>
-
-        <h2>Redox Chemistry</h2>
-
-        <p>
-            Redox reactions involve the transfer of electrons.
-        </p>
-
-        <h3>Oxidation and Reduction</h3>
-
-        <div class="definition">
-
-            <strong>Remember:</strong>
+            <div class="review-icon">
+                e⁻
+            </div>
 
             <p>
-                Oxidation is loss of electrons.
-                Reduction is gain of electrons.
+                Oxidation = loss of electrons.
+                Reduction = gain of electrons.
             </p>
 
         </div>
 
-        <div class="formula">
-            OIL RIG — Oxidation Is Loss, Reduction Is Gain
-        </div>
 
-        <h3>Oxidation Numbers</h3>
+        <div class="review-item">
 
-        <p>
-            Oxidation numbers can be used to identify oxidation and reduction
-            during chemical reactions.
-        </p>
-
-        <ul>
-
-            <li>Oxidation number increases → oxidation.</li>
-
-            <li>Oxidation number decreases → reduction.</li>
-
-        </ul>
-
-        <h3>Half Equations</h3>
-
-        <p>
-            Half equations show the electron transfer occurring during
-            oxidation or reduction.
-        </p>
-
-        <div class="formula">
-            Zn → Zn²⁺ + 2e⁻
-        </div>
-
-        <div class="formula">
-            Cu²⁺ + 2e⁻ → Cu
-        </div>
-
-    </section>
-
-
-    <!-- GROUP 1 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 04</p>
-
-        <h2>Group 1 — The Alkali Metals</h2>
-
-        <p>
-            Group 1 contains lithium, sodium, potassium and other alkali
-            metals.
-        </p>
-
-        <h3>Reactivity</h3>
-
-        <p>
-            Reactivity increases down the group because the outer electron
-            is further from the nucleus and is more easily removed.
-        </p>
-
-        <h3>Reaction with Water</h3>
-
-        <p>
-            Group 1 metals react with water to produce an alkaline solution
-            and hydrogen gas.
-        </p>
-
-        <div class="formula">
-            2Na + 2H₂O → 2NaOH + H₂
-        </div>
-
-        <h3>Reaction with Oxygen</h3>
-
-        <p>
-            Group 1 metals react with oxygen to form oxides and, for some
-            heavier members, other oxygen-containing compounds.
-        </p>
-
-    </section>
-
-
-    <!-- GROUP 2 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 05</p>
-
-        <h2>Group 2 — The Alkaline Earth Metals</h2>
-
-        <p>
-            Group 2 contains beryllium, magnesium, calcium, strontium,
-            barium and radium.
-        </p>
-
-        <h3>Reactivity</h3>
-
-        <p>
-            Reactivity generally increases down the group because the outer
-            electrons become easier to remove.
-        </p>
-
-        <h3>Reaction with Water</h3>
-
-        <p>
-            The reactions become more vigorous down the group.
-        </p>
-
-        <div class="formula">
-            Ca + 2H₂O → Ca(OH)₂ + H₂
-        </div>
-
-        <h3>Solubility of Hydroxides</h3>
-
-        <p>
-            The solubility of Group 2 hydroxides generally increases down
-            the group.
-        </p>
-
-        <h3>Solubility of Sulfates</h3>
-
-        <p>
-            The solubility of Group 2 sulfates generally decreases down
-            the group.
-        </p>
-
-    </section>
-
-
-    <!-- GROUP 7 -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 06</p>
-
-        <h2>Group 7 — The Halogens</h2>
-
-        <p>
-            Group 7 elements are reactive non-metals that exist as
-            diatomic molecules.
-        </p>
-
-        <div class="formula">
-            F₂ • Cl₂ • Br₂ • I₂
-        </div>
-
-        <h3>Reactivity</h3>
-
-        <p>
-            Reactivity decreases down the group because the outer shell
-            is further from the nucleus and attraction for an incoming
-            electron becomes weaker.
-        </p>
-
-        <h3>Displacement Reactions</h3>
-
-        <p>
-            A more reactive halogen can displace a less reactive halide
-            ion from solution.
-        </p>
-
-        <div class="formula">
-            Cl₂ + 2KBr → 2KCl + Br₂
-        </div>
-
-        <h3>Halide Ion Tests</h3>
-
-        <p>
-            Aqueous silver nitrate can be used to distinguish chloride,
-            bromide and iodide ions.
-        </p>
-
-        <ul>
-
-            <li>Chloride → white precipitate.</li>
-
-            <li>Bromide → cream precipitate.</li>
-
-            <li>Iodide → yellow precipitate.</li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- KINETICS -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 07</p>
-
-        <h2>Introduction to Kinetics</h2>
-
-        <p>
-            Kinetics concerns the rate at which chemical reactions occur.
-        </p>
-
-        <h3>Collision Theory</h3>
-
-        <p>
-            For a reaction to occur, particles must collide with sufficient
-            energy and with the appropriate orientation.
-        </p>
-
-        <h3>Activation Energy</h3>
-
-        <p>
-            Activation energy is the minimum energy required for a successful
-            reaction.
-        </p>
-
-        <div class="definition">
-
-            <strong>Important:</strong>
+            <div class="review-icon">
+                ↓
+            </div>
 
             <p>
-                A catalyst provides an alternative reaction pathway with
-                lower activation energy.
+                Group 1 reactivity increases down the group.
             </p>
 
         </div>
 
-        <h3>Factors Affecting Rate</h3>
 
-        <ul>
+        <div class="review-item">
 
-            <li>Temperature</li>
-
-            <li>Concentration</li>
-
-            <li>Pressure for gaseous reactions</li>
-
-            <li>Surface area of a solid</li>
-
-            <li>Presence of a catalyst</li>
-
-        </ul>
-
-        <h3>Maxwell-Boltzmann Distribution</h3>
-
-        <p>
-            Increasing temperature gives particles a greater average kinetic
-            energy and increases the proportion of particles with energy
-            greater than the activation energy.
-        </p>
-
-    </section>
-
-
-    <!-- EQUILIBRIA -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 08</p>
-
-        <h2>Introduction to Equilibria</h2>
-
-        <p>
-            A reversible reaction can reach a state of dynamic equilibrium.
-        </p>
-
-        <div class="formula">
-            Forward rate = Reverse rate
-        </div>
-
-        <p>
-            At equilibrium, the concentrations of reactants and products
-            remain constant, although both forward and reverse reactions
-            continue.
-        </p>
-
-        <h3>Le Chatelier's Principle</h3>
-
-        <p>
-            When a system at equilibrium is disturbed, the equilibrium
-            position shifts in the direction that opposes the change.
-        </p>
-
-        <h3>Temperature</h3>
-
-        <p>
-            Increasing temperature favours the endothermic direction.
-            Decreasing temperature favours the exothermic direction.
-        </p>
-
-        <h3>Pressure</h3>
-
-        <p>
-            For gaseous equilibria, increasing pressure favours the side
-            with fewer moles of gas.
-        </p>
-
-        <h3>Catalysts</h3>
-
-        <p>
-            A catalyst speeds up both forward and reverse reactions equally.
-            It does not change the equilibrium position.
-        </p>
-
-    </section>
-
-
-    <!-- ALCOHOLS -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 09</p>
-
-        <h2>Alcohols</h2>
-
-        <p>
-            Alcohols contain the hydroxyl functional group, −OH.
-        </p>
-
-        <div class="formula">
-            General functional group: R−OH
-        </div>
-
-        <h3>Classification</h3>
-
-        <ul>
-
-            <li>Primary alcohols</li>
-
-            <li>Secondary alcohols</li>
-
-            <li>Tertiary alcohols</li>
-
-        </ul>
-
-        <h3>Combustion</h3>
-
-        <p>
-            Alcohols can undergo complete combustion to form carbon dioxide
-            and water.
-        </p>
-
-        <div class="formula">
-            CH₃CH₂OH + 3O₂ → 2CO₂ + 3H₂O
-        </div>
-
-        <h3>Oxidation</h3>
-
-        <p>
-            Primary alcohols can be oxidised first to aldehydes and then
-            to carboxylic acids.
-        </p>
-
-        <div class="formula">
-            Primary alcohol → Aldehyde → Carboxylic acid
-        </div>
-
-        <p>
-            Secondary alcohols can be oxidised to ketones.
-            Tertiary alcohols are resistant to oxidation under typical
-            laboratory conditions.
-        </p>
-
-        <h3>Dehydration</h3>
-
-        <p>
-            Alcohols can undergo dehydration to form alkenes.
-        </p>
-
-        <div class="formula">
-            Alcohol → Alkene + H₂O
-        </div>
-
-    </section>
-
-
-    <!-- HALOGENOALKANES -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 10</p>
-
-        <h2>Halogenoalkanes</h2>
-
-        <p>
-            Halogenoalkanes contain a halogen atom bonded to a carbon atom.
-        </p>
-
-        <div class="formula">
-            R−X
-        </div>
-
-        <p>
-            where X may be F, Cl, Br or I.
-        </p>
-
-        <h3>Nucleophilic Substitution</h3>
-
-        <p>
-            Halogenoalkanes can react with nucleophiles in substitution
-            reactions.
-        </p>
-
-        <h3>Reaction with Aqueous Hydroxide</h3>
-
-        <p>
-            Aqueous hydroxide ions can replace the halogen atom to produce
-            an alcohol.
-        </p>
-
-        <div class="formula">
-            R−Br + OH⁻ → R−OH + Br⁻
-        </div>
-
-        <h3>Reaction with Cyanide</h3>
-
-        <p>
-            Cyanide ions can replace the halogen and increase the carbon
-            chain by one carbon atom.
-        </p>
-
-        <div class="formula">
-            R−Br + CN⁻ → R−CN + Br⁻
-        </div>
-
-        <h3>Reaction with Ammonia</h3>
-
-        <p>
-            Halogenoalkanes can react with ammonia to form amines.
-        </p>
-
-        <h3>Hydrolysis</h3>
-
-        <p>
-            The rate of hydrolysis depends on the carbon-halogen bond.
-            Iodoalkanes generally hydrolyse more readily than bromoalkanes,
-            which hydrolyse more readily than chloroalkanes.
-        </p>
-
-    </section>
-
-
-    <!-- SPECTROSCOPY -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">TOPIC 11</p>
-
-        <h2>Organic Spectra</h2>
-
-        <p>
-            Spectroscopic techniques provide information that can be used
-            to identify organic compounds.
-        </p>
-
-        <h3>Infrared Spectroscopy</h3>
-
-        <p>
-            Infrared spectroscopy can be used to identify functional groups
-            from characteristic absorption regions.
-        </p>
-
-        <ul>
-
-            <li>O−H absorption → broad absorption at higher wavenumbers.</li>
-
-            <li>C=O absorption → strong absorption around 1700 cm⁻¹.</li>
-
-            <li>C−H bonds → absorptions in the appropriate C−H region.</li>
-
-        </ul>
-
-        <h3>Mass Spectrometry</h3>
-
-        <p>
-            Mass spectrometry can provide information about molecular mass
-            and fragmentation.
-        </p>
-
-        <div class="definition">
-
-            <strong>Molecular ion:</strong>
+            <div class="review-icon">
+                ↓
+            </div>
 
             <p>
-                The molecular ion peak can provide the relative molecular
-                mass of an organic compound.
+                Group 7 reactivity decreases down the group.
             </p>
 
         </div>
 
-        <h3>Using Spectra Together</h3>
 
-        <p>
-            Different analytical techniques can be combined to identify
-            an unknown organic compound.
-        </p>
+        <div class="review-item">
 
-    </section>
+            <div class="review-icon">
+                ⇌
+            </div>
 
-
-    <!-- MIXED PRACTICE -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">PRACTICE</p>
-
-        <h2>Unit 2 Mixed Practice</h2>
-
-
-        <div class="question">
-
-            <strong>
-                1. A reaction transfers 8.36 kJ of energy to 200 g of water.
-                Calculate the temperature rise. Take c = 4.18 J g⁻¹ K⁻¹.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    q = mcΔT
-                </p>
-
-                <p>
-                    8360 = 200 × 4.18 × ΔT
-                </p>
-
-                <p>
-                    ΔT = 10.0 K
-                </p>
-
-            </details>
+            <p>
+                At dynamic equilibrium,
+                forward rate = reverse rate.
+            </p>
 
         </div>
 
 
-        <div class="question">
+        <div class="review-item">
 
-            <strong>
-                2. Explain why boiling temperatures generally increase
-                as the size of molecules increases.
-            </strong>
+            <div class="review-icon">
+                OH
+            </div>
 
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Larger molecules generally have more electrons and
-                    are more polarizable, producing stronger London forces.
-                    More energy is therefore required to separate the molecules.
-                </p>
-
-            </details>
+            <p>
+                Primary alcohol → aldehyde → carboxylic acid.
+            </p>
 
         </div>
 
 
-        <div class="question">
+        <div class="review-item">
 
-            <strong>
-                3. Explain why the reactivity of Group 1 metals increases
-                down the group.
-            </strong>
+            <div class="review-icon">
+                X
+            </div>
 
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    The outer electron is further from the nucleus and is
-                    increasingly shielded by inner electron shells.
-                    The attraction between the nucleus and outer electron
-                    decreases, so the electron is lost more easily.
-                </p>
-
-            </details>
+            <p>
+                R−X + OH⁻ → R−OH + X⁻
+            </p>
 
         </div>
 
 
-        <div class="question">
+    </div>
 
-            <strong>
-                4. Chlorine is added to potassium bromide solution.
-                Write the ionic equation.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                5. Explain why increasing temperature increases reaction rate.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Particles have greater average kinetic energy.
-                    Collisions occur more frequently and a greater proportion
-                    of particles have energy greater than the activation energy.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                6. State what happens to an equilibrium when pressure is
-                increased in a gaseous reaction.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    The equilibrium shifts towards the side with fewer
-                    moles of gas, provided the two sides contain different
-                    numbers of gaseous moles.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                7. Give the oxidation products of a primary alcohol.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    A primary alcohol can be oxidised to an aldehyde and
-                    then further oxidised to a carboxylic acid.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                8. Write the reaction of bromoethane with aqueous hydroxide ions.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    CH₃CH₂Br + OH⁻ → CH₃CH₂OH + Br⁻
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                9. Which halide ion gives a cream precipitate with
-                aqueous silver nitrate?
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    Bromide ions, Br⁻.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <div class="question">
-
-            <strong>
-                10. State the role of a catalyst in an equilibrium reaction.
-            </strong>
-
-            <details>
-
-                <summary>Show answer</summary>
-
-                <p>
-                    A catalyst provides an alternative pathway with lower
-                    activation energy. It speeds up both the forward and
-                    reverse reactions and does not change the equilibrium position.
-                </p>
-
-            </details>
-
-        </div>
-
-
-    </section>
-
-
-    <!-- QUICK REVIEW -->
-
-    <section class="lesson">
-
-        <p class="lesson-number">QUICK REVIEW</p>
-
-        <h2>Unit 2 Key Ideas</h2>
-
-        <div class="formula">
-            q = mcΔT
-        </div>
-
-        <div class="formula">
-            ΔH = Σ(bonds broken) − Σ(bonds formed)
-        </div>
-
-        <div class="formula">
-            Oxidation = Loss of electrons • Reduction = Gain of electrons
-        </div>
-
-        <div class="formula">
-            Group 1 reactivity ↑ down the group
-        </div>
-
-        <div class="formula">
-            Group 7 reactivity ↓ down the group
-        </div>
-
-        <div class="formula">
-            Forward rate = Reverse rate at dynamic equilibrium
-        </div>
-
-        <div class="formula">
-            Primary alcohol → Aldehyde → Carboxylic acid
-        </div>
-
-        <div class="formula">
-            R−X + OH⁻ → R−OH + X⁻
-        </div>
-
-    </section>
+</section>
 
 
 </main>
 
 
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <div class="navigation">
 
-    <a href="chemistry.html" class="button">
+    <a href="chemistry.html"
+       class="button">
+
         ← Back to Chemistry
+
     </a>
 
-    <a href="index.html" class="button">
+
+    <a href="chemistry-1.html"
+       class="button">
+
+        ← Chemistry Unit 1
+
+    </a>
+
+
+    <a href="chemistry-3.html"
+       class="button primary-nav">
+
+        Chemistry Unit 3 →
+
+    </a>
+
+
+    <a href="index.html"
+       class="button">
+
         Home
+
     </a>
 
 </div>
@@ -1233,12 +4110,205 @@
 
 <footer>
 
-    © 2026 IAL ATLAS • Independent student resource • Not affiliated with Pearson
+    <div class="footer-logo">
+        IAL <span>ATLAS</span>
+    </div>
+
+    <p>
+        © 2026 IAL ATLAS • Independent student resource
+        • Not affiliated with Pearson
+    </p>
 
 </footer>
 
 
+<script>
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progress").style.width =
+        progress + "%";
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const lessons =
+    document.querySelectorAll(".lesson");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.08
+        }
+    );
+
+
+lessons.forEach(lesson => {
+
+    observer.observe(lesson);
+
+});
+
+
+/* =========================================================
+   TOPIC NAV ACTIVE STATE
+========================================================= */
+
+const sections =
+    document.querySelectorAll(
+        ".lesson[id]"
+    );
+
+const navLinks =
+    document.querySelectorAll(
+        ".topic-nav a"
+    );
+
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 160;
+
+        if(
+            window.scrollY >= sectionTop
+        ){
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.style.background = "";
+
+        link.style.color = "";
+
+        if(
+            link.getAttribute("href") ===
+            "#" + current
+        ){
+
+            link.style.background =
+                "rgba(50,169,232,.14)";
+
+            link.style.color =
+                "#ffffff";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   SMOOTH BUTTON FEEDBACK
+========================================================= */
+
+document.querySelectorAll(
+    ".hero-button, .button"
+).forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            button.style.transform =
+                "scale(.96)";
+
+            setTimeout(() => {
+
+                button.style.transform = "";
+
+            },150);
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   DYNAMIC MOLECULE MOVEMENT
+========================================================= */
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        const x =
+            (event.clientX /
+            window.innerWidth - .5) * 12;
+
+        const y =
+            (event.clientY /
+            window.innerHeight - .5) * 12;
+
+        document.querySelectorAll(
+            ".molecule"
+        ).forEach((molecule,index) => {
+
+            const multiplier =
+                index === 0 ? 1 : -1;
+
+            molecule.style.marginLeft =
+                (x * multiplier) + "px";
+
+            molecule.style.marginTop =
+                (y * multiplier) + "px";
+
+        });
+
+    }
+);
+
+</script>
+
+
 </body>
 </html>
+
 
 
