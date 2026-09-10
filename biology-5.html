@@ -1,0 +1,4536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biology Unit 5 | IAL ATLAS</title>
+
+<meta name="description"
+content="Edexcel International A Level Biology Unit 5 notes covering respiration, muscles, the internal environment, coordination, nervous communication, the brain, gene technology and plant responses.">
+
+<meta name="keywords"
+content="Edexcel IAL Biology Unit 5, WBI15, respiration, muscles, internal environment, coordination, gene technology, nervous system, brain, genetic engineering">
+
+<meta name="theme-color" content="#05070d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   IAL ATLAS — BIOLOGY UNIT 5
+   RESPIRATION • INTERNAL ENVIRONMENT •
+   COORDINATION • GENE TECHNOLOGY
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    color:#edf5ff;
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(77,155,255,.11),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(92,255,196,.07),
+            transparent 32%
+        ),
+        #05070d;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    pointer-events:none;
+
+    opacity:.15;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    background:
+        radial-gradient(
+            circle at var(--mx,50%) var(--my,50%),
+            rgba(75,190,255,.09),
+            transparent 25%
+        );
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+#progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:3px;
+
+    z-index:9999;
+
+    background:
+        linear-gradient(
+            90deg,
+            #62d7ff,
+            #8b8cff,
+            #6affca
+        );
+
+    box-shadow:
+        0 0 18px rgba(80,200,255,.8);
+}
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+.particle{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:rgba(110,210,255,.7);
+
+    box-shadow:
+        0 0 8px rgba(100,210,255,.55);
+
+    animation:
+        particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    85%{
+        opacity:.8;
+    }
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:
+        rgba(5,7,13,.74);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.header-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:16px 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.logo{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:#fff;
+}
+
+.logo span{
+    color:#6bd5ff;
+}
+
+.back{
+
+    text-decoration:none;
+
+    color:#a9bbd2;
+
+    padding:8px 15px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:999px;
+
+    transition:.3s;
+
+    font-size:.88rem;
+}
+
+.back:hover{
+
+    color:#fff;
+
+    border-color:
+        rgba(100,210,255,.45);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(70,180,255,.15);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+
+    min-height:720px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:
+        90px 20px 70px;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:680px;
+    height:680px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(90,190,255,.09);
+
+    box-shadow:
+        0 0 100px rgba(70,170,255,.06),
+        inset 0 0 100px rgba(70,170,255,.04);
+
+    animation:
+        orbit 20s linear infinite;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:150px;
+
+    border:
+        1px solid rgba(100,255,200,.13);
+
+    border-radius:50%;
+
+    transform:rotate(-28deg);
+
+    animation:
+        orbitReverse 15s linear infinite;
+}
+
+@keyframes orbit{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes orbitReverse{
+
+    to{
+        transform:rotate(-385deg);
+    }
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:950px;
+}
+
+.eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:8px 16px;
+
+    margin-bottom:25px;
+
+    border-radius:999px;
+
+    background:
+        rgba(90,190,255,.08);
+
+    border:
+        1px solid rgba(90,190,255,.18);
+
+    color:#8cddff;
+
+    font-size:.80rem;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+}
+
+.eyebrow::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#6ad9ff;
+
+    box-shadow:
+        0 0 13px #6ad9ff;
+}
+
+.hero h1{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(3rem,8vw,6.5rem);
+
+    line-height:.95;
+
+    letter-spacing:-4px;
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #91dcff,
+            #9e92ff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-subtitle{
+
+    max-width:780px;
+
+    margin:auto;
+
+    color:#a9b9cf;
+
+    font-size:1.05rem;
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+
+    max-width:850px;
+
+    margin:45px auto 0;
+}
+
+.stat{
+
+    padding:18px 10px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:16px;
+
+    backdrop-filter:blur(15px);
+}
+
+.stat strong{
+
+    display:block;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.35rem;
+
+    color:#f3f8ff;
+}
+
+.stat span{
+
+    color:#8091aa;
+
+    font-size:.75rem;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:
+        30px 20px 100px;
+}
+
+
+/* =========================================================
+   TOPIC NAV
+   ========================================================= */
+
+.topic-nav{
+
+    position:sticky;
+
+    top:73px;
+
+    z-index:900;
+
+    display:flex;
+
+    gap:8px;
+
+    overflow-x:auto;
+
+    padding:12px;
+
+    margin-bottom:35px;
+
+    background:
+        rgba(8,12,21,.76);
+
+    backdrop-filter:blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+}
+
+.topic-nav::-webkit-scrollbar{
+    height:3px;
+}
+
+.topic-nav a{
+
+    white-space:nowrap;
+
+    text-decoration:none;
+
+    color:#92a4bd;
+
+    padding:9px 13px;
+
+    border-radius:10px;
+
+    font-size:.81rem;
+
+    transition:.3s;
+}
+
+.topic-nav a:hover{
+
+    color:#fff;
+
+    background:
+        rgba(100,190,255,.08);
+}
+
+
+/* =========================================================
+   LESSON
+   ========================================================= */
+
+.lesson{
+
+    position:relative;
+
+    margin:30px 0;
+
+    padding:34px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
+
+    border-radius:24px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .3s ease;
+}
+
+.lesson::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #68ceff,
+            transparent
+        );
+
+    opacity:.45;
+}
+
+.lesson:hover{
+
+    border-color:
+        rgba(100,200,255,.13);
+}
+
+.lesson-number{
+
+    color:#6bd1ff;
+
+    font-size:.74rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.lesson h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(1.7rem,4vw,2.5rem);
+
+    margin-bottom:18px;
+}
+
+.lesson h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    margin:28px 0 10px;
+
+    color:#9cdeff;
+}
+
+.lesson h4{
+
+    margin:20px 0 7px;
+
+    color:#dbeaff;
+}
+
+.lesson p{
+
+    color:#aebdd0;
+
+    margin:10px 0;
+}
+
+.lesson ul,
+.lesson ol{
+
+    padding-left:22px;
+
+    color:#aebdd0;
+}
+
+.lesson li{
+    margin:7px 0;
+}
+
+
+/* =========================================================
+   CONTENT BOXES
+   ========================================================= */
+
+.definition,
+.formula,
+.example,
+.warning,
+.tip,
+.method{
+
+    margin:20px 0;
+
+    padding:18px 20px;
+
+    border-radius:15px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.definition{
+    border-left:3px solid #6bcfff;
+}
+
+.formula{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-left:3px solid #988aff;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    color:#ebe7ff;
+}
+
+.formula::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b7adff,
+            transparent
+        );
+
+    animation:
+        scan 4s linear infinite;
+}
+
+@keyframes scan{
+
+    to{
+        left:100%;
+    }
+}
+
+.example{
+    border-left:3px solid #67e4be;
+}
+
+.example-title{
+
+    color:#70e8c7;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+}
+
+.solution{
+    color:#c3d1e3;
+}
+
+.warning{
+    border-left:3px solid #ffba69;
+}
+
+.tip{
+    border-left:3px solid #78a8ff;
+}
+
+.method{
+    border-left:3px solid #82ffc7;
+}
+
+
+/* =========================================================
+   GRIDS
+   ========================================================= */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.mini-card{
+
+    padding:20px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:17px;
+}
+
+.mini-card h4{
+
+    margin-top:0;
+
+    color:#8fdcff;
+}
+
+
+/* =========================================================
+   BIOLOGICAL PROCESS VISUAL
+   ========================================================= */
+
+.process-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin:30px 0;
+}
+
+.process-node{
+
+    min-width:135px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border:
+        1px solid rgba(100,200,255,.13);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:18px;
+
+    color:#b9cce2;
+}
+
+.process-node strong{
+
+    display:block;
+
+    color:#8edcff;
+
+    margin-bottom:5px;
+}
+
+.process-arrow{
+
+    color:#68d8ff;
+
+    font-size:1.4rem;
+
+    animation:
+        arrowPulse 1.7s ease-in-out infinite;
+}
+
+@keyframes arrowPulse{
+
+    50%{
+        transform:translateX(5px);
+        opacity:.5;
+    }
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-wrap{
+
+    overflow-x:auto;
+
+    margin:20px 0;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:600px;
+}
+
+th,
+td{
+
+    padding:12px 14px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    text-align:left;
+}
+
+th{
+
+    background:
+        rgba(100,190,255,.08);
+
+    color:#cceeff;
+}
+
+td{
+
+    color:#aebdd0;
+}
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.question{
+
+    margin:18px 0;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid rgba(255,255,255,.07);
+}
+
+.question strong{
+    color:#eaf4ff;
+}
+
+details{
+    margin-top:12px;
+}
+
+summary{
+
+    cursor:pointer;
+
+    color:#78d8ff;
+
+    font-weight:700;
+}
+
+details p{
+    margin-top:10px;
+}
+
+
+/* =========================================================
+   QUICK REVIEW
+   ========================================================= */
+
+.quick-review{
+
+    margin-top:45px;
+
+    padding:32px;
+
+    border-radius:25px;
+
+    border:
+        1px solid rgba(120,200,255,.16);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(100,190,255,.08),
+            transparent 40%
+        ),
+        rgba(255,255,255,.025);
+}
+
+.quick-review h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    margin-bottom:15px;
+}
+
+.review-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+}
+
+.review-item{
+
+    padding:12px 14px;
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    border-radius:12px;
+
+    color:#aebdd0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:55px;
+}
+
+.button{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#dcecff;
+
+    padding:12px 18px;
+
+    border-radius:13px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition:.3s;
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(100,200,255,.4);
+
+    box-shadow:
+        0 10px 30px rgba(50,150,255,.12);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    color:#62738a;
+
+    font-size:.85rem;
+}
+
+footer strong{
+    color:#a7cfff;
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-2,
+    .grid-3,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:620px;
+    }
+
+    .hero::before{
+        width:430px;
+        height:430px;
+    }
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        padding:13px 16px;
+    }
+
+    .hero{
+        padding:70px 15px 50px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .topic-nav{
+        top:62px;
+    }
+
+    .container{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .lesson{
+        padding:24px 20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .button{
+        text-align:center;
+    }
+
+    .process-arrow{
+        transform:rotate(90deg);
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.001ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.001ms !important;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="progress"></div>
+
+<div id="particles"></div>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+            IAL <span>ATLAS</span>
+        </div>
+
+        <a class="back" href="biology.html">
+            ← Biology
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Edexcel International A Level Biology
+        </div>
+
+        <h1>Unit 5</h1>
+
+        <p class="hero-subtitle">
+
+            Respiration, Internal Environment, Coordination
+            and Gene Technology — from ATP production and
+            muscle contraction to nervous communication,
+            homeostasis and modern biotechnology.
+
+        </p>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>WBI15</strong>
+                <span>Unit Code</span>
+            </div>
+
+            <div class="stat">
+                <strong>90</strong>
+                <span>Marks</span>
+            </div>
+
+            <div class="stat">
+                <strong>1h 45m</strong>
+                <span>Exam</span>
+            </div>
+
+            <div class="stat">
+                <strong>2</strong>
+                <span>Major Topics</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     TOPIC NAV
+     ===================================================== -->
+
+<nav class="topic-nav">
+
+    <a href="#overview">Overview</a>
+
+    <a href="#respiration">Respiration</a>
+
+    <a href="#muscles">Muscles</a>
+
+    <a href="#heart">Cardiac System</a>
+
+    <a href="#exercise">Exercise</a>
+
+    <a href="#homeostasis">Homeostasis</a>
+
+    <a href="#kidney">Kidney</a>
+
+    <a href="#nervous">Nervous System</a>
+
+    <a href="#synapses">Synapses</a>
+
+    <a href="#eye">Eye</a>
+
+    <a href="#brain">Brain</a>
+
+    <a href="#gene">Gene Technology</a>
+
+    <a href="#plants">Plant Responses</a>
+
+    <a href="#practice">Practice</a>
+
+    <a href="#review">Review</a>
+
+</nav>
+
+
+<!-- =====================================================
+     OVERVIEW
+     ===================================================== -->
+
+<section class="lesson reveal" id="overview">
+
+    <div class="lesson-number">
+        01 — Unit Overview
+    </div>
+
+    <h2>
+        Respiration, Internal Environment,
+        Coordination and Gene Technology
+    </h2>
+
+    <p>
+
+        Unit 5 is the second major A2 Biology unit.
+        It connects cellular respiration with movement,
+        cardiovascular and respiratory physiology,
+        homeostasis, nervous coordination and modern
+        genetic technology.
+
+    </p>
+
+
+    <div class="definition">
+
+        <strong>Topic 7</strong> — Respiration, Muscles
+        and the Internal Environment
+
+        <br><br>
+
+        <strong>Topic 8</strong> — Coordination,
+        Response and Gene Technology
+
+    </div>
+
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>Glucose</strong>
+
+            Respiratory substrate
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>ATP</strong>
+
+            Immediate energy
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Movement</strong>
+
+            Muscle contraction
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Coordination</strong>
+
+            Nervous + hormonal
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        What you need to master
+    </h3>
+
+    <ul>
+
+        <li>
+            Glycolysis
+        </li>
+
+        <li>
+            Link reaction and Krebs cycle
+        </li>
+
+        <li>
+            Oxidative phosphorylation
+        </li>
+
+        <li>
+            Anaerobic respiration
+        </li>
+
+        <li>
+            Skeletal muscle structure
+        </li>
+
+        <li>
+            Sliding filament mechanism
+        </li>
+
+        <li>
+            Cardiac muscle and cardiac output
+        </li>
+
+        <li>
+            Gas exchange and exercise
+        </li>
+
+        <li>
+            Homeostasis and negative feedback
+        </li>
+
+        <li>
+            Kidney and osmoregulation
+        </li>
+
+        <li>
+            Neurones and action potentials
+        </li>
+
+        <li>
+            Synapses and neurotransmitters
+        </li>
+
+        <li>
+            The mammalian eye
+        </li>
+
+        <li>
+            Brain structure and imaging
+        </li>
+
+        <li>
+            Gene technology
+        </li>
+
+        <li>
+            Plant responses
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     RESPIRATION
+     ===================================================== -->
+
+<section class="lesson reveal" id="respiration">
+
+    <div class="lesson-number">
+        02 — Topic 7
+    </div>
+
+    <h2>
+        Cellular Respiration
+    </h2>
+
+    <p>
+
+        Respiration transfers chemical energy from
+        organic molecules into ATP, which can then
+        power cellular processes.
+
+    </p>
+
+
+    <div class="formula">
+
+        <strong>
+            C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O
+        </strong>
+
+        <br><br>
+
+        Energy is released and transferred to ATP.
+
+    </div>
+
+
+    <h3>
+        Stages of aerobic respiration
+    </h3>
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>1</strong>
+
+            Glycolysis
+
+            <br>
+
+            Cytoplasm
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>2</strong>
+
+            Link reaction
+
+            <br>
+
+            Matrix
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>3</strong>
+
+            Krebs cycle
+
+            <br>
+
+            Matrix
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>4</strong>
+
+            Oxidative phosphorylation
+
+            <br>
+
+            Inner membrane
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Glycolysis
+    </h3>
+
+    <p>
+
+        Glycolysis takes place in the cytoplasm and
+        involves the phosphorylation and subsequent
+        splitting of glucose.
+
+    </p>
+
+    <ul>
+
+        <li>
+            Glucose is phosphorylated.
+        </li>
+
+        <li>
+            A six-carbon intermediate is split into
+            two three-carbon molecules.
+        </li>
+
+        <li>
+            The three-carbon molecules are oxidised.
+        </li>
+
+        <li>
+            Pyruvate is produced.
+        </li>
+
+        <li>
+            Reduced NAD is produced.
+        </li>
+
+        <li>
+            There is a net gain of ATP.
+        </li>
+
+    </ul>
+
+
+    <div class="formula">
+
+        <strong>
+            Net ATP gain from glycolysis = 2 ATP
+        </strong>
+
+        <br><br>
+
+        <strong>
+            Reduced NAD = 2 molecules per glucose
+        </strong>
+
+    </div>
+
+
+    <h3>
+        Link reaction
+    </h3>
+
+    <p>
+
+        Pyruvate enters the mitochondrial matrix and
+        is converted into acetyl coenzyme A.
+
+    </p>
+
+    <ol>
+
+        <li>
+            Pyruvate is decarboxylated.
+        </li>
+
+        <li>
+            Hydrogen is removed.
+        </li>
+
+        <li>
+            NAD is reduced.
+        </li>
+
+        <li>
+            The remaining two-carbon acetyl group
+            combines with coenzyme A.
+        </li>
+
+    </ol>
+
+
+    <div class="formula">
+
+        Pyruvate → Acetyl CoA + CO₂ + reduced NAD
+
+    </div>
+
+
+    <h3>
+        Krebs cycle
+    </h3>
+
+    <p>
+
+        Acetyl CoA enters the Krebs cycle. The cycle
+        produces carbon dioxide, reduced coenzymes
+        and ATP.
+
+    </p>
+
+
+    <div class="grid-3">
+
+        <div class="mini-card">
+
+            <h4>CO₂</h4>
+
+            <p>
+                Released during decarboxylation.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Reduced NAD / FAD</h4>
+
+            <p>
+                Carry hydrogen/electrons to the electron
+                transport chain.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>ATP</h4>
+
+            <p>
+                Produced by substrate-level phosphorylation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Oxidative phosphorylation
+    </h3>
+
+    <p>
+
+        Reduced NAD and reduced FAD donate electrons
+        to electron carriers in the inner mitochondrial
+        membrane.
+
+    </p>
+
+    <ol>
+
+        <li>
+            Electrons pass along the electron transport chain.
+        </li>
+
+        <li>
+            Energy released pumps protons across the
+            inner mitochondrial membrane.
+        </li>
+
+        <li>
+            A proton concentration gradient forms.
+        </li>
+
+        <li>
+            Protons flow through ATP synthase.
+        </li>
+
+        <li>
+            ATP is produced by chemiosmosis.
+        </li>
+
+        <li>
+            Oxygen acts as the final electron acceptor.
+        </li>
+
+        <li>
+            Water is formed.
+        </li>
+
+    </ol>
+
+
+    <div class="definition">
+
+        <strong>
+            Oxidative phosphorylation:
+        </strong>
+
+        ATP production associated with the oxidation
+        of reduced coenzymes through the electron
+        transport chain.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ANAEROBIC
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        03 — Anaerobic Respiration
+    </div>
+
+    <h2>
+        Anaerobic Respiration
+    </h2>
+
+    <p>
+
+        When oxygen availability is insufficient,
+        cells cannot maintain aerobic respiration
+        at the required rate.
+
+    </p>
+
+
+    <h3>
+        In animal cells
+    </h3>
+
+    <div class="formula">
+
+        Glucose → Lactate + small ATP yield
+
+    </div>
+
+
+    <p>
+
+        Lactate can accumulate during intense exercise
+        and is later transported and metabolised when
+        oxygen availability increases.
+
+    </p>
+
+
+    <h3>
+        In yeast
+    </h3>
+
+    <div class="formula">
+
+        Glucose → Ethanol + CO₂ + ATP
+
+    </div>
+
+
+    <div class="warning">
+
+        Anaerobic respiration produces much less ATP
+        per glucose molecule than aerobic respiration.
+
+    </div>
+
+
+    <h3>
+        Respiratory quotient
+    </h3>
+
+    <div class="formula">
+
+        <strong>
+            RQ = CO₂ produced ÷ O₂ consumed
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MUSCLES
+     ===================================================== -->
+
+<section class="lesson reveal" id="muscles">
+
+    <div class="lesson-number">
+        04 — Muscles
+    </div>
+
+    <h2>
+        Skeletal Muscle and Movement
+    </h2>
+
+
+    <h3>
+        Organisation
+    </h3>
+
+    <div class="process-flow">
+
+        <div class="process-node">
+            <strong>Muscle</strong>
+            Fascicles
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+            <strong>Fibre</strong>
+            Muscle cell
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+            <strong>Myofibril</strong>
+            Contractile structure
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+            <strong>Sarcomere</strong>
+            Functional unit
+        </div>
+
+    </div>
+
+
+    <h3>
+        Sliding filament mechanism
+    </h3>
+
+    <p>
+
+        Muscle contraction occurs when actin filaments
+        slide over myosin filaments, shortening the
+        sarcomere.
+
+    </p>
+
+
+    <ol>
+
+        <li>
+            A motor neurone stimulates the muscle fibre.
+        </li>
+
+        <li>
+            Calcium ions are released.
+        </li>
+
+        <li>
+            Calcium binds to troponin.
+        </li>
+
+        <li>
+            Tropomyosin moves away from actin's binding sites.
+        </li>
+
+        <li>
+            Myosin heads attach to actin.
+        </li>
+
+        <li>
+            Myosin heads pivot, pulling actin.
+        </li>
+
+        <li>
+            ATP allows the myosin head to detach and reset.
+        </li>
+
+    </ol>
+
+
+    <div class="formula">
+
+        ATP is required for:
+
+        <br><br>
+
+        • detachment of myosin heads
+
+        <br>
+
+        • re-cocking of myosin heads
+
+        <br>
+
+        • active transport of calcium ions
+
+    </div>
+
+
+    <h3>
+        Antagonistic muscle pairs
+    </h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Flexor</h4>
+
+            <p>
+                Contracts to decrease the angle at a joint.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Extensor</h4>
+
+            <p>
+                Contracts to increase the angle at a joint.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HEART
+     ===================================================== -->
+
+<section class="lesson reveal" id="heart">
+
+    <div class="lesson-number">
+        05 — Cardiovascular System
+    </div>
+
+    <h2>
+        Cardiac Muscle and Cardiac Output
+    </h2>
+
+
+    <h3>
+        Cardiac muscle
+    </h3>
+
+    <p>
+
+        Cardiac muscle is specialised for continuous,
+        rhythmic contraction and has a rich blood supply
+        to support its high energy demand.
+
+    </p>
+
+
+    <h3>
+        Myogenic contraction
+    </h3>
+
+    <p>
+
+        The heart is myogenic: the contraction rhythm
+        originates within the cardiac muscle itself.
+
+    </p>
+
+
+    <h3>
+        Cardiac cycle
+    </h3>
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>Atrial systole</strong>
+
+            Atria contract
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Ventricular systole</strong>
+
+            Ventricles contract
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Diastole</strong>
+
+            Heart relaxes
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Cardiac output
+    </h3>
+
+    <div class="formula">
+
+        <strong>
+            Cardiac output =
+            heart rate × stroke volume
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            Worked Example
+        </div>
+
+        <p>
+
+            A person has a heart rate of
+            75 beats min⁻¹ and a stroke volume
+            of 80 cm³.
+
+        </p>
+
+        <div class="solution">
+
+            Cardiac output
+
+            <br><br>
+
+            = 75 × 80
+
+            <br>
+
+            = 6000 cm³ min⁻¹
+
+            <br><br>
+
+            = 6.0 dm³ min⁻¹
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        The role of valves
+    </h3>
+
+    <p>
+
+        Valves prevent the backflow of blood and ensure
+        that blood flows through the heart in the correct
+        direction.
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     EXERCISE
+     ===================================================== -->
+
+<section class="lesson reveal" id="exercise">
+
+    <div class="lesson-number">
+        06 — Exercise Physiology
+    </div>
+
+    <h2>
+        Exercise and Gas Exchange
+    </h2>
+
+
+    <h3>
+        During exercise
+    </h3>
+
+    <ul>
+
+        <li>
+            Muscle ATP demand increases.
+        </li>
+
+        <li>
+            Rate of respiration increases.
+        </li>
+
+        <li>
+            Oxygen demand increases.
+        </li>
+
+        <li>
+            Carbon dioxide production increases.
+        </li>
+
+        <li>
+            Heart rate increases.
+        </li>
+
+        <li>
+            Ventilation increases.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Respiratory minute ventilation
+    </h3>
+
+    <div class="formula">
+
+        <strong>
+            Minute ventilation =
+            breathing rate × tidal volume
+        </strong>
+
+    </div>
+
+
+    <div class="example">
+
+        <div class="example-title">
+            Worked Example
+        </div>
+
+        <p>
+
+            Breathing rate = 20 breaths min⁻¹
+
+            <br>
+
+            Tidal volume = 2.5 dm³
+
+        </p>
+
+        <div class="solution">
+
+            Minute ventilation
+
+            <br><br>
+
+            = 20 × 2.5
+
+            <br>
+
+            = 50 dm³ min⁻¹
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Oxygen debt
+    </h3>
+
+    <p>
+
+        After intense exercise, oxygen consumption
+        can remain elevated while the body restores
+        normal physiological conditions and processes
+        accumulated metabolic products.
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     HOMEOSTASIS
+     ===================================================== -->
+
+<section class="lesson reveal" id="homeostasis">
+
+    <div class="lesson-number">
+        07 — Internal Environment
+    </div>
+
+    <h2>
+        Homeostasis and Negative Feedback
+    </h2>
+
+
+    <div class="definition">
+
+        <strong>
+            Homeostasis:
+        </strong>
+
+        Maintenance of a relatively stable internal
+        environment despite external or internal changes.
+
+    </div>
+
+
+    <h3>
+        Negative feedback
+    </h3>
+
+    <p>
+
+        Negative feedback reverses a change and returns
+        a variable towards its set point or normal range.
+
+    </p>
+
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>Stimulus</strong>
+
+            Variable changes
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Receptor</strong>
+
+            Detects change
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Coordinator</strong>
+
+            Processes information
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Effector</strong>
+
+            Produces response
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Blood glucose regulation
+    </h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>High blood glucose</h4>
+
+            <p>
+
+                Pancreatic β cells release insulin.
+                Cells increase glucose uptake and the
+                liver converts glucose into glycogen.
+
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Low blood glucose</h4>
+
+            <p>
+
+                Pancreatic α cells release glucagon.
+                Glycogen is broken down and glucose is
+                released into the blood.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula">
+
+        <strong>
+            Insulin → lowers blood glucose
+        </strong>
+
+        <br><br>
+
+        <strong>
+            Glucagon → raises blood glucose
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     KIDNEY
+     ===================================================== -->
+
+<section class="lesson reveal" id="kidney">
+
+    <div class="lesson-number">
+        08 — Excretion and Osmoregulation
+    </div>
+
+    <h2>
+        Liver, Kidney and Internal Environment
+    </h2>
+
+
+    <h3>
+        Deamination
+    </h3>
+
+    <p>
+
+        Excess amino acids cannot simply be stored.
+        Their amino groups are removed in the liver.
+
+    </p>
+
+
+    <div class="formula">
+
+        Amino acid → ammonia → urea
+
+    </div>
+
+
+    <p>
+
+        Urea is transported in the blood to the kidneys
+        for excretion.
+
+    </p>
+
+
+    <h3>
+        Nephron structure
+    </h3>
+
+    <div class="grid-3">
+
+        <div class="mini-card">
+
+            <h4>Glomerulus</h4>
+
+            <p>
+                Network of capillaries where ultrafiltration
+                occurs.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Bowman's capsule</h4>
+
+            <p>
+                Collects the filtrate produced by
+                ultrafiltration.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Loop of Henle</h4>
+
+            <p>
+                Important in creating the conditions
+                needed for water reabsorption.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Ultrafiltration
+    </h3>
+
+    <p>
+
+        High hydrostatic pressure forces small molecules
+        from the blood through the filtration barrier
+        into Bowman's capsule.
+
+    </p>
+
+
+    <div class="definition">
+
+        Large plasma proteins and blood cells normally
+        remain in the blood because they are too large
+        to pass through the filtration barrier.
+
+    </div>
+
+
+    <h3>
+        Selective reabsorption
+    </h3>
+
+    <p>
+
+        Useful substances such as glucose and required
+        ions are reabsorbed from the filtrate.
+
+    </p>
+
+
+    <h3>
+        ADH
+    </h3>
+
+    <p>
+
+        Antidiuretic hormone increases the permeability
+        of collecting ducts to water, allowing more water
+        to be reabsorbed.
+
+    </p>
+
+
+    <div class="formula">
+
+        <strong>
+            More ADH → greater water reabsorption →
+            smaller volume of concentrated urine
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NERVOUS SYSTEM
+     ===================================================== -->
+
+<section class="lesson reveal" id="nervous">
+
+    <div class="lesson-number">
+        09 — Topic 8
+    </div>
+
+    <h2>
+        Nervous Coordination
+    </h2>
+
+
+    <h3>
+        Central and peripheral nervous systems
+    </h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Central nervous system</h4>
+
+            <p>
+                Brain and spinal cord.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Peripheral nervous system</h4>
+
+            <p>
+                Nerves connecting the CNS with
+                receptors and effectors.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Neurones
+    </h3>
+
+    <div class="grid-3">
+
+        <div class="mini-card">
+
+            <h4>Sensory neurone</h4>
+
+            <p>
+                Carries impulses from receptors
+                towards the CNS.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Relay neurone</h4>
+
+            <p>
+                Connects neurones within the CNS.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Motor neurone</h4>
+
+            <p>
+                Carries impulses from the CNS
+                towards effectors.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Resting potential
+    </h3>
+
+    <p>
+
+        A neurone at rest maintains a potential difference
+        across its membrane through ion movements and
+        selective permeability.
+
+    </p>
+
+
+    <div class="formula">
+
+        <strong>
+            Resting potential ≈ −70 mV
+        </strong>
+
+    </div>
+
+
+    <h3>
+        Action potential
+    </h3>
+
+    <ol>
+
+        <li>
+            A stimulus causes depolarisation if
+            threshold is reached.
+        </li>
+
+        <li>
+            Sodium ions enter the axon through
+            voltage-gated channels.
+        </li>
+
+        <li>
+            The membrane potential becomes positive.
+        </li>
+
+        <li>
+            Sodium channels close and potassium
+            channels open.
+        </li>
+
+        <li>
+            Potassium ions leave the axon.
+        </li>
+
+        <li>
+            The membrane repolarises.
+        </li>
+
+    </ol>
+
+
+    <div class="definition">
+
+        <strong>
+            All-or-nothing response:
+        </strong>
+
+        If threshold is reached, a full action potential
+        occurs. Increasing stimulus strength does not
+        increase the size of an individual action potential.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SYNAPSES
+     ===================================================== -->
+
+<section class="lesson reveal" id="synapses">
+
+    <div class="lesson-number">
+        10 — Synapses
+    </div>
+
+    <h2>
+        Synaptic Transmission
+    </h2>
+
+
+    <h3>
+        Sequence of transmission
+    </h3>
+
+    <ol>
+
+        <li>
+            Action potential reaches the presynaptic
+            membrane.
+        </li>
+
+        <li>
+            Calcium ion channels open.
+        </li>
+
+        <li>
+            Calcium ions enter the synaptic knob.
+        </li>
+
+        <li>
+            Vesicles fuse with the presynaptic membrane.
+        </li>
+
+        <li>
+            Neurotransmitter is released by exocytosis.
+        </li>
+
+        <li>
+            Neurotransmitter diffuses across the
+            synaptic cleft.
+        </li>
+
+        <li>
+            It binds to receptors on the postsynaptic
+            membrane.
+        </li>
+
+        <li>
+            Ion channels open and a response is generated.
+
+        </li>
+
+    </ol>
+
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>Impulse</strong>
+
+            Presynaptic neurone
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Ca²⁺</strong>
+
+            Entry
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Neurotransmitter</strong>
+
+            Released
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Receptor</strong>
+
+            Postsynaptic response
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Why are synapses important?
+    </h3>
+
+    <ul>
+
+        <li>
+            Ensure one-way transmission.
+        </li>
+
+        <li>
+            Allow integration of signals.
+        </li>
+
+        <li>
+            Permit excitation or inhibition.
+        </li>
+
+        <li>
+            Allow modification of nervous responses.
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     EYE
+     ===================================================== -->
+
+<section class="lesson reveal" id="eye">
+
+    <div class="lesson-number">
+        11 — Mammalian Eye
+    </div>
+
+    <h2>
+        The Mammalian Eye
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Cornea</h4>
+
+            <p>
+                Refracts incoming light strongly.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Iris</h4>
+
+            <p>
+                Controls pupil diameter.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Lens</h4>
+
+            <p>
+                Fine-focuses light onto the retina.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Retina</h4>
+
+            <p>
+                Contains photoreceptors.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Optic nerve</h4>
+
+            <p>
+                Carries impulses from the retina
+                to the brain.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Ciliary muscles</h4>
+
+            <p>
+                Change lens shape during accommodation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Accommodation
+    </h3>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+
+                <th>Viewing</th>
+
+                <th>Ciliary muscles</th>
+
+                <th>Suspensory ligaments</th>
+
+                <th>Lens</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Near object</td>
+
+                <td>Contract</td>
+
+                <td>Slack</td>
+
+                <td>More rounded</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Distant object</td>
+
+                <td>Relax</td>
+
+                <td>Tight</td>
+
+                <td>Flatter</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <h3>
+        Rods and cones
+    </h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Rods</h4>
+
+            <p>
+                Highly sensitive to low light intensity
+                and do not provide colour vision.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Cones</h4>
+
+            <p>
+                Function best in brighter conditions
+                and provide colour vision.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BRAIN
+     ===================================================== -->
+
+<section class="lesson reveal" id="brain">
+
+    <div class="lesson-number">
+        12 — Brain and Coordination
+    </div>
+
+    <h2>
+        The Brain
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Cerebral hemispheres</h4>
+
+            <p>
+                Responsible for conscious processing,
+                voluntary movement and higher cognitive
+                functions.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Hypothalamus</h4>
+
+            <p>
+                Important in homeostasis and control
+                of the endocrine system.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Pituitary gland</h4>
+
+            <p>
+                Releases hormones involved in coordination
+                of many physiological processes.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Cerebellum</h4>
+
+            <p>
+                Important in coordination and balance.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Medulla oblongata</h4>
+
+            <p>
+                Controls important involuntary processes.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Brain imaging
+    </h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>MRI</h4>
+
+            <p>
+                Produces detailed images of brain
+                structures using magnetic fields
+                and radio waves.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>fMRI</h4>
+
+            <p>
+                Can identify changes in brain activity
+                associated with changes in blood flow.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>PET</h4>
+
+            <p>
+                Uses radioactive tracers to investigate
+                metabolic activity.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>CT</h4>
+
+            <p>
+                Uses X-rays to produce cross-sectional
+                images of the body.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="tip">
+
+        Brain-imaging methods provide different types
+        of information. The technique chosen depends
+        on the biological or medical question.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BRAIN CHEMISTRY
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        13 — Brain Chemistry
+    </div>
+
+    <h2>
+        Neurotransmitters and Ill Health
+    </h2>
+
+
+    <h3>
+        Dopamine
+    </h3>
+
+    <p>
+
+        Dopamine is an important neurotransmitter involved
+        in several brain pathways. Changes in dopamine
+        signalling are associated with conditions including
+        Parkinson's disease.
+
+    </p>
+
+
+    <h3>
+        Serotonin
+    </h3>
+
+    <p>
+
+        Serotonin is involved in mood and other physiological
+        processes. Altered serotonin signalling has been
+        associated with depression.
+
+    </p>
+
+
+    <div class="method">
+
+        <strong>
+            Drug development:
+        </strong>
+
+        <p>
+
+            Understanding neurotransmitter pathways can
+            help scientists identify potential targets
+            for therapeutic drugs.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GENE TECHNOLOGY
+     ===================================================== -->
+
+<section class="lesson reveal" id="gene">
+
+    <div class="lesson-number">
+        14 — Gene Technology
+    </div>
+
+    <h2>
+        Recombinant DNA and Genetic Engineering
+    </h2>
+
+
+    <h3>
+        Restriction enzymes
+    </h3>
+
+    <p>
+
+        Restriction enzymes recognise specific DNA
+        sequences and cut DNA at or near those sequences.
+
+    </p>
+
+
+    <h3>
+        DNA ligase
+    </h3>
+
+    <p>
+
+        DNA ligase joins DNA fragments by forming
+        phosphodiester bonds in the sugar-phosphate
+        backbone.
+
+    </p>
+
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>DNA</strong>
+
+            Target gene
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Restriction enzyme</strong>
+
+            Cut DNA
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Vector</strong>
+
+            Insert gene
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Ligase</strong>
+
+            Join DNA
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Vectors
+    </h3>
+
+    <p>
+
+        A vector can carry a gene into a host cell.
+        Plasmids are commonly used as vectors in
+        genetic engineering.
+
+    </p>
+
+
+    <h3>
+        Recombinant DNA
+    </h3>
+
+    <div class="definition">
+
+        Recombinant DNA contains DNA originating from
+        different sources.
+
+    </div>
+
+
+    <h3>
+        PCR
+    </h3>
+
+    <p>
+
+        Polymerase chain reaction is used to amplify
+        a specific DNA sequence.
+
+    </p>
+
+
+    <div class="process-flow">
+
+        <div class="process-node">
+
+            <strong>Denaturation</strong>
+
+            DNA strands separate
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Annealing</strong>
+
+            Primers bind
+
+        </div>
+
+        <div class="process-arrow">→</div>
+
+        <div class="process-node">
+
+            <strong>Extension</strong>
+
+            DNA polymerase adds nucleotides
+
+        </div>
+
+    </div>
+
+
+    <div class="formula">
+
+        PCR repeats the cycle to produce exponential
+        amplification of the target DNA sequence.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DNA SEQUENCING / BIOINFORMATICS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        15 — Modern Biology
+    </div>
+
+    <h2>
+        DNA Sequencing and Bioinformatics
+    </h2>
+
+
+    <h3>
+        DNA sequencing
+    </h3>
+
+    <p>
+
+        DNA sequencing determines the order of bases
+        in a DNA molecule.
+
+    </p>
+
+
+    <h3>
+        Bioinformatics
+    </h3>
+
+    <p>
+
+        Bioinformatics uses computational methods to
+        store, analyse and compare biological data.
+
+    </p>
+
+
+    <div class="grid-3">
+
+        <div class="mini-card">
+
+            <h4>Sequence comparison</h4>
+
+            <p>
+                Compare DNA sequences between organisms
+                or individuals.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Gene identification</h4>
+
+            <p>
+                Use sequence information to identify
+                possible genes and coding regions.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Evolutionary analysis</h4>
+
+            <p>
+                Compare molecular sequences to investigate
+                evolutionary relationships.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PLANT RESPONSES
+     ===================================================== -->
+
+<section class="lesson reveal" id="plants">
+
+    <div class="lesson-number">
+        16 — Plant Responses
+    </div>
+
+    <h2>
+        Sensitivity and Responses in Plants
+    </h2>
+
+
+    <h3>
+        Auxin
+    </h3>
+
+    <p>
+
+        Auxin is a plant hormone involved in growth
+        responses.
+
+    </p>
+
+
+    <h3>
+        Phototropism
+    </h3>
+
+    <p>
+
+        Shoots generally grow towards light.
+
+    </p>
+
+
+    <ol>
+
+        <li>
+            Light is detected.
+        </li>
+
+        <li>
+            Auxin distribution becomes uneven.
+        </li>
+
+        <li>
+            Cells on the shaded side elongate more.
+        </li>
+
+        <li>
+            The shoot bends towards the light.
+
+        </li>
+
+    </ol>
+
+
+    <h3>
+        Gravitropism
+    </h3>
+
+    <p>
+
+        Plants also respond directionally to gravity.
+        Roots and shoots show different growth responses.
+
+    </p>
+
+
+    <div class="tip">
+
+        Plant hormones can coordinate growth by changing
+        cell elongation and development.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CORE PRACTICALS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        17 — Practical Biology
+    </div>
+
+    <h2>
+        Unit 5 Practical Skills
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>
+                Respiration investigation
+            </h4>
+
+            <p>
+
+                Investigate respiration using suitable
+                organisms or tissues and measure changes
+                associated with respiration.
+
+            </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Exercise investigation
+            </h4>
+
+            <p>
+
+                Investigate how exercise affects variables
+                such as breathing rate, tidal volume,
+                ventilation and oxygen consumption.
+
+            </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Muscle investigation
+            </h4>
+
+            <p>
+
+                Interpret evidence relating muscle structure,
+                contraction and force production.
+
+            </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Biological data
+            </h4>
+
+            <p>
+
+                Analyse physiological datasets using
+                appropriate calculations, graphs and
+                statistical reasoning.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            Practical exam checklist
+        </strong>
+
+        <p>
+
+            Independent variable • dependent variable •
+            control variables • sample size • repeats •
+            accuracy • precision • uncertainty • anomalies •
+            conclusion • evaluation
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MATHEMATICS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        18 — Mathematical Biology
+    </div>
+
+    <h2>
+        Important Unit 5 Calculations
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>
+                Cardiac output
+            </h4>
+
+            <div class="formula">
+
+                Heart rate × stroke volume
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Minute ventilation
+            </h4>
+
+            <div class="formula">
+
+                Breathing rate × tidal volume
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Respiratory quotient
+            </h4>
+
+            <div class="formula">
+
+                CO₂ produced ÷ O₂ consumed
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Percentage change
+            </h4>
+
+            <div class="formula">
+
+                (change ÷ original) × 100
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Unit awareness
+    </h3>
+
+    <p>
+
+        Always check units before calculating.
+
+    </p>
+
+    <ul>
+
+        <li>
+            cm³ and dm³
+        </li>
+
+        <li>
+            seconds and minutes
+        </li>
+
+        <li>
+            concentrations
+        </li>
+
+        <li>
+            rates
+        </li>
+
+        <li>
+            percentages
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM PRACTICE
+     ===================================================== -->
+
+<section class="lesson reveal" id="practice">
+
+    <div class="lesson-number">
+        19 — Exam Practice
+    </div>
+
+    <h2>
+        Unit 5 Practice
+    </h2>
+
+
+    <div class="question">
+
+        <strong>
+            1. State the site of glycolysis.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+                Cytoplasm.
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            2. Explain why oxygen is required during
+            oxidative phosphorylation.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Oxygen acts as the final electron acceptor
+                at the end of the electron transport chain.
+                It combines with electrons and hydrogen ions
+                to form water.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            3. Calculate cardiac output for a heart rate
+            of 80 beats min⁻¹ and stroke volume of 75 cm³.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Cardiac output = 80 × 75
+
+                <br><br>
+
+                = 6000 cm³ min⁻¹
+
+                <br><br>
+
+                = 6.0 dm³ min⁻¹
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            4. Explain how ATP contributes to muscle
+            contraction.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                ATP provides energy for the cycling of
+                myosin heads and is also required for
+                processes such as calcium ion transport.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            5. Explain the role of negative feedback
+            in homeostasis.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                A change in an internal variable is detected,
+                producing a response that opposes the original
+                change and returns the variable towards its
+                normal range.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            6. Explain ultrafiltration in the kidney.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                High pressure in the glomerulus forces small
+                molecules from the blood through the filtration
+                barrier into Bowman's capsule. Blood cells
+                and large plasma proteins remain in the blood.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            7. Describe transmission across a synapse.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                An action potential causes calcium ions to
+                enter the synaptic knob. Vesicles fuse with
+                the presynaptic membrane and release
+                neurotransmitter. The neurotransmitter
+                diffuses across the synaptic cleft and binds
+                to receptors on the postsynaptic membrane.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            8. What is the role of DNA ligase in genetic
+            engineering?
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                DNA ligase joins DNA fragments by forming
+                phosphodiester bonds in the sugar-phosphate
+                backbone.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            9. Describe the three stages of PCR.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Denaturation separates the DNA strands.
+                During annealing, primers bind to
+                complementary sequences. During extension,
+                DNA polymerase adds nucleotides to form
+                new DNA strands.
+
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM STRATEGY
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        20 — Exam Strategy
+    </div>
+
+    <h2>
+        How to Approach Unit 5 Questions
+    </h2>
+
+
+    <div class="method">
+
+        <strong>
+            1 — Build the biological sequence
+        </strong>
+
+        <p>
+
+            For mechanisms, write the events in the
+            correct order rather than listing disconnected
+            facts.
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            2 — Link structure to function
+        </strong>
+
+        <p>
+
+            For muscles, kidneys, neurones and eyes,
+            explain why the structure allows the function.
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            3 — Use precise terminology
+        </strong>
+
+        <p>
+
+            For example:
+
+            <br><br>
+
+            "protons move down an electrochemical gradient
+            through ATP synthase"
+
+            <br><br>
+
+            is stronger than simply saying
+            "protons make ATP."
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            4 — Show calculations
+        </strong>
+
+        <p>
+
+            Write the equation, substitute values,
+            calculate and give the correct unit.
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            5 — For gene technology, know the enzyme
+            and its job
+        </strong>
+
+        <p>
+
+            Restriction enzyme → cuts DNA
+
+            <br>
+
+            DNA ligase → joins DNA
+
+            <br>
+
+            DNA polymerase → synthesises DNA
+
+            <br>
+
+            Primers → provide starting points for DNA synthesis
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK REVIEW
+     ===================================================== -->
+
+<section class="quick-review reveal" id="review">
+
+    <h2>
+        Unit 5 — Quick Review
+    </h2>
+
+
+    <div class="review-grid">
+
+        <div class="review-item">
+            ✓ Glycolysis
+        </div>
+
+        <div class="review-item">
+            ✓ Link reaction
+        </div>
+
+        <div class="review-item">
+            ✓ Krebs cycle
+        </div>
+
+        <div class="review-item">
+            ✓ Oxidative phosphorylation
+        </div>
+
+        <div class="review-item">
+            ✓ Chemiosmosis
+        </div>
+
+        <div class="review-item">
+            ✓ Anaerobic respiration
+        </div>
+
+        <div class="review-item">
+            ✓ Respiratory quotient
+        </div>
+
+        <div class="review-item">
+            ✓ Muscle structure
+        </div>
+
+        <div class="review-item">
+            ✓ Sliding filament mechanism
+        </div>
+
+        <div class="review-item">
+            ✓ Antagonistic muscles
+        </div>
+
+        <div class="review-item">
+            ✓ Cardiac cycle
+        </div>
+
+        <div class="review-item">
+            ✓ Cardiac output
+        </div>
+
+        <div class="review-item">
+            ✓ Exercise physiology
+        </div>
+
+        <div class="review-item">
+            ✓ Homeostasis
+        </div>
+
+        <div class="review-item">
+            ✓ Negative feedback
+        </div>
+
+        <div class="review-item">
+            ✓ Blood glucose regulation
+        </div>
+
+        <div class="review-item">
+            ✓ Deamination
+        </div>
+
+        <div class="review-item">
+            ✓ Kidney structure
+        </div>
+
+        <div class="review-item">
+            ✓ Ultrafiltration
+        </div>
+
+        <div class="review-item">
+            ✓ Selective reabsorption
+        </div>
+
+        <div class="review-item">
+            ✓ ADH
+        </div>
+
+        <div class="review-item">
+            ✓ Neurones
+        </div>
+
+        <div class="review-item">
+            ✓ Resting potential
+        </div>
+
+        <div class="review-item">
+            ✓ Action potential
+        </div>
+
+        <div class="review-item">
+            ✓ Synaptic transmission
+        </div>
+
+        <div class="review-item">
+            ✓ Mammalian eye
+        </div>
+
+        <div class="review-item">
+            ✓ Brain structure
+        </div>
+
+        <div class="review-item">
+            ✓ Brain imaging
+        </div>
+
+        <div class="review-item">
+            ✓ Neurotransmitters
+        </div>
+
+        <div class="review-item">
+            ✓ Restriction enzymes
+        </div>
+
+        <div class="review-item">
+            ✓ DNA ligase
+        </div>
+
+        <div class="review-item">
+            ✓ Recombinant DNA
+        </div>
+
+        <div class="review-item">
+            ✓ PCR
+        </div>
+
+        <div class="review-item">
+            ✓ DNA sequencing
+        </div>
+
+        <div class="review-item">
+            ✓ Bioinformatics
+        </div>
+
+        <div class="review-item">
+            ✓ Plant hormones
+        </div>
+
+        <div class="review-item">
+            ✓ Phototropism
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<div class="navigation">
+
+    <a class="button" href="biology-4.html">
+        ← Biology Unit 4
+    </a>
+
+    <a class="button" href="biology-6.html">
+        Biology Unit 6 →
+    </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+    <strong>IAL ATLAS</strong>
+
+    <br>
+
+    Free, student-built Edexcel International A Level resources.
+
+    <br><br>
+
+    Biology Unit 5 —
+    Respiration, Internal Environment,
+    Coordination and Gene Technology
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL PROGRESS
+   ========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        scrollHeight > 0
+        ? (scrollTop / scrollHeight) * 100
+        : 0;
+
+    document.getElementById("progress").style.width =
+        progress + "%";
+
+});
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i=0;i<65;i++){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        Math.random()*100 + "%";
+
+    particle.style.animationDuration =
+        (8 + Math.random()*18) + "s";
+
+    particle.style.animationDelay =
+        (-Math.random()*20) + "s";
+
+    particle.style.opacity =
+        .2 + Math.random()*.6;
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.10
+        }
+    );
+
+
+document.querySelectorAll(".reveal")
+.forEach(el=>{
+
+    revealObserver.observe(el);
+
+});
+
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
+
+document.addEventListener(
+    "pointermove",
+    e=>{
+
+        document.body.style.setProperty(
+            "--mx",
+            e.clientX + "px"
+        );
+
+        document.body.style.setProperty(
+            "--my",
+            e.clientY + "px"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CARD TILT
+   ========================================================= */
+
+document.querySelectorAll(".lesson")
+.forEach(card=>{
+
+    card.addEventListener(
+        "pointermove",
+        e=>{
+
+            if(window.innerWidth < 900)
+                return;
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                e.clientX - rect.left;
+
+            const y =
+                e.clientY - rect.top;
+
+            const rotateY =
+                ((x / rect.width)-.5) * 1.4;
+
+            const rotateX =
+                -((y / rect.height)-.5) * 1.4;
+
+            card.style.transform =
+                `perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-2px)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "pointerleave",
+        ()=>{
+
+            card.style.transform = "";
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
+
