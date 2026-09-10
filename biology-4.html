@@ -1,0 +1,3852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biology Unit 4 | IAL ATLAS</title>
+
+<meta name="description"
+content="Edexcel IAL Biology Unit 4 notes covering photosynthesis, ecosystems, energy flow, climate change, evolution, microbiology, immunity and forensics.">
+
+<meta name="keywords"
+content="Edexcel IAL Biology Unit 4, WBI14, Biology Energy Environment Microbiology Immunity, Topic 5 Biology, Topic 6 Biology">
+
+<meta name="theme-color" content="#05070d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   IAL ATLAS — BIOLOGY UNIT 4
+   ENERGY • ENVIRONMENT • MICROBIOLOGY • IMMUNITY
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 10%,rgba(74,150,255,.10),transparent 30%),
+        radial-gradient(circle at 90% 70%,rgba(80,255,190,.07),transparent 30%),
+        #05070d;
+
+    color:#edf5ff;
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+    opacity:.16;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+
+    background-size:45px 45px;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    background:
+        radial-gradient(
+            circle at var(--mx,50%) var(--my,50%),
+            rgba(90,180,255,.10),
+            transparent 25%
+        );
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+#progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:3px;
+
+    z-index:9999;
+
+    background:
+        linear-gradient(
+            90deg,
+            #63d5ff,
+            #7e8cff,
+            #67ffd0
+        );
+
+    box-shadow:0 0 18px rgba(80,200,255,.8);
+}
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    overflow:hidden;
+}
+
+.particle{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:rgba(120,210,255,.65);
+
+    box-shadow:
+        0 0 8px rgba(100,210,255,.5);
+
+    animation:
+        floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    85%{
+        opacity:.8;
+    }
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:
+        rgba(5,7,13,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.header-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:16px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.logo{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    color:#fff;
+}
+
+.logo span{
+    color:#6bd3ff;
+}
+
+.back{
+
+    text-decoration:none;
+
+    color:#aebfd5;
+
+    padding:8px 15px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:999px;
+
+    transition:.3s;
+
+    font-size:.88rem;
+}
+
+.back:hover{
+
+    color:#fff;
+
+    border-color:
+        rgba(100,200,255,.5);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(80,180,255,.15);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+
+    min-height:720px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:90px 20px 70px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:680px;
+
+    height:680px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(90,190,255,.09);
+
+    box-shadow:
+        0 0 100px rgba(70,170,255,.06),
+        inset 0 0 100px rgba(70,170,255,.04);
+
+    animation:
+        orbit 20s linear infinite;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:140px;
+
+    border:
+        1px solid rgba(100,255,200,.12);
+
+    border-radius:50%;
+
+    transform:rotate(-25deg);
+
+    animation:
+        orbitReverse 14s linear infinite;
+}
+
+@keyframes orbit{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes orbitReverse{
+
+    to{
+        transform:
+            rotate(-385deg);
+    }
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:950px;
+}
+
+.eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:
+        rgba(90,190,255,.08);
+
+    border:
+        1px solid rgba(90,190,255,.18);
+
+    color:#8cddff;
+
+    font-size:.80rem;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+}
+
+.eyebrow::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#6ad9ff;
+
+    box-shadow:
+        0 0 13px #6ad9ff;
+}
+
+.hero h1{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(3rem,8vw,6.5rem);
+
+    line-height:.95;
+
+    letter-spacing:-4px;
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #91dcff,
+            #9c91ff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-subtitle{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:#a9b9cf;
+
+    font-size:1.05rem;
+}
+
+.stats{
+
+    margin:45px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+
+    max-width:850px;
+}
+
+.stat{
+
+    padding:18px 10px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:16px;
+
+    backdrop-filter:blur(15px);
+}
+
+.stat strong{
+
+    display:block;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.35rem;
+
+    color:#f3f8ff;
+}
+
+.stat span{
+
+    color:#8091aa;
+
+    font-size:.75rem;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:
+        30px 20px 100px;
+}
+
+
+/* =========================================================
+   TOPIC NAV
+   ========================================================= */
+
+.topic-nav{
+
+    position:sticky;
+
+    top:73px;
+
+    z-index:900;
+
+    display:flex;
+
+    gap:8px;
+
+    overflow-x:auto;
+
+    padding:12px;
+
+    margin-bottom:35px;
+
+    background:
+        rgba(8,12,21,.76);
+
+    backdrop-filter:blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+}
+
+.topic-nav::-webkit-scrollbar{
+    height:3px;
+}
+
+.topic-nav a{
+
+    white-space:nowrap;
+
+    text-decoration:none;
+
+    color:#92a4bd;
+
+    padding:9px 13px;
+
+    border-radius:10px;
+
+    font-size:.81rem;
+
+    transition:.3s;
+}
+
+.topic-nav a:hover{
+
+    color:#fff;
+
+    background:
+        rgba(100,190,255,.08);
+}
+
+
+/* =========================================================
+   LESSON
+   ========================================================= */
+
+.lesson{
+
+    position:relative;
+
+    margin:30px 0;
+
+    padding:34px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
+
+    border-radius:24px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .3s ease;
+}
+
+.lesson::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #68ceff,
+            transparent
+        );
+
+    opacity:.45;
+}
+
+.lesson:hover{
+
+    border-color:
+        rgba(100,200,255,.13);
+}
+
+.lesson-number{
+
+    color:#6bd1ff;
+
+    font-size:.74rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.lesson h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(1.7rem,4vw,2.5rem);
+
+    margin-bottom:18px;
+}
+
+.lesson h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    margin:28px 0 10px;
+
+    color:#9cdeff;
+}
+
+.lesson h4{
+
+    margin:20px 0 7px;
+
+    color:#dbeaff;
+}
+
+.lesson p{
+
+    color:#aebdd0;
+
+    margin:10px 0;
+}
+
+.lesson ul,
+.lesson ol{
+
+    padding-left:22px;
+
+    color:#aebdd0;
+}
+
+.lesson li{
+
+    margin:7px 0;
+}
+
+
+/* =========================================================
+   BOXES
+   ========================================================= */
+
+.definition,
+.formula,
+.example,
+.warning,
+.tip,
+.method{
+
+    margin:20px 0;
+
+    padding:18px 20px;
+
+    border-radius:15px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.definition{
+
+    border-left:
+        3px solid #6bcfff;
+}
+
+.formula{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-left:
+        3px solid #988aff;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    color:#ebe7ff;
+}
+
+.formula::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b7adff,
+            transparent
+        );
+
+    animation:
+        scan 4s linear infinite;
+}
+
+@keyframes scan{
+
+    to{
+        left:100%;
+    }
+}
+
+.example{
+
+    border-left:
+        3px solid #67e4be;
+}
+
+.example-title{
+
+    color:#70e8c7;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+}
+
+.solution{
+    color:#c3d1e3;
+}
+
+.warning{
+
+    border-left:
+        3px solid #ffba69;
+}
+
+.tip{
+
+    border-left:
+        3px solid #78a8ff;
+}
+
+.method{
+
+    border-left:
+        3px solid #82ffc7;
+}
+
+
+/* =========================================================
+   ENERGY FLOW VISUAL
+   ========================================================= */
+
+.energy-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin:30px 0;
+}
+
+.energy-node{
+
+    min-width:130px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border:
+        1px solid rgba(100,200,255,.13);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:18px;
+
+    color:#b9cce2;
+}
+
+.energy-node strong{
+
+    display:block;
+
+    color:#8edcff;
+
+    margin-bottom:5px;
+}
+
+.energy-arrow{
+
+    color:#68d8ff;
+
+    font-size:1.4rem;
+
+    animation:
+        arrowPulse 1.7s ease-in-out infinite;
+}
+
+@keyframes arrowPulse{
+
+    50%{
+        transform:translateX(5px);
+        opacity:.5;
+    }
+}
+
+
+/* =========================================================
+   GRID CARDS
+   ========================================================= */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.mini-card{
+
+    padding:20px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:17px;
+}
+
+.mini-card h4{
+
+    margin-top:0;
+
+    color:#8fdcff;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-wrap{
+
+    overflow-x:auto;
+
+    margin:20px 0;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:600px;
+}
+
+th,
+td{
+
+    padding:12px 14px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    text-align:left;
+}
+
+th{
+
+    background:
+        rgba(100,190,255,.08);
+
+    color:#cceeff;
+}
+
+td{
+
+    color:#aebdd0;
+}
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.question{
+
+    margin:18px 0;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid rgba(255,255,255,.07);
+}
+
+.question strong{
+    color:#eaf4ff;
+}
+
+details{
+    margin-top:12px;
+}
+
+summary{
+
+    cursor:pointer;
+
+    color:#78d8ff;
+
+    font-weight:700;
+}
+
+details p{
+    margin-top:10px;
+}
+
+
+/* =========================================================
+   QUICK REVIEW
+   ========================================================= */
+
+.quick-review{
+
+    margin-top:45px;
+
+    padding:32px;
+
+    border-radius:25px;
+
+    border:
+        1px solid rgba(120,200,255,.16);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(100,190,255,.08),
+            transparent 40%
+        ),
+        rgba(255,255,255,.025);
+}
+
+.quick-review h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    margin-bottom:15px;
+}
+
+.review-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+}
+
+.review-item{
+
+    padding:12px 14px;
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    border-radius:12px;
+
+    color:#aebdd0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:55px;
+}
+
+.button{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#dcecff;
+
+    padding:12px 18px;
+
+    border-radius:13px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition:.3s;
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+        rgba(100,200,255,.4);
+
+    box-shadow:
+        0 10px 30px rgba(50,150,255,.12);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    color:#62738a;
+
+    font-size:.85rem;
+}
+
+footer strong{
+    color:#a7cfff;
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-2,
+    .grid-3,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:620px;
+    }
+
+    .hero::before{
+        width:430px;
+        height:430px;
+    }
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        padding:13px 16px;
+    }
+
+    .hero{
+        padding:70px 15px 50px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .topic-nav{
+        top:62px;
+    }
+
+    .container{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .lesson{
+        padding:24px 20px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .button{
+        text-align:center;
+    }
+
+    .energy-arrow{
+        transform:rotate(90deg);
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.001ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.001ms !important;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="progress"></div>
+
+<div id="particles"></div>
+
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+            IAL <span>ATLAS</span>
+        </div>
+
+        <a class="back" href="biology.html">
+            ← Biology
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Edexcel International A Level Biology
+        </div>
+
+        <h1>Unit 4</h1>
+
+        <p class="hero-subtitle">
+
+            Energy, Environment, Microbiology and Immunity —
+            from photosynthesis and ecosystems to pathogens,
+            immune responses, antibiotics and forensic biology.
+
+        </p>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>WBI14</strong>
+                <span>Unit Code</span>
+            </div>
+
+            <div class="stat">
+                <strong>90</strong>
+                <span>Marks</span>
+            </div>
+
+            <div class="stat">
+                <strong>1h 45m</strong>
+                <span>Exam</span>
+            </div>
+
+            <div class="stat">
+                <strong>2</strong>
+                <span>Major Topics</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     TOPIC NAV
+     ===================================================== -->
+
+<nav class="topic-nav">
+
+    <a href="#overview">Overview</a>
+
+    <a href="#photosynthesis">Photosynthesis</a>
+
+    <a href="#respiration">Energy Flow</a>
+
+    <a href="#ecosystems">Ecosystems</a>
+
+    <a href="#sampling">Ecological Sampling</a>
+
+    <a href="#climate">Climate Change</a>
+
+    <a href="#evolution">Evolution</a>
+
+    <a href="#microbiology">Microbiology</a>
+
+    <a href="#disease">Disease</a>
+
+    <a href="#immunity">Immunity</a>
+
+    <a href="#forensics">Forensics</a>
+
+    <a href="#practice">Practice</a>
+
+    <a href="#review">Review</a>
+
+</nav>
+
+
+<!-- =====================================================
+     OVERVIEW
+     ===================================================== -->
+
+<section class="lesson reveal" id="overview">
+
+    <div class="lesson-number">
+        01 — Unit Overview
+    </div>
+
+    <h2>
+        Energy, Environment, Microbiology and Immunity
+    </h2>
+
+    <p>
+
+        Unit 4 moves into A2 Biology and connects energy
+        transfer, photosynthesis, ecosystems, environmental
+        change, microorganisms, disease, immunity and
+        forensic techniques.
+
+    </p>
+
+
+    <div class="definition">
+
+        <strong>Unit 4 structure:</strong>
+
+        <br><br>
+
+        <strong>Topic 5</strong> — Energy Flow, Ecosystems
+        and the Environment
+
+        <br>
+
+        <strong>Topic 6</strong> — Microbiology, Immunity
+        and Forensics
+
+    </div>
+
+
+    <div class="energy-flow">
+
+        <div class="energy-node">
+
+            <strong>Light</strong>
+
+            Photosynthesis
+
+        </div>
+
+        <div class="energy-arrow">→</div>
+
+        <div class="energy-node">
+
+            <strong>Biomass</strong>
+
+            Chemical energy
+
+        </div>
+
+        <div class="energy-arrow">→</div>
+
+        <div class="energy-node">
+
+            <strong>Ecosystem</strong>
+
+            Energy transfer
+
+        </div>
+
+        <div class="energy-arrow">→</div>
+
+        <div class="energy-node">
+
+            <strong>Environment</strong>
+
+            Population change
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        What you need to master
+    </h3>
+
+    <ul>
+
+        <li>Photosynthesis</li>
+
+        <li>ATP and energy transfer</li>
+
+        <li>Energy flow through ecosystems</li>
+
+        <li>Productivity</li>
+
+        <li>Population and community ecology</li>
+
+        <li>Sampling techniques</li>
+
+        <li>Climate change</li>
+
+        <li>Natural selection and speciation</li>
+
+        <li>Microbial growth and culturing</li>
+
+        <li>Pathogens and disease</li>
+
+        <li>Innate and adaptive immunity</li>
+
+        <li>Antibiotics and resistance</li>
+
+        <li>Forensic DNA analysis</li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     PHOTOSYNTHESIS
+     ===================================================== -->
+
+<section class="lesson reveal" id="photosynthesis">
+
+    <div class="lesson-number">
+        02 — Topic 5
+    </div>
+
+    <h2>
+        Photosynthesis
+    </h2>
+
+    <p>
+
+        Photosynthesis converts light energy into chemical
+        energy stored in organic molecules.
+
+    </p>
+
+
+    <div class="formula">
+
+        <strong>
+            6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂
+        </strong>
+
+        <br><br>
+
+        Light energy is required.
+
+    </div>
+
+
+    <h3>
+        Chloroplast structure
+    </h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Grana</h4>
+
+            <p>
+                Stacks of thylakoid membranes containing
+                photosynthetic pigments and electron carriers.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Stroma</h4>
+
+            <p>
+                Fluid region containing enzymes involved in
+                carbon fixation and the Calvin cycle.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Thylakoid membrane</h4>
+
+            <p>
+                Site of the light-dependent reactions.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Starch grain</h4>
+
+            <p>
+                Storage form of carbohydrate produced from
+                photosynthetic products.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Light-dependent reactions
+    </h3>
+
+    <ol>
+
+        <li>
+            Chlorophyll absorbs light energy.
+        </li>
+
+        <li>
+            Electrons become excited.
+        </li>
+
+        <li>
+            Water undergoes photolysis.
+        </li>
+
+        <li>
+            Oxygen is released.
+        </li>
+
+        <li>
+            ATP is produced by photophosphorylation.
+        </li>
+
+        <li>
+            NADP is reduced to reduced NADP.
+        </li>
+
+    </ol>
+
+
+    <div class="formula">
+
+        <strong>
+            Photolysis:
+        </strong>
+
+        <br><br>
+
+        H₂O → 2H⁺ + 2e⁻ + ½O₂
+
+    </div>
+
+
+    <h3>
+        Cyclic vs non-cyclic photophosphorylation
+    </h3>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+
+                <th>Feature</th>
+
+                <th>Cyclic</th>
+
+                <th>Non-cyclic</th>
+
+            </tr>
+
+            <tr>
+
+                <td>ATP produced</td>
+
+                <td>Yes</td>
+
+                <td>Yes</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Reduced NADP</td>
+
+                <td>No</td>
+
+                <td>Yes</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Photolysis</td>
+
+                <td>No</td>
+
+                <td>Yes</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Oxygen released</td>
+
+                <td>No</td>
+
+                <td>Yes</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <h3>
+        Calvin cycle
+    </h3>
+
+    <p>
+
+        The Calvin cycle uses ATP and reduced NADP from the
+        light-dependent reactions to reduce carbon dioxide
+        and produce carbohydrate.
+
+    </p>
+
+
+    <div class="method">
+
+        <strong>
+            Remember:
+        </strong>
+
+        <p>
+
+            Light-dependent reactions →
+            ATP + reduced NADP
+
+            <br>
+
+            Calvin cycle →
+            uses ATP + reduced NADP
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESPIRATION / ENERGY
+     ===================================================== -->
+
+<section class="lesson reveal" id="respiration">
+
+    <div class="lesson-number">
+        03 — Energy Flow
+    </div>
+
+    <h2>
+        ATP and Energy Transfer
+    </h2>
+
+    <p>
+
+        ATP acts as an immediate source of energy for
+        cellular processes.
+
+    </p>
+
+
+    <div class="formula">
+
+        ATP + H₂O → ADP + Pi + energy
+
+    </div>
+
+
+    <h3>
+        Why ATP is useful
+    </h3>
+
+    <ul>
+
+        <li>
+            Releases manageable amounts of energy.
+        </li>
+
+        <li>
+            Can be rapidly regenerated.
+        </li>
+
+        <li>
+            Couples energy-releasing reactions to
+            energy-requiring processes.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Respiratory substrates
+    </h3>
+
+    <div class="grid-3">
+
+        <div class="mini-card">
+
+            <h4>Carbohydrate</h4>
+
+            <p>
+                Readily available and commonly used
+                respiratory substrate.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Lipid</h4>
+
+            <p>
+                High energy value per unit mass.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Protein</h4>
+
+            <p>
+                Can be used when other substrates
+                are limited.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Energy values
+    </h3>
+
+    <p>
+
+        Lipids contain more chemical energy per gram
+        than carbohydrates or proteins.
+
+    </p>
+
+
+    <div class="tip">
+
+        Energy released by respiration ultimately supports
+        processes such as active transport, synthesis,
+        movement and maintaining body functions.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ECOSYSTEMS
+     ===================================================== -->
+
+<section class="lesson reveal" id="ecosystems">
+
+    <div class="lesson-number">
+        04 — Ecology
+    </div>
+
+    <h2>
+        Ecosystems and Energy Flow
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Population</h4>
+
+            <p>
+                Members of the same species living in
+                an area at the same time.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Community</h4>
+
+            <p>
+                Populations of different species living
+                and interacting in an area.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Habitat</h4>
+
+            <p>
+                The place where an organism or population
+                normally lives.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Ecosystem</h4>
+
+            <p>
+                A community and its abiotic environment
+                interacting together.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Energy transfer
+    </h3>
+
+    <p>
+
+        Energy enters most ecosystems as light and is
+        converted into chemical energy by producers.
+
+    </p>
+
+
+    <div class="energy-flow">
+
+        <div class="energy-node">
+
+            <strong>Sun</strong>
+
+            Light
+
+        </div>
+
+        <div class="energy-arrow">→</div>
+
+        <div class="energy-node">
+
+            <strong>Producers</strong>
+
+            Plants / algae
+
+        </div>
+
+        <div class="energy-arrow">→</div>
+
+        <div class="energy-node">
+
+            <strong>Consumers</strong>
+
+            Animals
+
+        </div>
+
+        <div class="energy-arrow">→</div>
+
+        <div class="energy-node">
+
+            <strong>Decomposers</strong>
+
+            Bacteria / fungi
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Why energy is lost
+    </h3>
+
+    <ul>
+
+        <li>
+            Respiration releases energy as heat.
+        </li>
+
+        <li>
+            Not all material is eaten.
+        </li>
+
+        <li>
+            Some material is indigestible.
+        </li>
+
+        <li>
+            Energy is lost through waste.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Productivity
+    </h3>
+
+    <div class="formula">
+
+        <strong>
+            GPP = total chemical energy fixed
+            by photosynthesis
+        </strong>
+
+        <br><br>
+
+        <strong>
+            NPP = GPP − R
+        </strong>
+
+        <br><br>
+
+        where R = energy lost through respiration.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SAMPLING
+     ===================================================== -->
+
+<section class="lesson reveal" id="sampling">
+
+    <div class="lesson-number">
+        05 — Ecological Sampling
+    </div>
+
+    <h2>
+        Sampling Populations
+    </h2>
+
+
+    <h3>
+        Quadrat sampling
+    </h3>
+
+    <p>
+
+        Quadrats are used to investigate organisms that
+        are relatively stationary, such as plants.
+
+    </p>
+
+
+    <div class="method">
+
+        <strong>
+            Random sampling:
+        </strong>
+
+        <p>
+
+            Random coordinates can be generated so that
+            every area has an appropriate chance of being
+            selected.
+
+        </p>
+
+    </div>
+
+
+    <h3>
+        Transects
+    </h3>
+
+    <p>
+
+        Transects can be used to investigate how the
+        distribution of organisms changes along an
+        environmental gradient.
+
+    </p>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Line transect</h4>
+
+            <p>
+                Records organisms touching or occurring
+                along a line.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Belt transect</h4>
+
+            <p>
+                Uses a strip of defined width to sample
+                organisms across a gradient.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Sampling reliability
+    </h3>
+
+    <ul>
+
+        <li>
+            Increase sample size.
+        </li>
+
+        <li>
+            Use random sampling where appropriate.
+        </li>
+
+        <li>
+            Repeat sampling.
+        </li>
+
+        <li>
+            Sample different areas.
+        </li>
+
+    </ul>
+
+
+    <div class="formula">
+
+        <strong>
+            Population estimate =
+            mean number per quadrat × total area
+            ÷ quadrat area
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CLIMATE CHANGE
+     ===================================================== -->
+
+<section class="lesson reveal" id="climate">
+
+    <div class="lesson-number">
+        06 — Environment
+    </div>
+
+    <h2>
+        Climate Change
+    </h2>
+
+    <p>
+
+        Earth's climate changes naturally, but human
+        activities have significantly altered atmospheric
+        concentrations of greenhouse gases.
+
+    </p>
+
+
+    <h3>
+        Greenhouse gases
+    </h3>
+
+    <ul>
+
+        <li>
+            Carbon dioxide
+        </li>
+
+        <li>
+            Methane
+        </li>
+
+        <li>
+            Nitrous oxide
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Major human sources
+    </h3>
+
+    <ul>
+
+        <li>
+            Burning fossil fuels
+        </li>
+
+        <li>
+            Deforestation
+        </li>
+
+        <li>
+            Agriculture
+        </li>
+
+        <li>
+            Industrial activity
+        </li>
+
+    </ul>
+
+
+    <div class="definition">
+
+        <strong>
+            Greenhouse effect:
+        </strong>
+
+        Atmospheric gases absorb and re-radiate
+        infrared radiation, reducing the rate at which
+        heat escapes to space.
+
+    </div>
+
+
+    <h3>
+        Evidence
+    </h3>
+
+    <p>
+
+        Evidence for climate change can include
+        long-term temperature records, atmospheric
+        carbon dioxide measurements, ice-core data,
+        sea-level changes and changes in species
+        distributions.
+
+    </p>
+
+
+    <div class="warning">
+
+        Correlation between two variables does not by
+        itself establish causation. Scientists consider
+        multiple lines of evidence and alternative
+        explanations.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EVOLUTION
+     ===================================================== -->
+
+<section class="lesson reveal" id="evolution">
+
+    <div class="lesson-number">
+        07 — Evolution
+    </div>
+
+    <h2>
+        Natural Selection and Speciation
+    </h2>
+
+
+    <h3>
+        Natural selection
+    </h3>
+
+    <ol>
+
+        <li>
+            Individuals in a population show variation.
+        </li>
+
+        <li>
+            Some variation is heritable.
+        </li>
+
+        <li>
+            There is competition for resources.
+        </li>
+
+        <li>
+            Individuals with advantageous characteristics
+            are more likely to survive and reproduce.
+        </li>
+
+        <li>
+            Their alleles become more common in the
+            population over generations.
+        </li>
+
+    </ol>
+
+
+    <div class="definition">
+
+        Evolution can be described as a change in allele
+        frequencies in a population over generations.
+
+    </div>
+
+
+    <h3>
+        Speciation
+    </h3>
+
+    <p>
+
+        Speciation occurs when populations become
+        reproductively isolated and diverge genetically.
+
+    </p>
+
+
+    <h3>
+        Allopatric speciation
+    </h3>
+
+    <p>
+
+        Geographic separation prevents gene flow between
+        populations.
+
+    </p>
+
+
+    <h3>
+        Sympatric speciation
+    </h3>
+
+    <p>
+
+        Reproductive isolation develops without geographic
+        separation.
+
+    </p>
+
+
+    <div class="method">
+
+        <strong>
+            Core chain:
+        </strong>
+
+        <p>
+
+            Variation → selection pressure →
+            differential reproductive success →
+            allele-frequency change →
+            divergence → reproductive isolation
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MICROBIOLOGY
+     ===================================================== -->
+
+<section class="lesson reveal" id="microbiology">
+
+    <div class="lesson-number">
+        08 — Topic 6
+    </div>
+
+    <h2>
+        Microbiology and Microbial Growth
+    </h2>
+
+
+    <h3>
+        Aseptic technique
+    </h3>
+
+    <p>
+
+        Aseptic technique reduces contamination of cultures
+        and prevents microorganisms from being transferred
+        between cultures, people and the environment.
+
+    </p>
+
+
+    <ul>
+
+        <li>
+            Sterilise equipment where appropriate.
+        </li>
+
+        <li>
+            Disinfect work surfaces.
+        </li>
+
+        <li>
+            Minimise exposure of cultures.
+        </li>
+
+        <li>
+            Use sterile apparatus.
+        </li>
+
+        <li>
+            Follow appropriate laboratory safety procedures.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Microbial growth
+    </h3>
+
+    <div class="grid-3">
+
+        <div class="mini-card">
+
+            <h4>Lag phase</h4>
+
+            <p>
+                Cells adapt to the new environment.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Log phase</h4>
+
+            <p>
+                Rapid cell division and exponential growth.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Stationary phase</h4>
+
+            <p>
+                Growth rate slows as resources become limiting.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Factors affecting growth
+    </h3>
+
+    <ul>
+
+        <li>
+            Temperature
+        </li>
+
+        <li>
+            pH
+        </li>
+
+        <li>
+            Nutrient availability
+        </li>
+
+        <li>
+            Oxygen availability
+        </li>
+
+        <li>
+            Waste-product accumulation
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     PATHOGENS
+     ===================================================== -->
+
+<section class="lesson reveal" id="disease">
+
+    <div class="lesson-number">
+        09 — Pathogens
+    </div>
+
+    <h2>
+        Pathogens and Infectious Disease
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Bacteria</h4>
+
+            <p>
+                Prokaryotic organisms. Some cause disease
+                by producing toxins or damaging tissues.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Viruses</h4>
+
+            <p>
+                Acellular infectious particles that
+                replicate inside host cells.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Fungi</h4>
+
+            <p>
+                Eukaryotic organisms that can cause
+                infections in humans.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Protoctists</h4>
+
+            <p>
+                Some protoctists are pathogenic and can
+                cause serious disease.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Transmission
+    </h3>
+
+    <ul>
+
+        <li>
+            Direct contact
+        </li>
+
+        <li>
+            Droplets
+        </li>
+
+        <li>
+            Contaminated food or water
+        </li>
+
+        <li>
+            Vectors
+        </li>
+
+        <li>
+            Contaminated surfaces
+        </li>
+
+    </ul>
+
+
+    <div class="tip">
+
+        Preventing transmission can involve hygiene,
+        sanitation, vaccination, isolation and vector
+        control.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMMUNITY
+     ===================================================== -->
+
+<section class="lesson reveal" id="immunity">
+
+    <div class="lesson-number">
+        10 — Immunity
+    </div>
+
+    <h2>
+        The Immune Response
+    </h2>
+
+
+    <h3>
+        Non-specific defenses
+    </h3>
+
+    <ul>
+
+        <li>
+            Skin
+        </li>
+
+        <li>
+            Mucus
+        </li>
+
+        <li>
+            Ciliated epithelial cells
+        </li>
+
+        <li>
+            Stomach acid
+        </li>
+
+        <li>
+            Lysozyme
+        </li>
+
+        <li>
+            Phagocytic cells
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Phagocytosis
+    </h3>
+
+    <ol>
+
+        <li>
+            Phagocyte detects the pathogen.
+        </li>
+
+        <li>
+            Pathogen is engulfed.
+        </li>
+
+        <li>
+            A phagosome forms.
+        </li>
+
+        <li>
+            Lysosomes fuse with the vesicle.
+        </li>
+
+        <li>
+            Digestive enzymes destroy the pathogen.
+        </li>
+
+    </ol>
+
+
+    <h3>
+        Specific immunity
+    </h3>
+
+    <p>
+
+        Lymphocytes recognise specific antigens and
+        produce an immune response.
+
+    </p>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>B lymphocytes</h4>
+
+            <p>
+                Produce antibodies and form memory cells.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>T lymphocytes</h4>
+
+            <p>
+                Participate in cell-mediated immune
+                responses and help coordinate immunity.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Antibodies
+    </h3>
+
+    <p>
+
+        Antibodies have specific binding sites that
+        recognise complementary antigens.
+
+    </p>
+
+
+    <div class="definition">
+
+        <strong>
+            Antigen:
+        </strong>
+
+        A molecule or structure recognised by the
+        immune system and capable of triggering
+        a specific immune response.
+
+    </div>
+
+
+    <h3>
+        Vaccination
+    </h3>
+
+    <p>
+
+        Vaccination exposes the immune system to an
+        antigen so that memory cells can develop.
+
+        On later exposure to the pathogen, the
+        secondary immune response is faster and
+        stronger.
+
+    </p>
+
+
+    <div class="method">
+
+        <strong>
+            Primary response:
+        </strong>
+
+        Slower and smaller.
+
+        <br><br>
+
+        <strong>
+            Secondary response:
+        </strong>
+
+        Faster and larger due to memory cells.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ANTIBIOTICS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        11 — Antibiotics
+    </div>
+
+    <h2>
+        Antibiotics and Resistance
+    </h2>
+
+
+    <p>
+
+        Antibiotics target bacterial structures or processes
+        and therefore do not directly treat viral infections.
+
+    </p>
+
+
+    <h3>
+        Antibiotic resistance
+    </h3>
+
+    <ol>
+
+        <li>
+            Random genetic variation produces a resistant
+            bacterium.
+        </li>
+
+        <li>
+            Antibiotic exposure kills susceptible bacteria.
+        </li>
+
+        <li>
+            Resistant bacteria survive.
+        </li>
+
+        <li>
+            Resistant bacteria reproduce.
+        </li>
+
+        <li>
+            The resistance allele becomes more common.
+        </li>
+
+    </ol>
+
+
+    <div class="formula">
+
+        <strong>
+            Selection pressure:
+        </strong>
+
+        Antibiotic treatment
+
+        <br><br>
+
+        <strong>
+            Selected population:
+        </strong>
+
+        Resistant bacteria
+
+    </div>
+
+
+    <h3>
+        Reducing resistance</h3>
+
+    <ul>
+
+        <li>
+            Use antibiotics only when appropriate.
+        </li>
+
+        <li>
+            Avoid unnecessary prescriptions.
+        </li>
+
+        <li>
+            Use appropriate treatment regimes.
+        </li>
+
+        <li>
+            Develop new antimicrobial drugs.
+        </li>
+
+        <li>
+            Reduce transmission of resistant organisms.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     DECOMPOSITION
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        12 — Decomposition
+    </div>
+
+    <h2>
+        Microorganisms and Nutrient Cycling
+    </h2>
+
+
+    <p>
+
+        Microorganisms play major roles as decomposers,
+        breaking down organic material and returning
+        nutrients to ecosystems.
+
+    </p>
+
+
+    <h3>
+        Decomposition
+    </h3>
+
+    <ol>
+
+        <li>
+            Microorganisms release extracellular enzymes.
+        </li>
+
+        <li>
+            Large molecules are hydrolysed into smaller
+            soluble molecules.
+        </li>
+
+        <li>
+            Soluble molecules are absorbed.
+        </li>
+
+        <li>
+            Microorganisms respire and grow.
+        </li>
+
+        <li>
+            Carbon and mineral ions are returned to
+            the environment.
+        </li>
+
+    </ol>
+
+
+    <div class="tip">
+
+        Temperature, oxygen availability, moisture and
+        pH can influence decomposition.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FORENSICS
+     ===================================================== -->
+
+<section class="lesson reveal" id="forensics">
+
+    <div class="lesson-number">
+        13 — Forensics
+    </div>
+
+    <h2>
+        DNA Analysis and Forensic Biology
+    </h2>
+
+
+    <h3>
+        DNA profiling
+    </h3>
+
+    <p>
+
+        DNA profiling can compare DNA samples by analysing
+        differences in DNA fragments.
+
+    </p>
+
+
+    <h3>
+        Gel electrophoresis</h3>
+
+    <p>
+
+        DNA fragments can be separated according to size
+        using an electric field through a gel.
+
+    </p>
+
+
+    <div class="method">
+
+        <strong>
+            Basic sequence:
+        </strong>
+
+        <p>
+
+            DNA sample →
+            fragments →
+            electrical field →
+            separation →
+            banding pattern →
+            comparison
+
+        </p>
+
+    </div>
+
+
+    <h3>
+        Why do smaller fragments move further?
+    </h3>
+
+    <p>
+
+        Smaller DNA fragments move more easily through
+        the pores in the gel and therefore travel further
+        in the same period of time.
+
+    </p>
+
+
+    <div class="warning">
+
+        A DNA match indicates that samples have compatible
+        DNA profiles; interpretation of forensic evidence
+        also requires appropriate statistical and contextual
+        analysis.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CORE PRACTICALS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        14 — Core Practicals
+    </div>
+
+    <h2>
+        Unit 4 Practical Skills
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>
+                Core Practical 10
+            </h4>
+
+            <p>
+
+                Investigate the effects of light intensity,
+                wavelength, temperature and carbon dioxide
+                availability on the rate of photosynthesis
+                using a suitable aquatic plant.
+
+            </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Core Practical 11
+            </h4>
+
+            <p>
+
+                Carry out an ecological study of a habitat,
+                using techniques such as quadrats and
+                transects.
+
+            </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Microbiology
+            </h4>
+
+            <p>
+
+                Apply aseptic technique when culturing
+                microorganisms and interpreting growth.
+
+            </p>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Forensic analysis
+            </h4>
+
+            <p>
+
+                Understand how biological evidence such as
+                DNA fragments can be separated and compared.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            Practical exam rule:
+        </strong>
+
+        <p>
+
+            Know the independent variable, dependent variable,
+            controls, apparatus, method, expected pattern,
+            sources of error and realistic improvements.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DATA ANALYSIS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        15 — Mathematical Biology
+    </div>
+
+    <h2>
+        Calculations and Data Analysis
+    </h2>
+
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>
+                Percentage change
+            </h4>
+
+            <div class="formula">
+
+                [(new − original) ÷ original] × 100
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Rate
+            </h4>
+
+            <div class="formula">
+
+                Change ÷ time
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Efficiency
+            </h4>
+
+            <div class="formula">
+
+                useful output ÷ total input × 100
+
+            </div>
+
+        </div>
+
+
+        <div class="mini-card">
+
+            <h4>
+                Population estimate
+            </h4>
+
+            <div class="formula">
+
+                Mean per quadrat × total area
+                ÷ quadrat area
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <h3>
+        Interpreting graphs
+    </h3>
+
+    <ul>
+
+        <li>
+            Identify the overall trend.
+        </li>
+
+        <li>
+            Identify anomalies.
+        </li>
+
+        <li>
+            Compare gradients.
+        </li>
+
+        <li>
+            Quote data to support conclusions.
+        </li>
+
+        <li>
+            Distinguish correlation from causation.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM PRACTICE
+     ===================================================== -->
+
+<section class="lesson reveal" id="practice">
+
+    <div class="lesson-number">
+        16 — Exam Practice
+    </div>
+
+    <h2>
+        Unit 4 Practice
+    </h2>
+
+
+    <div class="question">
+
+        <strong>
+            1. State two products of the light-dependent
+            reactions that are used in the Calvin cycle.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                ATP and reduced NADP.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            2. Explain why oxygen is produced during
+            photosynthesis.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Water undergoes photolysis during the
+                light-dependent reactions, producing
+                oxygen as a product.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            3. Why is energy lost between trophic levels?
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Energy is lost through respiration and
+                released as heat. Some biomass is also
+                uneaten or not assimilated.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            4. Why are quadrats useful when studying plants?
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Plants are generally stationary, so quadrats
+                provide a defined area in which abundance or
+                distribution can be measured.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            5. Explain how antibiotic resistance can
+            increase in a bacterial population.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Genetic variation produces resistant bacteria.
+                Antibiotic treatment kills susceptible bacteria,
+                while resistant bacteria survive and reproduce.
+                Their resistance alleles therefore become more
+                common in the population.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            6. What is the role of memory cells after vaccination?
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Memory cells remain after the initial immune
+                response and allow a faster and stronger
+                response if the same antigen is encountered
+                again.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            7. Why do smaller DNA fragments travel further
+            through a gel?
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Smaller fragments pass more easily through
+                the pores in the gel and therefore migrate
+                further in the same time.
+
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <div class="question">
+
+        <strong>
+            8. Give two factors that can affect decomposition.
+        </strong>
+
+        <details>
+
+            <summary>
+                Show answer
+            </summary>
+
+            <p>
+
+                Temperature, oxygen availability, moisture
+                and pH are acceptable examples.
+
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM STRATEGY
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">
+        17 — Exam Strategy
+    </div>
+
+    <h2>
+        How to Attack a Unit 4 Question
+    </h2>
+
+
+    <div class="method">
+
+        <strong>
+            1 — Identify the biological process
+        </strong>
+
+        <p>
+
+            Photosynthesis? Ecology? Immunity?
+            Microbiology? Evolution?
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            2 — Identify the command word
+        </strong>
+
+        <p>
+
+            State, describe, explain, calculate,
+            compare, evaluate or suggest.
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            3 — Use precise biological terminology
+        </strong>
+
+        <p>
+
+            Avoid vague phrases such as "energy disappears."
+            Say that energy is transferred and eventually
+            dissipated as heat.
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            4 — Link cause to consequence
+        </strong>
+
+        <p>
+
+            Especially in six-mark explanations,
+            connect each biological step logically.
+
+        </p>
+
+    </div>
+
+
+    <div class="method">
+
+        <strong>
+            5 — Use data
+        </strong>
+
+        <p>
+
+            When a graph or table is provided,
+            quote relevant values and describe patterns.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK REVIEW
+     ===================================================== -->
+
+<section class="quick-review reveal" id="review">
+
+    <h2>
+        Unit 4 — Quick Review
+    </h2>
+
+
+    <div class="review-grid">
+
+        <div class="review-item">
+            ✓ Photosynthesis equation
+        </div>
+
+        <div class="review-item">
+            ✓ Chloroplast structure
+        </div>
+
+        <div class="review-item">
+            ✓ Light-dependent reactions
+        </div>
+
+        <div class="review-item">
+            ✓ Photolysis
+        </div>
+
+        <div class="review-item">
+            ✓ Cyclic and non-cyclic photophosphorylation
+        </div>
+
+        <div class="review-item">
+            ✓ Calvin cycle
+        </div>
+
+        <div class="review-item">
+            ✓ ATP
+        </div>
+
+        <div class="review-item">
+            ✓ Energy flow
+        </div>
+
+        <div class="review-item">
+            ✓ GPP and NPP
+        </div>
+
+        <div class="review-item">
+            ✓ Populations and communities
+        </div>
+
+        <div class="review-item">
+            ✓ Quadrats
+        </div>
+
+        <div class="review-item">
+            ✓ Transects
+        </div>
+
+        <div class="review-item">
+            ✓ Climate change
+        </div>
+
+        <div class="review-item">
+            ✓ Natural selection
+        </div>
+
+        <div class="review-item">
+            ✓ Speciation
+        </div>
+
+        <div class="review-item">
+            ✓ Microbial growth
+        </div>
+
+        <div class="review-item">
+            ✓ Aseptic technique
+        </div>
+
+        <div class="review-item">
+            ✓ Pathogens
+        </div>
+
+        <div class="review-item">
+            ✓ Innate immunity
+        </div>
+
+        <div class="review-item">
+            ✓ Adaptive immunity
+        </div>
+
+        <div class="review-item">
+            ✓ Vaccination
+        </div>
+
+        <div class="review-item">
+            ✓ Antibiotic resistance
+        </div>
+
+        <div class="review-item">
+            ✓ Decomposition
+        </div>
+
+        <div class="review-item">
+            ✓ DNA analysis
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<div class="navigation">
+
+    <a class="button" href="biology-3.html">
+        ← Biology Unit 3
+    </a>
+
+    <a class="button" href="biology-5.html">
+        Biology Unit 5 →
+    </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+    <strong>IAL ATLAS</strong>
+
+    <br>
+
+    Free, student-built Edexcel International A Level resources.
+
+    <br><br>
+
+    Biology Unit 4 —
+    Energy, Environment, Microbiology and Immunity
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL PROGRESS
+   ========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        scrollHeight > 0
+        ? (scrollTop / scrollHeight) * 100
+        : 0;
+
+    document.getElementById("progress").style.width =
+        progress + "%";
+
+});
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i=0;i<60;i++){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        Math.random()*100 + "%";
+
+    particle.style.animationDuration =
+        (8 + Math.random()*18) + "s";
+
+    particle.style.animationDelay =
+        (-Math.random()*20) + "s";
+
+    particle.style.opacity =
+        .2 + Math.random()*.6;
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.10
+        }
+    );
+
+
+document.querySelectorAll(".reveal")
+.forEach(el=>{
+
+    revealObserver.observe(el);
+
+});
+
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
+
+document.addEventListener(
+    "pointermove",
+    e=>{
+
+        document.body.style.setProperty(
+            "--mx",
+            e.clientX + "px"
+        );
+
+        document.body.style.setProperty(
+            "--my",
+            e.clientY + "px"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CARD TILT
+   ========================================================= */
+
+document.querySelectorAll(".lesson")
+.forEach(card=>{
+
+    card.addEventListener(
+        "pointermove",
+        e=>{
+
+            if(window.innerWidth < 900)
+                return;
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                e.clientX - rect.left;
+
+            const y =
+                e.clientY - rect.top;
+
+            const rotateY =
+                ((x / rect.width)-.5) * 1.4;
+
+            const rotateX =
+                -((y / rect.height)-.5) * 1.4;
+
+            card.style.transform =
+                `perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-2px)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "pointerleave",
+        ()=>{
+
+            card.style.transform = "";
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
+
