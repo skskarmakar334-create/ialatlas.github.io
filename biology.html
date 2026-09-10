@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edexcel IAL Biology Notes & Revision | IAL ATLAS</title>
+
+    <meta name="description"
+          content="Free, student-built Edexcel International A Level Biology notes, revision resources, practical skills and unit guides from IAL ATLAS.">
+
+    <meta name="keywords"
+          content="Edexcel IAL Biology, International A Level Biology, Biology notes, Biology revision, WBI11, WBI12, WBI13, WBI14, WBI15, WBI16">
+
+    <meta name="author" content="IAL ATLAS">
+
+    <meta property="og:title" content="Edexcel IAL Biology | IAL ATLAS">
+    <meta property="og:description"
+          content="Explore free Edexcel International A Level Biology notes, revision resources and practical skills.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #05070d;
+            color: #f4f7ff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+
+            background:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+            background-size: 50px 50px;
+            mask-image: linear-gradient(to bottom, black, transparent 90%);
+        }
+
+        .ambient {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.14;
+            pointer-events: none;
+            z-index: -3;
+        }
+
+        .ambient.one {
+            top: -180px;
+            left: -180px;
+            background: #00eaff;
+        }
+
+        .ambient.two {
+            right: -180px;
+            top: 45%;
+            background: #8b5cf6;
+        }
+
+        .ambient.three {
+            left: 30%;
+            bottom: -300px;
+            background: #22c55e;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 18px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(5, 7, 13, 0.72);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .logo {
+            text-decoration: none;
+            color: white;
+
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00eaff;
+        }
+
+        .back {
+            text-decoration: none;
+            color: #aeb8ca;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #00eaff;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+            padding: 150px 7% 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 14px;
+            margin-bottom: 25px;
+
+            border: 1px solid rgba(0,234,255,0.22);
+            border-radius: 999px;
+
+            background: rgba(0,234,255,0.05);
+
+            color: #8eefff;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00eaff;
+            box-shadow: 0 0 15px #00eaff;
+        }
+
+        h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3.4rem, 8vw, 7.5rem);
+            line-height: 0.92;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #ffffff, #6ee7f9, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            color: #aeb8ca;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 13px 20px;
+            border-radius: 12px;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .button.primary {
+            color: #001014;
+            background: #00eaff;
+            box-shadow: 0 0 30px rgba(0,234,255,0.2);
+        }
+
+        .button.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0,234,255,0.4);
+        }
+
+        .button.secondary {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.13);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .button.secondary:hover {
+            border-color: rgba(0,234,255,0.4);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           BIOLOGY ORBIT
+        ========================= */
+
+        .biology-visual {
+            width: 400px;
+            height: 400px;
+
+            position: relative;
+            flex-shrink: 0;
+
+            display: grid;
+            place-items: center;
+        }
+
+        .cell {
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            background:
+                radial-gradient(circle at 35% 30%,
+                rgba(255,255,255,0.2),
+                rgba(0,234,255,0.08) 45%,
+                rgba(139,92,246,0.1));
+
+            border: 1px solid rgba(0,234,255,0.35);
+
+            box-shadow:
+                0 0 50px rgba(0,234,255,0.16),
+                inset 0 0 40px rgba(139,92,246,0.12);
+
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .nucleus {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 50%;
+
+            background: rgba(139,92,246,0.25);
+            border: 1px solid rgba(139,92,246,0.6);
+
+            box-shadow: 0 0 35px rgba(139,92,246,0.4);
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(0,234,255,0.16);
+            border-radius: 50%;
+        }
+
+        .orbit.one {
+            width: 260px;
+            height: 110px;
+            transform: rotate(25deg);
+            animation: rotate 9s linear infinite;
+        }
+
+        .orbit.two {
+            width: 310px;
+            height: 150px;
+            transform: rotate(-35deg);
+            animation: rotateReverse 12s linear infinite;
+        }
+
+        .orbit.three {
+            width: 350px;
+            height: 220px;
+            transform: rotate(65deg);
+            animation: rotate 15s linear infinite;
+        }
+
+        .dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #00eaff;
+            box-shadow: 0 0 15px #00eaff;
+        }
+
+        .dot.a {
+            top: 35px;
+            right: 70px;
+        }
+
+        .dot.b {
+            bottom: 70px;
+            left: 45px;
+            background: #8b5cf6;
+            box-shadow: 0 0 15px #8b5cf6;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateReverse {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            max-width: 1300px;
+            margin: auto;
+            padding: 90px 6%;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading small {
+            color: #00eaff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .section-heading h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            margin-top: 10px;
+        }
+
+        .section-heading p {
+            color: #8994a8;
+            margin-top: 12px;
+            line-height: 1.7;
+            max-width: 650px;
+        }
+
+        /* =========================
+           UNIT CARDS
+        ========================= */
+
+        .units {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .unit-card {
+            position: relative;
+
+            padding: 30px;
+
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+
+            backdrop-filter: blur(15px);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .unit-card::before {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+
+            top: -90px;
+            right: -70px;
+
+            background: rgba(0,234,255,0.08);
+            filter: blur(25px);
+        }
+
+        .unit-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,234,255,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
+
+        .unit-number {
+            color: #00eaff;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .unit-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.35rem;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .unit-card p {
+            color: #8f9aad;
+            line-height: 1.7;
+            font-size: 0.92rem;
+        }
+
+        .unit-link {
+            display: inline-block;
+            margin-top: 20px;
+
+            color: #00eaff;
+            text-decoration: none;
+
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .unit-link:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           RESOURCE STRIP
+        ========================= */
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .resource {
+            padding: 25px 20px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+        .resource:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,234,255,0.25);
+        }
+
+        .resource-icon {
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+        }
+
+        .resource h3 {
+            font-size: 0.95rem;
+            margin-bottom: 7px;
+        }
+
+        .resource p {
+            color: #7f8a9d;
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NOTICE
+        ========================= */
+
+        .notice {
+            margin-top: 70px;
+            padding: 28px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(0,234,255,0.14);
+            background: rgba(0,234,255,0.035);
+
+            color: #a9b5c8;
+            line-height: 1.7;
+            font-size: 0.88rem;
+        }
+
+        .notice strong {
+            color: #00eaff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 70px;
+            padding: 45px 6%;
+
+            border-top: 1px solid rgba(255,255,255,0.07);
+
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: "Space Grotesk", sans-serif;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #737e91;
+            font-size: 0.8rem;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 130px;
+            }
+
+            .hero-content {
+                max-width: 800px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .biology-visual {
+                width: 330px;
+                height: 330px;
+                transform: scale(0.85);
+            }
+
+            .resources {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 16px 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            h1 {
+                font-size: 4rem;
+                letter-spacing: -3px;
+            }
+
+            .units {
+                grid-template-columns: 1fr;
+            }
+
+            .resources {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .biology-visual {
+                transform: scale(0.72);
+                margin-top: -30px;
+                margin-bottom: -30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="ambient one"></div>
+    <div class="ambient two"></div>
+    <div class="ambient three"></div>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            IAL <span>ATLAS</span>
+        </a>
+
+        <a href="index.html" class="back">
+            ← Back to Atlas
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Edexcel International Advanced Level
+            </div>
+
+            <h1>
+                <span>Biology</span>
+            </h1>
+
+            <p class="hero-description">
+                Explore clear, student-built Biology notes and revision
+                resources for the Pearson Edexcel International A Level.
+                From molecules and cells to immunity, gene technology and
+                practical skills — everything organized in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#units" class="button primary">
+                    Explore Units
+                </a>
+
+                <a href="#resources" class="button secondary">
+                    Revision Resources
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BIOLOGY VISUAL -->
+
+        <div class="biology-visual">
+
+            <div class="orbit one"></div>
+            <div class="orbit two"></div>
+            <div class="orbit three"></div>
+
+            <div class="cell">
+                <div class="nucleus"></div>
+            </div>
+
+            <div class="dot a"></div>
+            <div class="dot b"></div>
+
+        </div>
+
+    </header>
+
+
+    <!-- UNITS -->
+
+    <section class="section" id="units">
+
+        <div class="section-heading">
+
+            <small>Edexcel IAL Biology</small>
+
+            <h2>
+                Explore the six units
+            </h2>
+
+            <p>
+                The complete International A Level Biology qualification
+                consists of six units across IAS and IA2.
+            </p>
+
+        </div>
+
+
+        <div class="units">
+
+            <!-- UNIT 1 -->
+
+            <article class="unit-card">
+
+                <div class="unit-number">
+                    Unit 01 · WBI11
+                </div>
+
+                <h3>
+                    Molecules, Diet, Transport and Health
+                </h3>
+
+                <p>
+                    Explore biological molecules, diet, digestion,
+                    transport systems, health and the biological
+                    processes that connect them.
+                </p>
+
+                <a href="biology-1.html" class="unit-link">
+                    Open Unit 1 →
+                </a>
+
+            </article>
+
+
+            <!-- UNIT 2 -->
+
+            <article class="unit-card">
+
+                <div class="unit-number">
+                    Unit 02 · WBI12
+                </div>
+
+                <h3>
+                    Cells, Development, Biodiversity and Conservation
+                </h3>
+
+                <p>
+                    Study cell structure and division, development,
+                    biodiversity, classification and conservation.
+                </p>
+
+                <a href="biology-2.html" class="unit-link">
+                    Open Unit 2 →
+                </a>
+
+            </article>
+
+
+            <!-- UNIT 3 -->
+
+            <article class="unit-card">
+
+                <div class="unit-number">
+                    Unit 03 · WBI13
+                </div>
+
+                <h3>
+                    Practical Skills in Biology I
+                </h3>
+
+                <p>
+                    Build confidence with experimental design,
+                    data analysis, scientific measurements and
+                    practical investigation skills.
+                </p>
+
+                <a href="biology-3.html" class="unit-link">
+                    Open Unit 3 →
+                </a>
+
+            </article>
+
+
+            <!-- UNIT 4 -->
+
+            <article class="unit-card">
+
+                <div class="unit-number">
+                    Unit 04 · WBI14
+                </div>
+
+                <h3>
+                    Energy, Environment, Microbiology and Immunity
+                </h3>
+
+                <p>
+                    Investigate energy transfer, ecosystems,
+                    microorganisms, environmental biology and
+                    the immune system.
+                </p>
+
+                <a href="biology-4.html" class="unit-link">
+                    Open Unit 4 →
+                </a>
+
+            </article>
+
+
+            <!-- UNIT 5 -->
+
+            <article class="unit-card">
+
+                <div class="unit-number">
+                    Unit 05 · WBI15
+                </div>
+
+                <h3>
+                    Respiration, Internal Environment,
+                    Coordination and Gene Technology
+                </h3>
+
+                <p>
+                    Explore respiration, homeostasis, coordination,
+                    nervous and hormonal systems and modern
+                    gene technology.
+                </p>
+
+                <a href="biology-5.html" class="unit-link">
+                    Open Unit 5 →
+                </a>
+
+            </article>
+
+
+            <!-- UNIT 6 -->
+
+            <article class="unit-card">
+
+                <div class="unit-number">
+                    Unit 06 · WBI16
+                </div>
+
+                <h3>
+                    Practical Skills in Biology II
+                </h3>
+
+                <p>
+                    Develop advanced practical, experimental,
+                    analytical and evaluation skills required
+                    for IA2 Biology.
+                </p>
+
+                <a href="biology-6.html" class="unit-link">
+                    Open Unit 6 →
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <div class="notice">
+
+            <strong>IAL ATLAS Biology:</strong>
+            This section is being built specifically around the
+            Pearson Edexcel International Advanced Level Biology
+            specification. Content will be added progressively,
+            with notes, revision material, practical skills and
+            exam-focused resources.
+
+        </div>
+
+    </section>
+
+
+    <!-- RESOURCES -->
+
+    <section class="section" id="resources">
+
+        <div class="section-heading">
+
+            <small>Study smarter</small>
+
+            <h2>
+                Biology revision tools
+            </h2>
+
+            <p>
+                More than just notes — the goal is to make Biology
+                easier to understand, revise and apply.
+            </p>
+
+        </div>
+
+
+        <div class="resources">
+
+            <div class="resource">
+
+                <div class="resource-icon">
+                    🧬
+                </div>
+
+                <h3>
+                    Concept Notes
+                </h3>
+
+                <p>
+                    Clear explanations of important biological
+                    concepts and processes.
+                </p>
+
+            </div>
+
+
+            <div class="resource">
+
+                <div class="resource-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Practical Skills
+                </h3>
+
+                <p>
+                    Experimental methods, variables, data
+                    analysis and evaluation.
+                </p>
+
+            </div>
+
+
+            <div class="resource">
+
+                <div class="resource-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Exam Revision
+                </h3>
+
+                <p>
+                    Key facts, definitions, common mistakes
+                    and exam-focused revision.
+                </p>
+
+            </div>
+
+
+            <div class="resource">
+
+                <div class="resource-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data & Analysis
+                </h3>
+
+                <p>
+                    Learn how to interpret biological data,
+                    graphs, tables and experimental results.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            IAL <span style="color:#00eaff;">ATLAS</span>
+        </h3>
+
+        <p>
+            Free. Student-built. Made to make International
+            A Level learning easier.
+        </p>
+
+        <p style="margin-top:10px;">
+            © 2026 IAL ATLAS
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
