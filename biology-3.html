@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biology Unit 3 | IAL ATLAS</title>
+
+<meta name="description"
+content="Edexcel International A Level Biology Unit 3 practical skills notes, experimental design, data analysis, microscopy, enzymes, osmosis, genetics, plant practicals and exam practice.">
+
+<meta name="keywords"
+content="Edexcel IAL Biology Unit 3, WBI13, Biology practical skills, Biology practicals, experimental design, data analysis, IAL Biology">
+
+<meta name="theme-color" content="#05070d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   IAL ATLAS — BIOLOGY UNIT 3
+   PRACTICAL SKILLS IN BIOLOGY I
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(70,150,255,.10),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(0,255,190,.07),transparent 30%),
+        #05070d;
+    color:#eef4ff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.18;
+    z-index:-2;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:45px 45px;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background:
+        radial-gradient(circle at var(--mx,50%) var(--my,50%),
+        rgba(90,170,255,.10),
+        transparent 25%);
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:3px;
+    background:linear-gradient(90deg,#5cc8ff,#8a7dff,#6affc9);
+    z-index:9999;
+    box-shadow:0 0 15px rgba(90,200,255,.8);
+}
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:rgba(130,210,255,.65);
+    box-shadow:0 0 8px rgba(100,200,255,.5);
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+    15%{opacity:.8;}
+    85%{opacity:.8;}
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(5,7,13,.70);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:800;
+    letter-spacing:1px;
+    font-size:1.05rem;
+    color:white;
+}
+
+.logo span{
+    color:#69c9ff;
+}
+
+.back{
+    text-decoration:none;
+    color:#b8c8df;
+    border:1px solid rgba(255,255,255,.10);
+    padding:8px 15px;
+    border-radius:999px;
+    transition:.3s;
+    font-size:.9rem;
+}
+
+.back:hover{
+    color:white;
+    border-color:rgba(100,200,255,.5);
+    box-shadow:0 0 20px rgba(80,180,255,.15);
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    min-height:700px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:90px 20px 70px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    border:1px solid rgba(100,190,255,.08);
+    box-shadow:
+        0 0 80px rgba(70,170,255,.07),
+        inset 0 0 80px rgba(70,170,255,.04);
+    animation:heroOrbit 18s linear infinite;
+}
+
+@keyframes heroOrbit{
+    to{transform:rotate(360deg);}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(90,180,255,.08);
+    border:1px solid rgba(90,180,255,.18);
+    color:#8edaff;
+    font-size:.82rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#67d4ff;
+    box-shadow:0 0 12px #67d4ff;
+}
+
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(3rem,8vw,6.5rem);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+    background:linear-gradient(135deg,#ffffff,#8fdcff,#8c82ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-subtitle{
+    max-width:720px;
+    margin:auto;
+    color:#a9b9cf;
+    font-size:1.05rem;
+}
+
+.stats{
+    margin:45px auto 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    max-width:800px;
+    gap:12px;
+}
+
+.stat{
+    padding:18px 10px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.025);
+    border-radius:16px;
+    backdrop-filter:blur(15px);
+}
+
+.stat strong{
+    display:block;
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.4rem;
+    color:#f3f8ff;
+}
+
+.stat span{
+    color:#7f91aa;
+    font-size:.75rem;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px 100px;
+}
+
+/* =========================================================
+   TOPIC NAV
+   ========================================================= */
+
+.topic-nav{
+    position:sticky;
+    top:73px;
+    z-index:900;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:12px;
+    margin-bottom:35px;
+    background:rgba(8,12,21,.75);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+}
+
+.topic-nav::-webkit-scrollbar{
+    height:3px;
+}
+
+.topic-nav a{
+    white-space:nowrap;
+    text-decoration:none;
+    color:#92a4bd;
+    padding:9px 13px;
+    border-radius:10px;
+    font-size:.82rem;
+    transition:.3s;
+}
+
+.topic-nav a:hover{
+    color:#fff;
+    background:rgba(100,190,255,.08);
+}
+
+/* =========================================================
+   LESSON CARDS
+   ========================================================= */
+
+.lesson{
+    position:relative;
+    margin:30px 0;
+    padding:34px;
+    border:1px solid rgba(255,255,255,.08);
+    background:
+        linear-gradient(145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.018));
+    border-radius:24px;
+    backdrop-filter:blur(20px);
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow:hidden;
+}
+
+.lesson::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,#6acbff,transparent);
+    opacity:.45;
+}
+
+.lesson-number{
+    color:#6bcfff;
+    font-size:.75rem;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.lesson h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(1.7rem,4vw,2.5rem);
+    margin-bottom:18px;
+}
+
+.lesson h3{
+    font-family:"Space Grotesk",sans-serif;
+    margin:28px 0 10px;
+    color:#9bdfff;
+}
+
+.lesson h4{
+    margin:20px 0 7px;
+    color:#dbeaff;
+}
+
+.lesson p{
+    color:#aebdd0;
+    margin:10px 0;
+}
+
+.lesson ul,
+.lesson ol{
+    padding-left:22px;
+    color:#aebdd0;
+}
+
+.lesson li{
+    margin:7px 0;
+}
+
+/* =========================================================
+   SPECIAL BOXES
+   ========================================================= */
+
+.definition,
+.formula,
+.example,
+.warning,
+.tip,
+.method{
+    margin:20px 0;
+    padding:18px 20px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.025);
+}
+
+.definition{
+    border-left:3px solid #6bcfff;
+}
+
+.formula{
+    position:relative;
+    overflow:hidden;
+    border-left:3px solid #9b8cff;
+    font-family:"Space Grotesk",sans-serif;
+    color:#e9e5ff;
+}
+
+.formula::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,#b5aaff,transparent);
+    animation:scan 4s linear infinite;
+}
+
+@keyframes scan{
+    to{left:100%;}
+}
+
+.example{
+    border-left:3px solid #69e0bd;
+}
+
+.example-title{
+    font-weight:800;
+    color:#76e8c8;
+    margin-bottom:8px;
+}
+
+.solution{
+    color:#c3d1e3;
+}
+
+.warning{
+    border-left:3px solid #ffba69;
+}
+
+.tip{
+    border-left:3px solid #82a8ff;
+}
+
+.method{
+    border-left:3px solid #9effc9;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:20px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+
+th,
+td{
+    padding:12px 14px;
+    border:1px solid rgba(255,255,255,.08);
+    text-align:left;
+}
+
+th{
+    background:rgba(100,190,255,.08);
+    color:#cceeff;
+}
+
+td{
+    color:#aebdd0;
+}
+
+/* =========================================================
+   PRACTICAL VISUAL
+   ========================================================= */
+
+.lab-visual{
+    min-height:220px;
+    margin:25px 0;
+    border-radius:22px;
+    border:1px solid rgba(100,190,255,.12);
+    background:
+        radial-gradient(circle at center,
+        rgba(80,190,255,.10),
+        transparent 45%),
+        rgba(0,0,0,.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.lab-visual::before,
+.lab-visual::after{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(100,190,255,.18);
+    border-radius:50%;
+    animation:spin 12s linear infinite;
+}
+
+.lab-visual::before{
+    width:150px;
+    height:150px;
+}
+
+.lab-visual::after{
+    width:230px;
+    height:80px;
+    transform:rotate(35deg);
+}
+
+.lab-core{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:radial-gradient(circle,#e8fbff,#61cfff 40%,transparent 70%);
+    box-shadow:0 0 40px #5fcaff;
+    animation:pulse 2.5s ease-in-out infinite;
+    z-index:2;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.15);
+        box-shadow:0 0 70px #5fcaff;
+    }
+}
+
+/* =========================================================
+   TWO COLUMN
+   ========================================================= */
+
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.mini-card{
+    padding:20px;
+    border-radius:17px;
+    border:1px solid rgba(255,255,255,.07);
+    background:rgba(255,255,255,.025);
+}
+
+.mini-card h4{
+    margin-top:0;
+    color:#8fdcff;
+}
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.question{
+    margin:18px 0;
+    padding:20px;
+    border-radius:16px;
+    background:rgba(0,0,0,.18);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.question strong{
+    color:#e9f4ff;
+}
+
+details{
+    margin-top:12px;
+}
+
+summary{
+    cursor:pointer;
+    color:#78d8ff;
+    font-weight:700;
+}
+
+details p{
+    margin-top:10px;
+}
+
+/* =========================================================
+   QUICK REVIEW
+   ========================================================= */
+
+.quick-review{
+    margin-top:45px;
+    padding:32px;
+    border-radius:25px;
+    border:1px solid rgba(120,200,255,.16);
+    background:
+        radial-gradient(circle at top right,
+        rgba(100,190,255,.08),
+        transparent 40%),
+        rgba(255,255,255,.025);
+}
+
+.quick-review h2{
+    font-family:"Space Grotesk",sans-serif;
+    margin-bottom:15px;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.review-item{
+    padding:12px 14px;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:12px;
+    color:#aebdd0;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:55px;
+}
+
+.button{
+    display:inline-block;
+    text-decoration:none;
+    color:#dcecff;
+    padding:12px 18px;
+    border-radius:13px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.025);
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    border-color:rgba(100,200,255,.4);
+    box-shadow:0 10px 30px rgba(50,150,255,.12);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    text-align:center;
+    padding:45px 20px;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:#62738a;
+    font-size:.85rem;
+}
+
+footer strong{
+    color:#a7cfff;
+}
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:800px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-2,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:620px;
+    }
+
+    .hero::before{
+        width:430px;
+        height:430px;
+    }
+
+    .lesson{
+        padding:24px 20px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        padding:13px 16px;
+    }
+
+    .hero{
+        padding:70px 15px 50px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .stats{
+        gap:8px;
+    }
+
+    .stat{
+        padding:14px 7px;
+    }
+
+    .topic-nav{
+        top:62px;
+    }
+
+    .container{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .button{
+        text-align:center;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.001ms !important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+<div id="particles"></div>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            IAL <span>ATLAS</span>
+        </div>
+
+        <a class="back" href="biology.html">
+            ← Biology
+        </a>
+
+    </div>
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Edexcel International A Level Biology
+        </div>
+
+        <h1>Unit 3</h1>
+
+        <p class="hero-subtitle">
+            Practical Skills in Biology I — experimental design,
+            measurement, microscopy, data processing, graph analysis,
+            evaluation and scientific problem solving.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>WBI13</strong>
+                <span>Unit Code</span>
+            </div>
+
+            <div class="stat">
+                <strong>50</strong>
+                <span>Marks</span>
+            </div>
+
+            <div class="stat">
+                <strong>1h 20m</strong>
+                <span>Exam</span>
+            </div>
+
+            <div class="stat">
+                <strong>5+</strong>
+                <span>Maths Marks</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+<!-- =====================================================
+     TOPIC NAVIGATION
+     ===================================================== -->
+
+<nav class="topic-nav">
+
+    <a href="#overview">Overview</a>
+    <a href="#planning">Planning</a>
+    <a href="#variables">Variables</a>
+    <a href="#measurement">Measurement</a>
+    <a href="#microscopy">Microscopy</a>
+    <a href="#enzymes">Enzymes</a>
+    <a href="#osmosis">Osmosis</a>
+    <a href="#plants">Plant Practicals</a>
+    <a href="#data">Data Analysis</a>
+    <a href="#graphs">Graphs</a>
+    <a href="#evaluation">Evaluation</a>
+    <a href="#practice">Practice</a>
+    <a href="#review">Review</a>
+
+</nav>
+
+
+<!-- =====================================================
+     OVERVIEW
+     ===================================================== -->
+
+<section class="lesson reveal" id="overview">
+
+    <div class="lesson-number">01 — Unit Overview</div>
+
+    <h2>What is Unit 3?</h2>
+
+    <p>
+        Unit 3 is the practical-skills examination for the
+        Edexcel International AS Biology course. It assesses
+        practical knowledge and experimental skills developed
+        while studying Units 1 and 2.
+    </p>
+
+    <div class="definition">
+        <strong>Key idea:</strong>
+        Unit 3 is not simply a memory test of practicals.
+        You must be able to apply biological knowledge to
+        unfamiliar experiments and evaluate experimental evidence.
+    </div>
+
+    <h3>What can the paper test?</h3>
+
+    <ul>
+        <li>Experimental design</li>
+        <li>Independent, dependent and controlled variables</li>
+        <li>Apparatus and measurement</li>
+        <li>Microscopy and biological drawings</li>
+        <li>Sampling techniques</li>
+        <li>Enzyme investigations</li>
+        <li>Osmosis investigations</li>
+        <li>Food tests and biological molecules</li>
+        <li>Cell and tissue investigations</li>
+        <li>Plant practicals</li>
+        <li>Data processing</li>
+        <li>Graph plotting and interpretation</li>
+        <li>Uncertainty and experimental error</li>
+        <li>Evaluation and improvements</li>
+        <li>Mathematical calculations</li>
+    </ul>
+
+    <div class="lab-visual">
+        <div class="lab-core"></div>
+    </div>
+
+    <div class="tip">
+        <strong>Exam mindset:</strong>
+        Always ask: What was changed? What was measured?
+        What was controlled? How reliable are the results?
+        What evidence supports the conclusion?
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PLANNING
+     ===================================================== -->
+
+<section class="lesson reveal" id="planning">
+
+    <div class="lesson-number">02 — Experimental Design</div>
+
+    <h2>Planning an Investigation</h2>
+
+    <p>
+        A strong practical investigation begins with a clear
+        question or hypothesis and a method designed to produce
+        reliable evidence.
+    </p>
+
+    <h3>A good experimental plan should include</h3>
+
+    <ol>
+        <li>Independent variable</li>
+        <li>Dependent variable</li>
+        <li>Controlled variables</li>
+        <li>Suitable apparatus</li>
+        <li>Measurement method</li>
+        <li>Repeated measurements</li>
+        <li>Safety precautions</li>
+        <li>Data-processing method</li>
+        <li>Method of reducing uncertainty</li>
+    </ol>
+
+    <div class="method">
+
+        <strong>Planning framework</strong>
+
+        <p>
+            Hypothesis → Variables → Apparatus → Method →
+            Repeats → Data → Graph → Analysis → Conclusion →
+            Evaluation
+        </p>
+
+    </div>
+
+    <h3>Hypothesis</h3>
+
+    <p>
+        A hypothesis should predict a relationship between
+        variables that can be tested experimentally.
+    </p>
+
+    <div class="example">
+
+        <div class="example-title">Example</div>
+
+        <p>
+            Investigate the effect of temperature on the rate
+            of an enzyme-controlled reaction.
+        </p>
+
+        <div class="solution">
+
+            <strong>Hypothesis:</strong>
+
+            Increasing temperature will increase reaction rate
+            up to an optimum temperature, after which the rate
+            will decrease because enzyme structure is disrupted.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VARIABLES
+     ===================================================== -->
+
+<section class="lesson reveal" id="variables">
+
+    <div class="lesson-number">03 — Variables</div>
+
+    <h2>Independent, Dependent and Controlled Variables</h2>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+
+            <h4>Independent variable</h4>
+
+            <p>
+                The variable deliberately changed by the
+                investigator.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Dependent variable</h4>
+
+            <p>
+                The variable measured in response to the
+                independent variable.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Controlled variable</h4>
+
+            <p>
+                A factor kept constant so that it does not
+                affect the dependent variable.
+            </p>
+
+        </div>
+
+        <div class="mini-card">
+
+            <h4>Confounding variable</h4>
+
+            <p>
+                An uncontrolled factor that could influence
+                the result and weaken the conclusion.
+            </p>
+
+        </div>
+
+    </div>
+
+    <h3>Example: enzyme experiment</h3>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+                <th>Variable</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>Independent</td>
+                <td>Temperature</td>
+            </tr>
+
+            <tr>
+                <td>Dependent</td>
+                <td>Initial reaction rate</td>
+            </tr>
+
+            <tr>
+                <td>Controlled</td>
+                <td>pH, substrate concentration, enzyme concentration</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="warning">
+        <strong>Common mistake:</strong>
+        Saying "keep everything else the same" is not enough.
+        Name the important controlled variables explicitly.
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEASUREMENT
+     ===================================================== -->
+
+<section class="lesson reveal" id="measurement">
+
+    <div class="lesson-number">04 — Measurement</div>
+
+    <h2>Measurements, Accuracy and Reliability</h2>
+
+    <p>
+        Biological investigations involve measurement of
+        quantities such as length, mass, volume, temperature,
+        time, pH and biological counts.
+    </p>
+
+    <h3>Accuracy vs precision</h3>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+            <h4>Accuracy</h4>
+            <p>
+                How close a measurement is to the true value.
+            </p>
+        </div>
+
+        <div class="mini-card">
+            <h4>Precision</h4>
+            <p>
+                How closely repeated measurements agree with
+                one another.
+            </p>
+        </div>
+
+    </div>
+
+    <h3>Repeat readings</h3>
+
+    <p>
+        Repeating measurements helps identify anomalous values
+        and allows a mean to be calculated.
+    </p>
+
+    <div class="formula">
+
+        Mean =
+        <br><br>
+        <strong>
+            sum of all measurements ÷ number of measurements
+        </strong>
+
+    </div>
+
+    <h3>Significant figures</h3>
+
+    <p>
+        Results should normally be reported with an appropriate
+        number of significant figures consistent with the
+        precision of the measurements.
+    </p>
+
+    <div class="tip">
+        Avoid reporting an experimentally measured value with
+        unrealistic precision.
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MICROSCOPY
+     ===================================================== -->
+
+<section class="lesson reveal" id="microscopy">
+
+    <div class="lesson-number">05 — Microscopy</div>
+
+    <h2>Microscopy and Biological Drawings</h2>
+
+    <p>
+        Microscopy is important throughout Biology Unit 3.
+        You may need to interpret images, calculate
+        magnification, identify structures and evaluate
+        microscope techniques.
+    </p>
+
+    <div class="formula">
+
+        <strong>
+            Magnification =
+            image size ÷ actual size
+        </strong>
+
+    </div>
+
+    <h3>Unit conversion</h3>
+
+    <ul>
+        <li>1 mm = 1000 μm</li>
+        <li>1 μm = 1000 nm</li>
+        <li>1 mm = 1,000,000 nm</li>
+    </ul>
+
+    <div class="example">
+
+        <div class="example-title">Worked example</div>
+
+        <p>
+            An image of a cell is 30 mm long. Its actual length
+            is 60 μm. Calculate the magnification.
+        </p>
+
+        <div class="solution">
+
+            Convert:
+
+            <br>
+
+            30 mm = 30,000 μm
+
+            <br><br>
+
+            Magnification = 30,000 ÷ 60
+
+            <br><br>
+
+            <strong>Magnification = ×500</strong>
+
+        </div>
+
+    </div>
+
+    <h3>Biological drawings</h3>
+
+    <ul>
+        <li>Use clear single lines.</li>
+        <li>Do not shade structures unnecessarily.</li>
+        <li>Draw only what is observed.</li>
+        <li>Use labels with ruled lines.</li>
+        <li>Include an appropriate scale or magnification where required.</li>
+        <li>Make the drawing large enough to show relevant detail.</li>
+    </ul>
+
+    <h3>Resolution</h3>
+
+    <p>
+        Resolution is the ability to distinguish two objects
+        that are close together as separate objects.
+    </p>
+
+    <div class="definition">
+        Higher resolution allows finer structural detail to
+        be distinguished.
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ENZYMES
+     ===================================================== -->
+
+<section class="lesson reveal" id="enzymes">
+
+    <div class="lesson-number">06 — Enzyme Practical</div>
+
+    <h2>Investigating Enzyme Activity</h2>
+
+    <p>
+        Enzyme investigations can involve changing temperature,
+        pH, enzyme concentration or substrate concentration
+        and measuring the initial reaction rate.
+    </p>
+
+    <h3>Initial rate</h3>
+
+    <div class="formula">
+
+        <strong>
+            Rate = change in measured quantity ÷ time
+        </strong>
+
+    </div>
+
+    <p>
+        The initial rate is useful because substrate
+        concentration and product concentration can change
+        during an experiment.
+    </p>
+
+    <h3>Temperature</h3>
+
+    <p>
+        Increasing temperature generally increases reaction
+        rate initially because molecules have greater kinetic
+        energy and collide more frequently.
+    </p>
+
+    <p>
+        Above the optimum temperature, bonds maintaining the
+        enzyme's three-dimensional structure can be disrupted,
+        changing the active site.
+    </p>
+
+    <h3>pH</h3>
+
+    <p>
+        Each enzyme has a range of pH values in which it works
+        effectively. Extreme pH can alter interactions within
+        the enzyme and affect the active site.
+    </p>
+
+    <h3>Important controls</h3>
+
+    <ul>
+        <li>Enzyme concentration</li>
+        <li>Substrate concentration</li>
+        <li>Temperature</li>
+        <li>pH</li>
+        <li>Reaction volume</li>
+        <li>Time intervals</li>
+    </ul>
+
+    <div class="question">
+
+        <strong>
+            Why should an enzyme experiment use a water bath?
+        </strong>
+
+        <details>
+
+            <summary>Show answer</summary>
+
+            <p>
+                A water bath helps maintain a stable and
+                controlled temperature throughout the reaction.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OSMOSIS
+     ===================================================== -->
+
+<section class="lesson reveal" id="osmosis">
+
+    <div class="lesson-number">07 — Osmosis Practical</div>
+
+    <h2>Investigating Osmosis</h2>
+
+    <p>
+        Osmosis is the net movement of water molecules through
+        a partially permeable membrane from a region of higher
+        water potential to a region of lower water potential.
+    </p>
+
+    <h3>Typical investigation</h3>
+
+    <p>
+        Plant tissue such as potato cylinders can be placed in
+        solutions of different concentrations.
+    </p>
+
+    <h3>Variables</h3>
+
+    <ul>
+        <li>
+            Independent variable: concentration of external solution
+        </li>
+        <li>
+            Dependent variable: percentage change in mass
+        </li>
+        <li>
+            Controlled variables: tissue dimensions,
+            temperature, volume of solution and time
+        </li>
+    </ul>
+
+    <div class="formula">
+
+        <strong>
+            Percentage change =
+            [(final value − initial value) ÷ initial value] × 100
+        </strong>
+
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">Worked example</div>
+
+        <p>
+            A potato cylinder changes from 2.50 g to 2.75 g.
+            Calculate the percentage change in mass.
+        </p>
+
+        <div class="solution">
+
+            Change = 2.75 − 2.50 = 0.25 g
+
+            <br><br>
+
+            Percentage change =
+            (0.25 ÷ 2.50) × 100
+
+            <br><br>
+
+            <strong>= 10%</strong>
+
+        </div>
+
+    </div>
+
+    <h3>Interpreting a graph</h3>
+
+    <p>
+        The concentration at which percentage change in mass is
+        approximately zero can be used to estimate the external
+        solution concentration at which there is no net movement
+        of water.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PLANT PRACTICALS
+     ===================================================== -->
+
+<section class="lesson reveal" id="plants">
+
+    <div class="lesson-number">08 — Plant Investigations</div>
+
+    <h2>Plant Practical Skills</h2>
+
+    <p>
+        Unit 3 can require practical application of plant
+        biology from Unit 2.
+    </p>
+
+    <h3>Plant tissue microscopy</h3>
+
+    <ul>
+        <li>Roots</li>
+        <li>Stems</li>
+        <li>Leaves</li>
+        <li>Xylem</li>
+        <li>Phloem</li>
+        <li>Sclerenchyma fibres</li>
+        <li>Sieve tubes</li>
+    </ul>
+
+    <h3>Plan diagrams</h3>
+
+    <p>
+        A plan diagram should show the overall arrangement of
+        tissues rather than individual cells in unnecessary detail.
+    </p>
+
+    <h3>Tensile strength</h3>
+
+    <p>
+        Plant fibres can be investigated by measuring the force
+        required to break a fibre or by examining how fibres
+        behave as increasing loads are applied.
+    </p>
+
+    <div class="method">
+
+        <strong>Fair test:</strong>
+
+        <p>
+            Fibre length, fibre type, fibre width and environmental
+            conditions should be controlled when appropriate.
+        </p>
+
+    </div>
+
+    <h3>Plant mineral deficiencies</h3>
+
+    <p>
+        Plant growth can be investigated by growing plants in
+        solutions lacking specific mineral ions and comparing
+        their development with a control.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     FOOD TESTS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">09 — Biological Molecule Tests</div>
+
+    <h2>Food Tests</h2>
+
+    <div class="table-wrap">
+
+        <table>
+
+            <tr>
+                <th>Food substance</th>
+                <th>Test</th>
+                <th>Positive result</th>
+            </tr>
+
+            <tr>
+                <td>Starch</td>
+                <td>Iodine solution</td>
+                <td>Blue-black</td>
+            </tr>
+
+            <tr>
+                <td>Reducing sugar</td>
+                <td>Benedict's reagent + heating</td>
+                <td>Green → yellow → orange → red precipitate</td>
+            </tr>
+
+            <tr>
+                <td>Protein</td>
+                <td>Biuret test</td>
+                <td>Lilac/purple</td>
+            </tr>
+
+            <tr>
+                <td>Lipid</td>
+                <td>Ethanol emulsion test</td>
+                <td>White/cloudy emulsion</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="warning">
+        <strong>Exam point:</strong>
+        Always distinguish between the reagent, the procedure
+        and the positive result.
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MICROBIOLOGY / ASEPTIC TECHNIQUE
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">10 — Microbiology</div>
+
+    <h2>Microbial Investigations and Aseptic Technique</h2>
+
+    <p>
+        Practical investigations involving microorganisms require
+        careful control of contamination and safe handling.
+    </p>
+
+    <h3>Aseptic technique</h3>
+
+    <ul>
+        <li>Use sterile equipment.</li>
+        <li>Minimise exposure of cultures to the environment.</li>
+        <li>Disinfect appropriate surfaces.</li>
+        <li>Use appropriate protective equipment.</li>
+        <li>Dispose of biological material safely.</li>
+    </ul>
+
+    <div class="definition">
+        <strong>Aseptic technique:</strong>
+        procedures used to reduce contamination of cultures
+        and the surrounding environment.
+    </div>
+
+    <h3>Antimicrobial investigations</h3>
+
+    <p>
+        The effectiveness of an antimicrobial substance can be
+        investigated by comparing zones of inhibition around
+        treated discs.
+    </p>
+
+    <div class="formula">
+
+        <strong>
+            Larger zone of inhibition ≠ automatically
+            greater effectiveness in every context
+        </strong>
+
+    </div>
+
+    <p>
+        Diffusion through the agar, concentration and other
+        experimental factors can affect zone size.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     DATA PROCESSING
+     ===================================================== -->
+
+<section class="lesson reveal" id="data">
+
+    <div class="lesson-number">11 — Data Processing</div>
+
+    <h2>Processing Experimental Data</h2>
+
+    <h3>Mean</h3>
+
+    <div class="formula">
+        Mean = total of values ÷ number of values
+    </div>
+
+    <h3>Range</h3>
+
+    <div class="formula">
+        Range = highest value − lowest value
+    </div>
+
+    <h3>Percentage change</h3>
+
+    <div class="formula">
+        Percentage change =
+        [(new − original) ÷ original] × 100
+    </div>
+
+    <h3>Ratio</h3>
+
+    <p>
+        Ratios can be simplified by dividing each quantity by
+        the same factor.
+    </p>
+
+    <h3>Mitotic index</h3>
+
+    <div class="formula">
+
+        Mitotic index =
+        <br><br>
+        number of cells undergoing mitosis
+        ÷
+        total number of cells
+
+    </div>
+
+    <div class="example">
+
+        <div class="example-title">Example</div>
+
+        <p>
+            24 cells in a root tip are undergoing mitosis out
+            of 120 cells observed.
+        </p>
+
+        <div class="solution">
+
+            Mitotic index = 24 ÷ 120
+
+            <br><br>
+
+            <strong>= 0.20</strong>
+
+            <br><br>
+
+            As a percentage:
+
+            <strong>20%</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GRAPHS
+     ===================================================== -->
+
+<section class="lesson reveal" id="graphs">
+
+    <div class="lesson-number">12 — Graph Skills</div>
+
+    <h2>Plotting and Interpreting Graphs</h2>
+
+    <h3>Choosing axes</h3>
+
+    <p>
+        The independent variable normally goes on the x-axis
+        and the dependent variable goes on the y-axis.
+    </p>
+
+    <h3>Good graph practice</h3>
+
+    <ul>
+        <li>Label both axes.</li>
+        <li>Include units.</li>
+        <li>Use a sensible scale.</li>
+        <li>Use most of the available graph area.</li>
+        <li>Plot points accurately.</li>
+        <li>Use a line or curve of best fit where appropriate.</li>
+    </ul>
+
+    <h3>Gradient</h3>
+
+    <div class="formula">
+
+        Gradient =
+        <br><br>
+        change in y ÷ change in x
+
+    </div>
+
+    <p>
+        When determining a gradient from a graph, use a large
+        triangle on the line of best fit rather than two points
+        that are unnecessarily close together.
+    </p>
+
+    <h3>Correlation</h3>
+
+    <p>
+        A positive relationship means that the dependent variable
+        generally increases as the independent variable increases.
+    </p>
+
+    <p>
+        A negative relationship means that the dependent variable
+        generally decreases as the independent variable increases.
+    </p>
+
+    <div class="tip">
+        Correlation alone does not prove causation. Consider
+        controlled variables and the experimental design.
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     UNCERTAINTY
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">13 — Uncertainty</div>
+
+    <h2>Uncertainty and Error</h2>
+
+    <h3>Random error</h3>
+
+    <p>
+        Random errors cause measurements to vary unpredictably.
+        Repeats and calculating a mean can reduce their effect.
+    </p>
+
+    <h3>Systematic error</h3>
+
+    <p>
+        A systematic error shifts measurements consistently
+        in one direction and is not normally removed simply
+        by taking more repeats.
+    </p>
+
+    <h3>Reducing uncertainty</h3>
+
+    <ul>
+        <li>Use an instrument with a suitable resolution.</li>
+        <li>Increase the size of the measured quantity where practical.</li>
+        <li>Repeat measurements.</li>
+        <li>Use appropriate measuring techniques.</li>
+        <li>Keep relevant variables controlled.</li>
+    </ul>
+
+    <div class="definition">
+        <strong>Percentage uncertainty</strong> compares the
+        uncertainty in a measurement with the measured value.
+    </div>
+
+    <div class="formula">
+
+        Percentage uncertainty =
+        <br><br>
+        (absolute uncertainty ÷ measured value) × 100
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EVALUATION
+     ===================================================== -->
+
+<section class="lesson reveal" id="evaluation">
+
+    <div class="lesson-number">14 — Evaluation</div>
+
+    <h2>Evaluating an Experiment</h2>
+
+    <p>
+        Evaluation questions are among the most important
+        skills in Unit 3.
+    </p>
+
+    <h3>Ask five questions</h3>
+
+    <ol>
+        <li>Was the method valid?</li>
+        <li>Were the variables controlled?</li>
+        <li>Were enough repeats taken?</li>
+        <li>Were measurements precise enough?</li>
+        <li>How could the experiment be improved?</li>
+    </ol>
+
+    <h3>Weak evaluation</h3>
+
+    <div class="warning">
+
+        "Repeat the experiment because it may be inaccurate."
+
+    </div>
+
+    <h3>Strong evaluation</h3>
+
+    <div class="method">
+
+        "Repeat each concentration at least three times and
+        calculate a mean to reduce the influence of random
+        variation and identify anomalous results."
+
+    </div>
+
+    <h3>Improvement rule</h3>
+
+    <p>
+        Do not merely say "make it more accurate."
+        State exactly what should be changed and explain
+        why that change would improve the investigation.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PRACTICAL SCENARIOS
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">15 — Practical Scenarios</div>
+
+    <h2>Common Practical Contexts</h2>
+
+    <div class="grid-2">
+
+        <div class="mini-card">
+            <h4>Microscopy</h4>
+            <p>
+                Cell structure, magnification, scale,
+                biological drawings.
+            </p>
+        </div>
+
+        <div class="mini-card">
+            <h4>Enzymes</h4>
+            <p>
+                Temperature, pH, substrate concentration,
+                enzyme concentration and rate.
+            </p>
+        </div>
+
+        <div class="mini-card">
+            <h4>Osmosis</h4>
+            <p>
+                Plant tissue mass changes and solution
+                concentration.
+            </p>
+        </div>
+
+        <div class="mini-card">
+            <h4>Cell division</h4>
+            <p>
+                Root tip squash, mitosis and mitotic index.
+            </p>
+        </div>
+
+        <div class="mini-card">
+            <h4>Plant fibres</h4>
+            <p>
+                Tensile strength and comparison of materials.
+            </p>
+        </div>
+
+        <div class="mini-card">
+            <h4>Antimicrobials</h4>
+            <p>
+                Aseptic technique and zones of inhibition.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRACTICE
+     ===================================================== -->
+
+<section class="lesson reveal" id="practice">
+
+    <div class="lesson-number">16 — Exam Practice</div>
+
+    <h2>Unit 3 Practice</h2>
+
+    <div class="question">
+
+        <strong>
+            1. A student investigates the effect of pH on
+            enzyme activity. Identify the independent variable.
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                The pH of the reaction mixture.
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            2. Why should the experiment be repeated?
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                Repeats improve reliability, allow anomalous
+                values to be identified and allow a mean to
+                be calculated.
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            3. An image is 40 mm wide and the actual cell is
+            80 μm wide. Calculate magnification.
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                40 mm = 40,000 μm.
+                <br><br>
+                Magnification = 40,000 ÷ 80
+                <br><br>
+                <strong>×500</strong>
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            4. Give two ways of reducing random error.
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                Repeat measurements and calculate a mean.
+                Increasing the number of readings can also
+                improve reliability.
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            5. Why is the independent variable placed on
+            the x-axis?
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                The independent variable is the variable
+                deliberately changed by the investigator.
+                Conventionally it is plotted on the x-axis.
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            6. Give one difference between random and
+            systematic error.
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                Random errors cause unpredictable variation,
+                whereas systematic errors cause a consistent
+                shift in measurements.
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            7. A sample contains 15 heterozygous individuals
+            out of 60 individuals. Calculate the heterozygosity
+            index.
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                Heterozygosity index = 15 ÷ 60
+                <br><br>
+                <strong>= 0.25</strong>
+            </p>
+        </details>
+
+    </div>
+
+    <div class="question">
+
+        <strong>
+            8. State two features of a good scientific graph.
+        </strong>
+
+        <details>
+            <summary>Show answer</summary>
+            <p>
+                Correctly labelled axes with units and an
+                appropriate scale. Points should also be
+                plotted accurately.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM STRATEGY
+     ===================================================== -->
+
+<section class="lesson reveal">
+
+    <div class="lesson-number">17 — Exam Strategy</div>
+
+    <h2>How to Approach a Unit 3 Question</h2>
+
+    <div class="method">
+
+        <strong>Step 1 — Identify the experiment</strong>
+
+        <p>
+            Determine what biological process is being
+            investigated.
+        </p>
+
+    </div>
+
+    <div class="method">
+
+        <strong>Step 2 — Identify the variables</strong>
+
+        <p>
+            Find the independent, dependent and controlled
+            variables.
+        </p>
+
+    </div>
+
+    <div class="method">
+
+        <strong>Step 3 — Look at the measurements</strong>
+
+        <p>
+            Check units, significant figures, repeats and
+            possible anomalies.
+        </p>
+
+    </div>
+
+    <div class="method">
+
+        <strong>Step 4 — Process the data</strong>
+
+        <p>
+            Calculate means, percentages, rates, ratios or
+            other required quantities.
+        </p>
+
+    </div>
+
+    <div class="method">
+
+        <strong>Step 5 — Interpret</strong>
+
+        <p>
+            Describe the pattern and use biological knowledge
+            to explain it.
+        </p>
+
+    </div>
+
+    <div class="method">
+
+        <strong>Step 6 — Evaluate</strong>
+
+        <p>
+            Discuss reliability, validity, uncertainty,
+            errors and realistic improvements.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK REVIEW
+     ===================================================== -->
+
+<section class="quick-review reveal" id="review">
+
+    <h2>Unit 3 — Quick Review</h2>
+
+    <div class="review-grid">
+
+        <div class="review-item">
+            ✓ Independent variable
+        </div>
+
+        <div class="review-item">
+            ✓ Dependent variable
+        </div>
+
+        <div class="review-item">
+            ✓ Controlled variables
+        </div>
+
+        <div class="review-item">
+            ✓ Repeat measurements
+        </div>
+
+        <div class="review-item">
+            ✓ Mean and percentage change
+        </div>
+
+        <div class="review-item">
+            ✓ Magnification
+        </div>
+
+        <div class="review-item">
+            ✓ Microscopy
+        </div>
+
+        <div class="review-item">
+            ✓ Enzyme investigations
+        </div>
+
+        <div class="review-item">
+            ✓ Osmosis
+        </div>
+
+        <div class="review-item">
+            ✓ Plant practicals
+        </div>
+
+        <div class="review-item">
+            ✓ Graphs and gradients
+        </div>
+
+        <div class="review-item">
+            ✓ Uncertainty
+        </div>
+
+        <div class="review-item">
+            ✓ Random and systematic error
+        </div>
+
+        <div class="review-item">
+            ✓ Experimental evaluation
+        </div>
+
+        <div class="review-item">
+            ✓ Safety and aseptic technique
+        </div>
+
+        <div class="review-item">
+            ✓ Practical problem solving
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<div class="navigation">
+
+    <a class="button" href="biology-2.html">
+        ← Biology Unit 2
+    </a>
+
+    <a class="button" href="biology-4.html">
+        Biology Unit 4 →
+    </a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+    <strong>IAL ATLAS</strong>
+    <br>
+    Free, student-built Edexcel International A Level resources.
+    <br><br>
+    Biology Unit 3 — Practical Skills in Biology I
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SCROLL PROGRESS
+   ========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        scrollHeight > 0
+        ? (scrollTop / scrollHeight) * 100
+        : 0;
+
+    document.getElementById("progress").style.width =
+        progress + "%";
+
+});
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i=0;i<55;i++){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className="particle";
+
+    particle.style.left =
+        Math.random()*100 + "%";
+
+    particle.style.animationDuration =
+        (8 + Math.random()*18) + "s";
+
+    particle.style.animationDelay =
+        (-Math.random()*20) + "s";
+
+    particle.style.opacity =
+        .2 + Math.random()*.6;
+
+    particleContainer.appendChild(particle);
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.10
+        }
+    );
+
+document.querySelectorAll(".reveal")
+.forEach(el=>revealObserver.observe(el));
+
+
+/* =========================================================
+   CURSOR GLOW
+   ========================================================= */
+
+document.addEventListener("pointermove",e=>{
+
+    document.body.style.setProperty(
+        "--mx",
+        e.clientX + "px"
+    );
+
+    document.body.style.setProperty(
+        "--my",
+        e.clientY + "px"
+    );
+
+});
+
+
+/* =========================================================
+   CARD TILT
+   ========================================================= */
+
+document.querySelectorAll(".lesson")
+.forEach(card=>{
+
+    card.addEventListener("pointermove",e=>{
+
+        if(window.innerWidth < 900) return;
+
+        const rect =
+            card.getBoundingClientRect();
+
+        const x =
+            e.clientX - rect.left;
+
+        const y =
+            e.clientY - rect.top;
+
+        const rotateY =
+            ((x / rect.width)-.5) * 1.5;
+
+        const rotateX =
+            -((y / rect.height)-.5) * 1.5;
+
+        card.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-2px)`;
+
+    });
+
+    card.addEventListener("pointerleave",()=>{
+
+        card.style.transform="";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
