@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biology Unit 6 | Practical Skills in Biology II | IAL ATLAS</title>
+
+<meta name="description"
+   content="Edexcel International A Level Biology Unit 6 WBI16 Practical Skills in Biology II. Practical planning, variables, data analysis, graphs, uncertainty, evaluation, core practicals and exam skills.">
+
+<meta name="keywords"
+   content="Edexcel IAL Biology Unit 6, WBI16, Biology Practical Skills, Unit 6 Biology, Edexcel Biology practicals, Biology practical exam, IAL ATLAS">
+
+<meta name="theme-color" content="#05070d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#05070d;
+    --bg2:#080c16;
+    --panel:rgba(13,18,31,.72);
+    --panel2:rgba(18,25,42,.72);
+    --border:rgba(120,170,255,.18);
+    --border2:rgba(120,170,255,.32);
+    --text:#eef5ff;
+    --muted:#9aa9c2;
+    --accent:#6ca8ff;
+    --accent2:#9c7cff;
+    --cyan:#59e3ff;
+    --green:#68e0a1;
+    --orange:#ffbd6b;
+    --red:#ff7188;
+    --shadow:0 20px 70px rgba(0,0,0,.42);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    color:var(--text);
+    background:
+        radial-gradient(circle at 15% 15%,rgba(82,130,255,.14),transparent 28%),
+        radial-gradient(circle at 85% 20%,rgba(156,124,255,.12),transparent 25%),
+        radial-gradient(circle at 50% 90%,rgba(65,225,255,.08),transparent 30%),
+        var(--bg);
+    overflow-x:hidden;
+    line-height:1.75;
+}
+
+/* GRID */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+    opacity:.23;
+    background-image:
+        linear-gradient(rgba(120,170,255,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(120,170,255,.08) 1px,transparent 1px);
+    background-size:50px 50px;
+    mask-image:linear-gradient(to bottom,black,transparent 90%);
+}
+
+/* PROGRESS */
+
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0;
+    height:3px;
+    background:linear-gradient(90deg,var(--cyan),var(--accent),var(--accent2));
+    z-index:9999;
+    box-shadow:0 0 15px rgba(89,227,255,.8);
+}
+
+/* PARTICLES */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.particle{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:rgba(150,200,255,.8);
+    box-shadow:0 0 8px rgba(100,180,255,.7);
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+    15%{opacity:.7;}
+    85%{opacity:.7;}
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(20px);
+    background:rgba(5,7,13,.72);
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    width:min(1200px,92%);
+    margin:auto;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    text-decoration:none;
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.logo-mark{
+    width:36px;
+    height:36px;
+    border:1px solid rgba(100,180,255,.5);
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,rgba(90,170,255,.2),rgba(150,100,255,.16));
+    box-shadow:0 0 25px rgba(90,160,255,.15);
+}
+
+.back{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:.9rem;
+    transition:.25s;
+}
+
+.back:hover{
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    min-height:700px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    text-align:center;
+    padding:100px 20px 80px;
+    overflow:hidden;
+}
+
+.hero-content{
+    position:relative;
+    z-index:3;
+    max-width:900px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    border:1px solid var(--border2);
+    background:rgba(20,30,52,.55);
+    border-radius:999px;
+    color:#b9d5ff;
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    margin-bottom:24px;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    background:var(--cyan);
+    border-radius:50%;
+    box-shadow:0 0 12px var(--cyan);
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{opacity:.4;transform:scale(.8)}
+    50%{opacity:1;transform:scale(1.15)}
+}
+
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(3rem,7vw,6.8rem);
+    line-height:.95;
+    letter-spacing:-.06em;
+    margin-bottom:24px;
+    background:linear-gradient(120deg,#fff,#9bc9ff 45%,#b899ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow:0 0 50px rgba(100,150,255,.1);
+}
+
+.hero-subtitle{
+    color:var(--muted);
+    max-width:760px;
+    margin:0 auto 38px;
+    font-size:1.05rem;
+}
+
+.hero-stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.stat{
+    min-width:130px;
+    padding:16px 20px;
+    border:1px solid var(--border);
+    background:rgba(10,16,29,.65);
+    border-radius:16px;
+    backdrop-filter:blur(15px);
+}
+
+.stat strong{
+    display:block;
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.25rem;
+    color:white;
+}
+
+.stat span{
+    font-size:.73rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+/* SCIENTIFIC VISUAL */
+
+.lab-visual{
+    position:absolute;
+    width:520px;
+    height:520px;
+    right:-130px;
+    top:80px;
+    opacity:.55;
+}
+
+.lab-ring{
+    position:absolute;
+    inset:60px;
+    border:1px solid rgba(90,180,255,.2);
+    border-radius:50%;
+    animation:spin 25s linear infinite;
+}
+
+.lab-ring:nth-child(2){
+    inset:120px;
+    border-color:rgba(150,110,255,.25);
+    animation-duration:18s;
+    animation-direction:reverse;
+}
+
+.lab-ring:nth-child(3){
+    inset:180px;
+    border-color:rgba(80,220,220,.2);
+    animation-duration:12s;
+}
+
+.lab-core{
+    position:absolute;
+    width:90px;
+    height:90px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 30%,#fff,transparent 10%),
+        radial-gradient(circle,#75dfff,#456aff 50%,#7c50d8);
+    box-shadow:
+        0 0 30px rgba(80,180,255,.7),
+        0 0 100px rgba(90,110,255,.35);
+}
+
+.lab-dot{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 18px var(--cyan);
+    left:50%;
+    top:50%;
+    transform-origin:0 0;
+    animation:orbit 8s linear infinite;
+}
+
+.lab-dot:nth-child(5){
+    animation-duration:5s;
+    background:#a98bff;
+}
+
+.lab-dot:nth-child(6){
+    animation-duration:11s;
+    background:#68e0a1;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+@keyframes orbit{
+    from{transform:rotate(0deg) translateX(190px)}
+    to{transform:rotate(360deg) translateX(190px)}
+}
+
+/* CONTAINER */
+
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
+
+/* TOPIC NAV */
+
+.topic-nav{
+    position:sticky;
+    top:72px;
+    z-index:900;
+    margin-bottom:40px;
+    border:1px solid var(--border);
+    background:rgba(7,11,20,.78);
+    backdrop-filter:blur(20px);
+    border-radius:18px;
+    overflow:auto;
+    box-shadow:var(--shadow);
+}
+
+.topic-nav-inner{
+    display:flex;
+    min-width:max-content;
+}
+
+.topic-nav a{
+    color:var(--muted);
+    text-decoration:none;
+    padding:15px 18px;
+    font-size:.82rem;
+    border-right:1px solid rgba(120,170,255,.08);
+    transition:.25s;
+}
+
+.topic-nav a:hover{
+    color:white;
+    background:rgba(90,150,255,.08);
+}
+
+/* LESSON */
+
+.lesson{
+    position:relative;
+    margin:32px 0;
+    padding:42px;
+    border:1px solid var(--border);
+    border-radius:25px;
+    background:
+        linear-gradient(145deg,rgba(17,24,41,.78),rgba(8,12,22,.78));
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.lesson::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    right:-130px;
+    top:-130px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(90,160,255,.12),transparent 70%);
+    pointer-events:none;
+}
+
+.lesson-number{
+    color:var(--cyan);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.72rem;
+    font-weight:700;
+    margin-bottom:9px;
+}
+
+.lesson h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(1.7rem,3vw,2.5rem);
+    line-height:1.15;
+    margin-bottom:22px;
+}
+
+.lesson h3{
+    font-family:"Space Grotesk",sans-serif;
+    color:#d9e9ff;
+    margin:30px 0 12px;
+    font-size:1.2rem;
+}
+
+.lesson h4{
+    color:#b9d5ff;
+    margin:20px 0 8px;
+}
+
+.lesson p{
+    color:#bac6d9;
+    margin-bottom:14px;
+}
+
+.lesson ul,
+.lesson ol{
+    color:#bac6d9;
+    padding-left:25px;
+    margin-bottom:18px;
+}
+
+.lesson li{
+    margin:7px 0;
+}
+
+strong{
+    color:#eef6ff;
+}
+
+/* DEFINITION */
+
+.definition{
+    margin:22px 0;
+    padding:20px 22px;
+    border-left:3px solid var(--cyan);
+    border-radius:12px;
+    background:rgba(70,180,220,.06);
+}
+
+.definition strong{
+    color:var(--cyan);
+}
+
+/* FORMULA */
+
+.formula{
+    position:relative;
+    margin:22px 0;
+    padding:25px;
+    border:1px solid rgba(90,180,255,.24);
+    background:rgba(40,80,150,.08);
+    border-radius:16px;
+    overflow:hidden;
+    text-align:center;
+}
+
+.formula::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+    animation:scan 3s linear infinite;
+}
+
+@keyframes scan{
+    from{transform:translateX(-100%)}
+    to{transform:translateX(100%)}
+}
+
+.formula code{
+    color:#e8f5ff;
+    font-family:"Space Grotesk",monospace;
+    font-size:1.1rem;
+}
+
+/* TWO COLUMNS */
+
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin:22px 0;
+}
+
+.info-card{
+    border:1px solid var(--border);
+    background:rgba(9,15,27,.65);
+    border-radius:17px;
+    padding:22px;
+}
+
+.info-card h4{
+    margin-top:0;
+    color:#dcecff;
+}
+
+.info-card p{
+    margin-bottom:0;
+    font-size:.94rem;
+}
+
+/* EXAMPLE */
+
+.example{
+    margin:24px 0;
+    padding:24px;
+    border-radius:17px;
+    border:1px solid rgba(150,120,255,.22);
+    background:rgba(110,80,190,.06);
+}
+
+.example-title{
+    color:#c8b5ff;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.solution{
+    margin-top:15px;
+    padding:16px;
+    border-radius:12px;
+    background:rgba(0,0,0,.2);
+}
+
+/* PRACTICAL */
+
+.practical{
+    border:1px solid rgba(104,224,161,.22);
+    background:rgba(70,210,150,.05);
+    padding:24px;
+    border-radius:18px;
+    margin:22px 0;
+}
+
+.practical-label{
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.7rem;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+/* WARNING */
+
+.warning{
+    border-left:3px solid var(--orange);
+    background:rgba(255,190,100,.06);
+    padding:18px 20px;
+    border-radius:12px;
+    margin:22px 0;
+}
+
+.warning strong{
+    color:var(--orange);
+}
+
+/* ERROR TABLE */
+
+.error-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.error-table th,
+.error-table td{
+    border:1px solid rgba(120,170,255,.12);
+    padding:13px;
+    text-align:left;
+}
+
+.error-table th{
+    color:#d9e9ff;
+    background:rgba(80,130,220,.08);
+}
+
+.error-table td{
+    color:#b6c3d7;
+    font-size:.9rem;
+}
+
+/* QUESTION */
+
+.question{
+    margin:18px 0;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:rgba(10,16,28,.65);
+}
+
+.question strong{
+    display:block;
+    margin-bottom:8px;
+}
+
+details{
+    margin-top:12px;
+}
+
+summary{
+    cursor:pointer;
+    color:#8fc5ff;
+    font-weight:600;
+}
+
+.answer{
+    margin-top:12px;
+    padding:14px;
+    border-radius:10px;
+    background:rgba(90,150,255,.07);
+    color:#bac9dd;
+}
+
+/* CHECKLIST */
+
+.checklist{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.check{
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:rgba(10,16,29,.6);
+    color:#c2cede;
+}
+
+.check::before{
+    content:"✓";
+    color:var(--green);
+    margin-right:9px;
+    font-weight:800;
+}
+
+/* QUICK REVIEW */
+
+.quick-review{
+    padding:35px;
+    border:1px solid rgba(100,180,255,.25);
+    border-radius:25px;
+    background:
+        radial-gradient(circle at 100% 0%,rgba(100,140,255,.13),transparent 40%),
+        rgba(12,19,34,.8);
+    margin:45px 0;
+}
+
+.quick-review h2{
+    font-family:"Space Grotesk",sans-serif;
+    margin-bottom:20px;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.quick{
+    padding:16px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    color:#c0ccde;
+    font-size:.9rem;
+}
+
+/* BUTTONS */
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin:45px 0 70px;
+}
+
+.button{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:12px;
+    border:1px solid var(--border2);
+    background:rgba(30,50,90,.5);
+    color:#dcecff;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    background:rgba(70,120,210,.18);
+    box-shadow:0 10px 30px rgba(60,120,255,.12);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:40px 20px;
+    text-align:center;
+    color:#728098;
+    font-size:.82rem;
+}
+
+footer strong{
+    color:#a9caff;
+}
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .hero{
+        min-height:650px;
+    }
+
+    .lab-visual{
+        right:-260px;
+        opacity:.25;
+    }
+
+    .lesson{
+        padding:27px 21px;
+    }
+
+    .grid-2,
+    .checklist{
+        grid-template-columns:1fr;
+    }
+
+    .quick-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navigation{
+        flex-direction:column;
+    }
+
+    .button{
+        text-align:center;
+    }
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        min-height:62px;
+    }
+
+    .back{
+        font-size:.78rem;
+    }
+
+    .hero{
+        padding-top:75px;
+    }
+
+    .hero h1{
+        font-size:3.4rem;
+    }
+
+    .hero-subtitle{
+        font-size:.92rem;
+    }
+
+    .stat{
+        min-width:105px;
+        padding:13px;
+    }
+
+    .stat strong{
+        font-size:1rem;
+    }
+
+    .topic-nav{
+        top:62px;
+        border-radius:12px;
+    }
+
+    .topic-nav a{
+        padding:12px 14px;
+    }
+
+    .lesson{
+        border-radius:18px;
+    }
+
+    .lesson h2{
+        font-size:1.55rem;
+    }
+
+    .error-table{
+        display:block;
+        overflow-x:auto;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="progress"></div>
+<div id="particles"></div>
+
+<header>
+    <div class="header-inner">
+
+
+    <a href="biology.html" class="logo">
+        <span class="logo-mark">IA</span>
+        <span>IAL ATLAS</span>
+    </a>
+
+    <a href="biology.html" class="back">
+        ← Biology
+    </a>
+
+</div>
+
+
+</header>
+
+<section class="hero">
+
+
+<div class="lab-visual" aria-hidden="true">
+    <div class="lab-ring"></div>
+    <div class="lab-ring"></div>
+    <div class="lab-ring"></div>
+    <div class="lab-core"></div>
+    <div class="lab-dot"></div>
+    <div class="lab-dot"></div>
+    <div class="lab-dot"></div>
+</div>
+
+<div class="hero-content">
+
+    <div class="eyebrow">
+        <span class="status-dot"></span>
+        Edexcel International A Level Biology
+    </div>
+
+    <h1>UNIT 06</h1>
+
+    <p class="hero-subtitle">
+        Practical Skills in Biology II
+        <br>
+        Plan. Measure. Analyse. Evaluate.
+    </p>
+
+    <div class="hero-stats">
+
+        <div class="stat">
+            <strong>WBI16/01</strong>
+            <span>Unit code</span>
+        </div>
+
+        <div class="stat">
+            <strong>50</strong>
+            <span>Marks</span>
+        </div>
+
+        <div class="stat">
+            <strong>1h 20m</strong>
+            <span>Exam time</span>
+        </div>
+
+        <div class="stat">
+            <strong>5+</strong>
+            <span>Maths marks</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<main class="container">
+
+<nav class="topic-nav">
+    <div class="topic-nav-inner">
+
+
+    <a href="#overview">Overview</a>
+    <a href="#planning">Planning</a>
+    <a href="#variables">Variables</a>
+    <a href="#measurement">Measurement</a>
+    <a href="#data">Data Analysis</a>
+    <a href="#graphs">Graphs</a>
+    <a href="#uncertainty">Uncertainty</a>
+    <a href="#evaluation">Evaluation</a>
+    <a href="#practicals">Core Practicals</a>
+    <a href="#practice">Practice</a>
+    <a href="#review">Review</a>
+
+</div>
+
+
+</nav>
+
+<!-- OVERVIEW -->
+
+<section class="lesson reveal" id="overview">
+
+
+<div class="lesson-number">01 / Unit Overview</div>
+
+<h2>What is Unit 6?</h2>
+
+<p>
+    Unit 6 is the practical-skills examination for the Edexcel
+    International A Level Biology qualification. Unlike Units 4 and 5,
+    this unit is not primarily about learning another block of biological
+    theory.
+</p>
+
+<p>
+    Instead, you are expected to apply practical knowledge from Units
+    1, 2, 4 and 5 to unfamiliar experimental situations.
+</p>
+
+<div class="definition">
+    <strong>Core idea:</strong>
+    Unit 6 tests whether you can think like a scientist when given an
+    experiment, dataset, graph or biological problem.
+</div>
+
+<div class="grid-2">
+
+    <div class="info-card">
+        <h4>Exam format</h4>
+        <p>
+            Written examination, 50 marks, 1 hour 20 minutes.
+            Candidates answer all questions.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>What is assessed?</h4>
+        <p>
+            Planning, practical methods, variables, data processing,
+            graphing, uncertainty, evaluation and scientific reasoning.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>Synoptic nature</h4>
+        <p>
+            Questions may draw on practical work across Units 1, 2,
+            4 and 5.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>Mathematics</h4>
+        <p>
+            The paper contains at least five marks targeting
+            Level 2 or above mathematical skills.
+        </p>
+    </div>
+
+</div>
+
+<div class="warning">
+    <strong>Exam mindset:</strong>
+    Do not simply describe what you would do. Explain why the chosen
+    method, variable, control, measurement or analysis is appropriate.
+</div>
+
+
+</section>
+
+<!-- PLANNING -->
+
+<section class="lesson reveal" id="planning">
+
+
+<div class="lesson-number">02 / Investigation Planning</div>
+
+<h2>How to Plan a Biological Investigation</h2>
+
+<p>
+    Planning questions are among the most important skills in Unit 6.
+    A strong plan should allow another scientist to reproduce the
+    investigation and should produce data that can answer the hypothesis.
+</p>
+
+<h3>1. Start with the hypothesis</h3>
+
+<p>
+    A hypothesis predicts a relationship between two variables.
+    It should be testable using measurable data.
+</p>
+
+<div class="example">
+
+    <div class="example-title">Example hypothesis</div>
+
+    <p>
+        Increasing temperature will increase the rate of enzyme activity
+        up to an optimum temperature, after which the rate will decrease.
+    </p>
+
+</div>
+
+<h3>2. Formulate a null hypothesis</h3>
+
+<p>
+    A null hypothesis predicts that there is no significant relationship
+    or difference between the variables being investigated.
+</p>
+
+<div class="definition">
+    <strong>Null hypothesis:</strong>
+    There is no significant effect of the independent variable on the
+    dependent variable.
+</div>
+
+<h3>3. Select appropriate apparatus</h3>
+
+<p>
+    State the apparatus precisely and consider its range and resolution.
+    The apparatus must be suitable for the quantity being measured.
+</p>
+
+<ul>
+    <li>Use a balance for mass.</li>
+    <li>Use a stopwatch for time.</li>
+    <li>Use a thermometer or temperature probe for temperature.</li>
+    <li>Use a colorimeter when measuring changes in absorbance.</li>
+    <li>Use a gas syringe or suitable sensor when measuring gas volume.</li>
+    <li>Use a microscope and graticule when measuring microscopic structures.</li>
+</ul>
+
+<h3>4. Decide how the data will be collected</h3>
+
+<p>
+    State how measurements will be taken, how frequently they will be
+    taken and how many repeats will be performed.
+</p>
+
+<h3>5. Consider safety and ethics</h3>
+
+<p>
+    Identify hazards associated with organisms, chemicals, heat,
+    electrical equipment, glassware or biological samples.
+</p>
+
+<div class="practical">
+
+    <div class="practical-label">Planning checklist</div>
+
+    <ul>
+        <li>Hypothesis / null hypothesis</li>
+        <li>Independent variable</li>
+        <li>Dependent variable</li>
+        <li>Control variables</li>
+        <li>Apparatus and resolution</li>
+        <li>Measurement method</li>
+        <li>Range of values</li>
+        <li>Repeats</li>
+        <li>Safety</li>
+        <li>Ethical considerations</li>
+        <li>Data analysis method</li>
+    </ul>
+
+</div>
+
+
+</section>
+
+<!-- VARIABLES -->
+
+<section class="lesson reveal" id="variables">
+
+
+<div class="lesson-number">03 / Experimental Variables</div>
+
+<h2>Independent, Dependent and Control Variables</h2>
+
+<div class="grid-2">
+
+    <div class="info-card">
+        <h4>Independent variable</h4>
+        <p>
+            The variable deliberately changed by the investigator.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>Dependent variable</h4>
+        <p>
+            The variable measured as the response to the independent variable.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>Control variable</h4>
+        <p>
+            A factor kept constant so that it does not influence the result.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>Standardised variable</h4>
+        <p>
+            A factor controlled consistently between experimental conditions.
+        </p>
+    </div>
+
+</div>
+
+<div class="example">
+
+    <div class="example-title">Example: effect of temperature on respiration</div>
+
+    <p><strong>Independent:</strong> temperature.</p>
+
+    <p><strong>Dependent:</strong> rate of respiration.</p>
+
+    <p>
+        <strong>Controls:</strong> organism type, organism mass, volume of
+        solution, concentration of substrate, duration and apparatus.
+    </p>
+
+</div>
+
+<h3>Fair testing</h3>
+
+<p>
+    A fair test changes one independent variable while keeping other
+    relevant variables constant. This allows changes in the dependent
+    variable to be attributed to the independent variable with greater
+    confidence.
+</p>
+
+
+</section>
+
+<!-- MEASUREMENT -->
+
+<section class="lesson reveal" id="measurement">
+
+
+<div class="lesson-number">04 / Measurement</div>
+
+<h2>Measurements, Resolution and Calibration</h2>
+
+<h3>Resolution</h3>
+
+<p>
+    Resolution is the smallest change that an instrument can reliably
+    distinguish.
+</p>
+
+<div class="definition">
+    <strong>Example:</strong>
+    A balance displaying measurements to 0.01 g has a finer resolution
+    than one displaying only to 1 g.
+</div>
+
+<h3>Calibration</h3>
+
+<p>
+    Instruments should be checked before use. For example, a balance
+    should read zero before measuring mass.
+</p>
+
+<h3>Range</h3>
+
+<p>
+    The selected range of values should be large enough to reveal a
+    meaningful relationship but practical and safe for the investigation.
+</p>
+
+<h3>Repeats</h3>
+
+<p>
+    Repeating measurements helps identify anomalous results and improves
+    reliability by allowing a mean to be calculated.
+</p>
+
+<div class="formula">
+    <code>Mean = Σx / n</code>
+</div>
+
+<p>
+    If one measurement is very different from the others, investigate
+    whether an experimental error occurred before automatically removing it.
+</p>
+
+
+</section>
+
+<!-- DATA -->
+
+<section class="lesson reveal" id="data">
+
+
+<div class="lesson-number">05 / Data Processing</div>
+
+<h2>Processing and Analysing Data</h2>
+
+<h3>Tables</h3>
+
+<p>
+    Tables should have clear headings, units and consistent decimal places
+    or significant figures.
+</p>
+
+<div class="example">
+
+    <div class="example-title">Good table structure</div>
+
+    <table class="error-table">
+
+        <tr>
+            <th>Temperature / °C</th>
+            <th>Time / s</th>
+            <th>Rate / s⁻¹</th>
+        </tr>
+
+        <tr>
+            <td>20</td>
+            <td>52.0</td>
+            <td>0.0192</td>
+        </tr>
+
+        <tr>
+            <td>30</td>
+            <td>36.0</td>
+            <td>0.0278</td>
+        </tr>
+
+        <tr>
+            <td>40</td>
+            <td>24.0</td>
+            <td>0.0417</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<h3>Percentages</h3>
+
+<div class="formula">
+    <code>Percentage change = ((new − original) / original) × 100</code>
+</div>
+
+<h3>Rate calculations</h3>
+
+<div class="formula">
+    <code>Rate = change in quantity / time taken</code>
+</div>
+
+<h3>Magnification</h3>
+
+<div class="formula">
+    <code>Magnification = image size / actual size</code>
+</div>
+
+<h3>Ratio</h3>
+
+<p>
+    Ratios are commonly used when comparing biological quantities,
+    concentrations, proportions or experimental outcomes.
+</p>
+
+
+</section>
+
+<!-- GRAPHS -->
+
+<section class="lesson reveal" id="graphs">
+
+
+<div class="lesson-number">06 / Graph Skills</div>
+
+<h2>Constructing and Interpreting Graphs</h2>
+
+<h3>Choosing axes</h3>
+
+<ul>
+    <li>Independent variable → x-axis.</li>
+    <li>Dependent variable → y-axis.</li>
+    <li>Include units.</li>
+    <li>Use an appropriate scale.</li>
+    <li>Use most of the available graph area.</li>
+</ul>
+
+<h3>Line graphs</h3>
+
+<p>
+    Continuous independent variables are normally represented using a
+    line graph or suitable curve.
+</p>
+
+<h3>Bar charts</h3>
+
+<p>
+    Bar charts are suitable for discrete categories or independent
+    variables that are not continuous.
+</p>
+
+<h3>Histograms</h3>
+
+<p>
+    Histograms represent continuous data grouped into class intervals.
+    The bars touch because the intervals are continuous.
+</p>
+
+<h3>Gradient</h3>
+
+<div class="formula">
+    <code>Gradient = Δy / Δx</code>
+</div>
+
+<p>
+    When determining a gradient, use a large triangle along the line of
+    best fit rather than using two points that are very close together.
+</p>
+
+<h3>Correlation</h3>
+
+<p>
+    A positive correlation means that the dependent variable generally
+    increases as the independent variable increases.
+</p>
+
+<p>
+    A negative correlation means that the dependent variable generally
+    decreases as the independent variable increases.
+</p>
+
+<div class="warning">
+    <strong>Remember:</strong>
+    Correlation does not automatically prove causation. Other variables
+    may explain the observed relationship.
+</div>
+
+
+</section>
+
+<!-- UNCERTAINTY -->
+
+<section class="lesson reveal" id="uncertainty">
+
+
+<div class="lesson-number">07 / Uncertainty & Error</div>
+
+<h2>Uncertainty, Errors and Anomalies</h2>
+
+<h3>Random error</h3>
+
+<p>
+    Random errors cause measurements to vary unpredictably around the
+    true value.
+</p>
+
+<p>
+    Repeats and calculating a mean can reduce the effect of random error.
+</p>
+
+<h3>Systematic error</h3>
+
+<p>
+    A systematic error shifts measurements consistently in one direction.
+    Repeating the experiment does not remove this type of error.
+</p>
+
+<h3>Accuracy vs precision</h3>
+
+<div class="grid-2">
+
+    <div class="info-card">
+        <h4>Accuracy</h4>
+        <p>
+            How close a measurement is to the true or accepted value.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>Precision</h4>
+        <p>
+            How closely repeated measurements agree with each other.
+        </p>
+    </div>
+
+</div>
+
+<h3>Percentage uncertainty</h3>
+
+<div class="formula">
+    <code>% uncertainty = (absolute uncertainty / measured value) × 100</code>
+</div>
+
+<h3>Reducing uncertainty</h3>
+
+<ul>
+    <li>Use equipment with greater resolution.</li>
+    <li>Increase the size of the measured quantity where appropriate.</li>
+    <li>Take repeated measurements.</li>
+    <li>Use a larger sample size where practical.</li>
+    <li>Use appropriate calibration.</li>
+</ul>
+
+<h3>Errors in practical investigations</h3>
+
+<table class="error-table">
+
+    <tr>
+        <th>Problem</th>
+        <th>Possible improvement</th>
+    </tr>
+
+    <tr>
+        <td>Temperature changes during experiment</td>
+        <td>Use a controlled water bath or temperature probe.</td>
+    </tr>
+
+    <tr>
+        <td>Small volume measurements</td>
+        <td>Use apparatus with greater resolution.</td>
+    </tr>
+
+    <tr>
+        <td>Large variation between repeats</td>
+        <td>Increase repeats and investigate experimental conditions.</td>
+    </tr>
+
+    <tr>
+        <td>Instrument does not read zero</td>
+        <td>Calibrate or zero the instrument before measurement.</td>
+    </tr>
+
+    <tr>
+        <td>Subjective colour judgement</td>
+        <td>Use a colorimeter where appropriate.</td>
+    </tr>
+
+</table>
+
+
+</section>
+
+<!-- EVALUATION -->
+
+<section class="lesson reveal" id="evaluation">
+
+
+<div class="lesson-number">08 / Evaluation</div>
+
+<h2>Evaluating an Experiment</h2>
+
+<p>
+    Evaluation questions require more than saying that an experiment
+    was "good" or "bad". Identify a specific limitation, explain its
+    effect and propose a realistic improvement.
+</p>
+
+<div class="example">
+
+    <div class="example-title">Strong evaluation structure</div>
+
+    <p>
+        <strong>Limitation → effect → improvement.</strong>
+    </p>
+
+    <div class="solution">
+
+        <p>
+            <strong>Example:</strong>
+            The temperature was not maintained consistently, so changes
+            in reaction rate may have been caused partly by temperature
+            variation. A thermostatically controlled water bath could
+            maintain a constant temperature.
+        </p>
+
+    </div>
+
+</div>
+
+<h3>Reliability</h3>
+
+<p>
+    Reliability concerns the consistency of results. Repeats, larger
+    sample sizes and consistent procedures can improve reliability.
+</p>
+
+<h3>Validity</h3>
+
+<p>
+    Validity concerns whether the investigation actually tests the
+    intended hypothesis.
+</p>
+
+<h3>Conclusion</h3>
+
+<p>
+    A conclusion should refer directly to the data and should avoid
+    making claims stronger than the evidence allows.
+</p>
+
+<div class="definition">
+    <strong>Strong conclusion:</strong>
+    "The data support the hypothesis because increasing X was associated
+    with an increase in Y across the tested range."
+</div>
+
+
+</section>
+
+<!-- PRACTICALS -->
+
+<section class="lesson reveal" id="practicals">
+
+
+<div class="lesson-number">09 / Core Practical Network</div>
+
+<h2>Core Practicals Relevant to Unit 6</h2>
+
+<p>
+    Unit 6 is synoptic. You should be prepared to apply practical
+    techniques from Units 1, 2, 4 and 5.
+</p>
+
+<div class="grid-2">
+
+    <div class="info-card">
+        <h4>CP1</h4>
+        <p>
+            Investigate the effect of temperature or pH on enzyme activity.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP2</h4>
+        <p>
+            Investigate the effect of membrane structure/permeability using
+            suitable biological material.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP3</h4>
+        <p>
+            Investigate biological molecules using food-test procedures.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP4</h4>
+        <p>
+            Investigate transport or biological processes using appropriate
+            measurements and controls.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP5–9</h4>
+        <p>
+            Cell microscopy, mitosis, plant tissues, plant fibres and
+            antimicrobial investigations.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP10–14</h4>
+        <p>
+            Photosynthesis, ecological sampling, microbiology,
+            microorganisms and antibiotics.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP15</h4>
+        <p>
+            Use a redox indicator to investigate respiration in yeast.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP16</h4>
+        <p>
+            Use a simple respirometer to investigate respiration rate
+            and respiratory quotient.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP17</h4>
+        <p>
+            Investigate the effects of exercise on tidal volume, breathing
+            rate, respiratory minute ventilation and oxygen consumption.
+        </p>
+    </div>
+
+    <div class="info-card">
+        <h4>CP18</h4>
+        <p>
+            Investigate amylase production in germinating cereal grains.
+        </p>
+    </div>
+
+</div>
+
+<div class="practical">
+
+    <div class="practical-label">Unit 6 focus</div>
+
+    <p>
+        You do not need to memorise every practical as a script.
+        You need to understand the scientific principle, variables,
+        apparatus, measurements, controls, data analysis, safety,
+        limitations and possible improvements.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- PRACTICAL APPLICATIONS -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">10 / Practical Application</div>
+
+<h2>Respiration Example</h2>
+
+<p>
+    A respirometer can be used to investigate respiration in germinating
+    seeds or small invertebrates.
+</p>
+
+<h3>Basic principle</h3>
+
+<p>
+    Respiring organisms consume oxygen. Changes in gas volume or pressure
+    can therefore be used to estimate respiration rate.
+</p>
+
+<div class="formula">
+    <code>Rate of respiration = change in gas volume / time</code>
+</div>
+
+<h3>Respiratory quotient</h3>
+
+<div class="formula">
+    <code>RQ = CO₂ produced / O₂ consumed</code>
+</div>
+
+<p>
+    RQ can provide information about the respiratory substrate being used.
+</p>
+
+<h3>Variables</h3>
+
+<ul>
+    <li><strong>Independent:</strong> experimental condition being changed.</li>
+    <li><strong>Dependent:</strong> change in gas volume per unit time.</li>
+    <li><strong>Controls:</strong> organism mass, temperature, apparatus and duration.</li>
+</ul>
+
+
+</section>
+
+<!-- SPIROMETER -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">11 / Spirometry</div>
+
+<h2>Exercise and Ventilation Data</h2>
+
+<h3>Tidal volume</h3>
+
+<p>
+    Tidal volume is the volume of air moved into or out of the lungs
+    during a normal breath.
+</p>
+
+<h3>Breathing rate</h3>
+
+<p>
+    The number of breaths taken per unit time.
+</p>
+
+<h3>Respiratory minute ventilation</h3>
+
+<div class="formula">
+    <code>Minute ventilation = tidal volume × breathing rate</code>
+</div>
+
+<div class="example">
+
+    <div class="example-title">Worked example</div>
+
+    <p>
+        A person has a tidal volume of 0.50 dm³ and breathes
+        18 times per minute.
+    </p>
+
+    <div class="solution">
+
+        <p>
+            Minute ventilation = 0.50 × 18
+        </p>
+
+        <p>
+            <strong>= 9.0 dm³ min⁻¹</strong>
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- HOMEOSTASIS -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">12 / Homeostasis</div>
+
+<h2>Homeostasis and Experimental Data</h2>
+
+<p>
+    Homeostasis maintains internal conditions within narrow limits despite
+    changes in the external or internal environment.
+</p>
+
+<div class="definition">
+    <strong>Negative feedback:</strong>
+    A change from the optimum triggers responses that oppose the original
+    change.
+</div>
+
+<h3>Example: thermoregulation</h3>
+
+<p>
+    The hypothalamus detects changes in body temperature and coordinates
+    responses that help restore temperature toward its normal range.
+</p>
+
+<h3>Example: osmoregulation</h3>
+
+<p>
+    Osmoreceptors in the hypothalamus monitor plasma concentration.
+    ADH affects water reabsorption in the kidneys.
+</p>
+
+<div class="formula">
+    <code>More ADH → greater water reabsorption → smaller volume of concentrated urine</code>
+</div>
+
+
+</section>
+
+<!-- ECOLOGY -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">13 / Ecology Practical Skills</div>
+
+<h2>Sampling and Biodiversity</h2>
+
+<p>
+    Unit 6 can use ecological contexts from Unit 4. You should be able
+    to select an appropriate sampling method and analyse the resulting
+    data.
+</p>
+
+<h3>Quadrats</h3>
+
+<p>
+    Quadrats are used to sample organisms that are stationary or move
+    slowly, such as plants.
+</p>
+
+<h3>Transects</h3>
+
+<p>
+    Transects can investigate how the distribution or abundance of
+    organisms changes across an environmental gradient.
+</p>
+
+<h3>Important controls</h3>
+
+<ul>
+    <li>Quadrat size</li>
+    <li>Sampling locations</li>
+    <li>Number of samples</li>
+    <li>Environmental conditions</li>
+    <li>Sampling method</li>
+</ul>
+
+<div class="formula">
+    <code>Population estimate = mean number per quadrat × total habitat area / quadrat area</code>
+</div>
+
+
+</section>
+
+<!-- MICROBIOLOGY -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">14 / Microbiology</div>
+
+<h2>Microorganisms and Aseptic Technique</h2>
+
+<p>
+    Microbiological investigations require careful control of contamination
+    and safe handling of microorganisms.
+</p>
+
+<h3>Important principles</h3>
+
+<ul>
+    <li>Use sterile apparatus where appropriate.</li>
+    <li>Minimise exposure of cultures.</li>
+    <li>Use appropriate aseptic technique.</li>
+    <li>Dispose of biological material safely.</li>
+    <li>Follow laboratory safety procedures.</li>
+</ul>
+
+<h3>Growth measurements</h3>
+
+<p>
+    Microbial growth can be investigated using cell counts, dilution
+    plating, mass measurements or optical methods such as turbidity.
+</p>
+
+<div class="formula">
+    <code>Dilution factor = final volume / volume of sample transferred</code>
+</div>
+
+<div class="warning">
+    <strong>Safety:</strong>
+    In practical work, microorganisms must be handled according to
+    appropriate laboratory procedures and teacher supervision.
+</div>
+
+
+</section>
+
+<!-- MOLECULAR -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">15 / Molecular Techniques</div>
+
+<h2>PCR, Gel Electrophoresis and DNA Analysis</h2>
+
+<h3>PCR</h3>
+
+<p>
+    Polymerase chain reaction is used to amplify a selected DNA sequence,
+    producing many copies from a small starting amount.
+</p>
+
+<h3>Gel electrophoresis</h3>
+
+<p>
+    DNA fragments can be separated according to length. Smaller fragments
+    generally migrate further through the gel than larger fragments under
+    the same conditions.
+</p>
+
+<h3>DNA profiling</h3>
+
+<p>
+    DNA profiling compares patterns of DNA fragments and can be used to
+    investigate genetic relationships or identify biological samples.
+</p>
+
+<div class="info-card">
+
+    <h4>Unit 6 question approach</h4>
+
+    <p>
+        If a question gives you unfamiliar molecular data, first identify
+        what has been measured, what the axes represent and what biological
+        process the experiment is testing. Then analyse the evidence.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- PRACTICE -->
+
+<section class="lesson reveal" id="practice">
+
+
+<div class="lesson-number">16 / Exam Practice</div>
+
+<h2>Unit 6 Practice Questions</h2>
+
+<div class="question">
+
+    <strong>Q1. A student investigates the effect of temperature on enzyme activity.
+    Identify the independent and dependent variables.</strong>
+
+    <details>
+        <summary>Show answer</summary>
+
+        <div class="answer">
+            Independent variable: temperature.
+            Dependent variable: the measured rate of enzyme activity.
+        </div>
+
+    </details>
+
+</div>
+
+<div class="question">
+
+    <strong>
+        Q2. Explain why repeated measurements improve the reliability of an investigation.
+    </strong>
+
+    <details>
+        <summary>Show answer</summary>
+
+        <div class="answer">
+            Repeats allow variation between measurements to be identified
+            and a mean to be calculated. This reduces the influence of
+            random variation and provides a more representative result.
+        </div>
+
+    </details>
+
+</div>
+
+<div class="question">
+
+    <strong>
+        Q3. A balance has a resolution of 0.01 g. Explain why this may be
+        preferable to a balance with a resolution of 1 g when measuring a
+        small biological sample.
+    </strong>
+
+    <details>
+        <summary>Show answer</summary>
+
+        <div class="answer">
+            The 0.01 g balance can detect smaller changes in mass, allowing
+            measurements to be recorded with greater resolution and reducing
+            the relative uncertainty of a suitable measurement.
+        </div>
+
+    </details>
+
+</div>
+
+<div class="question">
+
+    <strong>
+        Q4. A graph shows an unexpected point far from the line of best fit.
+        What should the student do?
+    </strong>
+
+    <details>
+        <summary>Show answer</summary>
+
+        <div class="answer">
+            Check the original measurement and experimental procedure for
+            possible errors. The point should not simply be removed without
+            justification.
+        </div>
+
+    </details>
+
+</div>
+
+<div class="question">
+
+    <strong>
+        Q5. Explain why increasing the number of repeats can improve confidence
+        in a biological result.
+    </strong>
+
+    <details>
+        <summary>Show answer</summary>
+
+        <div class="answer">
+            More repeats provide more data, making random variation easier
+            to identify and allowing a more representative mean to be
+            calculated.
+        </div>
+
+    </details>
+
+</div>
+
+<div class="question">
+
+    <strong>
+        Q6. A student obtains a mean respiration rate from repeated measurements.
+        What information could be used to judge the spread of the data?
+    </strong>
+
+    <details>
+        <summary>Show answer</summary>
+
+        <div class="answer">
+            The range can provide a simple indication of spread. Appropriate
+            statistical measures may also be used depending on the data and
+            question.
+        </div>
+
+    </details>
+
+</div>
+
+
+</section>
+
+<!-- EXAM STRATEGY -->
+
+<section class="lesson reveal">
+
+
+<div class="lesson-number">17 / Exam Strategy</div>
+
+<h2>How to Attack a Unit 6 Question</h2>
+
+<div class="checklist">
+
+    <div class="check">
+        Identify what is being investigated.
+    </div>
+
+    <div class="check">
+        Identify the independent variable.
+    </div>
+
+    <div class="check">
+        Identify the dependent variable.
+    </div>
+
+    <div class="check">
+        Find the important control variables.
+    </div>
+
+    <div class="check">
+        Check units and significant figures.
+    </div>
+
+    <div class="check">
+        Look for repeats and anomalous data.
+    </div>
+
+    <div class="check">
+        Check the graph axes and scale.
+    </div>
+
+    <div class="check">
+        Calculate rates, percentages or ratios carefully.
+    </div>
+
+    <div class="check">
+        Consider random and systematic errors.
+    </div>
+
+    <div class="check">
+        Give realistic improvements.
+    </div>
+
+</div>
+
+<div class="example">
+
+    <div class="example-title">The golden evaluation formula</div>
+
+    <p>
+        <strong>Problem → Why it matters → Improvement.</strong>
+    </p>
+
+    <p>
+        Avoid vague statements such as "make it more accurate."
+        State exactly what should be changed and why it would improve
+        the investigation.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- REVIEW -->
+
+<section class="quick-review reveal" id="review">
+
+
+<h2>Unit 6 Quick Review</h2>
+
+<div class="quick-grid">
+
+    <div class="quick">
+        Independent variable = deliberately changed.
+    </div>
+
+    <div class="quick">
+        Dependent variable = measured response.
+    </div>
+
+    <div class="quick">
+        Control variables = kept constant.
+    </div>
+
+    <div class="quick">
+        Repeats improve reliability.
+    </div>
+
+    <div class="quick">
+        Calibration checks instrument accuracy.
+    </div>
+
+    <div class="quick">
+        Resolution = smallest detectable change.
+    </div>
+
+    <div class="quick">
+        Random errors cause scatter.
+    </div>
+
+    <div class="quick">
+        Systematic errors shift results consistently.
+    </div>
+
+    <div class="quick">
+        Percentage uncertainty compares uncertainty with measurement.
+    </div>
+
+    <div class="quick">
+        Independent variable normally goes on the x-axis.
+    </div>
+
+    <div class="quick">
+        Gradient = Δy / Δx.
+    </div>
+
+    <div class="quick">
+        Evaluation should identify a problem and a realistic improvement.
+    </div>
+
+    <div class="quick">
+        Unit 6 is synoptic across practical Biology.
+    </div>
+
+    <div class="quick">
+        Practical safety and ethics matter.
+    </div>
+
+    <div class="quick">
+        Always interpret data in its biological context.
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+
+<a href="biology-5.html" class="button">
+    ← Unit 5
+</a>
+
+<a href="biology.html" class="button">
+    Biology Home
+</a>
+
+<a href="index.html" class="button">
+    IAL ATLAS Home →
+</a>
+
+
+</div>
+
+</main>
+
+<footer>
+
+
+<p>
+    <strong>IAL ATLAS</strong> — Free, student-built Edexcel International A Level resources.
+</p>
+
+<p>
+    Biology Unit 6 • Practical Skills in Biology II • WBI16/01
+</p>
+
+
+</footer>
+
+<script>
+
+/* SCROLL PROGRESS */
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop=window.scrollY;
+    const docHeight=document.documentElement.scrollHeight-window.innerHeight;
+
+    const progress=(scrollTop/docHeight)*100;
+
+    document.getElementById("progress").style.width=progress+"%";
+
+});
+
+
+/* PARTICLES */
+
+const particleContainer=document.getElementById("particles");
+
+for(let i=0;i<55;i++){
+
+    const particle=document.createElement("span");
+
+    particle.className="particle";
+
+    particle.style.left=Math.random()*100+"%";
+    particle.style.animationDuration=(8+Math.random()*16)+"s";
+    particle.style.animationDelay=(Math.random()*12)+"s";
+    particle.style.opacity=(.2+Math.random()*.7);
+
+    particleContainer.appendChild(particle);
+
+}
+
+
+/* REVEAL */
+
+const revealObserver=new IntersectionObserver(
+    entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.08
+    }
+);
+
+document.querySelectorAll(".reveal").forEach(el=>{
+    revealObserver.observe(el);
+});
+
+
+/* ACTIVE TOPIC NAVIGATION */
+
+const sections=document.querySelectorAll(".lesson[id], .quick-review[id]");
+const navLinks=document.querySelectorAll(".topic-nav a");
+
+const sectionObserver=new IntersectionObserver(
+    entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                navLinks.forEach(link=>{
+                    link.style.color="";
+                    link.style.background="";
+                });
+
+                const active=document.querySelector(
+                    '.topic-nav a[href="#'+entry.target.id+'"]'
+                );
+
+                if(active){
+
+                    active.style.color="#ffffff";
+                    active.style.background="rgba(90,150,255,.09)";
+
+                }
+
+            }
+
+        });
+
+    },
+    {
+        rootMargin:"-25% 0px -65% 0px"
+    }
+);
+
+sections.forEach(section=>{
+    sectionObserver.observe(section);
+});
+
+
+/* HERO VISUAL PARALLAX */
+
+const visual=document.querySelector(".lab-visual");
+
+window.addEventListener("mousemove",e=>{
+
+    if(!visual) return;
+
+    const x=(e.clientX/window.innerWidth-.5)*12;
+    const y=(e.clientY/window.innerHeight-.5)*12;
+
+    visual.style.transform=
+        `translate(${x}px,${y}px)`;
+
+});
+
+
+</script>
+
+</body>
+</html>
