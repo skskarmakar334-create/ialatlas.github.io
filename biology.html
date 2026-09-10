@@ -1,1048 +1,3109 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Edexcel IAL Biology Notes & Revision | IAL ATLAS</title>
-
-    <meta name="description"
-          content="Free, student-built Edexcel International A Level Biology notes, revision resources, practical skills and unit guides from IAL ATLAS.">
-
-    <meta name="keywords"
-          content="Edexcel IAL Biology, International A Level Biology, Biology notes, Biology revision, WBI11, WBI12, WBI13, WBI14, WBI15, WBI16">
-
-    <meta name="author" content="IAL ATLAS">
-
-    <meta property="og:title" content="Edexcel IAL Biology | IAL ATLAS">
-    <meta property="og:description"
-          content="Explore free Edexcel International A Level Biology notes, revision resources and practical skills.">
-    <meta property="og:type" content="website">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Inter", sans-serif;
-            background: #05070d;
-            color: #f4f7ff;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* =========================
-           BACKGROUND
-        ========================= */
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -5;
-
-            background:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-
-            background-size: 50px 50px;
-            mask-image: linear-gradient(to bottom, black, transparent 90%);
-        }
-
-        .ambient {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.14;
-            pointer-events: none;
-            z-index: -3;
-        }
-
-        .ambient.one {
-            top: -180px;
-            left: -180px;
-            background: #00eaff;
-        }
-
-        .ambient.two {
-            right: -180px;
-            top: 45%;
-            background: #8b5cf6;
-        }
-
-        .ambient.three {
-            left: 30%;
-            bottom: -300px;
-            background: #22c55e;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            padding: 18px 6%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            background: rgba(5, 7, 13, 0.72);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-
-        .logo {
-            text-decoration: none;
-            color: white;
-
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #00eaff;
-        }
-
-        .back {
-            text-decoration: none;
-            color: #aeb8ca;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .back:hover {
-            color: #00eaff;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 90vh;
-            padding: 150px 7% 80px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 70px;
-
-            max-width: 1500px;
-            margin: auto;
-        }
-
-        .hero-content {
-            max-width: 720px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-
-            padding: 8px 14px;
-            margin-bottom: 25px;
-
-            border: 1px solid rgba(0,234,255,0.22);
-            border-radius: 999px;
-
-            background: rgba(0,234,255,0.05);
-
-            color: #8eefff;
-            font-size: 0.8rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #00eaff;
-            box-shadow: 0 0 15px #00eaff;
-        }
-
-        h1 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(3.4rem, 8vw, 7.5rem);
-            line-height: 0.92;
-            letter-spacing: -5px;
-            margin-bottom: 30px;
-        }
-
-        h1 span {
-            background: linear-gradient(90deg, #ffffff, #6ee7f9, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-description {
-            color: #aeb8ca;
-            font-size: 1.08rem;
-            line-height: 1.8;
-            max-width: 650px;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .button {
-            text-decoration: none;
-            padding: 13px 20px;
-            border-radius: 12px;
-
-            font-size: 0.9rem;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        .button.primary {
-            color: #001014;
-            background: #00eaff;
-            box-shadow: 0 0 30px rgba(0,234,255,0.2);
-        }
-
-        .button.primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(0,234,255,0.4);
-        }
-
-        .button.secondary {
-            color: white;
-            border: 1px solid rgba(255,255,255,0.13);
-            background: rgba(255,255,255,0.04);
-        }
-
-        .button.secondary:hover {
-            border-color: rgba(0,234,255,0.4);
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           BIOLOGY ORBIT
-        ========================= */
-
-        .biology-visual {
-            width: 400px;
-            height: 400px;
-
-            position: relative;
-            flex-shrink: 0;
-
-            display: grid;
-            place-items: center;
-        }
-
-        .cell {
-            width: 175px;
-            height: 175px;
-            border-radius: 50%;
-
-            display: grid;
-            place-items: center;
-
-            background:
-                radial-gradient(circle at 35% 30%,
-                rgba(255,255,255,0.2),
-                rgba(0,234,255,0.08) 45%,
-                rgba(139,92,246,0.1));
-
-            border: 1px solid rgba(0,234,255,0.35);
-
-            box-shadow:
-                0 0 50px rgba(0,234,255,0.16),
-                inset 0 0 40px rgba(139,92,246,0.12);
-
-            animation: float 5s ease-in-out infinite;
-        }
-
-        .nucleus {
-            width: 70px;
-            height: 70px;
-
-            border-radius: 50%;
-
-            background: rgba(139,92,246,0.25);
-            border: 1px solid rgba(139,92,246,0.6);
-
-            box-shadow: 0 0 35px rgba(139,92,246,0.4);
-        }
-
-        .orbit {
-            position: absolute;
-            border: 1px solid rgba(0,234,255,0.16);
-            border-radius: 50%;
-        }
-
-        .orbit.one {
-            width: 260px;
-            height: 110px;
-            transform: rotate(25deg);
-            animation: rotate 9s linear infinite;
-        }
-
-        .orbit.two {
-            width: 310px;
-            height: 150px;
-            transform: rotate(-35deg);
-            animation: rotateReverse 12s linear infinite;
-        }
-
-        .orbit.three {
-            width: 350px;
-            height: 220px;
-            transform: rotate(65deg);
-            animation: rotate 15s linear infinite;
-        }
-
-        .dot {
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: #00eaff;
-            box-shadow: 0 0 15px #00eaff;
-        }
-
-        .dot.a {
-            top: 35px;
-            right: 70px;
-        }
-
-        .dot.b {
-            bottom: 70px;
-            left: 45px;
-            background: #8b5cf6;
-            box-shadow: 0 0 15px #8b5cf6;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-14px);
-            }
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes rotateReverse {
-            from {
-                transform: rotate(360deg);
-            }
-
-            to {
-                transform: rotate(0deg);
-            }
-        }
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        .section {
-            max-width: 1300px;
-            margin: auto;
-            padding: 90px 6%;
-        }
-
-        .section-heading {
-            margin-bottom: 45px;
-        }
-
-        .section-heading small {
-            color: #00eaff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
-        }
-
-        .section-heading h2 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(2rem, 5vw, 3.4rem);
-            margin-top: 10px;
-        }
-
-        .section-heading p {
-            color: #8994a8;
-            margin-top: 12px;
-            line-height: 1.7;
-            max-width: 650px;
-        }
-
-        /* =========================
-           UNIT CARDS
-        ========================= */
-
-        .units {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .unit-card {
-            position: relative;
-
-            padding: 30px;
-
-            border: 1px solid rgba(255,255,255,0.09);
-            border-radius: 22px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
-                );
-
-            backdrop-filter: blur(15px);
-
-            overflow: hidden;
-
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-        }
-
-        .unit-card::before {
-            content: "";
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-
-            top: -90px;
-            right: -70px;
-
-            background: rgba(0,234,255,0.08);
-            filter: blur(25px);
-        }
-
-        .unit-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(0,234,255,0.3);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-        }
-
-        .unit-number {
-            color: #00eaff;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .unit-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 1.35rem;
-            line-height: 1.35;
-            margin-bottom: 12px;
-        }
-
-        .unit-card p {
-            color: #8f9aad;
-            line-height: 1.7;
-            font-size: 0.92rem;
-        }
-
-        .unit-link {
-            display: inline-block;
-            margin-top: 20px;
-
-            color: #00eaff;
-            text-decoration: none;
-
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .unit-link:hover {
-            text-decoration: underline;
-        }
-
-        /* =========================
-           RESOURCE STRIP
-        ========================= */
-
-        .resources {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .resource {
-            padding: 25px 20px;
-
-            border-radius: 18px;
-
-            background: rgba(255,255,255,0.035);
-            border: 1px solid rgba(255,255,255,0.08);
-
-            transition: 0.3s;
-        }
-
-        .resource:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0,234,255,0.25);
-        }
-
-        .resource-icon {
-            font-size: 1.7rem;
-            margin-bottom: 14px;
-        }
-
-        .resource h3 {
-            font-size: 0.95rem;
-            margin-bottom: 7px;
-        }
-
-        .resource p {
-            color: #7f8a9d;
-            font-size: 0.82rem;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           NOTICE
-        ========================= */
-
-        .notice {
-            margin-top: 70px;
-            padding: 28px;
-
-            border-radius: 18px;
-
-            border: 1px solid rgba(0,234,255,0.14);
-            background: rgba(0,234,255,0.035);
-
-            color: #a9b5c8;
-            line-height: 1.7;
-            font-size: 0.88rem;
-        }
-
-        .notice strong {
-            color: #00eaff;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            margin-top: 70px;
-            padding: 45px 6%;
-
-            border-top: 1px solid rgba(255,255,255,0.07);
-
-            text-align: center;
-        }
-
-        footer h3 {
-            font-family: "Space Grotesk", sans-serif;
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            color: #737e91;
-            font-size: 0.8rem;
-            line-height: 1.7;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 950px) {
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 130px;
-            }
-
-            .hero-content {
-                max-width: 800px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .biology-visual {
-                width: 330px;
-                height: 330px;
-                transform: scale(0.85);
-            }
-
-            .resources {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            nav {
-                padding: 16px 5%;
-            }
-
-            .hero {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-
-            h1 {
-                font-size: 4rem;
-                letter-spacing: -3px;
-            }
-
-            .units {
-                grid-template-columns: 1fr;
-            }
-
-            .resources {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-
-            .biology-visual {
-                transform: scale(0.72);
-                margin-top: -30px;
-                margin-bottom: -30px;
-            }
-        }
-
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Edexcel IAL Biology Notes & Revision | IAL ATLAS</title>
+
+<meta name="description"
+content="Free, student-built Edexcel International A Level Biology notes, revision resources, practical skills and unit guides from IAL ATLAS.">
+
+<meta name="keywords"
+content="Edexcel IAL Biology, International A Level Biology, Biology notes, Biology revision, WBI11, WBI12, WBI13, WBI14, WBI15, WBI16">
+
+<meta name="author" content="IAL ATLAS">
+
+<meta property="og:title" content="Edexcel IAL Biology | IAL ATLAS">
+
+<meta property="og:description"
+content="Explore free Edexcel International A Level Biology notes, revision resources and practical skills.">
+
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --bg:#03070a;
+    --bg2:#071014;
+
+    --cyan:#00f0d0;
+    --cyan2:#49ffe7;
+
+    --green:#55e69b;
+    --blue:#54b8ff;
+    --purple:#a47cff;
+    --pink:#ff6fb1;
+
+    --text:#f2fffb;
+    --muted:#91a8a6;
+
+    --glass:rgba(8,22,25,.68);
+    --glass2:rgba(10,29,32,.82);
+
+    --border:rgba(100,255,225,.13);
+    --border2:rgba(100,255,225,.28);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(0,240,208,.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(80,160,255,.07),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(70,230,150,.06),
+            transparent 30%
+        ),
+
+        var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+
+/* =========================================================
+   BIOLOGICAL GRID
+========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            rgba(80,255,220,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(80,255,220,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 95%
+        );
+
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.ambient{
+
+    position:fixed;
+
+    width:600px;
+    height:600px;
+
+    border-radius:50%;
+
+    filter:blur(130px);
+
+    opacity:.10;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+.ambient.one{
+
+    top:-250px;
+    left:-250px;
+
+    background:var(--cyan);
+
+}
+
+.ambient.two{
+
+    right:-250px;
+    top:30%;
+
+    background:var(--purple);
+
+}
+
+.ambient.three{
+
+    left:25%;
+    bottom:-350px;
+
+    background:var(--green);
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan);
+
+    animation:
+        particleFloat linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:
+            translateY(110vh)
+            translateX(0);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.8;
+
+    }
+
+    85%{
+
+        opacity:.8;
+
+    }
+
+    to{
+
+        transform:
+            translateY(-10vh)
+            translateX(80px);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    height:74px;
+
+    padding:0 6%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:
+        rgba(3,9,11,.68);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:
+        1px solid rgba(100,255,225,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+}
+
+.logo-icon{
+
+    width:38px;
+    height:38px;
+
+    border-radius:11px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid rgba(80,255,220,.35);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,240,208,.18),
+            rgba(0,240,208,.03)
+        );
+
+    box-shadow:
+        0 0 25px rgba(0,240,208,.12);
+
+}
+
+.logo-icon::before{
+
+    content:"";
+
+    width:13px;
+    height:20px;
+
+    border:
+        2px solid var(--cyan);
+
+    border-radius:50%;
+
+    transform:rotate(35deg);
+
+    box-shadow:
+        0 0 12px rgba(0,240,208,.4);
+
+}
+
+.logo span{
+
+    color:var(--cyan);
+
+}
+
+.back{
+
+    color:#91aaa8;
+
+    text-decoration:none;
+
+    font-size:.85rem;
+
+    transition:.3s;
+
+}
+
+.back:hover{
+
+    color:var(--cyan);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    max-width:1600px;
+
+    margin:auto;
+
+    padding:
+        150px
+        6%
+        90px;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1.05fr;
+
+    align-items:center;
+
+    gap:30px;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:20;
+
+    max-width:700px;
+
+}
+
+.eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        8px
+        14px;
+
+    border:
+        1px solid rgba(0,240,208,.25);
+
+    border-radius:999px;
+
+    background:
+        rgba(0,240,208,.045);
+
+    color:#8cfff0;
+
+    font-size:.72rem;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+
+    margin-bottom:27px;
+
+}
+
+.eyebrow::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 15px var(--cyan);
+
+    animation:
+        pulse 1.8s ease-in-out infinite;
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(.75);
+        opacity:.45;
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+        opacity:1;
+
+    }
+
+}
+
+.hero h1{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            8rem
+        );
+
+    line-height:.86;
+
+    letter-spacing:-6px;
+
+    margin-bottom:30px;
+
+}
+
+.hero h1 .main{
+
+    display:block;
+
+    background:
+        linear-gradient(
+            100deg,
+            #ffffff,
+            #9ffff2 38%,
+            #56cfff 70%,
+            #b18cff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero h1 .sub{
+
+    display:block;
+
+    font-size:.28em;
+
+    letter-spacing:
+        .15em;
+
+    margin-top:24px;
+
+    color:#8aa7a4;
+
+    background:none;
+
+    -webkit-text-fill-color:initial;
+
+}
+
+.hero-description{
+
+    max-width:670px;
+
+    color:#9db1b0;
+
+    font-size:1.02rem;
+
+    line-height:1.9;
+
+    margin-bottom:34px;
+
+}
+
+.hero-description strong{
+
+    color:#dffff8;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+
+}
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    padding:
+        13px
+        20px;
+
+    border-radius:12px;
+
+    font-size:.86rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.button.primary{
+
+    color:#00120f;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00f0d0,
+            #61ffe8
+        );
+
+    box-shadow:
+        0 0 35px rgba(0,240,208,.18);
+
+}
+
+.button.primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 50px rgba(0,240,208,.38);
+
+}
+
+.button.secondary{
+
+    color:#d7eeeb;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+.button.secondary:hover{
+
+    border-color:
+        rgba(0,240,208,.4);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   BIO LAB VISUAL
+========================================================= */
+
+.bio-lab{
+
+    position:relative;
+
+    width:600px;
+    height:600px;
+
+    justify-self:end;
+
+    perspective:1000px;
+
+}
+
+
+/* =========================================================
+   CELL MEMBRANE
+========================================================= */
+
+.cell-membrane{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:340px;
+    height:290px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-8deg);
+
+    border-radius:
+        48% 52% 50% 46% /
+        51% 45% 55% 49%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(130,255,235,.16),
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle at 65% 65%,
+            rgba(90,130,255,.12),
+            transparent 30%
+        ),
+
+        rgba(10,50,50,.24);
+
+    border:
+        1px solid rgba(90,255,225,.38);
+
+    box-shadow:
+
+        0 0 40px rgba(0,240,208,.12),
+
+        inset
+        0 0 70px rgba(0,240,208,.08),
+
+        inset
+        0 0 20px rgba(150,255,230,.08);
+
+    animation:
+        cellFloat 7s ease-in-out infinite;
+
+}
+
+@keyframes cellFloat{
+
+    0%,100%{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(-8deg)
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translate(-50%,-50%)
+            rotate(-5deg)
+            translateY(-12px);
+
+    }
+
+}
+
+
+/* =========================================================
+   NUCLEUS
+========================================================= */
+
+.nucleus{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:115px;
+    height:115px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255,255,255,.24),
+            transparent 10%
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(165,110,255,.42),
+            rgba(80,40,150,.18) 60%,
+            rgba(40,20,80,.1)
+        );
+
+    border:
+        1px solid rgba(190,150,255,.6);
+
+    box-shadow:
+
+        0 0 30px rgba(160,100,255,.4),
+
+        inset
+        0 0 30px rgba(190,140,255,.22);
+
+    z-index:8;
+
+}
+
+
+/* nucleolus */
+
+.nucleolus{
+
+    position:absolute;
+
+    width:27px;
+    height:27px;
+
+    left:45px;
+    top:40px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #d5baff,
+            #7345ca
+        );
+
+    box-shadow:
+        0 0 20px rgba(180,120,255,.65);
+
+}
+
+
+/* =========================================================
+   DNA HELIX
+========================================================= */
+
+.dna{
+
+    position:absolute;
+
+    width:90px;
+    height:360px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(12deg);
+
+    z-index:12;
+
+}
+
+.dna-strand{
+
+    position:absolute;
+
+    top:0;
+
+    width:3px;
+
+    height:100%;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--cyan),
+            #75a7ff,
+            var(--purple),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 0 10px rgba(0,240,208,.5);
+
+}
+
+.dna-strand.left{
+
+    left:18px;
+
+    animation:
+        dnaLeft 4s linear infinite;
+
+}
+
+.dna-strand.right{
+
+    right:18px;
+
+    animation:
+        dnaRight 4s linear infinite;
+
+}
+
+@keyframes dnaLeft{
+
+    0%,100%{
+
+        transform:
+            translateX(0)
+            scaleY(1);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(28px)
+            scaleY(.85);
+
+    }
+
+}
+
+@keyframes dnaRight{
+
+    0%,100%{
+
+        transform:
+            translateX(0)
+            scaleY(1);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(-28px)
+            scaleY(.85);
+
+    }
+
+}
+
+.base{
+
+    position:absolute;
+
+    width:62px;
+    height:2px;
+
+    left:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 0 8px rgba(100,200,255,.5);
+
+    transform-origin:center;
+
+}
+
+.base:nth-child(3){top:25px;}
+.base:nth-child(4){top:55px;}
+.base:nth-child(5){top:85px;}
+.base:nth-child(6){top:115px;}
+.base:nth-child(7){top:145px;}
+.base:nth-child(8){top:175px;}
+.base:nth-child(9){top:205px;}
+.base:nth-child(10){top:235px;}
+.base:nth-child(11){top:265px;}
+.base:nth-child(12){top:295px;}
+.base:nth-child(13){top:325px;}
+
+.dna-node{
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#dffff9;
+
+    box-shadow:
+        0 0 10px var(--cyan);
+
+}
+
+
+/* =========================================================
+   MITOCHONDRIA
+========================================================= */
+
+.mitochondrion{
+
+    position:absolute;
+
+    width:100px;
+    height:55px;
+
+    border-radius:
+        50% 45% 52% 48%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,125,100,.16),
+            rgba(255,180,80,.08)
+        );
+
+    border:
+        1px solid rgba(255,150,100,.5);
+
+    box-shadow:
+        0 0 22px rgba(255,120,80,.16),
+
+        inset
+        0 0 18px rgba(255,150,100,.08);
+
+    z-index:10;
+
+}
+
+.mitochondrion::before,
+.mitochondrion::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:13px;
+    right:13px;
+
+    height:15px;
+
+    border-top:
+        2px solid rgba(255,170,100,.55);
+
+    border-radius:50%;
+
+}
+
+.mitochondrion::before{
+
+    top:15px;
+
+    transform:
+        rotate(8deg);
+
+}
+
+.mitochondrion::after{
+
+    top:27px;
+
+    transform:
+        rotate(-8deg);
+
+}
+
+.mito-one{
+
+    left:4%;
+    top:25%;
+
+    transform:
+        rotate(-24deg);
+
+    animation:
+        mitoFloat 6s ease-in-out infinite;
+
+}
+
+.mito-two{
+
+    right:4%;
+    bottom:25%;
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        mitoFloat 8s ease-in-out infinite reverse;
+
+}
+
+.mito-three{
+
+    left:10%;
+    bottom:12%;
+
+    transform:
+        rotate(15deg)
+        scale(.72);
+
+    animation:
+        mitoFloat 7s ease-in-out infinite;
+
+}
+
+@keyframes mitoFloat{
+
+    0%,100%{
+
+        translate:0 0;
+
+    }
+
+    50%{
+
+        translate:0 -12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RIBOSOMES
+========================================================= */
+
+.ribosome{
+
+    position:absolute;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #dffffb,
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 0 14px rgba(0,240,208,.65);
+
+    z-index:15;
+
+}
+
+.r1{
+    left:17%;
+    top:39%;
+    animation:
+        ribosomeFloat 4s infinite ease-in-out;
+}
+
+.r2{
+    right:17%;
+    top:32%;
+    animation:
+        ribosomeFloat 5s infinite ease-in-out .5s;
+}
+
+.r3{
+    right:20%;
+    bottom:18%;
+    animation:
+        ribosomeFloat 4.5s infinite ease-in-out 1s;
+}
+
+.r4{
+    left:20%;
+    bottom:30%;
+    animation:
+        ribosomeFloat 6s infinite ease-in-out .3s;
+}
+
+@keyframes ribosomeFloat{
+
+    0%,100%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:
+            translate(
+                8px,
+                -12px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   CHROMOSOMES
+========================================================= */
+
+.chromosome{
+
+    position:absolute;
+
+    width:30px;
+    height:65px;
+
+    z-index:7;
+
+    opacity:.7;
+
+}
+
+.chromosome::before,
+.chromosome::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:13px;
+    height:55px;
+
+    border:
+        3px solid var(--purple);
+
+    border-radius:50%;
+
+}
+
+.chromosome::before{
+
+    left:1px;
+
+    transform:
+        rotate(35deg);
+
+}
+
+.chromosome::after{
+
+    right:1px;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+.ch1{
+
+    top:12%;
+    left:15%;
+
+    transform:
+        scale(.8)
+        rotate(20deg);
+
+}
+
+.ch2{
+
+    right:11%;
+    top:13%;
+
+    transform:
+        scale(.65)
+        rotate(-30deg);
+
+}
+
+.ch3{
+
+    left:4%;
+    bottom:35%;
+
+    transform:
+        scale(.55)
+        rotate(35deg);
+
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+========================================================= */
+
+.lab-orbit{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    border:
+        1px solid rgba(0,240,208,.13);
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+}
+
+.lab-orbit.one{
+
+    width:450px;
+    height:190px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(25deg);
+
+    animation:
+        orbitRotate 18s linear infinite;
+
+}
+
+.lab-orbit.two{
+
+    width:520px;
+    height:280px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-35deg);
+
+    animation:
+        orbitRotateReverse 25s linear infinite;
+
+}
+
+.lab-orbit.three{
+
+    width:560px;
+    height:380px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(65deg);
+
+    animation:
+        orbitRotate 32s linear infinite;
+
+}
+
+@keyframes orbitRotate{
+
+    from{
+
+        rotate:0deg;
+
+    }
+
+    to{
+
+        rotate:360deg;
+
+    }
+
+}
+
+@keyframes orbitRotateReverse{
+
+    from{
+
+        rotate:360deg;
+
+    }
+
+    to{
+
+        rotate:0deg;
+
+    }
+
+}
+
+
+/* =========================================================
+   LAB LABELS
+========================================================= */
+
+.bio-label{
+
+    position:absolute;
+
+    padding:
+        6px
+        10px;
+
+    border:
+        1px solid rgba(100,255,225,.15);
+
+    background:
+        rgba(3,15,17,.68);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:8px;
+
+    font-size:.62rem;
+
+    letter-spacing:1.3px;
+
+    text-transform:uppercase;
+
+    color:#8fffe9;
+
+    z-index:30;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.2);
+
+}
+
+.label-dna{
+
+    right:1%;
+    top:25%;
+
+}
+
+.label-nucleus{
+
+    left:3%;
+    top:49%;
+
+}
+
+.label-mito{
+
+    right:4%;
+    bottom:34%;
+
+}
+
+.label-ribo{
+
+    left:7%;
+    bottom:20%;
+
+}
+
+
+/* =========================================================
+   HERO SCANLINE
+========================================================= */
+
+.lab-scan{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:600px;
+    height:1px;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-22deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,240,208,.35),
+            transparent
+        );
+
+    animation:
+        scan 5s ease-in-out infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes scan{
+
+    0%,100%{
+
+        opacity:0;
+        scale:.7;
+
+    }
+
+    50%{
+
+        opacity:1;
+        scale:1;
+
+    }
+
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:
+        100px
+        6%;
+
+}
+
+.section-heading{
+
+    margin-bottom:48px;
+
+}
+
+.section-heading small{
+
+    display:block;
+
+    color:var(--cyan);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.7rem;
+
+    margin-bottom:10px;
+
+}
+
+.section-heading h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            4rem
+        );
+
+    line-height:1;
+
+}
+
+.section-heading p{
+
+    color:#829896;
+
+    max-width:700px;
+
+    margin-top:15px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   UNIT GRID
+========================================================= */
+
+.units{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+/* =========================================================
+   UNIT CARD
+========================================================= */
+
+.unit-card{
+
+    position:relative;
+
+    padding:34px;
+
+    min-height:260px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(30,90,90,.14),
+            rgba(255,255,255,.018)
+        );
+
+    backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+}
+
+.unit-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-120px;
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,240,208,.15),
+            transparent 68%
+        );
+
+    transition:.5s;
+
+}
+
+.unit-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:0;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    transition:.5s;
+
+}
+
+.unit-card:hover{
+
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(0,240,208,.32);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 35px rgba(0,240,208,.06);
+
+}
+
+.unit-card:hover::before{
+
+    transform:
+        scale(1.6);
+
+}
+
+.unit-card:hover::after{
+
+    width:100%;
+
+}
+
+.unit-number{
+
+    color:var(--cyan);
+
+    font-size:.7rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.unit-card h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.35rem;
+
+    line-height:1.3;
+
+    max-width:620px;
+
+    margin-bottom:13px;
+
+}
+
+.unit-card p{
+
+    color:#879c9a;
+
+    font-size:.9rem;
+
+    line-height:1.75;
+
+    max-width:650px;
+
+}
+
+.unit-link{
+
+    display:inline-flex;
+
+    margin-top:21px;
+
+    color:var(--cyan);
+
+    text-decoration:none;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.unit-link:hover{
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   UNIT NUMBER GLOW
+========================================================= */
+
+.unit-card:nth-child(2) .unit-number{
+
+    color:#62c8ff;
+
+}
+
+.unit-card:nth-child(3) .unit-number{
+
+    color:#a789ff;
+
+}
+
+.unit-card:nth-child(4) .unit-number{
+
+    color:#67e99f;
+
+}
+
+.unit-card:nth-child(5) .unit-number{
+
+    color:#ffad79;
+
+}
+
+.unit-card:nth-child(6) .unit-number{
+
+    color:#ff75b7;
+
+}
+
+
+/* =========================================================
+   RESOURCE SECTION
+========================================================= */
+
+.resources{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+
+}
+
+.resource{
+
+    position:relative;
+
+    min-height:210px;
+
+    padding:27px 22px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.resource:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,240,208,.25);
+
+    background:
+        rgba(0,240,208,.035);
+
+}
+
+.resource-icon{
+
+    width:45px;
+    height:45px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-bottom:20px;
+
+    border-radius:13px;
+
+    border:
+        1px solid rgba(0,240,208,.18);
+
+    background:
+        rgba(0,240,208,.05);
+
+    font-size:1.35rem;
+
+}
+
+.resource h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1rem;
+
+    margin-bottom:9px;
+
+}
+
+.resource p{
+
+    color:#7d9290;
+
+    font-size:.81rem;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   LAB STATUS PANEL
+========================================================= */
+
+.lab-status{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:
+        rgba(5,18,20,.68);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.status-item{
+
+    padding:
+        23px
+        20px;
+
+    border-right:
+        1px solid var(--border);
+
+}
+
+.status-item:last-child{
+
+    border-right:none;
+
+}
+
+.status-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#718987;
+
+    font-size:.65rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.3px;
+
+    margin-bottom:10px;
+
+}
+
+.status-light{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 10px var(--green);
+
+}
+
+.status-item strong{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.1rem;
+
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice{
+
+    margin-top:55px;
+
+    padding:27px;
+
+    border:
+        1px solid rgba(0,240,208,.13);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(0,240,208,.035),
+            rgba(140,100,255,.025)
+        );
+
+    color:#91a5a3;
+
+    font-size:.85rem;
+
+    line-height:1.8;
+
+}
+
+.notice strong{
+
+    color:var(--cyan);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    margin-top:80px;
+
+    padding:
+        50px 6%;
+
+    text-align:center;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+}
+
+footer h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#667b79;
+
+    font-size:.78rem;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding-top:135px;
+
+    }
+
+    .hero-content{
+
+        max-width:850px;
+
+        margin:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .bio-lab{
+
+        justify-self:center;
+
+        transform:
+            scale(.82);
+
+        margin-top:-35px;
+
+        margin-bottom:-55px;
+
+    }
+
+    .resources{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:800px){
+
+    .units{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .lab-status{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .status-item:nth-child(2){
+
+        border-right:none;
+
+    }
+
+    .status-item:nth-child(-n+2){
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    nav{
+
+        height:64px;
+
+        padding:
+            0 5%;
+
+    }
+
+    .logo{
+
+        font-size:1.05rem;
+
+    }
+
+    .logo-icon{
+
+        width:32px;
+        height:32px;
+
+    }
+
+    .back{
+
+        font-size:.72rem;
+
+    }
+
+    .hero{
+
+        padding:
+            115px 5% 60px;
+
+    }
+
+    .hero h1{
+
+        font-size:4.3rem;
+
+        letter-spacing:-3px;
+
+    }
+
+    .hero-description{
+
+        font-size:.9rem;
+
+    }
+
+    .bio-lab{
+
+        width:430px;
+        height:430px;
+
+        transform:
+            scale(.68);
+
+        margin-top:-70px;
+
+        margin-bottom:-100px;
+
+    }
+
+    .resources{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .lab-status{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .status-item{
+
+        border-right:none!important;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+    .status-item:last-child{
+
+        border-bottom:none;
+
+    }
+
+    .section{
+
+        padding:
+            75px 5%;
+
+    }
+
+    .unit-card{
+
+        padding:27px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation-duration:.01ms!important;
+
+        animation-iteration-count:1!important;
+
+        scroll-behavior:auto!important;
+
+        transition-duration:.01ms!important;
+
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <div class="ambient one"></div>
-    <div class="ambient two"></div>
-    <div class="ambient three"></div>
+<div class="ambient one"></div>
+<div class="ambient two"></div>
+<div class="ambient three"></div>
 
-    <!-- NAVIGATION -->
+<div id="particles"></div>
 
-    <nav>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-        <a href="index.html" class="logo">
-            IAL <span>ATLAS</span>
+<nav>
+
+
+<a href="index.html" class="logo">
+
+    <div class="logo-icon"></div>
+
+    IAL <span>ATLAS</span>
+
+</a>
+
+<a href="index.html" class="back">
+    ← Back to Atlas
+</a>
+
+
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+
+<div class="hero-content reveal">
+
+    <div class="eyebrow">
+        Biological Systems // Online Laboratory
+    </div>
+
+
+    <h1>
+
+        <span class="main">
+            Biology
+        </span>
+
+        <span class="sub">
+            EDExCEL INTERNATIONAL A LEVEL
+        </span>
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        Enter the <strong>IAL ATLAS Bio-Laboratory</strong> —
+        a student-built learning environment for Edexcel
+        International A Level Biology.
+
+        Explore the biology of
+        <strong>molecules, cells, energy, ecosystems,
+        immunity, coordination, genetics and practical science</strong>
+        through six structured units.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="#units" class="button primary">
+            Enter the Laboratory →
         </a>
 
-        <a href="index.html" class="back">
-            ← Back to Atlas
+        <a href="#resources" class="button secondary">
+            Explore Research Tools
         </a>
 
-    </nav>
+    </div>
+
+</div>
 
 
-    <!-- HERO -->
+<!-- =================================================
+     BIOLOGICAL LAB VISUAL
+================================================= -->
 
-    <header class="hero">
+<div class="bio-lab reveal">
 
-        <div class="hero-content">
 
-            <div class="eyebrow">
-                Edexcel International Advanced Level
-            </div>
+    <!-- ORBIT SYSTEM -->
 
-            <h1>
-                <span>Biology</span>
-            </h1>
+    <div class="lab-orbit one"></div>
+    <div class="lab-orbit two"></div>
+    <div class="lab-orbit three"></div>
 
-            <p class="hero-description">
-                Explore clear, student-built Biology notes and revision
-                resources for the Pearson Edexcel International A Level.
-                From molecules and cells to immunity, gene technology and
-                practical skills — everything organized in one place.
-            </p>
 
-            <div class="hero-buttons">
+    <!-- CELL -->
 
-                <a href="#units" class="button primary">
-                    Explore Units
-                </a>
+    <div class="cell-membrane">
 
-                <a href="#resources" class="button secondary">
-                    Revision Resources
-                </a>
+        <div class="nucleus">
 
-            </div>
+            <div class="nucleolus"></div>
 
         </div>
 
+    </div>
 
-        <!-- BIOLOGY VISUAL -->
 
-        <div class="biology-visual">
+    <!-- DNA -->
 
-            <div class="orbit one"></div>
-            <div class="orbit two"></div>
-            <div class="orbit three"></div>
+    <div class="dna">
 
-            <div class="cell">
-                <div class="nucleus"></div>
-            </div>
+        <div class="dna-strand left"></div>
 
-            <div class="dot a"></div>
-            <div class="dot b"></div>
+        <div class="dna-strand right"></div>
 
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+
+    </div>
+
+
+    <!-- MITOCHONDRIA -->
+
+    <div class="mitochondrion mito-one"></div>
+
+    <div class="mitochondrion mito-two"></div>
+
+    <div class="mitochondrion mito-three"></div>
+
+
+    <!-- RIBOSOMES -->
+
+    <div class="ribosome r1"></div>
+    <div class="ribosome r2"></div>
+    <div class="ribosome r3"></div>
+    <div class="ribosome r4"></div>
+
+
+    <!-- CHROMOSOMES -->
+
+    <div class="chromosome ch1"></div>
+    <div class="chromosome ch2"></div>
+    <div class="chromosome ch3"></div>
+
+
+    <!-- LABELS -->
+
+    <div class="bio-label label-dna">
+        DNA // GENETIC CODE
+    </div>
+
+    <div class="bio-label label-nucleus">
+        NUCLEUS // CONTROL
+    </div>
+
+    <div class="bio-label label-mito">
+        MITOCHONDRIA // ATP
+    </div>
+
+    <div class="bio-label label-ribo">
+        RIBOSOMES // PROTEIN
+    </div>
+
+
+    <div class="lab-scan"></div>
+
+</div>
+
+
+</header>
+
+<!-- =====================================================
+     UNIT SECTION
+===================================================== -->
+
+<section class="section" id="units">
+
+
+<div class="section-heading reveal">
+
+    <small>
+        Biological Curriculum
+    </small>
+
+    <h2>
+        Six research modules.
+    </h2>
+
+    <p>
+        Navigate the complete Edexcel International A Level
+        Biology pathway — from molecular biology and cells
+        to gene technology and advanced practical skills.
+    </p>
+
+</div>
+
+
+<div class="units">
+
+
+    <!-- UNIT 1 -->
+
+    <article class="unit-card reveal">
+
+        <div class="unit-number">
+            UNIT 01 · WBI11
         </div>
-
-    </header>
-
-
-    <!-- UNITS -->
-
-    <section class="section" id="units">
-
-        <div class="section-heading">
-
-            <small>Edexcel IAL Biology</small>
-
-            <h2>
-                Explore the six units
-            </h2>
-
-            <p>
-                The complete International A Level Biology qualification
-                consists of six units across IAS and IA2.
-            </p>
-
-        </div>
-
-
-        <div class="units">
-
-            <!-- UNIT 1 -->
-
-            <article class="unit-card">
-
-                <div class="unit-number">
-                    Unit 01 · WBI11
-                </div>
-
-                <h3>
-                    Molecules, Diet, Transport and Health
-                </h3>
-
-                <p>
-                    Explore biological molecules, diet, digestion,
-                    transport systems, health and the biological
-                    processes that connect them.
-                </p>
-
-                <a href="biology-1.html" class="unit-link">
-                    Open Unit 1 →
-                </a>
-
-            </article>
-
-
-            <!-- UNIT 2 -->
-
-            <article class="unit-card">
-
-                <div class="unit-number">
-                    Unit 02 · WBI12
-                </div>
-
-                <h3>
-                    Cells, Development, Biodiversity and Conservation
-                </h3>
-
-                <p>
-                    Study cell structure and division, development,
-                    biodiversity, classification and conservation.
-                </p>
-
-                <a href="biology-2.html" class="unit-link">
-                    Open Unit 2 →
-                </a>
-
-            </article>
-
-
-            <!-- UNIT 3 -->
-
-            <article class="unit-card">
-
-                <div class="unit-number">
-                    Unit 03 · WBI13
-                </div>
-
-                <h3>
-                    Practical Skills in Biology I
-                </h3>
-
-                <p>
-                    Build confidence with experimental design,
-                    data analysis, scientific measurements and
-                    practical investigation skills.
-                </p>
-
-                <a href="biology-3.html" class="unit-link">
-                    Open Unit 3 →
-                </a>
-
-            </article>
-
-
-            <!-- UNIT 4 -->
-
-            <article class="unit-card">
-
-                <div class="unit-number">
-                    Unit 04 · WBI14
-                </div>
-
-                <h3>
-                    Energy, Environment, Microbiology and Immunity
-                </h3>
-
-                <p>
-                    Investigate energy transfer, ecosystems,
-                    microorganisms, environmental biology and
-                    the immune system.
-                </p>
-
-                <a href="biology-4.html" class="unit-link">
-                    Open Unit 4 →
-                </a>
-
-            </article>
-
-
-            <!-- UNIT 5 -->
-
-            <article class="unit-card">
-
-                <div class="unit-number">
-                    Unit 05 · WBI15
-                </div>
-
-                <h3>
-                    Respiration, Internal Environment,
-                    Coordination and Gene Technology
-                </h3>
-
-                <p>
-                    Explore respiration, homeostasis, coordination,
-                    nervous and hormonal systems and modern
-                    gene technology.
-                </p>
-
-                <a href="biology-5.html" class="unit-link">
-                    Open Unit 5 →
-                </a>
-
-            </article>
-
-
-            <!-- UNIT 6 -->
-
-            <article class="unit-card">
-
-                <div class="unit-number">
-                    Unit 06 · WBI16
-                </div>
-
-                <h3>
-                    Practical Skills in Biology II
-                </h3>
-
-                <p>
-                    Develop advanced practical, experimental,
-                    analytical and evaluation skills required
-                    for IA2 Biology.
-                </p>
-
-                <a href="biology-6.html" class="unit-link">
-                    Open Unit 6 →
-                </a>
-
-            </article>
-
-        </div>
-
-
-        <div class="notice">
-
-            <strong>IAL ATLAS Biology:</strong>
-            This section is being built specifically around the
-            Pearson Edexcel International Advanced Level Biology
-            specification. Content will be added progressively,
-            with notes, revision material, practical skills and
-            exam-focused resources.
-
-        </div>
-
-    </section>
-
-
-    <!-- RESOURCES -->
-
-    <section class="section" id="resources">
-
-        <div class="section-heading">
-
-            <small>Study smarter</small>
-
-            <h2>
-                Biology revision tools
-            </h2>
-
-            <p>
-                More than just notes — the goal is to make Biology
-                easier to understand, revise and apply.
-            </p>
-
-        </div>
-
-
-        <div class="resources">
-
-            <div class="resource">
-
-                <div class="resource-icon">
-                    🧬
-                </div>
-
-                <h3>
-                    Concept Notes
-                </h3>
-
-                <p>
-                    Clear explanations of important biological
-                    concepts and processes.
-                </p>
-
-            </div>
-
-
-            <div class="resource">
-
-                <div class="resource-icon">
-                    🔬
-                </div>
-
-                <h3>
-                    Practical Skills
-                </h3>
-
-                <p>
-                    Experimental methods, variables, data
-                    analysis and evaluation.
-                </p>
-
-            </div>
-
-
-            <div class="resource">
-
-                <div class="resource-icon">
-                    🧠
-                </div>
-
-                <h3>
-                    Exam Revision
-                </h3>
-
-                <p>
-                    Key facts, definitions, common mistakes
-                    and exam-focused revision.
-                </p>
-
-            </div>
-
-
-            <div class="resource">
-
-                <div class="resource-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Data & Analysis
-                </h3>
-
-                <p>
-                    Learn how to interpret biological data,
-                    graphs, tables and experimental results.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
 
         <h3>
-            IAL <span style="color:#00eaff;">ATLAS</span>
+            Molecules, Diet, Transport and Health
         </h3>
 
         <p>
-            Free. Student-built. Made to make International
-            A Level learning easier.
+            Investigate biological molecules, diet, digestion,
+            transport systems, cardiovascular biology and
+            the relationship between biological processes and health.
         </p>
 
-        <p style="margin-top:10px;">
-            © 2026 IAL ATLAS
+        <a href="biology-1.html" class="unit-link">
+            Open Research Module →
+        </a>
+
+    </article>
+
+
+    <!-- UNIT 2 -->
+
+    <article class="unit-card reveal">
+
+        <div class="unit-number">
+            UNIT 02 · WBI12
+        </div>
+
+        <h3>
+            Cells, Development, Biodiversity and Conservation
+        </h3>
+
+        <p>
+            Explore cellular ultrastructure, reproduction,
+            development, plant biology, biodiversity,
+            classification and conservation.
         </p>
 
-    </footer>
+        <a href="biology-2.html" class="unit-link">
+            Open Research Module →
+        </a>
 
+    </article>
+
+
+    <!-- UNIT 3 -->
+
+    <article class="unit-card reveal">
+
+        <div class="unit-number">
+            UNIT 03 · WBI13
+        </div>
+
+        <h3>
+            Practical Skills in Biology I
+        </h3>
+
+        <p>
+            Learn how biological investigations are designed,
+            measured, analysed and evaluated through practical
+            scientific skills.
+        </p>
+
+        <a href="biology-3.html" class="unit-link">
+            Open Research Module →
+        </a>
+
+    </article>
+
+
+    <!-- UNIT 4 -->
+
+    <article class="unit-card reveal">
+
+        <div class="unit-number">
+            UNIT 04 · WBI14
+        </div>
+
+        <h3>
+            Energy, Environment, Microbiology and Immunity
+        </h3>
+
+        <p>
+            Study photosynthesis, energy transfer, ecosystems,
+            environmental change, microorganisms and the immune
+            response.
+        </p>
+
+        <a href="biology-4.html" class="unit-link">
+            Open Research Module →
+        </a>
+
+    </article>
+
+
+    <!-- UNIT 5 -->
+
+    <article class="unit-card reveal">
+
+        <div class="unit-number">
+            UNIT 05 · WBI15
+        </div>
+
+        <h3>
+            Respiration, Internal Environment,
+            Coordination and Gene Technology
+        </h3>
+
+        <p>
+            Explore respiration, muscles, homeostasis,
+            nervous coordination, the brain, gene technology
+            and biological responses.
+        </p>
+
+        <a href="biology-5.html" class="unit-link">
+            Open Research Module →
+        </a>
+
+    </article>
+
+
+    <!-- UNIT 6 -->
+
+    <article class="unit-card reveal">
+
+        <div class="unit-number">
+            UNIT 06 · WBI16
+        </div>
+
+        <h3>
+            Practical Skills in Biology II
+        </h3>
+
+        <p>
+            Develop advanced experimental planning,
+            data analysis, uncertainty, evaluation and
+            practical examination skills.
+        </p>
+
+        <a href="biology-6.html" class="unit-link">
+            Open Research Module →
+        </a>
+
+    </article>
+
+
+</div>
+
+
+<!-- =================================================
+     LAB STATUS
+================================================= -->
+
+<div class="lab-status reveal">
+
+
+    <div class="status-item">
+
+        <div class="status-top">
+
+            <span class="status-light"></span>
+
+            Curriculum
+
+        </div>
+
+        <strong>
+            Edexcel IAL
+        </strong>
+
+    </div>
+
+
+    <div class="status-item">
+
+        <div class="status-top">
+
+            <span class="status-light"></span>
+
+            Modules
+
+        </div>
+
+        <strong>
+            6 Units
+        </strong>
+
+    </div>
+
+
+    <div class="status-item">
+
+        <div class="status-top">
+
+            <span class="status-light"></span>
+
+            Laboratory
+
+        </div>
+
+        <strong>
+            Practical Skills
+        </strong>
+
+    </div>
+
+
+    <div class="status-item">
+
+        <div class="status-top">
+
+            <span class="status-light"></span>
+
+            Access
+
+        </div>
+
+        <strong>
+            Free Learning
+        </strong>
+
+    </div>
+
+
+</div>
+
+
+<div class="notice reveal">
+
+    <strong>IAL ATLAS Biology Laboratory:</strong>
+
+    This section is being developed as a free,
+    student-built resource for Pearson Edexcel
+    International Advanced Level Biology.
+
+    The aim is simple:
+    make difficult biological ideas easier to explore,
+    understand and revise — from the microscopic world
+    inside a cell to ecosystems, genetics and practical science.
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     RESOURCES
+===================================================== -->
+
+<section class="section" id="resources">
+
+
+<div class="section-heading reveal">
+
+    <small>
+        Laboratory Instruments
+    </small>
+
+    <h2>
+        Research tools.
+    </h2>
+
+    <p>
+        The Biology laboratory is designed around more than
+        memorising notes. Understand concepts, analyse evidence
+        and develop the practical skills needed to think like a scientist.
+    </p>
+
+</div>
+
+
+<div class="resources">
+
+
+    <div class="resource reveal">
+
+        <div class="resource-icon">
+            🧬
+        </div>
+
+        <h3>
+            Concept Notes
+        </h3>
+
+        <p>
+            Clear explanations of biological molecules,
+            cells, genetics, physiology and biological systems.
+        </p>
+
+    </div>
+
+
+    <div class="resource reveal">
+
+        <div class="resource-icon">
+            🔬
+        </div>
+
+        <h3>
+            Practical Laboratory
+        </h3>
+
+        <p>
+            Experimental methods, variables, apparatus,
+            measurements, safety and evaluation.
+        </p>
+
+    </div>
+
+
+    <div class="resource reveal">
+
+        <div class="resource-icon">
+            🧠
+        </div>
+
+        <h3>
+            Exam Intelligence
+        </h3>
+
+        <p>
+            Definitions, key processes, common mistakes,
+            exam reasoning and revision strategies.
+        </p>
+
+    </div>
+
+
+    <div class="resource reveal">
+
+        <div class="resource-icon">
+            📊
+        </div>
+
+        <h3>
+            Data Analysis
+        </h3>
+
+        <p>
+            Tables, graphs, calculations, uncertainty,
+            correlations and interpretation of evidence.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<h3>
+    IAL <span style="color:var(--cyan);">
+        ATLAS
+    </span>
+</h3>
+
+<p>
+    Free. Student-built.
+    Made to make International A Level learning easier.
+</p>
+
+<p style="margin-top:10px;">
+    © 2026 IAL ATLAS
+</p>
+
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for(let i=0;i<75;i++){
+
+    const particle =
+        document.createElement("span");
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        Math.random()*100 + "%";
+
+    particle.style.animationDuration =
+        (9 + Math.random()*18) + "s";
+
+    particle.style.animationDelay =
+        (Math.random()*15) + "s";
+
+    particle.style.opacity =
+        .2 + Math.random()*.7;
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.08
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el => {
+
+        revealObserver.observe(el);
+
+    });
+
+
+/* =========================================================
+   BIO LAB MOUSE PARALLAX
+========================================================= */
+
+const lab =
+    document.querySelector(".bio-lab");
+
+if(lab){
+
+    window.addEventListener(
+        "mousemove",
+        event => {
+
+            const x =
+                (event.clientX /
+                window.innerWidth - .5);
+
+            const y =
+                (event.clientY /
+                window.innerHeight - .5);
+
+            lab.style.transform =
+                `translate(
+                    ${x * 14}px,
+                    ${y * 14}px
+                )`;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UNIT CARD TILT
+========================================================= */
+
+document
+    .querySelectorAll(".unit-card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                if(window.innerWidth < 900)
+                    return;
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+                const rotateY =
+                    ((x / rect.width) - .5) * 5;
+
+                const rotateX =
+                    ((y / rect.height) - .5) * -5;
+
+                card.style.transform =
+                    `perspective(800px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-7px)`;
+
+            }
+        );
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   SMOOTH ANCHOR OFFSET
+========================================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(anchor => {
+
+        anchor.addEventListener(
+            "click",
+            function(event){
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                if(target){
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior:"smooth"
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+</script>
 
 </body>
 </html>
+
