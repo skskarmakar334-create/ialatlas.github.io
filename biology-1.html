@@ -3,1531 +3,1240 @@
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Edexcel International A Level Biology Unit 1 notes and revision resources. Study Molecules, Diet, Transport and Health with clear explanations, core practicals, exam skills and interactive revision.">
-
-    <meta name="keywords"
-          content="Edexcel IAL Biology Unit 1, International A Level Biology, Biology Unit 1 notes, Molecules Diet Transport Health, Edexcel Biology revision, IAL Biology notes">
-
-    <meta name="author"
-          content="IAL ATLAS">
-
-    <meta name="robots"
-          content="index, follow">
-
-    <link rel="canonical"
-          href="https://ialatlas.com/biology-1.html">
-
-    <meta property="og:title"
-          content="Edexcel IAL Biology Unit 1 | IAL ATLAS">
-
-    <meta property="og:description"
-          content="Molecules, Diet, Transport and Health — Edexcel International A Level Biology Unit 1 revision resources.">
-
-    <meta property="og:type"
-          content="website">
-
-    <meta property="og:url"
-          content="https://ialatlas.com/biology-1.html">
-
-    <meta property="og:image"
-          content="https://ialatlas.com/logo.png">
-
-    <meta name="twitter:card"
-          content="summary_large_image">
-
-    <meta name="twitter:title"
-          content="Edexcel IAL Biology Unit 1 | IAL ATLAS">
-
-    <meta name="twitter:description"
-          content="Study Edexcel IAL Biology Unit 1 with structured notes, practical skills and exam-focused revision.">
-
-    <title>
-        Edexcel IAL Biology Unit 1 | Molecules, Diet, Transport & Health | IAL ATLAS
-    </title>
-
-    <link rel="icon"
-          href="logo.png">
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-    <style>
-
-        :root {
-            --bg: #05070d;
-            --bg2: #080c15;
-            --panel: rgba(13, 18, 30, 0.72);
-            --panel2: rgba(18, 25, 40, 0.58);
-            --border: rgba(255,255,255,0.09);
-            --text: #f4f7fb;
-            --muted: #8994a8;
-            --soft: #b9c3d4;
-            --cyan: #66e3ff;
-            --green: #6dffb3;
-            --purple: #a98cff;
-            --pink: #ff79c6;
-            --yellow: #ffe58a;
-            --red: #ff7d91;
-            --shadow: 0 25px 80px rgba(0,0,0,0.45);
-            --radius: 24px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Inter", sans-serif;
-            background:
-                radial-gradient(circle at 15% 15%, rgba(102,227,255,0.08), transparent 25%),
-                radial-gradient(circle at 85% 25%, rgba(169,140,255,0.08), transparent 28%),
-                radial-gradient(circle at 50% 90%, rgba(109,255,179,0.05), transparent 30%),
-                var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -2;
-            opacity: 0.35;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 100;
-            opacity: 0.025;
-            background: repeating-linear-gradient(
-                to bottom,
-                transparent,
-                transparent 3px,
-                rgba(255,255,255,0.4) 4px
-            );
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        .cursor-glow {
-            position: fixed;
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            pointer-events: none;
-            background: radial-gradient(
-                circle,
-                rgba(102,227,255,0.09),
-                transparent 68%
-            );
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
-
-        #particles {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* HEADER */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 74px;
-            z-index: 50;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 6%;
-            background: rgba(5,7,13,0.58);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            transition: 0.3s ease;
-        }
-
-        header.scrolled {
-            background: rgba(5,7,13,0.9);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: "Space Grotesk", sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            font-size: 18px;
-        }
-
-        .logo-symbol {
-            width: 34px;
-            height: 34px;
-            border: 1px solid rgba(102,227,255,0.5);
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            color: var(--cyan);
-            box-shadow:
-                0 0 20px rgba(102,227,255,0.15),
-                inset 0 0 15px rgba(102,227,255,0.06);
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 26px;
-        }
-
-        nav a {
-            color: var(--muted);
-            font-size: 13px;
-            transition: 0.25s ease;
-        }
-
-        nav a:hover {
-            color: var(--cyan);
-        }
-
-        .back-btn {
-            padding: 9px 15px;
-            border: 1px solid rgba(102,227,255,0.22);
-            border-radius: 999px;
-            background: rgba(102,227,255,0.04);
-        }
-
-        .back-btn:hover {
-            background: rgba(102,227,255,0.1);
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 92vh;
-            padding: 150px 7% 80px;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-grid {
-            max-width: 1250px;
-            width: 100%;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            border: 1px solid rgba(102,227,255,0.18);
-            border-radius: 999px;
-            background: rgba(102,227,255,0.035);
-            color: var(--cyan);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-        }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--green);
-            box-shadow: 0 0 12px var(--green);
-            animation: pulse 1.8s infinite;
-        }
-
-        @keyframes pulse {
-            0%,100% { opacity: 0.45; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.15); }
-        }
-
-        h1 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(44px, 6vw, 78px);
-            line-height: 0.98;
-            letter-spacing: -0.045em;
-            margin-bottom: 24px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(
-                100deg,
-                var(--cyan),
-                var(--purple),
-                var(--green)
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-description {
-            max-width: 700px;
-            color: var(--soft);
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .meta-pill {
-            padding: 9px 13px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.025);
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .meta-pill strong {
-            color: var(--text);
-        }
-
-        /* DNA VISUAL */
-
-        .biology-orb {
-            width: min(390px, 80vw);
-            height: min(390px, 80vw);
-            margin: auto;
-            position: relative;
-            display: grid;
-            place-items: center;
-        }
-
-        .orb-core {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background:
-                radial-gradient(
-                    circle at 35% 30%,
-                    rgba(255,255,255,0.35),
-                    transparent 20%
-                ),
-                radial-gradient(
-                    circle,
-                    rgba(102,227,255,0.28),
-                    rgba(169,140,255,0.08) 50%,
-                    transparent 72%
-                );
-            border: 1px solid rgba(102,227,255,0.35);
-            box-shadow:
-                0 0 45px rgba(102,227,255,0.18),
-                inset 0 0 45px rgba(169,140,255,0.12);
-            animation: floatOrb 5s ease-in-out infinite;
-        }
-
-        .orbit {
-            position: absolute;
-            border: 1px solid rgba(102,227,255,0.16);
-            border-radius: 50%;
-        }
-
-        .orbit.one {
-            width: 250px;
-            height: 250px;
-            animation: spin 13s linear infinite;
-        }
-
-        .orbit.two {
-            width: 330px;
-            height: 330px;
-            transform: rotate(65deg);
-            animation: spinReverse 19s linear infinite;
-        }
-
-        .orbit.three {
-            width: 390px;
-            height: 180px;
-            transform: rotate(-25deg);
-            animation: spin 16s linear infinite;
-        }
-
-        .node {
-            position: absolute;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: var(--cyan);
-            box-shadow: 0 0 22px rgba(102,227,255,0.85);
-        }
-
-        .node.n1 { top: 22%; left: 31%; }
-        .node.n2 { top: 70%; right: 18%; background: var(--purple); }
-        .node.n3 { bottom: 12%; left: 25%; background: var(--green); }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes spinReverse {
-            to { transform: rotate(-360deg); }
-        }
-
-        @keyframes floatOrb {
-            0%,100% { transform: translateY(-8px); }
-            50% { transform: translateY(8px); }
-        }
-
-        /* SECTIONS */
-
-        .section {
-            max-width: 1250px;
-            margin: auto;
-            padding: 90px 7%;
-        }
-
-        .section-heading {
-            margin-bottom: 42px;
-        }
-
-        .section-label {
-            color: var(--cyan);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        h2 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(30px, 4vw, 48px);
-            letter-spacing: -0.035em;
-        }
-
-        .section-subtitle {
-            color: var(--muted);
-            margin-top: 12px;
-            line-height: 1.7;
-            max-width: 720px;
-        }
-
-        /* TOPIC CARDS */
-
-        .topic-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .topic-card {
-            position: relative;
-            padding: 30px;
-            min-height: 250px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.045),
-                    rgba(255,255,255,0.012)
-                );
-            backdrop-filter: blur(18px);
-            overflow: hidden;
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-        }
-
-        .topic-card::before {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: rgba(102,227,255,0.06);
-            filter: blur(35px);
-            top: -90px;
-            right: -70px;
-            pointer-events: none;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(102,227,255,0.3);
-            box-shadow:
-                0 20px 70px rgba(0,0,0,0.28),
-                0 0 35px rgba(102,227,255,0.05);
-        }
-
-        .topic-number {
-            color: var(--cyan);
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .topic-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 25px;
-            margin-bottom: 12px;
-        }
-
-        .topic-card p {
-            color: var(--muted);
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        .topic-list {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-
-        .topic-tag {
-            font-size: 11px;
-            color: var(--soft);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            padding: 6px 9px;
-            background: rgba(255,255,255,0.02);
-        }
-
-        /* SPECIFICATION MAP */
-
-        .spec-panel {
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            background: rgba(10,14,24,0.68);
-            backdrop-filter: blur(20px);
-            overflow: hidden;
-        }
-
-        .spec-row {
-            display: grid;
-            grid-template-columns: 90px 1fr 90px;
-            gap: 20px;
-            align-items: center;
-            padding: 20px 25px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .spec-row:last-child {
-            border-bottom: none;
-        }
-
-        .spec-code {
-            color: var(--cyan);
-            font-family: "Space Grotesk", sans-serif;
-            font-weight: 700;
-        }
-
-        .spec-title {
-            color: var(--soft);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .spec-type {
-            text-align: right;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--muted);
-        }
-
-        /* PRACTICALS */
-
-        .practical-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .practical {
-            padding: 23px;
-            min-height: 190px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: rgba(255,255,255,0.025);
-            transition: 0.3s ease;
-        }
-
-        .practical:hover {
-            transform: translateY(-5px);
-            border-color: rgba(109,255,179,0.28);
-        }
-
-        .practical-number {
-            color: var(--green);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            margin-bottom: 16px;
-        }
-
-        .practical h3 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 17px;
-            line-height: 1.35;
-            margin-bottom: 10px;
-        }
-
-        .practical p {
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.65;
-        }
-
-        /* MATH */
-
-        .math-panel {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .math-card {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: rgba(255,255,255,0.025);
-        }
-
-        .math-card .symbol {
-            font-size: 28px;
-            color: var(--purple);
-            margin-bottom: 12px;
-        }
-
-        .math-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-            margin-bottom: 9px;
-        }
-
-        .math-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.65;
-        }
-
-        /* EXAM */
-
-        .exam-box {
-            position: relative;
-            padding: 40px;
-            border-radius: 28px;
-            border: 1px solid rgba(102,227,255,0.17);
-            background:
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(102,227,255,0.08),
-                    transparent 30%
-                ),
-                rgba(255,255,255,0.025);
-            overflow: hidden;
-        }
-
-        .exam-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-top: 30px;
-        }
-
-        .exam-stat {
-            padding: 20px;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            background: rgba(0,0,0,0.16);
-        }
-
-        .exam-stat strong {
-            display: block;
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 27px;
-            margin-bottom: 5px;
-        }
-
-        .exam-stat span {
-            color: var(--muted);
-            font-size: 11px;
-        }
-
-        /* REVISION */
-
-        .revision-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .revision-card {
-            padding: 28px;
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            background: rgba(255,255,255,0.025);
-        }
-
-        .revision-icon {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .revision-card h3 {
-            font-family: "Space Grotesk", sans-serif;
-            margin-bottom: 10px;
-        }
-
-        .revision-card p {
-            color: var(--muted);
-            line-height: 1.7;
-            font-size: 13px;
-        }
-
-        /* UNIT NAV */
-
-        .unit-nav {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            margin-top: 60px;
-        }
-
-        .unit-link {
-            flex: 1;
-            padding: 22px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: rgba(255,255,255,0.025);
-            transition: 0.3s ease;
-        }
-
-        .unit-link:hover {
-            border-color: rgba(102,227,255,0.3);
-            transform: translateY(-4px);
-        }
-
-        .unit-link.next {
-            text-align: right;
-        }
-
-        .unit-label {
-            color: var(--muted);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 8px;
-        }
-
-        .unit-link strong {
-            font-family: "Space Grotesk", sans-serif;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 50px 7%;
-            text-align: center;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        footer strong {
-            color: var(--text);
-        }
-
-        /* REVEAL */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 950px) {
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a:not(.back-btn) {
-                display: none;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-meta {
-                justify-content: center;
-            }
-
-            .topic-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .practical-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .math-panel,
-            .revision-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .exam-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .spec-row {
-                grid-template-columns: 65px 1fr;
-            }
-
-            .spec-type {
-                display: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            header {
-                padding: 0 5%;
-            }
-
-            .logo {
-                font-size: 15px;
-            }
-
-            .hero {
-                padding-top: 125px;
-            }
-
-            .section {
-                padding: 65px 5%;
-            }
-
-            .biology-orb {
-                width: 300px;
-                height: 300px;
-            }
-
-            .orbit.one {
-                width: 200px;
-                height: 200px;
-            }
-
-            .orbit.two {
-                width: 260px;
-                height: 260px;
-            }
-
-            .orbit.three {
-                width: 300px;
-                height: 140px;
-            }
-
-            .orb-core {
-                width: 115px;
-                height: 115px;
-            }
-
-            .practical-grid,
-            .exam-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .exam-box {
-                padding: 25px;
-            }
-
-            .unit-nav {
-                flex-direction: column;
-            }
-
-            .unit-link.next {
-                text-align: left;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biology Unit 1 | IAL ATLAS</title>
+
+<meta name="description"
+content="Edexcel International A Level Biology Unit 1 — Molecules, Diet, Transport and Health. Complete notes, biological processes, practical skills, worked examples and practice.">
+
+<meta name="keywords"
+content="Edexcel IAL Biology Unit 1, WBI11, Biology Unit 1 notes, Edexcel Biology, IAL Biology, Molecules Diet Transport Health">
+
+<meta name="theme-color" content="#06111f">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,Helvetica,sans-serif;
+    background:#020711;
+    color:#eaf6ff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-5;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(0,255,170,.11),transparent 28%),
+        radial-gradient(circle at 85% 70%,rgba(0,180,255,.10),transparent 30%),
+        radial-gradient(circle at 50% 100%,rgba(112,75,255,.07),transparent 35%);
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-4;
+    opacity:.25;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+    background-size:50px 50px;
+}
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    width:0%;
+    background:linear-gradient(90deg,#00ffaa,#00d9ff,#7c5cff);
+    z-index:9999;
+    box-shadow:0 0 15px #00ffaa;
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#55ffcf;
+    box-shadow:0 0 12px #55ffcf;
+    opacity:.5;
+    animation:floatParticle linear infinite;
+}
+
+.particle:nth-child(1){left:8%;animation-duration:18s;animation-delay:-5s;}
+.particle:nth-child(2){left:18%;animation-duration:23s;animation-delay:-12s;}
+.particle:nth-child(3){left:31%;animation-duration:20s;animation-delay:-3s;}
+.particle:nth-child(4){left:44%;animation-duration:26s;animation-delay:-17s;}
+.particle:nth-child(5){left:57%;animation-duration:19s;animation-delay:-9s;}
+.particle:nth-child(6){left:69%;animation-duration:24s;animation-delay:-14s;}
+.particle:nth-child(7){left:81%;animation-duration:21s;animation-delay:-7s;}
+.particle:nth-child(8){left:92%;animation-duration:28s;animation-delay:-20s;}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translateY(110vh) translateX(0);
+        opacity:0;
+    }
+
+    15%{opacity:.5;}
+
+    50%{
+        transform:translateY(50vh) translateX(35px);
+    }
+
+    85%{opacity:.5;}
+
+    100%{
+        transform:translateY(-10vh) translateX(-25px);
+        opacity:0;
+    }
+
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:17px 7%;
+
+    background:rgba(2,10,20,.72);
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 10px rgba(0,255,170,.45);
+}
+
+.back-link{
+    color:#9edfff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-link:hover{
+    color:#fff;
+    text-shadow:0 0 12px #00ffaa;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    min-height:720px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:90px 20px;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 50% 45%,rgba(0,255,170,.11),transparent 30%),
+        linear-gradient(135deg,#020711,#061a30 55%,#081126);
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:950px;
+}
+
+.hero-label{
+    color:#55ffcf;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(44px,7vw,82px);
+    line-height:1.05;
+    margin-bottom:22px;
+
+    letter-spacing:-3px;
+
+    text-shadow:
+        0 0 20px rgba(0,255,170,.18);
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#55ffcf,#4ddfff,#7d68ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:760px;
+    margin:auto;
+    color:#aac4d9;
+    font-size:19px;
+}
+
+/* =========================================================
+   CELL VISUAL
+========================================================= */
+
+.cell{
+    position:absolute;
+    width:330px;
+    height:250px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border:2px solid rgba(85,255,207,.25);
+    border-radius:48% 52% 50% 45%;
+
+    box-shadow:
+        0 0 30px rgba(0,255,170,.15),
+        inset 0 0 50px rgba(0,255,170,.05);
+
+    animation:cellFloat 6s ease-in-out infinite;
+
+    opacity:.9;
+}
+
+.cell::before{
+    content:"";
+
+    position:absolute;
+    inset:18px;
+
+    border:1px solid rgba(77,223,255,.22);
+    border-radius:52% 45% 55% 48%;
+
+    animation:membranePulse 4s ease-in-out infinite;
+}
+
+.nucleus{
+    position:absolute;
+
+    width:72px;
+    height:72px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#55ffcf 32%,#086b67 72%);
+
+    box-shadow:
+        0 0 20px #00ffaa,
+        0 0 60px rgba(0,255,170,.45);
+}
+
+.nucleus::before,
+.nucleus::after{
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:0 0 8px #fff;
+}
+
+.nucleus::before{
+    width:13px;
+    height:13px;
+    left:16px;
+    top:14px;
+}
+
+.nucleus::after{
+    width:9px;
+    height:9px;
+    right:15px;
+    bottom:14px;
+}
+
+.organelle{
+    position:absolute;
+
+    width:23px;
+    height:13px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(77,223,255,.8);
+
+    box-shadow:0 0 10px rgba(77,223,255,.5);
+
+    animation:organelleMove 4s ease-in-out infinite;
+}
+
+.organelle.o1{
+    left:65px;
+    top:65px;
+}
+
+.organelle.o2{
+    right:58px;
+    top:82px;
+    animation-delay:-1s;
+}
+
+.organelle.o3{
+    left:80px;
+    bottom:55px;
+    animation-delay:-2s;
+}
+
+.organelle.o4{
+    right:78px;
+    bottom:62px;
+    animation-delay:-3s;
+}
+
+@keyframes cellFloat{
+
+    0%,100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+    50%{
+        transform:translate(-50%,-50%) scale(1.035);
+    }
+
+}
+
+@keyframes membranePulse{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.7;
+    }
+
+    50%{
+        transform:scale(1.03);
+        opacity:1;
+    }
+
+}
+
+@keyframes organelleMove{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(7px,-5px);
+    }
+
+}
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:40px;
+}
+
+.stat{
+    padding:12px 18px;
+
+    border:1px solid rgba(91,255,207,.18);
+    border-radius:100px;
+
+    background:rgba(255,255,255,.035);
+    backdrop-filter:blur(10px);
+
+    color:#a9cce0;
+    font-size:13px;
+}
+
+.stat strong{
+    color:#fff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+    padding:70px 0;
+}
+
+/* =========================================================
+   TOPIC NAV
+========================================================= */
+
+.topic-nav{
+    position:sticky;
+    top:72px;
+    z-index:50;
+
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+
+    padding:10px;
+    margin-bottom:40px;
+
+    background:rgba(4,15,28,.78);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+
+    backdrop-filter:blur(16px);
+}
+
+.topic-nav::-webkit-scrollbar{
+    height:3px;
+}
+
+.topic-nav a{
+    white-space:nowrap;
+    color:#91b2c7;
+    text-decoration:none;
+
+    padding:9px 14px;
+    border-radius:10px;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.topic-nav a:hover{
+    background:rgba(0,255,170,.1);
+    color:#55ffcf;
+}
+
+/* =========================================================
+   LESSON
+========================================================= */
+
+.lesson{
+    position:relative;
+
+    padding:42px;
+    margin-bottom:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:24px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.25),
+        inset 0 1px rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    overflow:hidden;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.lesson::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    right:-100px;
+    top:-100px;
+
+    border-radius:50%;
+
+    background:rgba(0,255,170,.07);
+    filter:blur(20px);
+}
+
+.lesson:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(0,255,170,.2);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.35),
+        0 0 40px rgba(0,255,170,.04);
+}
+
+.lesson-number{
+    color:#55ffcf;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:3px;
+    margin-bottom:8px;
+}
+
+.lesson h2{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.lesson h3{
+    color:#dff7ff;
+    font-size:22px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.lesson h4{
+    color:#7fe6ff;
+    margin-top:22px;
+    margin-bottom:8px;
+}
+
+.lesson p,
+.lesson li{
+    color:#9db4c6;
+}
+
+.lesson ul,
+.lesson ol{
+    padding-left:25px;
+}
+
+.lesson li{
+    margin-bottom:8px;
+}
+
+/* =========================================================
+   DEFINITION
+========================================================= */
+
+.definition{
+    margin:25px 0;
+    padding:22px;
+
+    border-left:3px solid #00ffaa;
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,255,170,.09),
+            rgba(0,255,170,.025)
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(0,255,170,.025);
+}
+
+.definition strong{
+    color:#55ffcf;
+}
+
+/* =========================================================
+   FORMULA
+========================================================= */
+
+.formula{
+    position:relative;
+
+    margin:24px 0;
+    padding:21px;
+
+    text-align:center;
+
+    border:1px solid rgba(98,255,207,.16);
+    border-radius:15px;
+
+    background:#030c18;
+
+    color:#8eeaff;
+
+    font-size:20px;
+    font-weight:800;
+
+    box-shadow:
+        inset 0 0 25px rgba(0,255,170,.035),
+        0 0 25px rgba(0,255,170,.03);
+
+    overflow:hidden;
+}
+
+.formula::after{
+    content:"";
+
+    position:absolute;
+    left:-100%;
+    top:0;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    animation:formulaScan 5s infinite;
+}
+
+@keyframes formulaScan{
+
+    0%{left:-100%;}
+
+    45%,100%{left:150%;}
+
+}
+
+/* =========================================================
+   BIO VISUAL
+========================================================= */
+
+.bio-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:240px;
+
+    margin:30px 0;
+
+    position:relative;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,255,170,.08),
+            transparent 55%
+        );
+}
+
+/* DNA */
+
+.dna{
+    position:relative;
+
+    width:280px;
+    height:190px;
+}
+
+.dna .strand{
+    position:absolute;
+
+    width:7px;
+    height:170px;
+
+    top:10px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        180deg,
+        #55ffcf,
+        #4ddfff,
+        #7d68ff
+    );
+
+    box-shadow:0 0 15px rgba(0,255,170,.5);
+}
+
+.dna .left{
+    left:75px;
+    transform:rotate(17deg);
+}
+
+.dna .right{
+    right:75px;
+    transform:rotate(-17deg);
+}
+
+.base{
+    position:absolute;
+
+    width:130px;
+    height:4px;
+
+    left:75px;
+
+    border-radius:10px;
+
+    background:#dff7ff;
+
+    box-shadow:0 0 10px #55ffcf;
+
+    transform-origin:left center;
+}
+
+.base:nth-child(3){top:32px;transform:rotate(9deg);}
+.base:nth-child(4){top:63px;transform:rotate(4deg);}
+.base:nth-child(5){top:94px;transform:rotate(-3deg);}
+.base:nth-child(6){top:125px;transform:rotate(-8deg);}
+.base:nth-child(7){top:156px;transform:rotate(-13deg);}
+
+/* =========================================================
+   BLOOD VISUAL
+========================================================= */
+
+.blood-flow{
+    position:relative;
+
+    width:420px;
+    height:130px;
+
+    border:3px solid rgba(255,90,130,.45);
+    border-radius:70px;
+
+    box-shadow:
+        inset 0 0 30px rgba(255,70,120,.08),
+        0 0 30px rgba(255,70,120,.08);
+
+    overflow:hidden;
+}
+
+.rbc{
+    position:absolute;
+
+    width:24px;
+    height:15px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,130,160,.75);
+
+    box-shadow:0 0 10px rgba(255,70,120,.5);
+
+    animation:bloodMove linear infinite;
+}
+
+.rbc:nth-child(1){top:20px;animation-duration:4s;}
+.rbc:nth-child(2){top:60px;animation-duration:5s;animation-delay:-2s;}
+.rbc:nth-child(3){top:90px;animation-duration:3.5s;animation-delay:-1s;}
+.rbc:nth-child(4){top:42px;animation-duration:6s;animation-delay:-4s;}
+.rbc:nth-child(5){top:75px;animation-duration:4.5s;animation-delay:-3s;}
+
+@keyframes bloodMove{
+
+    from{
+        left:-35px;
+        transform:rotate(0deg);
+    }
+
+    to{
+        left:430px;
+        transform:rotate(360deg);
+    }
+
+}
+
+/* =========================================================
+   EXAMPLES
+========================================================= */
+
+.example{
+    margin-top:25px;
+    padding:25px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+}
+
+.example-title{
+    color:#50dcff !important;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.solution{
+    margin-top:18px;
+    padding:18px;
+
+    background:rgba(0,0,0,.22);
+    border-radius:12px;
+}
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.warning{
+    margin:22px 0;
+    padding:20px;
+
+    border-left:3px solid #ffc857;
+    border-radius:13px;
+
+    background:rgba(255,200,87,.06);
+}
+
+.warning strong{
+    color:#ffd76d;
+}
+
+/* =========================================================
+   PRACTICAL
+========================================================= */
+
+.practical{
+    margin:25px 0;
+
+    padding:25px;
+
+    border:1px solid rgba(77,223,255,.14);
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(77,223,255,.06),
+            rgba(0,255,170,.025)
+        );
+}
+
+.practical-title{
+    color:#55ffcf !important;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:25px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:600px;
+}
+
+th,
+td{
+    padding:14px;
+
+    text-align:left;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+th{
+    color:#55ffcf;
+    background:rgba(0,255,170,.04);
+}
+
+td{
+    color:#9db4c6;
+}
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.question{
+    padding:22px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.question strong{
+    color:#dff7ff;
+}
+
+details{
+    margin-top:13px;
+}
+
+summary{
+    cursor:pointer;
+    color:#55dcff;
+    font-weight:800;
+}
+
+details p{
+    margin-top:12px;
+}
+
+/* =========================================================
+   QUICK REVIEW
+========================================================= */
+
+.quick-review{
+    padding:28px;
+
+    border:1px solid rgba(0,255,170,.12);
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,255,170,.08),
+            rgba(124,92,255,.05)
+        );
+}
+
+.quick-review li{
+    margin-bottom:11px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.navigation{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+
+    padding:20px 20px 70px;
+}
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:150px;
+
+    padding:13px 21px;
+
+    border:1px solid rgba(0,255,170,.2);
+    border-radius:12px;
+
+    background:rgba(0,255,170,.07);
+
+    color:#bfefff;
+    text-decoration:none;
+
+    font-weight:800;
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+
+    background:rgba(0,255,170,.16);
+    border-color:#00ffaa;
+
+    color:white;
+
+    box-shadow:
+        0 0 25px rgba(0,255,170,.15);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+
+    background:#01050b;
+
+    border-top:1px solid rgba(255,255,255,.07);
+
+    color:#60788d;
+    font-size:13px;
+}
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .back-link{
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:650px;
+        padding:70px 20px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .cell{
+        transform:translate(-50%,-50%) scale(.7);
+    }
+
+    .container{
+        width:94%;
+        padding-top:40px;
+    }
+
+    .topic-nav{
+        top:62px;
+    }
+
+    .lesson{
+        padding:27px 22px;
+        border-radius:20px;
+    }
+
+    .lesson h2{
+        font-size:29px;
+    }
+
+    .formula{
+        font-size:17px;
+        overflow-x:auto;
+    }
+
+    .bio-visual{
+        min-height:200px;
+    }
+
+    .dna{
+        transform:scale(.75);
+    }
+
+    .blood-flow{
+        transform:scale(.72);
+    }
+
+    .stats{
+        gap:8px;
+    }
+
+    .stat{
+        font-size:11px;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+        transition:none !important;
+    }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
+<div id="progress"></div>
 
-<div class="cursor-glow"></div>
+<div class="particles">
 
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
 
-<!-- HEADER -->
+</div>
 
-<header id="header">
+<header>
 
     <a href="index.html" class="logo">
-
-        <span class="logo-symbol">IA</span>
-
-        <span>IAL ATLAS</span>
-
+        IAL ATLAS
     </a>
 
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="biology.html">Biology</a>
-
-        <a href="#topics">Topics</a>
-
-        <a href="#practicals">Practicals</a>
-
-        <a href="#exam">Exam</a>
-
-        <a href="biology-2.html" class="back-btn">
-            Next Unit →
-        </a>
-
-    </nav>
+    <a href="biology.html" class="back-link">
+        ← Biology
+    </a>
 
 </header>
 
-
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
-    <div class="hero-grid">
+    <div class="cell">
 
-        <div class="reveal">
+        <div class="nucleus"></div>
 
-            <div class="eyebrow">
-                <span class="status-dot"></span>
-                EDexcel IAL Biology • Unit 1
-            </div>
-
-            <h1>
-
-                Molecules.<br>
-
-                <span class="gradient-text">
-                    Transport.
-                </span><br>
-
-                Health.
-
-            </h1>
-
-            <p class="hero-description">
-
-                Explore the molecular foundations of biology,
-                transport systems, cardiovascular health,
-                membranes, proteins, DNA and gene expression —
-                structured around the Pearson Edexcel International
-                A Level Biology Unit 1 specification.
-
-            </p>
-
-            <div class="hero-meta">
-
-                <span class="meta-pill">
-                    <strong>WBI11/01</strong>
-                </span>
-
-                <span class="meta-pill">
-                    <strong>80</strong> marks
-                </span>
-
-                <span class="meta-pill">
-                    <strong>1h 30m</strong>
-                </span>
-
-                <span class="meta-pill">
-                    IAS • Unit 1
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="biology-orb reveal">
-
-            <div class="orbit one"></div>
-            <div class="orbit two"></div>
-            <div class="orbit three"></div>
-
-            <div class="orb-core"></div>
-
-            <div class="node n1"></div>
-            <div class="node n2"></div>
-            <div class="node n3"></div>
-
-        </div>
+        <div class="organelle o1"></div>
+        <div class="organelle o2"></div>
+        <div class="organelle o3"></div>
+        <div class="organelle o4"></div>
 
     </div>
 
-</section>
+    <div class="hero-content">
 
-
-<!-- TOPICS -->
-
-<section class="section" id="topics">
-
-    <div class="section-heading reveal">
-
-        <div class="section-label">
-            Unit architecture
+        <div class="hero-label">
+            EDEXCEL INTERNATIONAL A LEVEL BIOLOGY • WBI11
         </div>
 
-        <h2>
-            Two major biological systems.
-        </h2>
+        <h1>
+            Biology <span>Unit 1</span>
+        </h1>
 
-        <p class="section-subtitle">
-            Unit 1 moves from biological molecules and transport
-            to membranes, proteins, DNA, gene expression and
-            genetic screening.
+        <p>
+            Molecules, Diet, Transport and Health
         </p>
 
-    </div>
+        <div class="stats">
 
-
-    <div class="topic-grid">
-
-        <article class="topic-card reveal">
-
-            <div class="topic-number">
-                TOPIC 01
+            <div class="stat">
+                <strong>WBI11</strong> Unit 1
             </div>
 
-            <h3>
-                Molecules, Transport & Health
-            </h3>
-
-            <p>
-                Build the molecular foundations of Biology and
-                connect them to transport systems, the mammalian
-                heart, haemoglobin, cardiovascular disease,
-                nutrition and health.
-            </p>
-
-            <div class="topic-list">
-
-                <span class="topic-tag">Water</span>
-                <span class="topic-tag">Carbohydrates</span>
-                <span class="topic-tag">Lipids</span>
-                <span class="topic-tag">Blood</span>
-                <span class="topic-tag">Heart</span>
-                <span class="topic-tag">Haemoglobin</span>
-                <span class="topic-tag">CVD</span>
-                <span class="topic-tag">Diet</span>
-
+            <div class="stat">
+                <strong>2</strong> Major Topics
             </div>
 
-        </article>
-
-
-        <article class="topic-card reveal">
-
-            <div class="topic-number">
-                TOPIC 02
+            <div class="stat">
+                <strong>4</strong> Core Practicals
             </div>
 
-            <h3>
-                Membranes, Proteins, DNA & Gene Expression
-            </h3>
-
-            <p>
-                Study gas exchange, membrane structure and
-                transport, proteins and enzymes, DNA replication,
-                protein synthesis, mutations, inheritance and
-                genetic screening.
-            </p>
-
-            <div class="topic-list">
-
-                <span class="topic-tag">Diffusion</span>
-                <span class="topic-tag">Osmosis</span>
-                <span class="topic-tag">Membranes</span>
-                <span class="topic-tag">Enzymes</span>
-                <span class="topic-tag">DNA</span>
-                <span class="topic-tag">Replication</span>
-                <span class="topic-tag">Translation</span>
-                <span class="topic-tag">Mutations</span>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- SPECIFICATION MAP -->
-
-<section class="section">
-
-    <div class="section-heading reveal">
-
-        <div class="section-label">
-            Specification map
-        </div>
-
-        <h2>
-            What you need to know.
-        </h2>
-
-        <p class="section-subtitle">
-            The sections below follow the numbered content
-            points in the Pearson Edexcel specification.
-        </p>
-
-    </div>
-
-
-    <div class="spec-panel reveal">
-
-        <div class="spec-row">
-
-            <div class="spec-code">1.1–1.5</div>
-
-            <div class="spec-title">
-                Water, carbohydrates, reducing sugars, starch,
-                glycosidic bonds, triglycerides and saturated/
-                unsaturated lipids.
-            </div>
-
-            <div class="spec-type">Molecules</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">1.6–1.9</div>
-
-            <div class="spec-title">
-                Mass transport, blood vessels, cardiac cycle,
-                mammalian heart, haemoglobin and oxygen
-                dissociation curves.
-            </div>
-
-            <div class="spec-type">Transport</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">1.10–1.13</div>
-
-            <div class="spec-title">
-                Atherosclerosis, blood clotting, cardiovascular
-                disease risk factors and dietary antioxidants.
-            </div>
-
-            <div class="spec-type">Health</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">1.14–1.20</div>
-
-            <div class="spec-title">
-                Vitamin C investigation, health-risk data,
-                cholesterol, obesity indicators and treatments
-                for cardiovascular disease.
-            </div>
-
-            <div class="spec-type">CVD</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">2.1–2.5</div>
-
-            <div class="spec-title">
-                Gas exchange surfaces, Fick's law, lungs,
-                fluid mosaic membranes, osmosis and membrane
-                transport.
-            </div>
-
-            <div class="spec-type">Membranes</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">2.6–2.8</div>
-
-            <div class="spec-title">
-                Amino acids, protein structure, globular and
-                fibrous proteins, enzyme action and enzyme
-                investigations.
-            </div>
-
-            <div class="spec-type">Proteins</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">2.9–2.13</div>
-
-            <div class="spec-title">
-                DNA and RNA, complementary base pairing,
-                replication, genetic code, transcription and
-                translation.
-            </div>
-
-            <div class="spec-type">Genetics</div>
-
-        </div>
-
-
-        <div class="spec-row">
-
-            <div class="spec-code">2.14–2.18</div>
-
-            <div class="spec-title">
-                Mutations, inheritance, sex linkage, cystic
-                fibrosis, genetic screening and ethical/social
-                issues.
-            </div>
-
-            <div class="spec-type">Gene expression</div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CORE PRACTICALS -->
-
-<section class="section" id="practicals">
-
-    <div class="section-heading reveal">
-
-        <div class="section-label">
-            Practical laboratory
-        </div>
-
-        <h2>
-            Core Practicals 01–04.
-        </h2>
-
-        <p class="section-subtitle">
-            Practical knowledge is part of the specification.
-            These investigations connect theory with experimental
-            design, observations, data collection and analysis.
-        </p>
-
-    </div>
-
-
-    <div class="practical-grid">
-
-        <article class="practical reveal">
-
-            <div class="practical-number">
-                CORE PRACTICAL 01
-            </div>
-
-            <h3>
-                Reducing sugars & starch
-            </h3>
-
-            <p>
-                Use Benedict's reagent to estimate reducing
-                sugar concentration and iodine solution to
-                estimate starch concentration using colour
-                standards.
-            </p>
-
-        </article>
-
-
-        <article class="practical reveal">
-
-            <div class="practical-number">
-                CORE PRACTICAL 02
-            </div>
-
-            <h3>
-                Vitamin C in food & drink
-            </h3>
-
-            <p>
-                Investigate vitamin C content and use quantitative
-                observations to compare food and drink samples.
-            </p>
-
-        </article>
-
-
-        <article class="practical reveal">
-
-            <div class="practical-number">
-                CORE PRACTICAL 03
-            </div>
-
-            <h3>
-                Membrane permeability
-            </h3>
-
-            <p>
-                Investigate membrane properties and examine the
-                effects of alcohol and temperature on membrane
-                permeability.
-            </p>
-
-        </article>
-
-
-        <article class="practical reveal">
-
-            <div class="practical-number">
-                CORE PRACTICAL 04
-            </div>
-
-            <h3>
-                Enzyme-catalysed reactions
-            </h3>
-
-            <p>
-                Investigate how temperature, pH, enzyme
-                concentration and substrate concentration affect
-                the initial rate of enzyme reactions.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- MATHEMATICAL SKILLS -->
-
-<section class="section">
-
-    <div class="section-heading reveal">
-
-        <div class="section-label">
-            Biology × Mathematics
-        </div>
-
-        <h2>
-            The numbers matter.
-        </h2>
-
-        <p class="section-subtitle">
-            Unit 1 contains mathematical and data-handling
-            requirements. Pearson specifies at least 8 marks
-            targeting Level 2 or above mathematics in the paper.
-        </p>
-
-    </div>
-
-
-    <div class="math-panel">
-
-        <article class="math-card reveal">
-
-            <div class="symbol">
-                %
-            </div>
-
-            <h3>
-                Percentage change
-            </h3>
-
-            <p>
-                Calculate and interpret percentage changes in
-                biological measurements and experimental results.
-            </p>
-
-        </article>
-
-
-        <article class="math-card reveal">
-
-            <div class="symbol">
-                ∆
-            </div>
-
-            <h3>
-                Initial rate
-            </h3>
-
-            <p>
-                Determine the initial rate of an enzyme-catalysed
-                reaction from suitable experimental data.
-            </p>
-
-        </article>
-
-
-        <article class="math-card reveal">
-
-            <div class="symbol">
-                c
-            </div>
-
-            <h3>
-                Concentration & units
-            </h3>
-
-            <p>
-                Work confidently with concentrations, quantities
-                and appropriate physical units when analysing
-                biological data.
-            </p>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- EXAM -->
-
-<section class="section" id="exam">
-
-    <div class="exam-box reveal">
-
-        <div class="section-label">
-            Assessment profile
-        </div>
-
-        <h2>
-            WBI11/01
-        </h2>
-
-        <p class="section-subtitle">
-            Pearson Edexcel International Advanced Subsidiary
-            Biology — Unit 1.
-        </p>
-
-
-        <div class="exam-grid">
-
-            <div class="exam-stat">
-
-                <strong>80</strong>
-
-                <span>
-                    Total marks
-                </span>
-
-            </div>
-
-
-            <div class="exam-stat">
-
-                <strong>1:30</strong>
-
-                <span>
-                    Examination time
-                </span>
-
-            </div>
-
-
-            <div class="exam-stat">
-
-                <strong>8+</strong>
-
-                <span>
-                    Minimum Level 2+ maths marks
-                </span>
-
-            </div>
-
-
-            <div class="exam-stat">
-
-                <strong>IAS</strong>
-
-                <span>
-                    International Advanced Subsidiary
-                </span>
-
+            <div class="stat">
+                <strong>Practice</strong> Questions
             </div>
 
         </div>
@@ -1536,358 +1245,2024 @@
 
 </section>
 
+<main class="container">
 
-<!-- REVISION STRATEGY -->
+<!-- =========================================================
+     TOPIC NAVIGATION
+========================================================= -->
 
-<section class="section">
+<nav class="topic-nav">
 
-    <div class="section-heading reveal">
+    <a href="#molecules">01 Molecules</a>
+    <a href="#transport">02 Transport</a>
+    <a href="#health">03 Health</a>
+    <a href="#membranes">04 Membranes</a>
+    <a href="#proteins">05 Proteins</a>
+    <a href="#dna">06 DNA</a>
+    <a href="#genetics">07 Genetics</a>
+    <a href="#practicals">Practicals</a>
+    <a href="#practice">Practice</a>
+    <a href="#review">Review</a>
 
-        <div class="section-label">
-            IAL ATLAS strategy
-        </div>
+</nav>
 
-        <h2>
-            How to master Unit 1.
-        </h2>
+<!-- =========================================================
+     TOPIC 01 — MOLECULES
+========================================================= -->
 
-        <p class="section-subtitle">
-            Don't just memorise isolated facts. Build connections
-            between molecules, structures, mechanisms, evidence
-            and biological consequences.
-        </p>
+<section class="lesson reveal" id="molecules">
 
-    </div>
+<p class="lesson-number">TOPIC 01</p>
 
+<h2>Water and Biological Molecules</h2>
 
-    <div class="revision-grid">
+<p>
+Biological molecules form the chemical basis of living organisms.
+Unit 1 begins with water, carbohydrates and lipids, linking their
+structures to their biological functions.
+</p>
 
-        <article class="revision-card reveal">
+<div class="bio-visual">
 
-            <div class="revision-icon">
-                🧬
-            </div>
+    <div class="dna">
 
-            <h3>
-                Learn structures
-            </h3>
+        <div class="strand left"></div>
+        <div class="strand right"></div>
 
-            <p>
-                Draw and recognise carbohydrates, triglycerides,
-                proteins, nucleotides, membranes and DNA.
-                Structure-function relationships are central.
-            </p>
-
-        </article>
-
-
-        <article class="revision-card reveal">
-
-            <div class="revision-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Follow mechanisms
-            </h3>
-
-            <p>
-                Practise explaining processes step-by-step:
-                cardiac cycle, clotting, atherosclerosis,
-                membrane transport, replication and protein
-                synthesis.
-            </p>
-
-        </article>
-
-
-        <article class="revision-card reveal">
-
-            <div class="revision-icon">
-                📊
-            </div>
-
-            <h3>
-                Analyse evidence
-            </h3>
-
-            <p>
-                Get comfortable interpreting graphs, tables,
-                correlations, experimental results and studies
-                of health risks.
-            </p>
-
-        </article>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
+        <div class="base"></div>
 
     </div>
+
+</div>
+
+<h3>Water</h3>
+
+<p>
+Water is essential for life and makes up a large proportion of
+living organisms. Its properties arise from the polar nature of
+the water molecule.
+</p>
+
+<div class="definition">
+
+<strong>Water is a polar molecule.</strong>
+
+<p>
+The oxygen atom is more electronegative than the hydrogen atoms,
+so oxygen carries a partial negative charge while the hydrogen
+atoms carry partial positive charges.
+</p>
+
+</div>
+
+<h3>Water as a Solvent</h3>
+
+<p>
+Water is an effective solvent for many ionic and polar substances.
+This makes it important in transport and metabolic reactions.
+</p>
+
+<ul>
+
+<li>Mineral ions can dissolve in water.</li>
+
+<li>Glucose and other polar molecules can be transported
+in aqueous solutions.</li>
+
+<li>Many metabolic reactions occur in aqueous environments.</li>
+
+<li>Blood plasma is largely water and acts as a transport medium.</li>
+
+</ul>
+
+<h3>Carbohydrates</h3>
+
+<p>
+Carbohydrates contain carbon, hydrogen and oxygen. They include
+monosaccharides, disaccharides and polysaccharides.
+</p>
+
+<h3>Monosaccharides</h3>
+
+<p>
+Monosaccharides are single sugar units. Examples include glucose,
+fructose and galactose.
+</p>
+
+<h3>Disaccharides</h3>
+
+<p>
+Disaccharides consist of two monosaccharides joined by a
+glycosidic bond.
+</p>
+
+<div class="definition">
+
+<strong>Condensation reaction</strong>
+
+<p>
+A condensation reaction joins molecules together while producing
+a molecule of water.
+</p>
+
+<strong>Hydrolysis reaction</strong>
+
+<p>
+Hydrolysis breaks a bond using water.
+</p>
+
+</div>
+
+<h3>Polysaccharides</h3>
+
+<p>
+Polysaccharides are large carbohydrate molecules made from many
+monosaccharide units.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Polysaccharide</th>
+<th>Main role</th>
+<th>Important feature</th>
+</tr>
+
+<tr>
+<td>Starch</td>
+<td>Energy storage in plants</td>
+<td>Compact and insoluble</td>
+</tr>
+
+<tr>
+<td>Glycogen</td>
+<td>Energy storage in animals and fungi</td>
+<td>Highly branched</td>
+</tr>
+
+<tr>
+<td>Cellulose</td>
+<td>Structural support in plant cell walls</td>
+<td>Long chains forming strong fibres</td>
+</tr>
+
+</table>
+
+</div>
+
+<h3>Starch</h3>
+
+<p>
+Starch contains two types of glucose polymer: amylose and
+amylopectin.
+</p>
+
+<ul>
+
+<li><strong>Amylose</strong> is an unbranched chain of α-glucose.</li>
+
+<li><strong>Amylopectin</strong> is branched.</li>
+
+</ul>
+
+<h3>Glycogen</h3>
+
+<p>
+Glycogen is the main storage polysaccharide in animals.
+Its extensive branching allows glucose units to be released
+rapidly when required.
+</p>
+
+<h3>Lipids</h3>
+
+<p>
+Triglycerides are formed from one glycerol molecule and three
+fatty acid molecules.
+</p>
+
+<div class="formula">
+Glycerol + 3 fatty acids → triglyceride + 3H<sub>2</sub>O
+</div>
+
+<p>
+The bonds formed between glycerol and fatty acids are ester bonds.
+</p>
+
+<h3>Saturated and Unsaturated Fatty Acids</h3>
+
+<ul>
+
+<li><strong>Saturated fatty acids</strong> contain no carbon-carbon
+double bonds.</li>
+
+<li><strong>Unsaturated fatty acids</strong> contain one or more
+carbon-carbon double bonds.</li>
+
+</ul>
+
+<div class="definition">
+
+<strong>Biological importance of triglycerides</strong>
+
+<p>
+Triglycerides provide a concentrated energy store and can also
+provide insulation and protection around organs.
+</p>
+
+</div>
 
 </section>
 
+<!-- =========================================================
+     TOPIC 02 — TRANSPORT
+========================================================= -->
 
-<!-- UNIT NAVIGATION -->
+<section class="lesson reveal" id="transport">
 
-<section class="section">
+<p class="lesson-number">TOPIC 02</p>
 
-    <div class="unit-nav">
+<h2>The Cardiovascular System and Transport</h2>
 
-        <a href="biology.html" class="unit-link">
+<p>
+Large multicellular organisms require mass transport systems
+because diffusion alone cannot supply all cells efficiently.
+</p>
 
-            <div class="unit-label">
-                ← Biology
-            </div>
+<div class="bio-visual">
 
-            <strong>
-                Biology Units
-            </strong>
+    <div class="blood-flow">
 
-        </a>
-
-
-        <a href="biology-2.html" class="unit-link next">
-
-            <div class="unit-label">
-                Next Unit →
-            </div>
-
-            <strong>
-                Unit 2 — Cells, Development, Biodiversity & Conservation
-            </strong>
-
-        </a>
+        <div class="rbc"></div>
+        <div class="rbc"></div>
+        <div class="rbc"></div>
+        <div class="rbc"></div>
+        <div class="rbc"></div>
 
     </div>
 
+</div>
+
+<h3>Why Mass Transport Is Necessary</h3>
+
+<p>
+As organisms become larger, their surface area to volume ratio
+decreases. Internal cells become farther from exchange surfaces,
+increasing the distance over which substances would need to
+diffuse.
+</p>
+
+<div class="definition">
+
+<strong>Mass transport</strong>
+
+<p>
+The bulk movement of substances through an organism, usually
+using a transport system such as the circulatory system.
+</p>
+
+</div>
+
+<h3>Blood Vessels</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Blood vessel</th>
+<th>Structure</th>
+<th>Function</th>
+</tr>
+
+<tr>
+<td>Artery</td>
+<td>Thick muscular and elastic wall; small lumen</td>
+<td>Carries blood away from the heart at high pressure</td>
+</tr>
+
+<tr>
+<td>Vein</td>
+<td>Thinner wall; large lumen; valves</td>
+<td>Returns blood to the heart at lower pressure</td>
+</tr>
+
+<tr>
+<td>Capillary</td>
+<td>Very narrow lumen and wall one cell thick</td>
+<td>Exchange of substances with tissues</td>
+</tr>
+
+</table>
+
+</div>
+
+<h3>The Mammalian Heart</h3>
+
+<p>
+The mammalian heart is a muscular organ containing four chambers:
+the right atrium, right ventricle, left atrium and left ventricle.
+</p>
+
+<h3>Major Blood Vessels</h3>
+
+<ul>
+
+<li>Vena cava</li>
+<li>Pulmonary artery</li>
+<li>Pulmonary vein</li>
+<li>Aorta</li>
+
+</ul>
+
+<h3>Heart Valves</h3>
+
+<p>
+Valves prevent the backflow of blood and help maintain
+one-directional movement through the heart.
+</p>
+
+<h3>Cardiac Cycle</h3>
+
+<p>
+The cardiac cycle consists of alternating periods of atrial
+and ventricular contraction and relaxation.
+</p>
+
+<div class="definition">
+
+<strong>Key sequence:</strong>
+
+<p>
+Atria contract → ventricles contract → heart muscle relaxes.
+</p>
+
+<p>
+The valves open and close according to differences in pressure.
+</p>
+
+</div>
+
+<h3>Double Circulation</h3>
+
+<p>
+Mammals have a double circulatory system. Blood passes through
+the heart twice during one complete circuit.
+</p>
+
+<ol>
+
+<li>
+The pulmonary circulation carries deoxygenated blood from the
+heart to the lungs and oxygenated blood back to the heart.
+</li>
+
+<li>
+The systemic circulation carries oxygenated blood from the heart
+to the body and returns deoxygenated blood to the heart.
+</li>
+
+</ol>
+
+<h3>Haemoglobin</h3>
+
+<p>
+Haemoglobin is a globular protein found inside red blood cells.
+It transports oxygen from the lungs to tissues.
+</p>
+
+<h3>Oxygen Dissociation Curves</h3>
+
+<p>
+The oxygen dissociation curve shows the relationship between
+oxygen concentration or partial pressure and the percentage
+saturation of haemoglobin with oxygen.
+</p>
+
+<div class="formula">
+Haemoglobin + O<sub>2</sub> ⇌ oxyhaemoglobin
+</div>
+
+<h3>The Bohr Effect</h3>
+
+<p>
+An increase in carbon dioxide concentration causes haemoglobin
+to have a lower affinity for oxygen. This shifts the oxygen
+dissociation curve to the right.
+</p>
+
+<div class="definition">
+
+<strong>Why this is useful:</strong>
+
+<p>
+Active tissues produce more carbon dioxide. The Bohr effect
+therefore encourages haemoglobin to release more oxygen where
+respiration is occurring rapidly.
+</p>
+
+</div>
+
+<h3>Fetal Haemoglobin</h3>
+
+<p>
+Fetal haemoglobin has a higher affinity for oxygen than adult
+haemoglobin. This allows the fetus to obtain oxygen from the
+mother's blood across the placenta.
+</p>
+
 </section>
 
+<!-- =========================================================
+     TOPIC 03 — HEALTH
+========================================================= -->
 
-<!-- FOOTER -->
+<section class="lesson reveal" id="health">
+
+<p class="lesson-number">TOPIC 03</p>
+
+<h2>Cardiovascular Disease, Risk and Health</h2>
+
+<p>
+Cardiovascular disease involves conditions affecting the heart
+and blood vessels. Unit 1 examines atherosclerosis, blood
+clotting, risk factors, evidence and treatments.
+</p>
+
+<h3>Atherosclerosis</h3>
+
+<p>
+Atherosclerosis involves changes to artery walls and the
+formation of plaques that can restrict blood flow.
+</p>
+
+<h3>Development of Atherosclerosis</h3>
+
+<ol>
+
+<li>Damage or dysfunction occurs in the endothelium.</li>
+
+<li>An inflammatory response develops.</li>
+
+<li>White blood cells and other substances accumulate.</li>
+
+<li>A plaque develops within the artery wall.</li>
+
+<li>The artery becomes narrower and blood flow can be restricted.</li>
+
+</ol>
+
+<div class="warning">
+
+<strong>Important:</strong>
+
+<p>
+Atherosclerosis can increase blood pressure because blood has
+to flow through a narrower vessel.
+</p>
+
+</div>
+
+<h3>Blood Clotting</h3>
+
+<p>
+Blood clotting reduces blood loss after damage to a blood vessel.
+It also contributes to cardiovascular disease when inappropriate
+clots block blood vessels.
+</p>
+
+<div class="formula">
+Prothrombin → Thrombin
+</div>
+
+<div class="formula">
+Fibrinogen → Fibrin
+</div>
+
+<p>
+Thrombin catalyses the conversion of fibrinogen into fibrin.
+Fibrin forms a mesh that helps trap blood cells and contributes
+to clot formation.
+</p>
+
+<h3>Risk Factors for Cardiovascular Disease</h3>
+
+<ul>
+
+<li>Genetic factors</li>
+<li>Diet</li>
+<li>Age</li>
+<li>Gender</li>
+<li>High blood pressure</li>
+<li>Smoking</li>
+<li>Physical inactivity</li>
+
+</ul>
+
+<h3>Dietary Antioxidants</h3>
+
+<p>
+Antioxidants can react with reactive molecules and may reduce
+oxidative damage. Their possible relationship with cardiovascular
+disease must be considered using evidence rather than assumption.
+</p>
+
+<h3>Correlation and Causation</h3>
+
+<div class="definition">
+
+<strong>Correlation does not automatically prove causation.</strong>
+
+<p>
+Two variables may change together because one causes the other,
+because both are influenced by another variable, or simply because
+of chance.
+</p>
+
+</div>
+
+<h3>Evaluating Health Studies</h3>
+
+<p>
+A biological study should be evaluated by considering its sample,
+methods, variables, reliability, validity and the strength of
+the evidence.
+</p>
+
+<ul>
+
+<li>Sample size</li>
+<li>Representative sampling</li>
+<li>Control of variables</li>
+<li>Reliable measurements</li>
+<li>Repeatability</li>
+<li>Statistical analysis</li>
+<li>Possible confounding variables</li>
+
+</ul>
+
+<h3>Perceived and Actual Risk</h3>
+
+<p>
+People do not always perceive health risks accurately. Media
+coverage, personal experience and the way information is presented
+can influence perception of risk.
+</p>
+
+<h3>Cholesterol</h3>
+
+<p>
+Cholesterol is transported through the blood in lipoproteins.
+High-density lipoprotein and low-density lipoprotein have
+different roles in cholesterol transport.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Lipoprotein</th>
+<th>General role</th>
+</tr>
+
+<tr>
+<td>LDL</td>
+<td>Transports cholesterol from the liver towards tissues</td>
+</tr>
+
+<tr>
+<td>HDL</td>
+<td>Transports cholesterol towards the liver</td>
+</tr>
+
+</table>
+
+</div>
+
+<h3>Reducing Cardiovascular Risk</h3>
+
+<ul>
+
+<li>Balanced diet</li>
+<li>Appropriate physical activity</li>
+<li>Not smoking</li>
+<li>Managing high blood pressure</li>
+<li>Managing cholesterol levels</li>
+<li>Maintaining a healthy body composition</li>
+
+</ul>
+
+<h3>Treatments</h3>
+
+<p>
+Different treatments target different cardiovascular risk
+factors and processes.
+</p>
+
+<ul>
+
+<li><strong>Antihypertensives</strong> reduce high blood pressure.</li>
+
+<li><strong>Statins</strong> reduce blood cholesterol levels.</li>
+
+<li><strong>Anticoagulants</strong> reduce blood clot formation.</li>
+
+<li><strong>Platelet inhibitors</strong> reduce platelet aggregation.</li>
+
+</ul>
+
+<div class="warning">
+
+<strong>Exam evaluation:</strong>
+
+<p>
+Treatments should be evaluated by considering both their benefits
+and possible risks or side effects.
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 04 — MEMBRANES
+========================================================= -->
+
+<section class="lesson reveal" id="membranes">
+
+<p class="lesson-number">TOPIC 04</p>
+
+<h2>Cell Membranes and Transport</h2>
+
+<p>
+Cell membranes control the movement of substances into and out
+of cells. Their structure explains their selective permeability.
+</p>
+
+<h3>Fluid Mosaic Model</h3>
+
+<p>
+The cell-surface membrane is described using the fluid mosaic
+model.
+</p>
+
+<ul>
+
+<li>Phospholipid bilayer</li>
+<li>Integral proteins</li>
+<li>Peripheral proteins</li>
+<li>Cholesterol</li>
+<li>Glycoproteins</li>
+
+</ul>
+
+<div class="definition">
+
+<strong>Phospholipid bilayer</strong>
+
+<p>
+Hydrophilic phosphate heads face the aqueous environments while
+hydrophobic fatty acid tails face inward, away from water.
+</p>
+
+</div>
+
+<h3>Diffusion</h3>
+
+<p>
+Diffusion is the net movement of particles from a region of
+higher concentration to a region of lower concentration.
+</p>
+
+<h3>Facilitated Diffusion</h3>
+
+<p>
+Facilitated diffusion is passive movement through membrane
+proteins. Channel and carrier proteins can allow particular
+substances to cross the membrane.
+</p>
+
+<h3>Active Transport</h3>
+
+<p>
+Active transport moves substances against their concentration
+gradient and requires energy from ATP.
+</p>
+
+<div class="formula">
+ATP → ADP + P<sub>i</sub> + energy
+</div>
+
+<h3>Endocytosis</h3>
+
+<p>
+Endocytosis involves the cell membrane surrounding material and
+forming a vesicle to bring it into the cell.
+</p>
+
+<h3>Exocytosis</h3>
+
+<p>
+Exocytosis involves vesicles fusing with the cell membrane and
+releasing their contents outside the cell.
+</p>
+
+<h3>Factors Affecting Diffusion</h3>
+
+<ul>
+
+<li>Concentration difference</li>
+<li>Surface area</li>
+<li>Diffusion distance</li>
+<li>Temperature</li>
+<li>Properties of the substance</li>
+
+</ul>
+
+<h3>Fick's Law</h3>
+
+<div class="formula">
+Rate of diffusion ∝
+(surface area × concentration difference) / diffusion distance
+</div>
+
+<p>
+A large surface area, large concentration difference and short
+diffusion distance increase the rate of diffusion.
+</p>
+
+<h3>Osmosis</h3>
+
+<p>
+Osmosis is the net movement of free water molecules across a
+partially permeable membrane from a region of higher water
+potential to a region of lower water potential.
+</p>
+
+<div class="definition">
+
+<strong>Water potential</strong>
+
+<p>
+Pure water has the highest water potential. Dissolving solutes
+in water lowers its water potential.
+</p>
+
+</div>
+
+<h3>Water Potential</h3>
+
+<p>
+The movement of water can be explained using water potential
+rather than simply describing water moving from a dilute solution
+to a concentrated solution.
+</p>
+
+<div class="formula">
+Water moves from higher Ψ to lower Ψ
+</div>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 05 — PROTEINS & ENZYMES
+========================================================= -->
+
+<section class="lesson reveal" id="proteins">
+
+<p class="lesson-number">TOPIC 05</p>
+
+<h2>Proteins and Enzymes</h2>
+
+<p>
+Proteins have a wide range of biological roles. Their function
+depends on their three-dimensional structure.
+</p>
+
+<h3>Amino Acids</h3>
+
+<p>
+Amino acids contain an amino group, a carboxyl group and a
+variable R group.
+</p>
+
+<div class="formula">
+NH<sub>2</sub>−CHR−COOH
+</div>
+
+<h3>Peptide Bonds</h3>
+
+<p>
+A condensation reaction between amino acids forms a peptide bond.
+A polypeptide is a chain of amino acids joined by peptide bonds.
+</p>
+
+<h3>Levels of Protein Structure</h3>
+
+<ul>
+
+<li><strong>Primary:</strong> amino acid sequence.</li>
+
+<li><strong>Secondary:</strong> local folding such as α-helices
+and β-pleated sheets.</li>
+
+<li><strong>Tertiary:</strong> overall three-dimensional structure
+of one polypeptide.</li>
+
+<li><strong>Quaternary:</strong> association of multiple
+polypeptide chains.</li>
+
+</ul>
+
+<h3>Protein Bonds and Interactions</h3>
+
+<ul>
+
+<li>Hydrogen bonds</li>
+<li>Ionic interactions</li>
+<li>Disulfide bonds</li>
+<li>Hydrophobic interactions</li>
+
+</ul>
+
+<h3>Globular and Fibrous Proteins</h3>
+
+<p>
+Globular proteins tend to have compact structures and include
+many enzymes and haemoglobin. Fibrous proteins tend to have
+longer structures and often have structural roles.
+</p>
+
+<h3>Haemoglobin</h3>
+
+<p>
+Haemoglobin is a globular protein adapted for oxygen transport.
+It contains four polypeptide chains and haem groups containing
+iron.
+</p>
+
+<h3>Collagen</h3>
+
+<p>
+Collagen is a fibrous protein that provides structural strength
+in connective tissues.
+</p>
+
+<h3>Enzymes</h3>
+
+<p>
+Enzymes are biological catalysts. They increase reaction rates
+by lowering the activation energy without being permanently
+changed by the reaction.
+</p>
+
+<div class="definition">
+
+<strong>Activation energy</strong>
+
+<p>
+The minimum energy required for a reaction to occur.
+</p>
+
+</div>
+
+<h3>Enzyme Specificity</h3>
+
+<p>
+The active site of an enzyme has a particular shape and chemical
+environment. Only suitable substrates can bind effectively.
+</p>
+
+<h3>Induced Fit</h3>
+
+<p>
+When a substrate binds, interactions between the substrate and
+enzyme can cause the active site to change shape slightly.
+This can help position the substrate correctly for reaction.
+</p>
+
+<h3>Factors Affecting Enzyme Activity</h3>
+
+<ul>
+
+<li>Temperature</li>
+<li>pH</li>
+<li>Substrate concentration</li>
+<li>Enzyme concentration</li>
+
+</ul>
+
+<h3>Temperature</h3>
+
+<p>
+Increasing temperature generally increases kinetic energy and
+collision frequency. Above the optimum temperature, bonds
+maintaining enzyme structure can be disrupted and the enzyme
+may become denatured.
+</p>
+
+<h3>pH</h3>
+
+<p>
+Extreme pH can alter ionic interactions and hydrogen bonding
+within a protein, changing the shape of the active site.
+</p>
+
+<h3>Initial Rate</h3>
+
+<p>
+The initial rate of an enzyme-controlled reaction is determined
+from the steepest early part of a reaction progress graph.
+</p>
+
+<div class="formula">
+Initial rate = change in product / change in time
+</div>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 06 — DNA
+========================================================= -->
+
+<section class="lesson reveal" id="dna">
+
+<p class="lesson-number">TOPIC 06</p>
+
+<h2>DNA, RNA and Genetic Information</h2>
+
+<p>
+DNA stores genetic information. RNA molecules help convert this
+information into proteins.
+</p>
+
+<h3>Nucleotides</h3>
+
+<p>
+A nucleotide contains a pentose sugar, phosphate group and
+nitrogen-containing base.
+</p>
+
+<h3>DNA Bases</h3>
+
+<ul>
+
+<li>Adenine</li>
+<li>Thymine</li>
+<li>Cytosine</li>
+<li>Guanine</li>
+
+</ul>
+
+<div class="definition">
+
+<strong>Complementary base pairing</strong>
+
+<p>
+Adenine pairs with thymine, while cytosine pairs with guanine.
+Hydrogen bonds hold complementary bases together.
+</p>
+
+</div>
+
+<h3>DNA Structure</h3>
+
+<p>
+DNA consists of two antiparallel polynucleotide strands forming
+a double helix.
+</p>
+
+<p>
+Nucleotides within each strand are joined by phosphodiester
+bonds.
+</p>
+
+<h3>RNA</h3>
+
+<p>
+RNA is generally single-stranded and contains ribose sugar.
+Uracil replaces thymine.
+</p>
+
+<h3>DNA Replication</h3>
+
+<p>
+Before cell division, DNA must be copied. DNA replication is
+semi-conservative.
+</p>
+
+<ol>
+
+<li>The DNA double helix unwinds.</li>
+
+<li>Hydrogen bonds between complementary bases break.</li>
+
+<li>Each original strand acts as a template.</li>
+
+<li>DNA polymerase joins complementary nucleotides.</li>
+
+<li>Two DNA molecules are produced, each containing one original
+strand and one new strand.</li>
+
+</ol>
+
+<h3>Meselson-Stahl Evidence</h3>
+
+<p>
+The Meselson-Stahl experiment provided evidence supporting
+semi-conservative DNA replication using different nitrogen
+isotopes and density measurements.
+</p>
+
+<h3>The Genetic Code</h3>
+
+<p>
+The genetic code is a triplet code. Three bases form a codon
+that specifies an amino acid or a termination signal.
+</p>
+
+<ul>
+
+<li>Triplet</li>
+<li>Non-overlapping</li>
+<li>Degenerate</li>
+
+</ul>
+
+<div class="definition">
+
+<strong>Degenerate code</strong>
+
+<p>
+More than one codon can code for the same amino acid.
+</p>
+
+</div>
+
+<h3>Genes</h3>
+
+<p>
+A gene is a sequence of DNA bases that codes for a polypeptide
+or functional RNA.
+</p>
+
+</section>
+
+<!-- =========================================================
+     TOPIC 07 — GENETICS
+========================================================= -->
+
+<section class="lesson reveal" id="genetics">
+
+<p class="lesson-number">TOPIC 07</p>
+
+<h2>Protein Synthesis, Mutations and Inheritance</h2>
+
+<p>
+Genetic information is expressed through transcription and
+translation. Mutations and inheritance help explain variation
+within populations.
+</p>
+
+<h3>Transcription</h3>
+
+<p>
+During transcription, RNA polymerase uses one DNA strand as a
+template to produce a complementary RNA molecule.
+</p>
+
+<h3>Translation</h3>
+
+<p>
+During translation, ribosomes use the sequence of codons on
+mRNA to assemble a polypeptide.
+</p>
+
+<ul>
+
+<li>mRNA carries the genetic message.</li>
+
+<li>tRNA carries amino acids.</li>
+
+<li>Anticodons on tRNA pair with complementary mRNA codons.</li>
+
+<li>The ribosome forms peptide bonds between amino acids.</li>
+
+</ul>
+
+<h3>Start and Stop Codons</h3>
+
+<p>
+Translation begins at a start codon and ends when a stop codon
+is reached.
+</p>
+
+<h3>Mutations</h3>
+
+<p>
+A mutation is a change in the DNA base sequence.
+</p>
+
+<h4>Substitution</h4>
+
+<p>
+One base is replaced by another.
+</p>
+
+<h4>Insertion</h4>
+
+<p>
+One or more bases are added to a sequence.
+</p>
+
+<h4>Deletion</h4>
+
+<p>
+One or more bases are removed.
+</p>
+
+<div class="warning">
+
+<strong>Mutation effects:</strong>
+
+<p>
+A mutation may have no observable effect, may alter a protein's
+function, or may contribute to disease. The effect depends on
+where and how the DNA sequence changes.
+</p>
+
+</div>
+
+<h3>Genetic Terminology</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>Gene</td>
+<td>A sequence of DNA associated with a characteristic or
+functional product</td>
+</tr>
+
+<tr>
+<td>Allele</td>
+<td>An alternative form of a gene</td>
+</tr>
+
+<tr>
+<td>Genotype</td>
+<td>The alleles an individual possesses</td>
+</tr>
+
+<tr>
+<td>Phenotype</td>
+<td>Observable characteristics resulting from genotype and
+environment</td>
+</tr>
+
+<tr>
+<td>Homozygous</td>
+<td>Two identical alleles</td>
+</tr>
+
+<tr>
+<td>Heterozygous</td>
+<td>Two different alleles</td>
+</tr>
+
+<tr>
+<td>Dominant</td>
+<td>An allele expressed in a heterozygote</td>
+</tr>
+
+<tr>
+<td>Recessive</td>
+<td>An allele expressed when no dominant allele masks it</td>
+</tr>
+
+<tr>
+<td>Codominant</td>
+<td>Both alleles contribute to the phenotype</td>
+</tr>
+
+</table>
+
+</div>
+
+<h3>Monohybrid Inheritance</h3>
+
+<p>
+A genetic cross can be represented using genetic diagrams.
+The expected proportions of offspring depend on the parental
+genotypes.
+</p>
+
+<div class="example">
+
+<p class="example-title">
+WORKED GENETIC EXAMPLE
+</p>
+
+<p>
+Suppose two heterozygous individuals have genotypes Aa × Aa.
+</p>
+
+<div class="solution">
+
+<p>
+Possible offspring genotypes:
+</p>
+
+<p>
+AA, Aa, Aa, aa
+</p>
+
+<p>
+Genotypic ratio:
+<strong>1 AA : 2 Aa : 1 aa</strong>
+</p>
+
+<p>
+Phenotypic proportions depend on whether A is dominant and on
+the characteristic being studied.
+</p>
+
+</div>
+
+</div>
+
+<h3>Sex Linkage</h3>
+
+<p>
+Some genes are located on the sex chromosomes. X-linked
+conditions can show different inheritance patterns in males
+and females.
+</p>
+
+<h3>Cystic Fibrosis</h3>
+
+<p>
+Cystic fibrosis is a genetic disorder associated with mutations
+in the CFTR gene. Changes in the CFTR protein affect chloride
+ion transport and can alter the properties of mucus.
+</p>
+
+<p>
+The disorder can affect the respiratory, digestive and
+reproductive systems.
+</p>
+
+<h3>Genetic Screening</h3>
+
+<p>
+Genetic screening can identify individuals who carry particular
+alleles or determine whether a fetus or embryo may have a
+genetic condition.
+</p>
+
+<ul>
+
+<li>Carrier screening</li>
+<li>Preimplantation genetic diagnosis</li>
+<li>Amniocentesis</li>
+<li>Chorionic villus sampling</li>
+
+</ul>
+
+<h3>Ethical and Social Issues</h3>
+
+<p>
+Genetic screening raises scientific, ethical and social questions.
+Different viewpoints should be considered when evaluating issues
+such as privacy, reproductive choice, possible discrimination,
+accuracy and psychological impact.
+</p>
+
+</section>
+
+<!-- =========================================================
+     CORE PRACTICALS
+========================================================= -->
+
+<section class="lesson reveal" id="practicals">
+
+<p class="lesson-number">CORE PRACTICALS</p>
+
+<h2>Biology Unit 1 Practical Skills</h2>
+
+<p>
+Practical work is an important part of Edexcel IAL Biology.
+Unit 1 includes four core practical areas.
+</p>
+
+<div class="practical">
+
+<p class="practical-title">
+CORE PRACTICAL 1 — FOOD TESTS
+</p>
+
+<h3>Reducing Sugars</h3>
+
+<p>
+Benedict's reagent can be used to test for reducing sugars.
+The sample is heated with Benedict's reagent and the resulting
+colour is compared with suitable standards.
+</p>
+
+<p>
+A positive result produces a colour change from the original
+blue reagent towards green, yellow, orange or red depending
+on concentration.
+</p>
+
+<h3>Starch</h3>
+
+<p>
+Iodine solution is used to test for starch. A positive result
+produces a blue-black colour.
+</p>
+
+</div>
+
+<div class="practical">
+
+<p class="practical-title">
+CORE PRACTICAL 2 — VITAMIN C
+</p>
+
+<p>
+The vitamin C content of foods or drinks can be compared using
+a suitable quantitative method.
+</p>
+
+<h3>Exam Considerations</h3>
+
+<ul>
+
+<li>Control variables</li>
+<li>Repeat measurements</li>
+<li>Use of standards</li>
+<li>Accurate volume measurements</li>
+<li>Reliability</li>
+<li>Validity</li>
+
+</ul>
+
+</div>
+
+<div class="practical">
+
+<p class="practical-title">
+CORE PRACTICAL 3 — MEMBRANE PROPERTIES
+</p>
+
+<p>
+The effect of factors such as temperature and alcohol
+concentration on membrane permeability can be investigated.
+</p>
+
+<p>
+Changes in membrane permeability can be measured using an
+appropriate indicator or quantitative measurement.
+</p>
+
+<div class="definition">
+
+<strong>Biological explanation:</strong>
+
+<p>
+Conditions that disrupt membrane structure can increase the
+movement of substances across the membrane.
+</p>
+
+</div>
+
+</div>
+
+<div class="practical">
+
+<p class="practical-title">
+CORE PRACTICAL 4 — ENZYME ACTIVITY
+</p>
+
+<p>
+The effect of temperature, pH, enzyme concentration or substrate
+concentration on the initial rate of an enzyme-controlled reaction
+can be investigated.
+</p>
+
+<h3>Variables</h3>
+
+<ul>
+
+<li>Independent variable</li>
+<li>Dependent variable</li>
+<li>Control variables</li>
+
+</ul>
+
+<h3>Initial Rate</h3>
+
+<div class="formula">
+Initial rate = gradient at the beginning of the reaction
+</div>
+
+</div>
+
+<h3>Practical Skills Checklist</h3>
+
+<ul>
+
+<li>Identify independent and dependent variables.</li>
+
+<li>Identify appropriate control variables.</li>
+
+<li>Explain why repeats improve reliability.</li>
+
+<li>Identify anomalies.</li>
+
+<li>Calculate means.</li>
+
+<li>Construct and interpret graphs.</li>
+
+<li>Describe trends using data.</li>
+
+<li>Distinguish correlation from causation.</li>
+
+<li>Evaluate experimental methods.</li>
+
+</ul>
+
+</section>
+
+<!-- =========================================================
+     PRACTICE
+========================================================= -->
+
+<section class="lesson reveal" id="practice">
+
+<p class="lesson-number">PRACTICE</p>
+
+<h2>Unit 1 Mixed Practice</h2>
+
+<p>
+Try each question before opening the answer. These questions
+cover molecules, transport, health, membranes, proteins,
+DNA and genetics.
+</p>
+
+<div class="question">
+
+<strong>
+1. Explain why water is an effective transport medium in
+organisms.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Water is polar and can dissolve many ionic and polar substances.
+Therefore substances such as mineral ions and glucose can be
+transported in aqueous solutions.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+2. Explain why glycogen is suitable for energy storage in animals.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Glycogen is compact and highly branched. Its branching provides
+many ends from which glucose units can be hydrolysed rapidly
+when energy is required.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+3. Explain why mammals require a mass transport system.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Mammals are large multicellular organisms with a relatively
+small surface area to volume ratio. Many cells are far from
+exchange surfaces, so diffusion alone would be too slow to
+supply their metabolic demands.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+4. Compare the structure of arteries and veins.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Arteries have thick muscular and elastic walls and relatively
+small lumens because they carry blood at high pressure.
+Veins have thinner walls, larger lumens and valves because
+blood returns at lower pressure.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+5. Explain the Bohr effect.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Increasing carbon dioxide concentration decreases the affinity
+of haemoglobin for oxygen. This causes the oxygen dissociation
+curve to shift to the right, promoting oxygen unloading in
+actively respiring tissues.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+6. Explain how atherosclerosis can increase cardiovascular risk.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Plaques can narrow arteries and reduce blood flow. They can also
+increase the risk of blood clots blocking vessels. Narrower
+arteries can contribute to increased blood pressure.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+7. State the direction of net water movement during osmosis.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Water moves from higher water potential to lower water potential
+across a partially permeable membrane.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+8. Explain why active transport requires ATP.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Active transport moves substances against their concentration
+gradient. Energy from ATP is used by membrane proteins to drive
+this movement.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+9. Explain why an enzyme's activity decreases above its optimum
+temperature.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+High temperatures disrupt bonds maintaining the enzyme's
+three-dimensional structure. The active site changes shape,
+so fewer substrate molecules bind effectively.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+10. What is meant by semi-conservative DNA replication?
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+Each newly formed DNA molecule contains one original strand
+and one newly synthesised strand.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+11. Distinguish between a gene and an allele.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+A gene is a DNA sequence associated with a particular functional
+product or characteristic. An allele is an alternative form of
+a gene.
+</p>
+
+</details>
+
+</div>
+
+<div class="question">
+
+<strong>
+12. Explain why insertion or deletion mutations can have
+large effects on a protein.
+</strong>
+
+<details>
+
+<summary>Show answer</summary>
+
+<p>
+An insertion or deletion can alter the reading frame of the
+genetic code. This can change many subsequent codons and therefore
+the amino acid sequence of the polypeptide.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     QUICK REVIEW
+========================================================= -->
+
+<section class="lesson reveal" id="review">
+
+<p class="lesson-number">QUICK REVIEW</p>
+
+<h2>Unit 1 Key Ideas</h2>
+
+<div class="quick-review">
+
+<ul>
+
+<li>
+Water is polar and acts as an important biological solvent.
+</li>
+
+<li>
+Monosaccharides can form disaccharides and polysaccharides
+through condensation reactions.
+</li>
+
+<li>
+Glycogen is a highly branched storage polysaccharide in animals.
+</li>
+
+<li>
+Triglycerides contain glycerol and three fatty acids joined
+by ester bonds.
+</li>
+
+<li>
+Large organisms require mass transport systems.
+</li>
+
+<li>
+Arteries, veins and capillaries are adapted for different
+transport functions.
+</li>
+
+<li>
+The mammalian heart produces a double circulation.
+</li>
+
+<li>
+Haemoglobin transports oxygen and shows a characteristic
+oxygen dissociation curve.
+</li>
+
+<li>
+The Bohr effect promotes oxygen unloading in actively
+respiring tissues.
+</li>
+
+<li>
+Atherosclerosis can restrict blood flow and contribute to
+cardiovascular disease.
+</li>
+
+<li>
+Correlation does not automatically prove causation.
+</li>
+
+<li>
+The cell-surface membrane follows the fluid mosaic model.
+</li>
+
+<li>
+Diffusion is passive; active transport requires energy from ATP.
+</li>
+
+<li>
+Osmosis is the net movement of water from higher to lower
+water potential across a partially permeable membrane.
+</li>
+
+<li>
+Protein structure determines protein function.
+</li>
+
+<li>
+Enzymes lower activation energy.
+</li>
+
+<li>
+DNA stores genetic information.
+</li>
+
+<li>
+DNA replication is semi-conservative.
+</li>
+
+<li>
+Transcription produces RNA and translation produces a
+polypeptide.
+</li>
+
+<li>
+Mutations alter DNA base sequences.
+</li>
+
+<li>
+Inheritance depends on alleles and genotype.
+</li>
+
+<li>
+Genetic screening has scientific, ethical and social implications.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<div class="navigation">
+
+<a href="biology.html" class="button">
+← Back to Biology
+</a>
+
+<a href="biology-2.html" class="button">
+Biology Unit 2 →
+</a>
+
+<a href="index.html" class="button">
+Home
+</a>
+
+</div>
 
 <footer>
 
-    <p>
-        <strong>IAL ATLAS</strong>
-        — Free, student-built Edexcel International A Level resources.
-    </p>
-
-    <p style="margin-top:10px;">
-        Biology Unit 1 • Molecules, Diet, Transport and Health
-    </p>
+© 2026 IAL ATLAS • Independent student resource •
+Not affiliated with Pearson
 
 </footer>
 
-
 <script>
 
-    /* HEADER */
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
 
-    const header = document.getElementById("header");
+window.addEventListener("scroll",function(){
 
-    window.addEventListener("scroll", () => {
+    const scrollTop =
+        window.scrollY;
 
-        if (window.scrollY > 30) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-    });
+    const percentage =
+        (scrollTop / documentHeight) * 100;
 
+    document.getElementById("progress").style.width =
+        percentage + "%";
 
-    /* CURSOR GLOW */
-
-    const glow = document.querySelector(".cursor-glow");
-
-    document.addEventListener("mousemove", e => {
-
-        glow.style.left = e.clientX + "px";
-        glow.style.top = e.clientY + "px";
-
-    });
+});
 
 
-    /* REVEAL */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
-    const revealObserver = new IntersectionObserver(
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+
         entries => {
 
             entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+                if(entry.isIntersecting){
 
                     entry.target.classList.add("visible");
-
-                    revealObserver.unobserve(entry.target);
 
                 }
 
             });
 
         },
+
         {
-            threshold: 0.12
+            threshold:.12
         }
+
     );
 
+revealElements.forEach(element => {
 
-    document.querySelectorAll(".reveal")
-        .forEach(el => revealObserver.observe(el));
+    observer.observe(element);
 
-
-    /* PARTICLES */
-
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-
-    let particles = [];
-
-    function resizeCanvas() {
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-    }
-
-    resizeCanvas();
-
-    window.addEventListener("resize", resizeCanvas);
+});
 
 
-    class Particle {
+/* =========================================================
+   RANDOM PARTICLE MOVEMENT
+========================================================= */
 
-        constructor() {
+const particles =
+    document.querySelectorAll(".particle");
 
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
+particles.forEach((particle,index)=>{
 
-            this.size = Math.random() * 1.7 + 0.3;
+    particle.style.top =
+        Math.random()*100 + "%";
 
-            this.speedX =
-                (Math.random() - 0.5) * 0.25;
+    particle.style.transform =
+        `scale(${.5 + Math.random()*1.5})`;
 
-            this.speedY =
-                (Math.random() - 0.5) * 0.25;
+});
 
-            this.alpha =
-                Math.random() * 0.5 + 0.15;
 
-        }
+/* =========================================================
+   BIOLOGICAL VISUAL INTERACTION
+========================================================= */
 
-        update() {
+document.querySelectorAll(".bio-visual").forEach(visual=>{
 
-            this.x += this.speedX;
-            this.y += this.speedY;
+    visual.addEventListener("mousemove",event=>{
 
-            if (this.x < 0) this.x = canvas.width;
-            if (this.x > canvas.width) this.x = 0;
+        const rect =
+            visual.getBoundingClientRect();
 
-            if (this.y < 0) this.y = canvas.height;
-            if (this.y > canvas.height) this.y = 0;
+        const x =
+            (event.clientX - rect.left) /
+            rect.width - .5;
 
-        }
+        const y =
+            (event.clientY - rect.top) /
+            rect.height - .5;
 
-        draw() {
+        const dna =
+            visual.querySelector(".dna");
 
-            ctx.beginPath();
+        const blood =
+            visual.querySelector(".blood-flow");
 
-            ctx.arc(
-                this.x,
-                this.y,
-                this.size,
-                0,
-                Math.PI * 2
-            );
+        if(dna){
 
-            ctx.fillStyle =
-                `rgba(102,227,255,${this.alpha})`;
-
-            ctx.fill();
+            dna.style.transform =
+                `translate(${x*18}px,${y*18}px)`;
 
         }
 
-    }
+        if(blood){
 
+            blood.style.transform =
+                `translate(${x*10}px,${y*10}px)`;
 
-    for (let i = 0; i < 90; i++) {
-
-        particles.push(new Particle());
-
-    }
-
-
-    function animateParticles() {
-
-        ctx.clearRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
-
-        particles.forEach(p => {
-
-            p.update();
-            p.draw();
-
-        });
-
-        requestAnimationFrame(animateParticles);
-
-    }
-
-    animateParticles();
-
-
-    /* CARD TILT */
-
-    document.querySelectorAll(
-        ".topic-card, .practical, .math-card, .revision-card"
-    ).forEach(card => {
-
-        card.addEventListener("mousemove", e => {
-
-            const rect =
-                card.getBoundingClientRect();
-
-            const x =
-                e.clientX - rect.left;
-
-            const y =
-                e.clientY - rect.top;
-
-            const rotateY =
-                ((x / rect.width) - 0.5) * 5;
-
-            const rotateX =
-                ((y / rect.height) - 0.5) * -5;
-
-            card.style.transform =
-                `translateY(-6px)
-                 perspective(800px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)`;
-
-        });
-
-        card.addEventListener("mouseleave", () => {
-
-            card.style.transform = "";
-
-        });
+        }
 
     });
 
+    visual.addEventListener("mouseleave",()=>{
 
-    /* PAGE LOAD */
+        const dna =
+            visual.querySelector(".dna");
 
-    window.addEventListener("load", () => {
+        const blood =
+            visual.querySelector(".blood-flow");
 
-        document.body.style.opacity = "1";
+        if(dna){
+
+            dna.style.transform =
+                "translate(0,0)";
+
+        }
+
+        if(blood){
+
+            blood.style.transform =
+                "translate(0,0)";
+
+        }
 
     });
+
+});
 
 </script>
 
 </body>
-
 </html>
+
 
